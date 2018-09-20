@@ -35,14 +35,32 @@ First we look at $\tau_{1} = \{U\subset X | X \setminus U \text{ is finite or } 
   $$X\setminus \bigcap_{i=1}^{n}U_{i} = \bigcup_{i=1}^{n}\left(X\setminus U_{i}\right)$$
   but since $U_{i}\in \tau_{1}$, we have a finite union of finitely sized sets, which then must be finite, and thus in $\tau_{1}$.
 \end{itemize}
-Now all that is left is to see if $\tau_{1}$ is Hausdorff. Suppose $p_{1},p_{2}\in X$ such that $p_{1} \neq p_{2}$, FINISH ME
+Now all that is left is to see if $\tau_{1}$ is Hausdorff. Suppose $p_{1},p_{2}\in X$ such that $p_{1} \neq p_{2}$, We propose that $\tau_{1}$ is not Hausdorff, and show this by contradiction. Assuming that $\tau_{1}$ is Hausdorff, then $\exists$ $A,B \in \tau_{1}$ such that $p_{1}\in A$, $p_{2}\in B$ and $A \cap B = \emptyset$. We also see that neither of $A$ nor $B$ are $\emptyset$, since then one or both won't contain $p_{1}$ or $p_{2}$. Then, consider the complement,
+$$X\setminus \left(A \bigcap B \right) = \left(X\setminus A\right) \bigcup \left(X \setminus B\right)$$
+but by definition of this topology, $X\setminus A$ and $X\setminus B$ are finite, and a union of finite sets is finite. This is a contradiction, since this should be all of $X$, which is infinite. Hence, we have that $\tau_{1}$ can not be Hausdorff.
 
 Next we look at $\tau_{2} = \{ U \subset X | X\setminus U \text{ is infinite or } \emptyset \}$. Then:
 \begin{itemize}
 \item Clearly both $X,\emptyset \in \tau_{2}$ since $X\setminus X = \emptyset$ and $X \setminus \emptyset = X$ which is infinite.
-\item  
+\item Suppose $U_{i}\in \tau_{2}$ for $i\in A$ an indexing set. Then, consider 
+  $$X \setminus \bigcup_{i\in A} U_{i} = \bigcap_{i}\left(X\setminus U_{i}\right)$$
+  but since $U_{i}\in \tau_{2}$, $X\setminus U_{i}$ is either infinite or empty. If it is empty, then the intersection is in $\tau_{2}$. Otherwise, we have a possibly infinite intersection of infinite sets, which is not necessarily infinite nor empty.
 \end{itemize}
+We see that $\tau_{2}$ can not be a topology because of the second set.
 
+Finally we look at the third possible topology,
+\begin{itemize}
+\item We see that $X\in \tau_{3}$ since the empty set is countable and $\emptyset \in \tau_{3}$ by definition.
+\item Suppose $U_{i}\in \tau_{3}$ with $i\in A$ indexing set. Notice,
+  $$X \setminus \bigcup_{i\in A} U_{i} = \bigcap_{i}\left(X\setminus U_{i}\right)$$
+  which is the possibly infinite intersection of countable sets or X. If all $U_{i} = X$ then this is trivially in $\tau_{3}$, so we suppose otherwise. We know however that the possibly infinite intersection of countable sets will necessarily be countable, and hence $\cup_{i}U_{i} \in \tau_{3}$.
+\item Suppose $U_{i}\in \tau_{3}$ with $i,n \in A$ indexing set. Consider
+  $$X \setminus \bigcap_{i\in A}^{n} U_{i} = \bigcup_{i}^{n}\left(X\setminus U_{i}\right)$$
+  again we suppose that none of the arguments in the union are all of $X$ since then we just get our set trivially in $\tau_{3}$. Supposing otherwise, we recall that the finite intersection of countable sets is countable, and thus $X\setminus \cup_{i}^{n}U_{i} \in \tau_{3}$.
+\end{itemize}
+We see that $\tau_{3}$ is indeed a topology.
+
+Now we need to check if $\tau_{3}$ is Hausdorff .
 \newpage
 
 \textbf{Question 2}
