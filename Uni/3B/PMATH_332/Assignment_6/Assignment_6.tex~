@@ -1,0 +1,59 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 332 $|$  Assignment 6}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Problem 1}
+
+\textbf{(a)}
+We can define $g(z) = \frac{f(z)}{z-2}$. The first thing we notice is that $f(z)$ is the composition of analytic functions, so we can conclude that $f(z)$ must also be analytic. Further, we notice that $\Gamma$ is the \textit{unit} circle, this means that the point at which $g(z)$ is not analytic, $z_{0} = 2$ is not enclosed by this curve. Thus, we can take an open subset $b_{1.1}(0) \subset \C$, which is the open ball of radius $1.1$ centred at $0$. Clearly this set is simply connected and open, and since $f(z)$ is analytic on $\C$, it will be analytic on $b_{1.1}(0)$. The most important part is that now $g(z)$ is also analytic on this subset, and hence by Cauchy's Integral Theorem,
+$$\frac{1}{2\pi i}\oint_{\Gamma}\frac{f(z)}{z -2}dz = \frac{1}{2\pi i}\oint_{\Gamma}g(z)dz = 0$$
+\textbf{(b)}
+We see that
+$$f(2) = \exp(\sin(\cos^{2}(2)))$$
+but we don't actually compute the value since we see that the last composed function is the exponential, and we know that this never will go to $0$ for any $z \in \C$, so it can't possibly agree with the non-zero value retrieved from $f(2)$.
+
+(\textbf{Note:} Though complex sine and cosine aren't bounded, they are still finite $\forall z\in \C$, so the above argument still holds and the exponential will never be 0)
+
+\textbf{(c)}
+Recall that in order to compute the integral in \textbf{(a)} we used the fact that $g(z)$ was analytic over the open subset $b_{1.1}(0)$ and in particular it did not contain the point at which the integrand was not analytic, $z_{2}=2$. In order to use Cauchy's Integral Formula, we require that the point $z_{0} = 2$ be contained by $\Gamma$, but clearly it is not, so the theorem does not actually hold here and hence was not disproven. 
+
+\textbf{Problem 2}
+
+The first case we can consider is the trivial case, $f=g$, since then naturally we would see that $f^{\prime} = g^{\prime}$. The second case we consider is if we can write $f = g + C$ for some $C\in \C$, then we recall that the derivative over $\C$ will be linear, and further we know derivatives of constants vanish, so
+$$f^{\prime} = (g + C)^{\prime} = g^{\prime}$$
+and we can flip our definition be subtracting $C$ from both sides and get a similar relation for $g$.
+
+% !!!!!!!!!!!!!!!!!! More cases?!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+\newpage
+\textbf{Problem 3}
+
+We start with the left side, and we see that our conditions for $U$ allow for us to use Cauchy's Integral Formula,
+$$\oint_{\Gamma} \frac{f^{\prime}(z)}{z-z_{0}}dz = 2\pi i f^{\prime}(z_{0})$$
+but again we have an Integral formula for derivatives, so
+$$2\pi i f^{\prime}(z_{0}) = 2\pi i \left(\frac{1}{2\pi i} \oint \frac{f(z)}{(z-z_{0})^{2}}dz\right) =  \oint \frac{f(z)}{(z-z_{0})^{2}}dz$$
+as required.
+
+\textbf{Problem 4}
+
+
+\end{document}

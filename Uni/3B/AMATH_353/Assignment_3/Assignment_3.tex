@@ -1,0 +1,136 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{AMATH 353 $|$  Assignment 3}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Problem 1}
+
+For this problem, every part will simply be applying the boundary condition to the general solution. In particular, for the PDE,
+$$\frac{\partial^{2}u}{\partial x^{2}} = -\lambda u$$
+we recognize that
+$$u = a\cos(\sqrt{\lambda} x) + b\sin(\sqrt{\lambda} x)$$
+from here we apply the boundary conditions.
+
+\textbf{(a)}
+The boundary conditions give us,
+$$u(0) = a\cos(0) + b\sin(0) = a = 0 \hspace{1em} \to \hspace{1em} u(L) = b\sin(\sqrt{\lambda}L) = 0$$
+For non-trivial solutions, $b\neq 0$, we get,
+$$\lambda = \left(\frac{n\pi}{L}\right)^{2} \hspace{2em} n \in \mathbb{N} \cup\{0\}$$
+\textbf{(b)}
+Apply BCs,
+$$\frac{\partial u}{\partial x}(0) = -a\sqrt{\lambda}\sin(0) + b\sqrt{\lambda}\cos(0) = b\sqrt{\lambda} = 0 \hspace{1em} \to \hspace{1em} \frac{\partial u}{\partial x}(L) = -a\sqrt{\lambda}\sin(\sqrt{\lambda}L)$$
+avoiding the trivial case,
+$$\sqrt{\lambda}L = n\pi \hspace{1em} \to \hspace{1em} \lambda = \left(\frac{n\pi}{L}\right)^{2}\hspace{2em} n\in\mathbb{N}\setminus\{0\}$$
+\textbf{(c)}
+Apply BCs
+$$u(0) = a\cos(0) + b\sin(0) = a = 0 \hspace{1em} \to \hspace{1em} \frac{\partial u}{\partial x}(L) = b\sqrt{\lambda}\cos(\sqrt{\lambda}L) = 0$$
+avoiding the non-trivial solution,
+$$\sqrt{\lambda}L= \left(n+\frac{1}{2}\right)\pi \hspace{1em} \to \hspace{1em} \lambda = \left(\frac{(n+\frac{1}{2})\pi}{L}\right)^{2} \hspace{2em} n\in\mathbb{N}\setminus\{0\}$$
+\textbf{(d)}
+Apply BCs,
+$$\frac{\partial u}{\partial x}(0) = -a\sqrt{\lambda}\sin(0) + b\sqrt{\lambda}\cos(0) = b\sqrt{\lambda} = 0 \hspace{1em} \to \hspace{1em} u(L) = a\cos(\sqrt{\lambda}L) = 0$$
+non-trivial solution,
+$$\sqrt{\lambda}L= \left(n+\frac{1}{2}\right)\pi \hspace{1em} \to \hspace{1em} \lambda = \left(\frac{(n+\frac{1}{2})\pi}{L}\right)^{2} \hspace{2em} n\in\mathbb{N}\setminus\{0\}$$
+\textbf{(e)}
+Apply the BCs,
+$$u(0) = a\cos(0) + b\sin(0) = a = 0 \hspace{1em} \to \hspace{1em}u(L) + \beta \frac{du}{dx}(L) = b\sin(\sqrt{\lambda}L) + \beta b\sqrt{\lambda}\cos(\sqrt{\lambda}L) = 0$$
+$$\tan(\sqrt{\lambda}L) = -\sqrt{\lambda}\beta$$
+where $\lambda$ satisfies the above equation.
+
+\textbf{(f)}
+Apply BCs,
+$$u(0) - \beta\frac{d u}{dx}(0) = a\cos(0) + b\sin(0) + \beta a\sqrt{\lambda}\sin(0) - \beta b\sqrt{\lambda}\cos(0) = 0 \hspace{1em} \to \hspace{1em} a = \beta b \sqrt{\lambda}$$
+$$u(L) = a\cos(\sqrt{\lambda}L) + b\sin(\sqrt{\lambda}L) = \beta b\sqrt{\lambda}\cos(\sqrt{\lambda}L) + b\sin(\sqrt{\lambda}L)= 0 \hspace{1em} \to \hspace{1em} \tan(\sqrt{\lambda L}) = -\beta\sqrt{\lambda}$$
+\textbf{(g)}
+Apply BCs
+$$\frac{d u}{d x}(0) = -a\sqrt{\lambda}\sin(0) + b\sqrt{\lambda}\cos(0) = b\sqrt{\lambda} = 0 \hspace{1em} \to \hspace{1em}u(L) + \beta \frac{du}{dx}(L) = a\cos(\sqrt{\lambda}L) - \beta a\sqrt{\lambda}\sin(\sqrt{\lambda}L) = 0$$
+$$\tan(\sqrt{\lambda}L) = \frac{1}{\beta \sqrt{\lambda}}$$
+\textbf{(h)}
+$$u(0) - \beta\frac{d u}{dx}(0) = a\cos(0) + b\sin(0) + \beta a\sqrt{\lambda}\sin(0) - \beta b\sqrt{\lambda}\cos(0) = 0 \hspace{1em} \to \hspace{1em} a = \beta b \sqrt{\lambda}$$
+$$\frac{du}{dx}(L) = -a\sqrt{\lambda}\sin(\sqrt{\lambda}L) + b\sqrt{\lambda}\cos(\sqrt{\lambda}L) = -\beta \lambda \sin(\sqrt{\lambda}L) + \sqrt{\lambda}\cos(\sqrt{\lambda}L) = 0$$
+$$\tan(\sqrt{\lambda}L) = \frac{\sqrt{\lambda}}{\lambda L}$$
+\newpage
+\textbf{Problem 2}
+
+Substitute $u(x,y) = M(x)N(y)$ into the PDE,
+$$u_{xx}+u_{yy}-au = 0 \hspace{1em} \to \hspace{1em} M^{\prime\prime}N + MN^{\prime\prime} - aMN = 0\hspace{1em} \to \hspace{1em}  M^{\prime\prime}N = -M(N^{\prime\prime} - aN)$$
+$$-\frac{M^{\prime\prime}}{M} = \frac{N^{\prime\prime} -aN}{N}$$
+This is only possible if both the LS and RS are equivalent to a constant, say $\lambda$. Then the two ODEs are,
+$$-\frac{M^{\prime\prime}}{M} = \lambda \hspace{2em} \frac{N^{\prime\prime} -aN}{N} = \lambda$$
+Notice that the ODE with $M$ is the same as in \textbf{Q1}, and the BCs are the same as in part \textbf{(b)}, so we already know that,
+$$M_{n}(x) = a\cos(\sqrt{\lambda_{n}}x) \hspace{1em} \& \hspace{1em} \lambda_{n} = \left(\frac{n\pi}{L}\right)^{2}$$
+For $N$ we see,
+$$N^{\prime\prime} - aN = N\lambda \hspace{1em} \to \hspace{1em} N^{\prime\prime} - (\lambda + a)N = 0$$
+We recognize this ODE, and conclude,
+$$N_{n}(y) = Ae^{\sqrt{\lambda_{n}}y} + Be^{-\sqrt{\lambda_{n}}y}$$
+\newpage
+\textbf{Problem 3}
+
+Let $u(r,\theta) = R(r)\Theta(\theta)$, subbing this into the PDE we get,
+$$\frac{1}{r} \frac{\partial}{\partial r} \left(r \frac{\partial u}{\partial r}\right) + \frac{1}{r^{2}}\frac{\partial^{2} u}{\partial \theta^{2}} = 0$$
+$$\frac{1}{r} \frac{\partial}{\partial r} \left(r R^{\prime}\Theta\right) + \frac{1}{r^{2}}R\Theta^{\prime\prime} = 0$$
+$$\frac{1}{r}(R^{\prime}\Theta + rR^{\prime\prime}\Theta) + \frac{1}{r^{2}}R\Theta^{\prime\prime}= 0$$
+$$r\Theta(R^{\prime}+ rR^{\prime\prime}) =-R\Theta^{\prime\prime}$$
+$$r\frac{R^{\prime} + R^{\prime\prime}}{R} = -\frac{\Theta^{\prime\prime}}{\Theta}$$
+Thus, $\exists \lambda \in \R$ such that,
+$$r\frac{R^{\prime} + R^{\prime\prime}}{R} = \lambda \hspace{2em} \& \hspace{2em} -\frac{\Theta^{\prime\prime}}{\Theta}=\lambda$$
+as required.
+
+\newpage
+\textbf{Problem 4}
+
+We have that $u(r,\phi) = R(r)\Phi(\phi)$, hence,
+$$\frac{1}{r^{2}}\frac{\partial}{\partial r}\left(r^{2}\frac{\partial u}{\partial r}\right)+\frac{1}{r^{2}}\frac{1}{\sin\phi}\frac{\partial}{\partial \phi}\left(\sin\phi \frac{\partial u}{\partial \phi}\right)=0 \hspace{1em} \to \hspace{1em} \frac{1}{r^{2}}\frac{\partial}{\partial r}\left(r^{2}R^{\prime}\Phi\right)+\frac{1}{r^{2}}\frac{1}{\sin\phi}\frac{\partial}{\partial \phi}\left(\sin\phi R\Phi^{\prime}\right)=0 $$
+$$\frac{1}{r^{2}}\left(2rR^{\prime}\Phi + r^{2}R^{\prime\prime}\Phi\right)+\frac{1}{r^{2}}\frac{1}{\sin\phi}\left(\cos\phi R\Phi^{\prime} + \sin\phi R\Phi^{\prime\prime}\right)=0 $$
+$$\Phi\left(2rR^{\prime} + r^{2}R^{\prime\prime}\right)+R\left(\cot\phi \Phi^{\prime} + \Phi^{\prime\prime}\right)=0 $$
+$$\frac{2rR^{\prime} + r^{2}R^{\prime\prime}}{R} = -\frac{\cot\phi \Phi^{\prime} + \Phi^{\prime\prime}}{\Phi}$$
+Thus, $\exists \lambda$ such that,
+$$\frac{2rR^{\prime} + r^{2}R^{\prime\prime}}{R} = \lambda \hspace{2em} \& \hspace{2em} -\frac{\cot\phi \Phi^{\prime} + \Phi^{\prime\prime}}{\Phi} = \lambda$$
+as required.
+
+\newpage
+\textbf{Problem 5}
+
+\textbf{(a)}
+First multiply the ODE through by the integrating factor,
+$$\frac{r}{a_{0}}(-a_{0}u^{\prime\prime}-a_{1}u^{\prime}+a_{2}u) = \frac{r}{a_{0}}\lambda u$$
+$$-ru^{\prime\prime}-r\frac{a_{1}}{a_{0}}u^{\prime}+r\frac{a_{2}}{a_{0}}u = r\frac{\lambda}{a_{0}}u$$
+however, notice that $r^{\prime} = r\frac{a_{1}}{a_{0}}$, and thus,
+$$-ru^{\prime\prime}-r^{\prime}u^{\prime}+r\frac{a_{2}}{a_{0}}u = r\frac{\lambda}{a_{0}}u$$
+$$-(ru^{\prime})^{\prime} + r\frac{a_{2}}{a_{0}}u = r\frac{\lambda}{a_{0}}u$$
+which is exactly in the form of a Sturm-Liouville problem. In particular we notice the following conditions on the constants; $a_{0} > 0$, $a_{2} > 0$ and $a_{1} \in \R$.
+
+\textbf{(b)}
+We notice that
+$$a_{0} = x^{2} \hspace{2em} a_{1} = ax \hspace{2em} a_{2} = -b$$
+Further, notice
+$$r=\int \frac{a_{1}}{a_{0}}dx = \int \frac{ax}{x^{2}}dx = \int \frac{a}{x}dx = a\ln (x)$$
+Subbing this info into the solution from \textbf{(a)}
+$$-(x^{a}u^{\prime})^{\prime}+x^{a}\frac{-b}{x^{2}}u = x^{a}\frac{\lambda}{x^{2}}u$$
+$$-(x^{a}u^{\prime})^{\prime}-bx^{a-2}u = \lambda x^{a-2}u$$
+which is our Sturm-Liouville problem.
+
+
+
+
+
+\end{document}

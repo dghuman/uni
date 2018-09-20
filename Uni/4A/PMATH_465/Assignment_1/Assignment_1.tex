@@ -1,0 +1,115 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 465 $|$  Assignment 1}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Question 1}
+
+First we look at $\tau_{1} = \{U\subset X | X \setminus U \text{ is finite or } X\}$, and check the three conditions of a topology. In particular:
+\begin{itemize}
+\item Clearly $X \in \tau_{1}$, since $X \setminus X = \emptyset$ which is finite, and $\emptyset \in \tau_{1}$ since clearly $X \setminus \emptyset = X$.
+\item Suppose $U_{i}\in \tau_{1}$ and consider the union of these open sets $\cup_{i}U_{i}$. In particular, we notice that
+  $$X \setminus \bigcup_{i}U_{i} = \bigcap_{i}\left(X\setminus U_{i}\right)$$
+  However, since $U_{i}\in \tau_{1}$, we have an intersection of sets of finite size, which is necessarily finite. Hence, is in $\tau_{1}$.
+\item Finally, suppose $U_{i}\in \tau_{1}$ and a finite intersection of these sets, $\cap_{i=1}^{n}U_{i}$. Then,
+  $$X\setminus \bigcap_{i=1}^{n}U_{i} = \bigcup_{i=1}^{n}\left(X\setminus U_{i}\right)$$
+  but since $U_{i}\in \tau_{1}$, we have a finite union of finitely sized sets, which then must be finite, and thus in $\tau_{1}$.
+\end{itemize}
+Now all that is left is to see if $\tau_{1}$ is Hausdorff. Suppose $p_{1},p_{2}\in X$ such that $p_{1} \neq p_{2}$, FINISH ME
+
+Next we look at $\tau_{2} = \{ U \subset X | X\setminus U \text{ is infinite or } \emptyset \}$. Then:
+\begin{itemize}
+\item Clearly both $X,\emptyset \in \tau_{2}$ since $X\setminus X = \emptyset$ and $X \setminus \emptyset = X$ which is infinite.
+\item  
+\end{itemize}
+
+\newpage
+
+\textbf{Question 2}
+
+\textbf{(a)} We start by showing that the three properties of a topology hold. Notice:
+\begin{itemize}
+\item Clearly $X,\emptyset \in \tau$ by definition.
+\item $\tau$ only contains $X$ and $\emptyset$ so any combination of unions will be either $X$ or $\tau$ necessarily.
+\item Again, we have only two elements to work with, and in particular the intersection of these elements will be $X$ when $\emptyset$ isn't used in the intersection, and will be $\emptyset$ otherwise.
+\end{itemize}
+
+So we have that this set is indeed a topology on $X$. Indeed, since $\tau$ is finite, it is second countable, but notice that since we only have $X$ or $\emptyset$, if we choose $p_{1},p_{2}\in X$ with $p_{1} \neq p_{2}$, the only open set that contains either of these is $X$ and obviously $X\cap X \neq \emptyset$, and hence is not Hausdorff.
+
+\textbf{(b)} Again, we look at the three properties of a topology:
+\begin{itemize}
+\item Since $X\subseteq X$ and $\emptyset \subset X$, we have that $X,\emptyset \in \tau$.
+\item Suppose $U_{i} \in \tau$ and indeed we see $\cup_{i}U_{i} \subseteq X$ which then implies $\cup_{i}U_{i} \in \tau$.
+\item Suppose $U_{i} \in \tau$, then for finite $n$ we have $\cap_{i=1}^{n}U_{i} \subseteq X$ which implies $\cap_{i=1}^{n}U_{i} \in \tau$.
+\end{itemize}
+
+Hence we see that $\tau$ is a topology on $X$. Further, suppose $x,y\in X$ with $x \neq y$, then clearly the singletons $\{x\},\{y\} \in \tau$ since $\{x\} \subset X$ and $\{y\} \subset X$. However, bu supposition, $\{x\} \cup \{y\} = \emptyset$ and hence $\tau$ is Hausdorff. To see that $\tau$ is not necessarily countable, consider the set $X = \N$, then $\tau = \mathcal{P}(\N)$ and by Cantor's Theorem we have that $\tau$ is uncountable.
+
+\textbf{(c)} First, suppose $(X,\tau)$ is a 0-manifold. Then, we know that $\tau$ contains sets that are homeomorphic to singletons, but then since $\tau$ is a topology, then the union of these sets is also in $\tau$, and hence $\tau$ contains all of the subsets of $X$, and is the discrete topology. We also have that $\tau$ is countable, by second countability of $(X,\tau)$, and hence $(X,\tau)$ is a countable discrete space.
+
+Now suppose $(X,\tau)$ is a countable discrete space. Then, we have already shown that discrete spaces are Hausdorff, and hence all we require is locally homeomorphic to $\R^{n}$. However, we recall that the simplest way to show the Hausdorff property was to use the fact that all singletons in $X$ are in $\tau$, and we can again apply this to see that each singleton can be associated with a singleton, and is hence a 0-manifold.
+
+\newpage
+
+\textbf{Question 3}
+
+Suppose $X$ a set and $\tau$ a topology on $X$ such that $(X,\tau)$ is an n-manifold. We want to show this manifold has a basis consisting of elements in $\tau$ that are Euclidean Balls (homeomorphic to open balls in $\R^{n}$).
+
+In particular, we will build a basis $\mathcal{B}$ by using the locally Euclidean property of $(X,\tau)$; $\forall x\in X$ $ \exists U\subseteq X$ such that $U$ is homeomorphic to some open ball, $B_{r}(y)$, in $\R^{n}$, where $y\in \R^{n}$ and $r>0$. We let $\mathcal{B}$ be the set of all such $U \subseteq X$ $\forall x \in X$, and notice that such a $\mathcal{B}$ contains only Euclidian Balls.
+
+To see that this is a basis of $\tau$, suppose $V \in \tau$, then in particular we see that 
+
+\newpage
+
+\textbf{Question 4}
+
+\textbf{(a)} To verify that the product topology is indeed a topology on $M_{1} \times M_{2}$ we check the three standard properties:
+
+\begin{itemize}
+\item First, since $\emptyset \in \tau_{1}$, $\emptyset \in \tau_{2}$, $M_{1}\in \tau_{1}$ and $M_{2}\in \tau_{2}$ by supposition, we see that naturally $(\emptyset,\emptyset)\in (\tau_{1},\tau_{2})$ and $(M_{1},M_{2}) \in (\tau_{1},\tau_{2})$.
+\item Suppose $(U_{i},V_{i})\in (\tau_{1},\tau_{2})$ a family of subsets. Then, notice that $\cup_{i}(U_{i},V_{i}) = (\cup_{i}U_{i},\cup_{i}V_{i})\in (\tau_{1},\tau_{2})$ due to $(M_{1},\tau_{1})$ and $(M_{2},\tau_{2})$ being topological spaces.
+\item Suppose $(U_{i},V_{i})\in (\tau_{1},\tau_{2})$ a finite family of subsets. Then, we see that $\cap_{i=1}^{n}(U_{i},V_{i}) = (\cap_{i=1}^{n}U_{i},\cap_{i=1}^{n}V_{i})\in (\tau_{1},\tau_{2})$ again due to the topological space assumption.
+\end{itemize}
+
+As a remark, we notice that the family of sets used for the second and third property assume the same number of subsets from $\tau_{1}$ and $\tau_{2}$, though we never required uniqueness among the family of each individual subset $U_{i}$ and $V_{i}$ and hence we allow for repeating sets and still retain the family in $(\tau_{1},\tau_{2})$.
+
+We see that all of the properties are satisfied and hence this product space is a topological space with topology $(\tau_{1},\tau_{2})$. 
+
+First, suppose that both $\tau_{1}$ and $\tau_{2}$ are Hausdorff. Then, in particular, consider two distinct points $(a_{1},a_{2})$ and $(b_{1},b_{2})$ in $M_{1} \times M_{2}$. We see that $\tau_{1}$ and $\tau_{2}$ being Hausdorff gives us 4 sets, $U_{1},V_{1} \in \tau_{1}$ and $U_{2},V_{2}\in \tau_{2}$ such that $a_{1}\in U_{1}$, $a_{2} \in U_{2}$, $b_{1} \in V_{1}$, $b_{2} \in V_{2}$ and $U_{1}\cap V_{1} = \emptyset$ and $U_{2}\cap V_{2} = \emptyset$. However, then we naturally see that we can just choose such sets to build the disjoint sets in $(\tau_{1},\tau_{2})$, in particular $(a_{1},a_{2}) \in (U_{1},V_{1})$ and $(b_{1},b_{2}) \in (U_{2}, V_{2})$ but by the above findings $(U_{1},V_{1}) \cap (U_{2}, V_{2}) = \emptyset$.\, and hence $(\tau_{1},\tau_{2})$ is Hausdorff on the product space.
+
+Second, suppose both $\tau_{1}$ and $\tau_{2}$ are second countable. Then $\exists$ bases $\mathcal{B}_{1},\mathcal{B}_{2}$ that are countable for $\tau_{1}$ and $\tau_{2}$ respectively. To see that this property extends to the product space, we choose our basis to be $(\mathcal{B}_{1},\mathcal{B}_{2})$. Clearly this basis will be countable since the direct product of countable sets is countable, but more importantly this is indeed a basis of $(\tau_{1},\tau_{2})$. To see this explicitly, take some $(U,V)\in (\tau_{1},\tau_{2})$, and applying the basis definition to each set $U,V$ respectively, we can conclude $\exists b_{1,i}\in \mathcal{B}_{1},b_{2,j}\in\mathcal{B}_{2}$ such that $U = \cup_{i}b_{1,i}$ and $V = \cup_{j}b_{2,j}$ and hence $(U,V) = (\cup_{i}b_{1,i},\cup_{j}b_{2,j})$. Hence $(\tau_{1},\tau_{2})$ is second countable.
+
+\textbf{(b)} 
+
+\textbf{(c)} In part \textbf{(a)} we showed that product spaces of topological spaces are toplogical spaces and also carry the Hausdorff and second countable nature of the paired topological spaces, assuming they both carry the respective property. Hence, the only thing left to show for this case is that the locally euclidean property also carries through to the product space.
+
+In particular, suppose $(p_{1},p_{2})\in M_{1}\times M_{2}$, then clearly $p_{1}\in M_{1}$ and $p_{2}\in M_{2}$, and by the locally euclidean property of each $\exists$ $U\in \tau_{1}$ and $V\in \tau_{2}$ such that each is homeomorphic to $B_{r_{1}}(x_{1}) \subset \R^{n_{1}}$ and $B_{r_{2}}(x_{2}) \subset \R^{n_{2}}$ respectively with $p_{1}\in U$, $p_{2} \in V$, $x_{1} \in \R^{n_{1}}$ and $x_{2}\in \R^{n_{2}}$. Then, assuming that $f_{1}$ and $f_{2}$ are the homeomorphisms respectively, we see that first $B_{r_{1}}(x_{1})\times B_{r_{2}}(x_{2})\subset \R^{n_{1}}\times \R^{n_{2}}$ is open under the topology $\mu_{1}\times\mu_{2}$ where $\mu_{1},\mu_{2}$ are the standard topologies of $\R^{n_{1}}$ and $\R^{n_{2}}$ respectively, and this follows from what we showed in $\textbf{(a)}$.
+
+Then, we can propose that the map $F: M_{1}\times M_{2} \to \R^{n_{1}}\times \R^{n_{2}}$ defined by $F(U\times V) \mapsto f_{1}(U)\times f_{2}(V)$ is a homeomorphism. To see that this is true follows directly from the fact that $f_{1}$ and $f_{2}$ are homeomorphisms and is a simple application of each. In particular, to see that $F$ is continuous, suppose $X\times Y \subset \R^{n_{1}}\times \R^{n_{2}}$ is open, then we see that $F^{-1}(X\times Y) = f_{1}^{-1}(X) \times f_{2}^{-1}(Y) \in \tau_{1}\times \tau_{2}$ by continuity of $f_{1}$ and $f_{2}$. To see that the inverse is continuous, suppose $U\times V \in \tau_{1}\times \tau_{2}$, then $F(U\times V) = f_{1}(U)\times f_{2}(V) \in \mu_{1}\times \mu_{2}$, and hence $F$ is a homeomorphism. Further, $\R^{n_{1}}\times \R^{n_{2}} \cong \R^{n_{1}+n_{2}}$, and hence we have the locally euclidean property, and we can conclude this is a $(n_{1}+n_{2})$-topological manifold.
+
+\textbf{(d)} This is an application of all of the technology we developed in the previous parts of this question. In particular, recall that $S_{1}$ is a toplogical $1$-manifold, and hence, from $\textbf{(a)}$ and $\textbf{(b)}$ we know $S_{1} \times S_{1}$ is a topological $2$ manifold. This motivates an inductive proof of the statement.
+
+The base case is the known result that $S_{1}$ is a topological $1$-manifold. Suppose $\underbrace{S_{1}\times \dots \times S_{1}}_{n-1}$ is a topological $(n-1)$-manifold, then consider
+$$\underbrace{S_{1}\times \dots \times S_{1}}_{n-1}\times S_{1}$$
+but by the previous parts we showed that products of topological $n$-manifolds are topological manifolds of dimension that is the sum of their dimensions, so we have that $\underbrace{S_{1}\times \dots \times S_{1}}_{n}$ is a topological $n$-manifold, as required.
+\end{document}

@@ -1,0 +1,177 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 359 $|$  Assignment 2}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Problem 1}
+
+Rather than explicitly writing out each microstate (since that would be silly and take way too long), we make a table that accounts for each particle being distinguishable. First, lets look at the colder box, since it has a lower quanta count. In particular, since this set of microstates will only be the 1 quanta being passed around, we get
+
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+ \hline
+ \multicolumn{2}{|c|}{\textbf{Quanta}} & \textbf{Microstates} \\
+ \hline
+ \textbf{0} & \textbf{1} & \\
+  \hline
+  3 & 1 & 4 \\
+ \hline
+\end{tabular}
+\end{center}
+
+where the quanta columns represent the number of possible quanta, and the rows following representing the number of that quanta occurring in these microstates. Hence, since we only have one quanta in the cold box, we end up with three 0 quanta and one 1 quanta. Obviously, this will result in 4 microstates, as the 1 quanta just gets passed around.
+
+Now we look at the hot box. We compute the microstates using simple counting techniques. Specifically, say we have the set of microstates with three 1 quanta and one 2 quanta, then the three 1 quanta have 4 choices in particles to choose from, but since the quanta themselves are indistinguishable, we use the choose function to compute it. Furthermore, the same folows with the one 2 quanta, it will have 1 choice to pass the 2 quanta to. Notice, the order in which we distribute positions will not matter.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+ \hline
+ \multicolumn{6}{|c|}{\textbf{Quanta}} & \textbf{Computation} & \textbf{Microstates}\\
+ \hline
+ \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & & \\
+  \hline
+  3 & 0 & 0 & 0 & 0 & 1 & ${{4}\choose{3}}{{1}\choose{1}}$ &4\\
+  \hline
+  2 & 1 & 0 & 0 & 1 & 0 & ${{4}\choose{2}}{{2}\choose{1}}{{1}\choose{1}}$ &12\\
+  \hline
+  2 & 0 & 1 & 1 & 0 & 0 & ${{4}\choose{2}}{{2}\choose{1}}{{1}\choose{1}}$ &12\\
+  \hline
+  1 & 2 & 0 & 1 & 0 & 0 & ${{4}\choose{1}}{{3}\choose{2}}{{1}\choose{1}}$ &12\\
+  \hline
+  1 & 1 & 2 & 0 & 0 & 0 & ${{4}\choose{1}}{{3}\choose{1}}{{2}\choose{2}}$ &12\\
+  \hline
+  0 & 3 & 1 & 0 & 0 & 0 & ${{4}\choose{3}}{{1}\choose{1}}$ &4\\
+  \hline
+  \multicolumn{6}{|c|}{\textbf{Total}} & 4+12+12+12+12+4 & 56 \\
+  \hline
+\end{tabular}
+\end{center}
+
+We predict the hot box has 56 microstates. We check both of the answers with the formula,
+
+$$\Omega_{cold} = \frac{(N+q-1)!}{(N-1)!q!} = \frac{(4 + 1 - 1)!}{(4-1)!1!} = 4 \hspace{1em}
+\Omega_{hot} = \frac{(N+q-1)!}{(N-1)!q!} = \frac{(4 + 5 - 1)!}{(4-1)!5!} = \frac{8!}{5!3!} = 56
+$$
+
+as required.
+
+\newpage
+
+\textbf{Problem 2}
+
+By the second law, the state which gives the highest entropy will be the state when equilibrium is reached. Thus, since we know $S \sim \ln \Omega$, we expect the macrostate with the highest number of microstates to provide the largest entropy. In the case of the blocks touching, we have effectively 8 particles with 6 quanta.
+
+Furthermore, since the macrostates are limited to those in each box, we simple need to find the macrostate by number of quanta in a single box. We use the relation we used to check out answers in question 1.
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+ \hline
+ \textbf{Quanta} & \textbf{Computation} & \textbf{Microstates}\\
+ \hline
+  0 & $\Omega_{0} =\frac{3!}{3!0!} $ &1\\
+  \hline
+  1 & $\Omega_{1} =\frac{4!}{3!1!} $ &4\\
+  \hline
+  2 & $\Omega_{2} =\frac{5!}{3!2!} $ &10\\  
+  \hline
+  3 & $\Omega_{3} =\frac{6!}{3!3!} $ &20\\
+  \hline
+  4 & $\Omega_{4} =\frac{7!}{3!4!} $ &35\\
+  \hline
+  5 & $\Omega_{5} =\frac{8!}{3!5!} $ &56\\
+  \hline
+  6 & $\Omega_{6} =\frac{9!}{3!6!} $ &84\\
+  \hline
+  \textbf{Total} & 1+4+10+20+35+56+84 & 210 \\
+  \hline
+\end{tabular}
+\end{center}
+
+Yet, the total number of microstates depends upon the other box aswell,
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+ \hline
+ \multicolumn{2}{|c|}{\textbf{Quanta}} & \textbf{Computation} & \textbf{Microstates}\\
+  \hline
+  \textbf{Box Left} & \textbf{Box Right} &  &\\
+  \hline
+  0 & 6 & $\Omega_{0}  \Omega_{6}$ &84\\
+  \hline
+  1 & 5 & $\Omega_{1}  \Omega_{5}$ &216\\
+  \hline
+  2 & 4 & $\Omega_{2}  \Omega_{4}$ &350\\  
+  \hline
+  3 & 3 & $\Omega_{3}  \Omega_{3}$ &400\\
+  \hline
+  4 & 2 & $\Omega_{4}  \Omega_{2}$ &350\\
+  \hline
+  5 & 1 & $\Omega_{5}  \Omega_{1}$ &216\\
+  \hline
+  6 & 0 & $\Omega_{6}  \Omega_{0}$ &84\\
+  \hline
+  \multicolumn{2}{|c|}{\textbf{Total}} & 84(2) + 216(2) + 350(2) + 400(2) & 2100 \\
+  \hline
+\end{tabular}
+\end{center}
+
+Clearly the macro state with 3 quanta in each has the most microstates, and hence will provide the largest entropy.
+
+\newpage
+
+\textbf{Problem 3}
+
+The left bar initially had 5 quanta over 4 particles, where the right bar had initially 1 quanta over the 4 particles. We already computed the microstates for these, so now all that is left is the microstates for 3 quanta over 4 particles. This can be shown the same way as in \textbf{Problem 1}.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+ \hline
+ \multicolumn{4}{|c|}{\textbf{Quanta}} & \textbf{Computation} & \textbf{Microstates}\\
+ \hline
+ \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & & \\
+  \hline
+  3 & 0 & 0 & 1 & ${{4}\choose{3}}{{1}\choose{1}}$ &4\\
+  \hline
+  2 & 1 & 1 & 0 & ${{4}\choose{2}}{{2}\choose{1}}{{1}\choose{1}}$ &12\\
+  \hline
+  1 & 3 & 0 & 0 & ${{4}\choose{1}}{{3}\choose{3}}$ &4\\
+  \hline
+  \multicolumn{4}{|c|}{\textbf{Total}} & 4+12+4 & 20 \\
+  \hline
+\end{tabular}
+\end{center}
+
+We notice this agrees with the previous computation in \textbf{Problem 2} which used the formula provided. Now we compute the entropy over these three states. Let $\Omega_{n}$ be the macrostate with $n$ quanta, since the number of particles is fixed. For initial entropy, we have entropy of the left box, $S_{l_{0}}$ , and for the right we have $S_{r_{0}}$. For the equilibrium entropy we have $S_{l_{1}}$ and $S_{r_{1}}$. Thus,
+
+$$S_{l_{0}} = \kappa_{B}\ln(\Omega_{5}) = \kappa_{B}\ln(56) \hspace{2cm} S_{r_{0}} = \kappa_{B}\ln(\Omega_{1}) = \kappa_{B}\ln(4)$$
+$$S_{l_{1}} = \kappa_{B}\ln(\Omega_{3}) = \kappa_{B}\ln(20) \hspace{2cm} S_{r_{1}} = \kappa_{B}\ln(\Omega_{3}) = \kappa_{B}\ln(20)$$
+
+We now have all the pieces to compute the change in entropy.
+
+$$\Delta S_{l} = S_{l_{1}} - S_{l_{0}} = \kappa_{B}\ln(20) - \kappa_{B}\ln(56) = \kappa_{B} \ln\left(\frac{20}{56}\right) \approx -1.42 \times 10^{-23} \frac{m^{2}kg}{s^{2}K}$$
+$$\Delta S_{r} = S_{r_{1}} - S_{r_{0}} = \kappa_{B}\ln(20) - \kappa_{B}\ln(4) = \kappa_{B} \ln\left(\frac{20}{4}\right) \approx 2.22 \times 10^{-23} \frac{m^{2}kg}{s^{2}K}$$
+$$\Delta S = \Delta S_{l} + \Delta S_{r} = \kappa_{B}\ln\left(\frac{20}{56}\right) + \kappa_{B}\ln\left(\frac{20}{4}\right) = \kappa_{B} \ln\left(\frac{(20)(20)}{(56)(4)}\right) \approx 8.5 \times 10^{-24} \frac{m^{2}kg}{s^{2}K}$$
+
+So, we see that the entropy in the left bar decreased, increased in the right bar, and the total intropy of the system increased, as we would expect with the second law.
+\end{document}

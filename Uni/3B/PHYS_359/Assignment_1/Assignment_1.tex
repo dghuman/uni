@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 359 $|$ Assignment 1}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Problem 1}
+
+\textbf{(a)} To show this relation, we simply do a direct computation.
+
+$$\lim_{a \to 1} \int_{0}^{\infty} \left(-1 \frac{\partial}{\partial a} \right)^{N}e^{-ax}dx = \lim_{a \to 1} \int_{0}^{\infty} (-1)^{N} \left(\frac{\partial}{\partial a} \right)^{N}e^{-ax}dx$$
+$$ = \lim_{a \to 1} \int_{0}^{\infty} (-1)^{N}(-1)^{N} x^{N}e^{-ax}dx$$
+$$ = \lim_{a \to 1} \int_{0}^{\infty} x^{N}e^{-ax}dx$$
+$$ = \int_{0}^{\infty} x^{N}e^{-x}dx$$
+
+\textbf{(b)} This relation can be shown by evaluating the integral first.
+
+$$\lim_{a \to 1} \left(-1 \frac{\partial}{\partial a} \right)^{N} \int_{0}^{\infty}e^{-ax}dx = \lim_{a \to 1} \left(-1\frac{\partial}{\partial a}\right)^{N} \frac{1}{a}$$
+$$ = \lim_{a\to 1} (-1)^{N} \prod_{i=1}^{N}(-1)^{i}a^{-(i+1)}$$
+$$ = \lim_{a\to 1}(-1)^{N}(-1)^{N}N! \prod_{i=1}^{N} a^{-(i+1)} = N!$$
+
+\textbf{(c)} We define the substitution. Thus, let $x = N + y\sqrt{N}$, then, $dx = dy\sqrt{N}$. Now to get the bounds, as $x \to 0$ we see $y \to -\sqrt{N}$, and as $x \to \infty$, $y \to \infty$.
+
+$$\int_{0}^{\infty} x^{N}e^{-x}dx = \int_{-\sqrt{N}}^{\infty} (N+y\sqrt{N})^{N}e^{-(N+y\sqrt{N})}\sqrt{N}dy$$
+$$ = \int_{-\sqrt{N}}^{\infty} N^{N}\left(1+\frac{y\sqrt{N}}{N}\right)^{N}e^{-(N+y\sqrt{N})}\sqrt{N}dy$$
+$$ =N^{N}\sqrt{N}e^{-N} \int_{-\sqrt{N}}^{\infty} \left(1+\frac{y\sqrt{N}}{N}\right)^{N}e^{-y\sqrt{N}}dy$$
+
+We now use our approximation by replacing $1+\frac{y\sqrt{N}}{N}$ with $e^{\ln(1+\frac{y\sqrt{N}}{N})}$. Thus,
+
+$$N^{N}\sqrt{N}e^{-N} \int_{-\sqrt{N}}^{\infty} \left(1+\frac{y\sqrt{N}}{N}\right)^{N}e^{-y\sqrt{N}}dy\approx N^{N}\sqrt{N}e^{-N} \int_{-\sqrt{N}}^{\infty} \left(e^{\frac{y\sqrt{N}}{N} - \frac{y^{2}}{2N}}\right)^{N}e^{-y\sqrt{N}}dy$$
+$$ \approx N^{N}\sqrt{N}e^{-N} \int_{-\sqrt{N}}^{\infty} e^{- \frac{y^{2}}{2}}dy $$
+
+Thus,
+
+$$N^{N}\sqrt{N}e^{-N} \int_{-\sqrt{N}}^{\infty} e^{- \frac{y^{2}}{2}}dy \approx N!$$
+
+\textbf{(d)} We now have an expression for $N!$, so let us try plugging that in and seeing where we go,
+
+$$\ln(N!) \approx \ln(N^{N}\sqrt{N}e^{-N} \int_{-\sqrt{N}}^{\infty} e^{- \frac{y^{2}}{2}}dy)$$
+
+For $N >> 1$, the lower integral bound approaches $-\infty$. With this in mind, we can compute the integral,
+
+$$ \ln(N^{N}\sqrt{N}e^{-N} \int_{-\sqrt{N}}^{\infty} e^{- \frac{y^{2}}{2}}dy) \approx \ln(N^{N}\sqrt{N}e^{-N} \sqrt{2\pi N})$$
+$$ \approx \ln(N^{N}) + \ln(e^{-N}) + \ln(\sqrt{2\pi N})$$
+
+And thus we get,
+
+$$\ln(N!) \approx N\ln(N) - N + \frac{1}{2}\ln(2\pi N)$$
+
+\newpage
+
+\textbf{Problem 2}
+
+\textbf{(a)} This is a fairly simple integral to compute,
+
+$$\int_{0}^{\infty} e^{-wx}dx = -\frac{1}{w}e^{-wx}  \bigg\rvert_{0}^{\infty} $$
+$$ = -\frac{1}{w} (0 - 1) = \frac{1}{w} $$
+
+\textbf{(b)} This problem is a bit tougher. The first step we take is to apply the geometric series closed form, 
+
+$$\sum_{j=0}^{\infty} e^{-wj} = \sum_{j=0}^{\infty}\left(e^{-w}\right)^{j}$$
+$$ = \frac{1}{1-e^{-w}} $$
+
+Now we expand the taylor series for $e^{x}$ to get,
+
+$$\frac{1}{1-e^{-w}} = \left(1 - \sum_{i=0}^{\infty}\frac{(-w)^{i}}{i!} \right)^{-1}$$
+
+We pull the first term from this series since it is $1$,
+
+$$ \left(1 - \sum_{i=0}^{\infty}\frac{(-w)^{i}}{i!} \right)^{-1} =  \left(\sum_{i=1}^{\infty}\frac{(-w)^{i}}{i!} \right)^{-1}$$
+
+We pull another term for convenience and factor out a $w$,
+
+$$\left(\sum_{i=1}^{\infty}\frac{(-w)^{i}}{i!} \right)^{-1} = \left(w - \sum_{i=2}^{\infty}\frac{(-w)^{i}}{i!} \right)^{-1}$$
+$$= \frac{1}{w} \left(1 - \sum_{i=2}^{\infty}\frac{(-w)^{i-1}}{i!} \right)^{-1}$$
+
+Recognize that we can again use a taylor expansion on this new argument, as it takes a similar form to $(1+x)^{-1}$,
+
+$$ \frac{1}{w} \left(1 - \sum_{i=2}^{\infty}\frac{(-w)^{i-1}}{i!} \right)^{-1} = \frac{1}{w} \sum_{k=0}^{\infty} \frac{(-1)^{k}k!}{k!}\left(\sum_{i=2}^{\infty}(-1)^{i-1}\frac{(w)^{i-1}}{i!}\right)^{k}$$
+$$ = \frac{1}{w}\sum_{k=0}^{\infty}(-1)^{k}\left(\sum_{i=2}^{\infty}(-1)^{i-1}\frac{w^{i-1}}{i!}\right)^{k}$$
+
+Expanding this double series will result in the terms we are looking for. We show this explicitly for the first few terms.
+
+$$ \frac{1}{w}\sum_{k=0}^{\infty}(-1)^{k}\left(\sum_{i=2}^{\infty}(-1)^{i-1}\frac{w^{i-1}}{i!}\right)^{k} = \frac{1}{w} \left( 1 - \left(-\frac{w}{2!} + \frac{w}{3!} - \dots \right) + \left(-\frac{w}{2!} + \frac{w}{3!} - \dots \right)^{2!} - \left(-\frac{w}{2!} + \frac{w}{3!} - \dots \right)^{3} + \dots \right)$$
+
+$O(w)$ is exactly the first term in the first series, $\frac{w}{2!}$. Notice, if we expand the $\frac{1}{w}$ through, the first term matches our integral and the second term matches what we would expect, $\frac{1}{2}$.
+
+Next, we look at terms of $O(w^{2})$ which results in the following expansion,
+
+$$ \frac{1}{w}\sum_{k=0}^{\infty}(-1)^{k}\left(\sum_{i=2}^{\infty}(-1)^{i-1}\frac{w^{i-1}}{i!}\right)^{k} = \frac{1}{w} \left( 1 + \frac{w}{2!} - \frac{w^{2}}{6} + \frac{w^{2}}{4} + O(w^{3}) \right) $$
+$$ =  \frac{1}{w} \left( 1 + \frac{w}{2!} + \frac{w^{2}}{12} + O(w^{3}) \right) $$
+
+And we continue to expand for higher order terms,
+
+$$ \frac{1}{w}\sum_{k=0}^{\infty}(-1)^{k}\left(\sum_{i=2}^{\infty}(-1)^{i-1}\frac{w^{i-1}}{i!}\right)^{k} =  \frac{1}{w} \left( 1 + \frac{w}{2!} + \frac{w^{2}}{12} + \frac{w^{3}}{24} - 2\frac{w^{3}}{2!3!} + \frac{w^{3}}{(2!)^{3}} + O(w^{4}) \right)$$
+$$ =  \frac{1}{w} \left( 1 + \frac{w}{2!} + \frac{w^{2}}{12} + w^{3}\left(\frac{1}{24} - \frac{4}{24} + \frac{3}{24} \right)+ w^{4}\left(-\frac{1}{5!} - \frac{1}{24} + \frac{1}{36} - \frac{1}{24} + \frac{1}{16} \right)+ O(w^{5}) \right) $$
+$$ = \frac{1}{w} \left(1 + \frac{w}{2} + \frac{w^{2}}{12} - \frac{w^{4}}{720} + w^{5}\left(\frac{1}{6!} - \frac{1}{45} + \frac{7}{96} - \frac{1}{12} + \frac{1}{2^{5}} \right) + O(w^{6})\right)$$
+$$ = \frac{1}{w} \left(1 + \frac{w}{2} + \frac{w^{2}}{12} - \frac{w^{4}}{720} + w^{6} \left(-\frac{1}{7!} + \frac{17}{2880} - \frac{137}{4320} + \frac{1}{16} - \frac{5}{96} + \frac{1}{2^{6}} \right) + O(w^{7})\right)$$
+$$ = \frac{1}{w} \left(1 + \frac{w}{2} + \frac{w^{2}}{12} - \frac{w^{4}}{720} + \frac{w^{6}}{30240} + O(w^{7})\right)$$
+
+As required.
+
+\end{document}

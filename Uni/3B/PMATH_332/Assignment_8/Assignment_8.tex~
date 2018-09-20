@@ -1,0 +1,104 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 332 $|$  Assignment 8}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Problem 1}
+
+\textbf{(a)}
+By inspection, we see poles at $z = \pm 2$. To see that they are of order 1,
+$$\lim_{z\to 2}(z-2)\frac{\sin(z)}{(z-2)(z+2)} = \lim_{z\to 2}\frac{\sin(z)}{z+2} = \frac{\sin(2)}{4}$$
+$$\lim_{z\to -2}(z+2)\frac{\sin(z)}{(z-2)(z+2)} = \lim_{z\to -2}\frac{\sin(z)}{z-2} = \frac{-\sin(2)}{-4} = \frac{\sin(2)}{4}.$$
+Next, we find the residues at these roots,
+$$\text{Res}(f,2) = \frac{1}{(-1+1)!}\lim_{z\to 2}\left((z-2)\frac{\sin(z)}{(z-2)(z+2)}\right)^{(-1 +1)} = \frac{\sin(2)}{4}$$
+$$\text{Res}(f,-2) = \frac{1}{(-1+1)!}\lim_{z\to -2}\left((z+2)\frac{\sin(z)}{(z-2)(z+2)}\right)^{(-1 +1)} = \frac{\sin(2)}{4}.$$
+By the Residue Theorem, we have that
+$$\oint_{\Gamma}\frac{\sin(z)}{z^{2} - 4}dz = 2\pi i\left(\frac{\sin(2)}{4} + \frac{\sin(2)}{4}\right) = \pi i \sin(2)$$
+
+\textbf{(b)}
+We recall that there is an essential singularity at $z=0$, so computing the integral becomes that more complicated, since the residue isn't as simple to compute. However, we recall that series expansion of $e^{x}$ about $x_{0} = 0$,
+$$e^{x} = \sum_{n=0}^{\infty}\frac{x^{n}}{n!}.$$
+Applying this to our integrand,
+$$z^{3}e^{\frac{2}{z}} = z^{3}\sum_{n=0}^{\infty}\frac{1}{n!}\left(\frac{2}{z}\right)^{n} = \sum_{n=0}^{\infty}\frac{2^{n}}{n!}z^{3-n}.$$
+We recognize that the coefficient for the $z^{-1}$ term is at $n=4$, so $a_{-1} = \frac{2^{4}}{4!} = \frac{16}{24} = \frac{2}{3}$ and hence by the Residue theorem,
+$$\oint_{\Gamma}z^{3}e^{\frac{2}{z}} = 2\pi i \left(\frac{2}{3}\right) = \frac{4\pi i }{3}.$$
+
+\textbf{(c)}
+By inspection, we recognize three singularities, $z=0$ and $z=\pm \pi$. I propose that the first singularity is a pole of order 3 and the second is a pole of order 1. We see this in
+$$\lim_{z\to 0}z^{3}\frac{1}{z^{2}\sin(z)} = \lim_{z\to 0}\frac{z}{\sin(z)} = 1$$
+$$\lim_{z\to \pm\pi}(z \mp \pi)\frac{1}{z^{2}\sin(z)} = \lim_{z\to \pm\pi}\frac{z \mp \pi}{z^{2}\sin(z)} = \frac{0}{0}$$
+apply L'H\^opital's rule,
+$$\lim_{z\to \pm\pi}\frac{z \mp \pi}{z^{2}\sin(z)} = \lim_{z\to \pm\pi}\frac{1}{z^{2}\cos(z) + 2z\sin(z)} = -\frac{1}{\pi^{3}}.$$
+Computing the residues,
+$$\text{Res}(f,\pm\pi) = \left(\mp\frac{1}{\pi^{3}}\right) = -\frac{1}{\pi^{3}}$$
+since the pole is of order 1. Next,
+$$\text{Res}(f,0) = \frac{1}{-1+3}\lim_{z\to 0}\left(\frac{z^{3}}{z^{2}\sin(z)}\right)^{\prime \prime} = \frac{1}{2}\lim_{z\to 0}\left(\frac{\sin(z) - z\cos(z)}{\sin^{2}(z)}\right)^{\prime}$$
+$$ = \frac{1}{2}\lim_{z\to 0}\frac{z\sin^{3}(z) - 2\sin^{2}(z)\cos(z) + 2z\sin(z)\cos^{2}(z)}{\sin^{4}(z)} = \frac{0}{0}$$
+So, we apply L'H\^opital's rule three times and see that the limit goes to $\frac{1}{3}$. Hence, by the residue theorem,
+$$\oint_{\Gamma}\frac{1}{z^{2}\sin(z)}dz = 2\pi i \left(\text{Res}(f,\pi) + \text{Res}(f,-\pi) + \text{Res}(f,0)\right) = 2\pi i \left(-\frac{1}{\pi^{3}} - \frac{1}{\pi^{3}} + \frac{1}{3}\right) = \frac{2 i (\pi^{3} - 6)}{3\pi^{2}}$$
+
+\textbf{Problem 2}
+
+\textbf{(a)}
+We recognize that the singularities for $f(t) = \frac{1}{(t^{2} + 1)(t^{2} + 4)}$ are in $\C$. So, we first let $t$ be complex by replacing it with $z$, so we see
+$$f(z) = \frac{1}{(z^{2} + 1)(z^{2} + 4)}$$
+with singularities at $z = \pm i, 2i$. To compute this infinite real integral, we have to take two steps. The first step will be to build a complex contour that we can relate to this real integral. To see this, we build a CCW oriented semicircle, such that the radius of the semicircle is $R > 4$ and it is centred at $z=0$. Let $\Gamma$ be this contour with $\Gamma_{1}$ being the portion that lies on the real line, and $\Gamma_{2}$ is the semicircle in the upper half of $\C$. Then, $\Gamma = \Gamma_{1} + \Gamma_{2}$, and
+$$\oint_{\Gamma}f(z)dz = \int_{\Gamma_{1}}f(z)dz + \int_{\Gamma_{2}}f(z)dz$$
+However, since this is a simple closed contour oriented positively, we can take arbitrary size $R>4$, since such $R$ will always contain the singularities $z= i, 2i$. Looking at the complex contour $\Gamma_{2}$, we realise that we can apply an $ML$ approximation,
+$$\int_{\Gamma_{2}}f(z)dz \leq ML$$
+where
+$$ L = \pi R \hspace{2em} M = \frac{1}{(R^{2} + 1)(R^{2} + 4)}.$$
+The $L$ comes from the fact it is a semi-circle, and the $M$ comes from the fact all $z$ on the contour have norm $R$. Now, what happens if we push this semi-circle to infinity? Well,
+$$\oint_{\Gamma}f(z)dz = \lim_{R\to \infty}\left( \int_{\Gamma_{1}}f(z)dz + \int_{\Gamma_{2}}f(z)dz\right)$$
+where by the $ML$ approximation, the second integral vanishes, and hence,
+$$\oint_{\Gamma}f(z)dz = \int_{-\infty}^{\infty}f(z)dz = \int_{-\infty}^{\infty}f(t)dt.$$
+The second step is to compute the contour integral using the Residue Theorem. We have two singularities contained in this contour, and they are both of order 1. We see
+$$\text{Res}(f,i) = \lim_{z\to i}\left((z-i)\frac{1}{(z + i)(z - i)(z +2i)(z-2i)}\right)^{(0)} = \frac{1}{(2i)(3i)(-i)} = -\frac{i}{6}$$
+$$\text{Res}(f,2i) = \lim_{z\to 2i}\left((z-2i)\frac{1}{(z + i)(z - i)(z +2i)(z-2i)}\right)^{(0)} = \frac{1}{(3i)(i)(4i)} = \frac{i}{12}$$
+so we have that
+$$\oint_{\Gamma}f(z)dz = 2\pi i\left(-\frac{i}{6} + \frac{i}{12}\right)= \frac{\pi}{6}.$$
+Putting it all together,
+$$\int_{-\infty}^{\infty}\frac{1}{(t^{2} + 1)(t^{2} + 4)}dt = \oint_{\Gamma}f(z)dz = 2\pi i\left(-\frac{i}{6} + \frac{i}{12}\right)= \frac{\pi}{6}$$
+as required.
+
+\textbf{(b)}
+Our approach to the problem will be the same as before, in that we will do this in two parts. The first part will be to relate the real integral to a contour integral, and the second step will be to compute the complex contour integral using the residue theorem. For the first step, notice that we can take $R>1$ and form a contour $\Gamma$ in $\C$ the same way as in \textbf{(a)}. The problem here is how we can show that the complex contour will vanish, since $\sin(z)$ is not bounded for $z\in\C$. To fix this, we choose the real part of our contour integral,
+$$\text{Re}\left(\int_{\Gamma}\frac{e^{iz}}{z^{4} + 1}dz\right) = \text{Re}\left(\int_{\Gamma_{1}}\frac{e^{iz}}{z^{4} + 1}dz\right) + \text{Re}\left(\int_{\Gamma_{2}}\frac{e^{iz}}{z^{4} + 1}dz\right).$$
+We can now do a $ML$ approximation for the complex integral,
+$$\int_{\Gamma_{1}}\frac{e^{iz}}{z^{4} + 1}dz \leq ML = \frac{\pi R}{R^{4} +1}$$
+$$L = \pi R \hspace{2em} M = \frac{1}{R^{4} + 1}$$
+where $M$ is easy enough to see, since $|z| = R$ and $|e^{iz}| = 1$. Hence, if we push $R$ to infinity, since by Pok\'e-Lemma, we can take arbitrary sized contours, we see that the complex integral will vanish over $\Gamma_{1}$, and the remaining integral becomes,
+$$\text{Re}\left(\int_{\Gamma}\frac{e^{iz}}{z^{4} + 1}dz\right) = \lim_{R \to \infty}\text{Re}\left(\int_{\Gamma_{2}}\frac{e^{iz}}{z^{4} + 1}dz\right) = \int_{-\infty}^{\infty}\frac{\sin(t)}{t^{4} + 1}dt. $$
+So now all that remains is to compute the contour integral. We see that $f(z) = \frac{e^{iz}}{z^{4} + 1}$ has four singularities, $z = e^{\frac{i\pi}{4}}, e^{\frac{3i\pi}{4}}, e^{\frac{5i\pi}{4}}$ and $e^{\frac{7i\pi}{4}}$. We recall that $\Gamma$ is in the upper half-plane of $\C$, so we only need to consider those singularities that exist in that plane, which are $z = e^{\frac{i\pi}{4}}$ and $z = e^{\frac{3i\pi}{4}}$. By inspection, we know these poles will be of order 1. So,
+$$\text{Res}(f,e^{\frac{i\pi}{4}}) = \lim_{z\to e^{\frac{i\pi}{4}}}\left(z-e^{\frac{i\pi}{4}}\right)\frac{e^{iz}}{\left(z - e^{\frac{i\pi}{4}}\right)\left(z - e^{\frac{3i\pi}{4}}\right)\left(z-e^{\frac{5i\pi}{4}}\right)\left(z-e^{\frac{7i\pi}{4}}\right)}$$
+$$\text{Res}(f,e^{\frac{i\pi}{4}}) = \frac{e^{i(\cos(\frac{\pi}{4}) + i\sin(\frac{\pi}{4}))}}{e^\frac{i\pi}{4}e^\frac{i\pi}{4}e^\frac{i\pi}{4}\left(1 - e^{\frac{i\pi}{2}}\right)\left(1 - e^{i\pi}\right)\left(1 - e^{\frac{3i\pi}{2}}\right)}$$
+$$\text{Res}(f,e^\frac{i\pi}{4}) = \frac{e^{i\frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}}}}{\left(-\frac{1}{\sqrt{2}} + i\frac{1}{\sqrt{2}}\right)(1 - i)(2)(1+i)} = \frac{e^{-\frac{1}{\sqrt{2}}}\left(\cos\left(\frac{1}{\sqrt{2}}\right) + i\sin\left(\frac{1}{\sqrt{2}}\right)\right)}{-\frac{4}{\sqrt{2}} + i\frac{4}{\sqrt{2}}}$$
+$$\text{Res}(f,e^\frac{i\pi}{4}) = \frac{e^{-\frac{1}{\sqrt{2}}}}{16}\left(\cos\left(\frac{1}{\sqrt{2}}\right) + i\sin\left(\frac{1}{\sqrt{2}}\right)\right)\left(-\frac{4}{\sqrt{2}} - i\frac{4}{\sqrt{2}}\right)$$
+$$\text{Res}(f,e^\frac{i\pi}{4}) =  \frac{e^{-\frac{1}{\sqrt{2}}}}{4\sqrt{2}}\left(\sin\left(\frac{1}{\sqrt{2}}\right) - \cos\left(\frac{1}{\sqrt{2}}\right) - i\cos\left(\frac{1}{\sqrt{2}}\right) - i\sin\left(\frac{1}{\sqrt{2}}\right)\right)$$
+Similarly,
+$$\text{Res}(f,e^{\frac{3i\pi}{4}}) = \lim_{z\to e^{\frac{3i\pi}{4}}}\left(z-e^{\frac{3i\pi}{4}}\right)\frac{e^{iz}}{\left(z - e^{\frac{i\pi}{4}}\right)\left(z - e^{\frac{3i\pi}{4}}\right)\left(z-e^{\frac{5i\pi}{4}}\right)\left(z-e^{\frac{7i\pi}{4}}\right)}$$
+$$\vdots$$
+$$\text{Res}(f,e^{\frac{3i\pi}{4}}) =  \frac{e^{-\frac{1}{\sqrt{2}}}}{4\sqrt{2}}\left(\sin\left(\frac{1}{\sqrt{2}}\right) - \cos\left(\frac{1}{\sqrt{2}}\right) + i\sin\left(\frac{1}{\sqrt{2}}\right) + i\cos\left(\frac{1}{\sqrt{2}}\right)\right)$$
+Now all that is left is to apply the Residue theorem,
+$$\text{Re}\left(\oint_{\Gamma}\frac{e^{iz}}{z^{4} + 1}dz\right) = \text{Re}\left(\frac{2\pi i }{4\sqrt{2e}}\left(\sin\left(\frac{1}{\sqrt{2}}\right) - \cos\left(\frac{1}{\sqrt{2}}\right) - i\cos\left(\frac{1}{\sqrt{2}}\right) - i\sin\left(\frac{1}{\sqrt{2}}\right)+ \sin\left(\frac{1}{\sqrt{2}}\right) - \cos\left(\frac{1}{\sqrt{2}}\right) + i\sin\left(\frac{1}{\sqrt{2}}\right) + i\cos\left(\frac{1}{\sqrt{2}}\right)\right)\right)$$
+
+\end{document}

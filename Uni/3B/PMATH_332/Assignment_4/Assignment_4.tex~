@@ -1,0 +1,115 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Arg}{\text{Arg}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 332 $|$  Assignment 4}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Problem 1}
+
+\textbf{(1)}
+We apply the definition of $\sin(z)$ in $\C$,
+$$\sin(z) = 2i \hspace{1em} \to \hspace{1em} \frac{e^{iz}-e^{-iz}}{2i} = 2i$$
+$$e^{iz}-e^{-iz} = (2i)(2i)$$
+Now since $z\in \C$, we know $\exists$ $a,b\in\R$ such that $z = a+bi$, thus,
+$$e^{i(a + bi)} - e^{-i(a+bi)} = -4$$
+$$e^{ia}e^{-b} - e^{-ia}e^{b} = -4$$
+We apply the definition of the complex exponential,
+$$e^{-b}(\cos(a) + i\sin(a)) - e^{b}(\cos(a) - i\sin(a)) = -4$$
+$$\left(e^{-b}-e^{b}\right)\cos(a) + i\left(e^{-b} + e^{b}\right)\sin(a) = -4$$
+by equality, we notice that $\sin(a)$ must be $0$, since $-4$ has no imaginary component. Thus we conclude $a = n\pi$ where $n \in \Z$. With this known, we have,
+$$\left(e^{-b}-e^{b}\right)\cos(n\pi) = -4 \hspace{1em} \to \hspace{1em}\left(e^{-b}-e^{b}\right)(-1)^{n} = -4$$
+$$e^{-b} - e^{b} = (-1)^{n}(-1)(4)$$
+$$e^{-b} - e^{b} = (-1)^{n+1}4$$
+$$e^{2b} + 4(-1)^{n+1}e^{b} - 1 = 0$$
+which is a quadratic in $e^{b}$. Applying the quadratic formula,
+$$e^{b} = \frac{4(-1)^{n} \pm \sqrt{16 - 4(-1)}}{2}$$
+$$e^{b} = \frac{4(-1)^{n} \pm \sqrt{20}}{2}$$
+$$e^{b} = 2(-1)^{n} \pm \sqrt{5}$$
+Notice that the solution to this is dependent on $n$. Thus, we see that the final solution is $z = a+ib$ where, for $n\in \Z$, $a = n\pi$ and if $n = 0$ mod $2$, $b = \ln(2 + \sqrt{5})$, otherwise $b = \ln(\sqrt{5} - 2)$.
+
+\newpage
+\textbf{(2)}
+Apply the definition of $\cos(z)$,
+$$\cos(z) = \sqrt{2} \hspace{1em} \to \hspace{1em} \frac{e^{iz} + e^{-iz}}{2} = \sqrt{2}$$
+Again, let $z = a+bi$, we get,
+$$e^{i(a+bi)} + e^{-i(a+bi)} = 2\sqrt{2}$$
+$$e^{-b}(\cos(a) + i\sin(b)) + e^{b}(\cos(a) - i\sin(a)) = 2\sqrt{2}$$
+$$\left(e^{-b} + e^{b}\right)\cos(a) + i\left(e^{-b} - e^{b}\right)\sin(a) = 2\sqrt{2}$$
+again, no imaginary component implies $a = n\pi$ for $n \in \Z$. Hence,
+$$\left(e^{-b}+e^{b}\right)\cos(n\pi) = 2\sqrt{2} \hspace{1em} \to \hspace{1em} \left(e^{-b}+e^{b}\right)(-1)^{n} = 2\sqrt{2} $$
+$$1 + e^{2b} = (-1)^{n}2\sqrt{2}e^{b}$$
+$$e^{2b} + (-1)^{n+1}2\sqrt{2}e^{b} + 1 = 0$$
+Again, a quadratic in $e^{b}$, thus we see
+$$e^{b} = \frac{(-1)^{n}2\sqrt{2} \pm \sqrt{(4)(2) - 4}}{2}$$
+$$e^{b} = \frac{(-1)^{n}2\sqrt{2} \pm \sqrt{4}}{2}$$
+$$e^{b} = (-1)^{n}\sqrt{2} \pm 1$$
+In this case we notice this is only a solution for $n=0$ mod $2$. Thus, we have that,
+$$a = 2n\pi \hspace{2em} b = \ln(\sqrt{2} - 1) \hspace{1em} \text{or} \hspace{1em} b = \ln(\sqrt{2} + 1)$$
+where $n \in \Z$.
+
+\textbf{(3)}
+We apply the definition of both $\cos(z)$ and $\sin(z)$ in $\C$,
+$$cos(z)=i\sin(z) \hspace{1em} \to \hspace{1em} \frac{e^{iz} + e^{-iz}}{2} = i\left(\frac{e^{iz} - e^{-iz}}{2i}\right)$$
+$$e^{iz} + e^{-iz} = e^{iz} - e^{-iz} \hspace{1em} \to \hspace{1em}2e^{-iz} = 0$$
+We can assume $z = a+ib$, hence,
+$$e^{-iz} = 0 \hspace{1em} \to \hspace{1em} e^{-i(a +ib)} = 0$$
+$$e^{b}e^{-ia} = 0$$
+Since $e^{b} \neq 0$ $\forall b\in\R$, we get that,
+$$e^{-ia} = 0 \hspace{1em} \to \hspace{1em} \cos(a) - i\sin(a) = 0$$
+yet, this implies that
+$$\cos(a) = 0 \hspace{1em} \& \hspace{1em} \sin(a) = 0$$
+which is not possible for any $a \in \R$. Thus there are no solutions.
+
+\newpage
+\textbf{Problem 2}
+
+\textbf{(a)}
+Start with the assumption that $z = a +ib$ for some $a,b\in \R$. By assumption, $\Im{z} \geq 0$ implies that $b \geq 0$. Then,
+$$|e^{iz}| = |e^{i(a+ib)}| = |e^{-b}e^{ia}| = |e^{-b}||e^{ia}|$$
+but since $a\in \R$, we know that $|e^{ia}| \leq 1$, and hence,
+$$|e^{-b}||e^{ia}| \leq |e^{-b}|$$
+but we see that by assumption $b\geq 0$, and hence it is necessary that,
+$$|e^{-b}| \leq 1$$
+
+\textbf{(b)}
+In the previous assignment, we proved that the L'h\^opital's rule still holds for complex functions. In particular, notice
+$$\lim_{z \to 0}\sin(z) = 0 \hspace{2em} \& \hspace{2em} \lim_{z\to 0} z = 0$$
+hence we have an indeterminant form. Since both of the functions are analytic, we apply L'h\^opital's rule
+$$\lim_{z\to 0}\frac{(\sin(z))^{\prime}}{(z)^{\prime}} = \lim_{z\to 0} \frac{\cos(z)}{1} = \lim_{z\to 0}\cos(z) = 0$$
+
+\textbf{(c)}
+We use part \textbf{(b)} to deduce that this limit diverges. In particular
+$$\lim_{z\to 0}\frac{\sin(z)}{z^{2}} = \left(\lim_{z\to 0}\frac{\sin(z)}{z}\right)\left(\lim_{z\to 0}\frac{1}{z}\right) = (1)\left(\lim_{z\to 0}\frac{1}{z}\right)$$
+to see that the remaining limit diverges, we take some $M >0$. Then, let $\delta = \frac{1}{M}$, and we see that if $z\in b_{\delta}(0)\setminus 0$, then
+$$|z| \leq \frac{1}{M} \implies M \leq \frac{1}{|z|}$$
+as required.
+
+\textbf{Problem 3}
+
+\textbf{(a)}
+To check the Cauchy-Riemann equations we first need to separate the Log into two functions. This follows naturally from definition
+$$Log(z) = \ln(|z|) + i\Arg(z) = \ln(\sqrt{x^{2} + y^{2}}) + i\Arg(x+iy)$$
+so we check directly,
+$$u_{x} = \frac{\partial}{\partial x} \ln(\sqrt{x^{2} + y^{2}}) = \frac{1}{\sqrt{x^{2} + y^{2}}}\left(\frac{x}{\sqrt{x^{2} + y^{2}}}\right) = \frac{x}{x^{2} + y^{2}}$$
+$$u_{y} = \frac{\partial}{\partial y} \ln(\sqrt{x^{2} + y^{2}}) = \frac{1}{\sqrt{x^{2} + y^{2}}}\left(\frac{y}{\sqrt{x^{2} + y^{2}}}\right) = \frac{y}{x^{2} + y^{2}}$$
+$$v_{x} = \frac{\partial}{\partial x}$$
+\end{document}

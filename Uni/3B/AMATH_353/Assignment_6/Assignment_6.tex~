@@ -1,0 +1,191 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\fo}{\mathcal{F}}
+\newcommand{\la}{\mathcal{L}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{AMATH 353 $|$  Assignment 6}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Problem 1}
+
+\textbf{(a)}
+From the homogeneous PDE we can conclude that the solution to the spatial ODE formed from separation is
+$$M(x) = A\sin\left(\frac{\sqrt{\lambda}}{c}x\right) + B\cos\left(\frac{\sqrt{\lambda}}{c}x\right)$$
+where the initial conditions will give us
+$$M_{n}(x) = A\sin\left(\frac{n\pi x}{L}\right) \hspace{2em} n \in \mathbb{N}\setminus\{0\}$$
+where $\lambda_{n} = \left(\frac{cn\pi x}{L}\right)^{2}$. We can now assume that the forced term must be a function such that it is in the space of functions spanned by the basis $\{M_{n}(x)\}$ with time-dependent coefficients. Thus,
+$$F(x)\sin(\omega t) = \sum_{n=1}^{\infty}f_{n}(t)M_{n}(x).$$
+Taking the inner product of both sides with $M_{n}(x)$ we get
+$$f_{n}(t) = \left(M_{n}(x), F(x)\sin(\omega t)\right).$$
+If we assume that the temporal variable under separation was $N(t)$, then from class we saw that the final solution becomes
+$$N_{n}(t) = \int_{0}^{t}f_{n}(\tau)\frac{\sin\left(\sqrt{\lambda_{n}}(t-\tau)\right)}{\sqrt{\lambda_{n}}}d\tau + N_{n}(0)\cos\left(\sqrt{\lambda_{n}}t\right) + \frac{N_{k}^{\prime}(0)}{\sqrt{\lambda_{n}}}\sin\left(\sqrt{\lambda_{n}}t\right).$$
+Our initial conditions tell us that $N_{n}(0) = 0 = N_{n}^{\prime}(0)$, so we expect
+$$N_{n}(t) = \int_{0}^{t}f_{n}(\tau)\frac{\sin\left(\sqrt{\lambda_{n}}(t-\tau)\right)}{\sqrt{\lambda_{n}}}d\tau.$$
+We know what $f_{n}(t)$ is, thus
+$$N_{n}(t) = \int_{0}^{t}\left(M_{n}(x), F(x)\sin(\omega \tau)\right)\frac{\sin\left(\sqrt{\lambda_{n}}(t-\tau)\right)}{\sqrt{\lambda_{n}}}d\tau = \frac{\left(M_{n}(x), F(x)\right)}{\sqrt{\lambda_{n}}}\int_{0}^{t}\sin(\omega \tau)\sin\left(\sqrt{\lambda_{n}}(t-\tau)\right)d\tau.$$
+Solving the integral (as was done in lecture) we get
+$$N_{n}(t) = \frac{\left(M_{n}(x), F(x)\right)}{\sqrt{\lambda_{n}}}\left(\frac{\omega\sin\left(\sqrt{\lambda_{n}}t\right) - \sqrt{\lambda_{n}}\sin(\omega t)}{\omega^{2} - \lambda_{n}}\right).$$
+
+\textbf{(b)}
+Taking the limit as $\omega \to \frac{\pi n c}{L} = \sqrt{\lambda_{n}}$ we see that from direct substitution we will get $\frac{0}{0}$. Applying L'H\^opital's rule we see that
+$$\lim_{\omega \to \sqrt{\lambda_{n}}} N_{n}(t) = \frac{\left(M_{n}(x), F(x)\right)}{\sqrt{\lambda_{n}}}\left(\frac{\sin\left(\sqrt{\lambda_{n}}t\right) - \sqrt{\lambda_{n}}t\cos(\omega t)}{2\lambda_{n}}\right).$$
+
+\newpage
+\textbf{Problem 2}
+
+\textbf{(a)}
+Similar to \textbf{Problem 1}, we can see that the spatial ODE will give us a sinusoidal solution, but here we have Neumann boundary conditions. So,
+$$M_{n}(x) = \cos\left(\frac{\sqrt{\lambda_{n}}}{c}x\right) \hspace{2em} \lambda_{n} = \left(\frac{nc \pi}{L}\right)^{2} \hspace{1em} n\in \mathbb{N}\cup\{0\}.$$
+Our forcing term here, unlike in the previous problem, is only time dependent. We still need to write the function as some linear combination of the basis formed by $\{M_{n}(x)\}$. However, notice that $n=0$ is a part of the solution. This value corresponds with $M_{0}(x) = 1$, and hence
+$$F(t) = (1)F(t) = M_{0}(x)F(t)$$
+So our forcing term is a ``scalar'' multiple of the first eigenfunction/basis-function. Thus, any inner product with the other basis vectors will be $0$, and so our ODE for $N_{n}(t)$ becomes,
+$$(F(t),M_{n}(x)) = \frac{dN_{n}}{dt} + \lambda_{n}N_{n} \hspace{1em} \to \hspace{1em} F(t) = \frac{dN_{0}}{dt} + \lambda_{0}N_{0}$$
+Which can be solved with an integrating factor $e^{\lambda_{0}t}$ to get
+$$e^{\lambda_{0}t}F(t) = e^{\lambda_{0}t}\frac{dN_{0}}{dt} + e^{\lambda_{0}t}\lambda_{0}N_{0}$$
+$$e^{\lambda_{0}t}F(t) = \frac{d}{dt}\left(e^{\lambda_{0}t}N_{0}\right)$$
+$$\int_{0}^{t}e^{\lambda_{0}\tau}F(\tau)d\tau = \int_{0}^{t}\frac{d}{d\tau}\left(e^{\lambda_{0}\tau}N_{0}\right)d\tau = e^{\lambda_{0}t}N_{0}(t) - N_{0}(0)$$
+From the initial condition we see that $N_{0}(0) = (f(x),M_{0}(x))$, and thus
+$$N_{0}(t) = e^{-\lambda_{0}t}(f(x),M_{0}(x)) + e^{-\lambda_{0}t}\int_{0}^{t}e^{\lambda_{0}\tau}F(\tau)d\tau.$$
+
+\textbf{(b)}
+Letting $F(t) = e^{-t}$, we see
+$$N(t) = e^{-\lambda_{0}t}(f(x),1) + e^{-\lambda_{0}t}\int_{0}^{t}e^{\lambda_{0}\tau}e^{-\tau}d\tau$$
+$$N(t) = e^{-\lambda_{0}t}(f(x),1) + e^{-\lambda_{0}t}\int_{0}^{t}e^{(\lambda_{0} - 1)\tau}d\tau$$
+$$N(t) = e^{-\lambda_{0}t}(f(x),1) + \frac{e^{-\lambda_{0}t}}{\lambda_{0}-1}\left(e^{(\lambda_{0} - 1)t} - 1\right)$$
+$$N(t) = e^{-\lambda_{0}t}\left((f(x),1) + \frac{e^{(\lambda_{0} - 1)t} - 1}{\lambda_{0}-1}\right).$$
+However, $\lambda_{0} = 0$, so
+$$N(t) = \left((f(x),1) - e^{-t} + 1\right).$$
+as required.
+
+\newpage
+\textbf{Problem 3}
+
+\textbf{(a)}
+We first take the Fourier transform of the PDE to get,
+$$\frac{d\mathcal{F}[u]}{dt} - c^{2}(-is)^{2}\mathcal{F}[u] = \mathcal{F}[F(x,t)]$$
+where we let $\mathcal{F}[u] = U(s,t)$ and $\mathcal{F}[F(x,t)] = H(s,t)$,
+$$\frac{dU}{dt} + c^{2}s^{2}U = H(s,t)$$
+This isn't immediately solvable, so we use the Laplace transform
+$$\tau\mathcal{L}[U] - U(s,0) + c^{2}s^{2}\mathcal{L}[U] = \mathcal{L}[H(s,t)].$$
+From initial conditions, we see that $U(s,0) = 0$, and thus we isolate $\mathcal{L}[U]$ to get
+$$\mathcal{L}[U] = \frac{1}{\tau + c^{2}s^{2}}\mathcal{L}[H(s,t)]$$
+$$\mathcal{F}[u] = U = \mathcal{L}^{-1}\left(\frac{1}{\tau + c^{2}s^{2}}\mathcal{L}[H(s,t)]\right)$$
+We see that this is heading towards a double convolution.
+$$u(x,t) = \mathcal{F}^{-1}\left(\mathcal{L}^{-1}\left(\frac{1}{\tau + c^{2}s^{2}}\right)\ast\mathcal{F}[F(x,t)]\right)$$
+$$u(x,t) = \int_{0}^{t}\int_{-\infty}^{\infty}G(x-s,t-\tau)F(s,\tau)dsd\tau$$
+where the function $G(s,\tau)$ is defined by the inverses of the $\frac{1}{\tau + c^{2}s^{2}}$, as required.
+
+\textbf{(b)}
+If our initial condition becomes $u(x,0) = f(x)$ then we see that $\mathcal{F}[u(x,0)] = U(s,0) = \mathcal{F}[f(x)]$. Then, since the procedure is the same as $\textbf{(a)}$ up till that initial condition,
+$$\mathcal{L}[U] = \frac{1}{\tau + c^{2}s^{2}}\mathcal{L}[H(s,t)] + \frac{1}{\tau + c^{2}s^{2}}\mathcal{F}[f(x)]$$
+and so if we follow the notation from the prior parts we see
+$$u(x,t) = \int_{0}^{t}\int_{-\infty}^{\infty}G(x-s,t-\tau)F(s,\tau)dsd\tau + \int_{-\infty}^{\infty}f(s)\int_{0}^{t}G(x-s,\tau)dtds$$
+as required.
+
+\newpage
+\textbf{Problem 4}
+
+We notice how $x$ is unbounded in it's domain, so we will first apply the Fourier Transform to the PDE in the $x$ dependence, letting $U(\lambda,t) = \fo[u(x,t)]$,
+$$\fo[u_{tt}] - \fo[c^{2}u_{xx}] - \fo[a^{2}u] = 0$$
+$$\frac{\partial^{2}U}{\partial t^{2}} + c^{2}\lambda^{2}U - a^{2}U = 0$$
+$$\frac{\partial^{2}U}{\partial t^{2}} + \left(c^{2}\lambda^{2} - a^{2}\right)U = 0$$
+We recognize this as an ODE in $t$ where the solution for $U$ will be
+$$U(\lambda,t) = A(\lambda)\cos\left(\sqrt{c^{2}\lambda^{2} - a^{2}}t\right) + B(\lambda)\sin\left(\sqrt{c^{2}\lambda^{2} - a^{2}}t\right).$$
+Changing the initial conditions to the Fourier space,
+$$\fo[u(x,0)] = U(\lambda,0) = \fo[f(x)] \hspace{2em} \fo[u_{t}(x,0)] = \frac{\partial U(\lambda,0)}{\partial t} = 0$$
+which tells us that $A(\lambda) = \fo[f(x)]$ and $B(\lambda) = 0$. So we have that
+$$U(\lambda , t) = \fo[u(x,t)] = \fo[f(x)]\cos\left(\sqrt{c^{2}\lambda^{2} - a^{2}}t\right)$$
+$$u(x,t) = \fo^{-1}\left(\fo[f(x)]\cos\left(\sqrt{c^{2}\lambda^{2} - a^{2}}t\right)\right)$$
+which by convolution theorem is
+$$u(x,t) = \int_{-\infty}^{\infty}f(x)g(x-\lambda,t)d\lambda$$
+where $g(x,t) = \fo^{-1}[\cos\left(\sqrt{c^{2}\lambda^{2} - a^{2}}t\right)]$.
+
+\newpage
+\textbf{Problem 5}
+
+Again, we see that $x$ is unbounded, so we take the Fourier Transform with respect to this variable,
+$$-\lambda^{2}\fo[u] + \frac{\partial^{2}\fo[u]}{\partial y^{2}} = 0.$$
+This is an ODE in $\fo[u] = U(\lambda,y)$ where we recognize the solution to be
+$$U(\lambda, y) = Ae^{\lambda y} + Be^{-\lambda y}.$$
+Next, we take the Fourier Transform of the boundary conditions,
+$$\fo[u(x,0)] = U(\lambda, 0) = \fo[e^{-|x|}] \hspace{2em} \fo[u(x,L)] = U(\lambda, L) = 0$$
+where the first boundary condition evaluates some more,
+$$U(\lambda, 0) = \fo[e^{-|x|}] = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{i\lambda x}e^{-|x|}dx =\frac{1}{\sqrt{2\pi}}\left(\int_{0}^{\infty}e^{i\lambda x}e^{-x}dx + \int_{-\infty}^{0}e^{i\lambda x}e^{x}dx\right)$$
+$$U(\lambda,0) = \frac{1}{\sqrt{2\pi}}\left(\frac{1}{i\lambda - 1}\left(e^{x(i\lambda - 1)}\right)_{0}^{\infty} + \frac{1}{i\lambda + 1}\left(e^{x(i\lambda + 1)}\right)_{-\infty}^{0}\right)$$
+$$U(\lambda,0) = \frac{1}{\sqrt{2\pi}}\left(\frac{1}{1-i\lambda} + \frac{1}{i\lambda + 1}\right)$$
+$$U(\lambda,0) = \frac{\sqrt{2}}{\lambda^{2} + 1}.$$
+Applying these BCs to the ODE solution, we see
+$$A+B = \frac{\sqrt{2}}{\lambda^{2} + 1} \hspace{2em} Ae^{\lambda L} + Be^{-\lambda L} = 0$$
+where we throw these in a matrix to solve,
+\[
+  \begin{bmatrix}
+    1 & 1 \\
+    e^{\lambda L} & e^{-\lambda L}
+  \end{bmatrix}
+  \begin{bmatrix}
+    A \\
+    B
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    \frac{\sqrt{2}}{\lambda^{2} + 1} \\
+    0
+  \end{bmatrix}
+\]
+\[
+  \begin{bmatrix}
+    A \\
+    B
+  \end{bmatrix}
+  =
+  \frac{1}{e^{-\lambda L} - e^{\lambda L}}
+  \begin{bmatrix}
+    e^{-\lambda L} & -1 \\
+    -e^{\lambda L} & 1
+  \end{bmatrix}
+  \begin{bmatrix}
+    \frac{\sqrt{2}}{\lambda^{2} + 1} \\
+    0
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    \frac{\sqrt{2}e^{-\lambda L}}{(\lambda^{2} + 1)(e^{-\lambda L} - e^{\lambda L})} \\
+    -\frac{\sqrt{2}e^{\lambda L}}{(\lambda^{2} + 1)(e^{-\lambda L} - e^{\lambda L})}
+  \end{bmatrix}
+\]
+Now that we have $A$ and $B$, we see that we can compute the final answer to be
+$$u(x,y) = \fo^{-1}\left(\frac{\sqrt{2}e^{-\lambda L}}{(\lambda^{2} + 1)(e^{-\lambda L} - e^{\lambda L})}e^{\lambda y} -\frac{\sqrt{2}e^{\lambda L}}{(\lambda^{2} + 1)(e^{-\lambda L} - e^{\lambda L})}e^{-\lambda y}\right)$$
+as required.
+
+\newpage
+\textbf{Problem 6}
+
+\textbf{(a)}
+We start with taking the Fourier transform and letting $U(\lambda,t) = \fo[u(x,t)]$,
+$$\frac{\partial U}{\partial t} + aU - ib\lambda U + c^{2}\lambda^{2}U = \fo[F(x,t)]$$
+$$\frac{\partial U}{\partial t} + \left(a - ib\lambda + c^{2}\lambda^{2}\right)U = \fo[F(x,t)].$$
+This is a first order forced ODE in $U$, so we multiply through by an integrating factor,
+$$e^{(a - ib\lambda + c^{2}\lambda^{2})t}\frac{\partial U}{\partial t} + \left(a - ib\lambda + c^{2}\lambda^{2}\right)e^{(a - ib\lambda + c^{2}\lambda^{2})t}U(\lambda,t) = e^{(a - ib\lambda + c^{2}\lambda^{2})t}\fo[F(x,t)]$$
+$$\frac{\partial}{\partial t}\left(e^{(a - ib\lambda + c^{2}\lambda^{2})t}U(\lambda,t)\right) =  e^{(a - ib\lambda + c^{2}\lambda^{2})t}\fo[F(x,t)]$$
+where we integrate to see
+$$\int_{0}^{t}\frac{\partial}{\partial \tau}\left(e^{(a - ib\lambda + c^{2}\lambda^{2})\tau}U(\lambda,\tau)\right)d\tau = \int_{0}^{t}e^{(a - ib\lambda + c^{2}\lambda^{2})\tau}\fo[F(x,\tau)]d\tau$$
+$$e^{(a - ib\lambda + c^{2}\lambda^{2})t}U(\lambda,t) - U(\lambda,0) =  \int_{0}^{t}e^{(a - ib\lambda + c^{2}\lambda^{2})\tau}\fo[F(x,\tau)]d\tau$$
+\end{document}

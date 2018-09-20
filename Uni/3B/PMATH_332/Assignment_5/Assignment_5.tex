@@ -1,0 +1,110 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 332 $|$  Assignment 5}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Problem 1}
+
+\textbf{(a)}
+We parametrize the two curves. In particular, $\Gamma_{2}$ is simple, but we have to define $\Gamma_{1}$ as the sum of two smooth curves. Let the parameterizing constants be $t_{2}$ and $t_{1}$ respectively. Then,
+\[
+  \Gamma_{1}= 
+  \begin{cases} 
+    e^{it_{1}} & 0 \leq t_{1} < \frac{\pi}{2} \\
+    i\sin(t_{1}) & \frac{\pi}{2}\leq t_{1}\leq \pi \\
+  \end{cases}
+  \hspace{4em}
+  \Gamma_{2}=1-t_{2}
+\]
+where $t_{1} \in [0,\pi]$ and $t_{2} \in [0,1]$.
+
+\textbf{(b)}
+The computation of the line integral of $f(z) = z^{2}$ is done using the definition, and by splitting $\Gamma_{1}$ into its parts. Thus,
+$$\int_{\Gamma_{1}}f(z)dz = \int_{0}^{\frac{\pi}{2}}(e^{it_{1}})^{2}(ie^{it_{1}})dt_{1} + \int_{\frac{\pi}{2}}^{\pi}(i\sin(t_{1}))^{2}(i\cos(t_{1}))dt_{1}$$
+$$ = i\int_{0}^{\frac{\pi}{2}}e^{3it_{1}}dt_{1} -i \int_{\frac{\pi}{2}}^{\pi}\sin^{2}(t_{1})\cos(t_{1})dt_{1}$$
+$$= i\frac{1}{3i}e^{3it_{1}}\biggr\rvert_{0}^{\frac{\pi}{2}} - i\frac{1}{3}\sin^{3}(t_{1})\biggr\rvert_{\frac{\pi}{2}}^{\pi}$$
+$$= \frac{1}{3}(\cos(3t_{1}) + i\sin(3t_{1}))\biggr\rvert_{0}^{\frac{\pi}{2}} - \frac{i}{3}(-1)$$
+$$= \frac{1}{3}(0 - i - 1 - i(0)) + \frac{i}{3} = -\frac{1}{3} - \frac{i}{3} + \frac{i}{3} = -\frac{1}{3}$$
+Similarly, we do the same computation for $\Gamma_{2}$,
+$$\int_{\Gamma_{2}}f(z)dz = \int_{0}^{1}(1-t_{2})^{2}(-1)dt_{2} = - \int_{0}^{1}(1 - 2t_{2} + t_{2}^{2})dt_{2}$$
+$$ = -\int_{0}^{1}dt_{2} + 2\int_{0}^{1}t_{2}dt_{2} - \int_{0}^{1}t_{2}^{2}dt_{2}$$
+$$ = -1 + 2\frac{1}{2}(1) - \frac{1}{3}(1) = -\frac{1}{3}$$
+
+\textbf{(c)}
+Similar to \textbf{(b)}, we apply the definition,
+$$\int_{\Gamma_{1}}g(z)dz = \int_{0}^{\frac{\pi}{2}}(e^{it_{1}})(e^{-it_{1}})(ie^{it_{1}})dt_{1} + i\int_{\frac{\pi}{2}}^{\pi}\sin^{2}(t_{1})\cos(t_{1})dt_{1}$$
+$$ = i\int_{0}^{\frac{\pi}{2}}e^{it_{1}}dt_{1} + i\int_{\frac{\pi}{2}}^{\pi}\sin^{2}(t_{1})\cos(t_{1})dt_{1}$$
+$$ = i\frac{1}{i}e^{it_{1}}\biggr\rvert_{0}^{\frac{\pi}{2}} +i\frac{1}{3}\sin^{3}(t_{1})\biggr\rvert_{\frac{\pi}{2}}^{\pi}$$
+$$= (\cos(t_{1}) + i\sin(t_{1}))\biggr\rvert_{0}^{\frac{\pi}{2}} + \frac{i}{3}(-1)$$
+$$ = (0 + i - 1 - 0) - \frac{i}{3} = -1 + \frac{2i}{3}$$
+and again for $\Gamma_{2}$ we see
+$$\int_{\Gamma_{2}}g(z)dz = \int_{0}^{1}|1-t_{2}|^{2}(-1)dt_{2} = -\int_{0}^{1}(1-t_{2})^{2}dt_{2}$$
+But this is the same integral as before, so
+$$\int_{\Gamma_{2}}g(z)dz = -\frac{1}{3}$$
+
+\textbf{(d)}
+We expect the results we got in both \textbf{(b)} and \textbf{(c)} due to the Cauchy-Goursat theorem. In particular, since $f(z)$ is analytic, we know by theorem that the line integral along any closed contour on $\C$, which is open and simply connected, will be zero. However, we notice that in \textbf{(b)}, if we reversed the direction of one of our curves, say $\Gamma_{2}$, then $\Gamma = \Gamma_{1} - \Gamma_{2}$ will be a curve that is closed. Hence, by theorem
+$$ 0 = \oint_{\Gamma}f(z)dz = \int_{\Gamma_{1}}f(z)dz - \int_{\Gamma_{2}}f(z)dz \hspace{1em} \implies \hspace{1em} \int_{\Gamma_{1}}f(z)dz = \int_{\Gamma_{2}}f(z)dz$$
+which is reflected in our results. On the other hand, we already have shown in a previous assignment that $h(z) = |z|$ is not analytic, and hence neither is $g(z) = |z|^{2}$, and thus we wouldn't expect that the integral along different paths be the same.
+
+\textbf{Problem 2}
+
+\textbf{(a)}
+We can choose any contour $\Gamma$ as long as $\Gamma(a) = i$ and $\Gamma(b) = \frac{i}{2}$, where $\Gamma= \alpha: [a,b] \to \C$, since we know that $f(z) = e^{\pi z}$ is an analytic function. We recall that since $f(z)$ is analytic, our integral value should be path independent. In particular, we could consider any closed path $\Gamma$. Then, by Cauchy's Integral theorem we have that
+$$\oint_{\Gamma}f(z)dz = 0$$
+Further, since the integral theorem doesn't require that we have a simple curve $\Gamma$, we can partition our curve $\Gamma$ into two parts. Say $\Gamma = \alpha(t): [a,b] \to \C$, then we can say $\Gamma_{1} = \alpha_{1}(t): [a,c] \to \C$ and $\Gamma_{2}= \alpha_{2}(t): [c,b] \to \C$ where $a,b,c \in \R$, $a < c < b$, $\alpha(a) = \alpha_{1}(a) = \alpha_{2}(b)$ and $\alpha_{1}(c) = \alpha_{2}(c)$. Then applying what we know from Cauchy's Integral theorem and that $\Gamma = \Gamma_{1} + \Gamma_{2}$, we get
+$$\oint_{\Gamma}f(z)dz = \int_{\Gamma_{1}}f(z)dz + \int_{\Gamma_{2}}f(z)dz = 0 \hspace{1em} \implies \hspace{1em} \int_{\Gamma_{1}}f(z)dz = -\int_{\Gamma_{2}}f(z)dz$$
+where the negative is simply a swap in the orientation of the curve $\Gamma_{2}$.
+Hence, we let $\Gamma = i(1- \frac{1}{2}t)$ where we let $t \in [0,1]$. Then
+$$\int_{\Gamma}f(z)dz = \int_{0}^{1}f(i(1-\frac{1}{2}t))(-i\frac{1}{2})dt$$
+$$ = \int_{0}^{1}e^{\pi(i - \frac{i}{2}t)}(-i\frac{1}{2})dt = -\frac{i}{2}\int_{0}^{1}e^{i\pi}e^{-\frac{i\pi}{2}t}dt$$
+$$ = \frac{i}{2}\int_{0}^{1}\left(\cos(\frac{t\pi}{2}) - i\sin(\frac{t\pi}{2})\right)dt = \frac{i}{2}\int_{0}^{1}\cos(\frac{\pi}{2}t)dt + \frac{1}{2}\int_{0}^{1}\sin(\frac{\pi}{2}t)dt$$
+$$= \frac{i}{2}\frac{2}{\pi}\left(\sin(\frac{\pi}{2}t)\biggr\rvert_{0}^{1}\right) - \frac{1}{2}\frac{2}{\pi}\left(\cos(\frac{\pi}{2}t)\biggr\rvert_{0}^{1}\right) = \frac{i}{\pi}(1) - \frac{1}{\pi}(-1) = \frac{1}{\pi} + \frac{i}{\pi}$$
+\textbf{(b)}
+We recall that composition of analytic functions will be analytic. Further, we see that none of the composed functions have discontinuities, and are hence analytic over all of $\C$, which is simply connected and open. We can apply Cuachy's Integral theorem, and hence can conclude that any line integral over a closed contour of $f(z) = \exp(\sin(\cos^{2}(z)))$ will be
+$$\oint_{\Gamma}\exp(\sin(\cos^{2}(z)))dz = 0$$
+$\forall \Gamma = \alpha: [a,b] \to \C$ such that $\alpha(a) = \alpha(b)$.
+
+\textbf{(c)}
+Again, since our closed curve $\Gamma$ is in the first quadrant we have that necessarily our closed contour \textit{does not} include the point $z = -3$, which is the point at which the function $f(z) = \frac{1}{z+3}$ will not be analytic. This function can be thought of as being the composition between $\frac{1}{z}$ and $z+3$ which are both analytic over $\C \setminus \{0\}$. Thus, since the first quadrant, defined explicitly by $Q_{1} = \{z \in \C | \Im\{z\} > 0, \Re\{z\} > 0\}$ is open and simply connected, and that $f(z)$ is further analytic over this open and simply connected set, we can apply Cauchy's integral theorem,
+$$\oint_{\Gamma} f(z)dz = 0$$
+where $\Gamma \subset Q_{1}$.
+
+
+\textbf{(d)}
+We have that $f(x+iy) = 2xy^{3} + iy$, and to we can parameterize our curve with
+$$\Gamma : \alpha(t) = \cos(t) - i\sin(t) \hspace{3em} t\in [0,2\pi)$$
+where we can let $\alpha_{1}(t) = \cos(t)$ and $\alpha_{2}(t) = -\sin(t)$. Then, in particular
+$$f(\alpha(t)) = 2(\alpha_{1}(t))(\alpha_{2}(t))^{3} + i\alpha_{2}(t) \hspace{1em} \& \hspace{1em} \alpha^{\prime}(t) = -\sin(t) - i\cos(t)$$
+then putting these together
+$$\int_{\Gamma}f(z)dz = \int_{0}^{2\pi}(-2\cos(t)\sin^{3}(t) - i\sin(t))(-\sin(t) - i\cos(t))dt$$
+$$ = 2\int_{0}^{2\pi}\cos(t)\sin^{4}(t)dt + i\int_{0}^{2\pi}\sin^{2}(t)dt + 2i\int_{0}^{2\pi}\cos^{2}(t)\sin^{2}(t)dt - \int_{0}^{2\pi}\sin(t)\cos(t)dt$$
+We notice that there are immediately 3 integrals that we can assume 0 since they are odd and over the period, thus we are left with,
+$$\int_{\Gamma}f(z)dz = i\int_{0}^{2\pi}\sin^{2}(t)dt = i\left(\frac{1}{4}(2\pi)^{2}\right) = i\pi^{2}$$
+
+\textbf{(BONUS)}
+
+Assume that $f(z)$ has an anti-derivative, and call it $F(z)$ such that $F^{\prime}(z) = f(z) \hspace{1em} z \in \C$, which is from definition. Consider the differentiabilty of $f(z)$, we write out the Cuachy-Riemann equations for $f(x + iy) = x-2xyi$ and see
+$$u_{x} = 1 \hspace{4em} v_{x} = -2y$$
+$$u_{y} = 0 \hspace{4em} v_{y} = -2x$$
+However, by theorem, we have that if $f(z)$ were analytic at $z \in\C$, the C-R equations exist at $z$ and are satisfied at this $z$. However, we see that this is not true $\forall z \in \C$, and hence by contra-positive, we can claim that $f(z)$ is not analytic over $\C$, which would imply that $F(z)$ is not analytic over $\C$, which is a direct contradiction. Thus, $f(z)$ does not have an anti-derivative over $\C$.
+\end{document}

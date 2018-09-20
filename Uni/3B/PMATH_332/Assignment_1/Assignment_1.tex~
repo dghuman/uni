@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 332 $|$  Assignment 1}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Problem 1}
+
+\textbf{(a)}
+We solve this using simple algebra,
+
+\begin{equation}
+  \begin{split}
+    \frac{z}{1-z} = 2-3i\\
+    z = (1-z)(2-3i)\\
+    z + (z-1)(2-3i) = 0\\
+    z + 2z - 3iz - 2 + 3i = 0\\
+    z(3-3i) = 2-3i\\
+  \end{split}
+  \rightarrow
+  \begin{split}
+    z = \frac{2-3i}{3-3i}\\
+    z = \frac{(2-3i)(3+3i)}{18}\\
+    z = \frac{6+6i-9i+9}{18}\\
+    z = \frac{15-3i}{18}\\
+  \end{split}
+\end{equation}
+
+\textbf{(b)}
+We apply the quadratic formula
+\end{document}
+
+\begin{equation}
+  \begin{split}
+    

@@ -1,0 +1,63 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{AMATH 353 $|$  Assignment 1}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Q1}
+
+\textbf{(a)}
+AMATH 353 is a required course for graduation in my major, and in order to graduate in time I had to take it this term.
+
+\textbf{(b)}
+I hope to learn techniques for solving or approximating solutions to most, if not all, PDEs. The tutorials sounds like they will provide some experience with solving PDEs numerically, so that will be helpful.
+
+\textbf{(c)}
+I will probably struggle the most with the group assignments, but that is mainly due to my dislike of group work. Hopefully it will not be as bad as my previous experiences with group work.
+
+\textbf{(d)}
+To be completely honest, the best thing that could be done for me for this course would be to move the location to something closer to MC. This is not necessarily an academic reason for doing better, but the run is definitely not fun. Otherwise, it seems you are taking your time walking the class through everything so that will be good for learning the material.
+
+\newpage
+
+\textbf{Q2}
+
+\textbf{(a)}
+We approach this problem by first seperating the terms
+
+$$\frac{\partial u}{\partial t} + \frac{\partial}{\partial x} \varphi(u) = 0$$
+$$\frac{\partial u}{\partial t} = -\frac{\partial}{\partial x} \varphi(u)$$
+$$\int_{t_{1}}^{t_{2}}\int_{a}^{b}\frac{\partial u}{\partial t}dxdt = -\int_{t_{1}}^{t_{2}}\int_{a}^{b}\frac{\partial}{\partial x} \varphi(u)dxdt$$
+
+Apply the fundamental theorem
+
+$$\int_{a}^{b}u(x,t_{2})dx - \int_{a}^{b}u(x,t_{1})dx = -\int_{t_{1}}^{t_{2}}\varphi (u(b,t))dt + \int_{t_{1}}^{t_{2}}\varphi (u(a,t))dt$$
+$$\int_{a}^{b}u(x,t_{2})dx = \int_{a}^{b}u(x,t_{1})dx+ \int_{t_{1}}^{t_{2}}\varphi (u(a,t))dt-\int_{t_{1}}^{t_{2}}\varphi (u(b,t))dt$$
+
+The left side of the equation is the total mass over the space interval $[a,b]$ at time $t_{2}$. This is equal to the total mass over the space $[a.b]$ at time $t_{1}$, added to flux at $x=a$ over the time $[t_{1},t_{2}]$, minus the flux at $x=b$ over the time $t_{1},t_{2}$. Effectively, this says that the final mass over a finite space interval is the initial mass plus the mass that flows in, and minus the mass that flows out over the finite time interval.
+
+\newpage
+
+\textbf{Q3}
+
+
+
+\end{document}

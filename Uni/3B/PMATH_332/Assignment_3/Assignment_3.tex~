@@ -1,0 +1,100 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Arg}{\text{Arg}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 332 $|$  Assignment 3}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Problem 1}
+
+\textbf{(a)}
+Assume $u$ and $v$ are continuous on $U$, and let $z_{0}\in U$. We apply the definition of continuity
+$$\lim_{z\to z_{0}} f(z) = \lim_{z\to z_{0}} (u(z) + iv(z)) = \lim_{z\to z_{0}}u(z) + i \lim_{z\to z_{0}}v(z) = u(z_{0}) + iv(z_{0}) = f(z_{0})$$
+hence the limit exists and is equal to the required value over all $z_{0} \in U$, thus $f$ is continuous.
+
+\textbf{(b)}
+Assume that $f$ is continuous over $U$, and let $z_{0} \in U$. Then, by definition of continuity,
+$$\lim_{z\to z_{0}}(f(z)) = f(z_{0})$$
+$$\lim_{z\to z_{0}}(u(z) + iv(z)) = u(z_{0}) + iv(z_{0})$$
+$$\lim_{z\to z_{0}}u(z) + i\lim_{z \to z_{0}}v(z) = u(z_{0}) + iv(z_{0})$$
+and by definition of equality in complex numbers we see,
+$$\lim_{z\to z_{0}}u(z) = u(z_{0}) \hspace{1em} \& \hspace{1em} \lim_{z \to z_{0}}(v(z)) = v(z_{0})$$
+
+\textbf{(c)}
+To deduce the continuous functions being continuous, we decompose them into functions of $u$ and $v$. First, notice that $f = e^{z} = e^{a + ib} = e^{a}e^{ib} = e^{a}\cos(b) + ie^{a}\sin(b)$, where the real an imaginary components are continuous over $\R$. Similarly, $f(z) = \bar{z} = \overline{a + ib} = a - ib$, and $f(z) = |z| = |a+ib| = a^{2}-b^{2} + 2iab$, where the component functions are clearly continuous functions.
+
+\textbf{Problem 2}
+
+\textbf{(a)} Take $z_{0} \in \{z\in\C \setminus \{0\}: z\notin \R^{-}\}$. Then, I postulate that
+$$\lim_{z\to z_{0}} \Arg(z) = \Arg(z_{0})$$
+To see this, we apply the definition of a limit. First, notice that $\Arg(z) = \Arg(\frac{z}{|z|})$, so we can assume that $|z| = 1$ without loss of generality. In particular, let $\varepsilon > 0$ with the corresponding $\delta = \sqrt{2 - 2\cos(\varepsilon)}$. This choice of $\delta$ is motivated geometrically, since $\varepsilon$ will bound the angle between $z$ and $z_{0}$, which both have norm 1, we know that the difference between the two will be described by the cosine law, where $z \in \{z\in\C \setminus \{0\}: z\notin \R^{-}\}$.
+$$|z - z_{0}| < \delta \hspace{1em} \to \hspace{1em} |z - z_{0}| < \sqrt{2 - 2\cos(\varepsilon)}$$
+We see that, by the cosine law,
+$$|\Arg(z) - \Arg(z_{0})| = | \arccos \left(\frac{|z|^{2} + |z_{0}|^{2} - |z-z_{0}|^{2}}{2|z||z_{0}|}\right) | = |\arccos \left(\frac{2 - |z-z_{0}|^{2}}{2}\right)|$$
+$$=|\arccos \left(1 - \frac{1}{2}|z - z_{0}|^{2}\right)| < |\arccos\left(1 - \frac{1}{2}\delta^{2}\right)| = |\arccos\left(1-\frac{1}{2}(\sqrt{2 -2\cos(\varepsilon)})^{2}\right)| = |\varepsilon| = \varepsilon$$
+Hence the limit exists and is $\Arg(z_{0})$. Notice that this is only well defined since $\varepsilon < 2\pi$ due to the limited codomain. This argument would not hold if the codomain was any larger.
+
+\textbf{(b)} To see that $\Arg$ is continuous on the negative real line $\R^{-}$, we consider the fact that $\Arg(z)$ where $z \in \R^{-}$ is the constant function $\Arg(z) = \pi$. Yet the constant function is trivially continuous. Thus $\Arg$ is continuous over $\R^{-}$.
+
+\textbf{Problem 3}
+
+\textbf{(a)}
+First we write the function $e^{z}$ in the form $u + iv$. Since $z\in\C$, $\exists x,y\in\R$ such that $z= x+iy$. Then,
+$$e^{z} = e^{x+yi} = e^{x}e^{yi} = e^{x}(\cos(y) + i\sin(y)) = e^{x}\cos(y) + ie^{x}\sin(y)$$
+Taking the components and differentiating,
+$$u_{x} = \frac{\partial}{\partial x}(e^{x}\cos(y)) = e^{x}\cos(y) \hspace{1em} \& \hspace{1em} v_{y} = \frac{\partial}{\partial y}(e^{x}\sin(y)) = e^{x}\cos(y)$$
+$$u_{y} = \frac{\partial}{\partial y}(e^{x}\cos(y)) = -e^{x}\sin(y) \hspace{1em} \& \hspace{1em} v_{x} = \frac{\partial}{\partial x}(e^{x}\sin(y)) = e^{x}\sin(y)$$
+We see that $u_{x} = v_{y}$ and $u_{y} = -v_{x}$ which satisfy the Cauchy-Riemann equations. Next, we know that $|z| = \sqrt{z\bar{z}}$, and since we already have that $z = x+iy$, we see
+$$|z| = \sqrt{z\bar{z}} = \sqrt{(x+iy)(x-iy)} = \sqrt{x^{2}+y^{2}}$$
+and further
+$$u_{x} = \frac{\partial}{\partial x}(\sqrt{x^{2} + y^{2}}) = x(x^{2} + y^{2})^{-\frac{1}{2}} \hspace{1em} \& \hspace{1em} v_{y} = \frac{\partial}{\partial y}(0) = 0$$
+We stop here since $u_{x} \neq v_{y}$ which already disagrees with the Cauchy-Riemann equations.
+
+\textbf{(b)}
+I claim that $|z|$ is analytic over the real and imaginary lines sans $\{0\}$, individually. This forms four portions of $\C$ over which the modulus is continuous, $\R^{+}, \R^{-}, \mathbb{I}^{+}$ and $\mathbb{I}^{-}$, where $\mathbb{I}^{\pm} = \{ z\in\C |z = ai, a \in \R^{\pm}\}$. First, take $z\in \R^{+}$, then,
+$$|z| = z$$
+which we know is differentiable over the reals. Similarly, if $z_{1}\in\R^{-}, z_{2}\in\mathbb{I}^{+}$ and $z_{3}\in\mathbb{I}^{-}$, then we see that, with $z_{2} = ai, z_{3} = bi$,
+$$|z_{1}| = -z \hspace{1em} |z_{2}| = a \hspace{1em} |z_{3}| = -b$$
+which are all the same identity function with modified domains, but equivalent to the real valued one, and hence differentiable,
+\newpage
+\textbf{Problem 4}
+
+\textbf{(a)}
+Consider the function $f = e^{x}\cos(y) + ie^{x}\sin(y)$. We showed in \textbf{Problem 3} that the Cauchy-Riemann equations are satisfied by this function, and further, we note these are satisfied over all of $\C$ with the partials being continuous, and hence being continuous over all of $\C$, which is open.Thus, $u_{x},u_{y},v_{x}$ and $v_{y}$ will be continuous over some open ball $b_{r}(z_{0})$ $\forall z_{0} \in \C$ and $r>0$. By theorem, $f$ is differentiable.
+
+Consider $g = e^{x}\sin(y) + ie^{x}\cos(y)$, which swaps the $u$ and $v$ from $f$. I propose this is not differentiable. To see this, consider the complex number, $z \in \C$, with zero as the imaginary component, $z = x \in \R$. We take two limits, one vertically and one horizontally. Let $h\in \R$, then,
+$$\lim_{h\to 0}\left(\frac{g(z + h) - g(z)}{h}\right) = \lim_{h\to 0}\left(\frac{e^{x+h}(0) + ie^{x+h}(1) - e^{x}(0) -ie^{x}(1) }{h}\right) = \lim_{h\to 0}\left(\frac{0}{h}\right) = 0$$
+$$\lim_{h\to 0}\left(\frac{g(z + ih) - g(z)}{ih}\right) =\lim_{h\to 0}\left(\frac{e^{x}\sin(h) + ie^{x}\cos(h) - e^{x}(0) -ie^{x}(1) }{ih}\right) = -ie^{x}\lim_{h\to 0}\left(\frac{\sin(h)}{h}\right) + e^{x}\lim_{h\to 0}\left(\frac{\cos(h)-1}{h}\right)$$
+We recognize that the last two limits are in indeterminant form, thus we apply L'H\^opital's rule and get,
+$$-ie^{x}\lim_{h\to 0}\left(\frac{\sin(h)}{h}\right) + e^{x}\lim_{h\to 0}\left(\frac{\cos(h)-1}{h}\right) = -ie^{x}\lim_{h\to 0}\left(\frac{\cos(h)}{1}\right) + e^{x}\lim_{h\to 0}\left(\frac{-\sin(h)}{1}\right) = -ie^{x}(1) + e^{x}(0) = -ie^{x}$$
+Clearly the limits do not agree, hence $g$ is not differentiable over $\C$.
+
+\textbf{(b)}
+Since $f$ is differentiable, then by theorem, since $f = u + iv$ we have that the partials must exist and satisfy the C-R equations, hence,
+$$u_{x} = v_{y} \hspace{1em} \& \hspace{1em} u_{y} = -v_{x}$$
+we notice that for $h = v - iu$, that $u^{\prime} = v$ and $v^{\prime} = -u$, then,
+$$u^{\prime}_{x} = v_{x} = -u_{y} = (-u)_{y} = v^{\prime}_{y} \hspace{1em} \& \hspace{1em}u^{\prime}_{y} = v_{y} = u_{x} = -(-u)_{x} = -v^{\prime}_{x}$$
+which satisfy the C-R equations. Next, due to the differentiability of $f$, we have that the partials $u_{x},u_{y}, v_{x}$ and $v_{y}$ must exist, and hence so do the partials for $h$ over all of $\C$. Now all we require is that they are continuous over some $b_{r}(z_{0})$ for $z_{0}\in\C$ and $r>0$.
+
+Since $f$ is differentiable over $\C$, it is also analytic and holomorphic. Then, $f^{\prime}$ is also anlaytic, and hence holomorphic. Yet this implies that the partials of the components must also be continuous over some open ball around all $z_{0} \in \C$.
+
+Hence, by theorem, we have that $h$ is differentiable.
+\end{document}

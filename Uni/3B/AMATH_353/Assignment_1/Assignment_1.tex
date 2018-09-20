@@ -1,0 +1,128 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{AMATH 353 $|$  Assignment 1}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Q1}
+
+\textbf{(a)}
+AMATH 353 is a required course for graduation in my major, and in order to graduate in time I had to take it this term.
+
+\textbf{(b)}
+I hope to learn techniques for solving or approximating solutions to most, if not all, PDEs. The tutorials sounds like they will provide some experience with solving PDEs numerically, so that will be helpful.
+
+\textbf{(c)}
+I will probably struggle the most with the group assignments, but that is mainly due to my dislike of group work. Hopefully it will not be as bad as my previous experiences with group work.
+
+\textbf{(d)}
+To be completely honest, the best thing that could be done for me for this course would be to move the location to something closer to MC. This is not necessarily an academic reason for doing better, but the run is definitely not fun. Otherwise, it seems you are taking your time walking the class through everything so that will be good for learning the material.
+
+\newpage
+
+\textbf{Q2}
+
+\textbf{(a)}
+We approach this problem by first seperating the terms
+
+$$\frac{\partial u}{\partial t} + \frac{\partial}{\partial x} \varphi(u) = 0$$
+$$\frac{\partial u}{\partial t} = -\frac{\partial}{\partial x} \varphi(u)$$
+$$\int_{t_{1}}^{t_{2}}\int_{a}^{b}\frac{\partial u}{\partial t}dxdt = -\int_{t_{1}}^{t_{2}}\int_{a}^{b}\frac{\partial}{\partial x} \varphi(u)dxdt$$
+
+Apply the fundamental theorem
+
+$$\int_{a}^{b}u(x,t_{2})dx - \int_{a}^{b}u(x,t_{1})dx = -\int_{t_{1}}^{t_{2}}\varphi (u(b,t))dt + \int_{t_{1}}^{t_{2}}\varphi (u(a,t))dt$$
+$$\int_{a}^{b}u(x,t_{2})dx = \int_{a}^{b}u(x,t_{1})dx+ \int_{t_{1}}^{t_{2}}\varphi (u(a,t))dt-\int_{t_{1}}^{t_{2}}\varphi (u(b,t))dt$$
+
+The left side of the equation is the total mass over the space interval $[a,b]$ at time $t_{2}$. This is equal to the total mass over the space $[a.b]$ at time $t_{1}$, added to flux at $x=a$ over the time $[t_{1},t_{2}]$, minus the flux at $x=b$ over the time $t_{1},t_{2}$. Effectively, this says that the final mass over a finite space interval is the initial mass plus the mass that flows in, and minus the mass that flows out over the finite time interval.
+
+\newpage
+
+\textbf{Q3}
+
+Consider a small portion of this rectangular container which is of the same height. We apply our conservation laws to this small portion.
+
+\textit{Conservation Laws:}
+
+$$\text{Total Mass} = \iint u(x,y,t)h(x,y)dA$$
+$$\text{Rate of Change of Total Mass} = \frac{\partial}{\partial t}\iint u(x,y,t)h(x,y)dA = \iint \frac{\partial u(x,y,t)}{\partial t}h(x,y)dA$$
+$$\text{Total Change by Source} = 0 \hspace{1em} \text{(No other external sources)}$$
+$$\text{Total Flux} = -\oint_{\partial A}\vec{\varphi}(x,y,t) \cdot \hat{n}h(x,y)du$$
+
+Where $u$ is a dummy variable that will parameterize the boundary of the arbitrary area in the container. In particular, we know
+
+$$\text{Rate of Change of Total Mass} = \text{Total Change by Source} + \text{Total Flux}$$
+$$\iint \frac{\partial u(x,y,t)}{\partial t}h(x,y)dA = 0 -\oint_{\partial A}\vec{\varphi}(x,y,t) \cdot \hat{n}h(x,y)du$$
+$$\iint \frac{\partial u(x,y,t)}{\partial t}h(x,y)dA = -\oint_{\partial A}\vec{\varphi}(x,y,t) \cdot \hat{n}h(x,y)du$$
+
+As required.
+
+\newpage
+
+\textbf{Q4}
+
+We build a PDE using the information we have through Newtons $2^{nd}$ law. In particular, consider a point $0 < x < L$ on this string, and further consider a small portion of this string by moving a $\Delta x$ in both directions. The mass of this small portion can be approximated for small variations in slope to be about the same as that when it is completely at rest and horizontal, and for small $\Delta x$, we can imagine that for smooth functions $A(x)$, the area will vary very little over the $2\Delta x$.
+
+$$\text{Mass: } m = \rho 2\Delta x A(x)$$
+$$\text{Acceleration: } a = \frac{\partial^{2}u(x,t)}{\partial t^{2}}$$
+
+We also let acceleration due to gravity to be represented by $Q(x,t)$. Assume a tension $T(x+\Delta x)$ to the right of $x$ and $T(x - \Delta x)$ right of $x$. Since the horizontal forces balance, we simple take the vertical components, assuming an angle $\theta(x)$ to the horizontal,
+
+$$\text{Force: } A(x + \Delta x)2\Delta x T(x + \Delta x) \sin (\theta(x + \Delta x)) -A(x - \Delta x)2\Delta x T(x - \Delta x) \sin (\theta(x - \Delta x)) $$
+
+Furthermore, we assume a dissipative force $F_{r} = m\tau \frac{\partial u}{\partial t}$, where $\tau$ is a scalar with units $[s^{-1}]$. Finally, we combine all of these into the second law,
+
+$$ma = \sum F$$
+$$\rho A(x)2\Delta x \frac{\partial^{2}u}{\partial t^{2}} = A(x + \Delta x)2\Delta x T(x + \Delta x) \sin (\theta(x + \Delta x)) -A(x - \Delta x)2\Delta x T(x - \Delta x) \sin (\theta(x - \Delta x))$$
+$$-\rho 2\Delta x A(x)Q(x,t) - \rho 2\Delta x A(x)\tau \frac{\partial u}{\partial t} $$
+We divide through by $2\Delta x$, and take the limit as $\Delta x \to 0$,
+
+$$\rho A(x)\frac{\partial^{2}u}{\partial t^{2}} = \lim_{\Delta x \to 0}\left(\frac{ A(x + \Delta x)T(x + \Delta x)\sin (\theta(x + \Delta x)) - A(x - \Delta x)T(x - \Delta x) \sin (\theta(x - \Delta x))}{2\Delta x} \right)$$
+$$ - \rho A(x)Q(x,t) - \rho A(x)\tau \frac{\partial u}{\partial t}$$
+
+By definition of the partial derivative we get,
+
+$$\rho A(x)\frac{\partial^{2}u}{\partial t^{2}} = \frac{\partial}{\partial x} \left(A(x)T(x)\sin(\theta(x,t))\right)  - \rho A(x)Q(x,t) - \rho A(x)\tau \frac{\partial u}{\partial t}$$
+
+\newpage
+
+\textbf{Q5}
+
+We build the two diffusion equations in 1D,
+
+$$\frac{\partial u}{\partial t} + \frac{\partial \varphi_{u}}{\partial x} = 0 \hspace{5em} \frac{\partial v}{\partial t} + \frac{\partial \varphi_{v}}{\partial x} = 0  $$
+
+Appling \textit{Burger's Equation},
+
+$$ \varphi_{u} = -K_{u}(x) \frac{\partial u}{\partial x} + Q(u) \hspace{5em} \varphi_{v} = -K_{v}(x) \frac{\partial v}{\partial x} + Q(v)$$
+
+Substituting this into the diffusion equation,
+
+$$\frac{\partial u}{\partial t} + \frac{\partial }{\partial x}\left( -K_{u}(x) \frac{\partial u}{\partial x} + Q(u)\right) = 0 \hspace{5em} \frac{\partial v}{\partial t} + \frac{\partial }{\partial x}\left(-K_{v}(x) \frac{\partial v}{\partial x} + Q(v)\right) = 0  $$
+
+expanding and applying the Lotka Voltera model, we get
+
+$$au-buv = \frac{\partial}{\partial x}\left(K_{u}(x) \frac{\partial u}{\partial x}\right) - \frac{\partial Q(u)}{\partial x} \hspace{5em} cuv-dv = \frac{\partial}{\partial x}\left(K_{v}(x) \frac{\partial v}{\partial x}\right) - \frac{\partial Q(v)}{\partial x} $$
+
+as required.
+
+
+\end{document}

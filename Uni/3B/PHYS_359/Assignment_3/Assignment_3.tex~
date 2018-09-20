@@ -1,0 +1,89 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 359 $|$  Assignment 3}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Problem 1}
+
+\textbf{(a)}
+Each coin toss is independent of the other, and hence we can think of each coin toss as being a choice between 2 options. Thus, naturally, for 25 coin flips where the coin is fair, we expect the number of microstates to simply be $2^{25}$.
+
+\textbf{(b)}
+The microstates are determined by the total number of heads flipped (or tails since the other will be 25 - tails). In particular, there are 26 microstates, each determined by the number of heads flipped. Say we have $n$ heads flipped in 25 trials. Then the total number of microstates will be the number of positions that these $n$ heads can take, or in other words
+$$\Omega_{n} = {25\choose n}$$
+Thus, the most likely macrostate will be the macrostate that maximizes the above choose scenario, assuming each microstate equally likely. Since this is exactly the binomial coefficient, we know that the maximum occurs at the half-way point. The number of flips being odd implies two maxima, $n=12$ or $n=13$, each with 5200300 microstates each. This says it is equally likely to get 12 heads and 13 tails or 13 heads and 12 tails.
+
+\textbf{(c)}
+The probability of observing this state is,
+$$P(H = 12)=P(H=13) = \frac{5200300}{2^{25}} \approx 0.1598$$
+\textbf{Problem 2}
+
+\textbf{(a)}
+We build a table where each row is a different macrostate. The energy column is the number of particles in each energy state, thus we see that each row will add up to 4 in the energy columns since that will be the number of particles. The microstate is computed for each macrostate using a simple counting technique. If we imagine each energy as a position with a certain number of distinguishable particles, we see that choosing $n$ particles with $m$ available positions we can use the choose function. The total number of macrostates is 7.
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+ \hline
+ \multicolumn{7}{|c|}{\textbf{Energy($\varepsilon$)}} & \textbf{Computation} & \textbf{Microstates}\\
+ \hline
+ \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6}& &\\
+  \hline
+  3 & 0 & 0 & 0 & 0 & 0 & 1 & ${{4}\choose{3}}{{1}\choose{1}}$ &4\\
+  \hline
+  2 & 1 & 0 & 0 & 0 & 1 & 0 & ${{4}\choose{2}}{{2}\choose{1}}{{1}\choose{1}}$ &12\\
+  \hline
+  2 & 0 & 1 & 0 & 1 & 0 & 0 & ${{4}\choose{2}}{{2}\choose{1}}{{1}\choose{1}}$ &12\\
+  \hline
+  2 & 0 & 0 & 2 & 0 & 0 & 0 & ${{4}\choose{2}}{{2}\choose{2}}$ &6\\
+  \hline
+  0 & 2 & 2 & 0 & 0 & 0 & 0 & ${{4}\choose{2}}{{2}\choose{2}}$ &6\\
+  \hline
+  1 & 0 & 3 & 0 & 0 & 0 & 0 & ${{4}\choose{3}}{{1}\choose{1}}$ &4\\
+  \hline
+  1 & 1 & 1 & 1 & 0 & 0 & 0 & ${4\choose 1}{3\choose 1}{2\choose 1}{1\choose 1}$ &24\\
+  \hline
+  \multicolumn{7}{|c|}{\textbf{Total}} & 4+12+12+6+6+4+24 & 68 \\
+  \hline
+\end{tabular}
+\end{center}
+
+\textbf{(b)}
+This is another way to compute the number of microstates for a given macrostate. In particular, the $N!$ is the number of ways to rearrange the four particles that are distinguishable without replacement. Thus $N!$ is the number of ways to rearrange the particles if they couldn't share the same energy level. The following product, $\prod_{n}\frac{1}{N_{n}}$, is a method of removing particles iterating in the same position. This is why it iterates over each energy level and is exactly the number of ways to rearrange the particles \textit{inside} the energy level. However, since we consider multiple particles to be equivalent in energy levels independent of the order, we remove these repeats.
+
+The final constraint limits the number of particles as we would expect.
+
+\textbf{(c)}
+According to the way I ordered my macrostates, the macrostate with the most microstates will be the last one, where $\Omega_{7} = 24$. Notice that the chart I made in \textbf{(a)} agrees with the formula discussed in \textbf{(b)}.
+
+\textbf{(d)}
+Referring to the table in $\textbf{(a)}$ we see that the total number of microstates is 68.
+
+\textbf{(e)}
+We write out the sum explicitly,
+$$\overline{N_{0}} = \frac{1}{68}\sum_{k=1}^{k=7}N_{k,0}\Omega_{k} = \frac{1}{68}\left((3)(4) + (2)(12) + (2)(12) + (2)(6) + (0)(6) + (1)(4) + (1)(24)\right) = \frac{100}{68} \approx 1.471$$
+$$\overline{N_{1}} = \frac{1}{68}\sum_{k=1}^{k=7}N_{k,1}\Omega_{k} = \frac{1}{68}\left((0)(4) + (1)(12) + (0)(12) + (0)(6) + (2)(6) + (0)(4) + (1)(24)\right) = \frac{48}{68} \approx 0.706$$
+$$\overline{N_{2}} = \frac{1}{68}\sum_{k=1}^{k=7}N_{k,2}\Omega_{k} = \frac{1}{68}\left((0)(4) + (0)(12) + (1)(12) + (0)(6) + (2)(6) + (3)(4) + (1)(24)\right) = \frac{60}{68} \approx 0.882$$
+$$\overline{N_{3}} = \frac{1}{68}\sum_{k=1}^{k=7}N_{k,3}\Omega_{k} = \frac{1}{68}((0)(4) + (0)(12) + (0)(12) + (2)(6) + (0)(6) + (0)(4) + (1)(24)) = \frac{36}{68} \approx 0.529$$
+$$\overline{N_{4}} = \frac{1}{68}\sum_{k=1}^{k=7}N_{k,4}\Omega_{k} = \frac{1}{68}((0)(4) + (0)(12) + (1)(12) + (0)(6) + (0)(6) + (0)(4) + (0)(24)) = \frac{12}{68} \approx 0.177$$
+$$\overline{N_{5}} = \frac{1}{68}\sum_{k=1}^{k=7}N_{k,5}\Omega_{k} = \frac{1}{68}\left((0)(4) + (1)(12) + (0)(12) + (0)(6) + (0)(6) + (0)(4) + (0)(24)\right) = \frac{12}{68} \approx 0.177$$
+$$\overline{N_{6}} = \frac{1}{68}\sum_{k=1}^{k=7}N_{k,6}\Omega_{k} = \frac{1}{68}\left((1)(4) + (0)(12) + (0)(12) + (0)(6) + (0)(6) + (0)(4) + (0)(24)\right) = \frac{4}{68} \approx 0.0588$$
+
+\end{document}

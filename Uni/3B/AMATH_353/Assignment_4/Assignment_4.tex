@@ -1,0 +1,233 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Lu}{\mathcal{L}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{AMATH 353 $|$  Assignment 4}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Problem 1}
+
+\textbf{(a)}
+Following the method done in Assignment 3 Question 5, we see that we can multiply the equation through by $\frac{1}{x}$ to get
+$$xM^{\prime\prime} + M^{\prime} + \frac{\lambda}{x}M = 0$$
+But we notice that this can be reduced to,
+$$-\frac{d}{dx}\left(xM^{\prime}\right) = \frac{\lambda}{x}M$$
+Which if we compare with the general Sturm-Liouville problem, we see that in this case we have $\rho(x) = \frac{1}{x}$ as required.
+
+\textbf{(b)}
+We assume that $x = e^{z}$. Substituting this into our PDE
+$$-\frac{d}{dx}(xM^{\prime}) = \frac{\lambda }{x}M \hspace{1em} \to \hspace{1em} -\frac{d}{dz}(M^{\prime}) = \lambda M$$
+We can see this from the following
+$$dx = e^{z}dz \hspace{1em} \& \hspace{1em} \frac{dM}{dx} = \frac{dM}{dz}\frac{dz}{dx}$$
+and so
+$$-\frac{d}{dz}\frac{dz}{dx}\left(e^{z}\frac{dM}{dz}\frac{dz}{dx}\right) = \frac{\lambda}{e^{z}}  M \hspace{1em} \to \hspace{1em} -e^{-z}\frac{d}{dz}(e^{z}e^{-z}M^{\prime}) = e^{-z}\lambda M$$
+And thus we have that
+$$-M^{\prime\prime} = \lambda M$$
+We recognize this ODE and see that the solution must be
+$$M(z) = A\cos(\sqrt{\lambda}z) + B\sin(\sqrt{\lambda}z)$$
+
+\textbf{(c)}
+We have our boundary conditions, but when $x =1$ we see that $z=0$ and when $x=L$ we have $z=\ln(L)$. Hence,
+$$M(0) = A\cos(0) + B\sin(0) = 0 \hspace{1em} \implies \hspace{1em} A = 0$$
+Further, we have that
+$$M(\ln(L)) = B\sin(\sqrt{\lambda}\ln(L)) = 0 \hspace{1em} \implies \hspace{1em} \sqrt{\lambda}\ln(L) = n\pi \hspace{1em} \implies \hspace{1em} \lambda_{n} = \frac{n^{2}\pi^{2}}{(\ln(L))^{2}}$$
+where $n \in \mathbb{N} \setminus \{0\}$ with associated eigenfunction $M_{n} = \sin(\sqrt{\lambda_{n}}z)$.
+
+\textbf{(d)}
+To see that this does indeed obey the orthogonality principle, assume that $m \neq n$ where $m.n\in \mathbb{N}\setminus \{0\}$. Then,
+$$(M_{n},M_{m}) = \int_{0}^{\ln(L)}\sin\left(\frac{n\pi z}{\ln(L)}\right)\sin\left(\frac{m\pi z}{\ln(L)}\right)dz = 0$$
+since we have two odd functions and we integrate over their period.
+
+\newpage
+\textbf{Problem 2}
+
+First we need that the operator $\frac{1}{r}L$ is self-adjoint. So we show this property first. Assume two functions in our function space $f(r)$ and $g(r)$. Then,
+$$\left(f,\frac{1}{r}L[g]\right) = \int_{V}f\frac{1}{r}L[g]r dr = \int_{V} f \left(-\frac{d}{dr}\left(r\frac{dg}{dr}\right) + \frac{n^{2}}{r}g\right)dr = -\int_{V}f\frac{d}{dr}\left(r\frac{dg}{dr}\right)dr + \int_{V}\frac{n^{2}}{r}fgdr$$
+On the first integral we can use integration by parts,
+$$-\int_{V}f\frac{d}{dr}\left(r\frac{dg}{dr}\right)dr = -f\left(r\frac{dg}{dr}\right)\biggr\rvert_{\partial V} + \int_{V}r\frac{df}{dr}\frac{dg}{dr}dr$$
+integrate by parts again,
+$$-\int_{V}f\frac{d}{dr}\left(r\frac{dg}{dr}\right)dr = -f\left(r\frac{dg}{dr}\right)\biggr\rvert_{\partial V} + r\frac{df}{dr}g\biggr\rvert_{\partial V} - \int_{V}\frac{d}{dr}\left(r\frac{df}{dr}\right)gdr$$
+where our terms on the boundary will vanish leaving us with,
+$$-\int_{V}f\frac{d}{dr}\left(r\frac{dg}{dr}\right)dr=- \int_{V}g\frac{d}{dr}\left(r\frac{df}{dr}\right)dr$$
+and so our inner product becomes
+$$\left(f,\frac{1}{r}L[g]\right) =-\int_{V}g\frac{d}{dr}\left(r\frac{df}{dr}\right)dr + \int_{V}\frac{n^{2}}{r}fgdr = \int_{V}g\left(-\frac{d}{dr}\left(r\frac{df}{dr}\right) + \frac{n^{2}}{r}f\right)dr$$
+which by definition of our operator is
+$$\left(f,\frac{1}{r}L[g]\right) = \int_{V}g\frac{1}{r}L[f]rdr = \left(\frac{1}{r}L[f],g\right)$$
+which gives us our self-adjoint property. Now, say that $M_{n}$ and $M_{m}$ are solutions to the eigenvalue problem such that
+$$\frac{1}{r}LM_{n} = \lambda_{n}M_{n} \hspace{1em} \& \hspace{1em} \frac{1}{r}LM_{m} = \lambda_{m}M_{m}$$
+where $\lambda_{m} \neq \lambda_{n}$. Further, we know that $\frac{1}{r}L$ is self-adjoint, hence
+$$\left(M_{n},\frac{1}{r}LM_{m}\right) = \left(\frac{1}{r}LM_{n},M_{m}\right)$$
+$$\left(M_{n},\lambda_{m}M_{m}\right) = \left(\lambda_{n}M_{n},M_{m}\right)$$
+$$(M_{n}, \lambda_{m}M_{m}) - (\lambda_{n}M_{n},M_{m}) = 0$$
+$$\lambda_{m}(M_{n},M_{m}) - \lambda_{n}(M_{n},M_{m}) = 0$$
+$$(\lambda_{m} - \lambda_{n})(M_{n},M_{m}) = 0$$
+But by assumption $\lambda_{n} \neq \lambda_{m}$ so we see that $(M_{n},M_{m}) = 0$ and hence the two eigenfunctions will be orthogonal.
+
+\newpage
+\textbf{Problem 3}
+
+\textbf{(a)}
+To see that $\Lu$ is indeed self-ajoint we apply the definition of inner product. First let $f$ and $g$ be functions of $\vec{x}$, then we see
+$$\left(f,\frac{1}{\rho}\Lu [g]\right) = \int_{V}f\frac{1}{\rho}\Lu [g] \rho dV = \int_{V} f\left(-\vec{\nabla} \cdot ( p \vec{\nabla}g ) + qg \right)dV = \int_{V} f\left(-\vec{\nabla} \cdot ( p \vec{\nabla}g )\right)dV + \int_{V}fqg dV $$
+We know use the vector identity $\nabla \cdot (\psi \textbf{A}) = \psi(\nabla \cdot \textbf{A}) + \textbf{A} \cdot (\nabla \psi)$, which gives us
+$$\left(f,\frac{1}{\rho}\Lu [g]\right)=-\int_{V}\left(\vec{\nabla} \cdot (f p \vec{\nabla}g ) - p\vec{\nabla}g \cdot \vec{\nabla}f \right)dV + \int_{V}fqg dV  = -\int_{V}\vec{\nabla} \cdot (f p \vec{\nabla}g )dV + \int_{V}p\vec{\nabla}g \cdot \vec{\nabla}f dV + \int_{V}fqg dV$$
+Now we apply the Divergence theorem to the first term,
+$$\left(f,\frac{1}{\rho}\Lu [g]\right)=-\oint_{\partial V}fp\vec{\nabla}g\cdot \vec{n} dS + \int_{V}p\vec{\nabla}g \cdot \vec{\nabla}f dV + \int_{V}fqg dV$$
+$$= -\oint_{\partial V}fp\frac{\partial g}{\partial n} dS + \int_{V}p\vec{\nabla}g \cdot \vec{\nabla}f dV + \int_{V}fqg dV$$
+We now apply the boundary condition to replace $\frac{\partial g}{\partial n}$ with $-\frac{\alpha}{\beta}g$, but the by commutivity and associativity, we shift the $-\frac{\alpha}{\beta}$ to the f and again apply the boundary condition to get $\frac{\partial f}{\partial n}$,
+$$\left(f,\frac{1}{\rho}\Lu [g]\right)=-\oint_{\partial V}gp\vec{\nabla}f \cdot \vec{n} dS + \int_{V}p\vec{\nabla}g \cdot \vec{\nabla}f dV + \int_{V}fqg dV$$
+apply Divergence theorem again
+$$= -\int_{V}\vec{\nabla} \cdot (g p \vec{\nabla}f )dV + \int_{V}p\vec{\nabla}g \cdot \vec{\nabla}f dV + \int_{V}fqg dV$$
+further, we know $\vec{\nabla}g \cdot \vec{\nabla}f = \vec{\nabla}f \cdot \vec{\nabla}g$, and hence can use the earlier identity in reverse,
+$$=-\int_{V}\left(\vec{\nabla} \cdot (g p \vec{\nabla}f ) - p\vec{\nabla}f \cdot \vec{\nabla}g \right)dV + \int_{V}gqf dV = -\int_{V} g\left(-\vec{\nabla} \cdot ( p \vec{\nabla}f )\right)dV + \int_{V}gqf dV$$
+and we apply linearity to get
+$$= \int_{V} g\left(-\vec{\nabla} \cdot ( p \vec{\nabla}f ) + qg \right)dV = \int_{V}g\frac{1}{\rho}\Lu [f] \rho dV = \left(\frac{1}{\rho}\Lu [f],g\right)$$
+as required.
+
+\textbf{(b)}
+Now that we have that the operator is self-adjoint, we use the same technique as we did in \textbf{Problem 2}. Assume that $M_{n}$ and $M_{m}$ are eigenfunctions such that
+$$\frac{1}{\rho}\Lu M_{n} = \lambda_{n}M_{n} \hspace{1em} \& \hspace{1em} \frac{1}{\rho}\Lu M_{m} = \lambda_{m}M_{m}$$
+where $\lambda_{m} \neq \lambda_{n}$. Further, we know that $\frac{1}{\rho}\Lu$ is self-adjoint, hence
+$$\left(M_{n},\frac{1}{\rho}\Lu M_{m}\right) = \left(\frac{1}{\rho}\Lu M_{n},M_{m}\right)$$
+$$\left(M_{n},\lambda_{m}M_{m}\right) = \left(\lambda_{n}M_{n},M_{m}\right)$$
+$$(M_{n}, \lambda_{m}M_{m}) - (\lambda_{n}M_{n},M_{m}) = 0$$
+$$\lambda_{m}(M_{n},M_{m}) - \lambda_{n}(M_{n},M_{m}) = 0$$
+$$(\lambda_{m} - \lambda_{n})(M_{n},M_{m}) = 0$$
+But by assumption $\lambda_{n} \neq \lambda_{m}$ so we see that $(M_{n},M_{m}) = 0$ and hence the two eigenfunctions will be orthogonal
+
+\textbf{(c)}
+We follow a similar procedure to part \textbf{(a)}. Start by multiplying the equation in question through by $u$ and integrating over $V$ to get
+$$\int_{V}\lambda u^{2}\rho dV = \int_{V}u\Lu udV = \int_{V}u\left(-\vec{\nabla} \cdot ( p \vec{\nabla}u ) + qu \right)dV = \int_{V}u\left(-\vec{\nabla} \cdot ( p \vec{\nabla}u )\right)dV +\int_{V} uqu dV$$
+We apply the identity from before, $\nabla \cdot (\psi \textbf{A}) = \psi(\nabla \cdot \textbf{A}) + \textbf{A} \cdot (\nabla \psi)$, which gives us
+$$=-\int_{V}\left(\vec{\nabla} \cdot (u p \vec{\nabla}u ) - p\vec{\nabla}u \cdot \vec{\nabla}u \right)dV + \int_{V}qu^{2} dV=-\int_{V}\vec{\nabla} \cdot (u p \vec{\nabla}u )dV + \int_{V}p\vec{\nabla}u \cdot \vec{\nabla}u dV + \int_{V}qu^{2} dV $$
+Apply divergence theorem
+$$=-\oint_{\partial V}u p \vec{\nabla}u \cdot \vec{n} dV + \int_{V}p\left(\vec{\nabla}u\right)^{2} dV + \int_{V}qu^{2} dV $$
+and applying boundary conditions we see
+$$\lambda \int_{V}u^{2} \rho dV=\frac{\alpha}{\beta}\oint_{\partial V}pu^{2} dV + \int_{V}p\left(\vec{\nabla}u\right)^{2} dV + \int_{V}qu^{2} dV $$
+where explicitly for $\lambda$ we get
+$$\lambda = \frac{\frac{\alpha}{\beta}\oint_{\partial V}pu^{2} dV + \int_{V}p\left(\vec{\nabla}u\right)^{2} dV + \int_{V}qu^{2} dV}{\int_{V}u^{2} \rho dV}$$
+where clearly $\lambda > 0$ since the integrals over the squares of u and its gradient will naturally be $>0$ and all of the coefficients are positive by assumption.
+
+\newpage
+\textbf{Problem 4}
+
+\textbf{(a)}
+Let $u(x,t) = M(x)N(t)$, then plugging this into the PDE yields
+$$MN^{\prime} = DM^{\prime\prime}N - V_{0}M^{\prime}N$$
+where we can divide through by MN to get
+$$\frac{N^{\prime}}{N} = \frac{ DM^{\prime\prime} - V_{0}M^{\prime}}{M}$$
+which we can separate using a constant $-\lambda$,
+$$N^{\prime} + \lambda N = 0 \hspace{2em} \& \hspace{2em} DM^{\prime\prime} - V_{0}M^{\prime} + \lambda M = 0$$
+Since $D$ and $V_{0}$ are constants, we can not simply write the initial sum as a derivative of the product of two functions. Thus this is not a Sturm-Liouville problem.
+
+\textbf{(b)}
+First we solve the spatial problem. Assume that the solution is of the form $e^{rx}$, then
+$$e^{rx}\left(Dr^{2} - V_{0}r + \lambda\right) = 0 \hspace{1em} \implies \hspace{1em} r = \frac{V_{0} \pm \sqrt{V_{0}^{2} - 4D\lambda}}{2D}$$
+Now consider the BCs. We see for non-trivial temporal part,
+$$M(0)N(t) = 0 \hspace{1em} M(L)N(t) = 0 \hspace{2em} \implies \hspace{2em} M(0) = 0 \hspace{1em} M(L) = 0$$
+But such BCs would require sinusoidal solutions, since the only other option is exponential which will yield the trivial solution with these conditions. Hence, assume that
+$$V_{0}^{2} < 4D\lambda$$
+hence our solution will be
+$$M(x) = A\cos\left(\frac{\sqrt{4D\lambda - V_{0}^{2}}}{2D}x\right) + B\sin\left(\frac{\sqrt{4D\lambda - V_{0}^{2}}}{2D}x\right)$$
+But the first BC, $M(0) = 0$ $\implies$ $A = 0$. The second BC gives us
+$$M(L) = B\sin\left(\frac{\sqrt{4D\lambda - V_{0}^{2}}}{2D}L\right) = 0 \hspace{1em} \implies \hspace{1em} \frac{\sqrt{4D\lambda - V_{0}^{2}}}{2D}L = n\pi$$
+$$\implies \hspace{1em} \lambda_{n} = \frac{n^{2}\pi^{2}D}{L^{2}} + \frac{V_{0}^{2}}{4D} \hspace{1em} \& \hspace{1em} M_{n}(x) = \sin\left(\frac{n\pi}{L}x\right)$$
+Where $n \in \mathbb{N} \setminus \{0\}$. Now that we have $\lambda_{n}$ we solve the temporal ODE,
+$$N^{\prime} + \lambda N = 0 \hspace{2em} \implies \hspace{2em} N_{n}(t) = Ae^{-\lambda_{n}t}$$
+
+\textbf{(c)}
+Notice that the only thing that we have changed are the boundary conditions,
+$$\frac{\partial u}{\partial x}(0,t) = M^{\prime}(0)N(t)= 0 \hspace{1em} \& \hspace{1em} \frac{\partial u}{\partial x}(L,t) = M^{\prime}(L)N(t) =0 \hspace{2em} \implies \hspace{2em} M^{\prime}(0) = 0 \hspace{1em} M^{\prime}(L) = 0$$
+due to non-trivial temporal solutions. So we see the first BC will give us
+$$M^{\prime}(0) = -A\frac{\sqrt{4D\lambda - V_{0}^{2}}}{2D}\sin(0) + B\frac{\sqrt{4D\lambda - V_{0}^{2}}}{2D}\cos(0) = 0 \hspace{1em} \implies \hspace{1em} B = 0$$
+The second BC will give us
+$$M^{\prime}(L) = -A\frac{\sqrt{4D\lambda - V_{0}^{2}}}{2D}\sin\left(\frac{\sqrt{4D\lambda - V_{0}^{2}}}{2D}L\right)$$
+which for non-trivial $\lambda_{n}$ we get,
+$$\frac{\sqrt{4D\lambda - V_{0}^{2}}}{2D}L = n\pi \hspace{1em} \implies \hspace{1em} \lambda_{n} =\frac{n^{2}\pi^{2}D}{L^{2}} + \frac{V_{0}^{2}}{4D}$$
+where $n \in \mathbb{N} \cup \{0\}$, and the corresponding eigenfunction is
+$$M_{n} = \cos\left(\frac{n\pi}{L}x\right)$$
+The temporal ODE will give a solution of
+$$N^{\prime} + \lambda_{n}N = 0 \hspace{1em} \implies \hspace{1em} N_{n}(t) = Ae^{-\lambda_{n} t}$$
+as expected.
+
+\newpage
+\textbf{Problem 5}
+
+Assume that the solution to this PDE is separable. Then, we can say $u(x,t) = M(x)N(t)$, and plugging this into our PDE we get
+$$MN^{\prime\prime} - \gamma^{2}M^{\prime\prime}N+c^{2}MN = 0$$
+we divide through by $MN$
+$$\frac{N^{\prime\prime}}{N} - \gamma^{2}\frac{M^{\prime\prime}}{M} + c^{2} = 0$$
+and now separate with $\lambda$ to get
+$$\frac{N^{\prime\prime}}{N}+ c^{2} = -\lambda \hspace{2em} \& \hspace{2em} \gamma^{2}\frac{M^{\prime\prime}}{M} = -\lambda$$
+$$N^{\prime\prime} + (c^{2} + \lambda)N = 0 \hspace{2em} \& \hspace{2em} M^{\prime\prime} + \frac{\lambda}{\gamma^{2}}M = 0$$
+We first solve the spatial ODE, where we recognize that the solution will be
+$$M(x) = A\cos\left(\frac{\sqrt{\lambda}}{\gamma}x\right) + B\sin\left(\frac{\sqrt{\lambda}}{\gamma}x\right)$$
+Notice that for non-trivial temporal solutions, we have $u(0,t) = M(0)N(t) = 0$ $\implies$ $M(0) = 0$ and similarly we get $M(L) = 0$. The first BC gives us that $A = 0$, and the second gives
+$$M(L) = B\sin\left(\frac{\sqrt{\lambda}}{\gamma}L\right) = 0 \hspace{2em} \implies \hspace{2em} \lambda_{n} = \frac{n^{2}\pi^{2}\gamma^{2}}{L^{2}}$$
+hence we have our eigenvalue $\lambda_{n}$ with corresponding eigenfunction $M_{n}(x) = B\sin\left(\frac{n\pi x}{L}\right)$, which we can normalize
+$$|M_{n}(x)| = \sqrt{\int_{0}^{L}B^{2}\sin^{2}\left(\frac{n\pi x}{L}\right)dx} = B\sqrt{\int_{0}^{L}\frac{1 - \cos\left(\frac{2n\pi x}{L}\right)}{2}dx} = B\sqrt{\frac{L}{2}} = 1$$
+hence we see that our normalized eigenfunction will be $M_{n}(x) = \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi x}{L}\right)$. Now we solve the temporal ODE. Again, we recognize the solution as
+$$N_{n}(t) = A_{n}\cos\left(\sqrt{c^{2} + \lambda}t\right) + B_{n}\sin\left(\sqrt{c^{2} + \lambda}t\right)$$
+So the general solution will be
+$$u(x,t) = \sum_{n=1}^{\infty}M_{n}(x)N_{n}(t) = \sum_{n=1}^{\infty}\sqrt{\frac{2}{L}}\sin\left(\frac{n\pi x}{L}\right)\left(A_{n}\cos\left(\sqrt{c^{2} + \lambda}t\right) + B_{n}\sin\left(\sqrt{c^{2} + \lambda}t\right)\right)$$
+Applying the first IC we get
+$$u(x,0) = \sum_{n=1}^{\infty}M_{n}(x)(A_{n}) \hspace{1em} \implies \hspace{1em}f(x) = \sum_{n=1}^{\infty}M_{n}(x)(A_{n})$$
+To solve for the fourier coeffecient $A_{n}$ we take the innerproduct of both sides with the $n^{\text{th}}$ term $M_{n}(x)$ to get
+$$\left(M_{n}(x),f(x)\right) = A_{n}$$
+which can be solved with a given explicit $f(x)$. Next we solve for $B_{n}$ by using the other IC,
+$$u_{t}(x,0) = \sum_{n=1}^{\infty}M_{n}(x)\left((\sqrt{c^{2} + \lambda_{n}})B)\_{n}\right) \hspace{2em} \implies \hspace{2em}g(x) = \sum_{n=1}^{\infty}M_{n}(x)\left((\sqrt{c^{2} + \lambda_{n}})B_{n}\right)$$
+again we take the inner product with the $n^{\text{th}}$ term $M_{n}(x)$ to get
+$$\frac{\left(M_{n}(x), g(x)\right)}{\sqrt{c^{2} + \lambda_{n}}} = B_{n}$$
+which can again be solved for explicitly if we have $g(x)$. We now have everything to solve the PDE,
+$$u(x,t) = \sum_{n=1}^{\infty}\sqrt{\frac{2}{L}}\sin\left(\frac{n\pi x}{L}\right)\left(\left(M_{n}(x),f(x)\right)\cos\left(\sqrt{c^{2} + \lambda}t\right) + \frac{\left(M_{n}(x), g(x)\right)}{\sqrt{c^{2} + \lambda_{n}}}\sin\left(\sqrt{c^{2} + \lambda}t\right)\right)$$
+
+\newpage
+\textbf{Problem 6}
+
+We follow the same procedure as before. Assume a solution of the form $u(x,y) = M(x)N(y)$, which gives us
+$$M^{\prime\prime}N + MN^{\prime\prime} = 0$$
+which is easily separated into
+$$M^{\prime\prime} +\lambda M =0 \hspace{2em} \& \hspace{2em} N^{\prime\prime} - \lambda N = 0$$
+We solve the $x$ ODE first. We notice that the solution must be
+$$M(x) = A\cos(\sqrt{\lambda}x) + B\sin(\sqrt{\lambda}x)$$
+The first BC, which for non-trivial $N(y)$ is $M(0) = 0$, tells us that $A = 0$. The second BC, through a similar argument, will tell us
+$$M(L_{x}) = B\sin(\sqrt{\lambda}L_{x}) = 0 \hspace{2em} \implies \hspace{2em} \lambda_{n} = \frac{n^{2}\pi^{2}}{L_{x}^{2}}$$
+Now that we have our eigenvalue $\lambda_{n}$ we can normalize the corresponding eigenfunction to get
+$$M_{n}(x) = \sqrt{\frac{2}{L_{x}}}\sin\left(\frac{n\pi x}{L_{x}}\right)$$
+We now solve the $y$ component. Notice that the general solution will be
+$$N_{n}(y) = A_{n}e^{\sqrt{\lambda_{n}}y} + B_{n}e^{-\sqrt{\lambda_{n}}y}$$
+So our combined solution is
+$$u(x,y) = f(x) = \sum_{n=1}^{\infty}M_{n}(x)N_{n}(y)$$
+we can now apply the ICs to solve for the Fourier coefficients $A_{n}$ and $B_{n}$. The first IC gives
+$$u_{y}(x,0) = \sum_{n=1}^{\infty}M_{n}(x)\left(\sqrt{\lambda_{n}}(A_{n} - B_{n})\right)$$
+Similar to the previous question, we can solve for $B_{n}$ by taking the inner product with $M_{n}$,
+$$\frac{\left(M_{n}, f(x)\right)}{\sqrt{\lambda_{n}}} =A_{n} - B_{n}$$
+$$\frac{\left(M_{n}, f(x)\right)}{\sqrt{\lambda_{n}}} + B_{n} = A_{n}$$
+The second IC tells us
+$$u_{y}(x, L_{y}) = g(x) = \sum_{n=1}^{\infty}M_{n}(x) \left(\sqrt{\lambda_{n}}A_{n}e^{\sqrt{\lambda_{n}}L_{y}} - \sqrt{\lambda_{n}}B_{n}e^{-\sqrt{\lambda_{n}}L_{y}}\right)$$
+Where we again can take the inner product to get
+$$(M_{n}(x),g(x)) = (M_{n}(x),f(x))\left(\sqrt{\lambda_{n}}A_{n}e^{\sqrt{\lambda_{n}}L_{y}} - \sqrt{\lambda_{n}}B_{n}e^{-\sqrt{\lambda_{n}}L_{y}}\right)$$
+$$(M_{n}(x),g(x)) = \left(\sqrt{\lambda_{n}}\left(\frac{\left(M_{n}, f(x)\right)}{\sqrt{\lambda_{n}}} + B_{n}\right)e^{\sqrt{\lambda_{n}}L_{y}} - \sqrt{\lambda_{n}}B_{n}e^{-\sqrt{\lambda_{n}}L_{y}}\right)$$
+we now solve for $B_{n}$,
+$$B_{n} = \frac{(M_{n},g(x)) - (M_{n},f(x))e^{\sqrt{\lambda_{n}}L_{y}}}{\sqrt{\lambda_{n}}\left(e^{\sqrt{\lambda_{n}}L_{y}} - e^{-\sqrt{\lambda_{n}}L_{y}}\right)}$$
+and hence we have the final solution is just applying these coefficients.
+\end{document}

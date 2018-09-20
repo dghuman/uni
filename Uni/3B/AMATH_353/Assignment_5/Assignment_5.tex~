@@ -1,0 +1,63 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{AMATH 353 $|$  Assignment 5}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Problem 1}
+
+\textbf{(a)}
+Assume that $u(x,y,t) = T(t)S(x,y)$, then our PDE becomes
+$$u_{t} = k(u_{xx} + u_{yy}) \hspace{1em} \implies \hspace{1em} T^{\prime}S = k(TS_{xx} + TS_{yy})$$
+$$\frac{T^{\prime}}{T} = \frac{k(S_{xx} + S_{yy})}{S}$$
+where we let $\lambda$ be our separation constant, and hence
+$$T^{\prime} - \lambda T = 0 \hspace{2em} \& \hspace{2em} S_{xx} + S_{yy} = \frac{\lambda}{k}S$$
+Now let $S(x,y) = X(x)Y(y)$, so we get
+$$S_{xx} + S_{yy} = \frac{\lambda}{k}S \hspace{1em} \implies \hspace{1em} X^{\prime \prime}Y + XY^{\prime \prime} = \frac{\lambda}{k}XY$$
+$$\frac{X^{\prime \prime}}{X} + \frac{Y^{\prime \prime}}{Y} = \frac{\lambda}{k}$$
+$$\frac{X^{\prime \prime}}{X} = \frac{\lambda}{k} - \frac{Y^{\prime \prime}}{Y}$$
+where we let $\mu^{2}$ be the separation constant here, and we get
+$$X^{\prime \prime} = -\mu^{2} X \hspace{2em} \& \hspace{2em} Y^{\prime \prime} = \left(\frac{\lambda}{k} + \mu^{2}\right)Y$$
+We look at the boundary and initial conditions, and we see that for non-trivial spatial solutions we get
+$$u(x,y,0) = X(x)Y(y)T(0) = f(x,y) \hspace{1em} \implies \hspace{1em} T(0) = f(x,y)$$
+$$u(0,y,t) = u(l,y,t) = 0 = X(l)Y(y)T(t) = X(0)Y(y)T(t) \hspace{1em} \implies \hspace{1em}  0 = X(l) = X(0)$$
+$$u_{y}(x,0,t) = u_{y}(x,l,t) = 0 = X(x)Y(l)T(t) = X(x)Y(0)T(t) \hspace{1em} \implies \hspace{1em}  0 = Y(l) = Y(0)$$
+
+\textbf{(b)}
+We solve the $X$ ODE first. By inspection we know that
+$$X(x) = A\cos(\mu x) + B\sin(\mu x)$$
+and applying the first BC gives
+$$X(0) = A = 0$$
+The second BC gives
+$$X(l) = B\sin(\mu l) = 0 \hspace{1em} \implies \hspace{1em} \mu_{n} = \frac{n\pi}{l}$$
+So our first spatial solution is
+$$X_{n}(x) = \sin(\mu_{n} x)$$
+Next, we solve the $Y$ ODE, where again by inspection
+$$Y(y) = Ae^{\sqrt{\frac{\lambda}{k} + \mu^{2}}y} + Be^{-\sqrt{\frac{\lambda}{k} + \mu^{2}}y}$$
+and the BC's give
+$$Y(0) = A + B = 0 \hspace{1em} \implies \hspace{1em} A = -B$$
+$$Y(l) = A\left(e^{\sqrt{\frac{\lambda}{k} + \mu^{2}}l} - e^{-\sqrt{\frac{\lambda}{k} + \mu^{2}}l}\right) = 0$$
+Which gives us that either $A = 0$ and we have the trivial solution, or
+$$\sqrt{\frac{\lambda}{k} + \mu^{2}} = 0 \hspace{1em} \implies \hspace{1em} \lambda = -k\mu^{2}$$
+$$\lambda_{n} = -\frac{kn^{2}\pi^{2}}{l^{2}}$$
+And thus our solution is given by
+
+\end{document}

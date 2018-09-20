@@ -1,0 +1,168 @@
+
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 332 $|$  Assignment 2}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Problem 1}
+
+We know that $\alpha(t)$ is piecewise smooth, as clearly $t=\pi$ partitions the curve into two trivially smooth functions. In particular, $f(t) = t + i\sin(t)$ is $C^{\infty}$ since $f_{1}(t)=t$, $f_{2}(t)=\sin(t)$ are $C^{\infty}$. For a similar reason $h(t)=(\pi + 1) + e^{it}$ is also smooth.
+
+The point of interest is actually \textit{at} $t=\pi$. This is interesting, since if $\alpha(t)$ is smooth at $t=\pi$ than the curve itself is continuous, which is stronger than piecewise smoothness. Clearly $\alpha(t)$ is continuous at $t=\pi$,
+
+$$\lim_{t^{-}\to \pi} \alpha(t) = \lim_{t^{-}\to \pi} (t+i\sin(t)) = \pi + 0 = \pi \hspace{1em} \& \hspace{1em} \lim_{t^{+}\to \pi} \alpha(t) = \lim_{t^{+}\to \pi} ((\pi + 1) + e^{it}) = \pi + 1 - 1 = \pi$$
+
+However, we differentiate by $t$, to get $f^{\prime}(t) = 1 + i\cos(t)$ and $h^{\prime}(t) = ie^{it}$, and in particular,
+
+$$\lim_{t^{-}\to \pi} \alpha^{\prime}(t) = \lim_{t^{-}\to \pi} (1+i\cos(t)) = 1 - 1i \hspace{1em} \& \hspace{1em} \lim_{t^{+}\to \pi} \alpha(t) = \lim_{t^{+}\to \pi} (ie^{it}) =-i $$
+
+Clearly the limits do not agree, and thus $\alpha$ is not $C^{1}$ at $t=\pi$ and thus not smooth.
+
+\textbf{Problem 2}
+
+\textbf{(a)}
+Take some $z_{0} \in \C$ and $r_{0} \in \R$ with $r_{0} > 0$. Then, we consider the open ball $b_{r_{0}}(z_{0})\in \C$. To prove this open ball is open, we must show that every point in the open ball has an associated open ball that contains the point and is contained by $b_{r_{0}}(z_{0})$. In particular, pick some $z_{1} \in b_{r_{0}}(z_{0})$ and fix $r_{1} = \frac{(|z_{0}| +r_{0})  - |z_{1}|}{2} \in \R$. Notice, by applying the triangle inequality,
+
+$$r_{1} = \frac{(|z_{0}|+r_{0}) - |z_{1}|}{2} = \frac{|z_{0}| + r_{0} - |z_{1}|}{2} \leq \frac{r_{0} + |z_{0}-z_{1}|}{2} < \frac{r_{0} + r_{0}}{2} = r_{0} $$
+
+Thus, clearly $r_{0} > r_{1}$. Naturally, we can then consider the open ball $b_{r_{1}}(z_{1})$ and propose $b_{r_{1}}(z_{1}) \subseteq b_{r_{0}}(z_{0})$. To prove this, we pick some $z\in b_{r_{1}}(z_{1})$. Naturally, we want that $|z-z_{0}| < r_{0}$, so we start with the left side
+
+$$|z-z_{0}| \leq |z-z_{1}| + |z_{1}-z_{0}| < r_{1} + |z-z_{0}| = \frac{r_{0}-|z_{1}-z_{0}|}{2} + |z-z_{0}| = \frac{r_{0} + |z_{1} - z_{0}|}{2} < \frac{r_{0}+r_{0}}{2} = r_{0}$$
+
+Thus, since $|z-z_{0}| < r_{0}$, we can conclude $b_{r_{1}}(z_{1}) \in b_{r_{0}}(z_{0})$.
+
+\newpage
+
+\textbf{(b)}
+Take some $z_{0}\in \C$ and $r_{0} \in \R$ such that $r > 0$. By definition, a set is closed if the complement is open. So, the goal is to show that the complement to the closed ball $\bar{b}_{r_{0}}(z_{0})$ is open. In particular, the complement is $\bar{b}_{r_{0}}^{c}(z_{0}) = \{ z\in \C | z \notin \bar{b}_{r_{0}}(z_{0}) \}$. To show this is open, we pick some $z_{1} \in \bar{b}_{r_{0}}^{c}(z_{0})$, and define
+
+$$r_{1} = \frac{|z_{1} - z_{0}| - r_{0}}{2}$$
+
+Now we just need to show that all $z \in b_{r_{1}}(z_{1})$ are also in $\bar{b}_{r_{0}}^{c}(z_{0})$. In particular, it suffices to show that $\forall z \in b_{r_{1}}(z_{1})$, that $z \notin \bar{b}_{r_{0}}(z_{0})$. In particular,
+
+$$|z - z_{0}| = |z - z_{1} + z_{1} - z_{0}| = |z_{1} - z_{0} -(z_{1} - z)| \geq |z_{1} - z_{0}| - |z_{1} - z|$$
+
+We recognize that $|z_{1} - z|$ looks a lot like $|z - z_{1}$, which we know to be less than $r_{1}$. But, we have to show first that $|z_{1} - z| = |z-z_{1}|$,
+
+$$|z-z_{1}| = (z-z_{1})\overline{(z-z_{1})} = (z-z_{1})(\bar{z} - \bar{z}_{1}) = z\bar{z} - z\bar{z}_{1} - z_{1}\bar{z} + z_{1}\bar{z}_{1}$$
+$$= z_{1}\bar{z_{1}} - z_{1}\bar{z} - z\bar{z}_{1} + z\bar{z} = (\bar{z} - \bar{z}_{1})(z-z_{1}) = \overline{(z-z_{1})}(z-z_{1}) = |z_{1} - z|$$
+
+Thus, we can continue now knowing in good faith that $|z-z_{1}| = |z_{1} - z|$. Continuing where we left off,
+
+$$|z_{1} - z_{0}| - |z_{1} - z| > |z_{1} - z_{0}| - r_{1} = |z_{1}-z_{0}| - \frac{|z_{1}-z_{0}|-r_{0}}{2}= \frac{|z_{1}-z_{0}|+r_{0}}{2} > \frac{r_{0} + r_{0}}{2} = r_{0}$$
+
+Thus, since we have shown that $|z-z_{0}| > r_{0}$, we can conclude that all $z\in b_{r_{1}}(z_{1})$ are not in the closed ball $\bar{b}_{r_{0}}(z_{0})$ and thus in the complement. Therefore, the complement to the open ball is open, which means by definition the closed ball $\bar{b}_{r_{0}}(z_{0})$ is closed.
+
+\textbf{Problem 3}
+
+We prove this directly. Assume that $(z_{n})_{n=1}^{\infty}$ converges to both $w_{1}$ and $w_{2}$, for $w_{1},w_{2} \in \C$. Then, by definition of convergence, $\forall \varepsilon_{1},\varepsilon_{2} > 0$, $\exists M_{1},M_{2}\in \N$ such that
+
+$$|z_{m_{1}} - w_{1}| < \varepsilon_{1} \hspace{1cm} \& \hspace{1cm} |z_{m_{2}}-w_{2}|<\varepsilon_{2} \hspace{1cm} \forall m_{1} \geq M_{1}, m_{2} \geq M_{2}$$
+
+This motivates us to make two open balls around these convergence values, $b_{\varepsilon_{1}}(w_{1})$ and $b_{\varepsilon_{2}}(w_{2})$. Since $\varepsilon_{1}$ and $\varepsilon_{2}$ are arbitrary, without loss of generality, we can let $\varepsilon_{1} = \varepsilon_{2} = \varepsilon$. As a result, since we are looking at a sequence of complex numbers that converge, we know that $|z_{i}| > |z_{i+1}|$ $\forall i\in \N$, and since we have fixed the arbitrary values to be equivalent, we notice either $M_{1} \geq M_{2}$ or $M_{2} \geq M_{1}$. We can choose one without losing generality, so we pick the former. In particular, for a fixed $\varepsilon$, we get,
+
+$$z_{m_{1}}\in b_{\varepsilon}(w_{1}) \hspace{1cm} z_{m_{2}}\in b_{\varepsilon}(w_{2})$$
+
+Yet, since $M_{1} \geq M_{2}$, we notice that $z_{m_{2}}\in b_{\varepsilon}(w_{1})$ as well. Explicitly, this means
+
+$$z_{m_{2}} \in  b_{\varepsilon}(w_{1}) \cap b_{\varepsilon}(w_{2}) \hspace{1cm} \forall \varepsilon<0$$
+
+I propose that this implies that $w_{1} = w_{2}$. To show this, consider the following inequality,
+
+$$|w_{1} - w_{2}| \leq |w_{1} - z_{m_{2}}| + |z_{m_{2}} - w_{2}| < \varepsilon + \varepsilon = 2\varepsilon$$
+
+Since $\varepsilon>0$, this means that $|w_{1} - w_{2}|$ can get arbitrarily small. This implies that $w_{1} = w_{2}$.
+
+\textbf{Problem 4}
+
+\textbf{(a)}
+Let $S_{1}, S_{2}, \dots, S_{N}$ be a list of open sets where $N \in \N$. Consider some $z\in \cup_{i=1}^{\infty}S_{i}$, then by definition of union, $\exists j\in \N$ such that $z\in S_{j}$, where $1 \leq j\leq N$. However, $S_{j}$ is open by assumption, hence by definition, $\exists r > 0$ such that $b_{r}(z) \subseteq S_{j} \subset  \cup_{i=1}^{\infty}S_{i}$, which implies that this union is open.
+
+This implies that a finite intersection of closed sets is closed. Since every closed set has an open complement, and the union of these open complements is the complement of the intersection of the closed sets. This is due to the intersection of closed sets containing elements that can not be in any of the open complements. Thus, the previous proof shows that this finite intersection must be closed.
+
+\textbf{(b)}
+Let $S_{1}, S_{2}, \dots, S_{N}$ be a list of open sets where $N \in \N$. Take some $z\in \cap_{i=1}^{N}S_{i}$, then by definition of intersection, $z\in S_{j}$ $\forall j\in \N$ where $ 1\leq j \leq N$. Yet every $S_{j}$ is open, thus $\exists r_{j} > 0$ such that $b_{r_{j}}(z) \subseteq S_{j}$. Thus, we consider the set of open balls $\{ b_{r_{1}}(z) , b_{r_{2}}(z) , \dots , b_{r_{N}}(z) \}$, where $r_{j}$ corresponds with $S_{j}$. In particular, since $r_{j}$ is a real number, $\exists \sigma : \N \to \N$ such that $\sigma(j)$ goes to the $j^{th}$ largest radius. Then,
+
+$$r_{\sigma(1)} \leq r_{\sigma(2)} \leq \dots \leq r_{\sigma(N)}$$
+
+Furthermore, we notice that since $S_{j}$ is open, $b_{r_{j}} \subseteq S_{j}$, and hence $\cap_{i=1}^{N}b_{r_{i}} \subseteq \cap_{i=1}^{N} S_{i}$. In particular, since every open ball in this set is concentric about $z$, we can conclude that a finite intersection of these open balls will simply be the open ball with the smallest radius, which we know is $r_{\sigma(1)}$, thus
+
+$$b_{r_{\sigma(1)}}(z) = \cap_{i=1}^{N}b_{r_{i}} \subseteq \cap_{i=1}^{N} S_{i}$$
+
+which by definition means that $\cap_{i=1}^{N} S_{i}$ is open, as required.
+
+This implies that a finite union of closed sets is closed. For every closed set in the union, the complement is open, and taking a union of closed sets means that the complement is the set of points not in any of the closed sets, which is by definition the intersection of the open complements. The previous proof shows the rest.
+
+\textbf{(c)}
+Consider the finite set of bounded sets $\{S_{1}, S_{2}, \dots , S_{N} \}$. Since every element of this set is bounded, then $\exists$ a corresponding set $\{r_{1} , r_{2}, \dots , r_{N} \}$ such that $S_{i} \subseteq b_{r_{i}}(0)$ $\forall i \in \{1, 2, \dots, N\}$. In particular, $\exists$ a symmetry mapping $\sigma: \N \to \N$ such that
+
+$$r_{\sigma(1)} \leq r_{\sigma(2)} \leq \dots \leq r_{\sigma(N)}$$
+
+hence, since all of the open balls are centered around the same point, $\cup_{i=1}^{N}b_{r_{i}}(0) = b_{r_{\sigma(N)}}(0)$. This is true since $\forall i$, $b_{r_{i}}(0) \subseteq b_{r_{\sigma(N)}}(0)$. Hence, since $S_{i} \subseteq b_{r_{i}}(0)$, we use the transitivity of subsets to conclude, $S_{i} \subseteq b_{r_{i}}(0) \subset b_{r_{\sigma(N)}}$ $\forall i$ which implies,
+
+$$\cup_{i=1}^{N} S_{i} \subseteq b_{r_{\sigma(N)}}(0)$$
+
+Hence the union is bounded by definition.
+
+\textbf{(d)}
+First we consider a finite union of compact sets. By definition, a compact set is closed and bounded. We already proved that a finite union of closed sets is closed. Furthermore, we proved in \textbf{(c)} that a finite union of bounded sets is bounded. Thus, a finite union of compact sets is compact.
+
+Next, we consider a finite intersection of compact sets. We showed in \textbf{(a)} that a finite intersection of closed sets is closed. We also know that a finite intersection of bounded sets is bounded. This follows trivially from the definition of bounded. In particular, if $z\in \cap_{i=1}^{N}S_{i}$, then $z \in S_{i}$ $\forall i$, and hence, similar to how we showed the finite union of bounded sets is bounded, we can take the largest open ball $b_{r_{\sigma(N)}}(0)$ and it is necessary that $z \in b_{r_{\sigma(N)}}(0)$, and hence the intersection is bounded.
+
+\newpage
+
+\textbf{Problem 5}
+
+Consider the set $S = \{z\in \C \mid \frac{1}{2} \leq |z| < 1\}$. We show that this is neither open nore closed. More importantly, we show this by showing that the set is not open, and neither is the complement.
+
+First, let us look at the set itself. We show this set is not open. To do so, we consider the elements that have norm $\frac{1}{2}$. In particular, we can take one element in this set, say $z_{0}$. Take a ball $b_{\varepsilon}(z_{0})$ for some $\varepsilon > 0$, Then, in particular, we consider a point, $z = (1-\varepsilon)z_{0}$, where $|z| = (1-\varepsilon)\frac{1}{2} < \frac{1}{2}$. Clearly $z\notin S$, by definition, and yet
+
+$$|z - z_{0}| = |(1-\varepsilon)z_{0} - z_{0}| = |z_{0} - \varepsilon z_{0} - z_{0}| = |-\varepsilon z_{0}| = \varepsilon|z_{0}| = \frac{\varepsilon}{2} < \varepsilon$$
+
+hence, clearly there will always be a point in any open ball around $z_{0}$ that is not in the set.
+
+Next, we look at the complement. In particular, take $z_{0} \in \C$, such that $|z_{0}| = 1$. By definition, $z_{0} \in \bar{S}$. Take some open ball around this point of radius $\varepsilon > 0$, $b_{\varepsilon}(z_{0})$, and now take $z = (1-\frac{\varepsilon}{2})z_{0}$. Clearly $|z| = 1-\frac{\varepsilon}{2} < 1$, hence $z \notin \bar{S}$, but notice,
+
+$$|z - z_{0}| = |(1-\frac{\varepsilon}{2})z_{0} - z_{0}| = |z_{0} - \frac{\varepsilon}{2}z_{0} - z_{0}| = |-\frac{\varepsilon}{2}z_{0}| = \frac{\varepsilon}{2} < \varepsilon$$
+
+hence $z \in b_{\varepsilon}(z_{0})$ $\forall \varepsilon > 0$, and thus $\bar{S}$ is not open.
+
+Hence, since neither $S$ nor $\bar{S}$ are open, we can conclude that $S$ is neither open nor closed.
+
+\textbf{BONUS}
+
+\textbf{(a)}
+I propose that an (countably) infinite union of open sets is open. To see this, we notice that consider the set of open sets $\mathbb{S} = \{S_{1},S_{2}, \dots \}$, such that $S_{i} \in \mathbb{S}$ $\forall i\in \N$. Hence, we notice that the indexing set is $\N$. Thus, by the axiom of choice, $\exists$ a choice function $f: \N \to \cup_{i=1}^{\infty}S_{i}$, which in particular allows us to choose an element $f(j) \in S_{j} \subseteq \cup_{i=1}^{\infty}S_{i}$, $j \in \N$. However, since $f(j)\in S_{j}$, then $\exists$ $r > 0$ such that $b_{r}(f(j))\subseteq \cup_{i=1}^{\infty}S_{i}$, which implies that $\cup_{i=1}^{\infty}S_{i}$ is open.
+
+\textbf{(b)} An (countably) infinite intersection of open sets will not be open. I provide a counter example. Consider the (countably) infinite set of open sets $\mathbb{S} = \{S_{1},S_{2}, \dots\}$ where $S_{i} = b_{\frac{1}{i}}(0)$ $\forall i \in \N$. We know that the sequence $(\frac{1}{n})_{n=1}^{\infty}\to 0$, hence, since there is no complex value with modulus $>0$, we can conclude $\cap_{i=1}^{\infty}S_{i} = \{\emptyset\}$. Yet, we know that this is \textbf{not} an open set, since $\C$ is an open set, and thus, $\{\emptyset\}$ is by definition closed.
+
+\newpage
+
+\textbf{(c)}
+From \textbf{(a)} we can deduce that an (countably) infinite intersection of closed sets is closed.We know for every open set, the complement is closed, and the complement to the union of those open sets will be the intersection of the closed sets. We know the union is open, thus the complement must be closed, which shows exactly what we wanted.
+
+For the infinite union of closed sets, we look at the complement of the counter example from $\textbf{(b)}$, and hence notice that the union of the complements would be all of $\C$, which is open.
+
+We show that an (countably) infinite union of bounded sets is not necessarily bounded. To show this, consider the set of bounded sets, $\{S_{1}, S_{2}, \dots\}$ where $S_{i} = \bar{b}_{i}(0)$. Clearly each set is closed, since every closed ball is closed, but furthermore, we can show that $\cup_{i=1}^{\infty}S_{i}$ is in fact just all of $\C$. To see this, consider some $z\in\C$. Then, since $(n)_{n=1}^{\infty}$ diverges, we can say $\exists m\in \N$ such that $|z| < m$, and hence $z \in b_{m}(0) \subset \cup_{i=1}^{\infty}S_{i}$, which implies $\C \subseteq\cup_{i=1}^{\infty}S_{i}$. To show the reverse, we invoke the Axiom of Choice, and for some $j\in\N$, we get $f(j)\in S_{j} \subseteq \C$, and hence $ \cup_{i=1}^{\infty}S_{i} \subseteq \C$. Hence, $\C = \cup_{i=1}^{\infty}S_{i}$, but $\C$ is not bounded, thus neither is this infinite union.
+\end{document}

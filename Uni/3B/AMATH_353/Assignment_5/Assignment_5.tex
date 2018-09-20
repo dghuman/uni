@@ -1,0 +1,221 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{AMATH 353 $|$  Assignment 5}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Problem 1}
+
+\textbf{(a)}
+Assume that $u(x,y,t) = T(t)S(x,y)$, then our PDE becomes
+$$u_{t} = k(u_{xx} + u_{yy}) \hspace{1em} \implies \hspace{1em} T^{\prime}S = k(TS_{xx} + TS_{yy})$$
+$$\frac{T^{\prime}}{T} = \frac{k(S_{xx} + S_{yy})}{S}$$
+where we let $\lambda$ be our separation constant, and hence
+$$T^{\prime} + \lambda T = 0 \hspace{2em} \& \hspace{2em} S_{xx} + S_{yy} = -\frac{\lambda}{k}S$$
+Now let $S(x,y) = X(x)Y(y)$, so we get
+$$S_{xx} + S_{yy} = -\frac{\lambda}{k}S \hspace{1em} \implies \hspace{1em} X^{\prime \prime}Y + XY^{\prime \prime} = -\frac{\lambda}{k}XY$$
+$$\frac{X^{\prime \prime}}{X} + \frac{Y^{\prime \prime}}{Y} = -\frac{\lambda}{k}$$
+$$\frac{X^{\prime \prime}}{X} = -\frac{\lambda}{k} - \frac{Y^{\prime \prime}}{Y}$$
+where we let $\mu^{2}$ be the separation constant here, and we get
+$$X^{\prime \prime} = -\mu^{2} X \hspace{2em} \& \hspace{2em} Y^{\prime \prime} = -\left(\frac{\lambda}{k} - \mu_{2}\right)Y$$
+We look at the boundary and initial conditions, and we see that for non-trivial spatial solutions we get
+$$u(x,y,0) = X(x)Y(y)T(0) = f(x,y) \hspace{1em} \implies \hspace{1em} T(0) = f(x,y)$$
+$$u(0,y,t) = u(l,y,t) = 0 = X(l)Y(y)T(t) = X(0)Y(y)T(t) \hspace{1em} \implies \hspace{1em}  0 = X(l) = X(0)$$
+$$u_{y}(x,0,t) = u_{y}(x,l,t) = 0 = X(x)Y(l)T(t) = X(x)Y(0)T(t) \hspace{1em} \implies \hspace{1em}  0 = Y^{\prime}(l) = Y^{\prime}(0)$$
+
+\textbf{(b)}
+We solve the $X$ ODE first. By inspection we know that
+$$X(x) = A\cos(\mu x) + B\sin(\mu x)$$
+and applying the first BC gives
+$$X(0) = A = 0$$
+The second BC gives
+$$X(l) = B\sin(\mu l) = 0 \hspace{1em} \implies \hspace{1em} \mu_{n} = \frac{n\pi}{l}$$
+So our first spatial solution is
+$$X_{n}(x) = \sin\left(\frac{n\pi x}{l}\right)$$
+Next, we solve the $Y$ ODE, where again by inspection
+$$Y(y) = A\cos\left({\sqrt{\frac{\lambda}{k} - \mu^{2}}y}\right) + B\sin\left({\sqrt{\frac{\lambda}{k} - \mu^{2}}y}\right)$$
+and the BC's give
+$$Y^{\prime}(0) = B\sqrt{\frac{\lambda}{k} - \mu^{2}} = 0 \hspace{1em} \implies \hspace{1em} B = 0$$
+$$Y^{\prime}(l) = -A\sqrt{\frac{\lambda}{k} - \mu^{2}}\sin\left(\sqrt{\frac{\lambda}{k} - \mu^{2}}l\right) = 0$$
+We see that then that
+$$\sqrt{\frac{\lambda}{k} - \mu^{2}}l = m\pi \hspace{2em} m\in\mathbb{N}\cup\{0\}$$
+$$\lambda_{m,n} = \frac{m^{2}\pi^{2}k}{l^{2}} - \mu^{2}_{n}k$$
+Plugging this into our eigenfunction we get
+$$Y_{m}(y) = \cos\left(\frac{m\pi y}{l}\right)$$
+and hence we have the eignefunctions for our spatial solutions.
+
+\textbf{(c)}
+By inspection, we see that the solution is
+$$T_{m,n}(t) = Ae^{-\lambda_{m,n}t}$$
+
+\textbf{(d)}
+We know that the final solution should be the product of these individual solutions, in particular
+$$u(x,y,t) = \sum_{m=0}^{\infty}\sum_{n=1}^{\infty}T_{n,m}(t)Y_{m}(y)X_{n}(x) =\sum_{m=0}^{\infty}\sum_{n=1}^{\infty} Ae^{-\lambda_{m,n}t}\left(\sin\left(\frac{n\pi x}{l}\right)\right)\left(\cos\left(\frac{m\pi y}{l}\right)\right) $$
+
+\textbf{(e)}
+We use the temporal initial condition to solve for the Fourier coefficient. In particular
+$$u(x,y,0) = f(x,y)= \sum_{m=0}^{\infty}\sum_{n=1}^{\infty} A\left(\sin\left(\frac{n\pi x}{l}\right)\right)\left(\cos\left(\frac{m\pi y}{l}\right)\right) $$
+Since we have a double sum, we will need to project the sum over two bases. We see
+$$A_{m,n} = \frac{\left(\cos\left(\frac{m\pi y}{l}\right),\left(\sin\left(\frac{n\pi x}{l}\right),f(x,y)\right)\right)}{\left(Y_{m}(y),Y_{m}(y)\right)\left(X_{n}(x),X_{n}(x)\right)}$$
+
+\newpage
+\textbf{Problem 2}
+
+\textbf{(a)}
+Assume the solution is of the form $u(x,y,t) = T(t)M(x,y)$, then our PDE becomes
+$$T^{\prime\prime}M = Tc^{2}(M_{xx} + M_{yy})$$
+Apply the separation constant $\lambda$ and we get
+$$T^{\prime\prime} + \lambda T = 0 \hspace{1em} \& \hspace{1em} M_{xx} + M_{yy} = -\frac{\lambda}{c^{2}}M$$
+Let $M(x,y) = X(x)Y(y)$, then
+$$\frac{X^{\prime\prime}}{X} + \frac{Y^{\prime\prime}}{Y} = -\frac{\lambda}{c^{2}}$$
+where we use another separation constant $\mu^{2}$ to get
+$$X^{\prime\prime}+\mu^{2}X = 0 \hspace{2em} \& \hspace{2em} Y^{\prime\prime} + \left(\frac{\lambda}{c^{2}} - \mu^{2}\right)Y = 0$$
+We first solve the spatial problem. Solving first for $X(x)$, we see that
+$$X(x) = A\cos(\mu x) + B\sin(\mu x)$$
+but our BC says that $X(0) = X(L) = 0$, so
+$$X(0) = A = 0 \hspace{2em} \& \hspace{2em} X(L) = B\sin(\mu L) = 0$$
+$$\implies \mu_{n} = \frac{n\pi}{L} \hspace{2em} n\in\mathbb{N}\setminus\{0\}$$
+Now for $Y(y)$,
+$$Y(y) = A\cos\left(\sqrt{\frac{\lambda}{c^{2}}-\mu^{2}}y\right) + B\sin\left(\sqrt{\frac{\lambda}{c^{2}}-\mu^{2}}y\right)$$
+and the BC tells us $Y(0) = Y(H) = 0$ which gives us
+$$Y(0) = A = 0 \hspace{2em} \& \hspace{2em} Y(H) = B\sin\left(\sqrt{\frac{\lambda}{c^{2}}-\mu^{2}}H\right)$$
+$$\implies \sqrt{\frac{\lambda}{c^{2}}-\mu^{2}}H = m\pi \hspace{2em} m\in\mathbb{N}\setminus\{0\}$$
+$$\lambda_{m,n} = \frac{m^{2}\pi^{2}c^{2}}{H^{2}} + \mu^{2}c^{2}$$
+Finally, our temporal solution will be
+$$T(t) = A\cos(\sqrt{\lambda_{m,n}}t) + B\sin(\sqrt{\lambda_{m,n}}t)$$
+and so our solution that satisfies the BCs will be
+$$u(x,y,t) = \sum_{m=1}^{\infty}\sum_{n=1}^{\infty}T_{m,n}(t)Y_{m}(y)X_{n}(x) = \sum_{m=1}^{\infty}\sum_{n=1}^{\infty}\left( A\cos(\sqrt{\lambda_{m,n}}t) + B\sin(\sqrt{\lambda_{m,n}}t)\right)\left(\sin\left(\frac{m\pi y}{H}\right)\right)\left(\sin\left(\frac{n\pi x}{L}\right)\right)$$
+which with our first initial condition gives
+$$u(x,y,0) = f(x,y) =  \sum_{m=1}^{\infty}\sum_{n=1}^{\infty}AY_{m}(y)X_{n}(x)$$
+$$\implies A_{m,n} = \frac{\left(X_{n}(x),\left(Y_{m}(y),f(x,y)\right)\right)}{(Y_{m}(y),Y_{m}(y))(X_{n}(x),X_{n}(x))}$$
+Similarly, the second initial condition gives us
+$$u_{t}(x,y,0) = g(x,y) = \sum_{m=1}^{\infty}\sum_{n=1}^{\infty}B\sqrt{\lambda_{m,n}}Y_{m}(y)X_{n}(x)$$
+$$\implies B_{m,n} = \frac{\left(X_{n}(x),\left(Y_{m}(y),g(x,y)\right)\right)}{\lambda_{m,n}(Y_{m}(y),Y_{m}(y))(X_{n}(x),X_{n}(x))}$$
+and so we have completely solved the PDE.
+
+\textbf{(b)}
+Refer to attached plots.
+
+\textbf{(c)}
+We have that
+$$\sin\left(\frac{\pi y}{H}\right)\sin\left(\frac{2\pi x}{L}\right) + \sin\left(\frac{2\pi y}{H}\right)\sin\left(\frac{\pi x}{L}\right) = 2\sin\left(\frac{\pi y}{H}\right)\sin\left(\frac{\pi x}{L}\right)\cos\left(\frac{\pi x}{L}\right) + 2\sin\left(\frac{\pi x}{L}\right)\sin\left(\frac{\pi y}{H}\right)\cos\left(\frac{\pi y}{H}\right)$$
+$$= 2\sin\left(\frac{\pi y}{H}\right)\sin\left(\frac{\pi x}{L}\right)\left(\cos\left(\frac{\pi x}{L}\right) + \cos\left(\frac{\pi y}{H}\right)\right)$$
+The nodal lines will be the values of $(x,y)$ over which these functions will vanish
+$$\sin\left(\frac{\pi y}{H}\right)\sin\left(\frac{\pi x}{L}\right)\left(\cos\left(\frac{\pi x}{L}\right) + \cos\left(\frac{\pi y}{H}\right)\right) = 0$$
+$$\sin\left(\frac{\pi y}{H}\right)\sin\left(\frac{\pi x}{L}\right) = 0 \hspace{2em} \& \hspace{2em} \cos\left(\frac{\pi x}{L}\right) + \cos\left(\frac{\pi y}{H}\right) = 0$$
+The sine terms give us $(x,y) = (0,0),(L,0),(0,H)$ and $(L,H)$, all of which lie on the corners. The cosines give us that
+$$\cos\left(\frac{\pi x}{L}\right) =- \cos\left(\frac{\pi y}{H}\right)$$
+we notice that since both of the cosines only have half a period over the domain, we expect to be able to find a continuous set of solutions to this transcendental equation. Since the entire function itself is smooth (a product of smooth functions) we expect that the roots form a continuous set. Then, since we require that the boundary points be the corners, we end up with lines between the corners.
+
+\newpage
+\textbf{Problem 3}
+
+We first recall what the laplacian in polar coordinates is and see that
+$$\nabla^{2}u = \frac{1}{r}\frac{\partial}{\partial r}\left(r\frac{\partial u}{\partial r}\right) + \frac{1}{r^{2}}\frac{\partial^{2}u}{\partial \theta^{2}} = 0$$
+We approach this as we normally would, so let $u(r,\theta) = R(r)\Theta(\theta)$, and get
+$$\frac{\Theta}{r}\left(rR^{\prime\prime} + R^{\prime}\right) + \frac{R}{r^{2}}\Theta^{\prime\prime} = 0 \hspace{2em} \implies \hspace{2em}\frac{r}{R}(rR^{\prime\prime} + R^{\prime})+ \frac{\Theta^{\prime\prime}}{\Theta} = 0$$
+$$\frac{r}{R}(rR^{\prime\prime} + R^{\prime})=-\frac{\Theta^{\prime\prime}}{\Theta}$$
+Let $\lambda^{2}$ be the separation constant, which gives us
+$$\frac{r}{R}(rR^{\prime\prime} + R^{\prime}) = \lambda^{2} \hspace{2em} \& \hspace{2em} -\frac{\Theta^{\prime\prime}}{\Theta}=\lambda^{2}$$
+The angular ODE gives us that
+$$\Theta(\theta) = A\cos(\lambda \theta) + B\sin(\lambda \theta)$$
+It is safe to assume continuity, so $\Theta(0) = \Theta(2\pi)$ and $\Theta^{\prime}(0) = \Theta^{\prime}(2\pi)$.  Then
+$$A = A\cos(2\pi \lambda) + B\sin(2\pi \lambda) \hspace{2em} \& \hspace{2em} \lambda B = -A\lambda\sin(\lambda \theta)+B\lambda\cos(\lambda \theta)$$
+which solving results in the usual result
+$$\Theta(\theta) = A_{n}\cos(n\theta) + B_{n}\sin(n\theta) \hspace{2em} n\in\mathbb{N}\cup \{0\}$$
+We look to the radial ODE and notice that the solution must be of the form
+$$R(r) = Dr^{n} + Er^{-n}$$
+but we require that $u(r,\theta)$ be bounded as $r \to \infty$, so we can assume that $D = 0$, and hence
+$$R_{n}(r) = E_{n}r^{-n}$$
+and thus our solution becomes
+$$u(r,\theta) = \sum_{n=0}^{\infty}\left(A_{n}\cos(n\theta) + B_{n}\sin(n\theta)\right)r^{-n}$$
+but we have that
+$$u(a,\theta) = f(\theta) = \sum_{n=0}^{\infty}\left(A_{n}\cos(n\theta) + B_{n}\sin(n\theta)\right)a^{-n} $$
+$$A_{n} = a^{n}\frac{(\cos(n\theta),f(\theta))}{(\cos(n\theta),\cos(n\theta))} \hspace{2em} \& \hspace{2em} B_{n} =  a^{n}\frac{(\sin(n\theta),f(\theta))}{(\sin(n\theta),\sin(n\theta))}$$
+and so our problem is solved.
+
+\newpage
+\textbf{Problem 4}
+
+\textbf{(a)}
+First we let $u(r,\theta,t) = T(t)M(r,\theta)$. Then,
+$$MT^{\prime} = DT\nabla^{2}M - kTM$$
+$$\frac{T^{\prime}}{T} = \frac{D\nabla^{2}M}{M} - k$$
+$$T^{\prime} + \lambda T = 0 \hspace{2em} \& \hspace{2em} \nabla^{2}M = \frac{k - \lambda}{D}M$$
+where $\lambda$ is our separating constant. Now we let $M(r,\theta) = R(r)\Theta(\theta)$, and hence
+$$\frac{\Theta}{r}\left(rR^{\prime\prime} + R^{\prime}\right) + \frac{R}{r^{2}}\Theta^{\prime\prime} = \frac{k-\lambda}{D}R\Theta$$
+$$\frac{r}{R}\left(rR^{\prime\prime} + R^{\prime}\right) + \frac{\Theta^{\prime\prime}}{\Theta} = \frac{k-\lambda}{D}r^{2}$$
+$$\frac{r}{R}\left(rR^{\prime\prime} + R^{\prime}\right) - \frac{k-\lambda}{D}r^{2} = \mu^{2} \hspace{2em} \& \hspace{2em} -\frac{\Theta^{\prime\prime}}{\Theta} = \mu^{2}$$
+We recognize the solution to the angular ODE, and further, we recognize this to be exactly the same as in \textbf{Problem 3}, and hence we will find that
+$$\Theta_{n}(\theta) = A_{n}\cos(n\theta) + B_{n}\sin(n\theta) \hspace{2em} \mu_{n}=n\in\mathbb{N}\cup\{0\}$$
+and for the radial equation we see that
+$$r^{2}R^{\prime\prime} + rR^{\prime} + \left(\frac{\lambda - k}{D}r^{2} - n^{2}\right) = 0$$
+which we recognize to be the Bessel DE, and hence the solution will be of the form
+$$R(r) = D_{n}J_{n}\left(\frac{\lambda - k}{D}r\right) + E_{n}Y_{n}\left(\frac{\lambda-k}{D}r\right)$$
+which are the Bessel Functions of the first and second kind. However, we need that $R(l) = 0$, so we can get conditions on $\lambda$ since if the solution is bounded at the centre, $r=0$ we require that $E_{n} = 0$, so
+$$R(l) = D_{n}J_{n}\left(\frac{\lambda - k}{D}l\right) = 0$$ 
+which will give us $\lambda_{n,m}$. Once we have that, we can find the temporal solution
+$$T_{n,m}(t) = Ce^{-\lambda_{n,m}t}$$
+and the final solution will the product of all three over the double sum
+$$u(r,\theta,t) = \sum_{n=0}^{\infty}\sum_{m=1}^{\infty}T_{n,m}(t)R_{n,m}(r)\Theta_{n}(\theta)$$
+
+\textbf{(b)}
+If we let $k=0$ and $D\neq 0$, we can see that our angular solution remains unchanged, and so does our temporal solution (excluding that $\lambda$ is changing). The real change occurs with the Bessel Functions in the Radial equation. We notice that for $k=0$ we get exactly what we would get for the 2D case in a circularly symmetric system under polar coordinates. This naturally will be similar to the 1D case since we have a symmetry in the other degree of freedom.
+
+\newpage
+\textbf{Problem 5}
+
+\textbf{(a)}
+Assume that $u = M(x,y)N(z)$, then we have that
+$$M_{xx}N + M_{yy}N + MN^{\prime\prime} = 0$$
+$$\frac{M_{xx} + M_{yy}}{M} + \frac{N^{\prime\prime}}{N} = 0$$
+$$M_{xx} + M_{yy} + \lambda^{2}M = 0 \hspace{2em} \& \hspace{2em} N^{\prime\prime} = \lambda^{2}N$$
+which are the corresponding ODEs for $M$ and $N$ for the separation constant $\lambda^{2}$.
+
+\textbf{(b)}
+Let $M(x,y) = X(x)Y(y)$, then we have that
+$$X^{\prime\prime}Y + XY^{\prime\prime} + \lambda^{2}XY = 0$$
+$$\frac{X^{\prime\prime}}{X} + \frac{Y^{\prime\prime}}{Y} + \lambda^{2} = 0$$
+$$X^{\prime\prime} + (\lambda^{2}-\mu^{2})X = 0 \hspace{2em} \& \hspace{2em} Y^{\prime\prime} + \mu^{2}Y = 0$$
+where $\mu^{2}$ is another separation constant. We see that for $Y$ we get
+$$Y(y) = A\cos(\mu y) + B\sin(\mu y)$$
+and the BC's give us
+$$Y(0) = A = 0 \hspace{2em} \to \hspace{2em} Y(H) = B\sin(\mu H) = 0$$
+$$\implies \mu_{n} = \frac{n\pi}{H} \hspace{2em} n\in\mathbb{N}\setminus\{0\}$$
+For $X$ we get
+$$X(x) = D\cos\left(\sqrt{\lambda^{2} - \mu^{2}}x\right) + E\sin\left(\sqrt{\lambda^{2} - \mu^{2}}x\right)$$
+which in the BC's gives
+$$X(0) = D = 0 \hspace{2em} \to \hspace{2em} X(L) = E\sin\left(\sqrt{\lambda^{2}-\mu^{2}}L\right) = 0$$
+$$\implies \sqrt{\lambda^{2}-\mu^{2}}L = m\pi$$
+$$\lambda_{n,m} = \sqrt{\frac{m^{2}\pi^{2}}{L^{2}} + \mu^{2}}$$
+Finally we can solve the $N$ component
+$$N_{n,m}(z) = A_{n,m}e^{\lambda_{n,m}z} + B_{n,m}e^{-\lambda_{n,m}z}$$
+and the solution will simply be plugging all of this into our original assumption
+$$u(x,y,z) = \sum_{n=1}^{\infty}\sum_{m=1}^{\infty}N_{n,m}(z)X_{m}(x)Y_{n}(y)$$
+$$u(x,y,z) = \sum_{n=1}^{\infty}\sum_{m=1}^{\infty}\left(A_{n,m}e^{\lambda_{n,m}z} + B_{n,m}e^{-\lambda_{n,m}z}\right)\sin\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi y}{H}\right)$$
+where we now apply the $z$ BC's,
+$$u_{y}(x,y,0) = 0 = \sum_{n=1}^{\infty}\sum_{m=1}^{\infty}\left(A_{n,m}\lambda_{n,m}e^{\lambda_{n,m}z} - B_{n,m}\lambda_{n,m}e^{-\lambda_{n,m}z}\right)\sin\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi y}{H}\right)$$
+But this is the zero function in an inner product space, so we can assume $A_{n,m} = B_{n,m}$. The second $z$ condition will give us
+$$u(x,y,H) = f(x,y) =  \sum_{n=1}^{\infty}\sum_{m=1}^{\infty}A_{n,m}\left(e^{\lambda_{n,m}H} +e^{-\lambda_{n,m}H}\right)\sin\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi y}{H}\right)$$
+Taking inner products with the orthogonal basis in both $m$ and $n$ we see
+$$A_{n,m} = \frac{\left(\sin\left(\frac{n\pi y}{H}\right),\left(\sin\left(\frac{m\pi y}{L}\right),f(x,y)\right)\right)}{\left(\sin\left(\frac{m\pi y}{L}\right),\sin\left(\frac{m\pi y}{L}\right)\right)\left(\sin\left(\frac{n\pi y}{L}\right),\sin\left(\frac{n\pi y}{L}\right)\right)\left(e^{\lambda_{n,m}H} +e^{-\lambda_{n,m}H}\right)}$$
+as required.
+\end{document}

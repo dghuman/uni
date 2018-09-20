@@ -1,0 +1,155 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{AMATH 353 $|$  Assignment 2}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Problem 1}
+
+In order to factor this PDE into two first order PDEs, we notice that the pair of PDEs forces us to factor in such a way that we end up with a nested PDE. In particular, we add and subtract intermediate terms,
+
+$$\frac{\partial^{2}u}{\partial t^{2}} - c^{2}\frac{\partial^{2}u}{\partial x^{2}} + D\frac{\partial u}{\partial t} = 0$$
+$$\frac{\partial^{2}u}{\partial t^{2}} - c^{2}\frac{\partial^{2}u}{\partial x^{2}} + D\frac{\partial u}{\partial t} + \left(- c\frac{\partial^{2}u}{\partial t\partial x} + c\frac{\partial^{2}u}{\partial t\partial x} - Dc\frac{\partial u}{\partial x} + Dc\frac{\partial u}{\partial x}\right) = 0$$
+
+rearranging so that we can factor out the $\frac{\partial}{\partial t}$ and $\frac{\partial}{\partial x}$ independently, we get
+
+$$\left(\frac{\partial^{2}u}{\partial t^{2}} - c\frac{\partial^{2}u}{\partial t\partial x} +  D\frac{\partial u}{\partial t}\right) + \left(c\frac{\partial^{2}u}{\partial t\partial x} - c^{2}\frac{\partial^{2}u}{\partial x^{2}}+ Dc\frac{\partial u}{\partial x}\right) -  Dc\frac{\partial u}{\partial x}  = 0$$
+$$\frac{\partial}{\partial t}\left(\frac{\partial u}{\partial t} - c\frac{\partial u}{\partial x} +  Du\right) + c\frac{\partial}{\partial x}\left(\frac{\partial u}{\partial t} - c\frac{\partial u}{\partial x}+ Du\right) -  Dc\frac{\partial u}{\partial x}  = 0$$
+
+Letting $v$ be this embedded PDE, we get our result,
+
+$$\frac{\partial u}{\partial t} - c\frac{\partial u}{\partial x} +  Du = v$$
+$$\frac{\partial v}{\partial t} + c\frac{\partial v}{\partial x} = Dc\frac{\partial u}{\partial x}$$
+
+As required.
+
+\newpage
+
+\textbf{Problem 2}
+
+\textbf{(a)}
+Notice that the terms used to classify this PDE will ignore crossing terms, thus we use $u_{tt} - 6u_{xx} = 0$ to classify the PDE. In particular, the negative sign between the two indicates a hyperbolic PDE.
+
+\textbf{(b)}
+To factor the differential operator, we pull the function $u$ and look at it in terms of just the operator,
+
+$$u_{tt} + u_{xt} -6u_{xx} = 0 \hspace{1em} \to \hspace{1em} \partial_{tt} + \partial_{xt} - 6 \partial_{xx} = 0$$
+
+and then just factor as we would a quadratic,
+
+$$\partial_{tt} + \partial_{xt} - 6 \partial_{xx} = 0 \hspace{1em} \to \hspace{1em} (\partial_{t} - 2\partial_{x})(\partial_{t} + 3\partial_{x}) = 0$$
+
+Thus the corresponding characteristic variables are,
+
+$$\alpha = x + 2t \hspace{2em} \& \hspace{2em} \beta = x - 3t$$
+
+\textbf{(c)}
+We use the chain rule to incorporate our characteristic variables. First, notice that the second order derivatives will vanish, as both $\alpha$ and $\beta$ are linear in $x$ and $t$. Thus, only the cross term remains in the PDE,
+
+$$\frac{\partial^{2}u}{\partial x \partial t} = \frac{\partial^{2}u}{\partial \alpha^{2}}\frac{\partial \alpha}{\partial x}\frac{\partial \alpha}{\partial t} = 2\frac{\partial^{2}u}{\partial \alpha^{2}} = 0 \hspace{1em} \& \hspace{1em} \frac{\partial^{2}u}{\partial x \partial t} = \frac{\partial^{2}u}{\partial \beta^{2}}\frac{\partial \beta}{\partial x}\frac{\partial \beta}{\partial t} = -3\frac{\partial^{2}u}{\partial \beta^{2}} = 0$$
+
+Notice the scalars are irrelevant since the derivative vanishes for both ODEs, thus we end up with
+
+$$\frac{\partial^{2}u}{\partial \alpha^{2}} = 0 \hspace{2em} \& \hspace{2em}\frac{\partial^{2}u}{\partial \beta^{2}} = 0$$
+
+\textbf{(d)}
+Working from the previous two ODEs, we see that,
+
+$$\frac{\partial u}{\partial \alpha} = h(\beta) + C \hspace{2em} \& \hspace{2em}\frac{\partial u}{\partial \beta} = k(\alpha) + D$$
+
+where $k(\alpha),h(\beta)$ are functions and $C,D \in \R$. To solve this, we make the assumption that the solution, $u(x,t)$, is a smooth function $\forall x,t\in S \subseteq\R$, for some subset $S$. Then a change of variable will retain this smoothness, and will imply,
+
+$$\frac{\partial^{2} u}{\partial \alpha \partial \beta} = \frac{\partial^{2} u}{\partial \beta \partial \alpha} \hspace{1em} \implies \hspace{1em} k^{\prime}(\alpha) = h^{\prime}(\beta)$$
+
+however, we know this is only possible if $\exists \lambda \in \R$ such that $ k^{\prime}(\alpha) = \lambda = h^{\prime}(\beta)$. From this we can further deduce that
+
+$$k(\alpha) = \alpha \lambda \hspace{2em} \& \hspace{2em} h(\beta) = \beta \lambda$$
+
+where the constants of integration are absorbed into the $D$ and $C$ respectively. Plugging this in and integrating we get
+
+$$u = \alpha\beta\lambda + C\alpha \hspace{2em} \& \hspace{2em} u = \alpha\beta\lambda + D\beta$$
+$$\implies u(\alpha,\beta) = \alpha\beta\lambda +C\alpha + D\beta$$
+$$\implies u(x,t) = (x + 2t)(x - 3t)\lambda + C(x + 2t) + D(x - 3t)$$
+
+which is the general solution.
+
+\textbf{(d)}
+To find a specific solution, we apply our ICs.
+
+$$f(x) = u(x,0) = \lambda x^{2} + x(C + D) \hspace{2em} \& \hspace{2em} g(x) = u_{t}(x,0) = -\lambda x + 2C-3D$$
+
+expanding our original general solution,
+
+$$u(x,t) = \lambda(x^{2} - xt -6t^{2}) + x(C+D) + t(2C - 3D)$$
+$$u(x,t) = (\lambda x^{2} + x(C+D)) + t(-\lambda x + 2C - 3D) - 6\lambda t^{2}$$
+$$u(x,t) = f(x) + tg(x) - 6\lambda t^{2}$$
+
+As required.
+
+\newpage
+
+\textbf{Problem 3}
+
+\textbf{(a)}
+Let $u = v(t)w(x)$. Substituting this in, we get,
+
+$$\frac{\partial^{2}u}{\partial t^{2}} = c^{4} \frac{\partial^{4}u}{\partial x^{4}} \hspace{1em} \to \hspace{1em} w(x)\frac{\partial^{2}v(t)}{\partial t^{2}} = c^{4}v(t)\frac{\partial^{4}w(x)}{\partial x^{4}}$$
+
+Assuming non-trivial solution, i.e. $w(x) \neq 0$ and $v(t) \neq 0$, we divide through by $v(t)w(x)$,
+
+$$ \frac{1}{v}\frac{\partial^{2}v}{\partial t^{2}} = \frac{c^{4}}{w}\frac{\partial^{4}w}{\partial x^{4}}$$
+
+which is only possible if $\exists \lambda \in \R$ such that,
+
+$$ \frac{1}{v}\frac{\partial^{2}v}{\partial t^{2}} = \lambda = \frac{c^{4}}{w}\frac{\partial^{4}w}{\partial x^{4}}$$
+
+$$\frac{\partial^{2}v}{\partial t^{2}} = \lambda v \hspace{2em} \& \hspace{2em} \frac{\partial^{4}w}{\partial x^{4}} = \frac{\lambda w}{c^{4}}$$ 
+
+\textbf{(b)}
+Let $u = v(t)w(x)$. Substituting this in, we get,
+
+$$\frac{\partial u}{\partial t} = c^{4} \frac{\partial^{4}u}{\partial x^{4}} \hspace{1em} \to \hspace{1em} w\frac{\partial v}{\partial t} = c^{4}v \frac{\partial^{4}w}{\partial x^{4}} \implies \frac{1}{v}\frac{\partial v}{\partial t} = \frac{c^{4}}{w} \frac{\partial^{4}w}{\partial x^{4}}$$
+
+Again, $\exists \lambda \in \R$ such that,
+
+$$\frac{\partial v}{\partial t} = \lambda v \hspace{2em} \& \hspace{2em} \frac{\partial^{4}w}{\partial x^{4}} = \frac{\lambda w}{c^{4}}$$ 
+
+\textbf{(c)}
+Let $u = v(y)w(x)$. Substituting this in, we get,
+
+$$-\frac{\partial^{2} u}{\partial y^{2}} = c^{4} \frac{\partial^{4}u}{\partial x^{4}} \hspace{1em} \to \hspace{1em} -w\frac{\partial^{2} v}{\partial y^{2}} = c^{4}v \frac{\partial^{4}w}{\partial x^{4}} \implies -\frac{1}{v}\frac{\partial^{2} v}{\partial y^{2}} = \frac{c^{4}}{w} \frac{\partial^{4}w}{\partial x^{4}}$$
+
+Finally, we use $\lambda \in \R$ such that
+
+$$\frac{\partial^{2} v}{\partial y^{2}} = -\lambda v \hspace{2em} \& \hspace{2em} \frac{\partial^{4}w}{\partial x^{4}} = \frac{\lambda w}{c^{4}}$$ 
+
+\newpage
+
+\textbf{Problem 4}
+
+Applying implicit differentiation,
+
+$$\frac{\partial u}{\partial t} = \frac{\partial f(x-tu)}{\partial t} = -\left(u + t\frac{\partial u}{\partial t}\right) f^{\prime}(x-tu) \hspace{1em} \& \hspace{1em} \frac{\partial u}{\partial x} = \frac{\partial f(x-tu)}{\partial x} = f^{\prime}(x-tu)$$
+
+Plugging these in we get,
+
+
+\end{document}

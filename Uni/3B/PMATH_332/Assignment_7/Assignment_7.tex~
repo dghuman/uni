@@ -1,0 +1,140 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 332 $|$  Assignment 7}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Problem 1}
+
+\textbf{(a)}
+From definition, we need to show that the partial sums converge pointwisely to our function and that said function is analytic. Fix some $z_{0} \in b_{1}(0)$, we recognize the partial sum of the $k^{th}$ term
+$$S_{k} = \sum_{n=0}^{k}z_{0}^{n} = \frac{1 - z_{0}^{k+1}}{1-z_{0}}$$
+since $|z_{0}| < 1$. I claim that the function that this series converges to is
+$$\sum_{n=0}^{\infty}z^{n} = \frac{1}{1-z}$$
+by the fact it is the geometric series. To see that this claim is true we see that
+$$|f_{k} - f| = |S_{k} - f| = \left|\frac{1-z_{0}^{k+1}}{1-z_{0}} - \frac{1}{1-z_{0}}\right| = \left|\frac{-z_{0}^{k+1}}{1-z_{0}}\right| = \frac{|z_{0}|^{k+1}}{|1-z_{0}|}$$
+however, we notice that $z_{0}$ is fixed, so this norm is proportional to the geometric sequence. However, we know that the geometric sequence converges to 0, so $\forall \varepsilon > 0$ $\exists M \in \mathbb{N}$ such that if $k > M$, then
+$$|f_{k} - f| = \frac{|z_{0}|^{k+1}}{|1-z_{0}|} < \varepsilon$$
+and hence we see that this power series converges pointwisely to $f = \frac{1}{1-z}$, which we recognize as being analytic over $\C \setminus \{1\}$, and since $b_{1}(0) \cap \{1\} = \emptyset$, we have an analytic function.
+
+\textbf{(b)}
+We just showed that the series converges pointwisely $\forall z_{0} \in b_{1}(0)$, and by proposition (covered in class) this implies that $\forall r < |z_{0}|$, the series will converge uniformly for $z \in b_{r}(0)$. Since $z_{0} \in b_{1}(0)$, we can take it arbitrarily close to $1$, and thus the power series will converge uniformly on $b_{1}(0)$.
+
+\textbf{(c)}
+Assume that the power series $\sum_{n=0}^{\infty}a_{n}(z-z_{0})^{n}$ converges pointwisely to $f(z)$ in $U$, where $z_{0} \in U$. Fix some $z_{1} \in U$, then
+$$\sum_{n=0}^{\infty}a_{n}(z_{1}-z_{0})^{n}$$
+will converge in $U \subset \C$. Further, since $U$ is open, we have that $\forall z_{1} \in U$, $\exists 0 < r < |z_{1} - z_{0}|$ such that, by proposition,
+$$\sum_{n=0}^{\infty}a_{n}(z-z_{0})^{n}$$
+will converge uniformly on $b_{r}(z_{0})$. Thus, since $U$ is open, clearly this series will converge uniformly to $f(z)$ in $U$. Thus, since we can think of the partial sums of the power series as a sequence, we see that this sequence must converge uniformly to $f(z)$ on $U$. However, we know that all complex polynomials are analytic on $\C$, and thus on $U$, then, by proposition, we know that the limit must also be analytic. Thus, $f(z)$ must be analytic on $U$.
+
+\textbf{Problem 2}
+
+\textbf{(a)}
+We know that the series expansion for $e^{iz}$ is and hence, if we assume that
+$$f(z) = \frac{e^{iz}}{z^{2} - 1} = \sum_{n=0}^{\infty}a_{n}z^{n}$$
+we see that
+$$(z^{2} - 1)f(z) = e^{iz} = \sum_{n=0}^{\infty}(i)^{n}\frac{z^{n}}{n!}$$
+$$(z^{2} - 1)f(z) = \sum_{n=0}^{\infty}\frac{(i)^{n}}{n!}z^{n}$$
+Assume that $f(z) = \sum_{m=0}^{\infty}a_{m}z^{m}$, then
+$$(z^{2} - 1)\sum_{m=0}^{\infty}a_{m}z^{m} = \sum_{m=0}^{\infty}a_{m}z^{m+2} - \sum_{m=0}^{\infty}a_{m}z^{m}$$
+To combine the two sums, we must have that the indices line up and the powers agree, so we drop terms from the latter sum and change the terms in the first sum to get
+$$= \sum_{m=2}^{\infty}a_{m-2}z^{m} - a_{0} - a_{1}z - \sum_{m=2}^{\infty}a_{m}z^{m}$$
+$$= -a_{0}-a_{1}z + \sum_{m=2}^{\infty}(a_{m-2} - a_{m})z^{m}$$
+which we can now compare to the LHS
+$$ -a_{0}-a_{1}z + \sum_{m=2}^{\infty}(a_{m-2} - a_{m})z^{m} = 1 + iz + \sum_{n=2}^{\infty}\frac{(i)^{n}}{n!}z^{n}$$
+$$\implies a_{0} = -1 \hspace{2em} a_{1} = -i \hspace{2em} a_{m-2} - a_{m} = \frac{(i)^{m}}{m!}$$
+$$\implies a_{m} = a_{m-2} -  \frac{(i)^{m}}{m!}$$
+We use the recursive relation to find the remaining 3 terms,
+$$a_{2} = a_{0} - \frac{i^{2}}{2!} = -1 + \frac{1}{2} = -\frac{1}{2}$$
+$$a_{3} = a_{1} - \frac{i^{3}}{3!} = -i + \frac{i}{6} = -\frac{5}{6}i$$
+$$a_{4} = a_{2} - \frac{i^{4}}{4!} = -\frac{1}{2} - \frac{1}{24} = -\frac{13}{24}$$
+So, the first four terms of our Taylor series will be
+$$f(z) = -1 - iz - \frac{1}{2}z^{2} - \frac{5i}{6}z^{3} - \frac{13}{24}z^{4} + O(z^{5})$$
+
+\textbf{(b)}
+We have that if $f(z) = \sum_{n=0}^{\infty}a_{n}z^{n}$ with uniform convergence over some open set, like we do for our $f(z)$, we can use the definition of the Taylor Series and see that
+$$a_{n} = \frac{f^{(n)}(0)}{n!}$$
+and so in this case
+$$a_{4} = -\frac{13}{24} = \frac{f^{(4)}(0)}{4!}$$
+$$f^{(4)}(0) = -\frac{13}{24}(24) = -13$$
+So, we see that $f^{(4)}(0) = -13$, as required.
+
+\textbf{(c)}
+Since $f$ is analytic and the series we computed converges uniformly, we know that the derivative will also converge uniformly. So
+$$f^{\prime}(z) = (f(z))^{\prime} = \left(-1 - iz - \frac{1}{2}z^{2} - \frac{5i}{6}z^{3} - \frac{13}{24}z^{4} + O(z^{5})\right)^{\prime}$$
+$$f^{\prime}(z)= -i -z -\frac{5i}{2}z^{2} - \frac{13}{6}z^{3} + O(z^{4})$$
+as required.
+
+\textbf{(d)}
+By definition, the radius of convergence is the maximum $R$ such that our series converges pointwisely in $b_{R}(0)$. Notice that we can assume that the radius of convergence of $f(z)$ must be $R=1$. This is clear by inspection, since the coefficients are bounded by 1 and we showed in \textbf{Problem 1} that the series $\sum_{n=0}^{\infty}z^{n}$ converges on $b_{1}(0)$, and we recall that it does not converge outside this radius. Furthermore, we have a proposition that says that if a sequence converges uniformly to a function on a subset $U$, then if the sequence is analytic, so is the limit with uniform convergence on $U$. We know that the Taylor series for our function converges, and hence converges uniformly, and thus the derivative must also converge uniformly over $U = b_{1}(0)$.
+
+
+\textbf{Problem 3}
+
+\textbf{(a)}
+We know that $f$ is analytic on $b_{1}(0)$, so then by theorem we can Taylor expand this function around $z=0$ and see that
+$$f(z) = \sum_{n=0}^{\infty}\frac{f^{(n)}(0)}{n!}z^{n}$$
+will converge uniformly on $b_{1}(0)$. But we know that
+$$f(0) = \dots = f^{(n)}(0) = 0$$
+so we see that
+$$f(z) = \sum_{n=0}^{\infty}\frac{f^{(n)}(0)}{n!}z^{n} = \sum_{n=0}^{\infty}\frac{(0)}{n!}z^{n} = 0$$
+as required.
+
+\textbf{(b)}
+The simplest counterexample to the above property for real functions is the following exponential function,
+$$f(x) = e^{x} - 1 \hspace{2em} x \in \R$$
+Clearly we see that $f(0) = \dots = f^{(n)}(0) = 0$ $\forall n > 0 \in \mathbb{N}$, but $f(x)$ is non-constant everywhere.
+
+\textbf{Problem 4}
+
+\textbf{(a)}
+We decompose $f$ into partial fractions by comparing coefficients,
+$$\frac{1}{z^{2}(z-1)} = \frac{A}{z} + \frac{B}{z^{2}} + \frac{C}{z-1} = \frac{Az(z-1) + B(z-1) + Cz^{2}}{z^{2}(z-1)}$$
+$$\implies 1 = (C + A)z^{2} + (B-A)z - B$$
+$$\implies -B = 1 \hspace{1em} \to \hspace{1em} B = -1$$
+$$B - A = 0 \hspace{1em} \to \hspace{1em} A = -1$$
+$$C+A = 0 \hspace{1em} \to \hspace{1em} C = 1$$
+thus we can conclude that
+$$f(z) = \frac{1}{z^{2}(z-1)} = -\frac{1}{z} - \frac{1}{z^{2}} + \frac{1}{z-1}$$
+
+\textbf{(b)}
+By Laurent's Theorem, since $f(z)$ is analytic on $S_{1}$, we can find a Laurent expansion about the point $z_{0} = 0$. From part \textbf{(b)} we know that the first two terms of our expansion will be $-z^{-1}$ and $-z^{-2}$, so we simply need to expand the remaining term around $z_{0} = 0$, which we recognize to be in the form of a geometric series, so
+$$f(z) = -z^{-1} - z^{-2} - \frac{1}{1-z} = -z^{-2}-z^{-1} - \sum_{n=0}^{\infty}z^{n} = -\sum_{n=-2}^{\infty}z^{n}$$
+which will be the Laurent series for $f(z)$ on $S_{1}$, since clearly the series converges pointwisely $\forall z \in S_{1}$. Since the series converges pointwisely over an open ball in $\C$, it will converge uniformly on $S_{1}$ as well, since $\forall z\in S_{1}$ we can always find a $z_{1} \in S_{1}$ such that $|z| < |z_{1}|$, and hence by proposition, we better have uniform convergence.
+
+\textbf{(c)}
+We now need to compute the Laurent expansion of $f$ around the point $z_{0} = 1$. We see that the Laurent expansion for the last term, $\frac{1}{z-1}$ is itself, so that is done. To expand the first term, we recognize that we can put it in a familiar form and centre it around $z_{0} = 1$ at the same time,
+$$-\frac{1}{z} = -\frac{1}{1-(1-z)} = -\sum_{n=0}^{\infty}(1-z)^{n}= -\sum_{n=0}^{\infty}(-1)^{n}(z-1)^{n}$$
+Next, we need a Taylor series for $\frac{-1}{z^{2}}$ around $z_{0} = 1$.
+
+
+\textbf{Problem 5}
+
+\textbf{(a)}
+We note that though $\sin(\pi z)$ is not bounded on $\C$, we will not have any singularities for $z\in \C$. Next, we see that according to the denominator, $\frac{1}{z^{4} - 1}$, we should expect four singularities, in particular, they will be the solutions to $z^{4}= 1$. We solve this for $z$. First, writing the RHS in ``polar'' form,
+$$z^{4} = 1 \hspace{2em} \to \hspace{2em} z^{4} = e^{i2k\pi}$$
+for $k\in\mathbb{N}$. Taking the fourth root of both sides we get
+$$z = e^{i\frac{k\pi}{2}}$$
+and we see that $k\in \{0,1,2,3\}$ for unique roots. Each root is separated by a finite distance, so all four roots will be isolated singularities.
+
+
+\end{document}
+
