@@ -60,7 +60,10 @@ Finally we look at the third possible topology,
 \end{itemize}
 We see that $\tau_{3}$ is indeed a topology.
 
-Now we need to check if $\tau_{3}$ is Hausdorff .
+Now we need to check if $\tau_{3}$ is Hausdorff. We use a similar argument to the one made in \textbf{(a)}. In particular, assume that $\tau_{3}$ is Hausdorff, and take distinct $p_{1},p_{2}\in X$. Then, $\exists$ $A,B\in \tau_{3}$ such that $p_{1}\in A$ and $p_{2}\in B$ such that $A\cap B = \empty$. $A$ and $B$ are both necessarily non-empty, and we again see that,
+$$X\setminus \left(A \bigcap B\right) = \left(X\setminus A\right) \bigcup \left(X\setminus B\right)$$
+but in this case we see that the right side is countable, even though it should be $X$, which isn't necessarily countable. Thus $\tau_{3}$ is not Hausdorff.
+
 \newpage
 
 \textbf{Question 2}
@@ -95,7 +98,7 @@ Suppose $X$ a set and $\tau$ a topology on $X$ such that $(X,\tau)$ is an n-mani
 
 In particular, we will build a basis $\mathcal{B}$ by using the locally Euclidean property of $(X,\tau)$; $\forall x\in X$ $ \exists U\subseteq X$ such that $U$ is homeomorphic to some open ball, $B_{r}(y)$, in $\R^{n}$, where $y\in \R^{n}$ and $r>0$. We let $\mathcal{B}$ be the set of all such $U \subseteq X$ $\forall x \in X$, and notice that such a $\mathcal{B}$ contains only Euclidian Balls.
 
-To see that this is a basis of $\tau$, suppose $V \in \tau$, then in particular we see that 
+To see that this is a basis of $\tau$, suppose $V \in \tau$, then in particular we see that $\forall p\in V$ $\exists V_{p} \subset \R^{n}$ and $f: V_{p}\to B_{r}(y)\subset \R^{n}$ for $f$ a homeomorphism. $r > 0$ and $y\in \R^{n}$. Then, we can restrict our homeomorphism to just that of the intersection and still have an element of $\tau$ by definition of topology. By definition of a homeomorphism we know that the image $f(V\cap V_{p})$ is open in $\R^{n}$, but then by the standard topology of $\R^{n}$ we can write $f(V\cap V_{p}$ as a union of open balls in $\R^{n}$, say $\cup_{i\in A}B_{r_{i}}(z_{i})$. Then, using the inverse of $f$, $f^{-1}(B_{r_{i}}(z_{i}))\in \mathcal{B}$ and more importantly, since this is true for all such $p$, we can say that $V$ can be written as the union of all such open sets in $\mathcal{B}$, confirming that this basis of Euclidean Balls is indeed a basis.
 
 \newpage
 
