@@ -11,6 +11,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\Sp}{\mathbb{S}}
 
 \DeclareMathOperator{\Ima}{Im}
 
@@ -25,5 +26,72 @@
 
 \textbf{Question 1}
 
-All we need is a counter example to see that the Hausdorff property does not carry through to quotient spaces. Consider $\R^{n}$ as our topological space. 
+Let $X = \{(x,y)\in\R^{2} | y=\pm 1\}$, and we define the equivalence relation $\sim$ where $(x,1) \sim (x,-1)$ for $x \neq 0$. Then $Y = X/\sim$ is the set of equivalence classes of $x$ values and two zeros, $(0,-1)$ and $(0,+1)$. 
+
+We first see that $X$ is a topological space by the relative topology. To see that $X$ is also Hausdorff, consider $(x_{1},y_{1}), (x_{2},y_{2}) \in X$ distinct. Then, suppose $U_{1}, U_{2} \subset X$ as open sets. By the relative topology of $\R^{2}$, we can always choose open balls in $\R^{2}$ small enough so that the intersection of $X$ with that open set is not disjoint. In particular, this means that the open set will be an open interval on either the line $y=1$ or $y=-1$.
+
+Then, if $y_{1} \neq y_{2}$, we have that $U_{1}\cap U_{2} = \emptyset$ by construction. Suppose that $y_{1} = y_{2}$, then we need to consider only the distinct points $x_{1}$ and $x_{2}$ on $\R$, but since the relative topology here will just be the standard topology of $\R$, we get Hausdorff for free. So $X$ is Hausdorff for sure.
+
+Now consider $Y$. In particular, to see that $Y$ is not Hausdorff, we choose the distinct points $(0,-1)$ and $(0,+1)$. We note that open sets are defined in $Y$ by the quotient topology, and we use open sets in $X$ under the equivalence relation to get our topology, $\bar{\tau}$.
+
+In particular, suppose again we can pick open balls small enough in $\R^{2}$ around the two points so that the intersection of the open ball with $X$ is restricted to a single line. Call these two open sets $U_{1} = B_{r}((0,1))\cap X$ and $U_{2} = B_{r}((0,-1))\cap X$, where $r < 2$. Suppose that $p_{1} \in U_{1}$, then $\exists x \in \R\setminus \{0\}$ such that $p_{1} = (x,1) \sim (x,-1) \in U_{2}$. So, in $Y$, the open sets will never be disjoint around $(0,1)$ and $(0,-1)$.
+
+Thus $Y$ is not Hausdorff.
+
+\newpage
+
+\textbf{Question 2}
+
+\newpage
+
+\textbf{Question 3}
+
+\textbf{(a)} Suppose $x\in \Sp^{n}\setminus \{N\}$, then we can parameterize the line connecting $x$ and $N$ by the following equation,
+$$y = t(x-N)+ N \hspace{1em} t\in \R$$
+In particular, we can find the $t$ for which this line intersects the subspace defined by $x_{n+1} = 0 \subset \R^{n+1}$,
+$$(y_{1}, \dots, y_{n}, 0) = tx + N(1-t) = (tx_{1}, \dots, tx_{n}, tx_{n+1} + 1 - t)$$
+$$ \implies t(x_{n+1} - 1) + 1 = 0 \iff t = \frac{1}{1-x_{n+1}}$$
+Hence, we see that the intersection of the line connecting $N$ and $x$ with the subspace setting $x_{n+!} = 0$ is just,
+$$\frac{(x_{1},\dots,x_{n},0)}{1-x_{n+1}} = (u,0) = (\sigma(x),0) $$
+as expected. We do the same for $S$, and we see that
+$$y = t(x-S) + S$$
+and again, for the subspace defined by $x_{n+1}= 0$, we get,
+$$ (y_{1}, \dots, y_{n}, 0) = (tx_{1},\dots,tx_{n},tx_{n+1} -1 +t)$$
+$$ \implies tx_{n+1} -1 +t = 0 \iff t = \frac{1}{1 + x_{n+1}}$$
+Hence, the intersection point will be,
+$$\frac{(x_{1},\dots,x_{n},0)}{1+x_{n+1}} = -\frac{(-x_{1},\dots,-x_{n},0)}{1-(-x_{n+1})} = (-\sigma(-x),0) = (\tilde{\sigma}(x),0)$$
+
+again as we would expect.
+
+\textbf{(b)} First we show injection. To see this, suppose that $x,y \in \Sp^{n}\setminus \{N\}$. Then, as we showed in $\textbf{(a)}$, we can relate the image under $\sigma$ of these points to the intersection of the line connecting the point and $N$ with the subspace that sets the $n^{th}+1$ component to 0. That is to say, if $\sigma(x) = \sigma(y)$, then $(\sigma(x),0) = (\sigma(y),0)$, which is to say that the two lines would intersect at that point in the plane defined by setting the $n^{th}+1$ component to 0. Yet, these two lines necessarily intersect at $N$ aswell, so they must be the same line.
+
+Then, we have that this line intersects $\Sp^{n}$ at $N$, by necessity, and both $x$ and $y$. But this is impossible, since a straight line in $R^{n+1}$ will only intersect a sphere at most twice. Further, by supposition, $x \neq N$ and $y \neq N$, and hence it must be that $x=y$. Thus we have that $\sigma$ is injective.
+
+Now we check surjection. The image lies in $\R^{n}$, so suppose $u\in\R^{n}$. In particular, we can again use the fact that $\sigma$ is simply the intersection of the line connecting $N$ and a point on $\Sp^{n}$ with the plane defined by setting the last component to 0. In particular, we then associate $u$ with $(u,0)$. Then, the line connecting this point and $N$ is defined by,
+$$y = t((u,0) - N) + N = (tu,0) + N(1-t) = (tu,1-t)$$
+for $t\in\R$. To find the point $y\in \Sp^{n}\setminus \{N\}$ with which this line intersects, we use the definition of $\Sp^{n}$
+$$1 = \sum_{i=1}^{n+1}y_{i}^{2} = \sum_{i=1}^{n}(tu_{i}) + (1-t)^{2}$$
+$$1 - (1 -2t +t^{2}) = t^{2}|u|^{2}$$
+$$2 - t = t|u|^{2} \iff t = \frac{2}{|u|^{2} +1}$$
+Thus, we have that
+$$y = \left(\frac{2u}{|u|^{2} + 1},1 - \frac{2}{|u|^{2} + 1}\right) = \frac{(2u_{i},\dots,2u_{n},|u|^{2}-1)}{|u|^{2} + 1}$$
+Hence we have that every $u\in\R^{n}$ has a preimage on $\Sp^{n}\setminus \{N\}$, and thus $\sigma$ is surjective.
+
+We can now conclude that $\sigma$ is a bijection, with the inverse stated above.
+
+\textbf{(c)} We note that $\tilde{\sigma} \circ \sigma^{-1}: \R^{n} \to \R^{n}$, since both stereographic projections are bijective. Then, suppose that $u\in\R^{n}$, and from the inverse computed in \textbf{(b)} we see
+$$\tilde{\sigma}(\sigma^{-1}(u)) = \tilde{\sigma}\left(\frac{(2u_{i},\dots,2u_{n},|u|^{2}-1)}{|u|^{2} + 1}\right)$$
+and by definition, we recall that $\tilde{\sigma}(x) = -\sigma(-x)$, thus,
+$$\tilde{\sigma}(\sigma^{-1}(u)) = -\sigma\left(-\frac{(2u_{i},\dots,2u_{n},|u|^{2}-1)}{|u|^{2} + 1}\right) = -\sigma\left(\frac{(-2u_{i},\dots,-2u_{n},-|u|^{2}+1)}{|u|^{2} + 1}\right)$$
+and applying the definition of $\sigma$ we see,
+$$\tilde{\sigma}(\sigma^{-1}(u)) = -\sigma\left(\frac{(-2u_{i},\dots,-2u_{n},-|u|^{2}+1)}{|u|^{2} + 1}\right) = -\frac{(-2u_{i},\dots,-2u_{n})}{(|u|^{2} + 1)(1 + |u|^{2} - 1)} = \frac{(2u_{i},\dots,2u_{n})}{(|u|^{2} + 1)|u|^{2}}$$
+Which is smooth except at the origin, which makes sense considering the stereographic projections get the origin from opposite poles. Further, we recall that both $\sigma$ and $\tilde{\sigma}$ are invertible, and inverse will thus also be smooth. Then, we have a diffeomorphism and hence the two charts are smoothly compatible, and hence the atlas $\{(\sigma,\Sp^{n}\setminus \{N\}),(\tilde{\sigma},\Sp^{n}\setminus \{S\})\}$ is a smooth atlas and gives a smooth structure on $\Sp^{n}$.
+
+\textbf{(d)} FINISH ME
+
+\newpage
+
+\textbf{Question 4}
+
+\textbf{(a)}
 \end{document}
