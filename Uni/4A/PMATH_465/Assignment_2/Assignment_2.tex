@@ -102,5 +102,32 @@ Now all we need to do is convince ourselves that this subset is actually all of 
 
 \textbf{(b)} To see that $\Pro^{n}$ is compact and connected, we use the fact that it is homeomorphic to $\Sp^{n}/\sim$, in particular we know that $\Sp^{n}/\sim$ is the quotient of the compact and connected set $\Sp^{n}\subset \R^{n+1}$. Then, $\Sp^{n}/\sim$ must also be compact and connected, and hence $\Pro^{n}$ is compact and connected since it is homeomorphic to a compact and connected set.
 
-\textbf{(c)} 
+\textbf{(c)} We will start with the sets and corresponding maps $\{U_{i}, \varphi_{i}\}_{i}$.
+
+First, we note that $\varphi_{i}$ is injective by construction. Suppose $[x],[y]\in U_{i}\subset\Pro^{n}$ and $\varphi_{i}([x]) = \varphi_{i}([y])$, but then by definition of $\varphi_{i}$ we must have that $x_{j} = y_{j}$ $\forall j= 1,\dots,n+1$ and hence $\varphi_{i}$ is injective.
+
+\textbf{(i)}
+We need that $\varphi_{i}(U_{i})$ is open in $\R^{n}$. To see this, we recall the projection map $\pi: \R^{n+1}\setminus\{0\} \to \Pro^{n}$ and denote the trivially continuous map $\iota: \R^{n} \to \R^{n+1}\setminus\{0\}$ where $\iota(x_{1},\dots,x_{i-1},x_{i+1},\dots,x_{n+1}) = (x_{1},\dots,x_{i-1},1,x_{i+1},\dots,x_{n+1})$. Then, we notice that $\varphi^{-1} = \pi \circ \iota$, and since both $\iota$ and $\pi$ are continuous, so is $\varphi^{-1}$. Finally, we know that $U_{i}$ is open in $\Pro^{n}$ and hence $\varphi_{i}(U_{i})$ is open.
+
+\textbf{(ii)}
+Fix $\alpha,\beta\in\{1,\dots,n+1\}$, then consider $\varphi_{\alpha}(U_{\alpha}\cap U_{\beta})$ and $\varphi_{\beta}(U_{\alpha}\cap U_{\beta})$: we wish to show these are open in $\R^{n}$. To see this, we only need that $U_{\alpha}\cap U_{\beta}$ is open in $\Pro^{n}$, but this follows from the quotient topology of $\Pro^{n}$. Then, since $U_{\alpha}\cap U_{\beta} \subset U_{\alpha}$, and we already showed prior that $\varphi_{i}^{-1}$ is continuous, we get that $\varphi_{\alpha}(U_{\alpha}\cap U_{\beta})$ is open. A similar argument with $\alpha$ swapped for $\beta$ shows the same for $\varphi_{\beta}(U_{\alpha}\cap U_{\beta})$.
+
+\newpage
+
+\textbf{(iii)}
+Suppose that $U_{\alpha}\cap U_{\beta} \neq \emptyset$. We want
+$$\varphi_{\alpha}\circ\varphi_{\beta}^{-1}: \varphi_{\beta}(U_{\alpha}\cap U_{\beta}) \subset \R^{n} \to \varphi_{\alpha}(U_{\alpha}\cap U_{\beta})\subset \R^{n}$$
+to be a diffeomorphism. To see this, suppose that $p\in U_{\alpha}\cap U_{\beta}$, then if $p = [x_{1}, \dots, x_{n+1}]$, we know that $\varphi_{\beta}(p) = \left(\frac{x_{1}}{x_{\beta}},\dots,\frac{x_{\beta -1}}{x_{\beta}},\frac{x_{\beta+1}}{x_{\beta}},\dots,\frac{x_{n+1}}{x_{\beta}}\right)\in \R^{n}$. Applying our map to this, we see,
+$$\varphi_{\alpha}(\varphi_{\beta}^{-1}(\varphi_{\beta}(p))) = \varphi_{\alpha}\left(\varphi_{\beta}^{-1}\left(\left(\frac{x_{1}}{x_{\beta}},\dots,\frac{x_{\beta -1}}{x_{\beta}},\frac{x_{\beta+1}}{x_{\beta}},\dots,\frac{x_{n+1}}{x_{\beta}}\right)\right)\right)$$
+$$ = \left(\frac{x_{1}}{x_{\alpha}},\dots,\frac{x_{\alpha -1}}{x_{\alpha}},\frac{x_{\alpha+1}}{x_{\alpha}},\dots,\frac{x_{n+1}}{x_{\alpha}}\right)$$
+and since necessarily we have $x_{\alpha} \neq 0$ and $x_{\beta} \neq 0$, we have that this is indeed a diffeomorphism. Indeed the inverse would carry the same property of being smooth, and the bijective properties come from each $\varphi_{i}$ being a homeomorphism.
+
+\textbf{(iv)}
+We need next that $U_{i}$ covers $\Pro^{n}$ for countably many $U_{i}$. This follows directly from the construction of the problem. In particular, we only need the set $\{U_{i}\}_{i}$ where $i = 1,\dots,n+1$. To see this, suppose a point $p\in \Pro^{n}$, then since we recall that $\Pro^{n} = \R^{n+1}\setminus\{0\}/\sim$ where $x \sim y \iff x = ky$ for $k\in \R\setminus \{0\}$, we can conclude that $[0]\notin \Pro^{n}$. Hence, $p$ must have atleast one non-zero element, suppose it is the $i^{th}$ element, then we know that $p\in U_{i}$. Hence all of $\Pro^{n}$ is covered by this open cover, and it is countable since it is finite.
+
+\textbf{(v)} Finally suppose $p,q\in \Pro^{n}$ distinct. Then, without loss of generality, suppose that the $i^{th}$ element of $p$ is zero. Further assume it is non-zero for $q$, then we can see that $\exists j = 1,\dots,i-1,i+1,\dots,n+1$ such that this component of $p$ is non-zero, and hence $p\in U_{j}$ and $q\in U_{i}$ but $p\notin U_{i}$. Now assume that $p$ and $q$ are non-zero in all of the same components, then we have that necessarily $p,q\in U_{i}$ for all such non-zero components.
+
+Hence we have that $\{U_{i},\varphi_{i}\}_{i}$ induces a smooth structure on $\Pro^{n}$.
+
+Now we can look at the second set of maps and sets, $\{V_{i},\psi_{i}\}_{i}$.
 \end{document}
