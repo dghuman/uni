@@ -12,6 +12,7 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
 
 \DeclareMathOperator{\Ima}{Im}
 
@@ -87,11 +88,19 @@ and applying the definition of $\sigma$ we see,
 $$\tilde{\sigma}(\sigma^{-1}(u)) = -\sigma\left(\frac{(-2u_{i},\dots,-2u_{n},-|u|^{2}+1)}{|u|^{2} + 1}\right) = -\frac{(-2u_{i},\dots,-2u_{n})}{(|u|^{2} + 1)(1 + |u|^{2} - 1)} = \frac{(2u_{i},\dots,2u_{n})}{(|u|^{2} + 1)|u|^{2}}$$
 Which is smooth except at the origin, which makes sense considering the stereographic projections get the origin from opposite poles. Further, we recall that both $\sigma$ and $\tilde{\sigma}$ are invertible, and inverse will thus also be smooth. Then, we have a diffeomorphism and hence the two charts are smoothly compatible, and hence the atlas $\{(\sigma,\Sp^{n}\setminus \{N\}),(\tilde{\sigma},\Sp^{n}\setminus \{S\})\}$ is a smooth atlas and gives a smooth structure on $\Sp^{n}$.
 
-\textbf{(d)} FINISH ME
+\textbf{(d)} To see how this smooth structure is the same as the standard smooth structure on $\Sp^{n}$ we consider the charts $(U_{i}^{\pm},\varphi_{i}^{\pm})$ and note that these are exactly our charts when $i = n+1$. Further, since every smooth atlas has a maximal atlas, we can see that the standard smooth structure then must contain the atlas we made above. Hence we have the same smooth structure on the two manifolds.
 
 \newpage
 
 \textbf{Question 4}
 
-\textbf{(a)}
+\textbf{(a)} Denote $\pi_{1} : \R^{n+1} \to \Pro^{n}$ and $\pi_{2} : \Sp^{n} \to \Sp^{n}/\sim$ the respective projection maps. We know that these two maps are homeomorphisms, so we know to expect their composition to also be a homeomorphism. In particular, consider the map
+$$f = \pi_{1} \circ\pi_{2}^{-1}: \Sp^{n}/\sim \to \pi_{1}(\Sp^{n})\subset \Pro^{n}$$
+which is a homeomorphism due to $\pi_{1}$ and $\pi_{2}$ being homeomorphisms, and further is a homeomorphism from $\Sp^{n}/\sim$ to a subset of $\Pro^{n}$.
+
+Now all we need to do is convince ourselves that this subset is actually all of $\Pro^{n}$. To see this, suppose that $p\in \Pro^{n}$, then $\pi_{1}^{-1}(p) \subset \R^{n+1}$ is a real line through the origin such that all those points are sent to $p$ under $\pi_{1}$. But the intersection of this line with $S^{n}$ will correspond with two antipodal points. In particular, $\pi_{2}\left(\pi_{1}^{-1}(p)\cap S^{n}\right)\subset \Sp^{n}/\sim$, and hence every point in $\Pro^{n}$ has a preimage in $\Sp^{n}/\sim$.
+
+\textbf{(b)} To see that $\Pro^{n}$ is compact and connected, we use the fact that it is homeomorphic to $\Sp^{n}/\sim$, in particular we know that $\Sp^{n}/\sim$ is the quotient of the compact and connected set $\Sp^{n}\subset \R^{n+1}$. Then, $\Sp^{n}/\sim$ must also be compact and connected, and hence $\Pro^{n}$ is compact and connected since it is homeomorphic to a compact and connected set.
+
+\textbf{(c)} 
 \end{document}
