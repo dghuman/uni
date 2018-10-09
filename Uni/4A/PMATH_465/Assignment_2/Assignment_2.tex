@@ -39,6 +39,7 @@ In particular, suppose again we can pick open balls small enough in $\R^{2}$ aro
 
 Thus $Y$ is not Hausdorff.
 
+
 \newpage
 
 \textbf{Question 2}
@@ -130,4 +131,35 @@ We need next that $U_{i}$ covers $\Pro^{n}$ for countably many $U_{i}$. This fol
 Hence we have that $\{U_{i},\varphi_{i}\}_{i}$ induces a smooth structure on $\Pro^{n}$.
 
 Now we can look at the second set of maps and sets, $\{V_{i},\psi_{i}\}_{i}$.
+
+\newpage
+
+\textbf{Question 5}
+
+\textbf{(a) Problem 2.3 From Lee}
+
+\textbf{(A)} To show that this map is smooth, we first recall a known relation between $\C$ and $\R^{2}$, in particular, we know that the two are bijective, and hence we can look at $\Sp^{1}$ as being in $\C$ since we can associate the two fields easily and it will make the work much easier.
+
+Now, consider the following map $\phi: \Sp^{1} \to (0,2\pi) \subset \R$ where if $z \in \Sp^{1}$, then $\exists \theta \in \R$ such that $z = e^{i\theta}$ and hence we can let $\phi(z) = \theta$. This clearly does not work for the entire circle, so we define $\phi^{\prime}: \Sp^{1} \to (-\pi,\pi) \subset \R$ to cover the remaining circle, but let it be defined specifically the same way for each $z\in \Sp^{1}$.
+
+We can now consider the actual map between the two circles. In particular, we note that $p_{n}(z) = z^{n}$ for $z\in \C$ is just a rotation in $\C$, since we can assume that $z\in \Sp^{1}$ for our purposes. Then, letting $z\in \Sp^{1}$ with complex representation $e^{i\theta}$ and $\theta\in (0,2\pi)\setminus \{\pi\}$,
+$$\phi^{\prime}\circ f \circ \phi^{-1} (\theta) = \phi^{\prime}\left(p_{n}(e^{i\theta})\right) = \phi^{\prime}\left(e^{in\theta}\right) = n\theta \in (-\pi,\pi)\setminus\{0\}$$
+Clearly this is smooth, and further choosing $\phi = \phi^{\prime}$ makes this even easier. Hence, we can see that all combinations of open sets will leave $f = p_{n}$ smooth, and hence we can say the this map is indeed a smooth map.
+
+\textbf{(B)} We use the stereographic projection we used in the earlier part of this assignment to make the calculation easier. In particular, we then only need the two elements of each atlas,
+$$\sigma(x_{1},\dots,x_{n+1}) = \frac{(x_{1},\dots,x_{n})}{1-x_{n+1}} \hspace{1em} \tilde{\sigma}(y_{1},\dots,y_{n+1}) = -\sigma(-x)$$
+where $x = (x_{1},\dots,x_{n+1})\in \Sp^{n}\setminus \{N\}$, where $N$ is the north pole of the unit sphere. Then we see that these form the smooth atlas of $\Sp^{n}$, and further will be all we need to show the smoothness of $\alpha$.
+
+Suppose that $x\in \Sp^{n}\setminus \{N\}$, then since we already showed that the projective map covers all of $\R^{n}$, we can suppose a preimage for any $p\in \R^{n}$. Then, we see
+$$\tilde{\sigma} \circ \alpha \circ \sigma^{-1} (p) = \tilde{\sigma}(\alpha(x)) = \tilde{\sigma}(-x) = -\sigma(x) = -\frac{(x_{1},\dots,x_{n})}{1-x_{n+1}}$$
+which is clearly smooth, since we know that $x_{n+1} \neq 0$ due to $N$ being removed. Similarly, we can see that $\sigma \circ \alpha \circ \tilde{\sigma}^{-1} (p)$ will also be smooth. Further, the matching patches will be trivially smooth. Thus, we see that the antipodal map $\alpha$ is indeed smooth on these spheres.
+
+\textbf{(C)}
+
+\textbf{(b)} First we show that this map is indeed well defined. In particular, suppose that $[x] = [x^{\prime}]$. Then, we can see that $\exists \lambda \in \R\setminus \{0\}$ such that $x = \lambda x^{\prime}$. In the map, we get
+$$[P(x^{\prime})] = \tilde{P}([x^{\prime}]) = \tilde{P}([x]) = [P(x)]$$
+so that equivalence classes are preserved under this map. But, we also see that
+$$[P(x)] = [P(x^{\prime})] = [P(\lambda x)] = [\lambda^{d}P(x)]$$
+hence we see that scaling elements of the smooth map $P$ still preserves the equivalence class under $\tilde{P}$
+
 \end{document}
