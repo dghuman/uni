@@ -160,6 +160,17 @@ which is clearly smooth, since we know that $x_{n+1} \neq 0$ due to $N$ being re
 $$[P(x^{\prime})] = \tilde{P}([x^{\prime}]) = \tilde{P}([x]) = [P(x)]$$
 so that equivalence classes are preserved under this map. But, we also see that
 $$[P(x)] = [P(x^{\prime})] = [P(\lambda x)] = [\lambda^{d}P(x)]$$
-hence we see that scaling elements of the smooth map $P$ still preserves the equivalence class under $\tilde{P}$
+hence we see that scaling elements of the smooth map $P$ still preserves the equivalence class under $\tilde{P}$. We can conclude that $\tilde{P}$ is indeed a well defined map.
 
+Next, we need to consider $\tilde{P}$ as a map between the smooth manifolds of $\R\Pro^{n}$ and $\R\Pro^{k}$ to show that it is smooth. To do so, we recall the projection maps $\pi_{n}: \R^{n+1}\setminus\{0\} \to \R\Pro^{n}$ and $\pi_{k}: \R^{k+1}\setminus\{0\} \to \R\Pro^{k}$ defined in the standard way for projective space. Further, we know that both of these maps are smooth and form a smooth atlas of their respective spaces with the entirety of their respective domains. Consider the map,
+$$\pi_{k}^{-1} \circ \tilde{P} \circ \pi_{n}: \R^{n+1}\setminus\{0\} \to \R^{k+1}\setminus \{0\}$$
+We need that this map be smooth. We have that $\pi_{n},\pi_{k}$ and $P$ are all smooth. However, we can notice that this map can be written as a combination of smooth maps, in particular,
+$$\tilde{P} = \pi_{k} \circ P \circ \pi_{n}^{-1}$$
+indeed,
+$$\tilde{P}([x]) = \pi_{k}\left(P\left(\pi_{n}^{-1}\left([x]\right)\right)\right) = \pi_{k}\left(P(tx)\right) = \pi_{k}\left(t^{d}P(x)\right) = [P(x)]$$
+where $t\in \R\setminus \{0\}$. Thus,
+$$\pi_{k}^{-1} \circ \tilde{P} \circ \pi_{n} = \pi_{k}^{-1} \circ \left(\pi_{k} \circ P \circ \pi_{n}^{-1}\right) \circ \pi_{n} = P$$
+which we know to be smooth. Thus we can conclude that $\tilde{P}$ is smooth.
+
+\textbf{(c)}
 \end{document}
