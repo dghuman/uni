@@ -11,6 +11,7 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
 \newcommand{\Sp}{\mathbb{S}}
 \newcommand{\Pro}{\mathbb{P}}
 
@@ -44,6 +45,11 @@ Thus $Y$ is not Hausdorff.
 
 \textbf{Question 2}
 
+First, we see that we can construct a very simple topology on $X$. Namely, let $\tau$ be the collection of subsets that consist of all possible unions of $I_{n}$ $\forall n \in \N$ with one another, and we include $\emptyset$. This is a topology, since $\emptyset, X\in \tau$, unions are in $\tau$ by construction, and intersections are either $\emptyset$, a single $I_{n}$ or a union of such sets, and hence is in our topology.
+
+Now that we are convinced this is a toplogy, we can construct a basis for this by letting $\mathcal{B} = \{I_{n}\}_{n\in \N}$. That is, our basis is just the collection of the intervals identified by the corresponding natural. Then, clearly all open sets can be constructed out of a union of our basis elements, and moreover this basis is countable by construction.
+
+Finally, we need to show that $Y = X/\sim$ is not first countable. To see this, consider the envoked quotient topology, $\tau_{\sim}$. Clearly, by definition of quotient topology, we see that $\pi (I_{n}) \in \tau_{\sim}$, where $\pi$ is the quotient map, sending elements to their equivalence class. Then, by the topology definition, 
 \newpage
 
 \textbf{Question 3}
@@ -172,5 +178,16 @@ where $t\in \R\setminus \{0\}$. Thus,
 $$\pi_{k}^{-1} \circ \tilde{P} \circ \pi_{n} = \pi_{k}^{-1} \circ \left(\pi_{k} \circ P \circ \pi_{n}^{-1}\right) \circ \pi_{n} = P$$
 which we know to be smooth. Thus we can conclude that $\tilde{P}$ is smooth.
 
-\textbf{(c)}
+\textbf{(c)} First, we note that removing a single point, namely $0$, from $\R^{n+1}$ will still leave it as a smooth manifold under the standard topology, of dimension $n+1$. Then, to show that the quotient map is indeed smooth, we need to consider the map
+$$\phi_{i} \circ \pi :\R^{n+1}\setminus \{0\} \to \R^{n}$$
+where
+$$\phi_{i}: U_{i} \to \R^{n}, [x_{1}:\cdots:x_{n+1}]\mapsto \left(\frac{x_{1}}{x_{i}},\dots,\frac{x_{i-1}}{x_{i}},\frac{x_{i+1}}{x_{i}},\dots,\frac{x_{n+1}}{x_{i}}\right)$$
+$$U_{i} = \{[x_{1}:\cdots:x_{n+1}]\in \Pro^{n}| x_{i}\neq 0\}$$
+To see that this map is smooth, consider some $(x_{1},\dots,x_{n+1})\in \R^{n+1}$, then
+$$\phi_{i}\left(\pi\left((x_{1},\dots,x_{n+1})\right)\right) = \phi_{i}\left([x_{1}:\cdots:x_{n+1}]\right) = \left(\frac{x_{1}}{x_{i}},\dots,\frac{x_{i-1}}{x_{i}},\frac{x_{i+1}}{x_{i}},\dots,\frac{x_{n+1}}{x_{i}}\right)$$
+which shows us that our composition is indeed smooth since $x_{i}\neq 0$ by construction.
+
+We have already shown that the quotient map is smooth, so we can use that to show that $\Pro^{1}$ is diffeomorphic to $\Sp^{1}$. In particular, we can think of the circle as a restriction of $\R^{2}\setminus \{0\}$, namely $\R^{2}\cap \Sp^{1}\subset \R^{2}\setminus \{0\}$. Then, we see that $f$ is still smooth from prior. We now just need to show that it is a bijection and invertible and we are done.
+
+To see that $\pi$ is indeed a bijection, suppose that 
 \end{document}
