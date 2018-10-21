@@ -49,7 +49,10 @@ First, we see that we can construct a very simple topology on $X$. Namely, let $
 
 Now that we are convinced this is a toplogy, we can construct a basis for this by letting $\mathcal{B} = \{I_{n}\}_{n\in \N}$. That is, our basis is just the collection of the intervals identified by the corresponding natural. Then, clearly all open sets can be constructed out of a union of our basis elements, and moreover this basis is countable by construction.
 
-Finally, we need to show that $Y = X/\sim$ is not first countable. To see this, consider the envoked quotient topology, $\tau_{\sim}$. Clearly, by definition of quotient topology, we see that $\pi (I_{n}) \in \tau_{\sim}$, where $\pi$ is the quotient map, sending elements to their equivalence class. Then, by the topology definition, 
+Finally, we need to show that $Y = X/\sim$ is not first countable. To see this, we suppose that $Y$ is indeed first countable, and in particular suppose so at $[(1,0])$. Then, $\exists (U_{i})_{i\in\N}$ such that any open set around $[(1,0)]$ contains some $U_{i}$.
+
+However, this equivalence class already gives rise to a contradiction that doesn't allow for open sets to contain it. The quotient topology of the above topology gives that the intersection of any two $I_{n}$ and $I_{m}$ must be contained in the topology. But, under this equivalence relation, we see that the end points have been associated as being equivalent, which implies that we would expect just this singleton equivalence class to be open on it's own. However, the preimage of this element is not open in $X$. Thus, we could not possibly construct open sets around this points, since it can not be contained in any open set at all.
+
 \newpage
 
 \textbf{Question 3}
@@ -160,7 +163,32 @@ Suppose that $x\in \Sp^{n}\setminus \{N\}$, then since we already showed that th
 $$\tilde{\sigma} \circ \alpha \circ \sigma^{-1} (p) = \tilde{\sigma}(\alpha(x)) = \tilde{\sigma}(-x) = -\sigma(x) = -\frac{(x_{1},\dots,x_{n})}{1-x_{n+1}}$$
 which is clearly smooth, since we know that $x_{n+1} \neq 0$ due to $N$ being removed. Similarly, we can see that $\sigma \circ \alpha \circ \tilde{\sigma}^{-1} (p)$ will also be smooth. Further, the matching patches will be trivially smooth. Thus, we see that the antipodal map $\alpha$ is indeed smooth on these spheres.
 
-\textbf{(C)}
+\textbf{(C)} To see how this will work, we first see the correspondence of $\C^{2}$ with $\R^{4}$. In particular, we see that the natural bijection is $(x_{1},x_{2},x_{3},x_{4}) \mapsto (x_{1} + ix_{2},x_{3} + ix_{4})$. This bijection holds our definition of the sphere consistent. Let's call the correspondance map, $f$. Further notice that this map is smooth.
+
+Next, we need to consider the charts of each surface. We use the stereographic projection, since we know it is smooth. Then, let $\theta_{i}: \Sp^{3}\to \R^{3}$ and $\sigma_{j}: \Sp^{2} \to \R^{2}$ be the corresponding stereographic projections, with the appropriate open sets, say $U_{i}\subset \Sp^{3}$ and $V_{j}\subset \Sp^{2}$, which are defined as in \textbf{Q3}.
+
+Then, we need to look at the map
+$$\sigma_{j} \circ F \circ f \circ \theta_{i}^{-1}: \theta_{i}(U_{i}\cap F^{-1}(V_{j}))\subset \R^{3} \to \sigma_{j}(F(U_{i})\cap V_{j})\subset \R^{2}$$ 
+We need to compute this map explicitly for a particular point. Since $\theta_{i}$ is surjective, let $p\in \R^{3}$ such that $\theta((x_{1},x_{2},x_{3},x_{4})) = p$. Then,
+$$\sigma_{j} \left( F \left( f \left (\theta_{i}^{-1} (p)\right)\right) \right) = \sigma_{j} \left( F \left( f \left( (x_{1},x_{2},x_{3},x_{4})\right)\right)\right) = \sigma_{j} \left( F \left( (x_{1} +ix_{2}, x_{3} + ix_{4})\right)\right)$$
+but letting $x_{1} + ix_{2} = w$ and $x_{3} + ix_{4} = z$, we see
+$$\sigma_{j} \left( F \left( f \left (\theta_{i}^{-1} (p)\right)\right) \right) = \sigma_{j} \left( F \left( (w,z)\right)\right) = \sigma_{j} \left((z\bar{w} + w\bar{z},iw\bar{z} - iz\bar{w},z\bar{z} - w\bar{w}))\right)$$
+We now compute each component...
+$$z\bar{w} + w\bar{z} = (x_{1} + ix_{2})(x_{3} - ix_{4}) + (x_{3} + ix_{4})(x_{1} - ix_{2}) = 2x_{1}x_{3} + 2x_{2}x_{4}$$
+
+$$iw\bar{z} - iz\bar{w} = i(x_{3} + ix_{4})(x_{1}-ix_{2}) - i(x_{1} + ix_{2})(x_{3} - ix_{4}) = -2x_{1}x_{4} -2x_{2}x_{3}$$
+
+$$z\bar{z} - w\bar{w} = (x_{1} + ix_{2})(x_{1} - ix_{2}) - (x_{3} + ix_{4})(x_{3} - ix_{4}) = x_{1}^{2} + x_{2}^{2} - x_{3}^{2} - x_{4}^{2}$$
+
+Then, we can apply the $\sigma_{j}$ map. For sake of clarity, we show all 3 cases for $j$. Notice, letting $(z\bar{w} + w\bar{z},iw\bar{z} - iz\bar{w},z\bar{z} - w\bar{w}) = q$, we get
+
+$$\sigma_{1}(q) = \frac{(-2x_{1}x_{4} - 2x_{2}x_{3},x_{1}^{2} + x_{2}^{2} - x_{3}^{2} - x_{4}^{2})}{1 - (2x_{1}x_{3} + 2x_{2}x_{4})^{2}}$$
+
+$$\sigma_{2}(q) = \frac{(2x_{1}x_{3} + 2x_{2}x_{4},x_{1}^{2} + x_{2}^{2} - x_{3}^{2} - x_{4}^{2})}{1 - (-2x_{1}x_{4} - 2x_{2}x_{3})^{2}}$$
+
+$$\sigma_{3}(q) = \frac{(2x_{1}x_{3} + 2x_{2}x_{4},-2x_{1}x_{4} - 2x_{2}x_{3})}{1- (x_{1}^{2} + x_{2}^{2} - x_{3}^{2} - x_{4}^{2})^{2}}$$
+
+which are all smooth with the appropriate subset. Thus, we see that $F$ is smooth.
 
 \textbf{(b)} First we show that this map is indeed well defined. In particular, suppose that $[x] = [x^{\prime}]$. Then, we can see that $\exists \lambda \in \R\setminus \{0\}$ such that $x = \lambda x^{\prime}$. In the map, we get
 $$[P(x^{\prime})] = \tilde{P}([x^{\prime}]) = \tilde{P}([x]) = [P(x)]$$
@@ -187,7 +215,13 @@ To see that this map is smooth, consider some $(x_{1},\dots,x_{n+1})\in \R^{n+1}
 $$\phi_{i}\left(\pi\left((x_{1},\dots,x_{n+1})\right)\right) = \phi_{i}\left([x_{1}:\cdots:x_{n+1}]\right) = \left(\frac{x_{1}}{x_{i}},\dots,\frac{x_{i-1}}{x_{i}},\frac{x_{i+1}}{x_{i}},\dots,\frac{x_{n+1}}{x_{i}}\right)$$
 which shows us that our composition is indeed smooth since $x_{i}\neq 0$ by construction.
 
-We have already shown that the quotient map is smooth, so we can use that to show that $\Pro^{1}$ is diffeomorphic to $\Sp^{1}$. In particular, we can think of the circle as a restriction of $\R^{2}\setminus \{0\}$, namely $\R^{2}\cap \Sp^{1}\subset \R^{2}\setminus \{0\}$. Then, we see that $f$ is still smooth from prior. We now just need to show that it is a bijection and invertible and we are done.
+We have already shown that $\pi$ is smooth, so we can use that to show that $\Pro^{1}$ is diffeomorphic to $\Sp^{1}$. In particular, we know that the stereographic projection of $\Sp^{1}$ is a smooth construction of the circle, as we showed in \textbf{Q3}, so we can use the inverse of that construction in composition with our $\pi$ map to build a diffeomorphism.
 
-To see that $\pi$ is indeed a bijection, suppose that 
+In particular, since both maps are smooth, by previous parts, we can assume that the composition is also smooth. Further, both maps have smooth inverses, so we have a smooth inverse for free as well. All we need is that the composition be a bijection. Explicitly, we denote $\sigma_{i}: \Sp^{1}\setminus P_{i}\to \R$, where $P_{i}$ denotes the appropriate pole, as the stereographic projection. 
+
+Then, we consider the map,
+$$f_{i} = \phi_{i}\circ \sigma_{i}^{-1}: \Pro^{1} \to \Sp^{1} \hspace{1em} i=1,2$$
+We get surjection for free since both charts map surjectively onto $\R$. Injection follows from each chart being an injection. Specifically, we note that both $\phi_{i}$ and $\sigma_{i}$ are injective, which has been shown prior, and hence we can conclude that the corresponding composition of the maps will be injective.
+
+Thus, we get a diffeomorphism.
 \end{document}

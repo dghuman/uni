@@ -1,0 +1,135 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 465 $|$  Assignment 3}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Question 1}
+
+\textbf{(a)} To see this, consider the open cover $\{M\setminus A,M \setminus B\}$. Then by theorem, we have a partition of unity subordinate to this cover denoted by $\{\varphi_{1}:M\setminus A \to \R\}\cup\{\varphi_{2}:M\setminus B\to \R\}$. In particular, note that we can let
+$$f = \varphi_{1}$$
+and such an $f$ will satisfy our conditions. To see this, first note that $supp(f) = supp(\varphi_{1})\subset M\setminus A$, thus $f(q) = 0$ $\forall q \in A$, as we want. Next, note that since this is a partition of unity, $0 \leq f(x) \leq 1$ $\forall x \in M$ by definition. Finally, notice that $\forall p\in B$,
+$$1 = \sum_{i=1}^{2}\varphi_{i}(p) = \varphi_{1}(p) + \varphi_{2}(p) = \varphi_{1}(p) = f(p)$$
+since $supp(\varphi_{2}) \subset M\setminus B$, and is smooth by theorem (there always exists smooth partition of unity). Thus, such an $f$ satisfies our function.
+
+\textbf{(b)} We need to construct a function that is only 1 on the closed set $B\subset M$ and is only 0 on the closed set $A\subset M$ where $A\cap B = \emptyset$ so that the inverse is well defined. To do this, we first need to construct an open cover that seperates our three sets of interest, namely $A, B$ and the rest of $M$.
+
+First, we construct our open set $U$ around B. We know that $M\setminus A$ is open, and we can build another open set containing $B$ by taking the union of open sets around each point in $B$, as in $\cup_{p\in B}W_{p}$, where $p\in W_{p}$ and $W_{p}$ is open. Then, we let $U = (M\setminus A)\cap(\cup_{p\in B}W_{p})$, and we see that $U$ is clearly open and $U \cap A = \emptyset$.
+
+We can build a similar open set, $V$, for $A$ such that $V\cap B = \emptyset$ in an analagous way.
+
+We now use our partition of unity subordinate to the open cover $\{M\setminus (A\cup B),U,V\}$, denoted by $\{\varphi_{1}:M\setminus (A\cup B) \to \R\}\cup\{\varphi_{2}:U \to \R\}\cup\{\varphi_{3}:V\to \R\}$, and in particular we denote
+$$f(p) = \varphi_{2}(p)$$
+Now we check if such an $f$ satisfies our conditions. First, clearly $f: M \to \R$ and is $C^{\infty}$ by definition of smooth partition function. Next, consider $f^{-1}(1)$.
+
+FINISH ME
+
+\textbf{(c)} We construct our partition of unity $\{\varphi_{1}: U \to \R,\varphi_{2}: M\setminus A \to \R\}$ subordinate to the open cover $\{U,M\setminus A\}$, where $M\setminus A$ is open since $A$ is closed. Then, we see that we can simply let $f = \varphi_{1}$.
+
+First, $\forall p \in A$, we see that
+$$1 = \sum_{i=1}^{2}\varphi_{i}(p) = \varphi_{1}(p) + \varphi_{2}(p) = \varphi_{1}(p) = f(p)$$
+since $supp(\varphi_{2}) \subset M\setminus A$. Next, we see that since $\varphi_{1}$ is a partition of unity,
+$$0 \leq f(x) = \varphi(1)(x) \leq 1 \hspace{1em} \forall x \in M$$
+by definition. Finally, $supp(f) = supp(\varphi_{1}) \subset U$ as required.
+
+Thus $f$ satisfies our conditions.
+
+\textbf{(d)} To do
+
+\newpage
+
+\textbf{Question 2}
+
+\textbf{(a)} We have already shown in class that $\R^{n}$ is indeed a smooth manifold. Further, vectors under addition in $\R^{n}$ trivially form a group, as it follows from component addition since the vector space is defined over a field. All we need then is that the inverse and addition form a smooth map.
+
+First we consider the group law, $f: \R^{n} \times \R^{n} \to \R^{n}$ which we must show is smooth. We note that $\R^{n}\times \R^{n}$ is a smooth manifold as well, since finite products of smooth manifolds are smooth manifolds where the underlying smooth structure is induced by the smooth structure of each smooth manifold. Then, we see that
+$$f(v,w) = v+w \hspace{1em} \forall v,w\in \R^{n}$$
+is the explicit map for the group law. Further, we know that a smooth atlas of $\R^{n}$ is just the identity map $\{id: \R^{n} \to \R^{n}\}$, and similarly for $\R^{n}\times\R^{n}$, since $\R^{n}\times\R^{n} \simeq \R^{2n}$. Then,
+$$id\circ f \circ id^{-1}: \R^{n}\times\R^{n} \simeq \R^{2n} \to \R^{n}$$
+and in particular, $\forall v,w\in \R^{n}$,
+$$id\circ f\circ id^{-1}(v,w) = id(f(v,w)) = id(v + w) = v+w$$
+which is smooth.
+
+Next we look at the inverse map, $\iota: \R^{n} \to \R^{n}$, where $\iota(v) = -v$ $\forall v\in \R^{n}$. Then, again we use the identity map as our patch map,
+$$id\circ \iota \circ id^{-1}(v) = id(\iota(v)) = id(-v) = -v \hspace{1em} \forall v\in \R^{n}$$
+which is smooth.
+
+Thus, we have that $\R^{n}$ is a Lie group.
+
+\textbf{(b)} We first need that $\R^{*}$ is a smooth manifold. By the smooth construction lemma, we see that if we let our collection of open sets be the standard topology on $\R$ but remove $\{0\}$ from all of the open sets, we still end up with a topology. Further, for each such open set, we use the identity map as our injective map, $id: U_{\alpha}\to \R$, where $U_{\alpha}$ is such an open set.
+
+Then, the conditions for the smooth construction lemma follow from $\R$ being a smooth manifold, as all we do is remove $\{0\}$ from our set.
+
+Next we show that the group law, $f: \R^{*}\times \R^{*} \to \R^{*}$ where $f(a,b) = ab$ for $a,b\in \R{*}$ is a smooth map. We know that $\R^{*}\times \R^{*}$ is a smooth manifold, and we use the identity map as our surface patch again. Then,
+$$id \circ f \circ id^{-1}: \R^{*}\times\R^{*} \to \R^{*}$$
+where for $a,b\in \R^{*}$,
+$$id \circ f \circ id^{-1}(a,b) = id(f(a,b)) = id(ab) = ab$$
+is smooth.
+
+Now we consider the inverse map $\iota : \R^{*} \to \R^{*}$ where $\iota(a) = \frac{1}{a}$ for $a\in \R^{*}$. Then we see that
+$$id \circ \iota id^{-1}: \R^{*} \to \R^{*}$$
+where for $a \in \R^{*}$,
+$$id \circ \iota \circ id^{-1}(a) = id(f(a)) = id\left(\frac{1}{a}\right) = \frac{1}{a}$$
+which is smooth since $0 \notin \R^{*}$.
+
+Hence we have that $\R^{*}$ is a Lie Group.
+
+\textbf{(c)} We already know that $S^{1}$ is a smooth manifold since $\C$ can be associated with $\R^{2}$. Further, we get that the product manifold is also smooth. 
+\newpage
+
+\textbf{Question 3}
+
+\textbf{(a)} Suppose $f\in C^{\infty}(N)$, $a,b \in \R$ and $X,Y\in T_{p}M$ for $p\in M$. Then,
+$$F_{*}(aX + bY) = (aX + bY)(f\circ F) = aX(f\circ F) + bY(f\circ F) = aF_{*}(X)(f) + bF_{*}(Y)(f)$$
+and hence $F_{*}$ is linear.
+
+\textbf{(b)} Suppose that $f\in C^{\infty}(P)$, $X\in T_{p}M$. Then,
+$$(G\circ F)_{*}(X)(f) = X(f\circ (G\circ F)) = X((f\circ G)\circ F) = F_{*}(X(f\circ G)) = G_{*}\circ F_{*}(X)(f)$$
+as required.
+
+\textbf{(c)} Suppose that $f\in C^{\infty}(M)$ and $X\in T_{p}M$. Then,
+$$(Id_{M})_{*}(X)(f) = X(f\circ Id_{M}) = X(f) \in T_{p}M$$
+as expected.
+
+\textbf{(d)} By property \textbf{(a)} we have that $F_{*}$ is linear and hence we know that scalar multiplication and addition of derivations is preserved under the map $F_{*}$. Next, we need that $F_{*}$ is a bijection. Suppose $X,Y\in T_{p}M$ and $f\in C^{\infty}(N)$. 
+
+First, suppose that $F_{*}(X)(f) = F_{*}(Y)(f)$, then,
+$$F_{*}(X)(f) = X(f\circ F) \hspace{2em} F_{*}(Y)(f) = Y(f\circ F)$$
+$$\implies X(f\circ F) = Y(f\circ F)$$
+however, since $F$ is a bijection (by diffeomorphism), it is in particular injective and hence $\exists q \in N$ unique such that $F(p) = q$ and hence 
+$$X(f(q)) = Y(f(q))\implies X = Y \hspace{1em}\forall p\in M$$
+thus we can conclude that $F_{*}$ is injective.
+
+Next, suppose $Z\in T_{q}N$ for some $q\in N$, but $F$ is surjective so $\exists p \in M$ such that $F(p) = q$. Then,
+$$T_{q}N \ni Z(f(p)) = Z(f\circ F(p)) = F_{*}(Z)(f) \implies Z \in T_{p}M$$
+hence we have that $F_{*}$ is surjective.
+
+Thus, $F_{*}$ is a bijection that preserves the vector addition and scalar multiplication (via linearity). Thus $F_{*}$ is an isomorphism.
+
+\newpage
+
+\textbf{Question 4}
+
+\end{document}
