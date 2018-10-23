@@ -96,7 +96,29 @@ which is smooth since $0 \notin \R^{*}$.
 
 Hence we have that $\R^{*}$ is a Lie Group.
 
-\textbf{(c)} We already know that $S^{1}$ is a smooth manifold since $\C$ can be associated with $\R^{2}$. Further, we get that the product manifold is also smooth. 
+\textbf{(c)} We already know that $S^{1}$ is a smooth manifold since $\C$ can be associated with $\R^{2}$. Further, we get that the product manifold is also smooth, and $S^{1}$ is a group under multiplication, since we just get rotations on the circle in $\C$, inverses exist under angle addition, the identity is an angle of 0, or multiplication by 1, and associativity follows from real addition.
+
+First we need that the group operation is a smooth map. To see this, we consider the smooth atlas $\mathcal{A} = \{\varphi,U\}\cup\{\psi,V\}$ where
+$$\varphi: U = S^{1}\setminus \{1\} \to (0,2\pi)\subset \R  \hspace{2em} \varphi(z = e^{i\theta}) = \theta \in \varphi(U)$$
+$$\psi: V = S^{1}\setminus \{-1\} \to (-\pi,\pi)\subset \R  \hspace{2em} \psi(z = e^{i\theta}) = \theta \in \psi(V)$$
+
+We already know this is smooth, and further $$\mathcal{B} = \mathcal{A}\times \mathcal{A}$$ will also induce a smooth structure on $S^{1}\times S^{1}$ since the atlas will use the smooth compatability of each component.
+
+Then, consider the following map, where
+$$f: S^{1}\times S^{1} \to S^{1} \hspace{2em} f(w = e^{i\theta},z = e^{i\phi}) = e^{i\theta}e^{i\phi} = e^{i(\theta+\phi)}\in S^{1}$$
+is the group operation, and
+$$\varphi \circ f \circ (\varphi,\psi)^{-1}: \varphi(U)\times \psi(V) \subset \R\times\R \to \R$$
+is one of the maps we need to show is smooth. In particular, we note that $\varphi,\psi$ are both smooth maps already, so $(\varphi,\psi)$ is also smooth (with smooth inverse).
+
+In particular, we notice that $f$ is necessarily smooth since it is simply the product of exponentials as stated in the definition. Thus, the composition map $\varphi \circ f \circ (\varphi,\psi)^{-1}$ will also be smooth since each component is smooth.
+
+Now we consider the inverse map, $\iota: S^{1} \to S^{1}$, where if $z\in \S^{1}$, we get
+$$\iota(z = e^{i\theta}) = e^{i(-\theta)} = e^{-i\theta}$$
+which is clearly smooth, and since $\varphi,\psi$ are smooth with smooth inverses, we get that the composition will also be smooth. Thus the inverse map is also smooth.
+
+Hence, since the group product and inverse map are both smooth, we get that $S^{1}\subset \C$ does form a Lie group under multiplication.
+
+\textbf{(d)}
 \newpage
 
 \textbf{Question 3}
@@ -132,4 +154,13 @@ Thus, $F_{*}$ is a bijection that preserves the vector addition and scalar multi
 
 \textbf{Question 4}
 
+Suppose $N$ is an $n$-dimensional smooth manifold and $M$ is an $m$-dimensional smooth manifold. Further, suppose $F: N\to M$ is a diffeomorphism. 
+
+Suppose that $p\in M$. Then, since $F$ is a diffeomorphism, it is a bijection, hence $\exists q\in N$ such that $F(q) = p$ and $F^{-1}(p) = q$. Hence, by definition of smooth manifold, $\exists \varphi: U \to \R^{n}$ where $q\in U$, $U$ open and $\varphi$ is a diffeomorphism.
+
+We know that diffeomorphisms send open sets to open sets, since a diffeomorphism is a homeomorphism, hence we see that $p\in F^(U)$ is an open set in $M$. Then, we see that $p$ has an open neighbourhood that is diffeomorphic to $\R^{n}$ through the map
+$$\varphi \circ F^{-1}: F(U)\subset M \to \R^{n}$$
+This is true $\forall p\in M$, hence every point in $M$ has an open neighbourhood diffeomorphic to $\R^{n}$, and thus $M$ is of diminsion $n$.
+
+Notice how a similar argument can be made $\forall q\in N$, and hence $N$ is of dimension $m$. Thus clearly we see that $m=n$.
 \end{document}
