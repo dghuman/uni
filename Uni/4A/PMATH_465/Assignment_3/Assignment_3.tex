@@ -36,15 +36,14 @@ since $supp(\varphi_{2}) \subset M\setminus B$, and is smooth by theorem (there 
 
 \textbf{(b)} We need to construct a function that is only 1 on the closed set $B\subset M$ and is only 0 on the closed set $A\subset M$ where $A\cap B = \emptyset$ so that the inverse is well defined. To do this, we first need to construct an open cover that seperates our three sets of interest, namely $A, B$ and the rest of $M$.
 
-First, we construct our open set $U$ around B. We know that $M\setminus A$ is open, and we can build another open set containing $B$ by taking the union of open sets around each point in $B$, as in $\cup_{p\in B}W_{p}$, where $p\in W_{p}$ and $W_{p}$ is open. Then, we let $U = (M\setminus A)\cap(\cup_{p\in B}W_{p})$, and we see that $U$ is clearly open and $U \cap A = \emptyset$.
+First we build open sets around $A$ and $B$ such that the intersection of the two is empty. We use the Hausdorff Property of the smooth manifold to do so. First, we can build an open set around $B$ by taking the union of open neighbourhoods around each point, $W_{p}$ where $p\in W_{p}$. Similarly, we can do the same for $A$ with open sets $V_{q}$ where $q\in V_{q}$. But, by the Hausdorff property of manifolds, we can see that if $V_{q}\cap W_{p} \neq \emptyset$, then $\exists \tilde{V}_{q},\tilde{W}_{p}$ such that $\tilde{V}_{q}\cap\tilde{W}_{p} = \emptyset$. Thus,
+$$U_{A} = \cup_{q\in A}\tilde{V}_{q} \hspace{2em} U_{B} = \cup_{p \in B}\tilde{W}_{p} \hspace{2em} U_{A}\cap U_{B} = \emptyset$$
 
-We can build a similar open set, $V$, for $A$ such that $V\cap B = \emptyset$ in an analagous way.
+Now, we can consider the open cover $\{U_{A},U_{B},M\setminus\{A\cup B\}\}$, and by the existence of partitions of unity, we can suppose such a partition with maps $\{\varphi_{A},\varphi_{B},\psi\}$. Now, we need a function such that it is $1$ only on $B$ and $0$ only on $A$. To build this, we use the Level Sets of Smooth Functions theorem.
 
-We now use our partition of unity subordinate to the open cover $\{M\setminus (A\cup B),U,V\}$, denoted by $\{\varphi_{1}:M\setminus (A\cup B) \to \R\}\cup\{\varphi_{2}:U \to \R\}\cup\{\varphi_{3}:V\to \R\}$, and in particular we denote
-$$f(p) = \varphi_{2}(p)$$
-Now we check if such an $f$ satisfies our conditions. First, clearly $f: M \to \R$ and is $C^{\infty}$ by definition of smooth partition function. Next, consider $f^{-1}(1)$.
-
-FINISH ME
+By this theorem, for $A$ and $B$ $\exists  f_{A},f_{B}\in C^{\infty}(M)$ respectively, such that $f_{A}^{-1}(0) = A$ and $f_{B}^{-1}(0) = B$. Thus, we can use the function
+$$f = \frac{1}{2} + \frac{f_{A}}{2(f_{A} + \phi_{A})} - \frac{f_{B}}{2(f_{B} + \phi_{B})}.$$
+First, we note this function is smooth, and is bounded between $0$ and $1$. Next, notice that if $p\in A$, then $f(p) = 0$, if $p \in B$ then $f(p) = 1$.
 
 \textbf{(c)} We construct our partition of unity $\{\varphi_{1}: U \to \R,\varphi_{2}: M\setminus A \to \R\}$ subordinate to the open cover $\{U,M\setminus A\}$, where $M\setminus A$ is open since $A$ is closed. Then, we see that we can simply let $f = \varphi_{1}$.
 
@@ -56,7 +55,7 @@ by definition. Finally, $supp(f) = supp(\varphi_{1}) \subset U$ as required.
 
 Thus $f$ satisfies our conditions.
 
-\textbf{(d)} To do
+\textbf{(d)} 
 
 \newpage
 
@@ -78,11 +77,11 @@ which is smooth.
 
 Thus, we have that $\R^{n}$ is a Lie group.
 
-\textbf{(b)} We first need that $\R^{*}$ is a smooth manifold. By the smooth construction lemma, we see that if we let our collection of open sets be the standard topology on $\R$ but remove $\{0\}$ from all of the open sets, we still end up with a topology. Further, for each such open set, we use the identity map as our injective map, $id: U_{\alpha}\to \R$, where $U_{\alpha}$ is such an open set.
+\textbf{(b)} First we note that $\R^{*}$ is indeed a group under multiplication. This follows from the component multiplication being multiplication in $\R$, which is associative, has identity, and has multiplicative inverses. Further the product is closed in the group with the zero vector removed. 
 
-Then, the conditions for the smooth construction lemma follow from $\R$ being a smooth manifold, as all we do is remove $\{0\}$ from our set.
+We note that the set $\{0\}$ is closed, hence the complement, $\R^{*}$ is open in $\R$, and hence the ambient standard topology of $\R$ equips $\R^{*}$ with a smooth atlas, and hence makes $\R^{*}$ a smooth manifold.
 
-Next we show that the group law, $f: \R^{*}\times \R^{*} \to \R^{*}$ where $f(a,b) = ab$ for $a,b\in \R{*}$ is a smooth map. We know that $\R^{*}\times \R^{*}$ is a smooth manifold, and we use the identity map as our surface patch again. Then,
+Next we show that the group law, $f: \R^{*}\times \R^{*} \to \R^{*}$ where $f(a,b) = ab$ for $a,b\in \R{*}$ is a smooth map. We know that $\R^{*}\times \R^{*}$ is a smooth manifold, and we use the identity map as our surface patch. Then,
 $$id \circ f \circ id^{-1}: \R^{*}\times\R^{*} \to \R^{*}$$
 where for $a,b\in \R^{*}$,
 $$id \circ f \circ id^{-1}(a,b) = id(f(a,b)) = id(ab) = ab$$
@@ -107,18 +106,44 @@ We already know this is smooth, and further $$\mathcal{B} = \mathcal{A}\times \m
 Then, consider the following map, where
 $$f: S^{1}\times S^{1} \to S^{1} \hspace{2em} f(w = e^{i\theta},z = e^{i\phi}) = e^{i\theta}e^{i\phi} = e^{i(\theta+\phi)}\in S^{1}$$
 is the group operation, and
-$$\varphi \circ f \circ (\varphi,\psi)^{-1}: \varphi(U)\times \psi(V) \subset \R\times\R \to \R$$
-is one of the maps we need to show is smooth. In particular, we note that $\varphi,\psi$ are both smooth maps already, so $(\varphi,\psi)$ is also smooth (with smooth inverse).
+$$\varphi \circ f \circ (\varphi\times\psi)^{-1}: \varphi(U)\times \psi(V) \subset \R\times\R \to \R$$
+is one of the maps we need to show is smooth. In particular, we note that $\varphi,\psi$ are both smooth maps already, so, for $\theta\in (0,2\pi)\subset \R$ and $\phi \in (-\pi,\pi)\subset \R$
+$$\varphi \circ f \circ (\varphi\times\psi)^{-1} (\theta,\phi) = \theta + \phi \in \R$$
 
-In particular, we notice that $f$ is necessarily smooth since it is simply the product of exponentials as stated in the definition. Thus, the composition map $\varphi \circ f \circ (\varphi,\psi)^{-1}$ will also be smooth since each component is smooth.
+which is smooth. This will hold for all other combinations, so we have that the group product is smooth.
 
-Now we consider the inverse map, $\iota: S^{1} \to S^{1}$, where if $z\in \S^{1}$, we get
+Now we consider the inverse map, $\iota: S^{1} \to S^{1}$, where if $z\in S^{1}$, we get
 $$\iota(z = e^{i\theta}) = e^{i(-\theta)} = e^{-i\theta}$$
 which is clearly smooth, and since $\varphi,\psi$ are smooth with smooth inverses, we get that the composition will also be smooth. Thus the inverse map is also smooth.
 
 Hence, since the group product and inverse map are both smooth, we get that $S^{1}\subset \C$ does form a Lie group under multiplication.
 
-\textbf{(d)}
+\textbf{(d)} First, we note that $GL(n,\R)$ is indeed a group under multiplication. In particular, we know that the group operation is closed, since this is simply the set of all $n\times n$ matrices over the real field with non-zero determinant, and the product of such matrices will result in a matrix also of determinant non-zero. Further, since the determinant is non-zero, we have the identity matrix, inverses for all elements, and associativity follows from the definition of group multiplication.
+
+We now need that $GL(n,\R)$ forms a smooth manifold. To see this, we use the fact that $GL(n,\R) \subset M_{n\times n} \simeq \R^{n^{2}}$, and in particular, we know that this is the complement to the set of all $n\times n$ singular matrices, which is closed in $\R^{n^{2}}$ since it is the image of the smooth (and hence continuous) map of the determinant which will have the primage of closed sets be closed. Hence we have that we can get a single patch of $\R^{n^{2}}$ which uses the ambient topology, and hence is smooth. So, we can take the association,
+$$GL(n,\R)\ni A \to (a_{1,1}, a_{1,2}, \dots, a_{1,n}, a_{2,1}, \dots, a_{n,n})\in \R^{n^{2}}$$
+which is a bijection onto it's image. With this association, we can show that the product map is smooth and so is the inverse.
+
+From now on, we let $det(a) = det(A)$ where $A\in GL(n,\R)$, $a \in \R^{n^{2}}$ and $A$ and $a$ are associated. 
+
+In particular, we know that the product of two smooth manifolds will be a smooth manifold under the product topology of the two individual manifolds. In particular we know that the identity will be the map over the patch $U\subset \R^{n^{2}}$ where $\forall x\in U$ $det(x) \neq 0$. Then, we see that $id_{\R^{n^{2}}}: \R^{n^{2}} \to \R^{n^{2}}$ will be our map, and if we let
+$$f: GL(n,\R)\times GL(n,\R) \subset \R^{n^{2}}\times \R^{n^{2}} \to GL(n,\R)\subset \R^{n^{2}}, f: (x,y)\mapsto xy\in GL(n,\R), \forall x,y\in U$$
+then we want the following map to be smooth,
+$$ id \circ f \circ id_{\R^{n^{2}}\times\R^{n^{2}}}: U\times U \to U \subset \R^{n^{2}}.$$
+Take $x,y \in U$, then,
+$$id \circ f \circ id_{\R^{n^{2}}\times\R^{n^{2}}}(x,y) = id \circ f(x,y) = id(xy) = xy$$
+where the product is matrix multiplication. Each element of the resulting matrix will be a polynomial in the components of $x$ and $y$ by definition, and hence will be smooth. In particular (just to be sure), if $x = (x_{1,1}\dots,x_{i,j},\dots,x_{n,n})$ and $y = (y_{1,1},\dots,y_{i,j},\dots,y_{n,n})$, then
+$$xy = \left(\sum_{m=1}^{n}x_{1,m}y_{m,1}, \dots, \sum_{m=1}^{n}x_{i,n}y_{j,n}, \dots, \sum_{m=1}^{n}x_{n,m}y_{m,n}\right)$$
+which is smooth, so our product map is aswell.
+
+Now we look at the inverse map. In particular, if $x\in U$ and $\iota: U\to U$ is the inverse map, then consider
+$$id\circ \iota \circ id(x) = id(\iota(x))$$
+but since $U$ is the set of invertable matrices, $\exists x^{-1}\in U$ and hence,
+$$id(\iota(x)) = id(x^{-1}) = x^{-1}.$$
+So all we have to check is that the inverse is smooth. We note that each component of the inverse is a polynomial in the components of $x$, but is divided by $det(x)$, so we have rational polynomials, which will still be smooth. Thus the inverse is smooth!
+
+Hence, we can conclude that the general linear group over the reals, $GL(n,\R)$ is indeed a Lie group.
+
 \newpage
 
 \textbf{Question 3}
