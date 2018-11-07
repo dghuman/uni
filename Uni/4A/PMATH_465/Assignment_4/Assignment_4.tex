@@ -103,6 +103,28 @@ as required.
 \newpage
 \textbf{Question 5}
 
+\textbf{(a)} To cook up some smooth vector field, we first use stereographic projection to give us our local coordinates. In particular, let $\{(U^{+},\varphi^{+}),(U^{-},\varphi^{+})\}$ be our smooth atlas, where $U^{+} = S^{2}\setminus \{(0,0,1)\}$, $U^{-} = S^{2}\setminus \{(0,0,-1)\}$ and the charts are
+\[ \varphi^{+}(x^{1},x^{2},x^{3}) = \frac{(x^{1},x^{2})}{1-x^{3}} = (s,t) \hspace{2em} \varphi^{-}(x^{1},x^{2},x^{3}) = \frac{(x^{1},x^{2})}{1-x^{3}} = (u,v) \]
+where we use $s,t,u,v$ as local variables in $\R^{2}$. Then, we see we would like to get the change of variables between the two coordinate systems. To do this, parameterize $S^{2}$ in terms of $s,t$ to get,
+\[ x^{1} = \frac{2s}{s^{2}+t^{2}+1} \hspace{1em} x^{2} = \frac{2t}{s^{2}+t^{2}+1} \hspace{1em} x^{3} = \frac{s^{2}+t^{2}-1}{s^{2}+t^{2}+1} \]
+and then we plug this into our definitions for $u$ and $v$,
+\[ u = \frac{s}{s^{2}+t^{2}} \hspace{2em} v = \frac{t}{s^{2} + t^{2}} \]
+so we now have a change of coordinates. Now, if $p\in S^{2}$, then,
+\[ \forall p\in U^{+} \hspace{1em} T_{p}S^{2} = \text{span}\left\{\frac{\partial}{\partial s}\bigg\rvert_{p},\frac{\partial}{\partial t}\bigg\rvert_{p}\right\} \hspace{2em} \forall p\in U^{-} \hspace{1em} T_{p}S^{2} = \text{span}\left\{\frac{\partial}{\partial u}\bigg\rvert_{p},\frac{\partial}{\partial v}\bigg\rvert_{p}\right\}\]
+Consider the smooth vector field $Y = \frac{\partial}{\partial s}$ on $U^{+}$. Well, we consider what this vector field looks like in the other patch by looking at the intersect, and apply our definition,
+\[ Y = Y(u)\frac{\partial}{\partial u} + Y(v)\frac{\partial}{\partial v} = \frac{\partial u}{\partial s}\frac{\partial}{\partial u} + \frac{\partial v}{\partial s}\frac{\partial}{\partial v} = \left(\frac{(s^{2}+t^{2}) - 2s^{2}}{(s^{2}+t^{2})^{2}}\right)\frac{\partial}{\partial u} + \left(\frac{-2st}{(s^{2} + t^{2})^{2}}\right)\frac{\partial}{\partial v} \]
+which from our change of coordinates we get
+\[ Y = (v^{2} - u^{2})\frac{\partial}{\partial u} - 2uv\frac{\partial}{\partial v} \]
+and we see that this vanishes identically only if $(u,v) = (0,0)$, which happens when $p = (0,0,1)$, which is the north pole. Thus, since we can write,
+\[ Y = 
+\begin{cases}
+  \frac{\partial}{\partial s} & p\in U^{+} \\
+  (v^{2} - u^{2})\frac{\partial}{\partial u} - 2uv\frac{\partial}{\partial v} & p\in U^{-} \\
+\end{cases}
+\]
+and $Y$ is a smooth vector field over all of $S^{2}$, we have it is only zero at $p = (0,0,1)$, as required.
+
+\textbf{(b)} 
 \newpage
 \textbf{Question 6}
 
