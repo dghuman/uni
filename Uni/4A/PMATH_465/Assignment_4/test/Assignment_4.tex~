@@ -127,7 +127,7 @@ and $Y$ is a smooth vector field over all of $S^{2}$, we have it is only zero at
 \textbf{(b)} We start by first writing $\gamma_{z}(t)$ in the appropriate coordinates, namely, we recall that if $(a+ub,c+id)\in \C^{2}$, then the associated point in $\R^{4}$ is $(a,b,c,d)$. With this in mind, we see that if $z_{1} = a+ib, z_{2} = c+id$, then
 \[ \gamma_{z}(t) = \left(e^{it}z_{1},e^{it}z_{2}\right) = (a\cos(t) - b\sin(t) + i(b\cos(t) + a\sin(t)), c\cos(t) - d\sin(t) + i(d\cos(t) + c\sin(t))) \]
 \[= (a\cos(t) - b\sin(t),b\cos(t) + a\sin(t),c\cos(t) - d\sin(t), d\cos(t) + c\sin(t))\in \R^{4}\]
-We recall stereographic projection for building our local coordinates; the atlas of $S^{3}$ will be $\{(U^{+},\varphi^{+})$ , $(U^{-},\varphi^{-})\}$ where $U^{+} = S^{3}\setminus (0,0,0,1)$ and $U^{-} = S^{3}\setminus (0,0,0,-1)$. Also,
+We recall stereographic projection for building our local coordinates; the atlas of $S^{3}$ will be $\{(U^{+},\varphi^{+}),(U^{-},\varphi^{-})\}$ where $U^{+} = S^{3}\setminus (0,0,0,1)$ and $U^{-} = S^{3}\setminus (0,0,0,-1)$. Also,
 \[ \varphi^{+}(x_{1},x_{2},x_{3},x_{4}) = \frac{(x_{1},x_{2},x_{3})}{1-x_{4}} =(s,t,u)\hspace{2em} \varphi^{-}(x_{1},x_{2},x_{3},x_{4}) = \frac{(x_{1},x_{2},x_{3})}{1+x_{4}} = (\alpha,\beta,\gamma) \]
 are the local coordinates. We have all the machinery we need now to compute $\gamma_{z}^{\prime}(t)$, in particular, by definition, if we suppose $z \simeq (a,b,c,d)\in U^{+}\subset\R^{4}$, then
 \[ \gamma_{z}^{\prime}(t) = \frac{d\gamma_{z}^{i}(t)}{dt}\frac{\partial}{\partial x^{i}} \]
@@ -137,9 +137,9 @@ but our coordinates are $s,t,u$, and so we need to find $\frac{d\gamma_{z}^{i}(t
 \[ \frac{d \gamma_{z}^{3}(t)}{dt} = \frac{d}{dt}(u) = \frac{d}{dt}\left(\frac{c\cos(t) - d\sin(t)}{1-d\cos(t) - c\sin(t)}\right) = \cdots = \frac{-c\sin(t)-d\cos(t)+d^{2}+c^{2}}{(1-d\cos(t) - c\sin(t))^{2}} \]
 and we have that
 \[\gamma_{z}^{\prime}(t) = \sum_{i=1}^{3}\frac{d\gamma_{z}^{i}(t)}{dt}\frac{\partial}{\partial x^{i}} = \frac{d\gamma_{z}^{1}(t)}{dt}\frac{\partial}{\partial s} + \frac{d\gamma_{z}^{2}(t)}{dt}\frac{\partial}{\partial t} + \frac{d\gamma_{z}^{3}(t)}{dt}\frac{\partial}{\partial u}\]
-Looking at each component, we see that this vector field is non vanishing. A similar argument for $U^{-}$ can show that it is non vanishing under the overlap.
+Looking at each component, we see that this vector field is non-vanishing. A similar argument for $U^{-}$ can show that it is non-vanishing under the overlap.
 
-With this in hand, if we let $Y_{z} = \gamma_{z}^{\prime}(0)$, from the previous calculations we see that this field is necessarily non\-vanishing over all of $S^{3}$, as we would like.
+With this in hand, if we let $Y_{z} = \gamma_{z}^{\prime}(0)$, from the previous calculations we see that this field is necessarily non-vanishing over all of $S^{3}$, as we would like.
 
 \newpage
 \textbf{Question 6}
@@ -155,16 +155,20 @@ as required.
 
 \textbf{(b)} Suppose $\mathcal{A}_{M}, \mathcal{A}_{N}$ smooth atlases for $M$ and $N$ respectively. Then, we know that $\mathcal{A}_{M}\times \mathcal{A}_{N}$ will be a smooth atlas for $M\times N$. In particular, let $(U,\varphi)\in \mathcal{A}_{M}$, $(V,\psi)\in \mathcal{A}_{N}$, $p\in U$, $q\in V$ with $U = (x_{1},\dots,x_{m})$ and $V = (y_{1},\dots,y_{n})$ local representations where $m = \text{dim}(M)$ and $n = \text{dim}(N)$. Then, $(U\times V,\varphi\times\psi)\in \mathcal{A}_{M}\times\mathcal{A}_{N}$, $(p,q)\in (U\times V)\subset M\times N$, with local representation $\varphi\times \psi = (x_{1},\dots,x_{m},y_{1},\dots,y_{n})$.
 
-To build a smooth vector field on $M\times N$ with $Y$, we use the $\pi_{1}$\-related condition, where $f\in C^{\infty}(M)$, then we want that
+To build a smooth vector field on $M\times N$ with $Y$, we use the $\pi_{1}$-related condition, where $f\in C^{\infty}(M)$, then we want that
 \[ Y(f) \circ \pi_{1} = \tilde{Y}(f\circ \pi_{1}). \]
 Looking at each part in local coordinates,
-\[ Y(f)\circ \pi_{1}(p,q) = Y(f(p)) = \sum_{i=1}^{m}Y^{i}(p)\frac{\partial f(p)}{\partial x_{i}} \hspace{2em} \tilde{Y}(f\circ \pi_{1})(p,q) = \tilde{Y}_{(p,q)}(f(p))\]
-\[ =\sum_{i=1}^{m}\tilde{Y}^{i}((p,q))\frac{\partial f(p)}{\partial x_{i}} + \sum_{j=1}^{n}\tilde{Y}^{j+m}((p,q))\frac{\partial f(p)}{\partial y_{j}}\]
-We notice that in order for $\tilde{Y}$ to be $\pi_{1}$\-related to $Y$, we must have that, for $i\in [1,m+n]\subset \Z$
+\[ Y(f)\circ \pi_{1}(p,q) = Y(f(p)) = \sum_{i=1}^{m}Y^{i}(p)\frac{\partial f(p)}{\partial x_{i}} \hspace{2em} \tilde{Y}(f\circ \pi_{1})(p,q) = \tilde{Y}_{(p,q)}(f(p)) \]
+\[ = \sum_{i=1}^{m}\tilde{Y}^{i}((p,q))\frac{\partial f(p)}{\partial x_{i}} + \sum_{j=1}^{n}\tilde{Y}^{j+m}((p,q))\frac{\partial f(p)}{\partial y_{j}}\]
+We notice that in order for $\tilde{Y}$ to be $\pi_{1}$-related to $Y$, we must have that, for $i\in [1,m+n]\subset \Z$
 \[ \tilde{Y}^{i}((p,q)) = Y^{i}(p) \hspace{1em} 0 < i \leq m \hspace{2em}\& \hspace{2em} \tilde{Y}^{i}((p,q)) = 0 \hspace{1em}i > m \]
 $\forall (p,q)\in M\times N$. We know that since $Y\in \mathcal{X}(M)$, $Y^{i}\in C^{\infty}(M)$ and we can extend this to a smooth function on $M\times N$ by making the new components zero. This is exactly what $\tilde{Y}$ is by construction; the components that do not match with $Y^{i}$ vanish, and the resulting vector field is still smooth $\forall (p,q)\in U\times V$. 
 
-Thus, we have constructed a smooth vector field by looking component\-wise at $Y$, and by definition of being $\pi_{1}$\-related by construction, we have that $Y = \pi_{1*}(\tilde{Y})$, as required.
+Suppose $\exists X\in \mathcal{X}(M\times N)$ such that $X$ is $\pi_{1}$-related to $Y$. Then, from the same argumena bove, we get that for $i\in \Z$,
+\[ X^{i}(p,q) = Y^{i}(p) = \tilde{Y}^{i}(p,q) \hspace{1em} 0 < i \leq m \hspace{2em} \&\hspace{2em} X^{i}(p,q) = 0 = \tilde{Y}^{i}(p,q) \hspace{1em} m < i \leq m+n\]
+$\forall (p,q)\in U\times V$. So, $\tilde{Y} = X$, and hence $\tilde{Y}$ is unique.
+
+Thus, we have constructed a smooth vector field by looking component-wise at $Y$, that is unique, and by definition of being $\pi_{1}$-related by construction, we have that $Y = \pi_{1*}(\tilde{Y})$, as required.
 
 The exact same steps can be taken for $Z$ but the first $m$ components would vanish in $\tilde{Z}^{i}$ instead. So, we can conclude the same result for $Z$ and $\tilde{Z}$.
 
@@ -181,7 +185,7 @@ $\forall k\in G$, so we have surjection as well. Thus $L_{g}$ is a bijection.
 
 Now we need that $L_{g}$ is also a smooth map. Take coordinate patches $(U,\varphi)$ and $(V,\psi)$ for $G$, which exist since $G$ is a Lie Group and hence a smooth manifold. Furthermore, assume $L_{g}(U)\cap V \neq \emptyset$, as otherwise we get a trivially smooth map. Then, we see that we want
 \[ \psi \circ L_{g} \circ \varphi^{-1}: \varphi(U) \subset \R^{n} \to \psi(L_{g}(U)\cap V) \subset \R^{n} \]
-to be smooth, where $G$ is $n$\-dimensional. Suppose $h\in U\subset G$, then we see that
+to be smooth, where $G$ is $n$-dimensional. Suppose $h\in U\subset G$, then we see that
 \[ \psi \circ L_{g} \circ \varphi^{-1} (\varphi(h)) = \psi(L_{g}(h)) = \psi(gh) \]
 but by assumption, we must have that $gh\in V$, and further, since $G$ is smooth, we know that $\psi$ is smooth, and hence we have that this composition is indeed smooth as required.
 
@@ -191,15 +195,6 @@ which is smooth by assumptions on $\varphi$. Thus we have a smooth inverse.
 
 Therefore, since we have that $L_{g}$ is a bijection that is smooth and has a smooth inverse $\forall (U,\varphi),(V,\psi)$ in the smooth atlas, we can conclude that $L_{g}$ is a diffeomorphism.
 
-\textbf{(b)} This follows from the \textit{naturality} property of the Lie Bracket, in particular, since $Y$ is left invariant, it is $L_{G}$ related to itself, and similarly for $Z$. Then, by the \textit{naturality} property of Lie Brackets, we must have that $[Y,Z]$ is $L_{g}$ related to itself, but then by definition $[Y,Z]$ is left invariant, as required.
+\textbf{(b)} This follows from the \textit{naturality} property of the Lie Bracket, in particular, since $Y$ is left-invariant, it is $L_{G}$ related to itself, and similarly for $Z$. Then, by the \textit{naturality} property of Lie Brackets, we must have that $[Y,Z]$ is $L_{g}$ related to itself, but then by definition $[Y,Z]$ is left-invariant, as required.
 
-\textbf{(c)} Suppose $X,Y\in Lie(G)$. Then, we see by the $\R$-linearity of the pushforward that majority of the vector space properties fall out, with $Lie(G)$ being a vector space over the reals. The remaining properties follow from the associativity of the real numbers, and the vector space properties for tangent spaces, since these vectors are already a part of the tangent space. All we need for this to work is that the sum of two vectors in $Lie(G)$ is still in $Lie(G)$. In particular, if $f\in C^{\infty}(G)$, $h\in G$,
-\[ L_{g*}(X + Y)_{h}(f) = L_{g*}(X_{h})(f) + L_{g*}(Y_{h})(f) = X_{gh}(f) + Y_{gh}(f) = (X + Y)_{gh}(f) \in Lie(G) \]
-as required.
-
-To see that $Lie(G)$ is isomorphic to $T_{e}(G)$, we need to confirm bijection and that the vector space properties are preserved. Suppose $X,Y\in Lie(G)$, such that $ev(X) = ev(Y)$, then by definition,
-\[ ev(X) = ev(Y) \iff X_{e} = Y_{e} \]
-but, since both $X,Y$ are in $Lie(G)$, we have that, $\forall g\in G$,
-\[ X_{g} = X_{ge} = L_{g*}X_{e} = L_{g*}Y_{e} = Y_{ge} = Y_{g} \implies X = Y.\]
-This gives us injection. Now we need surjection, suppose $Z\in T_{e}(G)$. Then, by the smooth extension lemma of vector fields we proved in $Q1$, we know $\exists W\in \mathcal{X}(G)$ such that $W_{e} = Z$. Now we need that this smooth vector field is in $Lie(G)$, or in particular, that $W$ is $L_{g}$-related to itself $\forall g\in G$. 
 \end{document}

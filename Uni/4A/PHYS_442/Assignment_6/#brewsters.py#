@@ -1,0 +1,36 @@
+import math
+import matplotlib.pyplot as plt
+import operator as op
+from functools import reduce
+
+# some definitions to make the computation easier
+#def ncr(n, r):
+#    r = min(r, n-r)
+#    numer = reduce(op.mul, range(n, n-r, -1), 1)
+#    denom = reduce(op.mul, range(1, r+1), 1)
+#    return numer//denom
+
+def prob(n,N):
+    return ncr(N,2*n+1)*(math.sin(1/float(N))*math.sin(1/float(N)))**(2*n+1)*(math.cos(1/float(N))*math.cos(1/float(N)))**(N-2*n-1)
+
+def probsum(N):
+    final = 0
+    if (N%2 == 0):
+        for n in range(int(N/2)):
+            final += prob(n,N)
+    else:
+        for n in range(int((N-1)/2+1)):
+            final += prob(n,N)
+    return final
+
+x=[]
+y=[]
+
+for i in range(15):
+    x.append(i)
+    y.append(probsum(i+1))
+
+plt.plot(y)
+plt.show()
+#savefig('thisistheone.png')
+print(probsum(3))
