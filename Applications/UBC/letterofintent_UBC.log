@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.2)  12 NOV 2018 18:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.10.2)  13 NOV 2018 12:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -545,29 +545,29 @@ LaTeX Info: Redefining \selectfont on input line 21.
 
 
 Overfull \hbox (2.46928pt too wide) in paragraph at lines 22--24
-[]\OT1/cmr/m/n/10.95 Dear Grad-u-ate Co-or-di-na-tor, My name Dil-raj Ghuamn an
-d I am ap-ply-ing for a Mas-ter's in physics 
+[]\OT1/cmr/m/n/10.95 Dear Grad-u-ate Co-or-di-na-tor, My name Dil-raj Ghu-man a
+nd I am ap-ply-ing for a Mas-ter's in physics 
  []
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 (./letterofintent_UBC.aux) ) 
 Here is how much of TeX's memory you used:
  2269 strings out of 493029
  27458 string characters out of 6136234
- 88443 words of memory out of 5000000
+ 91443 words of memory out of 5000000
  5812 multiletter control sequences out of 15000+600000
  4545 words of font info for 17 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,4n,43p,471b,117s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 27i,4n,43p,839b,117s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr10.pfb>
-Output written on letterofintent_UBC.pdf (1 page, 30226 bytes).
+Output written on letterofintent_UBC.pdf (2 pages, 34518 bytes).
 PDF statistics:
- 16 PDF objects out of 1000 (max. 8388607)
- 10 compressed objects within 1 object stream
+ 19 PDF objects out of 1000 (max. 8388607)
+ 12 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
