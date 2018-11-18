@@ -1,0 +1,8 @@
+
+Proposal of Research For NSERC
+
+The proposed research for the Master's is to extend the work done in describing the dynamics of dirac particles in a Kerr-Newman black hole geometry [1]. It seems natural to be able to extend this behaviour of Dirac particles near a black hole's event horizon to higher dimensional spaces, and still expect similar results. In particular, in this black hole geometry, we see no rise of fixed orbits for dirac particles near the black hole event horizon, and instead expect either the particle to fall into the event horizon or to drift away [2].
+
+A black hole is a an extremely dense body, so dense in fact that even light cannot escape from the interior of the mass [4]. In particular, a spherically symmetric mass is called a black hole if the radius of the mass is equal to the \textit{Shwarzschild Radius}, 
+
+
