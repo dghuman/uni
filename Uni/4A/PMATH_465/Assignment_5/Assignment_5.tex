@@ -22,7 +22,7 @@
 \linespread{1.25}
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{PMATH 465 $|$  Assignment 3}
+\lhead{PMATH 465 $|$  Assignment 5}
 
 \rhead{Dilraj Ghuman $|$ 20564228}
 
@@ -121,7 +121,8 @@ for $Y$.
 We first compute the composition of the maps. Thus, if $J,K \subset \R$ are open with $0\in J$ and $0\in K$, not defined explicitly just yet,  we can let $(s,t) \in J\times K$. Then
 \[ \theta_{s}\circ \psi_{t} ((p_{1},p_{2})) = \theta_{s}\left(\frac{p_{1}+p_{2}}{2}e^{t} - \frac{p_{2} - p_{1}}{2}e^{-t}, \frac{p_{1}+p_{2}}{2}e^{t} + \frac{p_{2} - p_{1}}{2}e^{-t}\right)\]
 \[= \left(\frac{p_{1}+p_{2}}{2}e^{t+s} - \frac{p_{2} - p_{1}}{2}e^{s-t}, \frac{p_{1}+p_{2}}{2}e^{t-s} + \frac{p_{2} - p_{1}}{2}e^{-s-t}\right)\]
-\[ \psi_{t}\circ\theta_{s} ((p_{1},p_{2})) = \psi_{t}(p_{1}e^{s},p_{2}e^{-s}) = \left(\frac{p_{1}e^{s}+p_{2}e^{-s}}{2}e^{t} - \frac{p_{2}e^{-s} - p_{1}e^{s}}{2}e^{-t}, \frac{p_{1}e^{s}+p_{2}e^{-s}}{2}e^{t} + \frac{p_{2}e^{-s} - p_{1}e^{s}}{2}e^{-t}\right) \]
+\[ = \psi_{t}\circ\theta_{s} ((p_{1},p_{2})) = \psi_{t}(p_{1}e^{s},p_{2}e^{-s})\]
+\[ = \left(\frac{p_{1}e^{s}+p_{2}e^{-s}}{2}e^{t} - \frac{p_{2}e^{-s} - p_{1}e^{s}}{2}e^{-t}, \frac{p_{1}e^{s}+p_{2}e^{-s}}{2}e^{t} + \frac{p_{2}e^{-s} - p_{1}e^{s}}{2}e^{-t}\right) \]
 
 %finish me
 
@@ -180,6 +181,53 @@ as required. Thus, we see that this sum is indeed an affine connection.
 
 To see that every affine connection is just the sum of the directional derivative, $D$ and some $C^{\infty}(\R^{n})$-bilinear map $\Gamma$, we note that we need to find $\Gamma$ such that this holds, since we already have $D$ and $\nabla$, our affine connection. Then, notice
 \[ \nabla  = D + \Gamma \implies \Gamma = \nabla - D. \]
-So, all we need is that $\nabla - D$ satisfies the conditions for it being like $\Gamma$. In particular, we need to check that it is $C^{\infty}(\R^{n})$-bilinear. Suppose $g,f\in C^{\infty}(\R^{n})$, and $X,Y\in \mathcal{X}(\R^{n})$, then
+So, all we need is that $\nabla - D$ satisfies the conditions for it being like $\Gamma$. In particular, we need to check that it is $C^{\infty}(\R^{n})$-bilinear. We know that the sum will be $C^{\infty}(\R^{n})$-linear in the first component since both $\Gamma$ and $D$ are already affine connections. All we need is to check the second component; suppose $f\in C^{\infty}(\R^{n})$, and $X,Y\in \mathcal{X}(\R^{n})$, then
+\[ (\nabla - D)(X,fY) = \nabla_{X}(fY) - D_{X}(fY) = X(f)Y + f\nabla_{X}Y - (X(f)Y + fD_{X}Y) \]
+\[ = f(\nabla_{X}Y - D_{X}Y) = f(\nabla - D)(X,Y) \]
+and hence we have that this is indeed $C^{\infty}(\R^{n})$-bilinear. Thus, we have that $\Gamma = \nabla - D$ is well defined and exists!
 
+\textbf{(b)} To show that the Lie Derivative satisfies the Leibniz rule, we let $f,g\in C^{\infty}(M)$, and $X,Y\in \mathcal{X}(M)$. Further, we recall that the Lie derivative is exactly the Lie bracket, which will be much easier to compute in this case, hence
+\[ \mathcal{L}(X,fY)(g) = \mathcal{L}_{X}(fY)(g) = [X,fY](g) = X((fY)(g)) - fY(X(g)) = X(fY(g)) - fY(X(g))\]
+\[ = X(f)Y(g) + fX(Y(g)) - fY(X(g)) = X(f)Y(g) + f(XY - YX)(g) = X(f)Y(g) + f[X,Y] \]
+\[ \implies \mathcal{L}(X,fY) = X(f)Y + f\mathcal{L}(X,Y) \]
+and thus we have that the Leibniz rule is satisfied. On the other hand,
+\[ \mathcal{L}(fX,Y)(g) = \mathcal{L}_{fX}(Y)(g) = [fX,Y](g) = fX((Y)(g)) - Y(fX(g)) = fX(Y(g)) - (Y(f)X(g) + fY(X(g)))\]
+\[ = fX(Y(g)) - fY(X(g)) - Y(f)X(g) = f[X,Y](g) - Y(f)X(g) \neq f[X,Y](g)\]
+and hence we do not have that the Lie derivative is $C^{\infty}(M)$-linear in the first component.
+
+Notice, if $M= \R^{n}$, and $p\in \R^{n}$, then
+\[ \mathcal{L}(X,Y)(g(p)) = [X,Y](g(p)) = (XY - YX)(g(p)) = X(Y(g(p))) - Y(X(g(p))).\]
+Since this is in $\R^{n}$, we get the natural local coordinates $\{x_{1},\dots,x_{n}\}$ and we can conclude that
+\[ X = \sum_{i=1}^{n}X^{i}\di{x_{i}} \hspace{2em} \& \hspace{2em} Y = \sum_{i=1}^{n}Y^{i}\di{x_{i}}. \]
+Then, since we have the local representations, we can sub those into our expression,
+\[ \mathcal{L}(X,Y)(g(p)) = \sum_{i=1}^{n}X^{i}(p)\di[Y(g)]{x_{i}}\bigg|_{p} - \sum_{i=1}^{n}Y^{i}(p)\di[X(g)]{x_{i}}\bigg|_{p} \]
+This will get ugly, so we look at just one of the expressions, as the other will follow symmetrically:
+\[ \sum_{i=1}^{n}X^{i}(p)\di[Y(g)]{x_{i}}\bigg|_{p} = \sum_{i=1}^{n}X^{i}(p)\di{x_{i}}\left(\sum_{j=1}^{n}Y^{j}(p)\di{x_{j}}g\bigg|_{p}\right) \]
+\[ = \sum_{i=1,j=1}^{n}X^{i}(p)\left(\di{x_{i}}Y^{j}(p)\di{x_{j}}g  + Y^{j}(p)\frac{\partial^{2}}{\partial x_{i} \partial x_{j}}g\right) \]
+\[ = \sum_{i=1}^{n}X(Y^{i})(p)\di{x_{i}}g\bigg|_{p}  + \sum_{i=1,j=1}^{n}X^{i}Y^{j}(p)\frac{\partial^{2}}{\partial x_{i} \partial x_{j}}g\bigg|_{p}. \]
+\newpage
+By symmetry, we get that
+\[ \mathcal{L}(X,Y)(g(p)) = \sum_{i=1}^{n}X(Y^{i})(p)\di{x_{i}}g\bigg|_{p}  + \sum_{i=1,j=1}^{n}X^{i}Y^{j}(p)\frac{\partial^{2}}{\partial x_{i} \partial x_{j}}g\bigg|_{p} \]
+\[ - \sum_{i=1}^{n}Y(X^{i})(p)\di{x_{i}}g\bigg|_{p}  - \sum_{i=1,j=1}^{n}Y^{i}X^{j}(p)\frac{\partial^{2}}{\partial x_{i} \partial x_{j}}g\bigg|_{p} \]
+\[ \mathcal{L}(X,Y)(g(p)) = \sum_{i=1}^{n}X(Y^{i})(p)\di{x_{i}}g\bigg|_{p} - \sum_{i=1}^{n}Y(X^{i})(p)\di{x_{i}}g\bigg|_{p} = D_{X}Y (g(p)) - D_{Y}X (g(p))\]
+\[ \implies \mathcal{L}(X,Y) = D_{X}Y - D_{Y}X \]
+as required.
+
+\textbf{(c)} We see that, if $\nabla$ and $\nabla^{\prime}$ are affine connections, then the sum, $\nabla + \nabla^{\prime}$ will not be, and this is due to the Leibniz rule not being satisfied. In particular, let $X,Y\in \mathcal{X}(M)$ and $f\in C^{\infty}(M)$, then
+\[ (\nabla + \nabla^{\prime})(X,fY) = \nabla_{X}(fY) + \nabla^{\prime}_{X}(fY) = X(f)Y + f\nabla_{X}(Y) + X(f)Y + f\nabla^{\prime}_{X}(Y)\]
+\[ = 2X(f)Y + f(\nabla + \nabla^{\prime})(X,Y) \neq X(f)Y + f(\nabla + \nabla^{\prime}) \]
+and thus we have that the Leibniz rule is not satisfied.
+
+Now we consider $t\nabla + (1-t)\nabla$, and check it is an affine connection. First, we note this is necessarily $\R$-bilinear and we have $C^{\infty}$-linearity in the first component since scalars won't change the linearity. Thus, all we need to check is the condition that failed earlier, the Leibniz rule. Suppose $X,Y\in \mathcal{X}(M)$ and $f\in C^{\infty}(M)$, then
+\[ (t\nabla + (1-t)\nabla^{\prime})(X,fY) = t\nabla_{X}(fY) + (1-t)\nabla^{\prime}_{X}(fY) = t(X(f)Y + f\nabla_{X}(Y)) + (1-t)(X(f)Y + f\nabla^{\prime}_{X}(Y)) \]
+\[= f(t\nabla_{X}(Y) + (1-t)\nabla^{\prime}_{X}(Y)) + (t+1-t)X(f)Y = X(f)Y + f(\nabla + \nabla^{\prime})(X,Y).\]
+We see that the Leibniz rule is indeed satisfied, and moreover, this holds $\forall t\in\R$.
+
+Now we consider an arbitrary, but finite, number of such affine connections. Suppose $\nabla_{1},\dots,\nabla_{l}$ are affine connections on $M$, and $a_{1},\dots,a_{l}\in \R$ such that $a_{1} + \dots + a_{l} = 1$. Further, let $X,Y\in \mathcal{X}(M)$ and $f\in C^{\infty}(M)$, then
+\[ (a_{1}\nabla_{1}+\dots+a_{l}\nabla_{l})(X,fY) = a_{1}\nabla_{1}(X,fY) + \dots + a_{l}\nabla_{l}(X,fY)\]
+\[ = a_{1}(X(f)Y + \nabla_{1}(X,Y)) + \dots + a_{l}(X(f)Y + \nabla_{l}(X,Y)) = (a_{1} + \dots a_{l})X(f)Y + a_{1}\nabla_{1}(X,Y) + \dots + a_{l}\nabla_{l}(X,Y) \]
+\[ = X(f)Y + (a_{1}\nabla_{1} + \dots + a_{l}\nabla_{l})(X,Y) \]
+and hence we again have that an arbitrary convex sum of affine connections is an affine connection.
+
+\textbf{(d)}
 \end{document}
