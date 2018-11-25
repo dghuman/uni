@@ -229,5 +229,20 @@ Now we consider an arbitrary, but finite, number of such affine connections. Sup
 \[ = X(f)Y + (a_{1}\nabla_{1} + \dots + a_{l}\nabla_{l})(X,Y) \]
 and hence we again have that an arbitrary convex sum of affine connections is an affine connection.
 
-\textbf{(d)}
+\textbf{(d)} We need to show that $T$, the torsion of $\nabla$, an affine connection, is $C^{\infty}(M)$-bilinear. Suppose $f,g\in C^{\infty}(M)$, and $X,Y\in \mathcal{X}(M)$, then
+\[ T(fX,gY) = \nabla_{fX}(gY) - \nabla_{gY}(fX) - [fX,gY] \]
+\[ = f(X(g)Y + g\nabla_{X}Y) - g(Y(f)X + f\nabla_{Y}X) - (fX(gY) - gY(fX)) \]
+We recall that the Lie Bracket only makes sense when acting on a smooth function on $M$, so let $h\in C^{\infty}(M)$, then we see that
+\[ [fX,gY](h) = fX(gY(h)) - gY(fX(h)) = f(X(g)Y(h) + g(X(Y(h)))) - g(Y(f)X(h) + fY(X(g))) \]
+\[ = fg[X,Y](h) + fX(g)Y(h) - gY(f)X(h)\]
+\[ \implies  [fX,gY] = fg[X,Y] + fX(g)Y - gY(f)X.\]
+Taking this result back into our original expression,
+\[ T(fX,gY) = f(X(g)Y + g\nabla_{X}Y) - g(Y(f)X + f\nabla_{Y}X) - (fg[X,Y] + fX(g)Y - gY(f)X) \]
+\[ = fg( \nabla_{X}Y - \nabla_{Y}X - [X,Y]) \]
+as required. The remaining requirements for linearity in smooth functions follow quite easily, as we already have $\R$-bilinearity, and that makes addition of more vector fields linear aswell. We therefore have our $C^{\infty}$-bilinearity!
+
+\newpage
+\textbf{Question 4}
+
+\textbf{(a)}
 \end{document}
