@@ -1,8 +1,8 @@
-\documentclass[11pt]{article}
+\documentclass[12pt]{article}
 \usepackage[document]{ragged2e}
 \usepackage[]{geometry}
-\usepackage{fancyhdr,amsmath,amsthm,amssymb}
-\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,fontspec}
+%\usepackage[utf8]{inputenc}
 
 \geometry{letterpaper,left=25mm,right=25mm}
 
@@ -11,8 +11,11 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\N}{\mathbb{N}}
 
-\linespread{1.25}
+\linespread{1.00}
 \setlength{\parskip}{1em}
+\setmainfont{Times New Roman}
+\setlength{\parindent}{1cm}
+\pagenumbering{gobble}
 %\pagestyle{fancy}
 %\fancyhf{}
 %\lhead{Course ID: Assignment N}
@@ -39,8 +42,59 @@ At the end of the term, I presented my work to my local group and at the TRIUMF 
 \section{Statemtn of Academic Goals}
 My research career up until now has been greatly focused on the experimental aspect of physics. This has given me a great appreciation for the difficulty of this area of research, but acedemically I have always found myself tending towards the more theoretical aspects with a focus on the underlying mathematics. This has been especially clear with the recent courses I have taken, am taking, and my past research experiences. My greatest research interest lies in Geometry, and in particular, it's application in physics.
 
-The study of geometry itself is quite large and has it's roots in Pure Mathematics, where it comes to fruition. However, geometry holds great power in the area of theoretical physics and is evident in the study of black holes, QFT and string theory. These topics are all linked by a single goal, and that is the understanding of gravity; the area of research on which I would like to focus on.
+The study of geometry itself is quite large and has it's roots in Pure Mathematics, where it comes to fruition. However, geometry holds great power in the area of theoretical physics and is evident in the study of black holes, QFT and string theory. These topics are all linked by a single goal, and that is the understanding of gravity; the force that still illudes physicists and is the end goal of many floating theories in the physics community.
 
+Einstein's general theory of relativity predicts that gravity is an emergent phenomena of mass distorting the fabric of spacetime \cite{gr}. This elegent theory gives rise to one of the now most fundementally accepted theories and has been used to predict many physical phenomena. The beauty of the theory truly shines when one begins to see predictions of interesting events that may have not been detected otherwise, like black holes. With Schwarzschild's solution to Einsteins's field equations for stationary masses, one finds that there is an unsettling divergence in the curvature of spacetime for a particular radius of the mass \cite{mbh}.
+
+At such a radius, one finds that the mass has become so dense that even light can not escape it's gravitational pull \cite{gr}. And yet, this is only for one such scenario where we have considered the mass to be stationary in it's axis. What if we give the mass the freedom to rotate? Such a scenario is solved by Kerr solutions to the Einstein Feild Equations \cite{mbh}. This leads naturally into the behaviour of electromagnetic waves in Kerr geometry, and further into spin-$\frac{1}{2}$ fields in such a geometry \cite{mbh}.
+
+Delving deaper, and we can find that the \textit{behaviour} of particles near a Kerr-Newmann black hole can lead to surprising insights; such as finding no bound states for Dirac particles in this Kerr-Newmann geometry \cite{cpam}\cite{atmp}. Perhaps we can consider attempting to fix the singularities found in Einstein's general theory of relativity with Weyl conformal symmetry while remaining conformally symmetric to the Kerr metric \cite{confgrav}. There are many questions one can pose and attempt to push forward in this field, and so many of them are intriguing.
+
+My interest in geometry and physics leads perfectly into this field, as I carry the intuition that comes with working on physics problems and continue to build a solid background in geometry from a mathemiticians perspective. I am taking a grad level course in geometry with the pure math department, and will be taking a course in both general relativity and particle physics in the winter to help strengthen my background in this field. My motivation to learn and my curiosity of the field places me in a position that is well suited to contributing to the geometrical nature of spacetime and the beauty that comes with it.
+
+\section{Leadership Experience}
+
+Much of my leadership experience comes from previous work I have done, and it sheds light on my ability to work independently and shows my ability to take the lead in tasks. In particular, I will be highlighting my accomplishments at TRIUMF, SNOLab, and my work experience at Humber College.
+
+At TRIUMF, the priority of my work with T2K was the construction and preparation of the mPMT meant to be used for the NuPrism extension. As such, I was tasked with testing and preparing the PMTs used in the construction. In this process I built and recorded a method of casting the PMTs with optical gel that would minimize the risk of the cast failing and provided a consistant methodology for further construction of prototypes.
+
+At SNOLab, the work I did was independently completed. My supervisor would provide me with tasks, such as building a Dark Rate check, or shifting an analysis structure to a computer cluster that used different management software, it was up to me in which direction I would tackle the problem. This freedom meant that I would work for weeks at a time without any supervision and still succesfully produced results in completing the tasks asked of me during a time crunch. 
+
+As an initial co-op position, I worked at Humber College as a Math Centre tutor for 8 months. The centre is a drop-in based tutoring resource and acted as a multi-resource as lectureres would often provide hours through the centre. This position involved more than just tutoring students, however, as a large part of my position was leading the volunteer tutors. I scheduled, and would give tours to the new peer tutors. Further, I led the ``mobile tutoring'' incentive, an approach of tutoring that would send a peer tutor to a remote location on campus to assist students that may not be able to directly visit the centre for whatever reason. This increased the publicity of the centre across campus and provided me with an oppertunity to lead a project on my own to fruition.
+
+Furthermore, due to my seniority in the position after the first 4 months, I was tasked heavily with leading the other co-op students. I became the representative of the other students that worked there and worked with my supervisor to make sure everything went smoothly.
+
+\section{Conclusion}
+
+My experience at TRIUMF and SNOLAB, in junction with my drive to learn more mathematics and physics in the field of geometry and general relativity place me as an excellent graduate student candidate. My experience in working independently at TRIUMF and SNOLAB, and leading a team at Humber have all prepared me for approaching a master's thesis with the intent, and means, to impact the physics research field. 
+
+\newpage
+\begin{thebibliography}{99}
+
+\bibitem{nuprism}
+  S. Bhadra, A. Blondel, et al. \textit{Letter of Intent to Construct a nuPRISM Detector in the J-PARC Neutrino Beamline}. \texttt{physics.ins-det}. High Energy Physics - Experiment. \texttt{arXiv:1412.3086}.
+
+  \bibitem{deap} P.-A. Amaudruz, M. Baldwin, M. Batygov, et al. (DEAP-3600 Collaboration) \testit{First results from the DEAP-3600 dark matter search with argon at SNOLAB}. \texttt{arXiv:1701.08042}. arXiv (2017)
+  
+\bibitem{cpam}
+  F. Finster, N. Kamran, J. Smoller, and S.-T. Yau, \textit{Non-existence of time-periodic solutions of the Dirac equation in an axisymmetric black hole geometry}, \texttt{gr-qc/9905047}, Comm. Pure Appl. Math. 53 (2000) 902-92.
+
+\bibitem{atmp}
+  F. Finster, N. Kamran, J. Smoller, S.-T. Yau, \textit{The Long-Time Dynamics Dirac Particles in the Kerr-Newman Black Hole Geometry}, \texttt{gr-qc/0005088}, Adv. Theor. Math. Phys. 7 (2003) 25-52.
+
+\bibitem{confgrav}
+  C. Bambi, Z. Cao, L. Modesto. \textit{Testing Conformal Gravity with Astrophysical Black Holes}, High Energy Astrophysical Phenomena. Phys. Rev. D 98, 024007 (2018)
+
+\bibitem{mbh}
+  S. Chandrasekhar. \textit{The Mathematical Theory of Blackholes}. Revised reprint of the 1983 original. International Series of Monographs on Physics ,69. Oxford Science Publications. The Clarendon Press, Oxford University Press, NewYork, 1992.	
+
+\bibitem{gr}
+  J. D. Nightingale, J. Foster. \textit{A Short Course in General Relativity}. Springer, New York, NY. Springer-Verlag New York 2006.
+
+\bibitem{dirac}
+  Dirac, P.A.M. \textit{Principles of Quantum Mechanics}. Internatial Series of Monographs on Physics (4th ed.). Oxford University Press (1982) [1958].
+  
+\end{thebibliography}
 
 
 \end{document}
