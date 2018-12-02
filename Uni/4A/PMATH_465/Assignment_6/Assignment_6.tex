@@ -111,9 +111,46 @@ Now, we show that $\textbf{(b)}\iff\textbf{(c)}$. Suppose first that $\omega(Y)\
 \[ \omega^{i} = \omega\left(\del{x_{i}}\right) \in C^{\infty}(M) \]
 since $\del{x_{i}}\in \mathfrak{X}(M)$.
 
-Conversely, we suppose the component functions smooth, in particular $\omega^{i}\in C^{\infty}(U_{\alpha})$, $\forall U_{\alpha}$ in our smooth atlas $\{(U_{\alpha},\varphi_{\alpha})\}$. Suppose $a\in \R^{n}$ and $Y\in \mathfrak{X}(M)$
+Conversely, we suppose the component functions smooth, in particular $\omega^{i}\in C^{\infty}(U_{\alpha})$, $\forall U_{\alpha}$ in our smooth atlas $\{(U_{\alpha},\varphi_{\alpha})\}$. Suppose $a\in \R^{n}$ and $Y\in \mathfrak{X}(M)$, then
+\[ \omega(Y) \circ \varphi^{-1}(a) : \varphi(U)\subset \R \to \R \]
+\[ \omega(Y) \circ \varphi^{-1}(a) = \omega_{\varphi^{-1}(a)}(Y_{\varphi^{-1}(a)}) = \sum_{i=1}^{\infty}\omega^{i}(\varphi^{-1}(a))d_{\varphi^{-1}(a)}x_{i}(Y).\]
+By supposition, we already know that $\omega^{i}$ is smooth, so all we need to show being smooth is $d_{\varphi^{-1}(a)}x_{i}(Y)$ $\forall i\in \{1,\dots,n\}$. We see that
+\[ d_{\varphi^{-1}(a)}x_{i}(Y) = Y_{\varphi^{-1}(a)}(x_{i})\]
+but $Y \in \mathfrak{X}(M)$, so we know that $Y$ is a smooth vector field, and hence, $Y^{i} = Y(x_{i})$ is a smooth function, and thus $d_{\varphi^{-1}(a)}x_{i}(Y)$ is a smooth function. Thus, we can conclude that $\omega(Y)\in C^{\infty}(M)$ for any $Y\in \mathfrak{X}(M)$.
 
+\newpage
+\textbf{Question 3}
 
+Suppose $M,N$ smooth manifolds and $F:M\to N$ a smooth map. Further, we will need , $f\in C^{\infty}(N)$ and $\omega \in \Lambda^{1}(N)$.
 
-%\[ \omega(Y)(p) = \omega_{p}(Y_{p}) = \sum_{k=1}^{n}\omega^{k}(p)d_{p}x_{k}(Y) \]
+\textbf{(a)} Let $X \in T_{p}M$ for some $p\in M$, $\omega,\eta \in \Lambda^{1}(N)$ and $a,b\in \R$. Then, we see that
+\[ F^{*}(a\omega + b\eta)(X) = (a\omega+b\eta)(F_{*,p}(X)) = a\omega(F_{*,p}(X)) + b\eta(F_{*,p}(X)) = aF^{*}(\omega)(X) + bF^{*}(\eta)(X) \]
+and hence we have $\R$-linearity in the pullback.
+
+\textbf{(b)} Let $X \in T_{p}M$ for some $p\in M$ and $f\in C^{\infty}(N)$. Then
+\[ F^{*}(df)(X) = df(F_{*,p}(X)) = d_{F(p)}f(F_{*,p}(X)) = F_{*,p}(X)(f) = X_{p}(f\circ F) = d_{F(p)}(f\circ f)(X) = d(f\circ F)(X) \]
+as required.
+
+\textbf{(c)} Let $X \in T_{p}M$ for some $p\in M$, $f\in C^{\infty}(N)$ and $\omega \in \Lambda^{1}(N)$. Then,
+\[ F^{*}(f\omega)(X) = (F_{*,p})^{*}(f(F(p))\omega_{F(p)})(X) = f(F(p))(F_{*,p})^{*}(\omega_{F(p)})(X) = (f\circ F)F^{*}(\omega)(X). \]
+
+\textbf{(d)} Let $X \in T_{p}M$ for some $p\in M$, $(U,\varphi = (y_{1},\dots,y_{n})$ local chart of $N$, $\omega\in \Lambda^{1}(N)$ where $\omega = \sum_{i=1}^{n}\omega^{i}dy_{i}$ and $F = (F_{1},\dots,F_{n})$. Then,
+\[ F^{*}(\omega)(X) = (F_{*,p})^{*}(\omega_{F(p)})(X) = \omega_{F(p)}(F_{*,p}(X)) = \sum_{i=1}^{n}\omega_{F(p)}^{i}d_{F(p)}(y_{i})(F_{*,p}(X)). \]
+Notice that
+\[ d_{F(p)}(y_{i})(F_{*,p}(X)) = (F_{*,p}(X))_{F(p)}(y_{i}) = X_{p}(y_{i}\circ F) = X_{p}(F_{i}) = d_{F(p)}F_{i}(X)\]
+which then gives us that
+\[ F^{*}(\omega)(X) = \sum_{i=1}^{n}\omega_{F(p)}^{i}d_{F(p)}(y_{i})(F_{*,p}(X)) = \sum_{i=1}^{n}(\omega^{i}\circ F)(p)d_{p}F_{i}(X)\]
+as expected.
+
+\textbf{(e)} We use the previous result. Supposing the same conditions as \textbf{(d)}, we see that we know
+\[ F^{*}(\omega) = \sum_{i=1}^{n}(\omega^{i}\circ F)dF_{i} \]
+but we also know that $\omega$ is smooth, and thus $\omega^{i}$ is smooth and $(\omega^{i}\circ F)\in C^{\infty}(M)$ since $F$ is also smooth. Moreover, since $y_{i}$ is smooth as well, we get that $dF_{i}\in \Omega^{1}(M)$. Thus, since the right hand side of the equations is just a sum of smooth 1-forms on $M$, we get that
+\[ F^{*}(\omega) = \sum_{i=1}^{n}(\omega^{i}\circ F)dF_{i} \in \Omega^{1}(M) \]
+as expected.
+
+\newpage
+\textbf{Question 4}
+
+\textbf{(a)}
+
 \end{document}
