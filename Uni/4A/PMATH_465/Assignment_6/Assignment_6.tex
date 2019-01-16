@@ -151,6 +151,100 @@ as expected.
 \newpage
 \textbf{Question 4}
 
-\textbf{(a)}
+We already know that $H$, $N$, and $G$ must all be groups, so now we need to show that $G$ is a smooth manifold. To see how this quoteint group forms a smooth manifold, we need to see how the quotient group is constructed. We recall that the quotient group by a normal subgroup, which $N$ is, is defined as the set of left-cosets, which is equivalent to the set of right cosets. Then,
+\[ G = H/N = \{hN: h\in H\} \]
+and we see that if $n\in N$ and $h\in H$
+\[ h =
+\begin{bmatrix}
+  1 & a & b \\
+  0 & 1 & c \\
+  0 & 0 & 1 \\
+\end{bmatrix}
+\hspace{2em}
+n =
+\begin{bmatrix}
+  1 & 0 & m \\
+  0 & 1 & 0 \\
+  0 & 0 & 1 \\
+\end{bmatrix}
+\]
+where $a,b,c,m \in \R$. Then
+\[ hn =
+\begin{bmatrix}
+  1 & a & b+m \\
+  0 & 1 & c \\
+  0 & 0 & 1 \\
+\end{bmatrix}
+.\]
+Then, we see that the elements of $H/N$ are cosets, and hence is the set of matrices $\forall m \in \R$. Furthermore, we see that $[h] = hN$, and $h \sim h^{\prime}$, where
+\[ h =
+\begin{bmatrix}
+  1 & a & b \\
+  0 & 1 & c \\
+  0 & 0 & 1 \\
+\end{bmatrix}
+\hspace{2em}
+h^{\prime} =
+\begin{bmatrix}
+  1 & a^{\prime} & b^{\prime} \\
+  0 & 1 & c^{\prime} \\
+  0 & 0 & 1 \\
+\end{bmatrix}
+\iff a = a^{\prime} \hspace{1em} \& \hspace{1em} c = c^{\prime}.
+\]
+Finally, this shows us that we can associate each element of the group with an element of $\R^{2}$, in particular $h\mapsto (a,c)\in \R^{2}$ as a bijection! The bijection follows quite naturally, since if $[h]\in G$, then it can be defined uniquely by $a,c \in \R$, and thus uniquely by $(a,c)\in \R^{2}$. For surjection, we see that any $(a,c)\in \R^{2}$ has a class defined by any $h$, as long as the components match accordingly, and then the preimage becomes $hN = [h]$.
 
+Even more natural is the product of two elements. If we call the association map $f: G \to \R^{2}$, where $f(h) = (a,c)$ for $h\in G$, then we can even see that the operation of multiplication is sent nicely, since if we take the $h,h^{\prime}$ from earlier, we get
+\[ hh^{\prime} =
+\begin{bmatrix}
+  1 & a^{\prime}+ a & b^{\prime}+c^{\prime}a + b \\
+  0 & 1 & c^{\prime} + c \\
+  0 & 0 & 1 \\
+\end{bmatrix}
+\]
+and so $f(hh^{\prime}) = (a^{\prime} + a,c^{\prime} + c)$. Notice this works for the group $G$ since we take $h$ and $h^{\prime}$ as representatives of their respective cosets.
+
+We also have that $f$ is smooth with smooth inverese, since it is just a polynomial map, and a very simply polynomial map at that. Thus, $f$ has given us a way of associating $G$ with $\R^{2}$ smoothly, and hence we can use the natural topology of $\R^{2}$ with the standard atlas to get a smooth structure on $G$. Therefore, $G$ is a smooth manifold.
+
+To completely show that $G$ is a Lie group, we need that the multiplication map is also smooth and so is the inverse map. Of course, this follow quite easily from our association with $\R^{2}$, since multiplication is just addition of vectors in $\R^{2}$, we can use the smoothness of addition to guarantee that the multiplication map is smooth. The inverse map is also quite straightforward, as it better agree with multiplication being addition of vectors in $\R^{2}$, and hence is just the map that flips the signs of the components of the vector in $\R^{2}$, and hence is also smooth.
+
+We can conclude that $G$ is a Lie Group.
+
+The Lie Algebra structure is isomorphic to the tangent plane of the Lie group at the identity. In particular, our Lie algebra will be $T_{[e]}G$, where $e$ is the identity matrix in $G$. Notice that $e$ is just a representative of the identy element of $G$, as the identity is the coset $eN = N$. The correspining element in $\R^{2}$ is, as we expect, $(0,0)$, so we know that the tangent space will also correspond, thus $T_{[e]}G \simeq T_{(0,0)}\R^{2} \simeq \R^{2}$, where '$\simeq$' is vector space isomorphism. Hence, the Lie algebra of this Lie group is isomorphic as a vector space to $\R^{2}$.
+
+\newpage
+\textbf{Question 5}
+
+\textbf{(a)} Let $X\in \mathfrak{X}(M)$, $(x_{1},\dots,x_{n})$ be local coordinates and let $\gamma:I\to M$ be a smooth curve.
+
+Assume that $X$ is parallel along $\gamma(t)$, then we know that if $X = \sum_{i=1}^{n}X^{i}\di{x_{i}}$,
+\[ D_{\gamma^{\prime}(t)}X = \sum_{i=1}^{n}\gamma^{\prime}(t)(X^{i})\di{x_{i}} = 0 \]
+but we notice that we must have
+\[ \gamma^{\prime}(t)(X^{i}) = \gamma_{*,\gamma(t)}\left(\del{t}\right)(X^{i}) = \del{t}(X^{i}\circ \gamma(t)) = 0 \]
+$\forall i \in \{1,\dots,n\}$, which implies $X^{i}\circ\gamma(t) = a^{i}$ for some $a^{i}\in \R$. Thus, we see that
+\[  X_{\gamma(t)} = \sum_{i=1}^{n}X^{i}(\gamma(t))\di{x_{i}}\bigg|_{\gamma(t)} = \sum_{i=1}^{n}X^{i}_{\gamma(t)}\di{x_{i}}\bigg|_{\gamma(t)} = \sum_{i=1}^{n}a^{i}\di{x_{i}}\bigg|_{\gamma(t)}\]
+and $X$ is constant along $\gamma(t)$.
+
+Conversely, suppose that we have $a_{1},\dots,a_{n}\in \R$ such that
+\[ X_{\gamma(t)} = \sum_{i=1}^{n}a_{i}\di{x_{i}}\bigg|_{\gamma(t)} \]
+then we see that
+\[ D_{\gamma^{\prime}(t)}X = \sum_{i=1}^{n}\gamma^{\prime}(t)(X^{i})\di{x_{i}}\bigg|_{\gamma(t)} = \sum_{i=1}^{n}\gamma_{*,\gamma(t)}(\del{t})(X^{i})\di{x_{i}}\bigg|_{\gamma(t)} \]
+\[= \sum_{i=1}^{n}\del{t}(X^{i}(\gamma(t)))\di{x_{i}}\bigg|_{\gamma(t)} = \sum_{i=1}^{n}\del{t}(a_{i})\di{x_{i}}\bigg|_{\gamma(t)} = 0\]
+and so we have that $X$ is parallel along $\gamma(t)$.
+
+From what we see above, if we replace $X$ with $\gamma^{\prime}(t)$, we see that if $\gamma(t)$ were a geodesic,
+then
+\[ D_{\gamma^{\prime}(t)}\gamma^{\prime}(t) = 0 \iff \gamma^{\prime}(t)_{\gamma(t)} = \sum_{i=1}^{n}a_{i}\del{x_{i}}\bigg|_{\gamma(t)} \]
+and so we see that $\gamma^{\prime}(t)$ are constant tangents, which implies that $\gamma(t)$ is linear, and hence $\gamma(t)$ is linear and corresponds with a line (segment) in $\R^{n}$
+
+\textbf{(b)}
+
+\textbf{(c)} We first see that $\R$-linearity in each component is satisfied immediatly since the standard inner product is bilinear, and we have already shown that the Euclidean Connection is bilinear. Suppose $f\in C^{\infty}(S^{2})$, $p\in S^{2}$ and $X,Y\in \mathfrak{X}(S^{2})$, then
+\[ \nabla_{fX}Y(p) = D_{fX}Y(p) - (D_{fX}Y(p) \cdot p)p = fD_{fX}Y(p) - f(D_{X}Y(p) \cdot p)p = f\nabla_{X}Y(p) \]
+and hence we have $C^{\infty}(S^{2})$-linearity in the first component. Now we check the Leibniz Rule,
+\[ \nabla_{X}(fY)(p) = D_{X}(fY)(p) - (D_{X}(fY)(p) \cdot p)p\]
+\[ = (X(f)Y + fD_{X}Y)(p) - (((X(f)Y + fD_{X}Y))(p) \cdot p)(p)\]
+\[ = X(f)Y(p) + fD_{X}Y(p) - (X(f)Y(p)\cdot p)(p) + (fD_{X}Y(p) \cdot p)(p)\]
+\[= X(f)Y(p) + f(D_{X}Y(p) - (D_{X}(Y)(p) \cdot p)p) = X(f)Y(p) + f\nabla_{X}(Y) \]
+as expected. So, we see that this is indeed an affine connection.
 \end{document}

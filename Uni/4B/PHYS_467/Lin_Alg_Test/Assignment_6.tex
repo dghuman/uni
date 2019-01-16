@@ -1,0 +1,105 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 467 $|$  Assignment 0}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Question 1}
+
+\textbf{(a)} Suppose $A$ is a $d \times d$ matrix, then we know that
+\[ e^{A} = \sum_{n=0}^{\infty}\frac{1}{n!}A^{n}. \]
+
+\textbf{(b)} We make use of the exponential expansion we did just above. In particular, we see that
+\[ e^{-iUHU^{\dagger}t} = \sum_{n=0}^{\infty}\frac{(-it)^{n}}{n!}(UHU^{\dagger})^{n} = \sum_{n=0}^{\infty}\frac{(-it)^{n}}{n!}\underbrace{UHU^{\dagger}\cdot UHU^{\dagger} \dots UHU^{\dagger}}_{n \text{times}}\]
+but we know that $U$ is unitary, so we have that $U^{\dagger} = U^{-1}$, so we get that
+\[ e^{-iUHU^{\dagger}t} = \sum_{n=0}^{\infty}\frac{(-it)^{n}}{n!}UH^{n}U^{\dagger} = Ue^{-iHt}U^{\dagger} \]
+as expected.
+
+\newpage
+\textbf{Question 2}
+
+\textbf{(a)} This is done with a direct computation. Notice,
+\[ ee^{\dagger} =
+\begin{pmatrix}
+  \cos^{2}\frac{\theta}{2} & e^{-i \phi}\sin\frac{\theta}{2}\cos\frac{\theta}{2} \\
+  e^{i\phi}\sin\frac{\theta}{2}\cos\frac{\theta}{2} & \sin^{2}\frac{\theta}{2} \\
+\end{pmatrix}
+\]
+and from inspection, we see that
+\[ (ee^{\dagger})^{\dagger} =
+\begin{pmatrix}
+  \cos^{2}\frac{\theta}{2} & e^{-i \phi}\sin\frac{\theta}{2}\cos\frac{\theta}{2} \\
+  e^{i\phi}\sin\frac{\theta}{2}\cos\frac{\theta}{2} & \sin^{2}\frac{\theta}{2} \\
+\end{pmatrix}
+= ee^{\dagger} \]
+as expected.
+
+\textbf{(b)} We can see $b$ and $c$ just from looking at the matrix. In particular, using the expansion of $e^{i\phi} = \cos\phi + i\sin\phi$ we see that we must have
+\[ b = \cos\phi \sin\frac{\theta}{2} \cos\frac{\theta}{2} \hspace{2em} c = \sin\phi \sin\frac{\theta}{2} \cos\frac{\theta}{2}. \]
+On the other hand, we see that obtaining $a$ and $d$ is just a matter of solving the system,
+\[ a + d = \cos^{2}\frac{\theta}{2} \hspace{2em} \& \hspace{2em} a - d = \sin^{2}\frac{\theta}{2} \]
+\[ \implies 2a = \cos^{2}\frac{\theta}{2} + \sin^{2}\frac{\theta}{2} = 1 \implies a = \frac{1}{2} \]
+\[ \implies d = \cos^{2}\frac{\theta}{2} -\frac{1}{2}. \]
+Hence, we have our real $a,b,c$ and $d$.
+
+\newpage
+\textbf{Question 3}
+
+\textbf{(a)} We know that the eigenvectors will satisfy the eigenvalue problem when applied to $X$, and from inspection we can find that
+\[ f_{0} =
+\begin{pmatrix}
+  1 \\
+  1 \\
+\end{pmatrix}
+\hspace{2em} \& \hspace{2em} f_{1} =
+\begin{pmatrix}
+  -1 \\
+  1 \\
+\end{pmatrix}
+\]
+which are expressed in the basis of $\{e_{0},e_{1}\}$.
+
+\textbf{(b)} We know that the $+1$ eigenspace is simply $\{e_{0}\}$ for $Z$ and $\{f_{0}\}$ for $X$, so we would expect the eigenbasis of a tensor space to be the tensor of the corresponding eigenspaces, that is $\{f_{0} \otimes e_{0} \otimes f_{0\}}$. Since we have all of these vectors in the standard basis representation, we can explicitly write out the vector that would be this tensor as
+\[ f_{0} \otimes e_{0} \otimes f_{0} =
+\begin{pmatrix}
+  1 \\
+  1 \\
+  0 \\
+  0 \\
+  1 \\
+  1 \\
+  0 \\
+  0 \\
+\end{pmatrix}
+\]
+
+\textbf{(c)} Here we will avoid writing out the tensor product explicitly, since it is instead easier to compute using the multilinearity of the tensor. That is, the tensor product results in a tensor, and hence is multilinear and we can just consider the null spaces of each component of the tensor. Simply put, we need the null spaces of $I+X$ and $I+Z$, and then we just tensor them accordingly.
+
+By inspection, we notice that the null space of $I+X$ better be $f_{1}$, since we want all vectors whose inverse is obtained by swapping components, which is spanned by $f_{1}$. Similarly, we see that for the null space of $I+Z$, we want all vectors that only have second component, which is spanned by $e_{1}$. Thus, we have that the basis of our null space, $B_{\text{null}}$, will be
+\[ B_{\text{null}} = \{f_{1} \otimes e_{1} \otimes f_{1} \} \]
+as required.
+
+\end{document}

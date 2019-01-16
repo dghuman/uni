@@ -1,0 +1,83 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,braket}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 467 $|$  Assignment 1}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Question 1}
+
+\textbf{(a)} We know where the basis vectors are being sent under this map, so we know exactly how this matrix should look. Specifically, since we know that basis vectors just pull out coloumns of matrices, we see that the coloumns of the matrix should be the output vectors. Thus,
+
+\[ U =
+\begin{bmatrix}
+  1 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 1 \\
+  0 & 0 & 1 & 0 \\
+\end{bmatrix}
+\hspace{2em} \& \hspace{2em} V =
+\begin{bmatrix}
+  1 & 0 & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}.
+\]
+The braket notation will look like
+\[ U = \ket{00}\bra{00} + \ket{01}\bra{01} + \ket{11}\bra{10} + \ket{10}\bra{11} \hspace{1em} \& \hspace{1em} V = \ket{00}\bra{00} + \ket{10}\bra{01} + \ket{01}\bra{10} + \ket{11}\bra{11} \]
+as required.
+
+\textbf{(b)} We first note that $V$ is symmetric and real valued, also known as hermitian, thus $V^{\dagger} = V$. The actions are
+\[ \ket{00} \to \ket{00} \hspace{1em} \ket{01} \to \ket{11} \hspace{1em} \ket{10} \to \ket{10} \hspace{1em} \ket{11} \to \ket{01} \hspace{1em} \]
+which tells us that the matrix representation better be
+\[ VUV^{\dagger} =
+\begin{bmatrix}
+  1 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 1 \\
+  0 & 0 & 1 & 0 \\
+  0 & 1 & 0 & 0 \\
+\end{bmatrix}.
+\]
+The braket notation will look like
+\[ VUV^{\dagger} = \ket{00}\bra{00} + \ket{11}\bra{01} + \ket{10}\bra{10} + \ket{10}\bra{11} \]
+as required.
+
+\textbf{(c)} If we call $I$ the identity matrix in $\C^{2}$, we are asked to find $T = H \otimes I$. To get the matrix representation, we first notice that
+\[ H\ket{0} = \frac{1}{\sqrt{2}}\ket{0} + \frac{1}{\sqrt{2}}\ket{1} \hspace{2em} H\ket{1} = \frac{1}{\sqrt{2}}\ket{0} - \frac{1}{\sqrt{2}}\ket{1}.\]
+With this information, we can get the matrix representation to be
+\[ T = \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+  1 & 0 & 1 & 0 \\
+  0 & 1 & 0 & 1 \\
+  1 & 0 & -1 & 0 \\
+  0 & 1 & 0 & -1 \\
+\end{bmatrix}.
+\]
+
+For $UT$, we get an action of
+\[ \ket{00} \to \frac{1}{\sqrt{2}}(\ket{00}+\ket{11}) \hspace{1em} \ket{01} \to \frac{1}{\sqrt{2}}(\ket{01}+\ket{10}) \]
+\[ \ket{10} \to \frac{1}{\sqrt{2}}(\ket{00}-\ket{11}) \hspace{1em} \ket{11} \to \frac{1}{\sqrt{2}}(\ket{01}-\ket{10})\]
+\end{document}

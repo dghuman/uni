@@ -1,0 +1,248 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 465 $|$  Assignment 5}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Question 1}
+
+\textbf{(A) Problem 9.3 in Lee}
+
+\textbf{(a)} We consider the vector field $V = y\di{x} + \di{y}$ on $\R^{2}$. Suppose $p = (p_{1},p_{2})\in\R^{2}$, and say we wish to find the flow $\varphi_{t}(p) = \gamma_{p}(t)$. We find the maximal integral curve in the standard way; suppose $\gamma_{p}(t) = (x(t),y(t))$ and $\gamma_{p}(0) = p$, then
+\[ \gamma^{\prime}_{p}(t) = \gamma_{*}\left(\del{t}\bigg|_{p}\right) = \del[x]{t}\di{x} + \del[y]{t}\di{y} = y\di{x} + \di{y} = V  \implies \del[x]{t} = y \hspace{1em} \& \hspace{1em} \del[y]{t} = 1\]
+\[ y(t) = t + c \hspace{2em} x(t) = \frac{1}{2}t^{2}+ct+d \]
+but we have our initial condition, which gives
+\[ \gamma_{p}(0) = (d,c) = (p_{1},p_{2}) \implies \varphi_{t}((p_{1},p_{2})) = (\frac{1}{2}t^{2}+p_{2}t+p_{1},t + p_{2}) \]
+where $t\in \R$, and we see this is our flow.
+
+\textbf{(b)} Let $W = x\di{x} + 2y\di{y}$, and we can let $\varphi_{t}(p) = \gamma_{p}(t)$, where $p = (p_{1},p_{2})\in \R^{2}$. Then, if $\gamma_{p}(0) = p$ and $\gamma_{p}(t) = (x(t),y(t))$, we get
+\[ \gamma^{\prime}_{p}(t) = \gamma_{*}\left(\del{t}\bigg|_{p}\right) = \del[x]{t}\di{x} + \del[y]{t}\di{y} = x\di{x} + 2y\di{y} = W \implies \del[x]{t} = x \hspace{1em} \& \hspace{1em} \del[y]{t} = 2y\]
+\[ x(t) = Ae^{t} \hspace{2em} y(t) = Be^{2t}. \]
+Applying our initial condition,
+\[ \gamma_{p}(0) = (A,B) = (p_{1},p_{2}) \implies A = p_{1} \hspace{1em} \& \hspace{1em} B = p_{2} \]
+which then gives us that
+\[ \varphi_{t}((p_{1},p_{2})) = (p_{1}e^{t},p_{2}e^{2t}) \]
+where $t\in \R$, and hence we have our flow.
+
+\textbf{(c)} We see that $X = x\di{x} - y\di{y}$, and we let $\varphi_{t}(p) = \gamma_{p}(t)$ for $p=(p_{1},p_{2})\in \R^{2}$, $\gamma_{p}(t) = (x(t),y(t))$ and $\gamma_{p}(0) = p$. Then,
+\[ \gamma^{\prime}_{p}(t) = \gamma_{*}\left(\del{t}\bigg|_{p}\right) = \del[x]{t}\di{x} + \del[y]{t}\di{y} = x\di{x} - y\di{y} = X \implies \del[x]{t} = x \hspace{1em} \& \hspace{1em} \del[y]{t} = -y \]
+\[ x(t) = Ae^{t} \hspace{2em} y(t) = Be^{-t}. \]
+Applying our initial condition,
+\[ \gamma_{p}(0) = (A,B) = (p_{1},p_{2}) \implies A = p_{1} \hspace{1em} \& \hspace{1em} B = p_{2} \]
+so that
+\[ \varphi_{t}((p_{1},p_{2})) = (p_{1}e^{t},p_{2}e^{-t}) \]
+where $t\in \R$ and thus we have our flow.
+
+\textbf{(d)} We let $Y = x\di{y} + y\di{x}$, and further let $\varphi_{t}(p) = \gamma_{p}(t)$, where $p=(p_{1},p_{2})\in \R^{2}$, $\gamma_{p}(t) = (x(t),y(t))$, and $\gamma_{p}(0) = p$, then
+\[ \gamma^{\prime}_{p}(t) = \gamma_{*}\left(\del{t}\bigg|_{p}\right) = \del[x]{t}\di{x} + \del[y]{t}\di{y} = x\di{y} + +y\di{x} = Y \implies \del[x]{t} = y \hspace{1em} \& \hspace{1em} \del[y]{t} = x \]
+which is a pair of coupled ODEs. Suppose the following set-up
+\[ \vec{x} = 
+\begin{bmatrix}
+  x \\
+  y \\
+\end{bmatrix}
+\hspace{1em}
+A =
+\begin{bmatrix}
+  0 & 1 \\
+  1 & 0 \\
+\end{bmatrix}
+\implies \del{t}\vec{x} = A\vec{x}
+\]
+so that our system of ODE's becomes a vector ODE. Suppose a solution of the form $e^{\lambda t}\vec{v}$ where $\vec{v}\in \R^{2}$, then
+\[ \del{t}\vec{x} = A\vec{x} \implies \lambda e^{\lambda t}\vec{v} = Ae^{\lambda t}\vec{v} \implies  \lambda \vec{v}= A\vec{v} \]
+hence, we need to find the eigenvectors and eigen values for our solution. Thus,
+\[ \text{det}(A - \lambda \mathcal{I}) =
+\begin{vmatrix}
+  -\lambda & 1 \\
+  1 & -\lambda \\
+\end{vmatrix}
+= \lambda^{2} - 1 \implies \lambda = \pm 1 
+\]
+Furthermore, plugging in the eigenvalues, we can find that the corresponding eigenvectors to be
+\[ \vec{v_{1}} = 
+\begin{bmatrix}
+  1 \\
+  1
+\end{bmatrix}
+\hspace{2em} \& \hspace{2em} \vec{v_{2}} =
+\begin{bmatrix}
+  -1 \\
+  1 \\
+\end{bmatrix}
+\]
+With this, we see that our solution becomes
+\[ \gamma_{p}(t) = (Ae^{t} - Be^{-t}, Ae^{t} + Be^{-t}) \implies \gamma_{p}(0) = (p_{1},p_{2}) = (A-B,A+B) \]
+\[ \implies A = \frac{p_{1}+p_{2}}{2} \hspace{2em} \& \hspace{2em} B = \frac{p_{2} - p_{1}}{2} \]
+and hence the flow is
+\[ \varphi_{t}(p) = \left(\frac{p_{1}+p_{2}}{2}e^{t} - \frac{p_{2} - p_{1}}{2}e^{-t}, \frac{p_{1}+p_{2}}{2}e^{t} + \frac{p_{2} - p_{1}}{2}e^{-t}\right) \hspace{1em} \forall t\in \R\]
+as required.
+
+\textbf{(B) Problem 9.18 from Lee} 
+
+We compute the flows of the two vector fields using the same methodology we used in the previous question. For $X$ we have that
+\[ \gamma^{\prime}_{p}(t) = \gamma_{*}\left(\del{t}\bigg|_{p}\right) = \del[x]{t}\di{x} + \del[y]{t}\di{y} = x\di{x} - y\di{y} = X  \implies \del[x]{t} = x \hspace{1em} \& \hspace{1em} \del[y]{t} = -y\]
+which we know will give us
+\[ x = Ae^{t} \hspace{2em} \& \hspace{2em} y = Be^{-t}. \]
+If we suppose $p = (p_{1},p_{2})\in M$, we get,
+\[ \gamma_{p}(0) = (p_{1},p_{2}) = (A,B) \implies A = p_{1} \hspace{2em} B = p_{2}\]
+hence we have that
+\[ \theta_{t}((p_{1},p_{2})) = (p_{1}e^{t},p_{2}e^{-t}) \]
+as our flow for $X$. Next, we consider the flow for $Y$. Again, we have that
+\[ \gamma^{\prime}_{p}(t) = \gamma_{*}\left(\del{t}\bigg|_{p}\right) = \del[x]{t}\di{x} + \del[y]{t}\di{y} = x\di{y} + y\di{x} = Y  \implies \del[y]{t} = x \hspace{1em} \& \hspace{1em} \del[x]{t} = y.\]
+We recall from question $\textbf{(A)}$ that the solution to this will give us a flow of 
+\[ \psi_{t}((p_{1},p_{2})) = \left(\frac{p_{1}+p_{2}}{2}e^{t} - \frac{p_{2} - p_{1}}{2}e^{-t}, \frac{p_{1}+p_{2}}{2}e^{t} + \frac{p_{2} - p_{1}}{2}e^{-t}\right) \hspace{1em} \forall t\in \R\]
+for $Y$.
+
+We first compute the composition of the maps. Thus, if $J,K \subset \R$ are open with $0\in J$ and $0\in K$, not defined explicitly just yet,  we can let $(s,t) \in J\times K$. Then
+\[ \theta_{s}\circ \psi_{t} ((p_{1},p_{2})) = \theta_{s}\left(\frac{p_{1}+p_{2}}{2}e^{t} - \frac{p_{2} - p_{1}}{2}e^{-t}, \frac{p_{1}+p_{2}}{2}e^{t} + \frac{p_{2} - p_{1}}{2}e^{-t}\right)\]
+\[= \left(\frac{p_{1}+p_{2}}{2}e^{t+s} - \frac{p_{2} - p_{1}}{2}e^{s-t}, \frac{p_{1}+p_{2}}{2}e^{t-s} + \frac{p_{2} - p_{1}}{2}e^{-s-t}\right)\]
+\[ = \psi_{t}\circ\theta_{s} ((p_{1},p_{2})) = \psi_{t}(p_{1}e^{s},p_{2}e^{-s})\]
+\[ = \left(\frac{p_{1}e^{s}+p_{2}e^{-s}}{2}e^{t} - \frac{p_{2}e^{-s} - p_{1}e^{s}}{2}e^{-t}, \frac{p_{1}e^{s}+p_{2}e^{-s}}{2}e^{t} + \frac{p_{2}e^{-s} - p_{1}e^{s}}{2}e^{-t}\right) \]
+
+%finish me
+
+\textbf{(C)} We have that $Z = \di{x} \in \mathcal{X}(\R^{2})$ and $V = y\di{x} + \di{y}$. Then, by definition of the Lie bracket,
+\[ [V,Z] = (V(Z^{x}) - Z(V^{x}))\del{x} + (V(Z^{y}) - Z(V^{y}))\del{y} = (V(1) - Z(y))\del{x} + (V(0) - Z(1))\del{y}\]
+\[ [V,Z] = (0 - 0)\del{x} + (0 - 0)\del{y} = 0 \]
+
+as expected.
+
+% add diagram
+
+\newpage
+\textbf{Question 2: Problem 9.5 from Lee} 
+
+By supposition, we know that $M$ has a nowhere vanishing vector field. Call this vector field $X\in \mathcal{X}(M)$. Furthermore, since $M$ is compact, we know that $M$ is complete and that the maximal integral curves admitted by this vector field will be over all of $\R$. Thus, we get a global flow for our manifold $M$. I propose that the homotopic map will be naturally induced by the flow of this manifold.
+
+To see this, consider $p\in M$, and suppose $\gamma_{p}(t) : I\subset \R^{n} \to M$ an integral curve , with dim$(M) = n$, $0\in I$, $\gamma_{p}(0) = p \in M$ and $X_{\gamma_{p}(t)} = \gamma_{p}^{\prime}(t)$. However, this integral curve clearly gives us our flow aswell; we simply associate $\varphi_{t}(p) = \gamma_{p}(t)$. Furthermore, since $M$ is compact, $I = \R$, and our flow is global. The homotopy comes from this flow. To see this, we fix a map using the flow, in particular, let $F_{1}: M \to M$ such that $F_{1}(p) = \varphi_{1}(p)$, and we see that neccessarily $id: M \to M$ is just $id(p) = p = \varphi_{0}(p)$. So, since $\varphi_{t}(p)$ is a \textit{smooth}, global flow, we have that it is also continuous, and we get
+\[ \varphi_{0}(p) = id(p) \hspace{2em} \& \hspace{2em} \varphi_{1}(p) = F_{1}(p) \]
+where we know $\varphi: \R \times M \to M$. Thus, we have that the identity is homotopic with $F_{1}$, where $F_{1}$ is smooth since the flow is smooth.
+
+To finish off the proof, we need that the homotopy yields no stationary points. This follows from the vector field that originally admitted the global flow; the vector feild is non-vanishing. Suppose we did have a stationary point, say $q\in M$ under the homotopy, then we see
+\[ \varphi_{0}(q) = \varphi_{1}(q) \implies \gamma_{q}(0) = \gamma_{q}(1) \implies \gamma_{q}^{\prime}(t) = 0 \implies X_{\gamma_{q}(t)} = 0 \]
+which is a contradiction, since we assumed that $X$ is non-vanishing. Therefore we have no stationary points.
+
+\newpage
+\textbf{Problem 3}
+
+\textbf{(a)} We get the smoothness of $D_{X}Y$ from the components. In particular, notice that since $Y^{i}$ is smooth $\forall i = 1,\dots,n$, and $X \in \mathcal{X}(M)$, we know compositions of smooth maps will be smooth as well, and hence $X(Y^{i}) \in \C^{\infty}(M)$. Then, by lemma, since the component functions are smooth, $D_{X}Y$ is smooth.
+
+First, we need that the map is $\R$-bilinear. Suppose $X,Y,Z \in \mathcal{X}(M)$ and $a,b\in\R$, then
+\[ D(aX,bY) = D_{aX}bY = \sum_{i=1}^{n}aX(bY^{i})\di{x_{i}} = ab\sum_{i=1}^{n}X(Y^{i})\di{x_{i}} = abD_{X}Y = abD(X,Y)\]
+\[ D(X, Y + Z) = D_{X}(Y + Z) = \sum_{i=1}^{n}X((Y + Z)^{i})\di{x_{i}} = \sum_{i=1}^{n}X((Y+Z)(x_{i}))\di{x_{i}}\]
+\[= \sum_{i=1}^{n}X(Y(x_{i})+Z(x_{i}))\di{x_{i}} = \sum_{i=1}^{n}(X(Y^{i}) + X(Z^{i}))\di{x_{i}}\]
+\[= \sum_{i=1}^{n}X(Y^{i})\di{x_{i}} + \sum_{i=1}^{n}X(Z^{i})\di{x_{i}} = D_{X}Y + D_{X}Z = D(X,Y) + D(X,Z) \]
+\[ D(X+Y,Z) = D_{X+Y}Z = \sum_{i=1}^{n}(X+Z)(Y^{i})\di{x_{i}} = \sum_{i=1}^{n}(X(Y^{i})\di{x_{i}} + Z(Y^{i})\di{x_{i}})\]
+\[= D_{X}Y + D_{Z}Y = D(X,Y) + D(Z,Y) \]
+So we see that we have $\R$-bilinearity in this map. Now we need that it is $C^{\infty}(M)$-linear in $X$. Let $f\in\C^{\infty}(M)$, then,
+\[ D(fX,Y) = D_{fX}Y = \sum_{i=1}^{n}(fX)(Y^{i})\di{x_{i}} \]
+however, we note that since $f$ is just a smooth function on $M$, and $\mathcal{X}(M)$ is a vector field closed under multiplication by $C^{\infty}(M)$ fuctions. To see this explicitly, we need this to act on a smooth function at a point; let $g\in C^{\infty}(M)$ and $p\in M$, then
+\[ D(fX,Y)(f(p)) = \sum_{i=1}^{n}(fX)(Y^{i})(p)\di[g(p)]{x_{i}} = \sum_{i=1}^{n}(fX)_{p}(Y^{i})\di[g(p)]{x_{i}} \]
+\[ = \sum_{i=1}^{n}(f(p)X(p))(Y_{i})\di[g(i)]{x_{i}} = f(p)\sum_{i=1}^{n}X_{p}(Y^{i})\di[g(p)]{x_{i}}\]
+\[ = f(p)(D_{X}Y)(p) = (fD(X,Y))(p) \]
+as required!
+
+Now we check the Leibniz rule. We have,
+\[ D(X,fY)(g(p)) = D_{X}(fY)(g(p)) = \sum_{i=1}^{n}X(fY)^{i}(p)\di[g(p)]{x_{i}} \]
+\[ = \sum_{i=1}^{n}X_{p}(fY)(x_{i})\di[g(p)]{x_{i}} = \sum_{i=1}^{n}X_{p}(fY^{i})\di[g(p)]{x_{i}}\]
+\[ = \sum_{i=1}^{n}(X_{p}(f)Y^{i}_{p} + f(p)X_{p}(Y^{i}))\di[g(p)]{x_{i}} = \sum_{i=1}^{n}X_{p}(f)Y^{i}_{p}\di[g(p)]{x_{i}} + \sum_{i=1}^{n}f(p)X_{p}(Y^{i})\di[g(p)]{x_{i}} \]
+\[ = X_{p}(f)Y_{p}(g) + f(p)D_{X}(Y)(g(p)) \]
+\[ \implies D(X,fY) = X(f)Y + fD(X,Y) \]
+as required. Thus, we have that the directional derivative is indeed an affine connection.
+
+Now we look at $D + \Gamma$. Since $\Gamma$ is a $C^{\infty}(\R^{n})$-bilinear map it is also $\R$-bilinear, and hence we have that the sum of two $\R$-bilinear maps better be $\R$-bilinear. Furthermore, since $\Gamma$ is $C^{\infty}(\R^{n}$-bilinear, it automatically satisfies the being $C^{\infty}(\R^{n})$-linear in $X$. Thus, we get that the sum will also be $C^{\infty}(\R^{n})$-linear. Then, all we need is that it also satisfies the Leibniz rule. We see
+\[(D+\Gamma)(X,fY) = D(X,fY) + \Gamma(X,fY) = X(f)Y + fD(X,Y) + f\Gamma(X,Y) = X(f)Y + f(D+\Gamma)(X,Y)\]
+as required. Thus, we see that this sum is indeed an affine connection.
+
+To see that every affine connection is just the sum of the directional derivative, $D$ and some $C^{\infty}(\R^{n})$-bilinear map $\Gamma$, we note that we need to find $\Gamma$ such that this holds, since we already have $D$ and $\nabla$, our affine connection. Then, notice
+\[ \nabla  = D + \Gamma \implies \Gamma = \nabla - D. \]
+So, all we need is that $\nabla - D$ satisfies the conditions for it being like $\Gamma$. In particular, we need to check that it is $C^{\infty}(\R^{n})$-bilinear. We know that the sum will be $C^{\infty}(\R^{n})$-linear in the first component since both $\Gamma$ and $D$ are already affine connections. All we need is to check the second component; suppose $f\in C^{\infty}(\R^{n})$, and $X,Y\in \mathcal{X}(\R^{n})$, then
+\[ (\nabla - D)(X,fY) = \nabla_{X}(fY) - D_{X}(fY) = X(f)Y + f\nabla_{X}Y - (X(f)Y + fD_{X}Y) \]
+\[ = f(\nabla_{X}Y - D_{X}Y) = f(\nabla - D)(X,Y) \]
+and hence we have that this is indeed $C^{\infty}(\R^{n})$-bilinear. Thus, we have that $\Gamma = \nabla - D$ is well defined and exists!
+
+\textbf{(b)} To show that the Lie Derivative satisfies the Leibniz rule, we let $f,g\in C^{\infty}(M)$, and $X,Y\in \mathcal{X}(M)$. Further, we recall that the Lie derivative is exactly the Lie bracket, which will be much easier to compute in this case, hence
+\[ \mathcal{L}(X,fY)(g) = \mathcal{L}_{X}(fY)(g) = [X,fY](g) = X((fY)(g)) - fY(X(g)) = X(fY(g)) - fY(X(g))\]
+\[ = X(f)Y(g) + fX(Y(g)) - fY(X(g)) = X(f)Y(g) + f(XY - YX)(g) = X(f)Y(g) + f[X,Y] \]
+\[ \implies \mathcal{L}(X,fY) = X(f)Y + f\mathcal{L}(X,Y) \]
+and thus we have that the Leibniz rule is satisfied. On the other hand,
+\[ \mathcal{L}(fX,Y)(g) = \mathcal{L}_{fX}(Y)(g) = [fX,Y](g) = fX((Y)(g)) - Y(fX(g)) = fX(Y(g)) - (Y(f)X(g) + fY(X(g)))\]
+\[ = fX(Y(g)) - fY(X(g)) - Y(f)X(g) = f[X,Y](g) - Y(f)X(g) \neq f[X,Y](g)\]
+and hence we do not have that the Lie derivative is $C^{\infty}(M)$-linear in the first component.
+
+Notice, if $M= \R^{n}$, and $p\in \R^{n}$, then
+\[ \mathcal{L}(X,Y)(g(p)) = [X,Y](g(p)) = (XY - YX)(g(p)) = X(Y(g(p))) - Y(X(g(p))).\]
+Since this is in $\R^{n}$, we get the natural local coordinates $\{x_{1},\dots,x_{n}\}$ and we can conclude that
+\[ X = \sum_{i=1}^{n}X^{i}\di{x_{i}} \hspace{2em} \& \hspace{2em} Y = \sum_{i=1}^{n}Y^{i}\di{x_{i}}. \]
+Then, since we have the local representations, we can sub those into our expression,
+\[ \mathcal{L}(X,Y)(g(p)) = \sum_{i=1}^{n}X^{i}(p)\di[Y(g)]{x_{i}}\bigg|_{p} - \sum_{i=1}^{n}Y^{i}(p)\di[X(g)]{x_{i}}\bigg|_{p} \]
+This will get ugly, so we look at just one of the expressions, as the other will follow symmetrically:
+\[ \sum_{i=1}^{n}X^{i}(p)\di[Y(g)]{x_{i}}\bigg|_{p} = \sum_{i=1}^{n}X^{i}(p)\di{x_{i}}\left(\sum_{j=1}^{n}Y^{j}(p)\di{x_{j}}g\bigg|_{p}\right) \]
+\[ = \sum_{i=1,j=1}^{n}X^{i}(p)\left(\di{x_{i}}Y^{j}(p)\di{x_{j}}g  + Y^{j}(p)\frac{\partial^{2}}{\partial x_{i} \partial x_{j}}g\right) \]
+\[ = \sum_{i=1}^{n}X(Y^{i})(p)\di{x_{i}}g\bigg|_{p}  + \sum_{i=1,j=1}^{n}X^{i}Y^{j}(p)\frac{\partial^{2}}{\partial x_{i} \partial x_{j}}g\bigg|_{p}. \]
+\newpage
+By symmetry, we get that
+\[ \mathcal{L}(X,Y)(g(p)) = \sum_{i=1}^{n}X(Y^{i})(p)\di{x_{i}}g\bigg|_{p}  + \sum_{i=1,j=1}^{n}X^{i}Y^{j}(p)\frac{\partial^{2}}{\partial x_{i} \partial x_{j}}g\bigg|_{p} \]
+\[ - \sum_{i=1}^{n}Y(X^{i})(p)\di{x_{i}}g\bigg|_{p}  - \sum_{i=1,j=1}^{n}Y^{i}X^{j}(p)\frac{\partial^{2}}{\partial x_{i} \partial x_{j}}g\bigg|_{p} \]
+\[ \mathcal{L}(X,Y)(g(p)) = \sum_{i=1}^{n}X(Y^{i})(p)\di{x_{i}}g\bigg|_{p} - \sum_{i=1}^{n}Y(X^{i})(p)\di{x_{i}}g\bigg|_{p} = D_{X}Y (g(p)) - D_{Y}X (g(p))\]
+\[ \implies \mathcal{L}(X,Y) = D_{X}Y - D_{Y}X \]
+as required.
+
+\textbf{(c)} We see that, if $\nabla$ and $\nabla^{\prime}$ are affine connections, then the sum, $\nabla + \nabla^{\prime}$ will not be, and this is due to the Leibniz rule not being satisfied. In particular, let $X,Y\in \mathcal{X}(M)$ and $f\in C^{\infty}(M)$, then
+\[ (\nabla + \nabla^{\prime})(X,fY) = \nabla_{X}(fY) + \nabla^{\prime}_{X}(fY) = X(f)Y + f\nabla_{X}(Y) + X(f)Y + f\nabla^{\prime}_{X}(Y)\]
+\[ = 2X(f)Y + f(\nabla + \nabla^{\prime})(X,Y) \neq X(f)Y + f(\nabla + \nabla^{\prime}) \]
+and thus we have that the Leibniz rule is not satisfied.
+
+Now we consider $t\nabla + (1-t)\nabla$, and check it is an affine connection. First, we note this is necessarily $\R$-bilinear and we have $C^{\infty}$-linearity in the first component since scalars won't change the linearity. Thus, all we need to check is the condition that failed earlier, the Leibniz rule. Suppose $X,Y\in \mathcal{X}(M)$ and $f\in C^{\infty}(M)$, then
+\[ (t\nabla + (1-t)\nabla^{\prime})(X,fY) = t\nabla_{X}(fY) + (1-t)\nabla^{\prime}_{X}(fY) = t(X(f)Y + f\nabla_{X}(Y)) + (1-t)(X(f)Y + f\nabla^{\prime}_{X}(Y)) \]
+\[= f(t\nabla_{X}(Y) + (1-t)\nabla^{\prime}_{X}(Y)) + (t+1-t)X(f)Y = X(f)Y + f(\nabla + \nabla^{\prime})(X,Y).\]
+We see that the Leibniz rule is indeed satisfied, and moreover, this holds $\forall t\in\R$.
+
+Now we consider an arbitrary, but finite, number of such affine connections. Suppose $\nabla_{1},\dots,\nabla_{l}$ are affine connections on $M$, and $a_{1},\dots,a_{l}\in \R$ such that $a_{1} + \dots + a_{l} = 1$. Further, let $X,Y\in \mathcal{X}(M)$ and $f\in C^{\infty}(M)$, then
+\[ (a_{1}\nabla_{1}+\dots+a_{l}\nabla_{l})(X,fY) = a_{1}\nabla_{1}(X,fY) + \dots + a_{l}\nabla_{l}(X,fY)\]
+\[ = a_{1}(X(f)Y + \nabla_{1}(X,Y)) + \dots + a_{l}(X(f)Y + \nabla_{l}(X,Y)) = (a_{1} + \dots a_{l})X(f)Y + a_{1}\nabla_{1}(X,Y) + \dots + a_{l}\nabla_{l}(X,Y) \]
+\[ = X(f)Y + (a_{1}\nabla_{1} + \dots + a_{l}\nabla_{l})(X,Y) \]
+and hence we again have that an arbitrary convex sum of affine connections is an affine connection.
+
+\textbf{(d)} We need to show that $T$, the torsion of $\nabla$, an affine connection, is $C^{\infty}(M)$-bilinear. Suppose $f,g\in C^{\infty}(M)$, and $X,Y\in \mathcal{X}(M)$, then
+\[ T(fX,gY) = \nabla_{fX}(gY) - \nabla_{gY}(fX) - [fX,gY] \]
+\[ = f(X(g)Y + g\nabla_{X}Y) - g(Y(f)X + f\nabla_{Y}X) - (fX(gY) - gY(fX)) \]
+We recall that the Lie Bracket only makes sense when acting on a smooth function on $M$, so let $h\in C^{\infty}(M)$, then we see that
+\[ [fX,gY](h) = fX(gY(h)) - gY(fX(h)) = f(X(g)Y(h) + g(X(Y(h)))) - g(Y(f)X(h) + fY(X(g))) \]
+\[ = fg[X,Y](h) + fX(g)Y(h) - gY(f)X(h)\]
+\[ \implies  [fX,gY] = fg[X,Y] + fX(g)Y - gY(f)X.\]
+Taking this result back into our original expression,
+\[ T(fX,gY) = f(X(g)Y + g\nabla_{X}Y) - g(Y(f)X + f\nabla_{Y}X) - (fg[X,Y] + fX(g)Y - gY(f)X) \]
+\[ = fg( \nabla_{X}Y - \nabla_{Y}X - [X,Y]) \]
+as required. The remaining requirements for linearity in smooth functions follow quite easily, as we already have $\R$-bilinearity, and that makes addition of more vector fields linear aswell. We therefore have our $C^{\infty}$-bilinearity!
+
+\newpage
+\textbf{Question 4}
+
+\textbf{(a)}
+\end{document}

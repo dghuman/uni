@@ -1,0 +1,64 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 348 $|$  Assignment 1}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Question 1}
+
+\textbf{(a)} We prove the claim directly. Suppose that $G/Z(G)$ is indeed cyclic, then $\exists /, a\in G$ such that $aZ(G)$ generates the entire quotient group. We know that cosets partition the group, and in particular if $g,h\in G$, then $\exists \, g_{Z}, h_{Z} \in Z(G)$ and $n,m\in \Z^{+}$ such that
+\[ g = a^{n}g_{Z} \hspace{2em} \& \hspace{2em} h = a^{m}h_{Z} \, .\]
+Then, using the fact that $g_{Z}$ and $h_{Z}$ are in the centre, 
+\[ gh = (a^{n}g_{Z})(a^{m}h_{Z}) = a^{n}a^{m}g_{Z}h_{Z} = a^{m}a^{n}h_{Z}g_{Z} = (a^{m}h_{Z})(a^{n}g_{Z}) = hg \]
+and so we see that $G$ is abelian.
+
+\textbf{(b)} We first use Lagrange's theorem, since we know $Z(G)$ is a normal subgroup of $G$, then we know that $|Z(G)$ divides $|G|$. So, we get that $|Z(G)| = 1, p$ or $p_{2}$. Well, if $|Z(G)| = p^{2}$, then $G = Z(G)$ and $G$ is abelian.
+
+Further, we recall that the centre of $p$-groups is non-trivial, so we know that $|Z(G)|\neq 1$, and hence we assume $|Z(G)| = p$. Then, $|G|/|Z(G)| = |G:Z(G)| = p$ and we recall that groups of prime order are cyclic, and hence from the above proof we know that $G$ is abelian.
+
+Thus, we have shown what is required.
+
+%We look at this in cases. In particular, we know from the class equation that
+%\[ |G| = |Z(G)| + \sum |G:Stab(a_{i})| \, .\]
+%Here we know that $|G| = p^{2}$ for some prime $p$. The trivial case is if $|Z(G)| = p^{2}$, in which case $G$ is abelian from the definition of the centre of the group, and we see that $|Z(G)| \geq 1$ due to the identity.
+
+%Next, we know that $p\,|\,p^{2}$, so we can assume that $p\,|\,(|Z(G)| + \sum|G:Stab(a_{i})|)$. This further implies that either $p$ divides both of the terms in the sum, or neither of them. If $p \, | \, |Z(G)|$, and we already have assumed that $|Z(G)| \neq p^{2}$, we get that $|Z(G)| = p$. This gives us that $\sum |G:Stab(a_{i})| = p(p-1)$
+\newpage
+\textbf{Question 2}
+
+We first factor 132 into it's primes to get $2^{2}\cdot 3\cdot 11$. Looking at $n_{11}$, we see that
+\[ n_{11} = 1 (\text{mod} 11) \hspace{2em} \& \hspace{2em} n_{11} | 12 \]
+so we require that $n_{11} = 1$ or $12$. If $n_{11} = 1$ then we have a normal subgroup so we assume $n_{11} = 12$. Next, we look at $n_{3}$,
+\[ n_{3} = 1 (\text{mod} 3) \hspace{2em} \& \hspace{2em} n_{3} | 44 = 2^{2} \cdot 11 \, .\]
+We have way more choices than we did with our Sylow 11-group, so we reduce this by counting the number of elements that are actually left after having 12 Sylow 11-subgroups. We see that $132 - (12 \times 10) = 12$, so we must have that $n_{3} = 1, 4$. However, if $n_{3} = 4$, then there are no Sylow 2-subgroups, which is a contradiction with Sylows first theorem, and hence $n_{3} = 1$ and we see that we have no simple groups of order 132.
+
+\newpage
+\textbf{Question 3}
+
+\textbf{(a)} 
+
+\end{document}

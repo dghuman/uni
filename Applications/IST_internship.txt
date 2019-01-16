@@ -1,0 +1,9 @@
+Dear Professor Herbert Edelsbrunner,
+
+My name is Dilraj Ghuman and I am an undergraduate student at the University of Waterloo in Mathematical Physics. I will be graduating this June with an Honours Bachelor of Science, and will be applying for the IST internship this summer. I am contacting you in interest of your research, as I have checked that you will be taking part in this internship yourself.
+
+Though I will be getting a Bachelor of Science, and am studying physics, I have always had an interest in mathematics as well. I have taken a course in Groups & Rings, Differential Geometry, and just completed a course in Geometry of Manifolds (Lee's Introduction to Smooth Manifolds). This last course in particular has guarenteed that I will be persuing further education in geometry and have a great interest in the subject.
+
+I have been applying for masters positions, and will recieve my results by May, so I would like to take this summer as an oppertunity to learn as much geometry as I can. 
+
+I have worked previously at TRIUMF in Vancouver, Canada, and SNOLAB in Sudbury, Canada, with the T2K and DEAP projects respectively. This has lead to experience in experimental physics where I primarily worked in C++. A large proportion of my work was 

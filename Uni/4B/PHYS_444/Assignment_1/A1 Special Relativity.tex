@@ -1,0 +1,369 @@
+\documentclass[12pt,oneside]{book}
+%==================================================================================
+% metadata
+\title{PHYS 444
+\hfill
+Assignment 1
+\\
+Special Relativity}
+
+\author{
+	Alice\footnote{Alice@uWaterloo.ca}
+\and % use this for more than one author
+	Bob\footnote{Bob@uWaterloo.ca}
+}
+%==================================================================================
+%==================================================================================
+% preamble
+\usepackage[margin=1in]{geometry}
+\usepackage[svgnames,x11namees]{xcolor}
+\usepackage{hyperref}\hypersetup{
+	colorlinks=true,
+	linkcolor={blue!75!black},	
+	citecolor={blue!75!black},
+	urlcolor={blue!75!black},
+}
+\usepackage{cancel}		\renewcommand{\CancelColor}{\color{red}} %change cancel color to red
+\usepackage{graphicx}	\graphicspath{{graphics/}}
+\usepackage{mathtools}	\DeclarePairedDelimiterX\set[1]\lbrace\rbrace{\def\given{\;\delimsize\vert\;}#1}
+\usepackage{physics}
+\usepackage{nicefrac}
+\usepackage{paralist}
+\usepackage{makeidx}	\makeindex
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+%==================================================================================
+% number the examples
+\newcounter{example}[chapter]
+\newenvironment{example}[2]{\noindent\refstepcounter{example}\par\medskip
+	\noindent\textbf{Example~\thechapter.\theexample\quad #1} 
+	\par\medskip\noindent#2
+	\rmfamily}{\medskip}
+\def\exampleautorefname~#1\null{Example~\thechapter.#1\null}
+\newenvironment{solution}[1]{\par\medskip\noindent\textbf{Solution}\par\medskip #1}{\medskip}
+%==================================================================================
+% odonovan macros
+\newcommand{\hint}[1]{{[{\bf Hint:} #1]}}
+\newcommand{\gls}[1]{{\bf #1}} % not using glossaries here
+\newcommand{\ie}{\textit{i.e.}\ }
+\newcommand{\eg}{\textit{e.g.}\ }
+\newcommand{\fd}[2]{ \frac{d #1 }{d #2 } }	% full derivative
+
+%==================================================================================
+%==================================================================================
+\begin{document}
+\frontmatter
+\maketitle
+\tableofcontents
+\mainmatter
+%==================================================================================
+%==================================================================================
+\setcounter{chapter}{0}
+\chapter{Special Relativity}	\label{ch:Special Relativity}
+%==================================================================================
+%==================================================================================
+\section{Introduction}
+
+%==================================================================================
+%==================================================================================
+\section{Einstein's Postulates}
+
+Instead of imposing an ether upon the experimental evidence Einstein\index{Einstein} found the simplest possible explanation (an application of Occam's razor -- the hypothesis with the fewest assumptions should be selected).
+
+Einstein's postulates are 
+\begin{enumerate}
+\item
+The laws of physics are the same in all inertial reference frames (IRF).
+\item
+The speed of light is the same in all directions.
+\end{enumerate}
+
+These postulates appear contradictory in light\index{pun} of what we know of Galilean relativity but Einstein was able to reconcile them by abandoning absolute time, replacing the usual Galilean transformations with the FitzGerald-Lorentz transformation.
+%==================================================================================
+%==================================================================================
+\section{Invariants}
+
+There are several scalar invariants that are the same in all inertial reference frames...
+%==================================================================================
+%==================================================================================
+\section{Spacetime Diagrams (aka Minkowski Diagrams)}
+
+%==================================================================================
+\subsection{Galilean Relativity}
+
+\begin{figure*}
+\centering
+\includegraphics{spaceTimeGalilean}
+\caption{
+A spacetime diagram has the time axis vertical and the space axis horizontal. The world-line of an object moving with a constant velocity is a straight line with a slope given by the velocity.
+The three world lines, $x=0$, $x=vt$, and $x=ct$, are rotated in Bob's IRF.
+Note that the slope of Bob's world-line relative to Alice's is $x=vt=(v/c) (ct)$ so for typical macroscopic velocities $v\sim 30 $ m/s and 
+$\frac{x}{ct} = \frac{v}{c} \sim 10^{-7}$, while that for the world-line of the flash is $\frac{x}{ct}=1$.
+}
+\label{worldline1.fig}
+\end{figure*}
+
+%==================================================================================
+%==================================================================================
+\section{Lorentz Transformations}
+
+\begin{figure}
+\centering\includegraphics[scale=0.8]{spaceTime}
+\caption{The Spacetime diagram for Alice, Bob, \& Claire in \autoref{ex:AliceBobClaire}}
+\end{figure}
+
+\begin{example}{Alice, Bob, \& Claire}
+{\label{ex:AliceBobClaire}%
+Consider three inertial observers, Alice, Bob, and Claire. Bob has velocity $\vec{v}=\hat{x}\, v$ relative to Alice, and Claire has velocity $\vec{v}\,'=\hat{x}\, v'$ relative to Bob. 
+
+Recall that the Lorentz transformation for one space coordinate is given by
+$$
+	\mqty[ ct' \\ x' ] 
+	=
+	\gamma
+	\mqty[ 1 & -v/c \\ -v/c & 1 ]
+	\mqty[ ct \\ x ],
+$$
+with $\gamma = \frac{1}{\sqrt{1-(v/c)^2}}$, the usual Lorentz factor.}%
+\begin{inparaenum}{(a)}
+\item
+In the diagram above, sketch the world-lines of Bob and Claire. Label the world lines of Alice, Bob, and Claire.
+\item
+What are Bob's space-time coordinates, $x'$ \& $t'$ in terms of Alice's, $x$ \& $t$?
+\item
+What are Claire's space-time coordinates, $x''$ \& $t''$ in terms of Bob's, $x'$ \& $t'$?
+\item
+Substitute your solution from (b) into those from (c) to find Claire's space-time coordinates, 
+$x''$ \& $t''$ in terms of Alice's, $x$ \& $t$.
+\hint{Check that your equations are dimensionally correct.}
+\item
+Now consider Claire's word-line, $x''=0$; substitute this into one of your results from (d), and solve the result for $x=ut$ (with $u$ some constant), Claire's world-line in Alice's coordinates.
+\item
+What is Claire's velocity, $u$, relative to Alice?
+\item
+Consider instead Claire's infinitesimal space-time displacement, $(c\,dt'', dx'')$. Use the Lorentz transformation given above to write this in terms of Bob's infinitesimal space-time displacement, $(c\,dt', dx')$. Then divide one by the other to obtain an expression for $\frac{dx''}{dt''}$.
+\item
+Now use $dx' = -v'\,dt'$ to find an expression for $\frac{dx''}{dt''}$.
+\end{inparaenum}
+\end{example}
+
+%==================================================================================
+\subsubsection{Minkowski Diagrams}
+
+%==================================================================================
+%==================================================================================
+\section{Causality}
+%==================================================================================
+\subsubsection{Proper Length and Time}
+%==================================================================================
+%==================================================================================
+\section{Lorentz Covariance}
+%==================================================================================
+%==================================================================================
+\section{4-Vectors}
+%==================================================================================
+\subsubsection{4-Velocity}
+%==================================================================================
+\subsubsection{Addition of 4-Velocities}
+\begin{example}{4-Velocity}
+{Calculate the 4-velocity,
+$$
+	[U^\mu] 
+	= 
+	\frac{d}{d\tau} [X^\mu] 
+$$
+and the 4-acceleration,
+\begin{align*}
+	(A^\mu)
+	&= 
+	\frac{d}{d\tau} (U^\mu)
+	= 
+	\gamma\frac{d}{dt} \gamma( c, \vec{v}).
+\end{align*}
+}
+\end{example}
+%==================================================================================
+\begin{solution}
+\begin{enumerate}[(a)]
+\item
+This is the solution for part (a) is...
+\end{enumerate}
+\end{solution}
+
+
+%==================================================================================
+\begin{example}{Bob and Alice Play Ball}{%
+Bob throws a ball with speed $u^\prime$ in the positive $x^\prime$ direction at $t^\prime=0$. Its position is then $x^\prime=u^\prime t^\prime$. Alice is at rest in an IRF moving at speed $v$ (in the positive $x$ direction) relative to Bob.}%
+\begin{inparaenum}[(a)]
+\item
+Calculate Alice's measurement of the ball's speed using a Galilean transformation,
+$
+\smqty[x\\t]
+=
+\smqty[
+1 & -v
+\\
+0 & 1
+]
+\smqty[
+x^\prime
+\\
+t^\prime
+].
+$
+\item
+Calculate Alice's measurement of the ball's speed using a Lorentz transformation,
+$
+\smqty[x\\ct]
+=
+\gamma
+\smqty[
+1 & -\nicefrac{v}{c}
+\\
+-\nicefrac{v}{c} & 1
+]
+\smqty[
+x^\prime
+\\
+ct^\prime
+].
+$
+\item
+Show that in the $v,u\ll c$ limits, the solution for (b) reduces to that of (a).
+\item
+Draw the space-time diagram for Bob and Alice's IRFs and the world-line of the ball. Add the ``rapidities'' to your diagram (\ie the angle, $\alpha$, between Bob's and Alice's world-lines and the angles, $\theta$ and $\theta^\prime$, between Alice's and Bob's world-lines and that of the ball.)
+
+%\centering\input{figures/lines}
+\item
+If, $\alpha$, the ``rapidity'' is defined such that $\tanh\alpha=\nicefrac{v}{c}$, show that the ball's speed in Alice's IRF is given by the sum of the rapidities of Bob and Bob's ball. (Hint: Use the identity 
+$  \tanh(x + y) = \frac{\tanh (x) + \tanh (y)}{1 + \tanh (x) \tanh (y)}$.)
+\end{inparaenum}
+\end{example}
+
+%==================================================================================
+\subsubsection{4-Momentum}
+
+\begin{example}{Griffiths' Electrodynamics Pr.\ 12.35}
+{In the past, most experiments in particle physics involved stationary targets: one particle (usually a proton or an electron) was accelerated to a high energy $E$, and collided with a target particle at rest (Fig. 12.29a). Far higher relative energies are obtainable (with the same accelerator) if you accelerate both particles to energy $E$, and fire them at each other (Fig. 12.29b). Classically, the energy E of one particle, relative to the other, is just $4E$ (why?)- not much of a gain (only a factor of 4). But relativistically the gain can be enormous. Assuming the two particles have the same mass, $m$, show that 
+$$
+	E' = \frac{eE^2}{mc^2} - mc^2.
+$$
+Suppose you use protons ($mc^2=1$ GeV) with $E = 30$ GeV. What $E'$ do you get? What multiple of E does this amount to? (1 GeV $=10^9$ electron volts.) [Because of this relativistic enhancement, most modern elementary particle experiments involve {\bf colliding beams}, instead of fixed targets.]
+}
+\end{example}
+
+%==================================================================================
+\section{Covariant and Contravariant}
+%==================================================================================
+\subsubsection{Minkowski Metric}
+%==================================================================================
+\subsection{Covariant and Contravariant}
+%==================================================================================
+%==================================================================================
+%\section{}
+
+
+\appendix
+%==================================================================================
+%==================================================================================
+\chapter{Index Notation}
+
+\section{Vectors}
+\section{Inner Product}
+\subsection{Einstein Summation Notation}
+\section{Rank-2 Tensors}
+\subsection{Outer Product}
+
+%========================================================================
+%========================================================================
+\begin{example}{In Summation}
+{
+Consider the case in which the position of a particle is a function of time,
+$
+    \vec{r}(t)
+    %=x_1(t)\hat{e}_1+x_2(t)\hat{e}_2+x_3(t)\hat{e}_3
+    =x_i(t) \ \hat{e}_i
+$. The $\hat{e}_i$ are the Cartesian orthonormal basis vectors; assume Einstein summation convention for this question. Express your answers in index notation.}%
+\begin{inparaenum}
+\item   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Using index notation, calculate $r\dot{r}$ and $\vec{r}\cdot\dot{\vec{r}}$, where $\dot{\vec{r}}\equiv \fd{\vec{r}}{t}$, $r=|\vec{r}|$, etc.
+\item   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Using index notation, calculate $\frac{d}{dt}\left(\vec{r}\cdot\vec{r}\right)$.
+\item   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Calculate $\vec{r}\cdot\dot{\vec{r}}$% = r \dot{r}$, where $r=\left|\vec{r}\right|$, etc.
+\item   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Plot $\vec{r}(t)$ for $\left|\vec{r}\right|=r_\circ$, a constant. 
+(Hint: What is $\vec{r}\cdot\dot{\vec{r}}$ for this case?)
+\end{inparaenum}
+\end{example}
+
+%========================================================================================
+%========================================================================================
+\begin{example}{Indicial}
+{}
+\begin{inparaenum}
+\item   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Use index notation to show that
+$$
+    \qty( \vec{a}\times\vec{b} )\cdot\vec{c}
+    =
+    \qty( \vec{b}\times\vec{c} )\cdot\vec{a}
+    =
+    \qty( \vec{c}\times\vec{a} )\cdot\vec{b}
+$$
+(Hint: Use the properties of the Levi-Civita symbol, $\varepsilon_{ijk}$.)
+\item   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Give a physical interpretation of the result from (a).
+\item   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Use index notation to show that
+$$
+    \qty( \vec{a}\times\vec{b} ) \times \qty( \vec{c}\times\vec{d} )
+    =
+    \qty( \qty( \vec{a}\times\vec{b} )\cdot\vec{d} ) \vec{c}
+    -
+    \qty( \qty( \vec{a}\times\vec{b} )\cdot\vec{c} ) \vec{d}
+$$
+\end{inparaenum}
+\end{example}
+
+%==================================================================================
+%==================================================================================
+\backmatter
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\begin{thebibliography}{9}
+
+\bibitem{textbook}
+{\bf Physics from Symmetry} by Jakob Schwichtenberg, Second Edition, ISBN 978-3-319-66631-0.
+
+\bibitem{SR1}
+Wikipedia contributors. {\bf Special Relativity.} Wikipedia, The Free Encyclopedia. January 7, 2019, 08:26 UTC. 
+Available at: \href{https://en.wikipedia.org/wiki/Special_relativity}{https://en.wikipedia.org/wiki/Special\_relativity}
+Accessed January 8, 2019.
+
+\bibitem{group1}
+Wikipedia contributors. {\bf Minkowski diagram.} Wikipedia, The Free Encyclopedia. January 7, 2019, 08:26 UTC. 
+Available at: \href{https://en.wikipedia.org/wiki/Minkowski_diagram}{https://en.wikipedia.org/ wiki/Minkowski\_diagram}
+Accessed January 8, 2019.
+   
+\end{thebibliography}
+
+%==================================================================================
+\newpage
+\addcontentsline{toc}{chapter}{\indexname}
+\printindex
+
+\end{document}
+
+
+%%==================================================================================
+%\begin{example}{}{%
+%This is the question.
+%}%
+%\begin{inparaenum}[(a)]
+%\item
+%This is the part.
+%\end{inparaenum}
+%\end{example}
