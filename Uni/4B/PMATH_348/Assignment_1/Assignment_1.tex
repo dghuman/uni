@@ -38,7 +38,11 @@ and so we see that $G$ is abelian.
 
 \textbf{(b)} We first use Lagrange's theorem, since we know $Z(G)$ is a normal subgroup of $G$, then we know that $|Z(G)$ divides $|G|$. So, we get that $|Z(G)| = 1, p$ or $p_{2}$. Well, if $|Z(G)| = p^{2}$, then $G = Z(G)$ and $G$ is abelian.
 
-Further, we recall that the centre of $p$-groups is non-trivial, so we know that $|Z(G)|\neq 1$, and hence we assume $|Z(G)| = p$. Then, $|G|/|Z(G)| = |G:Z(G)| = p$ and we recall that groups of prime order are cyclic, and hence from the above proof we know that $G$ is abelian.
+Next, we suppose $|Z(G)| = 1$. By the class equation, we have that
+\[ |G| = |Z(G)| + \sum |G: C_{G}(a_{i})| \]
+and since $p \nmid |Z(G)|$, we see that $p \nmid |G:C_{G}(a_{i})|$. However, since the centre is trivial, we know that $a_{i} \notin Z(G)$ and the groups $C_{G}(a_{i})$ are proper subgroups of $G$, and hence $p \, | \, |G:C_{G}(a_{i})|$, which is a contradiction. Thus, the centre is non-trival.
+
+Next we assume $|Z(G)| = p$. Then, $|G|/|Z(G)| = |G:Z(G)| = p$ and we recall that groups of prime order are cyclic, and hence from the above proof we know that $G$ is abelian.
 
 Thus, we have shown what is required.
 
@@ -51,14 +55,56 @@ Thus, we have shown what is required.
 \textbf{Question 2}
 
 We first factor 132 into it's primes to get $2^{2}\cdot 3\cdot 11$. Looking at $n_{11}$, we see that
-\[ n_{11} = 1 (\text{mod} 11) \hspace{2em} \& \hspace{2em} n_{11} | 12 \]
+\[ n_{11} = 1 (\text{mod}\, 11) \hspace{2em} \& \hspace{2em} n_{11} | 12 \]
 so we require that $n_{11} = 1$ or $12$. If $n_{11} = 1$ then we have a normal subgroup so we assume $n_{11} = 12$. Next, we look at $n_{3}$,
-\[ n_{3} = 1 (\text{mod} 3) \hspace{2em} \& \hspace{2em} n_{3} | 44 = 2^{2} \cdot 11 \, .\]
+\[ n_{3} = 1 (\text{mod}\, 3) \hspace{2em} \& \hspace{2em} n_{3} | 44 = 2^{2} \cdot 11 \, .\]
 We have way more choices than we did with our Sylow 11-group, so we reduce this by counting the number of elements that are actually left after having 12 Sylow 11-subgroups. We see that $132 - (12 \times 10) = 12$, so we must have that $n_{3} = 1, 4$. However, if $n_{3} = 4$, then there are no Sylow 2-subgroups, which is a contradiction with Sylows first theorem, and hence $n_{3} = 1$ and we see that we have no simple groups of order 132.
 
 \newpage
 \textbf{Question 3}
 
-\textbf{(a)} 
+\textbf{(a)} We prove this by looking at the action of left multiplication to cosets of $H$ in $G$. In particular, since $|G:H| = n > 1$, we know that $\{a_{1}H, a_{2}H, \dots, a_{n}H \}$ forms the set of left cosets, where $a_{0} = e$. Suppose $g\in G$, then the action will be $g \cdot a_{i}H = ga_{i}H = a_{j}H$, which we can define as a map, call it $f_{g}$. Notice that this action of left multiplication only permutes the representatives. So, define a map $f: G \to S_{n}$ with $f(g) = f_{g}$, and thus elements of $G$ are sent to their action on the left cosets of $H$, which is exactly a subset of $S_{n}$. Now we need to convince ourselves this is injection and homomorphism. Well, notice that the homomorphism property holds quite naturally, as if $g,h\in G$, then
+\[ f(gh)(a_{i}) = f_{gh}(a_{i}) = (gh)(a_{i}) = g(ha_{i}) = g(f_{h}(a_{i})) = f_{g}(f_{h}(a_{i})) = f(g)\circ f(h) (a_{i}) \]
+and $f(e)(a_{i}) = f_{e}(a_{i}) = e(a_{i}) = a_{i}$. To see injection, we need to show that distinct elements map uniquely. Suppose $f(g) = f(h)$, then
+\[ f(g)(a_{i}) = f_{g}(a_{i}) = ga_{i} \hspace{2em} \& \hspace{2em} f(h)(a_{i}) = f_{h}(a_{i}) = ha_{i} \]
+\[ f(g) = f(h) \implies ga_{i} = ha_{i} \implies g = h \]
+and so we have injection.
+
+Thus there is indeed an injective homomorphism from $G$ to a subgroup of $S_{n}$ (where we know it is a subgroup since it is a homomorphism).
+
+\textbf{(b)} Since $G$ is not simple, we can assume no proper normal subgroups and hence we have that $n_{p} > 1$. Furthermore, we see that $|G:N_{G}(P)| = n_{p}$, where we note that the normalizer forms a subgroup. This means we can apply the previous proof! Thus, we have an injective map $\varphi: G \to S_{n_{p}}$, and in particular, $\varphi(G)\leq S_{n_{p}}$, so $|G|$ divides $|S_{n_{p}}| = n_{p}!$ by Lagrange's Theorem.
+
+\textbf{(c)} We start by factoring, in particular we see that $|G| = 48 = 2^{4}\cdot 3$. We first note that
+\[ n_{3} = 1 (\text{mod} \, 3) \hspace{2em} \& \hspace{2em} n_{3} \, |\, 16 \, .\]
+So, we have that $n_{3} \in \{1, 4, 16\}$. We assume $n_{3} \neq 1$, since then we would have that $G$ has a normal subgroup and hence not simple. Suppose instead that $n_{3} = 4$, but by the contrapositive of the previous proof, we see that then $|G| = 48$ does not divide $4!$, and since $3\, | \, |G|$, and $|G| \neq 3$, we see that $G$ would not be simple. Then, we only have $n_{3} = 16$ left, which by counting tells us that we have $48 - (16 \cdot 2) = 16$ elements left. Well, we know that then $n_{2} = 1$ since there is only enough room for one Sylow 2-subgroup, but then $G$ has a normal subgroup and is not simple. Thus, we have no simple subgroups of order 48.
+
+\newpage
+\textbf{Question 4}
+
+We prove this statement by induction on the group order. First, notice that $|G| = 2$ gives us the trivial Sylow 2-subgroup of itself and the statement is trivially true. Thus, suppose $|G| = p^{n}m > 2$ where $n,m \in \Z$,  and $p \nmid m$, and we assume the result for all groups of smaller order. We consider two cases:
+
+\textbf{Case 1} Suppose $p\, |\, |Z(G)|$. Then by Cauchy's Theorem we have that $\exists \, a \in Z(G)$ such that $|a| = p$, and $<a> \leq Z(G)$, and thus $<a>$ is normal in $G$. Then, we can consider the subgroup $G/<a>$, which has order less than $G$, and hence by induction the result holds and we have a Sylow $p$-subgroup and subgroups of all orders of $p$ less than the Sylow $p$-subgroup. We can order these subgroups by their order in $p$ and call them
+\[\{\bar{H}_{1}, \bar{H}_{2}, \dots , \bar{H}_{n-1} \} \,.\]
+We notice that if $n = 1$, then we only have $<a>$ as our subgroup and that gives us our result, so we suppose $n>1$. Then, we see the order of our subgroups is given by $\{ p, p^{2}, \dots, p^{n-1}\}$ respectively. Then, by the correspondance theorem, we have that
+\[ \bar{H}_{i} = H_{i}/<a> \, , \, 1 \leq i \leq n-1\]
+where $H \leq G$, and buy looking at orders
+\[ p^{i} = \frac{|H_{i}|}{p} \implies |H| = p^{i+1} \, .\]
+So, we see that $G$ has subgroups of orders $p^{k}$ for $k\in \{1, \dots, p\}$.
+
+\textbf{Case 2} Suppose $p \, \nmid \, |Z(G)|$. Then by the class equation, we see that
+\[ p^{n}m = |Z(G)| + \sum |G:C_{G}(a_{i})| \]
+and thus $\exists \, a_{i}$ such that $p \nmid |G:C_{G}(a_{i})| \implies p^{n} \, | \, |C_{G}(a_{i})|$. We know that $C_{G}(a_{i}) \neq G$ since $a_{i} \notin Z(G)$, so $|C_{G}(a_{i})| < |G|$, and by induction $C(a_{i})$ has a Sylow $p$-subgroup and subgroups of order $p^{k}$ for $k = 1, \dots, n$.
+
+Thus, we have that $G$ has subgroups of order $p^{k}$ for $k = 1, \dots, n$ given that $|G| = p^{n}m$.
+
+\newpage
+\textbf{Question 5}
+
+We prove this statement by contradiction. Suppose that $\exists Q \leq G$ a $p$-subgroup such that it is not contained in any of the Sylow $p$-subgroups. In particular, suppose $P$ is a Sylow $p$-subgroup of $G$ and that $G$, and thus $Q$, acts on $P$ by conjugation to produce $K = \{gPg^{-1}: g\in G\}$, where we order them to get $K = \{P = P_{1}, P_{2}, \dots, P_{r}\}$. So, we have assumed $Q \cap P_{i} = \{e\} \leq Q$, $i\in \{1, \dots, r\}$. Then, by theorem,
+\[ |K| = \sum_{i=1}^{r}|Q:Q\cap P_{i}| = \sum_{i=1}^{r}|Q|/1 \implies p\, |\, |K| \,.\]
+But, we know from the third Sylow Theorem that $n_{p} = |K| = 1 \, (\text{mod} \, p )$, and hence this is a contradiction. So, we must have that $Q \leq P_{i}$ for some $P_{i} \in K$.
+
+
+
 
 \end{document}
