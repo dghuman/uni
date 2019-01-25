@@ -72,5 +72,32 @@ Like \textbf{Case 2}, we must have that $\bar{n}_{p} < n_{p}$, as expected.
 \newpage
 \textbf{Question 3}
 
-\textbf{(a)}
+\textbf{(a)} With $n= 2$, we see that $H_{1}\cap H_{2} = \{e\}$, but both subgroups are normal in $G$. Then, we know that the two commute with one another. To see this, consider $h_{1}\in H_{1}$ and $h_{2}\in H_{2}$, then it suffices to show that $h_{1}^{-1}h_{2}^{-1}h_{1}h_{2} \in H_{1}\cap H_{2}$, since $h_{1}^{-1}h_{2}^{-1}h_{1}h_{2} = e \implies h_{1}h_{2} = h_{2}h_{1}$. Notice
+\[ (h_{1}^{-1}h_{2}^{-1}h_{1})h_{2} \in H_{2} \quad \& \quad h_{1}^{-1}(h_{2}^{-1}h_{1}h_{2}) \in H_{1} \]
+by normality, and hence the commutivity follows. Now that we know this, the construction of the isomorphism becomes much easier. We use the natural homomorphism,
+\[ \varphi: H_{1}H_{2} \to H_{1} \times H_{2} \quad \varphi(h_{1}h_{2})\mapsto (h_{1},h_{2}) \quad h_{1}\in H_{1}, h_{2}\in H_{2} \, .\]
+To see this is a homomorphism, take $g_{1}\in H_{1}$ and $g_{2}\in H_{2}$ along with $h_{1}$ and $h_{2}$ to see
+\[ \varphi(h_{1}h_{2}g_{1}g_{2}) = \varphi(h_{1}g_{1}h_{2}g_{2}) = (h_{1}g_{1},h_{2}g_{2}) \, .\]
+Next we need a bijection. Surjection follows trivially since if $(h_{1},h_{2})\in H_{1}\times H_{2}$, we have $\varphi(h_{1}h_{2}) = (h_{1},h_{2})$ by construction. On the other hand, we have injection from definition as well,
+\[ \varphi(h_{1}h_{2}) = \varphi(g_{1}g_{2}) \iff (h_{1},h_{2}) = (g_{1},g_{2}) \iff h_{1}=g_{1} \,,\, h_{2} = g_{2} \, .\]
+So, $H_{1}H_{2} \cong H_{1}\times H_{2}$.
+
+\textbf{(b)} Suppose every Sylow subgroup of $G$ is normal. Then, by Sylows Second theorem, we have that there is only one of each $p$ dividing $G$. Further, this implies that each Sylow subgroup has trivial intersection with the other. Suppose $\{P_{i}\}_{i\in I}$, for $I$ some indexing set, is the set of all Sylow subgroups of $G$, then we have just concluded that each is unique in its order from the others and $P_{i}\cap P_{j} = \{e\}$ $\forall \, i,j\in I$ where $i\neq j$. Then, since we can apply the above lemma to get that
+\[\prod_{i\in I}P_{i} \cong \times_{i\in I}P_{i} \]
+we just need that the LHS is G. Notice that the order of the LHS will be the product of the subgroup sizes, but that is exactly $|G|$, so thus LHS is $G$.
+
+Now, suppose that \textit{not} every Sylow subgroup is normal. In particular, if $P_{j} \leq G$ is such a Sylow subgroup, then in the set of all Sylow subgroups of $G$, $\{P_{i}\}_{i\in I}$ for some $j\in I$. Then, since $P_{j}$ is not normal, the subgroup is not unique as that Sylow subgroup, and will have non-trivial intersection with some other Sylow subgroup. Thus, the product of the subgroups will have an order different from that of $|G|$, and hence can not be isomorphic to $G$. Thus, by contrapositive, the claim follows.
+
+\newpage
+\textbf{Question 4}
+
+Notice that $175 = 5^{2}\cdot 7$. We clearly need to apply Sylow theory, so we use the third theorem to get
+\[ n_{7} = 1 \, (\text{mod}\, 7) \quad n_{7}\, | \, 25 \quad \& \quad n_{5} = 1 \, (\text{mod} \, 5) \quad n_{5} \, |\, 7 \, .\]
+We see that we only actually have one option for each, that is $n_{7} = n_{5} = 1$. So, we have that each subgroup is normal, and since they are normal and will intersect trivially, we have from the previous lemma
+\[ G = H_{5}H_{7} \cong H_{5}\times H_{7} \, .\]
+We know that $|H_{5}| = 25$ and $|H_{7}| = 7$, so we see that since 7 is prime, by Lagrange's theorem $H_{7} \cong \Z_{7}$, and thus we have 
+\[ G \cong H_{5} \times \Z_{7} \, .\]
+Further, we recall that groups of order $p^{2}$, for $p$ prime are just $\Z_{p}\times\Z_{p}$, so
+\[ G\cong \Z_{5}\times \Z_{5}\times Z_{7} \, .\]
+As required.
 \end{document}

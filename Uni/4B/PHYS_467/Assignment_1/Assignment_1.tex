@@ -24,7 +24,7 @@
 \fancyhf{}
 \lhead{PHYS 467 $|$  Assignment 1}
 
-\rhead{Dilraj Ghuman $|$ 20564228}
+%\rhead{Dilraj Ghuman $|$ 20564228}
 
 \begin{document}
 \textbf{Question 1}
@@ -106,4 +106,24 @@ as required.
 
 \newpage
 \textbf{Question 3}
+
+\textbf{(a)} We know that the probabilities under a complete von Neumann measurement along the basis will simply give the basis vectors each with a probability given by the coefficient of the state. That is,
+\[ Prob(\ket{00}) = |a|^{2} \quad Prob(\ket{01}) = |b|^{2} \quad Prob(\ket{10}) = |c|^{2} \quad Prob(\ket{11}) = |d|^{2} \, .\]
+
+\textbf{(b)} (i) We see that the projectors better just be the projectors in the qubit that Alice is using, and then leave Bob's qubit untouched. So,
+\[ P_{\ket{0}_{A}} = \ket{0}\bra{0} \otimes I \quad \& \quad P_{\ket{1}_{A}} = \ket{1}\bra{1} \otimes I \]
+where we know $I = \ket{0}\bra{0} + \ket{1}\bra{1}$.
+
+(ii) We expect the probability of measuring a ``0'' and ``1'' to be
+\[ ||P_{\ket{0}_{A}}\ket{\psi}||_{2}^{2} = ||a\ket{00} + b\ket{01}||^{2}_{2} = |a|^{2} + |b|^{2} \quad \& \quad
+||P_{\ket{1}_{A}}\ket{\psi}||_{2}^{2} = ||c\ket{10} + d\ket{11}||^{2}_{2} = |c|^{2} + |d|^{2}\]
+respectively. The post measurement states better be
+\[ \ket{\psi}_{\ket{0}_{A}} = \frac{1}{\sqrt{|a|^{2} + |b|^{2}}}\left(a\ket{00} + b\ket{01}\right) \quad \& \quad \ket{\psi}_{\ket{1}_{A}} = \frac{1}{\sqrt{|c|^{2} + |d|^{2}}}\left(c\ket{10} + d\ket{11}\right) \]
+respectively.
+
+(iii) First, we suppose the measurement outcome $\ket{\psi}_{\ket{0}_{A}}$. Then, we get the probability of a ``0'' and ``1'' to be
+\[ ||P_{\ket{0}_{B}}\ket{\psi}_{\ket{0}_{A}}||_{2}^{2} = \frac{1}{|a|^{2}+|b|^{2}}||a\ket{00}||_{2}^{2} = \frac{|a|^{2}}{|a|^{2}+|b|^{2}} \quad \& \quad ||P_{\ket{1}_{B}}\ket{psi}_{\ket{0}_{A}}||_{2}^{2} = \frac{1}{|a|^{2}+|b|^{2}}||b\ket{01}||_{2}^{2} = \frac{|b|^{2}}{|a|^{2}+|b|^{2}}\]
+respectively. That is
+\[\text{Prob}(\ket{0}_{B}|\ket{0}_{A}) = \frac{|a|^{2}}{|a|^{2}+|b|^{2}} \quad \text{Prob}(\ket{1}_{B}|\ket{0}_{A}) = \frac{|b|^{2}}{|a|^{2}+|b|^{2}} \, .\]
+In a similar way, if we suppose the measurement outcome $\ket{\psi}_{\ket{1}_{A}}$, then the probabilities of ``0'' and ``1'' measured by Bob will be
 \end{document}
