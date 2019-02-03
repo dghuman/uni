@@ -1,0 +1,98 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,mathtools,xfrac}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 348 $|$  Assignment 3}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Question 1}
+
+\textbf{(a)} We notice a root by inspection. In particular, we can see that
+\[ f(-1) = -8 + 3 -1 + 2 - 5 + 9 = 0 \]
+and since $-1 = 10 (\text{mod} \, 11)$, we have that $x= 10$ is a root of this polynomial over the Field $\Z_{11}$, and hence is reducible.
+
+\textbf{(b)} Again, by inspection we note that this is not factorable over $\R$, and hence will not be reducable over $\R$.
+
+\textbf{(c)} This polynomial is reducable. In particular, since the leading power is a composite integer, there will always be a factoring of the polynomial that is non-trivial based off of the leading power. 
+
+\textbf{(d)} We show this is irreducible through the Mod 5 irreducibility test. That is,
+\[ \bar{f}(x) = x^{3} - 2x+2 (\text{mod}\, 5)\]
+and we see that $\bar{f}(0) = 2, \bar{f}(1) = 1,\bar{f}(2) = 1,\bar{f}(3) = 3,\bar{f}(4) = 3$, and since deg$(f(x)) = $deg$(\bar{f}(x))$, we can conclude that $f(x)$ is irreducible in $\Z$.
+
+\textbf{(e)} We look at this polynomial as a ring with coeffecients in $\Q (y)$. Consider the prime ideal $\langle p \rangle \in \Q(y)$, we notice that $y\, |\, y^{5}$, $y | y^{3}$ but $y^{2} \nmid y$ and hence we can apply Eisenstein's Criterion and $f(x,y)$ is irreducible over $\Q [x,y]$.
+
+\newpage
+\textbf{Question 2}
+
+\textbf{(a)} Suppose $f(x)\in F[x]$ is reducible. Then, $\exists g(x),h(x)\in F[x]$ with $g(x),h(x)\notin F^{\times}$ such that $f(x) = g(x)h(x)$, and thus we see that $f(x+a) = g(x+a)h(x+a)$ will be a non-trivial factorization of $f(x+a)$ and thus $f(x+a)$ will be reducible. The proof follows exactly the same way in the other direction, and hence both contrapositives have been shown and we can conclude $f(x)$ is irreducible if and only if $f(x+a)$ is irreducible.
+
+\textbf{(b)} Notice
+\[ f(x+1) = (x+1)^{4} + 1 = x^{4} + 4x^{3} + 6x^{2} + 4x + 2 \]
+and by Eisenstien's Criterion on 2 we have irreducibility. From \textbf{(a)} we have that $f(x)$ is also irreducible.
+\newpage
+\textbf{Question 3}
+
+\textbf{(a)} We need to find the minimal polynomial associated with this root. Notice,
+\[ \alpha = i + \sqrt{2} \implies \alpha^{2} = -1 + 2\sqrt{2}i + 2 = 2\sqrt{2} + 1 = 2\sqrt{2} + 4 - 3 = 2\sqrt{2}(i + \sqrt{2}) - 3 = 2\sqrt{2}\alpha - 3\]
+\[ \implies (\alpha^{2} + 3)^{2} = 8\alpha^{2} \implies \alpha^{4} - 2\alpha^{2} + 9 = 0\, .\]
+So, we guess that the minimal polynomial is $f(x) = x^{4} -2x^{2} + 9$. We use the mod $p$-irreducibility test with $p=5$. We get,
+\[ \bar{f}(x) = x^{4} + 3x^{2} + 4\]
+and we see that
+\[ \bar{f}(0) = 4 \quad \bar{f}(1) = 3 \quad \bar{f}(2) = 2 \quad \bar{f}(3) = 2 \quad \bar{f}(4) = 3 \, .\]
+So, we can conclude that $f(x)$ is irreducible and since it is also monic with $f(\alpha) = 0$, we have the minimal polynomial. Thus deg$(\alpha) = 4$.
+
+\textbf{(b)} We use De Moivre's Theorem with $n=3$ to get
+\[ \left(\cos\left(\frac{\pi}{9}\right) + i\sin\left(\frac{\pi}{9}\right)\right)^{n} = \cos\left(\frac{\pi}{3}\right) + i\sin\left(\frac{\pi}{3}\right) = \frac{1}{2} + i\frac{\sqrt{3}}{2}\]
+\[ \cos^{3}\left(\frac{\pi}{9}\right) + i3\cos^{2}\left(\frac{\pi}{9}\right)\sin\left(\frac{\pi}{9}\right) - 3\sin^{2}\left(\frac{\pi}{9}\right)\cos\left(\frac{\pi}{9}\right) - i\sin^{3}\left(\frac{\pi}{9}\right) = \frac{1}{2} + i\frac{\sqrt{3}}{2} \,.\]
+Looking strictly at the real component,
+\[ \implies \cos^{3}\left(\frac{\pi}{9}\right) - 3\left(1- \cos^{2}\left(\frac{\pi}{9}\right)\right)\cos\left(\frac{\pi}{9}\right) = \frac{1}{2} \, .\]
+We let $\alpha = \cos\left(\frac{\pi}{9}\right)$, then we see that
+\[ \implies \alpha^{3} - 3(1-\alpha^{2})\alpha = \frac{1}{2} \implies \alpha^{3} -\frac{3}{4}\alpha - \frac{1}{8} = 0 \]
+and so the minimal polynomial is $f(x) = x^{3} - \frac{3}{4}x - \frac{1}{8}$. We still need to check it is actually the minimal polynomial. Clearly it is monic, so we need to check the irreducibility. By Gauss' Lemma, it suffices to show that the polynomial $g(x) = 8x^{3} - 6x - 1 \in \Z[x]$ is irreducible. We use the mod $p$-irreducibility test, with $p=5$, and we see that $\bar{g}(x) = 3x^{3} - x - 1 (\text{mod} \, 5)$ which would give us
+\[ \bar{g}(0) = 2 \quad \bar{g}(1) = 1 \quad \bar{g}(2) = 2 \quad \bar{g}(3) = 2 \quad \bar{g}(4) = 2 \, .\]
+So, clearly $f(x)$ is irreducible and monic, this $\text{deg}_{\Q}\left(\cos\left(\frac{\pi}{9}\right)\right) = 3$ as required.
+
+
+\newpage
+\textbf{Question 4}
+
+We know that $(\sqrt[\leftroot{1}\uproot{0}3]{2})^{-1}, \sqrt{2} \in \Q(\sqrt{2},\sqrt[\leftroot{1}\uproot{0}3]{2})$, so
+\[(\sqrt[\leftroot{1}\uproot{0}3]{2})^{-1}\sqrt{2} = \sqrt{2}/\sqrt[\leftroot{1}\uproot{0}3]{2} = \sqrt[\leftroot{1}\uproot{0}6]{2} \in \Q(\sqrt{2},\sqrt[\leftroot{1}\uproot{0}3]{2})\, .\]
+So, $\Q(\sqrt[\leftroot{1}\uproot{0}6]{2})\subseteq \Q(\sqrt{2},\sqrt[\leftroot{1}\uproot{0}3]{2})$.
+
+To get the other inclusion, we notice that $2,(\sqrt[\leftroot{1}\uproot{0}6]{2})^{-1} \in \Q(\sqrt[\leftroot{1}\uproot{0}6]{2})$, so
+\[ (2)(\sqrt[\leftroot{1}\uproot{0}6]{2})^{-3} = 2^{1 - \frac{3}{6}} = \sqrt{2} \in \Q(\sqrt[\leftroot{1}\uproot{0}6]{2}) \, .\]
+Similarly
+\[ (2)(\sqrt[\leftroot{1}\uproot{0}6]{2})^{-4} = 2^{1 - \frac{4}{6}} = \sqrt[\leftroot{1}\uproot{0}3]{2} \in \Q(\sqrt[\leftroot{1}\uproot{0}6]{2}) \, .\]
+So, we have that $\Q(\sqrt{2},\sqrt[\leftroot{1}\uproot{0}3]{2}) \subseteq \Q(\sqrt[\leftroot{1}\uproot{0}6]{2})$, and hence $\Q(\sqrt{2},\sqrt[\leftroot{1}\uproot{0}3]{2}) = \Q(\sqrt[\leftroot{1}\uproot{0}6]{2})$.
+
+\newpage
+\textbf{Question 5}
+
+We notice that $f(x) = x^{3} + x + 1 \in \Z_{5}[x]$ is irreducible, as
+\[ f(0) = 1 \quad f(1) = 3 \quad f(2) = 1 \quad f(3) = 1 \quad f(4) = 4 \, .\]
+Then, we let $\alpha$ be a root of $f(x)$, and consider the field $\Z_{5}(\alpha) \cong \Z_{5}[x]/\langle x^{3} + x + 1\rangle$. Notice that $|\Z_{5}(\alpha)| = 5^{3} = 125$, so our field is
+\[ \Z_{5}[x]/\langle x^{3} + x + 1\rangle \, .\]
+\end{document}

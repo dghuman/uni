@@ -1,0 +1,21 @@
+Check your quatation marks. Remember that in Latex it is different to enter quotation marks depending on the compiler. The general technique is ``words here".
+
+Would prefer to have the solutions written in Latex, but I suppose that is preference more than anything.
+
+In section 1.7 Causality, you may want to explain the light cone causality more eloquently. In particular, consider the sentance "This statement that an effect cannot be caused by a cause outside of its "past" light cone is consistent with the fact that information cannot travel faster thatn the speed of light...". This sounds awkward, and though I understand what you mean, I would recommend a better way of phrasing it.
+
+Also in section 1.7, under Proper Length and Time, second paragraph, you say "Different observers will measure different lengths for different objects, depending on their relative speed to the object". Now, though that statement is technically true, I believe you may have wanted something more specific to proper length; I imagine you wanted to say that different IRFs will measure different lengths for the same object depending on their relative speeds.
+
+Section 1.8, you misspelt "Lorentz" as "Lorents".
+
+Section 1.9, under Addition of 4-Velocities. The first sentence of this paragragh is a run-on sentence. Try splitting it up.
+
+Section 1.9, under 4-Momentum. You can make brackets in Latex bigger by applying the "\left" and "\right" to the appropriate bracket. For example, "$$ F(x) = \int \left(\sum_{i} f_{i}(x)\right) dx $$" will have the appropriate sized brackets.
+
+All through section 1.10.1 you will need to fix the quotation marks.
+
+Appendix A.3, nit-picking here, but you probably want to mention that the cross product is only well defined as you defined it in $\R^{3}$.
+
+Appendix A.4, check out the "tensor" package for Latex. It makes the spacing in the indices much nicer and they actually look like a tensor!
+
+

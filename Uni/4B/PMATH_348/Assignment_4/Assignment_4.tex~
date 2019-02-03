@@ -1,0 +1,32 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,mathtools,xfrac}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 348 $|$  Assignment 4}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Question 1}
+
+\end{document}

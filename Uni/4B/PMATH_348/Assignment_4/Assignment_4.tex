@@ -1,0 +1,54 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,mathtools,xfrac}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 348 $|$  Assignment 4}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Question 1}
+
+\textbf{(a)} Since $\alpha \in K$ is algebraic over $F$, and $F \subset E$ as a subfield, then $\alpha$ is algebraic over E. By definition, $\exists\, f(x)\in F[x]$ minimial polynomial of $\alpha$ over $F$. There are two cases to consider for this polynomial:
+
+(i) Suppose $f(x)$ is irreducable in $E[x]$ where the coeffecients of $f(x)$ are sent under the canonical inclusion map. Then, since $f(\alpha) = 0$ and it is monic by construction, $f(x)$ is the minimal polynomial over $E$ of $\alpha$. With this determined
+\[ [E(\alpha):E] = \text{deg}_{E}(f(x)) = \text{deg}_{F}(f(x)) = [F(\alpha):F] \,.\]
+
+(ii) Suppose $f(x)$ is reducable in $E[x]$ where the coeffecients are mapped as before. Then, $\exists\, h(x),g(x)\in E[x]$ such that $\text{deg}_{E}(h(x)) \geq 1$, $g(x)$ is the minimal polynomial of $\alpha$ over $E$ and $f(x) = h(x)g(x)$. Therefore,
+\[ [E(\alpha):E] = \text{deg}_{E}(g(x)) \leq \text{deg}_{E}(h(x)g(x)) = \text{deg}_{F}(f(x)) = [F(\alpha):F] \, .\]
+
+\textbf{(b)} We first note that $E(\alpha)/E$, $E(\alpha)/F$, $F(\alpha)/F$ and $E(\alpha)/F(\alpha)$ are all finite extensions. So, we are motivated to apply the Tower Theorem:
+\[ [E(\alpha):F] = [E(\alpha):F(\alpha)][F(\alpha):F] \geq [E(\alpha):F(\alpha)][F(\alpha):E] \]
+where the inequality comes from \textbf{(a)}. Then, with another application of the Tower theorem
+\[ [E(\alpha):F(\alpha)] \leq \frac{[E(\alpha):F]}{[E(\alpha):E]} = \frac{[E(\alpha):E][E:F]}{[E(\alpha):E]} = [E:F]\]
+as required.
+
+\newpage
+\textbf{Question 2}
+
+Since $F(\alpha,\beta)/F(\alpha),F(\alpha,\beta)/F(\beta),F(\alpha)/F,F(\beta)/F,$ and $F(\alpha,\beta)/F$ are all finite extensions, we can apply the Tower Theorem. Let $\text{deg}_{F}(\alpha) = m$, and $\text{deg}_{F}(\beta) = n$, then
+\[ [F(\alpha,\beta):F] = [F(\alpha,\beta):F(\alpha)][F(\alpha):F] = [F(\alpha,\beta):F(\alpha)]m \]
+\[ [F(\alpha,\beta):F] = [F(\alpha,\beta):F(\beta)][F(\beta):F] = [F(\alpha,\beta):F(\beta)]n \,.\]
+So we clearly have that $n \, |\, [F(\alpha,\beta):F]$ and $m \, |\, [F(\alpha,\beta):F]$, and since these are coprime, $nm \, | \,[F(\alpha,\beta):F]$.
+
+\end{document}

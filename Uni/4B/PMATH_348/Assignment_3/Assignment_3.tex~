@@ -1,0 +1,59 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,mathtools,xfrac}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 348 $|$  Assignment 1}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Question 1}
+
+\textbf{(a)} We notice a root by inspection. In particular, we can see that
+\[ f(-1) = -8 + 3 -1 + 2 - 5 + 9 = 0 \]
+and since $-1 = 10 (\text{mod} \, 11)$, we have that $x= 10$ is a root of this polynomial over the Field $\Z_{11}$, and hence is reducible.
+
+\textbf{(b)} Again, by inspection we note that this is not factorable over $\R$, and hence will not be reducable over $\R$.
+
+\textbf{(c)}
+
+\textbf{(d)} We show this is irreducible through the Mod 5 irreducibility test. That is,
+\[ \bar{f}(x) = x^{3} - 2x+2 (\text{mod}\, 5)\]
+and we see that $\bar{f}(0) = 2, \bar{f}(1) = 1,\bar{f}(2) = 1,\bar{f}(3) = 3,\bar{f}(4) = 3$, and since deg$(f(x)) = $deg$(\bar{f}(x))$, we can conclude that $f(x)$ is irreducible in $\Z$.
+
+\textbf{(e)} We look at this polynomial as a ring with coeffecients in $\Q (y)$. Consider the prime ideal $\langle p \rangle \in \Q(y)$, we notice that $y\, |\, y^{5}$, $y | y^{3}$ but $y^{2} \nmid y$ and hence we can apply Eisenstein's Criterion and $f(x,y)$ is irreducible over $\Q [x,y]$.
+
+\newpage
+\textbf{Question 2}
+
+\textbf{(a)} Suppose $f(x)\in F[x]$ is reducible. Then, $\exists g(x),h(x)\in F[x]$ with $g(x),h(x)\notin F^{\times}$ such that $f(x) = g(x)h(x)$, and thus we see that $f(x+a) = g(x+a)h(x+a)$ will be a non-trivial factorization of $f(x+a)$ and thus $f(x+a)$ will be reducible. The proof follows exactly the same way in the other direction, and hence both contrapositives have been shown and we can conclude $f(x)$ is irreducible if and only if $f(x+a)$ is irreducible.
+
+\textbf{(b)} Notice
+\[ f(x+1) = (x+1)^{4} + 1 = x^{4} + 4x^{3} + 6x^{2} + 4x + 2 \]
+and by Eisenstien's Criterion on 2 we have irreducibility. From \textbf{(a)} we have that $f(x)$ is also irreducible.
+\newpage
+\textbf{Question 3}
+
+\textbf{(a)} We need to find the minimal polynomial associated with this root. Notice,
+\[ \alpha = i + \sqrt{2} \implies \alpha^{2} = -1 + 2\sqrt{2}i + 2 = 2\sqrt{2} + 1
+\end{document}

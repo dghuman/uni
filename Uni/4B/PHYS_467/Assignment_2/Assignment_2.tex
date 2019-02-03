@@ -1,0 +1,93 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,braket}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 467 $|$  Assignment 2}
+
+%\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\textbf{Question 1}
+
+\textbf{Question 2}
+
+\textbf{Question 3}
+
+\textbf{(a)} We recall that
+\[ H = \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+  1 & 1 \\
+  1 & -1 \\
+\end{bmatrix}
+\,
+Z = 
+\begin{bmatrix}
+  1 & 0 \\
+  0 & -1 \\
+\end{bmatrix}
+\,
+X =
+\begin{bmatrix}
+  0 & 1 \\
+  1 & 0 \\
+\end{bmatrix}
+\]
+Then, we see that
+\[ HXH = \frac{1}{2}
+\begin{bmatrix}
+  1 & 1 \\
+  1 & -1 \\
+\end{bmatrix}
+\begin{bmatrix}
+  1 & 0 \\
+  0 & -1 \\
+\end{bmatrix}
+\begin{bmatrix}
+  1 & 1 \\
+  1 & -1 \\
+\end{bmatrix}
+= \frac{1}{2}
+\begin{bmatrix}
+  1 & 1 \\
+  1 & -1 \\
+\end{bmatrix}
+\begin{bmatrix}
+  1 & -1 \\
+  1 & 1 \\
+\end{bmatrix}
+=
+\frac{1}{2}
+\begin{bmatrix}
+  2 & 0 \\
+  0 & -2 \\
+\end{bmatrix}
+= Z \]
+as expected.
+
+\textbf{(b)}
+To avoid drawing out the diagrams in tikz, I label them as 1, 2, and 3 from top to bottom. So, circuit 1 is the one with 4 hadamard matrices.
+
+(1) We just need to expand the tensor expression, that is the first diagram can equivalently be written as
+\[ (H \otimes H)(CU)(H \otimes H) = (H \otimes H)\left(\ket{0}\bra{0}\otimes I + \ket{1}\bra{1}\otimes X\right)(H\otimes H) \]
+where $CU$ is the $CNOT$ gate. We notice that it will be convenient to use BraKet notation. In that notation, we recognize that $X = \ket{1}\bra{0} + \ket{0}\bra{1}$ and $H = \frac{1}{\sqrt{2}}\left((\ket{0} + \ket{1})\bra{0} + (\ket{0} - \ket{1})\bra{1}\right)$
+\end{document}
