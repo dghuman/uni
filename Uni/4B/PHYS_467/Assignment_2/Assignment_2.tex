@@ -29,8 +29,30 @@
 \begin{document}
 \textbf{Question 1}
 
+Suppose $\{\ket{0},\ket{1}\}$ and orthonormal basis for $M$, then $\exists\, \ket{\eta_{1}},\ket{\eta_{2}}\in R$, with $\alpha,\beta \in \R$ (where the vector space is over the field of real numbers) such that
+\[ \ket{\psi}_{RM} = \alpha\ket{\eta_{1}}\otimes \ket{0} + \beta\ket{\eta_{2}}\otimes \ket{1} \, .\]
+We know that the $M$ state is shared with Alice, so we get Alice and Bob to apply the teleportation protocol on:
+\[ \ket{\psi}_{RM}\ket{\Phi_{0}} = \frac{1}{\sqrt{2}}(\alpha\ket{\eta_{1}}\otimes \ket{0}(\ket{00} + \ket{11}) + \beta\ket{\eta_{2}}\otimes \ket{1}(\ket{00} + \ket{11}) \, .\]
+First, since Alice has the $M$ state, she can apply the CNOT gate with her bit to get
+\[ \implies \frac{1}{\sqrt{2}}(\alpha\ket{\eta_{1}}\otimes \ket{0}(\ket{00} + \ket{11}) + \beta\ket{\eta_{2}}\otimes \ket{1}(\ket{10} + \ket{01}) \]
+and then Alice applies the Hadamard to the $M$ state to get
+\[ \implies \frac{1}{\sqrt{2}}(\alpha\ket{\eta_{1}}\otimes (\ket{0} + \ket{1})(\ket{00} + \ket{11}) + \beta\ket{\eta_{2}}\otimes (\ket{0} - \ket{1})(\ket{10} + \ket{01}) \, .\]
+It is now convenient to switch our ordering of the tensor product to act on Bob's ket instead, and rearrange to get
+\[ \implies \frac{1}{\sqrt{2}}(\ket{00}(\alpha\ket{\eta_{1}}\otimes \ket{0} + \beta\ket{\eta_{2}}\otimes \ket{1}) + \ket{01}(\alpha\ket{\eta_{1}}\otimes \ket{1} + \beta\ket{\eta_{2}}\otimes \ket{0}) \]
+\[ + \ket{10}(\alpha\ket{\eta_{1}}\otimes \ket{0} - \beta\ket{\eta_{2}}\otimes \ket{1}) + \ket{11}(\alpha\ket{\eta_{1}}\otimes\ket{1} - \beta\ket{\eta_{2}}\otimes \ket{0})) \, .\]
+To complete the teleportation, Bob will apply a Von Neumann measurement along the $M$ basis and Alice's basis and get his new state ket. Notice, if we relabel Bob's system as $D$, then the four possible outcomes are
+\[ \alpha\ket{\eta_{1}}\otimes \ket{0} + \beta\ket{\eta_{2}}\otimes \ket{1} \]
+\[ \alpha\ket{\eta_{1}}\otimes \ket{1} + \beta\ket{\eta_{2}}\otimes \ket{0} \]
+\[ \alpha\ket{\eta_{1}}\otimes \ket{0} - \beta\ket{\eta_{2}}\otimes \ket{1} \]
+\[ \alpha\ket{\eta_{1}}\otimes \ket{1} - \beta\ket{\eta_{2}}\otimes \ket{0} \]
+all of which are a phase away from $\ket{\psi}_{RD}$ as required.
+
+\newpage
 \textbf{Question 2}
 
+We prove that this is impossible through contradiction. Suppose there was a process, $T$, in which Alice was to communicate 1 of the $2^{2n}$ classical messages to Bob through sending a $[2^{rn}]$-dimensional quantum system consuming some arbitrarily entangles state $\ket{\eta}$. We can't use the teleportation protocol on the $[2^{rn}]$-dimensional qauntum system since the entire process is to send it. We can, however, apply the Super Dense Coding scheme with $\ket{\eta}$ to communicate the messages. So, with Super Dense Coding, we have now communicated 1 of $2^{2n}$ messages to Bob by sending only $(2^{rn})^{2} = 2^{2rn} < 2^{2n}$ messages. This contradicts the no discounted lunch theorem, in the presence of a quantum entangled state. Thus, by contradiction, it is impossible for Alice to communicate even 1 of the $2^{2n}$ messages to Bob by sending only a $2^{rn}$ dimensional quantum system. 
+
+\newpage
 \textbf{Question 3}
 
 \textbf{(a)} We recall that
@@ -89,5 +111,44 @@ To avoid drawing out the diagrams in tikz, I label them as 1, 2, and 3 from top 
 
 (1) We just need to expand the tensor expression, that is the first diagram can equivalently be written as
 \[ (H \otimes H)(CU)(H \otimes H) = (H \otimes H)\left(\ket{0}\bra{0}\otimes I + \ket{1}\bra{1}\otimes X\right)(H\otimes H) \]
-where $CU$ is the $CNOT$ gate. We notice that it will be convenient to use BraKet notation. In that notation, we recognize that $X = \ket{1}\bra{0} + \ket{0}\bra{1}$ and $H = \frac{1}{\sqrt{2}}\left((\ket{0} + \ket{1})\bra{0} + (\ket{0} - \ket{1})\bra{1}\right)$
+where $CU$ is the $CNOT$ gate. We notice that it will be convenient to use BraKet notation. In that notation, we recognize that $X = \ket{1}\bra{0} + \ket{0}\bra{1}$ and $H = \frac{1}{\sqrt{2}}\left((\ket{0} + \ket{1})\bra{0} + (\ket{0} - \ket{1})\bra{1}\right)$. So, first expanding our BraKet version of the circuit using tensor linearity,
+\[ (H \otimes H)(CU)(H \otimes H) = (H\otimes H)(\ket{0}\bra{0}\otimes I)(H\otimes H) + (H\otimes H)(\ket{1}\bra{1}\otimes X)(H\otimes H)\]
+\[ = H\ket{0}\bra{0}H\otimes HH + H\ket{1}\bra{1}H\otimes HXH\]
+\[ = \left(\frac{1}{\sqrt{2}}(\ket{0}+\ket{1})\right)\left(\frac{1}{\sqrt{2}}(\bra{0} + \bra{1})\right) \otimes H^{2} + \left(\frac{1}{\sqrt{2}}(\ket{0}-\ket{1})\right)\left(\frac{1}{\sqrt{2}}(\bra{0} - \bra{1})\right)\otimes Z \]
+where we recall that $H^{2} = I$, so
+\[ = \frac{1}{2}(\ket{0}\bra{0} + \ket{0}\bra{1} + \ket{1}\bra{0} + \ket{1}\bra{1})\otimes I + \frac{1}{2}(\ket{0}\bra{0} - \ket{0}\bra{1} - \ket{1}\bra{0} + \ket{1}\bra{1})\otimes Z\]
+\[ = \frac{1}{2}(I + X)\otimes I + \frac{1}{2}(I - X)\otimes Z = \frac{1}{2}(I + X)\otimes (\ket{0}\bra{0} + \ket{1}\bra{1}) + \frac{1}{2}(I - X)\otimes (\ket{0}\bra{0} - \ket{1}\bra{1}) \]
+\[ = \frac{1}{2}(I + X + I - X)\otimes \ket{0}\bra{0} + \frac{1}{2}(I + X - I + X)\otimes \ket{1}\bra{1} \]
+\[ \implies (H \otimes H)(CU)(H \otimes H) = I\otimes \ket{0}\bra{0} + X\otimes \ket{1}\bra{1} \]
+which is exactly what we wanted.
+
+(2) We have
+\[ (CU)(I \otimes Z)(CU) = (\ket{0}\bra{0}\otimes I + \ket{1}\bra{1}\otimes X)(I \otimes Z)(\ket{0}\bra{0}\otimes I + \ket{1}\bra{1}\otimes X) \]
+\[ = (\ket{0}\bra{0}I\ket{0}\bra{0}) \otimes Z + (\ket{1}\bra{1}I\ket{1}\bra{1})\otimes XZX + (\ket{0}\bra{0}I\ket{1}\bra{1}\otimes ZX + \ket{1}\bra{1}I\ket{0}\bra{0}\otimes XZ\]
+where we know that $XZX = \ket{1}\bra{1} - \ket{0}\bra{0}$, and the cross terms vanish, since $\{Z,X\} = 0$, 
+\[ = \ket{0}\bra{0} \otimes Z - \ket{1}\bra{1}\otimes Z = (\bra{0}\ket{0} - \bra{1}\ket{1})\otimes Z = Z\otimes Z\]
+as required.
+
+(3) We see
+\[ (CU)(X\otimes I)(CU) = (\ket{0}\bra{0}\otimes I + \ket{1}\bra{1}\otimes X)(X \otimes I)(\ket{0}\bra{0}\otimes I + \ket{1}\bra{1}\otimes X) \]
+\[ = (\ket{0}\bra{0}X\ket{0}\bra{0}) \otimes I + (\ket{1}\bra{1}X\ket{1}\bra{1})\otimes XIX + (\ket{0}\bra{0}X\ket{1}\bra{1}\otimes X + \ket{1}\bra{1}X\ket{0}\bra{0}\otimes X\]
+\[ = 0 + 0 + \ket{0}\bra{1}\otimes X + \ket{1}\bra{0}\otimes X = X\otimes X\]
+as required.
+\newpage
+\textbf{Question 4}
+
+\textbf{(a)} We already know that $\{CNOT, H, T\}$ form a universal set of gates, so it would be weird to have just $\{CNOT, T\}$ form a universal set as well. So, we can guess that it will not be universal. To see this, we recall that the $T$ gate and $CNOT$ gate will give us all the Pauli Matrices as gates, since $T$ is just a rotation by $\frac{\pi}{4}$ about the $z$ axis. However, this set does not allow us to produce $H$. Since $H$ can't be produced, we have a non-universal set.
+
+\textbf{(b)} It suffices to show this is universal by showing that we can produce each of $CNOT, H$ and $T$ from $\{c-Z,K,T\}$. Clearly $T$ is already done by inclusion, so all we need check now is $CNOT$ and $H$. First, we recall
+\[ \text{c}-Z = \ket{0}\bra{0}\otimes I + \ket{1}\bra{1}\otimes Z \quad \& \quad T = \ket{0}\bra{0} + e^{i\frac{\pi}{4}}\ket{1}\bra{1}\, .\]
+The matrix form can be recovered from the Ket form, this is just more compact. Then, using a computing software, we can find that
+\[ K^{2}T^{2}KT^{2}K^{2} =
+\begin{bmatrix}
+  \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
+  \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
+\end{bmatrix}
+= H \, .\]
+So, this shows us that the Hadamard gate can be constructed by the $K$ and $T$ gates. Now we need to find $CNOT$. However, now that we can use $H$, we recall the relationship $HXH = Z$ which can be written as $HZH = X$ (since $H$ is idempotent of degree 2), and thus
+\[ (I\otimes H)\text{c}-Z(I\otimes H) = \ket{0}\bra{0}\otimes H^{2} + \ket{1}{1}\otimes HZH = \ket{0}\bra{0}\otimes H^{2} + \ket{1}{1}\otimes X = \text{CNOT}\, .\]
+Therefore, we have that this set is also universal.
 \end{document}

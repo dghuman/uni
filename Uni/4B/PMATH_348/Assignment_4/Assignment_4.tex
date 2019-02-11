@@ -51,4 +51,57 @@ Since $F(\alpha,\beta)/F(\alpha),F(\alpha,\beta)/F(\beta),F(\alpha)/F,F(\beta)/F
 \[ [F(\alpha,\beta):F] = [F(\alpha,\beta):F(\beta)][F(\beta):F] = [F(\alpha,\beta):F(\beta)]n \,.\]
 So we clearly have that $n \, |\, [F(\alpha,\beta):F]$ and $m \, |\, [F(\alpha,\beta):F]$, and since these are coprime, $nm \, | \,[F(\alpha,\beta):F]$.
 
+Now we use the previous question to see that
+\[ [F(\alpha,\beta):F] = [F(\alpha,\beta):F(\alpha)][F(\alpha):F] \leq [F(\beta):F][F(\alpha):F] = mn \]
+and since $mn \, | \, [F(\alpha,\beta):F]$, we have that
+\[ [F(\alpha,\beta):F] = mn = [F(\beta):F][F(\alpha):F] \, .\]
+
+
+\newpage
+\textbf{Question 3}
+
+\textbf{(a)} From the previous assignment, we recall that $\text{deg}_{\Q}(i + \sqrt{2}) = 4$ and $\text{deg}_{\Q}(\cos(\frac{\pi}{9})) = 3$, which are coprime. So, from the previous lemma
+\[ [\Q(\alpha,\beta): \Q] = [\Q(\alpha):\Q][\Q(\beta):\Q] = (3)(4) = 12 \, .\]
+
+\textbf{(b)} By the Tower theorem,
+\[ [\Q(\sqrt{p},\sqrt{q}):\Q] = [\Q(\sqrt{p},\sqrt{q}):\Q(\sqrt{p}][\Q(\sqrt{p}):\Q] \,.\]
+We recognize that each square root of a prime will have a minimal polynomial of order 2, namely $x^{2} - p$ and $x^{2} - q$ over $\Q$. So, all we need to show is that this minimal polynomial is the same in the adjoined field over the opposite extension. In particular, in this case we consider $x^{2} - q$ over $\Q(\sqrt{p})$. Clearly this is still irreducible, as otherwise we would have a power of $\sqrt{p}$ that is $q$, but they are distinct primes, and so that can not be the case. Thus,
+\[ [\Q(\sqrt{p},\sqrt{q}):\Q] = [\Q(\sqrt{p},\sqrt{q}):\Q(\sqrt{p}][\Q(\sqrt{p}):\Q] = 2\cdot 2 = 4 \,.\]
+
+\textbf{(c)} We notice that this polynomial is reducible, in particular,
+\[ x^{3} + x + 1 = (x + 1)(x^{2} - x + 2) \, \in \Z_{3}[x] \, .\]
+Here, we see that $x^{2} - x + 2$ is irreducible and so is $x + 1$, so we just need to consider $\alpha$ in these two cases.
+
+Suppose $\alpha = 2$, then the minimal polynomial is $x + 1$, so $\text{deg}_{\Z_{3}}(\alpha) = 1$, and thus
+\[[\Z_{3}(\alpha):\Z_{3}] = 1 \, .\]
+
+Suppose $\alpha$ is a root of the irreducible and monic $x^{2} - x + 2$, then we have that
+\[[\Z_{3}(\alpha):\Z_{3}] = 2 \, .\]
+
+\textbf{(d)} Since $\R(t) = \R(t,t^{2})$, we can think of $\R(t^{2}) = F$ as a new field, and then we see that the question becomes to find $[F(t):F]$, which is to say we want a minimal polynomial in $F$ of $t$. So, what polynomial in $\R(t^{2})[x]$ has a root of $t$. Well, we see that the natural choice would be $x^{2} - t^{2} \in \R(t^{2})[x]$. So, the minimal polynomial, call it $p(x)$, must divide this polynomial, and hence $\text{deg}_{\R(t^{2})}(t) \in \{1,2\}$. But, if the degree were 1, then that would imply that $t\in \R(t^{2})$, which is false, so we must have that the degree of $t$ is 2. Then, $[\R(t):\R(t^{2})] = 2$, as required.
+
+\newpage
+\textbf{Question 4}
+
+We build the natural homomorphism and show that it is an isomorphism. That is, for any rational polynomial $\frac{f(\alpha)}{g(\alpha)}\in F(\alpha), g(\alpha) \neq 0$, which is by definition of adjoining, we define the map $\varphi: F(\alpha) \to F(x)$ by
+\[ \varphi\left(\frac{f(\alpha)}{g(\alpha)}\right) = \frac{f(x)}{g(x)} \, \in F(x) \, .\]
+This is the natural homomorphism, and since all we do is relabel, this better be a homomorphism. Notice here, however, that since $\alpha$ is trancendental over $F$, $\text{ker}(\varphi) = \{0\}$. That is, the kernel is trivial, and so we have injection. Moreover, notice that the map has a natural inverse that is also injective, thus we have surjection, and 
+\[ F(\alpha) \cong F(x) \]
+as needed. Since $\beta$ is trancendental like $\alpha$, the above holds for it aswell and we get $F(\beta) \cong F(x)$, and by chaining isomorphisms, $F(\beta) \cong F(\alpha)$.
+
+\newpage
+\textbf{Question 5}
+
+We use the Tower theorem and what we did in \textbf{Question 1} to prove this statement. First, since $f(x) \in \Q[x]$ is irreducible, then by Kronecker's theorem, $\exists \, \alpha$ in some field extension of $\Q$ such that $f(\alpha) = 0$. Thus, we see that $f(x)$ is the minimal polynomial of $\alpha$ over $\Q$, up to some unit multiple to make it monic. This gives us the following extensions we can use
+\[ E(\alpha)/\Q \quad E(\alpha)/\Q(\alpha) \quad \Q(\alpha)/\Q \quad E(\alpha)/E \, .\]
+Since these are all finite (due to $E/\Q$ being finite), we apply the Tower Theorem along with inequalities from \textbf{Question 1} to get
+\[ [E(\alpha):Q] = [E(\alpha):E][E:\Q] \leq [\Q(\alpha):\Q]\cdot 2 = 4n \]
+\[ [E(\alpha):Q] = [E(\alpha):\Q(\alpha)][\Q(\alpha):\Q] \leq [E:\Q]\cdot 2n = 4n \]
+\[ \implies 2n\, | \, [E(\alpha):Q] \quad [E(\alpha):Q] \leq 4n\]
+\[ \implies [E(\alpha):Q] \in \{2n, 4n\} \, .\]
+So, we need only consider these two cases of $[E(\alpha):Q]$.
+
+Suppose $[E(\alpha):Q] = 4n$, then by the Tower Theorem, $[E(\alpha):E] = 2n$, and this says that the minimal polynomial of $\alpha$ over $E$ is of order $2n$, but we already know that $f(x)\in E[x]$ is the minimal polynomial over $\Q$, and thus can not have reduced in degree in the extension, and hence $\text{deg}_{E}f(x) = 2n$ and it is irreducible.
+
+Suppose $[E(\alpha):Q] = 2n$, then by the Tower Theorem, $[E(\alpha):E] = n$, that is the minimal polynomial of $\alpha$ over $E$ has degree $n$. Since $f(x) \in \Q[x]$ was the minimal polynomial (up to unit multiple), we expect its extension to contain the minimal polynomial over $E$, but the degree must be $n$. Suppose the minimal polynomial is $p(x)\in E[x]$, then we must have that $f(x) = p(x)h(x)$, with $h(x)\in E[x]$ some other degree $n$ polynomial. Clearly $p(x)$ is irreducible, so we need to consider the reducibility of $h(x)$. However, since $\alpha$ was chosen arbitrarily, any root of $h(x)$ will follow a similar path and hence will require it also being of degree n. Thus, $h(x)$ better be irreducible.
 \end{document}
