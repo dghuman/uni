@@ -1,0 +1,112 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\dif}{\text{d}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 476 $|$  Assignment 1}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Question 1}
+
+\textbf{(a)}
+
+\newpage
+\textbf{Question 2}
+
+\textbf{(a)} We compute the Lagrangian through some simple algebra. First, we recall that $d\tau = \gamma^{-1}dt$, and thus
+\[ -\int mc^{2}\dif\tau = -mc^{2}\int \frac{\dif t}{\gamma} = \int -mc^{2}\sqrt{1 - \frac{\vec{v}\cdot\vec{v}}{c^{2}}}\dif t\, .\]
+In the other integral, we contract to get,
+\[ \int qA_{\mu}\dif x^{\mu} = \int q (-V\dif t + \vec{A}\cdot \dif\vec{x}) = \int q\left(-V\dif t + \vec{A}\cdot \del[\vec{x}]{t}\dif t\right)\, . \]
+So, our final action looks like
+\[ S = \int \left (-mc^{2}\sqrt{1 - \frac{\vec{v}\cdot\vec{v}}{c^{2}}} - qV + q(\vec{A}\cdot \vec{v})\right )\dif t\]
+and thus
+\[ L = -mc^{2}\sqrt{1 - \frac{\vec{v}\cdot\vec{v}}{c^{2}}} - qV + q(\vec{A}\cdot \vec{v}) \, .\]
+
+\textbf{(b)} First we rewrite $L$ in terms of $\dot{x}^{\mu}$. Notice
+\[ \dot{x}_{\mu}\dot{x}^{\mu} = -c^{2} + \vec{v}\cdot\vec{v} \]
+and hence
+\[ L = -mc^{2}\sqrt{1 - \frac{\vec{v}\cdot\vec{v}}{c^{2}}} + q(-V + (\vec{A}\cdot\vec{v})) = -imc\sqrt{\dot{x}_{\mu}\dot{x}^{\mu}} + qA_{\mu}\dot{x}^{\mu}\, .\]
+In this case, we see that
+\[ \Pi^{\mu} = \eta^{\mu\nu}\Pi_{\nu} = \eta^{\mu\nu}\di[L]{\dot{x}^{\nu}} = \eta^{\mu\nu}\di{\dot{x}^{\nu}}\left(-imc\sqrt{\dot{x}_{\nu}\dot{x}^{\nu}} + qA_{\nu}\dot{x}^{\nu}\right) = \eta^{\mu\nu}\di{\dot{x}^{\nu}}\left(-imc\eta_{\nu\sigma}\sqrt{\dot{x}^{\sigma}\dot{x}^{\nu}} + q\eta_{\nu\sigma}A^{\sigma}\dot{x}^{\nu}\right) \]
+which will give us
+\[ \Pi^{\mu} = \delta^{\mu}_{\sigma}\left(\frac{-imc}{\sqrt{\dot{x}^{\sigma}\dot{x}^{\nu}}}\dot{x}^{\sigma} + qA^{\sigma}\right) = \frac{-imc}{\sqrt{-c^{2} + \vec{v}\cdot\vec{v}}}\dot{x}^{\mu} + qA^{\mu} = \frac{m}{\sqrt{1 - \frac{\vec{v}\cdot\vec{v}}{c^{2}}}}\dot{x}^{\mu} + qA^{\mu}\, .\]
+Now we find the kinimatical 4-momentum. To do so, we first need to find the 4-velocity, which we see is
+\[ u^{\mu} = \del[x^{\mu}]{\tau} = \del[t]{\tau}\del[x^{\mu}]{t} = \gamma\del[x^{\mu}]{t}= \gamma\dot{x}^{\mu} \, .\]
+So, we better have that
+\[ p^{\mu} = mu^{\mu} = m\gamma\dot{x}^{\mu} \, .\]
+Combining our answers, we see that
+\[ \Pi^{\mu} = p^{\mu} + qA^{\mu} \, .\]
+That is, the canonical and kinematic 4-momentum differ by the 4-potential. The kinematic 4-momentum is independent of the vector potential, where the canonical 4-momentum depends upon the kinematic 4-momentum \textit{and} the 4-potential. Thus, I would argue that the canonical 4-momentum is more physical than the kinematic 4-momentum since it carries the potential as a factor in determining the true momentum.
+
+\textbf{(c)} By the ELE, we know that
+\[ \del{t}\left(\di[L]{\dot{x}^{\mu}}\right) = \di[L]{x^{\mu}} \,,\]
+and so we need to find the appropriate components. First,
+\[ \di[L]{x^{\mu}} = \di{x^{\mu}}\left(-imc\sqrt{\dot{x}_{\mu}\dot{x}^{\mu}} + qA_{\mu}\dot{x}^{\mu}\right) = q\partial_{\mu}(A_{\nu}\dot{x}^{\nu})\]
+and next
+\[ \del{t}\left(\di[L]{\dot{x}^{\mu}}\right) = \del{t}\left( p^{\mu} + qA^{\mu}\right) = m\del{t}\left(\gamma \dot{x}^{\mu}\right) + q\del[A^{\mu}]{t} \]
+\[ = m\del[\tau]{t}\del{\tau}(\gamma \dot{x}^{\mu}) + q\del[A^{\mu}]{t} = m\gamma^{-1}\del[u^{\mu}]{\tau} + q\del[A^{\mu}]{t} \, .\]
+Equating the two sides, we get that
+\[ \del{t}\left(\di[L]{\dot{x}^{\mu}}\right) = \di[L]{x^{\mu}}\]
+\[ m\gamma^{-1}\del[u^{\mu}]{\tau} + q\del[A^{\mu}]{t} = q\partial_{\mu}(A_{\nu}\dot{x}^{\nu}) \]
+\[ m\gamma^{-1}\del[u^{\mu}]{\tau} = q\left(\partial_{\mu}(A_{\nu}\dot{x}^{\nu}) - \del[A^{\mu}]{t}\right) = q\left(\partial_{\mu}(A_{\nu}\dot{x}^{\nu}) - \partial_{\nu}A_{\mu}\dot{x}^{\nu}\right) = q\left(\partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}\right)\dot{x}^{\nu}\]
+\[ m\del[u^{\mu}]{\tau} = q\left(\partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}\right)\gamma\dot{x}^{\nu} = q\left(\partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}\right)u^{\nu} = qF_{\nu\mu}u^{\nu} \]
+as required.
+
+\textbf{(d)} This is just computation, where we use $F_{\mu\nu} =\partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}$ and the relationships of $\vec{E}$ and $\vec{B}$ with the potentials. The first thing we notice is that if $\nu=\mu$ we better have zero, so $F_{00} = F_{11} = F_{22} = F_{33} = 0$. Then
+\[ F_{01} = \partial_{0}A_{1} - \partial_{1}A_{0} = -\frac{1}{c}\di[A_{1}]{t} - \frac{1}{c}\di[V]{x} = \frac{1}{c}E_{1} \]
+\[ F_{02} = \partial_{0}A_{2} - \partial_{2}A_{0} = -\frac{1}{c}\di[A_{2}]{t} - \frac{1}{c}\di[V]{y} = \frac{1}{c}E_{2} \]
+and seeing a pattern we get $F_{03} = \frac{1}{c}E_{3}$. Next,
+\[ F_{10} = \partial_{1}A_{0} - \partial_{0}A_{1} = \frac{1}{c}\di[V]{x} + \frac{1}{c}\di[A_{1}]{t} = -\frac{1}{c}E_{1}\]
+which makes sense, since flipping the index better just give us the anti-symmetric component. So, we skip the anti-symmetric parts as $F_{20} = -F_{02}$ and $F_{30} = -F_{03}$. Further,
+\[ F_{12} = \partial_{1}A_{2} - \partial_{2}A_{1} = \di[A_{2}]{x} - \di[A_{1}]{y} = \left(\vec{\nabla}\times \vec{A}\right)_{3} = B_{3}\]
+\[ F_{13} = \partial_{1}A_{3} - \partial_{3}A_{1} = \di[A_{3}]{x} - \di[A_{1}]{z} = -\left(\vec{\nabla}\times \vec{A}\right)_{2} = -B_{2} \]
+where we see the pattern is in the cyclic nature of the indices. So, $F_{12}$ got us the postive curl, and $F_{13}$ got us the negative, as we would expect following the cyclic nature. Therefore $F_{23} = B_{1}$ and with the anti-symmetric nature, we get the remaining entries aswell, $F_{31} = B_{2}$, $F_{21} = -B_{3}$ and $F_{32} = -B_{1}$. Thus, we have computed $F_{\mu\nu}$ in all of it's coordinates.
+
+\textbf{(e)} We know that the spatial coordinate occurs when $\mu \in \{1,2,3\}$, so we can just compute those components directly:
+\[ m\del[u^{1}]{\tau} = qF^{1\nu}u_{\nu} \implies m\del[\tau]{t}\del[u^{1}]{t} = q\left(\gamma E_{1} + \gamma v_{2}B_{3} - \gamma v_{3} B_{2}\right) \]
+\[ \gamma\del[(mu^{1})]{t} = q\gamma\left(E_{1} + v_{2}B_{3} - v_{3}B_{2}\right) \]
+\[ \del[p_{1}]{t} = qE_{1} + q(v_{2}B_{3} - v_{3}B_{2})\, .\]
+Similarly we can find
+\[ \del[p_{2}]{t} = qE_{2} + q(v_{3}B_{1} - v_{1}B_{3}) \quad \& \quad \del[p_{3}]{t} = qE_{3} + q(v_{1}B_{2} - v_{2}B_{1}) \]
+and combining the components to get
+\[ \del[\vec{p}]{t} = q\vec{E} + q\vec{v}\times \vec{B} \]
+which is exactly the Lorentz force law.
+
+The first component tells us
+\[ \gamma \del[p^{0}]{t} = q\left(\frac{\gamma}{c}v_{1}E_{1} + \frac{\gamma}{c}v_{2}E_{2} + \frac{\gamma}{c}v_{3}E_{3}\right) \]
+\[ \del[cp^{0}]{t} = \del[\mathcal{E}]{t} = q\vec{v}\cdot \vec{E} \]
+as required.
+
+\newpage
+\textbf{Question 3}
+
+\textbf{(a)} Recall that in covariant form, the d'Alembertian looks like
+\[ \square = -\frac{1}{c^{2}}\partial_{t} + \nabla^{2} = \partial_{\mu}\partial^{\mu} \]
+which is clearly Lorentz invariant, as it is a contraction of the 4-derivative with itself. 
+
+\textbf{(b)} We apply a Lorentz transformation with 
+\[ t' = \gamma\left(t - \frac{v}{c}^{2}x\right) \quad x' = \gamma(x - vt) \quad y' = y \quad z' - z
+\end{document}

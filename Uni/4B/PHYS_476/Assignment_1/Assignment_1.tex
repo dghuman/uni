@@ -1,0 +1,195 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,tensor}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\dif}{\text{d}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 476 $|$  Assignment 1}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Question 1}
+
+\textbf{(a)}
+
+\newpage
+\textbf{Question 2}
+
+\textbf{(a)} We compute the Lagrangian through some simple algebra. First, we recall that $d\tau = \gamma^{-1}dt$, and thus
+\[ -\int mc^{2}\dif\tau = -mc^{2}\int \frac{\dif t}{\gamma} = \int -mc^{2}\sqrt{1 - \frac{\vec{v}\cdot\vec{v}}{c^{2}}}\dif t\, .\]
+In the other integral, we contract to get,
+\[ \int qA_{\mu}\dif x^{\mu} = \int q (-V\dif t + \vec{A}\cdot \dif\vec{x}) = \int q\left(-V\dif t + \vec{A}\cdot \del[\vec{x}]{t}\dif t\right)\, . \]
+So, our final action looks like
+\[ S = \int \left (-mc^{2}\sqrt{1 - \frac{\vec{v}\cdot\vec{v}}{c^{2}}} - qV + q(\vec{A}\cdot \vec{v})\right )\dif t\]
+and thus
+\[ L = -mc^{2}\sqrt{1 - \frac{\vec{v}\cdot\vec{v}}{c^{2}}} - qV + q(\vec{A}\cdot \vec{v}) \, .\]
+
+\textbf{(b)} First we rewrite $L$ in terms of $\dot{x}^{\mu}$. Notice
+\[ \dot{x}_{\mu}\dot{x}^{\mu} = -c^{2} + \vec{v}\cdot\vec{v} \]
+and hence
+\[ L = -mc^{2}\sqrt{1 - \frac{\vec{v}\cdot\vec{v}}{c^{2}}} + q(-V + (\vec{A}\cdot\vec{v})) = -imc\sqrt{\dot{x}_{\mu}\dot{x}^{\mu}} + qA_{\mu}\dot{x}^{\mu}\, .\]
+In this case, we see that
+\[ \Pi^{\mu} = \eta^{\mu\nu}\Pi_{\nu} = \eta^{\mu\nu}\di[L]{\dot{x}^{\nu}} = \eta^{\mu\nu}\di{\dot{x}^{\nu}}\left(-imc\sqrt{\dot{x}_{\nu}\dot{x}^{\nu}} + qA_{\nu}\dot{x}^{\nu}\right) = \eta^{\mu\nu}\di{\dot{x}^{\nu}}\left(-imc\eta_{\nu\sigma}\sqrt{\dot{x}^{\sigma}\dot{x}^{\nu}} + q\eta_{\nu\sigma}A^{\sigma}\dot{x}^{\nu}\right) \]
+which will give us
+\[ \Pi^{\mu} = \delta^{\mu}_{\sigma}\left(\frac{-imc}{\sqrt{\dot{x}^{\sigma}\dot{x}^{\nu}}}\dot{x}^{\sigma} + qA^{\sigma}\right) = \frac{-imc}{\sqrt{-c^{2} + \vec{v}\cdot\vec{v}}}\dot{x}^{\mu} + qA^{\mu} = \frac{m}{\sqrt{1 - \frac{\vec{v}\cdot\vec{v}}{c^{2}}}}\dot{x}^{\mu} + qA^{\mu}\, .\]
+Now we find the kinimatical 4-momentum. To do so, we first need to find the 4-velocity, which we see is
+\[ u^{\mu} = \del[x^{\mu}]{\tau} = \del[t]{\tau}\del[x^{\mu}]{t} = \gamma\del[x^{\mu}]{t}= \gamma\dot{x}^{\mu} \, .\]
+So, we better have that
+\[ p^{\mu} = mu^{\mu} = m\gamma\dot{x}^{\mu} \, .\]
+Combining our answers, we see that
+\[ \Pi^{\mu} = p^{\mu} + qA^{\mu} \, .\]
+That is, the canonical and kinematic 4-momentum differ by the 4-potential. The kinematic 4-momentum is independent of the vector potential, where the canonical 4-momentum depends upon the kinematic 4-momentum \textit{and} the 4-potential. Thus, I would argue that the canonical 4-momentum is more physical than the kinematic 4-momentum since it carries the potential as a factor in determining the true momentum.
+
+\textbf{(c)} By the ELE, we know that
+\[ \del{t}\left(\di[L]{\dot{x}^{\mu}}\right) = \di[L]{x^{\mu}} \,,\]
+and so we need to find the appropriate components. First,
+\[ \di[L]{x^{\mu}} = \di{x^{\mu}}\left(-imc\sqrt{\dot{x}_{\mu}\dot{x}^{\mu}} + qA_{\mu}\dot{x}^{\mu}\right) = q\partial_{\mu}(A_{\nu}\dot{x}^{\nu})\]
+and next
+\[ \del{t}\left(\di[L]{\dot{x}^{\mu}}\right) = \del{t}\left( p^{\mu} + qA^{\mu}\right) = m\del{t}\left(\gamma \dot{x}^{\mu}\right) + q\del[A^{\mu}]{t} \]
+\[ = m\del[\tau]{t}\del{\tau}(\gamma \dot{x}^{\mu}) + q\del[A^{\mu}]{t} = m\gamma^{-1}\del[u^{\mu}]{\tau} + q\del[A^{\mu}]{t} \, .\]
+Equating the two sides, we get that
+\[ \del{t}\left(\di[L]{\dot{x}^{\mu}}\right) = \di[L]{x^{\mu}}\]
+\[ m\gamma^{-1}\del[u^{\mu}]{\tau} + q\del[A^{\mu}]{t} = q\partial_{\mu}(A_{\nu}\dot{x}^{\nu}) \]
+\[ m\gamma^{-1}\del[u^{\mu}]{\tau} = q\left(\partial_{\mu}(A_{\nu}\dot{x}^{\nu}) - \del[A^{\mu}]{t}\right) = q\left(\partial_{\mu}(A_{\nu}\dot{x}^{\nu}) - \partial_{\nu}A_{\mu}\dot{x}^{\nu}\right) = q\left(\partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}\right)\dot{x}^{\nu}\]
+\[ m\del[u^{\mu}]{\tau} = q\left(\partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}\right)\gamma\dot{x}^{\nu} = q\left(\partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}\right)u^{\nu} = qF_{\nu\mu}u^{\nu} \]
+as required.
+
+\textbf{(d)} This is just computation, where we use $F_{\mu\nu} =\partial_{\mu}A_{\nu} - \partial_{\nu}A_{\mu}$ and the relationships of $\vec{E}$ and $\vec{B}$ with the potentials. The first thing we notice is that if $\nu=\mu$ we better have zero, so $F_{00} = F_{11} = F_{22} = F_{33} = 0$. Then
+\[ F_{01} = \partial_{0}A_{1} - \partial_{1}A_{0} = -\frac{1}{c}\di[A_{1}]{t} - \frac{1}{c}\di[V]{x} = \frac{1}{c}E_{1} \]
+\[ F_{02} = \partial_{0}A_{2} - \partial_{2}A_{0} = -\frac{1}{c}\di[A_{2}]{t} - \frac{1}{c}\di[V]{y} = \frac{1}{c}E_{2} \]
+and seeing a pattern we get $F_{03} = \frac{1}{c}E_{3}$. Next,
+\[ F_{10} = \partial_{1}A_{0} - \partial_{0}A_{1} = \frac{1}{c}\di[V]{x} + \frac{1}{c}\di[A_{1}]{t} = -\frac{1}{c}E_{1}\]
+which makes sense, since flipping the index better just give us the anti-symmetric component. So, we skip the anti-symmetric parts as $F_{20} = -F_{02}$ and $F_{30} = -F_{03}$. Further,
+\[ F_{12} = \partial_{1}A_{2} - \partial_{2}A_{1} = \di[A_{2}]{x} - \di[A_{1}]{y} = \left(\vec{\nabla}\times \vec{A}\right)_{3} = B_{3}\]
+\[ F_{13} = \partial_{1}A_{3} - \partial_{3}A_{1} = \di[A_{3}]{x} - \di[A_{1}]{z} = -\left(\vec{\nabla}\times \vec{A}\right)_{2} = -B_{2} \]
+where we see the pattern is in the cyclic nature of the indices. So, $F_{12}$ got us the postive curl, and $F_{13}$ got us the negative, as we would expect following the cyclic nature. Therefore $F_{23} = B_{1}$ and with the anti-symmetric nature, we get the remaining entries aswell, $F_{31} = B_{2}$, $F_{21} = -B_{3}$ and $F_{32} = -B_{1}$. Thus, we have computed $F_{\mu\nu}$ in all of it's coordinates.
+
+\textbf{(e)} We know that the spatial coordinate occurs when $\mu \in \{1,2,3\}$, so we can just compute those components directly:
+\[ m\del[u^{1}]{\tau} = qF^{1\nu}u_{\nu} \implies m\del[\tau]{t}\del[u^{1}]{t} = q\left(\gamma E_{1} + \gamma v_{2}B_{3} - \gamma v_{3} B_{2}\right) \]
+\[ \gamma\del[(mu^{1})]{t} = q\gamma\left(E_{1} + v_{2}B_{3} - v_{3}B_{2}\right) \]
+\[ \del[p_{1}]{t} = qE_{1} + q(v_{2}B_{3} - v_{3}B_{2})\, .\]
+Similarly we can find
+\[ \del[p_{2}]{t} = qE_{2} + q(v_{3}B_{1} - v_{1}B_{3}) \quad \& \quad \del[p_{3}]{t} = qE_{3} + q(v_{1}B_{2} - v_{2}B_{1}) \]
+and combining the components to get
+\[ \del[\vec{p}]{t} = q\vec{E} + q\vec{v}\times \vec{B} \]
+which is exactly the Lorentz force law.
+
+The first component tells us
+\[ \gamma \del[p^{0}]{t} = q\left(\frac{\gamma}{c}v_{1}E_{1} + \frac{\gamma}{c}v_{2}E_{2} + \frac{\gamma}{c}v_{3}E_{3}\right) \]
+\[ \del[cp^{0}]{t} = \del[\mathcal{E}]{t} = q\vec{v}\cdot \vec{E} \]
+as required.
+
+\newpage
+\textbf{Question 3}
+
+\textbf{(a)} Recall that in covariant form, the d'Alembertian looks like
+\[ \square = -\frac{1}{c^{2}}\partial_{t} + \nabla^{2} = \partial_{\mu}\partial^{\mu} \]
+which is clearly Lorentz invariant, as it is a contraction of the 4-derivative with itself. 
+
+\textbf{(b)} We apply a Lorentz transformation with our active Lorentz boost with $\tensor{\Lambda}{_{\mu}^{\nu}}$ on $k_{\nu}$ with a relative velocity of $v$ between the frames,
+\[ \tensor{\Lambda}{_{\mu}^{\nu}}k_{\nu} = \left(-\gamma k + \gamma \frac{v}{c}k\cos(\alpha), -\gamma\frac{v}{c}k -\gamma k \cos(\alpha), -k\sin(\alpha), 0\right) \, .\]
+Furthermore, we see that
+\[ \tan(\alpha') = \frac{k_{y}}{k_{x}} = \frac{-k\sin(\alpha)}{-\gamma\frac{v}{x}k - \gamma k\cos(\alpha)} = \frac{1}{\gamma}\frac{\sin(\alpha)}{\cos(\alpha) + \frac{v}{c}} = \frac{\sqrt{1 - \frac{v^{2}}{c^{2}}}\sin(\alpha)}{\cos(\alpha) + \frac{v}{c}}\]
+as expected.
+
+\textbf{(c)} We answer the questions in the order they are asked.
+
+(i) Notice that $l'$ better just be the distance that the edge of the box has moved in a time $dt$ with velocity $v$, that is, $l' = vdt$. On the other hand, $l''$ will undergo a lorentz transformation to get the distance we precieve in a time $dt$. In particular, $l''$ will be the length contracted version of $l$, and hence $l'' = \gamma^{-1} l = \sqrt{1 - \frac{v^{2}}{c^{2}}}l$.
+
+(ii) The observer is still at rest, and see's that the cube has begun moving at a time $t=0$ in the $x$ direction with a velocity $v$. In a small instance of time $dt$, the cube will have shifted that $l'$ distance and now light will have had to have traveled a bit further to bounce off of the $AB$ side of the cube. Simply put, there will be a delay caused by the motion of the cube. This is important since the observer will see all the light that reaches them at the time $dt$, but that light will not all have reflected off of the $AB$ side of the cube at the same time! This will cause a skew in the cube to the observer and will thus let us see the painting on the $AB$ side.
+
+(iii) From geometry, we have that
+\[ \sin(\delta) = \frac{l'}{l} \quad \& \quad \cos(\delta) = \frac{l''}{l}\]
+\[ \implies \tan(\delta) = \frac{\sin(\delta)}{\cos(\delta)} = \frac{l'}{l''} = \frac{vdt}{\sqrt{1-\frac{v^{2}}{c^{2}}}l} \]
+\[ \delta = \arctan\left(\frac{vdt}{\sqrt{1-\frac{v^{2}}{c^{2}}}l}\right) \]
+which will satisfy our requirements for the apparent lengths.
+
+(iv) Set $\alpha = \delta$ and we get
+\[ \tan(\alpha') = \frac{\sqrt{1- \frac{v^{2}}{c^{2}}}\sin(\alpha)}{\cos(\alpha) + \frac{v}{c}} \quad \& \quad\alpha = \arctan\left(\frac{vdt}{\sqrt{1-\frac{v^{2}}{c^{2}}}l}\right)\]
+\[ \implies \alpha^{\prime} =\frac{\sqrt{1- \frac{v^{2}}{c^{2}}}\sin\left(\arctan\left(\frac{vdt}{\sqrt{1-\frac{v^{2}}{c^{2}}}l}\right)\right)}{\cos\left(\arctan\left(\frac{vdt}{\sqrt{1-\frac{v^{2}}{c^{2}}}l}\right)\right) + \frac{v}{c}} \implies \alpha' = \frac{\sqrt{1-\frac{v^{2}}{c^{2}}}\left(\frac{vdt}{\sqrt{l^{2}-l^{2}\frac{v^{2}}{c^{2}} + v^{2}dt^{2}}}\right)}{\frac{\sqrt{1 - \frac{v^{2}}{c^{2}}}l}{\sqrt{l^{2}-l^{2}\frac{v^{2}}{c^{2}} + v^{2}dt^{2}}} + \frac{v}{c}} \]
+
+\textbf{(d)} We begin by parameterizing our vectors $\vec{k}_{1}'$ and $\vec{k}_{2}'$ in terms of the $\alpha'$ and $\beta'$, where in the rest frame we know that $\alpha' = \beta'$. Notice, that for $\vec{k}_{1}'$ we can think of it's unit vecotor in the $x-y$ plane being the $x-axis$ rotated by $-\alpha'$ counter clockwise, and thus will give us
+\[ \vec{k}_{1}' = k(-\cos(\alpha'), \sin(\alpha'),0) \, .\]
+Similarly, we can find that
+\[ \vec{k}_{2}' = k(\cos(\beta'), \sin(\beta'),0) \, .\]
+Now, by the equivalence principle, in the frame $S$ where the mirror is moving with velocity $-v$ in the $x-$direction, we can instead suppose the rays are boosted with velocity $+v$ in the $x$-direction for the same result. Then, we see that we will get our new four vectors to be
+\[ k_{1}^{\mu} = \left(-k\gamma +k\gamma\frac{v}{c}\cos(\alpha'), -k\gamma\frac{v}{c} - k\gamma\cos(\alpha'), k\sin(\alpha'), 0\right) \]
+\[ k_{2}^{\mu} = \left(-k\gamma -k\gamma\frac{v}{c}\cos(\beta'), -k\gamma\frac{v}{c} + k\gamma\cos(\beta'), k\sin(\beta'), 0\right) \, .\]
+We know that
+\[ \sin(\alpha) = \frac{k_{y}}{\sqrt{k_{x}^{2} + k_{y}^{2}}} = \frac{k\sin(\alpha')}{k\sqrt{\gamma^{2}\left(\frac{v}{c}\right)^{2} + 2\gamma^{2}\frac{v}{c}\cos(\alpha') + \gamma^{2}\cos^{2}(\alpha') + \sin^{2}(\alpha')}} \]
+\[ \sin(\beta) = \frac{k_{y}}{\sqrt{k_{x}^{2} + k_{y}^{2}}} = \frac{k\sin(\beta')}{k\sqrt{\gamma^{2}\left(\frac{v}{c}\right)^{2} - 2\gamma^{2}\frac{v}{c}\cos(\beta') + \gamma^{2}\cos^{2}(\beta') + \sin^{2}(\beta')}} \]
+and thus, since $\alpha' = \beta'$ we get
+\[ \frac{\sin(\alpha)}{\sin(\beta)} = \frac{\sqrt{\gamma^{2}\left(\frac{v}{c}\right)^{2} - 2\gamma^{2}\frac{v}{c}\cos(\beta') + \gamma^{2}\cos^{2}(\beta') + \sin^{2}(\beta')}}{\sqrt{\gamma^{2}\left(\frac{v}{c}\right)^{2} + 2\gamma^{2}\frac{v}{c}\cos(\alpha') + \gamma^{2}\cos^{2}(\alpha') + \sin^{2}(\alpha')}} = \frac{k_{2}}{k_{1}} = \frac{\omega_{2}}{\omega_{1}} \]
+as required.
+
+\textbf{(e)} We have light moving at a speed $V = \frac{c}{n}$ in a medium which is moving at a speed $v \ll c$ itself. This is a classic case of velocity addition in a special relativity setting. In particular, we expect the new velocity to be
+\[ V' = \frac{V  - (\gamma - 1)V + \gamma v}{\gamma(1+\frac{vV}c^{2})} = \frac{2V + \gamma(v - V)}{\gamma(1+ \frac{vV}{c^{2}})} \, .\]
+We can approximate $\gamma = \frac{1}{\sqrt{1 - v^{2}/c^{2}}}$ with $1 + \frac{v^{2}}{2c^{2}}$ since $v \ll c$. Then
+\[ V' = \frac{2V + (1 + \frac{v^{2}}{2c^{2}})(v - V)}{(1 + \frac{v^{2}}{2c^{2}})(1 + \frac{vV}{c^{2}})} = \frac{2V + v - V + \frac{v^{3}}{2c^{2}} - \frac{v^{2}V}{2c^{2}}}{1 + \frac{vV}{c^{2}} + \frac{v^{2}}{2c^{2}} + \frac{v^{3}V}{2c^{4}}} \]
+\[ V' = \frac{V + v + v\frac{v^{2}}{2c^{2}} - V\frac{v^{2}}{2c^{2}}}{1 + \frac{vV}{c^{2}} + \frac{v^{2}}{2c^{2}}}\, . \]
+To continue, we factor out a $c$ to get
+\[ V' = c\left(\frac{\frac{1}{n} + \frac{v}{c} + \frac{v^{3}}{2c^{3}} - \frac{v^{2}}{2nc^{2}}}{1 + \frac{v}{nc} + \frac{v^{2}}{2c^{2}}}\right) = c\left(\frac{\frac{1}{n} + \frac{v}{c} - \frac{v^{2}}{2nc^{2}}}{1 + \frac{v}{nc} + \frac{v^{2}}{2c^{2}}}\right) \, .\]
+Therefore, our new index of refraction is
+\[ n' = \frac{\frac{1}{n} + \frac{v}{c} - \frac{v^{2}}{2nc^{2}}}{1 + \frac{v}{nc} + \frac{v^{2}}{2c^{2}}} \, .\]
+
+\newpage
+\textbf{Question 4}
+
+\textbf{(a)} First, we reduce $H(\vec{p})$ using the non-relativistic limit. That is, we get
+\[ H(\vec{p}) = \sqrt{m^{2}c^{4} + c^{2}\vec{p}^{2}} = mc\sqrt{c^{2} + c^{2}\vec{p}^{2}/m^{2}c^{2}} \simeq mc^{2} \, .\]
+Then,
+\[ Z = V\int d^{3}\vec{p}e^{-\beta H(\vec{p})} = Ve^{-\beta mc^{2}}\int d^{3}\vec{p} \]
+\[ \implies E = -\di{\beta}(\log Z) = -\di{\beta}\left(\log(V) - \beta mc^{2} + \log\left(\int d^{3}\vec{p}\right)\right) = mc^{2}\, .\]
+The entropy will be
+\[ S = \beta E + \log Z = \beta mc^{2} - \beta mc^{2} + \log(V) + \log\left(\int d^{3}\vec{p}\right) = \log(V) + \log\left(\int d^{3}\vec{p}\right) \, .\]
+To recover the Ideal Gas law in classical, non-relativistic thermodynamics, we use the above energy and entropy terms. With entropy maximized at our fixed energy we can relate the two and the ideal gas law will arise. We can see inklings of this from the fact that $\int d^{3}\vec{p} = P$ and hence we get our $PV$ term in entropy. 
+
+\textbf{(b)} Entropy does not depend on the rest energy of the particle. We could see this from the density function since the density better give us entropy, but in the non-relativistic limit, we see that the exponentials will exactly cancel and remove our dependence upon $mc^{2}$.
+
+\textbf{(c)} Supposing $mc \ll |\vec{p}|$, we see that
+\[ H(\vec{p}) = \sqrt{m^{2}c^{4} + c^{2}\vec{p}^{2}} = |\vec{p}|\sqrt{m^{2}c^{4}/\vec{p}^{2} + c^{2}} \simeq pc\]
+where $p = |\vec{p}|$. Then, 
+\[ Z = V\int d^{3}\vec{p}e^{-\beta pc} \implies E = -\di{\beta}\log Z = -\di{\beta} \left(\log V + \log\left( \int d^{3} \vec{p} e^{-\beta pc}\right) \right) \]
+\[ E = -\di{\beta}\log\left(\int d^{3}\vec{p}e^{-\beta pc}\right) \, . \]
+Further,
+\[ S = \beta E + \log Z = -\beta \di{\beta}\log\left(\int d^{3}\vec{p}e^{-\beta pc}\right) + \log V + \log \left(\int d^{3}\vec{p} e^{-\beta pc}\right) \, . \]
+
+\textbf{(d)} The trick lies in $H(\vec{p})$. That is, even though we integrate over all momenta, when we approximate at either end of the spectrum (non-relativistic versus ultra-relativistic), we are assuming that momenta in that range dominate the contribution towards the partition function. Thus, making the approximation is still meaningful as it imposes conditions on our state.
+
+The true scale we are comparing is the value that momentum generates. In particular, the form of our partition function is motivation enough, since we have the exponential of momentum, to tell us that we are actually comparing length scales with mass rather than the momentum. Smaller length scales will correspond with larger momentum and vica-versa.
+
+\textbf{(e)} We need to first find what the boosted momentum looks like in terms of the old momentum. First, recall that $p^{\mu} = mu^{\mu} = m\gamma \dot{x}^{\mu}$ and we know how to boost a velocity $\dot{x}^{\mu}$ in the direction of an aribitrary velocity $\vec{\nu}$. In particular, we let $\vec{n} = \frac{\vec{\nu}}{|\vec{\nu}|}$, then
+\[ \dot{\vec{x}}' = \vec{v}' = \frac{\vec{v}+ (\gamma - 1)(\vec{n}\cdot \vec{v})\vec{n} - \gamma \vec{\nu}}{\gamma(1- \frac{\vec{\nu}\cdot \vec{v}}{c^{2}})} \]
+and so
+\[ \vec{p}' = m\gamma \vec{v}' = m\gamma \left(\frac{\vec{v}+ (\gamma - 1)(\vec{n}\cdot \vec{v})\vec{n} - \gamma \vec{\nu}}{\gamma(1- \frac{\vec{\nu}\cdot \vec{v}}{c^{2}})}\right) = \frac{\vec{p}+ (\gamma - 1)(\vec{n}\cdot \vec{p})\vec{n} - m\gamma^{2} \vec{\nu}}{\gamma - \frac{\vec{\nu}\cdot \vec{p}}{mc^{2}}} \, .\]
+Because of the given Lorentz invariant nature of $d\vec{x}$ and $d\vec{p}$, we can see that
+\[ Z' = \int d^{3}\vec{x}'\int d^{3}\vec{p}'e^{-\beta}H(\vec{p}') = V\int d^{3}\vec{p}e^{-\beta \tilde{H}(\vec{p})}\]
+where
+\[ \tilde{H}(\vec{p}) = \sqrt{m^{2}c^{4} + c^{2}\left(\frac{|\vec{p}+ (\gamma - 1)(\vec{n}\cdot \vec{p})\vec{n} - m\gamma^{2} \vec{\nu}|^{2}}{(\gamma - \frac{\vec{\nu}\cdot \vec{p}}{mc^{2}})^{2}}\right)} \, .\]
+
+\newpage
+\textbf{Question 5}
+
+\textbf{(a)}
+\end{document}
