@@ -151,7 +151,9 @@ We can approximate $\gamma = \frac{1}{\sqrt{1 - v^{2}/c^{2}}}$ with $1 + \frac{v
 To continue, we factor out a $c$ to get
 \[ V' = c\left(\frac{\frac{1}{n} + \frac{v}{c} + \frac{v^{3}}{2c^{3}} - \frac{v^{2}}{2nc^{2}}}{1 + \frac{v}{nc} + \frac{v^{2}}{2c^{2}}}\right) = c\left(\frac{\frac{1}{n} + \frac{v}{c} - \frac{v^{2}}{2nc^{2}}}{1 + \frac{v}{nc} + \frac{v^{2}}{2c^{2}}}\right) \, .\]
 Therefore, our new index of refraction is
-\[ n' = \frac{\frac{1}{n} + \frac{v}{c} - \frac{v^{2}}{2nc^{2}}}{1 + \frac{v}{nc} + \frac{v^{2}}{2c^{2}}} \, .\]
+\[ n' = \frac{1 + \frac{v}{nc} + \frac{v^{2}}{2c^{2}}}{\frac{1}{n} + \frac{v}{c} - \frac{v^{2}}{2nc^{2}}} \, .\]
+Further dropping the quadratic terms of the index of refraction gives us
+\[ n' = \frac{1 + \frac{v}{nc}}{\frac{1}{n} + \frac{v}{n}} = \frac{\frac{nc + v}{nc}}{\frac{c + nv}{nc}} = \frac{nc + v}{c + nv} = \frac{\frac{c^{2}}{V'} + v}{c\left(1 + \frac{v}{V'}\right)}\]
 
 \newpage
 \textbf{Question 4}
@@ -191,5 +193,57 @@ where
 \newpage
 \textbf{Question 5}
 
-\textbf{(a)}
+\textbf{(a)} We first seperate our equation of motion into the following form for simplicity,
+\[ a = \del[\gamma]{t}v + \del[v]{t}\gamma \, . \]
+But, we know that $\del[\gamma]{t} = \frac{\gamma^{3}}{c^{2}}va$, so
+\[ a dt = \gamma^{3}\frac{v^{2}}{c^{2}} a dt + \gamma dv = \gamma\left(\gamma^{2}\frac{v^{2}}{c^{2}} + 1\right)dv \]
+\[ a dt = \frac{dv}{\left(1- \frac{v^{2}}{c^{2}}\right)^{\frac{3}{2}}} \, .\]
+To continue here, we integrate and use the fact that both the velocities were zero at $t=0$. Remembering that in this case $a$ is constant, we can integrate both sides.
+\[ \text{LHS} = \int a dt = at + C \quad \& \quad \text{RHS} = \int \frac{dv}{\left(1 - \frac{v^{2}}{c^{2}}\right)^{\frac{3}{2}}}\]
+where on the right hand side we use a trigonometric substitution of the form $v/c = \sin\theta $ and we can find
+\[\text{RHS} = -c \tan\theta = -c\frac{v}{\sqrt{c^{2} - v^{2}}} = -\frac{v}{\sqrt{1 - \frac{v^{2}}{c^{2}}}} \]
+and with some rearranging
+\[ v = \del[x]{t} = \frac{at}{\sqrt{1 + \left(\frac{at}{c}\right)^{2}}} \, .\]
+Notice that the constant $C$ vanishes since $v_{1}(0) = v_{2}(0) = 0$. Then, we can integrate again to get
+\[ x = \frac{c^{2}}{a}\left(\sqrt{1 + \left(\frac{at}{c}\right)^{2}} - 1\right) + x_{0}\]
+where $x_{0} = x(t=0)$. WLOG (without loss of generality), we can suppose $x_{1}(0) = 0$, and thus $x_{2}(0) = d$ and our trajectories become
+\[ x_{1}(t) = \frac{c^{2}}{a_{1}}\left(\sqrt{1 + \left(\frac{a_{1}t}{c}\right)^{2}} - 1\right) \quad \& \quad x_{2}(t) = \frac{c^{2}}{a_{2}}\left(\sqrt{1 + \left(\frac{a_{2}t}{c}\right)^{2}} - 1\right) + d\, .\]
+Note that if we were to let $a_{1} = a_{2}$, then
+\[ x_{2}(t) - x_{1}(t) = d \neq f(t) \]
+and so we have no time dependance upon the distance between the rockets; we will not observe the distance change.
+
+\textbf{(b)} Since both rockets have an initial velocity of zero, we know the speed will be given by
+\[ v_{1/2} = \frac{a_{1/2}t}{\sqrt{1 + \left(\frac{a_{1/2}t}{c}\right)^{2}}} \]
+for each acceleration. Dropping the $1/2$ indice, we can isolate for $t$
+\[ v\sqrt{1 + \left(\frac{at}{c}\right)^{2}} = at \implies v^{2}\left(1 + \left(\frac{at}{c}\right)^{2}\right) = a^{2}t^{2}\]
+\[ t = \frac{v/a}{\sqrt{1 - \frac{v^{2}}{c^{2}}}} \, .\]
+Thus, the times at which both rockets will reach the velocity $u$ will be
+\[ t_{1} = \frac{u/a_{1}}{\sqrt{1 - \frac{u^{2}}{c^{2}}}} \quad \& \quad t_{2} = \frac{u/a_{2}}{\sqrt{1 - \frac{u^{2}}{c^{2}}}} \, . \]
+
+\textbf{(c)} The problem is just a matter of transforming the events into the $S'$ coordinate system. In particular, in $S$ we have the 2-vectors
+\[ x^{\mu}_{1} = (ct_{1}, x_{1}(t_{1})) \quad \& \quad x^{\mu}_{2} = (ct_{2}, x_{2}(t_{2})) \]
+which correspond with events $E_{1}$ and $E_{2}$ respectively. Knowing this, we can compute $\Delta x$ and $\Delta t$ in the frame $S$ and then apply the tansformation that tells us these vectors in the $S'$ frame with the transformation $\tensor{\Lambda}{^{\mu}_{\nu}}$. First, we note that $\gamma = \frac{1}{\sqrt{1 - u^{2}/c^{2}}}$, and hence $t_{i} = \gamma\frac{u}{a_{i}}$, then
+\[ x_{1}(t_{1}) = \frac{c^{2}}{a_{1}}\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right)
+\quad \& \quad x_{2}(t_{1}) = \frac{c^{2}}{a_{2}}\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right)
+\]
+\[ \Delta x = x_{2}(t_{2}) - x_{1}(t_{1}) = \frac{c^{2}}{a_{2}}\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right) - \frac{c^{2}}{a_{1}}\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right) \]
+\[ \Delta x = c^{2}\delta\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right)\]
+and similarly
+\[\Delta t = t_{2} - t_{1} = \frac{u/a_{2}}{\sqrt{1 - \frac{u^{2}}{c^{2}}}} - \frac{u/a_{1}}{\sqrt{1 - \frac{u^{2}}{c^{2}}}} = \gamma u \delta \]
+where $\delta = \frac{1}{a_{2}} - \frac{1}{a_{1}}$. Then, we transform the vector $\Delta x^{\mu} = x_{2}^{\mu} - x_{1}^{\mu} = (c\Delta t, \delta x)$ to get
+\[ \Delta x'^{\mu} = \left(-\gamma c\Delta t - \gamma \frac{u}{c}\Delta x, \gamma u \Delta t + \gamma \Delta x\right) \]
+\[ = \gamma \left(
+-c\gamma u\delta - uc\delta \left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right),
+\gamma u^{2}\delta + c^{2}\delta\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right)
+\right) \, .\]
+So, reading from this 2-vector, we see that
+\[
+\Delta t' = -\gamma u\delta\left(\gamma + \left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right)\right)
+\quad \& \quad
+\Delta x' = \gamma^{2} u^{2}\delta + \gamma c^{2}\delta\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right)
+\]
+as required.
+
+\textbf{(d)} To prove this claim, we need to show that the rigidity condition implies that $\delta t' = 0$, as then we have a true measure of distance. Assuming the rigidity condition, we see that
+\[ \Delta x' = \Delta x = d = \gamma^{2} u^{2}\delta + \gamma c^{2}\delta\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right) \]
 \end{document}
