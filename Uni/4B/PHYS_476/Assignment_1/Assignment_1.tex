@@ -31,7 +31,50 @@
 
 \textbf{Question 1}
 
-\textbf{(a)}
+\textbf{(a)} We first find our differential relations. In particular, notice that
+\[ \di{t} = \di[t']{t}\di{t'} + \di[x']{t}\di{x'} \quad \& \quad \di{x} = \di[x']{x}\di{x'} \]
+and individually we can compute
+\[ \di[t']{t} = 1 \quad \di[x']{t} = -V \quad \di[x']{x} = 1 \, .\]
+So, we see that
+\[ \di{t} = \di{t'} - V\di{x'} \quad \& \quad \di{x} = \di{x'} \]
+which we substitute into the wave equation
+\[\left( -\frac{1}{c^{2}}\partial_{t}^{2} + \partial_{x}^{2}\right)\phi(t,x) = 0 \to \left( -\frac{1}{c^{2}}\partial_{t}^{2} + \partial_{x}^{2}\right)\phi(t',x') = 0\]
+\[ = -\frac{1}{c^{2}}\left(\di[\phi]{t'} - V\di[\phi]{x'}\right)^{2} + \partial_{x'}^{2}\phi(t',x') \]
+\[ = -\frac{1}{c^{2}}\left(\partial_{t'}^{2}\phi - 2V\partial_{t'}\partial_{x'}\phi + V^{2}\partial_{x'}^{2}\phi\right) + \partial_{x'}^{2}\phi \]
+\[  =\left(-\frac{1}{c^{2}}\partial_{t'}^{2} + \partial_{x'}^{2}\right)\phi + 2\frac{V}{c^{2}}\partial_{t'}\partial_{x'}\phi - \frac{V^{2}}{c^{2}}\partial_{x'}^{2}\phi \]
+as required.
+
+\textbf{(b)} We show that this indeed a solution to the above PDE by direct substitution. First, we reduce our notation be using $f_{1}$ and $f_{2}$ to avoid writing the $t'$ and $x'$ dependence. Then,
+\[ \partial_{t'}f_{1} = -(c-V)f_{1}' \quad \partial_{x'}f_{1} = f_{1}' \quad \partial_{t'}^{2}f_{1} = (c-V)^{2}f_{1}'' \quad \partial_{x'}^{2}f_{1} = f_{1}'' \quad \partial_{t'}\partial_{x'}f_{1} = -(c-V)f_{1}'' \]
+\[ \partial_{t'}f_{2} = (c+V)f_{2}' \quad \partial_{x'}f_{2} = f_{2}' \quad \partial_{t'}^{2}f_{2} = (c+V)^{2}f_{2}'' \quad \partial_{x'}^{2}f_{2} = f_{2}'' \quad \partial_{t'}\partial_{x'}f_{2} = (c+V)f_{2}'' \]
+and hence, if we let $\phi = f_{1} + f_{2}$ we see
+\[ \text{LS} = \left(-\frac{1}{c^{2}}\partial_{t'}^{2} + \partial_{x'}^{2}\right)(f_{1} + f_{2}) + 2\frac{V}{c^{2}}\partial_{t'}\partial_{x'}(f_{1} +f_{2}) - \frac{V^{2}}{c^{2}}\partial_{x'}^{2}(f_{1} + f_{2}) \]
+\[ = -\frac{1}{c^{2}}\partial_{t'}^{2}(f_{1} + f_{2}) + \left(1 - \frac{V^{2}}{c^{2}}\right)\partial_{x'}^{2}(f_{1} + f_{2}) - \frac{V^{2}}{c^{2}}\partial_{x'}^{2}(f_{1} + f_{2}) \]
+\[ = -\frac{1}{c^{2}}((c-V)^{2}f_{1}'' + (c+V)^{2}f_{2}'') + \left(1 - \frac{V^{2}}{c^{2}}\right)(f_{1}'' + f_{2}'') - \frac{V^{2}}{c^{2}}(-(c-V)f_{1}'' + (c+V)f_{2}'') \, .\]
+We see that the first term becomes $-((1 - \frac{V}{c})^{2}f_{1} + (1 + \frac{V}{c})^{2}f_{2})$ which when we expand the quadratic terms will give us the terms to cancel with the remaining pieces of the PDE. Thus, $\text{LS} = 0$, and $f_{1} + f_{2}$ satisfies the Galilean transformed equation.
+
+\textbf{(c)} As we did in \textbf{(a)}, we first see that
+\[ \partial_{t} = \di[t']{t}\di{t'} + \di[x']{t}\di{x'} = \gamma\di{t'} -\gamma V\di{x'} \quad \partial_{x} = \di[t']{x}\di{t'} + \di[x']{x}\di{x'} = -\gamma\frac{V}{c^{2}}\di{t'} +\gamma \di{x'} \, .\]
+Subbing this into our equation we get
+\[ \left(-\frac{1}{c^{2}}\left(\gamma\partial_{t'} -\gamma V\partial_{x'}\right)^{2} + \left(-\gamma\frac{V}{c^{2}}\partial_{t'} +\gamma \partial_{x'}\right)^{2}\right)\phi(t',x') = 0\]
+\[ \gamma^{2}\left(-\frac{1}{c^{2}}\left(\partial_{t'}^{2} - 2V\partial_{t'}\partial_{x'}+V^{2}\partial_{x'}^{2}\right) + \left(\frac{V^{2}}{c^{4}}\partial_{t'}^{2} - \frac{2V}{c^{2}}\partial_{t'}\partial_{t'} + \partial_{x'}^{2}\right)\right)\phi  = 0\]
+\[ \gamma^{2}\left(-\frac{1}{c^{2}}\partial_{t'}^{2}\left(1 - \frac{V^{2}}{c^{2}}\right) + \partial_{x'}^{2}\left(1 - \frac{V^{2}}{c^{2}}\right)\right)\phi = \]
+\[ \implies \left(-\frac{1}{c}^{2}\partial_{t'}^{2} + \partial_{x'}^{2}\right)\phi(t',x') = 0\, .\]
+Thus, we have Lorentz Invariance. We now plug in $\phi = f_{1} + f_{2}$ to get
+\[ \text{LS} = -\frac{1}{c^{2}}\partial_{t'}^{2}(f_{1} + f_{2}) + \partial_{x'}^{2}(f_{1} + f_{2}) \]
+\[ = -\frac{1}{c^{2}}(c^{2}f_{1}'' + c^{2}f_{2}'') + (f_{1}'' + f_{2}'') = 0 \]
+and hence this is indeed the most general solution. This solution is the same as of that of a plane wave in the untransformed frame. Moreover, both have solutions that say light will move with a velocity of $c$, and so we have constant velocity of light under transformed frames.
+
+\textbf{(d)} We notice that $\partial_{\mu'}\partial^{\mu}$ is a contraction, and moreover it is completely contracted, and hence we know that such values are Lorentz covariant, and hence invariant under Lorentz transformations.
+
+\textbf{(e)} This is done directly with substituting in $\partial_{\mu}\partial^{\mu} = -\frac{1}{c^{2}}\partial_{t}^{2} + \partial_{x}^{2}$ where we can. That is,
+\[ \text{LS} = \left(\frac{1}{c^{4}}\partial_{t}^{4}\left(-\frac{1}{c^{2}}\partial_{t}^{2}+3\partial_{x}^{2}\right) + \partial_{x}^{4}\left(\partial_{x}^{2} - 3\frac{1}{c^{2}}\partial_{t}^{2}\right)\right)\phi \]
+\[ = \left(\frac{1}{c^{4}}\partial_{t}^{4}\left(\partial_{\mu}\partial^{\mu} + 2\partial_{x}^{2}\right) + \partial_{x}^{4}\left(\partial_{\mu}\partial^{\mu} - 2\frac{1}{c^{2}}\partial_{t}^{2}\right)\right)\phi = \left(\left(\frac{1}{c^{4}}\partial_{t}^{4} + \partial_{x}^{4}\right)\partial_{\mu}\partial^{\mu} + \frac{2}{c^{4}}\partial_{t}^{4}\partial_{x}^{2} - \frac{2}{c^{2}}\partial_{x}^{4}\partial_{t}^{2}\right)\phi \]
+\[ =\left(\left(\frac{1}{c^{4}}\partial_{t}^{4} + \partial_{x}^{4}\right)\partial_{\mu}\partial^{\mu} - \frac{2}{c^{2}}\partial_{t}^{2}\partial_{x}^{2}\left(-\frac{1}{c^{2}}\partial_{t}^{2} + \partial_{x}^{2}\right)\right)\phi = \left(\left(\frac{1}{c^{4}}\partial_{t}^{4} + \partial_{x}^{4}\right)\partial_{\mu}\partial^{\mu} - \frac{2}{c^{2}}\partial_{t}^{2}\partial_{x}^{2}\partial_{\mu}\partial^{\mu}\right)\phi\]
+\[ = \left(\frac{1}{c^{4}}\partial_{t}^{4} + \partial_{x}^{4} - \frac{2}{c^{2}}\partial_{t}^{2}\partial_{x}^{2}\partial_{\mu}\right)\partial_{\mu}\partial^{\mu}\phi = (\partial_{\mu}\partial^{\mu})^{2}\partial_{\mu}\partial^{\mu}\]
+which is obviously Lorentz invariant!
+
+\textbf{(f)} In the Michelson-Morley experiment, it was found that if the aether did exist, it would be undetectable. That is to say, there would be a medium that not only can not be disproven, but can not be detected in any way. This is ofcourse useless in the field of physics, as the scientific nature relies upon theories being disprovable. Another fault of the first possibility was to have a favoured frame. This intuitively does not make sense, as one of the postulates that has been assumed since the infancy of physics was that of having frame independent physics; the laws of physics will not change dependent upon the frame, even if what we observe may. Thus, the second result was accepted as largely being the more correct thinking.
 
 \newpage
 \textbf{Question 2}
@@ -120,14 +163,16 @@ as expected.
 (ii) The observer is still at rest, and see's that the cube has begun moving at a time $t=0$ in the $x$ direction with a velocity $v$. In a small instance of time $dt$, the cube will have shifted that $l'$ distance and now light will have had to have traveled a bit further to bounce off of the $AB$ side of the cube. Simply put, there will be a delay caused by the motion of the cube. This is important since the observer will see all the light that reaches them at the time $dt$, but that light will not all have reflected off of the $AB$ side of the cube at the same time! This will cause a skew in the cube to the observer and will thus let us see the painting on the $AB$ side.
 
 (iii) From geometry, we have that
-\[ \sin(\delta) = \frac{l'}{l} \quad \& \quad \cos(\delta) = \frac{l''}{l}\]
-\[ \implies \tan(\delta) = \frac{\sin(\delta)}{\cos(\delta)} = \frac{l'}{l''} = \frac{vdt}{\sqrt{1-\frac{v^{2}}{c^{2}}}l} \]
-\[ \delta = \arctan\left(\frac{vdt}{\sqrt{1-\frac{v^{2}}{c^{2}}}l}\right) \]
+\[ \cos(\delta) = \frac{l''}{l}\]
+\[ \implies \delta = \arccos \left(\frac{l''}{l}\right) = \arccos \left(\frac{\gamma^{-1}l}{l}\right)\]
+\[ \delta = \arccos(\gamma^{-1})\]
 which will satisfy our requirements for the apparent lengths.
 
-(iv) Set $\alpha = \delta$ and we get
-\[ \tan(\alpha') = \frac{\sqrt{1- \frac{v^{2}}{c^{2}}}\sin(\alpha)}{\cos(\alpha) + \frac{v}{c}} \quad \& \quad\alpha = \arctan\left(\frac{vdt}{\sqrt{1-\frac{v^{2}}{c^{2}}}l}\right)\]
-\[ \implies \alpha^{\prime} =\frac{\sqrt{1- \frac{v^{2}}{c^{2}}}\sin\left(\arctan\left(\frac{vdt}{\sqrt{1-\frac{v^{2}}{c^{2}}}l}\right)\right)}{\cos\left(\arctan\left(\frac{vdt}{\sqrt{1-\frac{v^{2}}{c^{2}}}l}\right)\right) + \frac{v}{c}} \implies \alpha' = \frac{\sqrt{1-\frac{v^{2}}{c^{2}}}\left(\frac{vdt}{\sqrt{l^{2}-l^{2}\frac{v^{2}}{c^{2}} + v^{2}dt^{2}}}\right)}{\frac{\sqrt{1 - \frac{v^{2}}{c^{2}}}l}{\sqrt{l^{2}-l^{2}\frac{v^{2}}{c^{2}} + v^{2}dt^{2}}} + \frac{v}{c}} \]
+(iv) Set $\alpha = \frac{\pi}{2} - \delta$ and we get
+\[ \tan(\alpha') = \frac{\sqrt{1- \frac{v^{2}}{c^{2}}}\sin(\alpha)}{\cos(\alpha) + \frac{v}{c}} \quad \& \quad\alpha = \frac{\pi}{2} - \arccos(\gamma^{-1})\]
+\[ \implies \alpha^{\prime} =\frac{\sqrt{1- \frac{v^{2}}{c^{2}}}\sin(\frac{\pi}{2} -\arccos(\gamma^{-1}))}{\cos(\frac{\pi}{2} - \arccos(\gamma^{-1})) + \frac{v}{c}} = -\frac{\sqrt{1- \frac{v^{2}}{c^{2}}}\cos(\arccos(\gamma^{-1}))}{-\sin(\arccos(\gamma^{-1})) + \frac{v}{c}} \]
+\[ \implies -\frac{\sqrt{1- \frac{v^{2}}{c^{2}}}\gamma^{-1}}{-\frac{u}{c} + \frac{v}{c}} = \frac{c\left(1 - \frac{v^{2}}{c^{2}}\right)}{u - v}\]
+%\[ \implies \alpha^{\prime} =\frac{\sqrt{1- \frac{v^{2}}{c^{2}}}\sin\left(\arctan\left(\frac{vdt}{\sqrt{1-\frac{v^{2}}{c^{2}}}l}\right)\right)}{\cos\left(\arctan\left(\frac{vdt}{\sqrt{1-\frac{v^{2}}{c^{2}}}l}\right)\right) + \frac{v}{c}} \implies \alpha' = \frac{\sqrt{1-\frac{v^{2}}{c^{2}}}\left(\frac{vdt}{\sqrt{l^{2}-l^{2}\frac{v^{2}}{c^{2}} + v^{2}dt^{2}}}\right)}{\frac{\sqrt{1 - \frac{v^{2}}{c^{2}}}l}{\sqrt{l^{2}-l^{2}\frac{v^{2}}{c^{2}} + v^{2}dt^{2}}} + \frac{v}{c}} \]
 
 \textbf{(d)} We begin by parameterizing our vectors $\vec{k}_{1}'$ and $\vec{k}_{2}'$ in terms of the $\alpha'$ and $\beta'$, where in the rest frame we know that $\alpha' = \beta'$. Notice, that for $\vec{k}_{1}'$ we can think of it's unit vecotor in the $x-y$ plane being the $x-axis$ rotated by $-\alpha'$ counter clockwise, and thus will give us
 \[ \vec{k}_{1}' = k(-\cos(\alpha'), \sin(\alpha'),0) \, .\]
@@ -173,7 +218,7 @@ To recover the Ideal Gas law in classical, non-relativistic thermodynamics, we u
 \[ H(\vec{p}) = \sqrt{m^{2}c^{4} + c^{2}\vec{p}^{2}} = |\vec{p}|\sqrt{m^{2}c^{4}/\vec{p}^{2} + c^{2}} \simeq pc\]
 where $p = |\vec{p}|$. Then, 
 \[ Z = V\int d^{3}\vec{p}e^{-\beta pc} \implies E = -\di{\beta}\log Z = -\di{\beta} \left(\log V + \log\left( \int d^{3} \vec{p} e^{-\beta pc}\right) \right) \]
-\[ E = -\di{\beta}\log\left(\int d^{3}\vec{p}e^{-\beta pc}\right) \, . \]
+\[ E = -\di{\beta}\log\left(\int d^{3}\vec{p}e^{-\beta pc}\right)\, .\]
 Further,
 \[ S = \beta E + \log Z = -\beta \di{\beta}\log\left(\int d^{3}\vec{p}e^{-\beta pc}\right) + \log V + \log \left(\int d^{3}\vec{p} e^{-\beta pc}\right) \, . \]
 
@@ -224,26 +269,39 @@ Thus, the times at which both rockets will reach the velocity $u$ will be
 \[ x^{\mu}_{1} = (ct_{1}, x_{1}(t_{1})) \quad \& \quad x^{\mu}_{2} = (ct_{2}, x_{2}(t_{2})) \]
 which correspond with events $E_{1}$ and $E_{2}$ respectively. Knowing this, we can compute $\Delta x$ and $\Delta t$ in the frame $S$ and then apply the tansformation that tells us these vectors in the $S'$ frame with the transformation $\tensor{\Lambda}{^{\mu}_{\nu}}$. First, we note that $\gamma = \frac{1}{\sqrt{1 - u^{2}/c^{2}}}$, and hence $t_{i} = \gamma\frac{u}{a_{i}}$, then
 \[ x_{1}(t_{1}) = \frac{c^{2}}{a_{1}}\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right)
-\quad \& \quad x_{2}(t_{1}) = \frac{c^{2}}{a_{2}}\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right)
+\quad \& \quad x_{2}(t_{2}) = \frac{c^{2}}{a_{2}}\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right) + d
 \]
-\[ \Delta x = x_{2}(t_{2}) - x_{1}(t_{1}) = \frac{c^{2}}{a_{2}}\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right) - \frac{c^{2}}{a_{1}}\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right) \]
-\[ \Delta x = c^{2}\delta\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right)\]
+\[ \Delta x = x_{2}(t_{2}) - x_{1}(t_{1}) = \frac{c^{2}}{a_{2}}\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right) + d - \frac{c^{2}}{a_{1}}\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right) \]
+\[ \Delta x = c^{2}\delta\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right) + d = c^{2}\delta\left(\gamma - 1\right) + d\]
 and similarly
 \[\Delta t = t_{2} - t_{1} = \frac{u/a_{2}}{\sqrt{1 - \frac{u^{2}}{c^{2}}}} - \frac{u/a_{1}}{\sqrt{1 - \frac{u^{2}}{c^{2}}}} = \gamma u \delta \]
 where $\delta = \frac{1}{a_{2}} - \frac{1}{a_{1}}$. Then, we transform the vector $\Delta x^{\mu} = x_{2}^{\mu} - x_{1}^{\mu} = (c\Delta t, \delta x)$ to get
-\[ \Delta x'^{\mu} = \left(-\gamma c\Delta t - \gamma \frac{u}{c}\Delta x, \gamma u \Delta t + \gamma \Delta x\right) \]
+\[ \Delta x'^{\mu} = \left(\gamma c\Delta t - \gamma \frac{u}{c}\Delta x, -\gamma u \Delta t + \gamma \Delta x\right) \]
 \[ = \gamma \left(
--c\gamma u\delta - uc\delta \left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right),
-\gamma u^{2}\delta + c^{2}\delta\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right)
-\right) \, .\]
+c\gamma u\delta - uc\delta \left(\gamma - 1\right) - \frac{u}{c}d,
+-\gamma u^{2}\delta + c^{2}\delta\left(\gamma - 1 + d\right)
+\right)\, .\]
 So, reading from this 2-vector, we see that
 \[
-\Delta t' = -\gamma u\delta\left(\gamma + \left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right)\right)
+\Delta t' = \gamma u\delta
 \quad \& \quad
-\Delta x' = \gamma^{2} u^{2}\delta + \gamma c^{2}\delta\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right)
+\Delta x' = -\gamma^{2} u^{2}\delta + c^{2}\delta \gamma^{2} - c^{2}\delta\gamma + c^{2}\delta \gamma d = c^{2}\delta(1- \gamma + \gamma d)
 \]
 as required.
 
-\textbf{(d)} To prove this claim, we need to show that the rigidity condition implies that $\delta t' = 0$, as then we have a true measure of distance. Assuming the rigidity condition, we see that
-\[ \Delta x' = \Delta x = d = \gamma^{2} u^{2}\delta + \gamma c^{2}\delta\left(\sqrt{1 + \left(\frac{\gamma u}{c}\right)^{2}} - 1\right) \]
+\textbf{(d)} To prove this claim, we need to show that the rigidity condition implies that $\Delta t' = 0$, as then we have a true measure of distance. Assuming the rigidity condition, we see that
+\[ \Delta x' = \Delta x = d \implies d = c^{2}\delta\left(\gamma - 1\right) + d\]
+\[ c^{2}\delta\left(\gamma - 1\right) = 0\, .\]
+Now, if $\delta = 0$ we see that $\Delta t'$ will necessarily vanish. Instead, we suppose that $\gamma - 1 = 0 \implies \gamma = 1 \implies u = 0$. In this case, we again get that $\Delta t' = \gamma u \delta = 0$. Therefore, we have that rigidity $\implies \Delta t' = 0$. Notice that if we don't demand the rigidity condition, we no longer guarantee that $\Delta t' = 0$, and thus can not say that $\Delta x'$ is a physical distance.
+
+\textbf{(e)} Now we suppose the rigidity condition on $\Delta x' = d$, and we look for a relationship in $\delta$ to see what we can get. Notice,
+\[ d = \Delta x' = c^{2}\delta(1 + \gamma(d-1)) \implies \delta = \frac{d}{c^{2}(1+\gamma(d-1))} \]
+and using the fact that $\delta = \frac{1}{a_{2}} - \frac{1}{a_{1}}$, we see
+\[ \frac{1}{a_{2}} - \frac{1}{a_{1}} = \frac{d}{c^{2}(1+\gamma(d-1))} \implies a_{2} = \frac{1}{\frac{d}{c^{2}(1+\gamma(d-1))} + \frac{1}{a_{1}}}\]
+\[ a_{2} = \frac{a_{1}c^{2}(1 + \gamma(d-1))}{a_{1}d + c^{2}(1+\gamma(d-1))} \, .\]
+If we were to presume $a_{1} = a_{2} \implies \delta = 0$ which gives us that $d=0$, so we don't have rigidity and the rope does indeed break!
+
+\textbf{(f)} According to the computations we did above, we would require that in the rest frame, we better accelerate each component of the rigid object with the same acceleration, as we would expect. On the other hand, if we look at a comoving frame at some fixed velocity, then we will need a different acceleration at each point, dependent upon that frame.
+
+\textbf{(g)} An experimentalist would justify the string breaking by arguing that the internal forces in the string will be too great for the string to keep up with the constant acceleration. That is, in order for the string to constantly accelerate with the rockets, there will be internal forces in the string that attempt to speed it up, and these internal forces will overcome the capability of the string to pull and thus cause it to break. 
 \end{document}

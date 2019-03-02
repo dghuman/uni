@@ -1,0 +1,78 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,mathtools,xfrac}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 348 $|$  Assignment 5}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Question 1}
+
+\textbf{(a)} We find the splitting field of $f(x) = x^{11} - 2$ by finding the roots. In particular, notice that we have an immediate root of $\sqrt[\leftroot{1}\uproot{0}11]{2}$, and if we suppose $\xi_{11}$ the 11th root of unity, then we have that the roots of this polynomial will be $\sqrt[\leftroot{1}\uproot{0}11]{2}, \xi_{11}\sqrt[\leftroot{1}\uproot{0}11]{2}, \xi_{11}^{2}\sqrt[\leftroot{1}\uproot{0}11]{2}, \dots, \xi_{11}^{10}\sqrt[\leftroot{1}\uproot{0}11]{2}$. So, the splitting field will be $\Q(\sqrt[\leftroot{1}\uproot{0}11]{2}, \xi_{11})$. Notice, $\text{deg}_{\Q}\left(\sqrt[\leftroot{1}\uproot{0}11]{2}\right) = 11$ and $\text{deg}_{\Q}(\xi_{11}) = 10$ since 11 is prime. These two are coprime, and thus by a lemma we proved in the previous assignment,
+\[ [\Q(\sqrt[\leftroot{1}\uproot{0}11]{2},\xi_{11}): \Q] = [\Q(\sqrt[\leftroot{1}\uproot{0}11]{2}):\Q][\Q(\xi_{11}):\Q] = 11\cdot 10 = 110\, .\]
+
+\textbf{(b)} We find the splitting field of $f(x) = x^{4} - x^{2} + 4$ by first finding the roots:
+\[ f(x) = (x^{2} + 2)^{2} - 5x^{2} = (x^{2} + 2 - \sqrt{5}x)(x^{2} + 2 + \sqrt{5})\]
+\[ f(x) = \left(x - \frac{\sqrt{5} - i\sqrt{3}}{2}\right) \left(x - \frac{\sqrt{5} + i\sqrt{3}}{2}\right) \left(x - \frac{-\sqrt{5} - i\sqrt{3}}{2}\right) \left(x - \frac{-\sqrt{5} + i\sqrt{3}}{2}\right)\, .\]
+These aren't nice roots, but we only need to adjoin $\sqrt{5}$ and $i\sqrt{3}$ onto $\Q$ to have the splitting field, that is, the splitting field is $\Q(\sqrt{5},i\sqrt{3})$. To compute $[\Q(\sqrt{5},i\sqrt{3}):\Q]$, we notice
+\[ \text{deg}_{\Q}(\sqrt{5}) = \text{deg}_{\Q}(x^{2} - 5) = 2 \quad \text{deg}_{\Q}(\sqrt{3}) = \text{deg}_{\Q}(x^{2} + 3) = 2\, .\]
+Since these are not coprime, we can't apply our little trick. Instead, we use the fact that $f(x)$ is irreducible over $\Q$. This would imply that any field extension using this polynomial better have degree atleast 4, and since $f(x)$ will split over $\Q(\sqrt{5},i\sqrt{3})$, it better be atleast degree 4. However, from last assignment, we also have an inequality that says $[\Q(\sqrt{5},i\sqrt{3}):\Q] \leq 4$, and thus we would require that $[\Q(\sqrt{5},i\sqrt{3}):\Q] = 4$.
+
+So, to see that $f(x)$ is irreducible, we use the mod-3 irreducibility test. Then,
+\[ \bar{f}(x) = x^{4} - x^{2} + 1 \quad \bar{f}(0) = 1,\bar{f}(1) = 1, \bar{f}(2) = 1 \, .\]
+So, we need to check if this factors into degree 2 irreducible polynomials. The irreducible polynomials of $\Z_{3}[x]$ are
+\[ x^{2}+2\, ,\, x^{2}+1\, , \, x^{2}+x+2\, ,\, x^{2}-x+2\,,\,2x^{2}+x+1\,,\,2x^{2}-x+1 \, .\]
+Immediatly, we see that the polynomials with leading coefficient 2 can only multiply one another since the result better be monic, but the product is $x^{4} - x + 1$. Similarly, the polynomials with only an $x^{2}$ term can only multiply one another since the result with another polynomial would leave them with an extra $x^{3}$ term, and they multiply together to $x^{4} - 1$. Finally, the remaining two multiply to $x^{4} + 4$. Thus, we have irreducibility, and
+\[ [\Q(\sqrt{5},i\sqrt{3}):\Q] = 4\, .\]
+
+\textbf{(c)} We need to find the roots of the polynomial. Notice,
+\[ f(x) = x^{4} + 2 = (x^{2} + i\sqrt{2})(x^{2} - i\sqrt{2})\]
+\[ = \left(x + \sqrt{i}\sqrt[\leftroot{1}\uproot{0}4]{2}\right)\left(x - \sqrt{i}\sqrt[\leftroot{1}\uproot{0}4]{2}\right)\left(x + i\sqrt{i}\sqrt[\leftroot{1}\uproot{0}4]{2}\right)\left(x - i\sqrt{i}\sqrt[\leftroot{1}\uproot{0}4]{2}\right) \, .\]
+So, the extension we consider will be $\Q(\sqrt[\leftroot{1}\uproot{0}4]{2},i)$. We know this because $\sqrt{i} = e^{i\frac{\pi}{4}} = \frac{1 + i}{\sqrt{2}}$, which is a combination of our extensions. This is clearly the minimal such extension as we need atleast these to get our polynomial to split. We notice that the degree can be obtained from using the fact that this is the extension in which the root $\sqrt[\leftroot{1}\uproot{0}4]{2}$ lives, so this is atleast of order 4 by the fact that the minimal polynomial is $x^{4} + 2$ since it is irreducible by 2-Eisenstein.
+
+finish this?
+
+\newpage
+\textbf{Question 2}
+
+\textbf{(a)} (i) Suppose $I=R$. Then units will be in $I$ such as $1$, and thus $f(x_{f})\, | \, 1$, for some $f(x_{f})\in I$. But then $f(x_{f})$ is a unit and in $F$, and thus $f(x)\in F[x]$ would be constant. This is a contradiction, and therefore $I\neq R$.
+
+(ii) Assuming the $I$ and $R$ from before, we now have the field extension of $F$ in the form $K_{1} = R/M$, where $M$ is the maximal ideal containing $I$. Suppose $g(x) \in F[x]$ is some polynomial over $F$. We can assume it monic, since if it is not $\exists\, u \in F$ such that $ug(x)$ is monic. Further, we suppose that it has no roots over $F$, since otherwise it will have roots over $K_{1}$ simply be the fact that $F \subseteq K_{1}$. So, we now have the monic polynomial $g(x)$ that has no roots over $F$. Since it is monic, we better have that $\langle g(x_{g})\rangle \subset I\subset M$, for some indeterminant $x_{g}$, where $R = F[\dots, x_{g},\dots]$. In particular, this immediately tells us that if we consider $g(x)\in K_{1}[x]$, then we have $g(x_{g})\in R/M$ and thus $g(x_{g}) = 0$, and $x_{g}$ better be a root of $g(x)\in K_{1}[x]$. All that remains to show is that $x_{g}\in K_{1}$. But this comes for free from the fact that $K_{1} = R/M$, and this is exactly all polynomials over all the polynomial indeterminants such that they vanish over their respective indeterminants. Thus, we have shown that all polynomials have a root at their respective indeterminant over $K_{1}$.
+
+(iii) Suppose $f(x) \in K[x]$, then $\exists\, K_{n}$, for smallest $n$, such that $f(x)\in K_{n}[x]$. By (ii), we have that $f(x)$ has a root in $K_{n+1}\subset K$, and so $K$ is algebraicly closed. Further, $K_{0} = F \subset K$, and thus contains $F$ by construction (technically an isomorphic copy).
+
+\textbf{(b)} We see that the closure of $\Q$ cannot be $\C$ since $\C/\Q$ is not algebraic. In particular, notice that we have trancendental numbers, such as $\pi \in \C$, but there is no such polynomial over $\Q[x]$ where $\pi$ is the root.
+
+\newpage
+\textbf{Question 3}
+
+\textbf{(a)} $(\implies)$ Suppose $f(x)$ has a multiple root in some extension, say $f(x) = (x-\alpha)^{n}q(x)\in K[x]$, where $K/F$, $q(x)\in K[x]$. Notice,
+\[ f'(x) = n(x-\alpha)^{n-1}q(x) + (x-\alpha)^{n}q'(x)\]
+where $n > 1$ since it is a multiple root. So, clearly $f(x)$ and $f'(x)$ share a common root, and since they share a common root, we can suppose $\exists\, g(x) \in F[x]$ minimal polynomial of $\alpha$, and thus we better have that $g(x)\, |\, f(x)$ and $g(x)\, |\, f'(x)$, and since $\text{deg}_{\F}(g(x)) > 1$, we have a positive degree factor between the two.
+
+(\impliedby) Suppose $f(x)$ and $f'(x)$ share a common factor of positive degree, call it $g(x)$, with $\text{deg}(g(x)) \geq 1$. Then, $\exists h(x)\in F[x]$ such that $f(x) = g(x)h(x)$, and more importantly,
+\[ f'(x) = g'(x)h(x) + g(x)h'(x) \, .\]
+Clearly $g(x) | g(x)h'(x)$, and thus $g(x) | g'(x)h(x)$, but since $\text{deg}_{F}(g'(x)) < \text{deg}_{F}(g(
+
+\end{document}
