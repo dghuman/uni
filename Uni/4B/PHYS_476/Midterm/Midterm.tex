@@ -1,0 +1,181 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,tensor}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\dif}{\text{d}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 476 $|$ Midterm}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Question 1}
+
+Since the acceleration is constant, there is no need to perform an integral and instead we need only compute the distance. The question then becomes, in which frame do we want the distance? Well the rocket is a non-inertial frame, so the notion of distance is not consistent, and therefore we will be using the frame of the observer on earth. We need to break this problem up into the four components of the acceleration; a positive acceleration, a negative acceleration, a negative acceleration and finally a positive acceleration.
+
+\textbf{Distance:} We need only find the distance traveled in the first block of positive acceleration, since the integrals in the remaining parts will be symmetric and give exactly the same result as this first block. Using our Rindler coordinates, we see that (dropping units for simplicity)
+\[ x = \frac{c^{2}}{a}\left(\cosh\left(\frac{a\tau}{c}\right) - 1\right) = \frac{(3.8\times 10^{8})^{2}}{9.8}\left(\cosh\left(\frac{(9.8)(5\cdot365\cdot24\cdot3600)}{3.8\times 10^{8}}\right) - 1\right) \approx 4.1528 \times 10^{17}\,\text{m}\, .\]
+So, we can conclude that the total distance traveled by this ship in the frame of an observer on earth (who was in a coframe with the rocket at $t=0$) is $4\times4.1528\times 10^{17}$ m $\approx 1.66\times 10^{18}$ meters.
+
+\textbf{Time:} We have the proper time observed by the rocket to be 20 years, broken into two sets of negative accelerations and positive accelerations. However, we know from the Rindler coordinates (from the initially comoving frame (ct,x))
+\[ t = \frac{c}{a}\sinh\left(\frac{a\tau}{c}\right) \]
+which is the same even with a negative acceleration, so the total travel time as measured by someone on earth will be
+\[ T = 2t_{+a} + 2t_{-a} = 4t = 4\frac{3\times 10^{8}}{9.8}\sinh\left(\frac{9.8(5\cdot365\cdot 24\cdot 3600)}{3\times 10^{8}}\right) \approx 4.52 \times 10^{9} \, \text{s} \approx 143.45 \text{years}\, . \]
+
+\newpage
+\textbf{Question 2}
+
+\textbf{(a)} Keeping in mind that this is in natural units, we recall that $E = \sqrt{m^{2} + p^{2}}$, where $p = |\vec{p}|$. In particular, a photon has no mass, so we would expect $E_{2} = p_{2}$ and $E_{2}' = p_{2}'$, and for the particle, we retain the mass term. For simplicity, let $p_{i} = |\vec{p}_{i}|$. Now, notice that by conservation of linear momentum
+\[ \vec{p_{1}} + \vec{p}_{2} = \vec{p_{1}}' + \vec{p}_{2}' \implies \vec{p}_{1}' = \vec{p_{1}} + \vec{p}_{2}  - \vec{p}_{2}'\]
+\[ (p_{1}')^{2} = \vec{p}_{1}' \cdot \vec{p}_{1}' = \left(\vec{p_{1}} + \vec{p}_{2}  - \vec{p}_{2}'\right)\cdot\left(\vec{p_{1}} + \vec{p}_{2}  - \vec{p}_{2}'\right)\]
+\[ = p_{1}^{2} + p_{2}^{2} + (p_{2}')^{2} + 2p_{1}p_{2}C_{12} - 2p_{1}p_{2}'C_{12'} - 2p_{2}p_{2}'C_{22'} \, .\]
+However, by conservation of energy, we know that
+\[ E_{1} + E_{2} = E_{1}' + E_{2}' \implies E_{1} + E_{2} - E_{2}' = \sqrt{m^{2} +( p_{1}')^{2}}\]
+\[ \left(E_{1} + E_{2} - E_{2}'\right)^{2} = \underbrace{m^{2} +  p_{1}^{2}}_{E_{1}^{2}} + \underbrace{p_{2}^{2}}_{E_{2}^{2}} + \underbrace{(p_{2}')^{2}}_{(E_{2}')^{2}} + 2p_{1}p_{2}C_{12} - 2p_{1}p_{2}'C_{12'} - 2p_{2}p_{2}'C_{22'}\]
+\[ E_{1}^{2} + E_{2}^{2} + (E_{2}')^{2} + 2E_{1}E_{2} - 2E_{1}E_{2}' - 2E_{2}E_{2}' =  E_{1}^{2} + E_{2}^{2} + (E_{2}')^{2} + 2p_{1}p_{2}C_{12} - 2p_{1}p_{2}'C_{12'} - 2p_{2}p_{2}'C_{22'}\]
+\[ E_{1}E_{2} - p_{1}E_{2}C_{12} =  E_{1}E_{2}' + E_{2}E_{2}' - p_{1}E_{2}'C_{12'} - E_{2}E_{2}'C_{22'}\]
+\[ E_{2}(E_{1} - p_{1}C_{12}) = E_{2}'(E_{1} + E_{2}(1 - C_{22'}) - p_{1}C_{12'}) \]
+\[ \implies E_{2}' = \frac{E_{2}(E_{1} - p_{1}C_{12})}{E_{1} + E_{2}(1 - C_{22'}) - p_{1}C_{12'}} \, .\]
+
+\textbf{(b)} Letting $C_{12} = -1$, $C_{22'} = -1$ and $C_{12'} = 1$, we see that
+\[ E_{2}' = \frac{E_{2}(E_{1} - p_{1}C_{12})}{E_{1} + E_{2}(1 - C_{22'}) - p_{1}C_{12'}} = \frac{E_{2}(E_{1} + p_{1})}{E_{1} + E_{2}(1 + 1) - p_{1}} \]
+\[\approx \frac{E_{2}(E_{1} + E_{1})}{E_{1} + E_{2}(1 + 1) - E_{1}} = \frac{E_{2}(2E_{1})}{2E_{2}} = E_{1} \, .\]
+So, we see that $E_{2}' = E_{1}$, that is the photon leaves the collision with the energy that the ultra-relativistic particle entered with. So, the change in the energy of the photon is $\Delta E_{\text{photon}} = E_{2}' - E_{2} = E_{1} - E_{2}$, so that is the amount of energy that the photon took from the ultra-relativistic particle. Therefore, the energy that the particle is left with will be exactly, $E_{1}' = E_{1} - \Delta E_{\text{photon}} = E_{2}$.
+
+\textbf{(c)} Suppose there \textit{was} an abundance of ultra-relativistic particles in the universe. Well, we already are observing a low energy background of photons and so these ultra-relativistic particles would interact with these low energy photons through reverse compton scattering and hence produce high energy photons. But, this is a contradiction since we clearly observe an abundance of low energy photons! So, even if there was an ultra-relativistic particle travelling through the universe, it would reverse compton scatter and reduce in speed. Therefore we do not expect an abundance of ultra-relativistc particles.
+
+\newpage
+\textbf{Question 3}
+
+\textbf{(a)} Suppose $M$ is a smooth manifold and $f\in C^{\infty}(M)$. Then, by definition, we have $df = \partial_{\mu}fdx^{\mu}$ from some coordinate chart $\{x^{\mu}\}$. By definition of exterior derivative,
+\[ d(df) = d(\partial_{\mu}fdx^{\mu}) = \partial_{[\mu}\partial_{\nu]}fdx^{\mu}\otimes dx^{\nu} \]
+but $f$ is smooth, so $\partial_{\mu}\partial_{\nu}f = \partial_{\nu}\partial_{\mu}f$, so
+\[ d(df) = 0dx^{\nu}\otimes dx^{\nu}\, , \]
+which is the zero two form in $\Omega^{2}(M)$.
+
+\textbf{(b)} By definition of the exterior derivative, we know that repeated differentials will vanish, that is the $dx^{\mu}\otimes dx^{\mu}$ terms all vanish. Moreover, we know that this definition of the exterior derivative is exactly equivalent to the definition of the exterior derivative that uses wedge products (the anti-symmetric, bi-linear form). Either way, 
+\[ d\omega = d\left(\frac{xdy - ydx}{x^{2} + y^{2}}\right) = \frac{-x^{2} -2xy + y^{2}}{(x^{2}+y^{2})^{2}}dx\wedge dy - \frac{-y^{2} - 2xy + x^{2}}{(x^{2} + y^{2})^{2}}dy \wedge dx \]
+\[ = \frac{-x^{2} -2xy + y^{2}}{(x^{2}+y^{2})^{2}}dx\wedge dy + \frac{-y^{2} - 2xy + x^{2}}{(x^{2} + y^{2})^{2}}dx \wedge dy \]
+\[= \left(\frac{-x^{2} -2xy + y^{2} -y^{2} - 2xy + x^{2}}{(x^{2} + y^{2})^{2}}\right) dx \otimes dy = 0\, .\]
+(The wedge products are used since I am more comfortable with them and it is how I learned the exterior derivative).
+
+\textbf{(c)} We want $f\in C^{\infty}(\R^{2}\setminus \{0\})$ such that
+\[ f_{x} = -\frac{y}{x^{2} + y^{2}} \quad \& \quad f_{y} = \frac{x}{x^{2} + y^{2}}\, . \]
+So, integrating the first, we see that
+\[ f = -\arctan\left(\frac{x}{y}\right) + C(y) \implies f_{y} = \frac{x}{x^{2} + y^{2}} + C'(y) \implies C'(y) = 0\]
+and a symmetric argument for $f_{y}$ gives us that
+\[ f(x,y) = -\arctan\left(\frac{x}{y}\right) + C\]
+where $C\in \R$. Notice, this is not defined at $(x,y) = (0,0)$, as required.
+
+\textbf{(d)} From \textbf{(c)}, we would be motivated to believe that $\omega$ is indeed an exact one-form, however, there is an issue in how the function is defined. The function is not actually \textit{well defined}, that is by inspection of the arguments, we notice this is exactly the angle that the vector $(y,x)$ makes with the $x$-axis, but the negative. But, then, we know that this is first off, not defined for any $y=0$, so we have to remove the entire $y$-axis. Moreover, it is not well-defined under $2\pi$ rotations, since we get a symmetry that isn't picked up by the vector, but is by the $\arctan$, which tells us that we get different answers for the same value represented differently.
+
+These arguments show us that this is not actually a well defined differential of a function on our manifold, and hence is not exact, even though it is closed.
+
+\newpage
+\textbf{Question 4}
+
+\textbf{(a)} Since we have a Riemannian manifold in $\R^{2}$, with a metric $g$, we immediatly have the induced Levi-Civita connection. This relationship between the metric and induced unique connection gives rise to the general christoffel symbol relation
+\[ \tensor{\Gamma}{^{\rho}_{\mu\nu}} = \frac{1}{2}g^{\rho\sigma}\left(\partial_{\mu}g_{\nu\sigma} + \partial_{\nu}g_{\mu\sigma} - \partial_{\sigma}g_{\mu\nu}\right)\, .\]
+We can use this to compute the Christoffel symbols using our metric, but we notice that $g_{\mu\nu} = \delta_{\mu}^{\nu} = \delta_{\nu}^{\mu}$ (from symmetry of the metric). Noticing that the Christoffel symbol relation requires evaluating the coeffectients of the metric using the basis vectors of the tangent space (the derivations), we know that everything will vanish;
+\[ \tensor{\Gamma}{^{\rho}_{\mu\nu}} = \frac{1}{2}\delta^{\rho}_{\sigma}\left(\partial_{\mu}\delta_{\nu}^{\sigma} + \partial_{\nu}\delta_{\mu}^{\sigma} - \partial_{\sigma}\delta_{\mu}^{\nu}\right)\]
+\[ \tensor{\Gamma}{^{\rho}_{\mu\nu}} = \frac{1}{2}\delta^{\rho}_{\sigma}\left( 0 + 0 - 0\right) = 0 \]
+as required. Moreover, since the Riemann tensor is just sums and contractions of the Christoffel symbols, we better have that the Riemann tensor is zero, and hence the plane has zero curvature. 
+
+\textbf{(b)} Suppose a smooth manifold $M$, with a torsion free affine connection $\nabla: T_{p}M\times T_{p}M \to T_{p}M$, where $p\in M$. Suppose the coordinate basis $\{x^{\mu}\}$ near $p$, then the induced coordinate basis on $T_{p}M$ will be $\{\partial_{\mu}\}$, and so if $U,V \in T_{p}M$, $\exists\, U^{\mu},V^{\nu} \in C^{\infty}(M)$ such that
+\[ V = V^{\nu}\partial_{\nu} \quad \& \quad U = U^{\mu}\partial_{\mu} \, .\]
+Then, we see that
+\[ \nabla_{U}V = \nabla_{U^{\mu}\partial_{\mu}}(V^{\nu}\partial_{\nu}) = U^{\mu}\nabla_{\partial_{\mu}}(V^{\nu}\partial_{\nu}) = U^{\mu}\left(V^{\nu}\nabla_{\partial_{\mu}}\partial_{\nu} + (\nabla_{\partial_{\mu}}V^{\nu})\partial_{\nu}\right) \]
+but we recognize that $\nabla_{\partial_{\mu}}\partial_{\nu} = \tensor{\Gamma}{_{\mu\nu}^{\rho}}\partial_{\rho}$, and $\nabla_{\partial_{\mu}}V^{\nu} = \partial_{\mu}V^{\nu}$, so
+\[\nabla_{U}V =  U^{\mu}\left(V^{\nu}\tensor{\Gamma}{_{\mu\nu}^{\rho}}\partial_{\rho} + \partial_{\mu}V^{\nu}\partial_{\nu}\right) = U^{\mu}V^{\nu}\tensor{\Gamma}{_{\mu\nu}^{\rho}}\partial_{\rho} + \partial_{\mu}V^{\nu}\partial_{\nu}\, . \]
+This isn't exactly of the same form as we want, so we can do some changing of the indices to see that
+\[\nabla_{U}V = U^{\mu}V^{\rho}\tensor{\Gamma}{^{\mu}_{\nu\rho}}\partial_{\nu} + \partial_{\mu}V^{\nu}\partial_{\nu} = \left(U^{\mu}V^{\rho}\tensor{\Gamma}{^{\mu}_{\nu\rho}} + \partial_{\mu}V^{\nu}\right)\partial_{\nu}\]
+as required. In particular, we notice that the Christoffel symbols describe how the basis changes with the connection, and in particular, we showed above that the Christoffel symbols are linked closely with the metric and the curvature of our manifold.
+
+\textbf{(c)} Replacing $U = U^{\nu}\partial_{\nu}$ with $\partial_{\nu}$, we see that the above relationship gives us
+\[ \nabla_{\partial_{\nu}}V = \left(\partial_{\nu}V^{\mu}(1) + \tensor{\Gamma}{^{\mu}_{\nu\rho}}(1)V^{\rho}\right)\partial_{\mu} = \left(\frac{\partial V^{\mu}}{\partial x^{\nu}} + \tensor{\Gamma}{^{\mu}_{\nu\rho}}V^{\rho}\right)\partial_{\mu}\]
+as expected. Further, in cartesian coordinates we know that $\tensor{\Gamma}{^{\mu}_{\nu\rho}} = 0$, and so we see that
+\[ \nabla_{\partial_{\nu}}V = \frac{\partial V^{\mu}}{\partial x^{\nu}}\partial_{\mu} \]
+which is exactly the partial derivative, and clearly it is unchanged as we travel around our manifold.
+
+\textbf{(d)} To see that the transition maps between the two coordinates of cartesian and polar are not diffeomorphisms, we only need show that injectivity is not held. In particular, consider the points $(r,\theta) = (1, 0)$ and $(r,\theta) = (1,2\pi)$. Notice that \textit{both} of these points correspond with the same point in cartesian coordinates, namely $(x,y) = (1,0)$. Therefore, since we can't define open intervals for our coordinate charts in the polar coordinates, we would need atleast two patches to cover the manifold.
+
+\textbf{(e)} First, we compute the line element $ds^{2}$, since it will then be easy enough to read out the metric as a $2\times 2$ matrix. Using our coordinate relation,
+\[ ds^{2} = dx^{2} + dy^{2} = d(r\cos\theta)^{2} + d(r\sin\theta)^{2} = \left(\cos\theta dr - r\sin\theta d\theta\right)^{2} + \left(\sin\theta dr + r\cos\theta d\theta\right)^{2}\]
+\[= \left(\cos^{2}\theta dr^{2} - 2r\cos\theta\sin\theta drd\theta + r^{2}\sin^{2}\theta d\theta^{2}\right) + \left(\sin^{2}\theta dr^{2} + 2r\sin\theta\cos\theta drd\theta + r^{2}\cos^{2}\theta d\theta^{2}\right) \]
+\[ = \left(\cos^{2}\theta + \sin^{2}\theta\right)dr^{2} + r^{2}\left(\cos^{2}\theta + \sin^{2}\theta\right)d\theta^{2} = dr^{2} + r^{2}d\theta^{2} \, .\]
+So, we see that
+\[ g_{\mu'\nu'} =
+\begin{bmatrix}
+  1 & 0 \\
+  0 & r^{2} \\
+\end{bmatrix}
+\]
+as required.
+
+\textbf{(f)} From the Levi-Civita connection, we know the relationship between the metric and the Christoffel symbols, and by inspection we know that the only component of the metric that will give us non-zero terms will be from the $g_{11} = r^{2}$ term, and in particular when we take the partial with respect to $r$. Looking at
+\[ \tensor{\Gamma}{^{\rho'}_{\mu'\nu'}} = \frac{1}{2}g^{\rho'\sigma'}\left(\partial_{\mu'}g_{\nu'\sigma'} + \partial_{\nu'}g_{\mu'\sigma'} - \partial_{\sigma'}g_{\mu'\nu'}\right)\]
+we see this is highly restrictive, since we immediatly see that we need $\rho' = \sigma'$ as otherwise $g^{\rho'\sigma'} = 0$. If $\rho' = 0$, then the first two terms vanish since $g_{01}=g_{10} =0$ and $g_{00} = 1$ which vanishes with either tangent vector. So, we see that this leaves
+\[ \tensor{\Gamma}{^{0}_{\mu'\nu'}} = -\frac{1}{2}\partial_{r}g_{\mu'\nu'} \]
+which is only non-zero if $\mu'=\nu' = 1$, so
+\[ \tensor{\Gamma}{^{0}_{11}} = -\frac{1}{2}\partial_{r}r^{2} = -r \, .\]
+If $\rho' = 1$, then we see that the last term will vanish, since the action of the $\theta$ tangent vector causes all entries of the metric to vanish. Then, we are left with
+\[ \tensor{\Gamma}{^{1}_{\mu'\nu'}} = \frac{1}{2}g^{11}\left(\partial_{\mu'}g_{\nu'1} + \partial_{\nu}g_{\mu'1}\right)\, .\]
+Now, we know that $\mu' \neq \nu'$, since then we get off terms, and we need the diagonal. Then, we see that the two options are either $\mu' = 0 \, \& \, \nu' = 1$ or $\mu' = 1 \, \& \, \nu' = 0$. So,
+\[ \tensor{\Gamma}{^{1}_{01}} = \frac{1}{2}g^{11}\left(\partial_{0}g_{11} + \partial_{1}g_{01}\right) = \frac{1}{2}\frac{1}{r^{2}}(2r) = \frac{1}{r} \]
+and by symmetry, we expect $\tensor{\Gamma}{^{1}_{10}} = \frac{1}{r}$. Everything else is zero. Suppose $V \in T_{p}M$, then
+\[ \nabla_{0}V = \left(\frac{\partial V^{1}}{\partial x^{0}} + \tensor{\Gamma}{^{1}_{01}}V^{0}\right)\partial_{1} = \left(\frac{\partial V^{1}}{\partial r} + \frac{1}{r}V^{0}\right)\partial_{\theta}\]
+\[ \nabla_{1}V = \left(\frac{\partial V^{0}}{\partial x^{1}} + \tensor{\Gamma}{^{0}_{11}}V^{1}\right)\partial_{0} + \left(\frac{\partial V^{1}}{\partial x^{1}} + \tensor{\Gamma}{^{1}_{10}}V^{0}\right)\partial_{1}\]
+\[ = \left(\frac{\partial V^{0}}{\partial \theta} - rV^{1}\right)\partial_{r} + \left(\frac{\partial V^{1}}{\partial \theta} + \frac{1}{r}V^{0}\right)\partial_{\theta}\, .\]
+So, we see that the basis does indeed change with the coordinates, as we would expect.
+
+\textbf{(g)} We consider the fact that we only have three Christoffel symbols to check, since the rest are zero. Moreover, we know that $\tensor{R}{_{abc}^{d}} = -\tensor{R}{_{bac}^{d}}$, $\tensor{R}{_{abc}^{d}} = -\tensor{R}{_{abd}^{c}}$ and finally $\tensor{R}{_{[abc]}^{d}} = 0$, so we only need to consider the following 5 independent components, and the rest follow from them:
+\[ \tensor{R}{_{101}^{1}} \quad \tensor{R}{_{101}^{0}} \quad \tensor{R}{_{000}^{0}} \quad \tensor{R}{_{111}^{1}} \quad \tensor{R}{_{100}^{0}} \, .\]
+So, we compute these using our three Christoffel symbols, $\tensor{\Gamma}{^{0}_{11}} = -r$, $\tensor{\Gamma}{^{1}_{01}} = \tensor{\Gamma}{^{1}_{10}} = \frac{1}{r}$, which gives
+\[ \tensor{R}{_{000}^{0}} = \partial_{1}\tensor{\Gamma}{^{0}_{00}} - \partial_{0}\tensor{\Gamma}{^{0}_{00}} + \tensor{\Gamma}{^{\lambda}_{00}}\tensor{\Gamma}{^{0}_{\lambda 0}} - \tensor{\Gamma}{^{\lambda}_{00}}\tensor{\Gamma}{^{0}_{\lambda 0}} = 0\]
+\[ \tensor{R}{_{111}^{1}} = \partial_{1}\tensor{\Gamma}{^{1}_{11}} - \partial_{1}\tensor{\Gamma}{^{1}_{11}} + \tensor{\Gamma}{^{\lambda}_{11}}\tensor{\Gamma}{^{1}_{\lambda 1}} - \tensor{\Gamma}{^{\lambda}_{11}}\tensor{\Gamma}{^{1}_{\lambda 1}} = -1 + 1 = 0\]
+\[ \tensor{R}{_{101}^{1}} = \partial_{0}\tensor{\Gamma}{^{1}_{11}} - \partial_{1}\tensor{\Gamma}{^{1}_{01}} + \tensor{\Gamma}{^{\lambda}_{11}}\tensor{\Gamma}{^{1}_{\lambda 0}} - \tensor{\Gamma}{^{\lambda}_{01}}\tensor{\Gamma}{^{1}_{\lambda 1}} = 0\]
+\[ \tensor{R}{_{101}^{0}} = \partial_{0}\tensor{\Gamma}{^{0}_{11}} - \partial_{1}\tensor{\Gamma}{^{0}_{01}} + \tensor{\Gamma}{^{\lambda}_{11}}\tensor{\Gamma}{^{0}_{\lambda 0}} - \tensor{\Gamma}{^{\lambda}_{01}}\tensor{\Gamma}{^{0}_{\lambda 1}} = \partial_{r}(-r) - \left(\frac{1}{r}\right)(-r) = -1 + 1 = 0\]
+\[ \tensor{R}{_{100}^{0}} = \partial_{0}\tensor{\Gamma}{^{0}_{10}} - \partial_{1}\tensor{\Gamma}{^{0}_{00}} + \tensor{\Gamma}{^{\lambda}_{10}}\tensor{\Gamma}{^{0}_{\lambda 0}} - \tensor{\Gamma}{^{\lambda}_{00}}\tensor{\Gamma}{^{0}_{\lambda 1}} = 0\]
+and thus we have that the Riemann tensor is zero for all components, and the space is indeed flat as before.
+
+\newpage
+\textbf{Question 5}
+
+\textbf{(a)} First, we compute something that will be useful in this calculation,
+\[ \partial_{\mu}\left(\Omega(x^{\lambda})\eta_{\nu\rho}\right) = \frac{\partial \Omega(x^{\lambda})}{\partial x^{\mu}}\eta_{\nu\rho} + \Omega(x^{\lambda})\frac{\partial \eta_{\nu\rho}}{\partial x^{\mu}}\]
+\[ = \Omega'(x^{\lambda})\frac{\partial x^{\lambda}}{\partial x^{\mu}}\eta_{\nu\rho} + 0 = \Omega'(x^{\lambda})\delta^{\lambda}_{\mu}\eta_{\nu\rho}\, . \]
+So, using the fact that we are working on a Lorentzian manifold, and we can use the Levi-Civita connection to get an explcit relation for our Christoffel symbols, we see
+\[ \tensor{\Gamma}{^{\rho}_{\mu\nu}} = \frac{1}{2}g^{\rho\sigma}\left(\partial_{\mu}g_{\nu\sigma} + \partial_{\nu}g_{\mu\sigma} - \partial_{\sigma}g_{\mu\nu}\right) = \frac{1}{2}\left(\frac{1}{\Omega(x^{\lambda})}\eta^{\rho\sigma}\right)\left( \partial_{\mu}\left(\Omega(x^{\lambda})\eta_{\nu\sigma}\right) + \partial_{\nu}\left(\Omega(x^{\lambda})\eta_{\mu\sigma}\right) - \partial_{\sigma}\left(\Omega(x^{\lambda})\eta_{\mu\nu}\right)\right)\]
+\[ = \frac{\eta^{\rho\sigma}\Omega'(x^{\lambda})}{2\Omega(x^{\lambda})}\left(\delta_{\mu}^{\lambda}\eta_{\nu\sigma} + \delta^{\lambda}_{\nu}\eta_{\mu\sigma} - \delta_{\sigma}^{\lambda}\eta_{\mu\nu}\right) \, .\]
+
+\textbf{(b)} We recall the Geodesic equation as being
+\[ \frac{d^{2} x^{\rho}}{d \tau^{2}} + \tensor{\Gamma}{^{\rho}_{\mu\nu}}\del[x^{\mu}]{\tau}\del[x^{\nu}]{\tau} = 0\]
+and since we just found an expression for our Christoffel symbols, we see
+\[ \implies \frac{d^{2} x^{\rho}}{d \tau^{2}} + \frac{\eta^{\rho\sigma}\Omega'(x^{\lambda})}{2\Omega(x^{\lambda})}\left(\delta_{\mu}^{\lambda}\eta_{\nu\sigma} + \delta^{\lambda}_{\nu}\eta_{\mu\sigma} - \delta_{\sigma}^{\lambda}\eta_{\mu\nu}\right)\del[x^{\mu}]{\tau}\del[x^{\nu}]{\tau} = 0\]
+\[ \frac{d^{2} x^{\rho}}{d \tau^{2}} + \frac{\eta^{\rho\sigma}\Omega'(x^{\lambda})}{2\Omega(x^{\lambda})}\left(\eta_{\nu\sigma}\del[x^{\lambda}]{\tau}\del[x^{\nu}]{\tau} + \eta_{\mu\sigma}\del[x^{\mu}]{\tau}\del[x^{\lambda}]{\tau} - \delta_{\sigma}^{\lambda}\underbrace{\eta_{\mu\nu}\del[x^{\mu}]{\tau}\del[x^{\nu}]{\tau}}_{u^{\mu}u_{\mu} = -\frac{1}{\Omega}}\right) = 0\]
+\[ \frac{d^{2} x^{\rho}}{d \tau^{2}} + \frac{\eta^{\rho\sigma}\Omega'(x^{\lambda})}{2\Omega(x^{\lambda})}\eta_{\nu\sigma}\del[x^{\lambda}]{\tau}\del[x^{\nu}]{\tau} + \frac{\eta^{\rho\sigma}\Omega'(x^{\lambda})}{2\Omega(x^{\lambda})}\eta_{\mu\sigma}\del[x^{\mu}]{\tau}\del[x^{\lambda}]{\tau} + \frac{1}{\Omega}\frac{\eta^{\rho\sigma}\Omega'(x^{\lambda})}{2\Omega(x^{\lambda})}\delta_{\sigma}^{\lambda} = 0 \]
+and multiplying through by $\Omega$, and knowing that $\Omega'\partial_{\tau}x^{\lambda} = \frac{d\Omega}{d\tau}$, then
+\[ \omega \frac{d^{2} x^{\rho}}{d \tau^{2}} + \frac{d\Omega}{d\tau}\del[x^{\rho}]{\tau} + \frac{d\Omega}{d\tau}\del[x^{\rho}]{\tau} + \eta^{\rho\lambda}\partial_{\lambda}\left(\log(\sqrt{\Omega})\right) = 0\]
+\[ \implies \partial_{\tau}\left(\Omega \del[x^{\rho}]{\tau}\right) + \eta^{\rho\lambda}\partial_{\lambda}\left(\log(\sqrt{\Omega})\right) = 0 \]
+as required.
+\end{document}

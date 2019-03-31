@@ -1,0 +1,80 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,mathtools,xfrac}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\Gal}{\text{Gal}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 348 $|$  Assignment 6}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Question 1}
+
+\textbf{(a)} Since $f(x)$ is non-constant (since it is irreducible), seperable and of degree $n$, if we let $K$ be the splitting field of $f(x)$, then by theorem we have that $|\Gal(K/F)| = |\Gal(f(x))| = [K:F]$. However, $f(x)$ is irreducible, so we can consider the field extension $E = F(\alpha)$, where $\alpha\in K$ is a root of $f(x)$. Applying the Tower Theorem,
+\[ [K:F] = [K:F(\alpha)][F(\alpha):F] = [K:F(\alpha)]n \implies n\, |\, [K:F] = |G| \, . \]
+Moreover, since $f(x)$ is seperable and irreducible, we have that $G \cong H \leq S_{n}$, and by Lagrange, $|G|\, |\, |S_{n}| = n!$, as required.
+
+\textbf{(b)} By the previous lemma, $2\, |\, |G| = |\Gal(f(x))|$ and $|G| \, |\, 2! = 2$, so $|G| = 2$, and all groups of order 2 are known up to isomorphism to be $\Z_{2}$, so $G \cong Z_{2}$.
+
+\textbf{(c)} By our previous lemma, we better have that $4\, |\, |G|$, and $|G| \, | \, 4! = 24$, so $|G| \in \{4,12\}$, and since $|S_{3}| = 6$, we clearly can't have an isomorphism, and further there is no quartic that would give such an isomorphism.
+
+\textbf{(d)} We can use the polynomial $f(x) = (x + 1)(x^{3} - 2)\in \Q[x]$. Notice that it is already separated into it's two irreducible factors just to make it clear that the product is not irreducible. Further, this is seperable, as the four roots are $\{-1, \sqrt[\leftroot{1}\uproot{0}3]{2}, \xi_{3}\sqrt[\leftroot{1}\uproot{0}3]{2}, \xi_{3}^{2}\sqrt[\leftroot{1}\uproot{0}3]{2}\}$, which are all distinct. Since we have four distinct roots, in our splitting field, we will have $3\cdot 2\cdot 1 = 4!$ choices for $\varphi \in G = \Gal(f(x))$ to send our roots, since the first root already is in $\Q$, and hence is fixed by all $\varphi$. Thus, we can form the isomorphism with the indices; label the roots as $\alpha_{1},\alpha_{2},\alpha_{3}$, where we ignore the first root (since it is fixed), and we see that $\varphi(\alpha_{i}) = \alpha_{j}$, $i,j \in \{1,2,3\}$, and this is exactly the $S_{3}$ group on the indices. So, $G \cong S_{3}$.
+
+\newpage
+\textbf{Question 2}
+
+\textbf{(a)} We prove by contrapositive. Suppose $f(x)$ is reducible and seperable with splitting field $K$, and $f(x) \in F[x]$. Since $f(x)$ is reducible, suppose $p(x),q(x)\in F[x]$ such that $p(x)q(x) = f(x)$ where $p(x)$ and $q(x)$ are irreducible. Since $f(x)$ is seperable, $q(x)$ and $p(x)$ are also seperable. Consider $\phi \in \Gal(f(x))$, then if $\alpha$ is a root of $p(x)$, we know that $\phi(\alpha)$ better also be a root of $p(x)$, since that is the minimal polynomial (up to unit multiple). Thus, there is no way to get from a root of $p(x)$ to a root of $q(x)$ with the galois group, hence $\Gal(f(x))$ is not transitive. 
+%Let $K_{q}$ and $K_{p}$ be the splitting fields of $p(x)$ and $q(x)$ respectively, then we note that $K/K_{q}$ and $K/K_{p}$ are extensions. 
+
+\textbf{(b)} It suffices to show that the two polynomials have the same Galois groups, since $\textbf{(a)}$ gave us the converse to a corollary we already know, and thus we have that a polynomial is irreducible iff it's Galois group is transitive. Hence, if $f(x)$ and $g(x)$ have the same Galois group (possibly up to isomorphism), then $f(x)$ is irreducible $\iff \Gal(f(x))$ is transitive $\iff \Gal(g(x))$ is transitive $\iff$ $g(x)$ is irreducible.
+
+To see that the two share a Galois group, we first notice that if $f(\alpha) = 0$, then $g(1/\alpha) = (1/\alpha)^{n}f(\alpha) = 0$, and we have a motivation for a map between the roots of $f(x)$ and $g(x)$. Let $F = \Gal(f(x))$ and $G = \Gal(g(x))$, and notice we can define a map between the two groups by sending the automorphisms based on where they send roots. That is, consider $\phi \in F$ and let $\alpha \in K$ be a root of $f(x)$, then notice that since $\phi$ is an automorphism, it is a homomorphism with a trivial kernel, thus
+\[ 1 = \phi(1) = \phi(\alpha \alpha^{-1}) = \phi(\alpha)\phi(1/\alpha) \implies \left(\phi(\alpha)\right)^{-1} = \phi(1/\alpha) \]
+and since $\phi$ is defined by how it sends its roots to other roots, this just showed us that it better send the inverse of its roots to the appropriate inverse. Then, $\phi \in G$, and similarly, if $\psi \in G$, we can make the same argument as above and get that $\psi \in F$, hence $G\subseteq F$ and $F\subseteq G$ and thus $F = G$.
+
+\textbf{(c)} By definition,
+\[ g(x) = x^{4}\left(3\frac{1}{x^{4}} + 9\frac{1}{x^{3}} - 21\frac{1}{x^{2}} + 81\frac{1}{x} + 1\right) = x^{4} + 81x^{3} - 21x^{2} + 9x + 3 \, .\]
+Notice that $g(x)$ just flips the coeffecient order! From this, we immediatly see that $g(x)$ is irreducible over $\Q$ by 3-Eisenstien, and thus by \textbf{(b)} $f(x)$ is irreducible over $\Q$. 
+
+\newpage
+\textbf{Question 3}
+
+\textbf{(a)} Suppose $f(x)$ and $g(x)$ share a root in $K$, call it $\alpha$, which is not repeated. Since $K$ is a splitting field of $f(x)g(x)$, it is an algebraic extension, and thus $\exists\, p(x) \in F[x]$ minimal polynomial with $\alpha$ as a root. But, both $f(x)$ and $g(x)$ have this root, so we must have that $p(x)\, | \, f(x)$ and $p(x) \, |\, g(x)$, but both $f(x)$ and $g(x)$ are irreducibile, so either $p(x) = f(x)$ or $p(x) = g(x)$, but then either way we again have one polynomial dividing the other. This is a contradiction, so we $f(x)$ and $g(x)$ do not share a common root in $K$.
+
+
+\textbf{(b)} We prove this by induction on the number of minimal polynomials, $n$. The base case was done in \textbf{(a)}, since we can replace $f(x)$ and $g(x)$ with $p_{1}(x)$ and $p_{2}(x)$. Proceeding by induction, suppose the result for the $n$th case. Consider the following product,
+\[ f(x) = p_{1}(x)p_{2}(x) \dots p_{n}(x) \cdot p_{n+1}(x) \]
+where we know $g(x) = \prod_{k=1}^{n}p_{k}(x)$ is seperable. Suppose $f(x)$ was not seperable, then we would have a multiple root in the splitting field. By the inductive hypothesis, we already have that $g(x)$ is seperable, so this would imply that $p_{n+1}(x)$ is not seperable, but this is a contradiction. Therefore, $f(x)$ is seperable.
+
+\newpage
+\textbf{Question 4}
+
+\textbf{(a)} for (1324), notice that
+\[ \alpha_{1} = \sqrt[\leftroot{1}\uproot{0}4]{2} \to \alpha_{3} = i\sqrt[\leftroot{1}\uproot{0}4]{2} \quad \alpha_{3} = i\sqrt[\leftroot{1}\uproot{0}4]{2} \to \alpha_{2} = -\sqrt[\leftroot{1}\uproot{0}4]{2} \]
+which actually immediately defines the rest of our group, since we now need to send $\alpha_{2}$ to $\alpha_{4}$ and we need to send $\alpha_{4}$ to $\alpha_{1}$, in order for the root relationships to be preserved. This permutation group element preserves this, hence (1324)$\in G$.
+
+We note that first $(14)$ gives $\alpha_{1} \to \alpha_{4}$ which forces $\alpha_{2} \to \alpha_{3}$, and if $\alpha_{4} \to \alpha_{1}$, then $\alpha_{3} \to \alpha_{2}$, which agree with the transpositions, and hence $(14)(23)\in G$.
+
+\textbf{(b)} Looking at the plot, and the fact that our two elements of the Galois group above are just a rotation and reflection respectively, we can conclude that the group will be isomorphic to $D_{8}$, the dihedral group of a square.
+
+\end{document}

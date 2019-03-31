@@ -1,0 +1,95 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,mathtools,xfrac,tabu}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\Gal}{\text{Gal}}
+\newcommand{\Fix}{\text{Fix}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 348 $|$  Assignment 8}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Question 1}
+
+\textbf{(a)} First, notice that $f(x)$ is seperable and irreducible by assumption, and so the splitting field of $f(x)$, $K/\Q$, will be Galois. Notice, that the statement follows if we can show that the expression is fixed by the elements of $\Gal(K/\Q) = \Gal(f(x))$, since $K/\Q$ is Galois $\implies$ $\Fix(\Gal(f(x))) = \Q$, then anything fixed by the Galois group must be in $\Q$. Suppose $\varphi \in \Gal(f(x))$, then notice
+\[ g(\alpha_{1}, \alpha_{2}, \dots, \alpha_{n}) = \frac{3 + \alpha_{1}}{\alpha_{1}^{7}} + \dots + \frac{3 + \alpha_{n}}{\alpha_{n}^{7}} = \sum_{k=1}^{n}\frac{3 + \alpha_{k}}{\alpha_{k}^{7}}\]
+, and so we have
+\[ \varphi(g(\alpha_{1},\alpha_{2}, \dots, \alpha_{n})) = \varphi\left(\sum_{k=1}^{n}\frac{3 + \alpha_{k}}{\alpha_{k}^{7}}\right)\]
+and with homomorphism properties,
+\[\varphi(g(\alpha_{1},\alpha_{2}, \dots, \alpha_{n})) = \sum_{k=1}^{n}\frac{3 + \varphi(\alpha_{k})}{\varphi(\alpha_{k})^{7}} \, .\]
+However, we know that the elements of the galois group have a unique element of $S_{n}$ associated with them through an isomorphism, and so if $\pi \in \S_{n}$ is the symmetry group element associated with $\varphi$, we see that
+\[ \varphi(g(\alpha_{1},\alpha_{2}, \dots, \alpha_{n})) = \sum_{k=1}^{n}\frac{3 + \alpha_{\pi(k)})}{\alpha_{\pi(k)})^{7}} = g(\alpha_{1},\alpha_{2}, \dots,\alpha_{n}) \]
+up to reordering. Thus, we are done.
+
+\textbf{(b)} Since $K/F$ is Galois, we know that $[K:F] = |\Gal(K/F)|$ $\implies p\, |\, |\Gal(K/F)|$. By Cauchy's Theorem, $\exists \, \varphi \in \Gal(K/F)$ such that $|\varphi| = p$, and moreover $\langle \varphi \rangle = H < \Gal(K/F)$. The Fundemental Theorem of Galois Theory tells us that $\Fix(H) \in \mathcal{E}$, and moreover that $\Fix(\Gal(K/\Fix(H))) = \Fix(H)$, and so $K/\Fix(H)$ is a Galois group, and thus $[K:\Fix(H)] = |\Gal(K/\Fix(H))| = |H| = p$, as required.
+
+\textbf{(c)} We have the tower of fields $\C/F/\Q$. Proceed by contrapositive, suppose $F \nsubseteq \R$, then:
+
+\textbf{Case 1:} Suppose $\R \subset F$, but $\R/\Q$ is not seperable, and so from Assignment 7 this would imply $F/\Q$ is not seperable, and thus not Galois, which is a contradition.
+
+\textbf{Case 2:} We now can't say anything about the two subfields of $\C$ except $F\cap \R \supseteq \Q$. Notice, since $F/\Q$ is Galois, it is simple, so $\exists\, \alpha \in F$ such that $F= \Q(\alpha)$. Notice, $\alpha \notin F\cap \R$, since if $\alpha \in \R$, then $\Q(\alpha) \subset \R$, and we get \textbf{Case 1}. Clearly $\alpha \notin \Q$. Since $F/\Q$ is Galois, the minimal polynomial of $\alpha$ over $\Q$ is seperable. Call it $f(x)$, and thus $[F:\Q] = \text{deg}(f(x))$. Notice, $f(\alpha) = 0$ $\implies$ we have a linearly dependent result $a + ib = 0$, since $\alpha = c + id \in \C$, but this is only possible if $i$ can be written as a linear combination of elements in $\Q$, and hence the $i$ must be in $\Q$, and thus $2 \, | \, \deg(f(x)) = [\Q(\alpha):\Q] = [F:\Q]$.
+
+\newpage
+\textbf{Question 2}
+
+\textbf{(a)} Since $K$ is a splitting field of $p_{1}(x)p_{2}(x)\dots p_{m}(x)$, it is normal. All we need for $K$ to be Galois is that $p_{1}(x)p_{2}(x)\dots p_{m}(x)$ be seperable. However, we know from hypothesis that each $p_{i}(x)$ is a minimal polynomial, and moreover is seperable. Furthermore, each $p_{i}(x)$ is distinct, so we have no overlapping roots $\implies$ $p_{1}(x)p_{2}(x)\dots p_{m}(x)$ is seperable, and thus $K$ is normal.
+
+\textbf{(b)} Since $K/F$ is Galois, from A7 we know that if $K/F(\alpha_{1},\dots,\alpha_{n})/F$ is a tower of fields then $F(\alpha_{1},\dots,\alpha_{n})$ is seperable. However, we know that $\alpha_{i} \in K$ $\forall i \in \{1, \dots, n\}$, and so $F \subset K$, and the result follows.
+
+\textbf{(c)} By the above theory, we see that we need the distinct minimal polynomials of our roots, which we see to be
+\[ q_{1}(x) = x^{3} - 2 \quad \& \quad q_{2}(x) = x^{7} - 3 \]
+which are irreducible by 2 and 3 - Eisenstien respectively. These are clearly distinct, so we need to find the splitting field of $q_{1}(x)q_{2}(x) = (x^{3} - 2)(x^{7} - 3)$. For simplicity, let $\alpha = \sqrt[\leftroot{1}\uproot{0}3]{2})$ and $\beta = \sqrt[\leftroot{1}\uproot{0}7]{3})$, then notice that the roots we need in our splitting field must be $\alpha, \alpha\xi_{3}, \alpha\xi_{3}^{2}, \beta, \beta\xi_{7}, \beta\xi_{7}^{2}, \dots ,\beta\xi_{7}^{6}$. We recognize that the splitting field is thus $\Q(\alpha, \beta, \xi_{3}, \xi_{7})$, which is minimal by construction.
+
+\newpage
+\textbf{Question 3}
+
+\textbf{(a)} We know that $K/\Q$ is Galois from $\textbf{Question 2}$, since $x^{2} - 7$ is seperable (with roots $\pm\sqrt{2}$) and irreducible (7-Eisenstein) and $x^{4} + x^{3} + x^{2} + x + 1$ is seperable and irreducible (5th cyclotomic polynomial). So, the splitting field of the product is the Galois Closure of some intermediate field that contains only one root of each polynomial.
+
+\textbf{(b)} Since we have two seperable minimal polynomials, we know that the elements of the Galois group must be transitive withen each polynomial, and we can only send roots to roots that share the same minimal polynomial. Thus, if we call $\alpha = \sqrt{7}$, we get
+
+\begin{center}
+  $\begin{tabu}{ c|c c |c c c c|c }
+    & \alpha & -\alpha & \xi_{5} & \xi_{5}^{2} & \xi_{5}^{3} & \xi_{5}^{4} & S_{6} \\
+    \hline
+    \varphi_{1} & \alpha & -\alpha & \xi_{5} & \xi_{5}^{2} & \xi_{5}^{3} & \xi_{5}^{4} & \varepsilon\\
+    \varphi_{2} & \alpha & -\alpha & \xi_{5}^{2} & \xi_{5}^{4} & \xi_{5} & \xi_{5}^{3} & (3465)\\
+    \varphi_{3} & \alpha & -\alpha & \xi_{5}^{3} & \xi_{5} & \xi_{5}^{4} & \xi_{5}^{2} & (3564)\\
+    \varphi_{4} & \alpha & -\alpha & \xi_{5}^{4} & \xi_{5}^{3} & \xi_{5}^{2} & \xi_{5} & (36)(45)\\
+    \varphi_{5} & -\alpha & \alpha & \xi_{5} & \xi_{5}^{2} & \xi_{5}^{3} & \xi_{5}^{4} & (12)\\
+    \varphi_{6} & -\alpha & \alpha & \xi_{5}^{2} & \xi_{5}^{4} & \xi_{5} & \xi_{5}^{3} & (12)(3465)\\
+    \varphi_{7} & -\alpha & \alpha & \xi_{5}^{3} & \xi_{5} & \xi_{5}^{4} & \xi_{5}^{2} & (12)(3564)\\
+    \varphi_{8} & -\alpha & \alpha & \xi_{5}^{4} & \xi_{5}^{3} & \xi_{5}^{2} & \xi_{5} & (12)(36)(45)\\
+  \end{tabu}$
+\end{center}
+
+\textbf{(c)} By inspection, we see that there are two independent components to our group elements, and so we see that $\Gal(K/\Q) \cong \Z_{2}\times\Z_{4}$.
+
+\textbf{(d)} Since we have that $\Gal(K/\Q) \cong \Z_{2}\times\Z_{4}$, and we know that subfields correspond with subfields, we can get an idea of the subfield structure by considering the subgroups of $\Z_{2}\times\Z_{4}$. We note that the subgroups must be $\Z_{2}$, $\Z_{2}\times \Z_{2}$ and $\Z_{4}$. To represent these subgroups, I used the generators as elements, $(a,b)\in\Z_{2}\times \Z_{4}$. Notice, the index of the subgroup is found by checking the number of elements that have been removed in each subgroup.
+
+The subfield diagram is found by using the Fundemental Theorem of Galois Theory, and we just flip the diagram to obtain the approriate positions. The subgroups of $S_{6}$ are chosen such that we get a similar group as the appropriate group from the group diagram. The fix is decided by looking at the table we have made. The only fix that is not obvious is $\Fix(\langle (36)(45)\rangle)$. Clearly $\alpha$ is fixed, but we see that we have swapped $\xi_{5}$ and $\xi_{5}^{4}$ so we better expect that $\xi_{5} + \xi_{5}^{4}$ is fixed. This gives us our diagram.
+
+\newpage
+\textbf{Question 4}
+
+
+\end{document}

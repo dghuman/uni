@@ -1,0 +1,223 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,tensor}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\dif}{\text{d}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+
+\DeclareMathOperator{\Ima}{Im}
+\DeclareMathOperator{\cotan}{cotan}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 476 $|$  Assignment 2}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Question 1}
+
+\textbf{(a)} There is no need to check the transition maps explicitly for smoothness, since it is sufficient to show that the map misses a set of points on the sphere that are excluded purely to retain the set be open from which we map our coordinates. In particular, notice that $U$ is the open set in $\R^{2}$ that $\psi$ must use to map onto the sphere, so what is the maximal size of this open set? Well, we know that in order for this set to remain open, the maximum size it can be is $U = \{(\theta,\phi)\in \R^{2} \,|\, \theta \in (0, 2\pi)\, ,\, \phi \in (-\pi, \pi )\}$. The points this set will be missing includes the poles, $(0,0,\pm 1)$ and the great half-circle connecting them, corresponding with the points $(0,-\cos t, -\sin t)$ where $t\in (-\frac{\pi}{2}, \frac{\pi}{2})$.
+
+Notice this is arbitrary on the choice of where we begin $U$ in the $\theta$ and $\phi$ direction, since needing the set to be open forces us to remove some part of the circle from our patch.
+
+\textbf{(b)} Consider the following arbitrary function $f(\theta,\phi)$, then we know that the basis is a coordinate basis $\iff$ it commutes on arbitrary functions. So, notice,
+\[ [\partial_{\theta},\partial_{\phi}](f(\theta,\phi)) = \partial_{\theta}\left(\partial_{\phi}f(\theta,\phi)\right) - \partial_{\phi}\left(\partial_{\theta}f(\theta,\phi)\right) \]
+\[ = \partial_{\theta}\partial_{\phi}f(\theta,\phi) - \partial_{\phi}\partial_{\theta}f(\theta,\phi) \]
+but since $f(\theta,\phi)$ is smooth by hypothesis, we know the partials are equivalent, thus
+\[ [\partial_{\theta},\partial_{\phi}](f(\theta,\phi)) = 0\, . \]
+
+\textbf{(c)} First we get the differentials of the coordinate functions
+\[ dx = \sin\theta\cos\phi dr + r\cos\theta\cos\phi d\theta -r\sin\theta\sin\phi d\phi \]
+\[ dy = \sin\theta\sin\phi dr + r\cos\theta\sin\phi d\theta + r\sin\theta\cos\phi d\phi \]
+\[ dz = \cos\theta dr - r\sin\theta d\theta \]
+so we have that
+\[ ds^{2} = dx^{2} + dy^{2} + dz^{2} = \left(\sin\theta\cos\phi dr + r\cos\theta\cos\phi d\theta -r\sin\theta\sin\phi d\phi\right)^{2}\]
+\[+ \left(\sin\theta\sin\phi dr + r\cos\theta\sin\phi d\theta + r\sin\theta\cos\phi d\phi\right)^{2} + \left(\cos\theta dr - r\sin\theta d\theta\right)^{2} \]
+where we recognize that the square represents a tensor product. However, we first simplify by noticing that $r = 1$ and so $dr = 0$, thus
+\[ ds^{2} = \left(\cos\theta\cos\phi d\theta -\sin\theta\sin\phi d\phi\right)^{2} + \left(\cos\theta\sin\phi d\theta + \sin\theta\cos\phi d\phi\right)^{2} + \left(-\sin\theta d\theta\right)^{2} \, . \]
+Now, we expand the tensor product to get
+\[ \left(\cos\theta\cos\phi d\theta -\sin\theta\sin\phi d\phi\right)^{2} = \cos^{2}\theta\cos^{2}\phi d\theta^{2} + \sin^{2}\theta\sin^{2}\phi d\phi^{2} - \cos\theta\cos\phi\sin\theta\sin\phi (d\theta\otimes d\phi + d\phi \otimes d\theta) \]
+\[ \left(\cos\theta\sin\phi d\theta + \sin\theta\cos\phi d\phi\right)^{2} = \cos^{2}\theta\sin^{2}\phi d\theta^{2} + \sin^{2}\theta\cos^{2}\phi d\phi^{2} + \cos\theta\sin\phi\sin\theta\cos\phi(d\theta\otimes d\phi + d\phi\otimes d\theta) \]
+\[ \left(-\sin\theta d\theta\right)^{2} = \sin^{2}\theta d\theta^{2} \]
+but we notice that the off-diagonal terms exactly vanish leaving us with
+\[ ds^{2} = \cos^{2}\theta d\theta^{2} + \sin^{2}\theta d\phi^{2} + \sin^{2}\theta d\theta^{2} = d\theta^{2} + \sin^{2}\theta d\phi^{2}\, .\]
+So, we see that if we take the inner product of the two vectors through the metric, we get
+\[ g(\partial_{\theta},\partial_{\phi}) = (d\theta^{2} + \sin^{2}\theta d\phi^{2})(\partial_{\theta}\partial_{\phi}) = d\theta^{2}(\partial_{\theta}\partial_{\phi}) + \sin^{2}\theta d\phi^{2}(\partial_{\theta}\partial_{\phi})\]
+\[ = d\theta(\partial_{\theta})\otimes d\theta(\partial_{\phi}) + \sin^{2}\theta d\phi(\partial_{\phi})\otimes d\phi(\partial_{\theta}) = 0 \]
+as expected. However, notice that
+\[ g(\partial_{\theta},\partial_{\theta}) = (d\theta^{2} + \sin^{2}\theta d\phi^{2})(\partial_{\theta}\partial_{\theta}) = 1 \]
+\[ g(\partial_{\phi},\partial_{\phi}) = (d\theta^{2} + \sin^{2}\theta d\phi^{2})(\partial_{\phi}\partial_{\phi}) = \sin^{2}\theta \]
+and thus, since the second basis vector will have variable norm that can't be rescaled by a constant, we will always have a non-orthonormal basis.
+
+\textbf{(d)} From \textbf{(c)}, we know that we need to normalize $\partial_{\phi}$, since it gives a norm of $\sin^{2}\theta$. Thus, the natural orthonormal basis would be $\{\partial_{\theta},\frac{1}{\sin\theta}\partial_{\phi}\}$, so that the norm is now 1 for both of our vectors, while retaining our orthogonality. However, notice
+\[ [\partial_{\theta},\frac{1}{\sin\theta}\partial_{\phi}]f(\theta,\phi) = \partial_{\theta}\left(\frac{1}{\sin\theta}\partial_{\phi}f(\theta,\phi)\right) - \frac{1}{\sin\theta}\partial_{\phi}\left(\partial_{\theta}f(\theta,\phi)\right)\]
+\[ = \partial_{\theta}\left(\frac{1}{\sin\theta}f_{\phi}(\theta,\phi)\right)- \frac{1}{\sin\theta}\partial_{\phi}\left(f_{\theta}(\theta,\phi)\right) = -\frac{\cos\theta}{\sin^{2}\theta}f_{\phi}(\theta,\phi) + \frac{1}{\sin\theta}f_{\theta\phi}(\theta,\phi) - \frac{1}{\sin\theta}f_{\theta\phi}(\theta,\phi)\]
+\[ = -\frac{\cos\theta}{\sin^{2}\theta}f_{\phi}(\theta,\phi)\]
+which is non-zero and hence we have a non-coordinate basis.
+
+\textbf{(e)} From before, we have $ds^{2}|_{S^{2}}$, so we get
+\[ ds^{2} = -dt^{2} + d\theta^{2} + \sin^{2}\theta d\phi^{2} \, .\]
+Moreover, this metric gives rise to a Levi-Civita connection with our pseudo-Riemannian metric, which we recall to be
+\[ \nabla_{\mu}V = \left(\frac{\partial V^{\nu}}{\partial x^{\mu}} + \tensor{\Gamma}{^{\nu}_{\mu\rho}}V^{\rho}\right)\partial_{\nu} \]
+and we have the Christoffel symbols from the metric. In particular, with this metric, we note we only have three non-zero components,
+\[ \tensor{\Gamma}{^{2}_{12}} = \frac{1}{2}\sin^{2}\theta\left(\partial_{\theta}\frac{1}{\sin^{2}\theta}\right) = -\cot\theta = \tensor{\Gamma}{^{2}_{21}} \quad \& \quad \tensor{\Gamma}{^{1}_{22}} = -\frac{1}{2}\partial_{\theta}\left(\frac{1}{\sin^{2}\theta}\right) = \frac{\cos\theta}{\sin^{3}\theta}\, .\]
+So, we see that
+\[ \nabla_{\mu}\nabla^{\mu}\psi = g^{\mu\nu}\nabla_{\mu}\nabla_{\nu}\psi = \left(-\nabla_{0}\nabla_{0} + \nabla_{1}\nabla_{1} + \sin^{2}\theta\nabla_{2}\nabla_{2}\right)\psi \]
+\[ = \left(-\left(\frac{\partial^{2}}{\partial t^{2}}\right) + \left(\frac{\partial^{2}}{\partial \theta^{2}} - \partial_{\theta}\cotan\theta - \cotan\theta\partial_{\theta} + \cot^{2}\theta\right) + \sin^{2}\theta\left(\frac{\partial^{2}}{\partial \phi^{2}} + \left(\frac{\cos\theta}{\sin^{3}\theta} - \cot\theta\right)^{2}\right)\right)\psi \]
+thus our wave equation better satify
+\[ \left(-\left(\frac{\partial^{2}}{\partial t^{2}}\right) + \left(\frac{\partial^{2}}{\partial \theta^{2}} - \partial_{\theta}\cotan\theta - \cotan\theta\partial_{\theta} + \cot^{2}\theta\right) + \sin^{2}\theta\left(\frac{\partial^{2}}{\partial \phi^{2}} + \left(\frac{\cos\theta}{\sin^{3}\theta} - \cot\theta\right)^{2}\right)\right)\psi = 0\, .\]
+
+\newpage
+\textbf{Question 2}
+
+\textbf{(a)} We note that the differential equations that need to be satisfied from our vector field are
+\[ \frac{dx^{1}}{ds} = 1 \quad \& \quad \frac{dx^{2}}{ds} = \lambda \, ,\]
+which give us solutions of the form
+\[ x^{1} = x^{1}_{0} + s \quad \& \quad x^{2} = x^{2}_{0} + \lambda s \, .\]
+Where $x^{1}_{0}$ and $x^{2}_{0}$ are the initial conditions, and can be written as $\theta^{1}(0)$ and $\theta^{2}(0)$ respectively. Then, the induced flow is
+\[ \varphi(\gamma(s)) = \left(\theta^{1}(0) + s, \theta^{2}(0) + \lambda s\right) \]
+where the integral curve is fixed by a choice of initial condition (or initial point) $(\theta^{1}(0),\theta^{2}(0))$. However, we notice that the initial conditions are unchanged modulo $2\pi$, since or domain is only defined on that size of an interval, and moreover the angle just repeats. Thus, we use the equivalence class under $2\pi$ rotations, $([\theta^{1}(0)],[\theta^{2}(0)])$ and we get
+\[ \varphi(\gamma(s)) = ([\theta^{1}(0) + s], [\theta^{2}(0) + \lambda s]) \, ,\]
+as expected.
+
+\textbf{(b)} We avoid proving density and instead look at the set of curves for which the torus is not covered. In particular, notice that to not cover the entire torus, we would need that the curve have a \textit{finite} period, since it is impossible to cover the torus in a finite number of ``laps'' around the torus. Thus, notice we need to find the period of
+\[ \varphi[\gamma(s)] = ([\theta^{1}(0) + s],[\theta^{2}(0) + \lambda s]) \, .\]
+First, we check what this looks like at $s=0$, and we get
+\[ \varphi[\gamma(0)] = (\theta^{1}(0), \theta^{2}(0)) \]
+and we wish to translate this in each coordinate such that we retrieve this initial condition. That is, for the first coordinate to repeat, we need $s = 2n\pi$ where $n\in \Z$. For the other coordinate, we need that
+\[ \lambda s = 2m \pi \implies \lambda 2n\pi = 2m\pi \implies \lambda n = m \implies \lambda = \frac{m}{n}, \quad m,n \in \Z\,, n\neq 0 \, . \]
+Therefore, we need $\lambda \in \Q$ for the curves to not cover the entire torus. 
+
+\textbf{(c)} Suppose $f \in C^{\infty}(S^{1}\times S^{1})$, and assume $\lambda$ is irrational. Then,
+\[v(f) = 0 \implies \partial_{1}f + \lambda \partial_{2}f = 0 \implies \partial_{1}f = 0 \quad \& \quad \partial_{2}f = 0 \implies f = \text{constant}\, , \]
+and since it is constant over the dense subset with $\lambda$ irrational, it will be constant over the entire manifold.
+
+\textbf{(d)} Similar to \textbf{(c)}, we get a similar situation, however that this will only hold over the set of closed curves that are defined by the rational $\lambda$. Thus, we conclude that for each integral curve, we get a possibly different constant that is dependent upon the two angles an $\lambda$, that is
+\[ \bar{f}(\theta_{1},\theta_{2}) = h(\lambda,\theta_{1},\theta_{2})\, .\]
+However, we know that integral curves are dependent upon only single parameters, and so we know that is a combination of these three that give us the true smooth function. Notice, we can linearly swap between the integral curves with $\lambda\theta_{1} - \theta_{2}$, and so
+\[ \bar{f}(\theta_{1},\theta_{2}) = h(\lambda\theta_{1} -\theta_{2})\, .\]
+
+\newpage
+\textbf{Question 3}
+
+\textbf{(a)} By definition, we have that
+\[ \gamma^{*}f(t) = f(\gamma(t)) = f(\cos(t),\sin(t)) = 2\cos t\sin t \, .\]
+
+\textbf{(b)} By applications of our definitions, we this only makes sense if we have a smooth function to act on. Let $f\in C^{\infty}(\R^{2})$, then we have
+\[ \gamma_{*}\left(\partial_{t}\biggr\rvert_{\gamma(t_{0})}\right)(f) = \partial_{t}\biggr\rvert_{t_{0}}(f(\gamma)) = \frac{\partial f}{\partial x}\di[x]{t}\biggr\rvert_{t_{0}} + \di[f]{y}\di[y]{t}\biggr\rvert_{t_{0}} = \left(\di[x]{t}\biggr\rvert_{t_{0}}\di{x} + \di[y]{t}\biggr\rvert_{t_{0}}\di{y}\right)f \]
+and since we know $\gamma = (\cos t,\sin t)$, we can conclude
+\[ \gamma_{*}\left(\partial_{t}\biggr\rvert_{\gamma(t_{0})}\right) = \di[x]{t}\biggr\rvert_{t_{0}}\di{x} + \di[y]{t}\biggr\rvert_{t_{0}}\di{y} = -\sin(t_{0})\di{x} + \cos(t_{0})\di{y} \]
+where $\gamma(t_{0}) = (x,y)$ is arbitrary.
+
+\textbf{(c)} Suppose $\varphi$ is not injective. Then, $\exists\, p, q \in M$ such that $\varphi(p)= \varphi(q)$ and $p\neq q$. Then, notice that if $v \in \Gamma(TM)$ (v is a vector field) and $f \in C^{\infty}(M)$, then by our definition
+\[v_{q}f(\varphi) =  \varphi_{*}v[f](\varphi(q)) = \varphi_{*}v[f](\varphi(p)) = v_{p}f(\varphi) \]
+and so we will have two different vectors at the same point in $T_{\varphi(p)}M'$, which is clearly not a vector field.
+
+\textbf{(d)} Let $f \in C^{\infty}(M)$, then we see that, applying our definitions
+\[ \varphi_{*}v\biggr\rvert_{\varphi(p)}(f) = v\biggr\rvert_{p}\varphi^{*}(f) = v'\biggr\rvert_{\varphi(p)}(f) \]
+as expected. Moreover, we see
+\[ (\varphi^{*}\circ v')(f) = (\varphi^{*}\circ \varphi_{*}v)(f) = \varphi^{*}(\varphi_{*}v)(\varphi^{*}(f)) = v\circ \varphi^{*}(f) \]
+as required.
+
+\textbf{(e)} Suppose $\varphi$ is a diffeomorphism. Then, it is simple enough to show that we have a well-defined isomorphism between $T_{p}M$ and $T_{\varphi(p)}M'$. To see that it is well defined, let $p =q \in M$, then we see that
+\[ v\biggr\rvert_{q}\varphi^{*}f = \varphi_{*}v\biggr\rvert_{\varphi_{q}}f = \varphi_{*}v[f](\varphi(q)) = \varphi_{*}v[f](\varphi(p)) = \varphi_{*}v\biggr\rvert_{\varphi_{p}}f = v\biggr\rvert_{p}\varphi^{*}f \]
+which tells us we have a well defined map. To see that this is also an isomorphism, notice that the diffeomorphism properties of $\varphi$ gives us bijectivity for free, since a push-forward is ultimately an action using $\varphi$. The homomorphism property can be shown: let $v,w \in \Gamma(TM)$, and $f\in C^{\infty}(M)$, we see
+\[ \varphi_{*}(v + w)\biggr\rvert_{\varphi(p)}(f) = (v+w)\biggr\rvert_{p}f(\varphi)= v\biggr\rvert_{p}f(\varphi) + w\biggr\rvert_{p}f(\varphi) = \varphi_{*}(v)\biggr\rvert_{\varphi(p)}(f) + \varphi_{*}(w)\biggr\rvert_{\varphi(p)}(f) \, .\]
+Moreover, combining our two results from \textbf{(d)} we see
+\[ v\circ \varphi^{*} = \varphi^{*}\circ v' \implies v' = \varphi_{*}\circ v\circ \varphi^{*}\]
+and we recall that $v' = \varphi_{*}v$ and thus we get
+\[ \varphi_{*}v =  \varphi_{*}\circ v\circ \varphi^{*}\]
+as expected.
+
+\newpage
+\textbf{Question 4}
+
+First, just by inspection, we see the immediate killing vector that is $\partial_{\phi}$. We still have 2 remaining, which we will have to find through the killing equation. Since we have a metric, we are immediatly motivated to write the killing equation in terms of the Christoffel symbols. We recall, that in order for a vector field to be called a killing vector field, it needs to satisfy
+\[ \nabla_{a}k_{b} + \nabla_{b}k_{a} = 0 \, .\]
+But, under this metric, we have that
+\[ \nabla_{\mu}V = \left(\frac{\partial V^{\nu}}{\partial x^{\mu}} + \tensor{\Gamma}{^{\nu}_{\mu\rho}}V^{\rho}\right)\partial_{\nu} \]
+and we have
+\[ \tensor{\Gamma}{^{\nu}_{\mu\rho}} = \frac{1}{2}g^{\nu\sigma}(\partial_{\mu}g_{\rho\sigma} + \partial_{\rho}g_{\mu\sigma} - \partial_{\sigma}g_{\mu\rho})\, . \]
+Notice that $g$ is symmetric, and moreover we only need to cycle through 2 terms, so
+\[ \tensor{\Gamma}{^{0}_{11}} = -\frac{1}{2}(-1)(-\partial_{u}\cosh^{2}(u)) = -\frac{1}{2}(2\cosh(u)\sinh(u)) \]
+\[ \tensor{\Gamma}{^{1}_{10}} = \tensor{\Gamma}{^{1}_{01}} = -\frac{1}{2}\frac{1}{\cosh^{2}u}(\partial_{u}\cosh^{2}u) = -\frac{1}{2\cosh^{2}u}(2\cosh(u)\sinh(u)) = -\tanh(u) \]
+and so we have
+\[ \nabla_{a}k_{b} + \nabla_{b}k_{a} = \left(\frac{\partial k_{b}}{\partial x^{a}} + \tensor{\Gamma}{^{b}_{ac}}k^{c}\right)\partial_{b} + \left(\frac{\partial k_{a}}{\partial x^{b}} + \tensor{\Gamma}{^{a}_{bc}}k^{c}\right)\partial_{a}\, . \]
+Notice that the $a=b$ case immediately restricts us to $a=b=1$, just by looking at the Christoffel symbols, which further restricts us to $\tensor{\Gamma}{^{1}_{10}}$, which forces $c=0$. So, the $a=b$ gives the following systems
+\[ \frac{\partial k^{1}}{\partial \phi} - \tanh (u)k^{0} = 0 \quad \& \quad \frac{\partial k^{0}}{\partial u} = 0\]
+and the other case gives
+\[ \left(\frac{\partial k^{0}}{\partial \phi} - \cosh(u)\sinh(u)k^{1}\right)\partial_{u} + \left(\frac{\partial k^{1}}{\partial u} - \tanh(u)k^{0}\right)\partial_{\phi} = 0\, .\]
+
+\newpage
+\textbf{Question 5}
+
+\textbf{(a)} Notice that
+\[ C_{abcd} = R_{abcd} + A(g_{a[d}R_{c]b} + g_{b[c}R_{d]a}) + BRg_{a[c}g_{d]b} \]
+but we know that Riemann tensor has antisymmetry in its first coodinates, so that is done. Looking at the other parts we see
+\[ g_{a[d}R_{c]b} + g_{b[c}R_{d]a} = -g_{a[c}R_{d]b} - g_{b[d}R_{c]a} = - (g_{a[d}R_{c]b} + g_{b[c}R_{d]a}) \]
+\[ g_{a[c}g_{d]b} = g_{ac}g_{db} - g_{ad}g_{cb} = -(g_{ad}g_{cb} - g_{ac}g_{db}) = -(g_{cb}g_{ad} - g_{db}g_{ac}) = -g_{b[c}g_{d]a} \]
+and thus
+\[ C_{abcd} = -C_{bacd} \, .\]
+Again, the Riemann tensor has antisymmetry for free, so we look at the remaining components. However, the remaining components are free as well, since we have the commutation between $c$ and $d$ cooked into our equation:
+\[ g_{a[d}R_{c]b} + g_{b[c}R_{d]a} = -g_{a[c}R_{d]b} - g_{b[d}R_{c]a} = - (g_{a[d}R_{c]b} + g_{b[c}R_{d]a}) \]
+\[ g_{a[c}g_{d]b} = -g_{a[d}g_{c]b} \]
+and so $C_{abcd} = -C_{abdc}$. Finally, we look at the last property
+\[ C_{[abc]d} = C_{abcd} + C_{bcad} + C_{cabd}\]
+\[ = (R_{abcd} + A(g_{a[d}R_{c]b} + g_{b[c}R_{d]a}) + BRg_{a[c}g_{d]b}) + (R_{bcad} + A(g_{b[d}R_{a]c} + g_{c[a}R_{d]b}) + BRg_{b[a}g_{d]c})\]
+\[ + (R_{cabd} + A(g_{c[d}R_{b]a} + g_{a[b}R_{d]c}) + BRg_{c[b}g_{d]a}) \]
+\[ = R_{abcd} + R_{bcad} + R_{cabd} + A\left(g_{a[d}R_{c]b} + g_{b[c}R_{d]a} + g_{b[d}R_{a]c} + g_{c[a}R_{d]b} + g_{c[d}R_{b]a} + g_{a[b}R_{d]c}\right) \]
+\[ + BR(g_{a[c}g_{d]b} + g_{b[a}g_{d]c} + g_{c[b}g_{d]a}) \, .\]
+Notice,
+\[ R_{abcd} + R_{bcad} + R_{cabd} = 0\]
+from the property of the Riemann tensor. Next, notice
+\[ = g_{a[d}R_{c]b} + g_{b[c}R_{d]a} + g_{b[d}R_{a]c} + g_{c[a}R_{d]b} + g_{c[d}R_{b]a} + g_{a[b}R_{d]c} \]
+\[ = g_{ad}R_{cb} - g_{ac}R_{db} + g_{bc}R_{da} - g_{bd}R_{ca} + g_{bd}R_{ac} - g_{ba}R_{dc} + g_{ca}R_{db} - g_{cd}R_{ab} + g_{cd}R_{ba} - g_{cb}R_{da} + g_{ab}R_{dc} - g_{ad}R_{bc} \]
+\[ = (g_{ad}R_{cb} - g_{ad}R_{bc}) + (- g_{ac}R_{db} + g_{ca}R_{db}) + (g_{bc}R_{da} - g_{cb}R_{da}) + (- g_{bd}R_{ca} + g_{bd}R_{ac}) + (- g_{ba}R_{dc} + g_{ab}R_{dc}) \]
+\[ + (- g_{cd}R_{ab} + g_{cd}R_{ba}) = 0 \]
+as expected, using the symmetric nature of $g_{ab}$ and $R_{ab}$. Finally, we have
+\[ g_{a[c}g_{d]b} + g_{b[a}g_{d]c} + g_{c[b}g_{d]a} = g_{ac}g_{db} - g_{ad}g_{cb} + g_{ba}g_{dc} - g_{bd}g_{ac} + g_{cb}g_{da} - g_{cd}g_{ba}\]
+\[ = (g_{ac}g_{db} - g_{bd}g_{ac}) + (- g_{ad}g_{cb} + g_{cb}g_{da}) + (g_{ba}g_{dc} + - g_{cd}g_{ba}) = 0\]
+and so combining our results,
+\[ C_{[abc]d} = 0 + A(0) + BR(0) = 0 \]
+as required.
+
+\textbf{(b)} First, we rewrite the tensor by raising the last index using the metric
+\[ \tensor{C}{_{abc}^{d}} = \tensor{C}{_{abcl}}\tensor{g}{^{ld}} \]
+\[ = g^{ld}R_{abcl} + Ag^{ld}(g_{a[l}R_{c]b} + g_{b[c}R_{l]a}) + BRg^{ld}g_{a[c}g_{l]b} \]
+\[ = \tensor{R}{_{abc}^{d}} + A(g^{ld}g_{al}R_{cb} - g^{ld}g_{ac}R_{lb} + g^{ld}g_{bc}R_{la} - g^{ld}g_{bl}R_{ca}) + BR(g^{ld}g_{ac}g_{lb} - g^{ld}g_{al}g_{cb}) \]
+and contracting appropriately, we see
+\[ \tensor{C}{_{abc}^{d}} = \tensor{R}{_{abc}^{d}} +A(\delta^{d}_{a}R_{cb} - g_{ac}\tensor{R}{^{d}_{b}} + g_{bc}\tensor{R}{^{d}_{a}} - \delta^{d}_{b}R_{ca}) + BR(g_{ac}\delta^{d}_{b} - \delta_{a}^{d}g_{cb}) \, .\]
+So, we see that
+\[ \tensor{C}{_{abc}^{b}} = \tensor{R}{_{abc}^{b}} +A(\delta^{b}_{a}R_{cb} - g_{ac}\tensor{R}{^{b}_{b}} + g_{bc}\tensor{R}{^{b}_{a}} - \delta^{b}_{b}R_{ca}) + BR(g_{ac}\delta^{b}_{b} - \delta_{a}^{b}g_{cb}) \]
+\[ = R_{ac} +A(R_{ca} - g_{ac}R + \tensor{R}{_{ca}} - nR_{ca}) + BR(g_{ac}n - g_{ca}) \]
+\[ = R_{ac} + A((2 - n)R_{ca} - g_{ac}R) + BRg_{ac}(n-1)\]
+\[ = R_{ac}(1 + A(2-n)) + Rg_{ac}(B(n-1) - A)\,. \]
+Equating coeffecients, we see that
+\[ \implies 1 + A(2-n) = 0  \quad \& \quad B(n-1) - A = 0 \]
+\[ \implies A = \frac{1}{n-2} \quad \quad \implies B = \frac{1}{(n-1)(n-2)} \, .\]
+We obtain the components of the Weyl tensor as in the notes up to a constant of a half.
+
+\textbf{(c)} We know the constraints for the Riemann tensor and the Weyl Tensor are exactly the same up until the trace free condition of the Weyl tensor. So, the Weyl tensor will have the $(n^{2}(n^{2} - 1))/12$ independent components, but then we will have $n(n+1)/2$ more constraints to account for. Thus, the total number of independent components will be
+\[ \frac{n^{2}(n^{2} - 1)}{12} - \frac{n(n+1)}{2} = \frac{1}{12}\left(n^{4} - n^{2} - 6n^{2} - 6n\right) = \frac{n}{12}(n^{3} - 7n - 6) \]
+aas required. 
+
+
+
+
+\end{document}

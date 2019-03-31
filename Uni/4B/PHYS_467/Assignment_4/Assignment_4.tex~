@@ -1,0 +1,274 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,braket,mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\Que}[1]{\textbf{Question #1}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 467 $|$  Assignment 4}
+
+%\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\Que{1}
+
+\textbf{(a)} First, we see that the initial step can be completed in $K$ queries at most, and if this is the case, then the remaining problem becomes a search problem of finding $K$ marked items in the list of $N$. Notice there will be some constraints on $N$ for this case; if $K > N/2$, then we are guerenteed a collision in the set $K$, even in the worst case. Thus, for the most possible number of queries, we need $K \leq N/2$. In this case, we will get
+\[ O(K + \sqrt{N/K}) \]
+queries, where the first comes from the initial step, and the last order comes from the quantum search algorithm.
+
+\textbf{(b)} Notice, if we choose $K = N^{1/3}$, we get
+\[ \implies O(N^{1/3} + \sqrt{N/N^{1/3}}) = O(N^{1/3} + \sqrt{N^{2/3}}) = O(2N^{1/3}) = O(N^{1/3})\]
+as required.
+
+
+\newpage
+\Que{2}
+
+\textbf{(a)} First, we know the state in $C$ is already $H^{b}\ket{s}$, so we only need to consider the states prepared in the $A_{1}$ and $A_{2}$ systems to understand what kind of density matrix we want. In particular, we know that Alice knows what $s$ and $b$ are, since that is how she prepares the state $H^{b}\ket{s}$. We see that
+\[ \ket{s}\otimes \ket{b}\otimes H^{b}\ket{s} \in A_{1}A_{2}C \, .\]
+Therefore, the density matrix will be
+\[ \ket{s}\bra{s} \otimes \ket{b}\bra{b} \otimes H^{b}\ket{s}\bra{s}H^{b} \]
+since $(H^{b})^{\dagger} = H^{b}$ in this case. Therefore, expanding each interms of their known components, we get
+\[
+\ket{s}\bra{s} \otimes \ket{b}\bra{b} \otimes 
+\frac{1}{2^{b}}\left(\ket{+}\bra{0} + \ket{-}\bra{1}\right)^{b}
+\ket{s}\bra{s}
+\left(\ket{+}\bra{0} + \ket{-}\bra{1}\right)^{b} \,.
+\]
+Further, we can eliminate the dependence on $b$ by being clever with our construction, that is we can write
+\[ \ket{b}\otimes H^{b}\ket{s} = \frac{1}{\sqrt{2}}\ket{0}\otimes \ket{s} + \frac{1}{\sqrt{2}}\ket{1}\otimes H\ket{s}\]
+which builds the dependence upon $b$ into the state. So, the final density is
+\[ \ket{s}\bra{s} \otimes \frac{1}{2}\left(\ket{0}\bra{0}\otimes \ket{s}\bra{s} + \ket{1}\bra{1}\otimes H\ket{s}\bra{s}H\right)\, ,\]
+where $H = \frac{1}{\sqrt{2}}(\ket{+}\bra{0} + \ket{-}\bra{1})$. 
+
+\textbf{(b)} Eve has only caught the state in the system $C$, so we must have either
+\[\rho_{0} = \frac{1}{2}\left(\ket{0}\bra{0} + H\ket{0}\bra{0}H\right) \quad \& \quad \rho_{1} = \frac{1}{2}\left(\ket{1}\bra{1} + H\ket{1}\bra{1}H\right)\]
+
+\textbf{(c)} We use classical probability theory to see that we simply need to compute
+\[ P(s=e) = \frac{1}{2}\text{Tr}\left(P_{0}\rho_{0}\right) + \frac{1}{2}\text{Tr}(P_{1}\rho_{1}P_{1}^{\dagger})\]
+where
+\[ P_{0}\rho_{0} = \frac{1}{2}\left(I + \frac{Z + X}{\sqrt{2}}\right)\frac{1}{2}\left(\ket{0}\bra{0} + H\ket{0}\bra{0}H\right) \]
+\[ = \frac{1}{4}\left(\ket{0}\bra{0} + H\ket{0}\bra{0}H + \frac{1}{\sqrt{2}}(\ket{0}\bra{0} + \ket{1}\bra{0}) + \frac{1}{\sqrt{2}}(ZH\ket{0}\bra{0}H + XH\ket{0}\bra{0}H) \right) \]
+and so the trace of this thing would be
+\[ \frac{1}{4}\left(1 +\frac{1}{4} + \frac{1}{\sqrt{2}}
+
+\newpage
+\Que{3}
+
+\textbf{(a)} This is just a matter of applying our definition of a matrix exponential. We recall that
+\[ e^{i\theta Z} = I\cos(\theta) + iZ\sin(\theta)\]
+But, we notice that
+\[ D_{1}(\rho) = \frac{1}{2}e^{i\theta Z}\left(\rho e^{-i2\theta Z} + e^{-i2 \theta Z}\rho\right)e^{i\theta Z} \]
+and so we first compute the inner bracket to get
+\[ \rho e^{-i2\theta Z} + e^{-i2 \theta Z}\rho = \rho \cos(2\theta) - i\rho Z\sin(2\theta) + \rho \cos(2\theta) - iZ\rho \sin(2\theta) \]
+Notice that
+\[ \rho Z =
+\begin{pmatrix}
+  a & b\\
+  c & d\\
+\end{pmatrix}
+\begin{pmatrix}
+  1 & 0 \\
+  0 & -1 \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+  a & -b\\
+  c & -d\\
+\end{pmatrix}
+\]
+\[ Z\rho =
+\begin{pmatrix}
+  1 & 0 \\
+  0 & -1 \\
+\end{pmatrix}
+\begin{pmatrix}
+  a & b\\
+  c & d\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+  a & b\\
+  -c & -d\\
+\end{pmatrix}
+\]
+So, we have
+\[2
+\begin{pmatrix}
+  a & b \\
+  c & d\\
+\end{pmatrix}
+\cos(2\theta) - 2i\sin(2\theta)
+\begin{pmatrix}
+  a & 0\\
+  0 & -d\\
+\end{pmatrix}
+= 2
+\begin{pmatrix}
+  a(\cos(2\theta) - i\sin(2\theta)) & b\cos(2\theta) \\
+  c\cos(2\theta) & d(\cos(2\theta) + i\sin(2\theta))\\
+\end{pmatrix}
+\, .\]
+So, we see that
+\[ D_{1}(\rho) =2\frac{1}{2}
+\begin{pmatrix}
+  e^{i\theta} & 0\\
+  0 & e^{-i\theta}\\
+\end{pmatrix}
+\begin{pmatrix}
+  a(\cos(2\theta) - i\sin(2\theta)) & b\cos(2\theta) \\
+  c\cos(2\theta) & d(\cos(2\theta) + i\sin(2\theta))\\
+\end{pmatrix}
+\begin{pmatrix}
+  e^{i\theta} & 0\\
+  0 & e^{-i\theta}\\
+\end{pmatrix}
+\]
+\[ = 2\frac{1}{2}
+\begin{pmatrix}
+  e^{i\theta} & 0\\
+  0 & e^{-i\theta}\\
+\end{pmatrix}
+\begin{pmatrix}
+  ae^{-i\theta} &  b\cos(2\theta)e^{-i\theta} \\
+  c\cos(2\theta)e^{i\theta} & de^{i\theta}\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+  a & b\cos(2\theta) \\
+  c\cos(2\theta) & d\\
+\end{pmatrix}
+\]
+as expected.
+
+\textbf{(b)} First, we see that
+\[Z \rho Z =
+\begin{pmatrix}
+  1 & 0\\
+  0 & -1\\
+\end{pmatrix}
+\begin{pmatrix}
+  a & b\\
+  c & d\\
+\end{pmatrix}
+\begin{pmatrix}
+  1 & 0\\
+  0 & -1\\
+\end{pmatrix}
+= 
+\begin{pmatrix}
+  1 & 0\\
+  0 & -1\\
+\end{pmatrix}
+\begin{pmatrix}
+  a & -b\\
+  c & -d\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+  a & -b\\
+  -c & d\\
+\end{pmatrix}
+\]
+and so we see that
+\[ D_{2}(\rho) = (1-p)
+\begin{pmatrix}
+  a & b\\
+  c & d\\
+\end{pmatrix}
++ p
+\begin{pmatrix}
+  a & -b\\
+  -c & d\\
+\end{pmatrix}
+=
+\begin{pmatrix}
+  (1-p)a + pa & (1-p)b - pb \\
+  (1-p)c -pc & (1-p)d + pd \\
+\end{pmatrix}
+=
+\begin{pmatrix}
+  a & (1-2p)b \\
+  (1-2p)c & d \\
+\end{pmatrix}
+\]
+as expected.
+
+\textbf{(c)} The easiest way to start this is to approach it using Dirac notation. In particular, we see we can represent our circuit as
+\[ (I\otimes \ket{0}\bra{0} + Z\otimes \ket{1}\bra{1})(R\otimes I)(\ket{0}\otimes \rho= (R\ket{0}\otimes \ket{0}\bra{0} + ZR\ket{0}\otimes \ket{1}\bra{1})(I\otimes \rho) \]
+where we know
+\[ R\ket{0} = \sqrt{1-p}\ket{0} + \sqrt{p}\ket{1} \quad \& \quad ZR\ket{0} = \sqrt{1-p}\ket{0} - \sqrt{p}\ket{1}\]
+and so
+\[ U =
+\begin{pmatrix}
+  \sqrt{1-p} & 0\\
+  \sqrt{p} & 0\\
+  0 & \sqrt{1-p} \\
+  0 & -\sqrt{p} \\
+\end{pmatrix}
+\]
+as required.
+
+\textbf{(d)} We continue from where we left off, in that we know $U$, and we know how $V$ must act on $U$, since it acts only in the $E$ space, we must have that if
+\[ V =
+\begin{pmatrix}
+  v_{1} & v_{2} \\
+  v_{3} & v_{4} \\
+\end{pmatrix}
+\]
+then
+\[ (V\otimes I)U = 
+\begin{pmatrix}
+  \sqrt{1-p}v_{1} + \sqrt{p}v_{2} & 0\\
+  \sqrt{1-p}v_{3} + \sqrt{p}v_{4} & 0\\
+  0 & \sqrt{1-p}v_{1} -\sqrt{p}v_{2} \\
+  0 & \sqrt{1-p}v_{3} -\sqrt{p}v_{4} \\
+\end{pmatrix}
+\, .\]
+So, if $\rho$ is the arbitrary matrix from before, we are looking to find
+\[
+\begin{pmatrix}
+  \sqrt{1-p}v_{1} + \sqrt{p}v_{2} & 0\\
+  \sqrt{1-p}v_{3} + \sqrt{p}v_{4} & 0\\
+  0 & \sqrt{1-p}v_{1} -\sqrt{p}v_{2} \\
+  0 & \sqrt{1-p}v_{3} -\sqrt{p}v_{4} \\
+\end{pmatrix}
+\rho
+\left(
+\begin{pmatrix}
+  \sqrt{1-p}v_{1} + \sqrt{p}v_{2} & 0\\
+  \sqrt{1-p}v_{3} + \sqrt{p}v_{4} & 0\\
+  0 & \sqrt{1-p}v_{1} -\sqrt{p}v_{2} \\
+  0 & \sqrt{1-p}v_{3} -\sqrt{p}v_{4} \\
+\end{pmatrix}
+\right)^{T}
+\]
+\[ =
+\begin{pmatrix}
+  \sqrt{1-p}v_{1} + \sqrt{p}v_{2} & 0\\
+  \sqrt{1-p}v_{3} + \sqrt{p}v_{4} & 0\\
+  0 & \sqrt{1-p}v_{1} -\sqrt{p}v_{2} \\
+  0 & \sqrt{1-p}v_{3} -\sqrt{p}v_{4} \\
+\end{pmatrix}
+\]
+
+\end{document}

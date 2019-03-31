@@ -1,0 +1,92 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,mathtools,xfrac,tabu}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\Gal}{\text{Gal}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PMATH 348 $|$  Assignment 7}
+
+\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+
+\textbf{Question 1}
+
+\textbf{(a)} We know that $K/E/F$ is a tower of fields, and since $K/F$ is algebraic, we better have that $E/F$ and $K/E$ are algebraic. Suppose $\alpha \in K$, since $K/F$ is seperable, then $\exists\, p(x) \in F[x]$ minimal polynomial of $\alpha$, which is seperable over its splitting field. Then, we know that $\alpha$ has a minimal polynomial, say $g(x) \in E[x]$, and know that $g(x) \, | \, p(x)$ over $E$ by the fact that $g(x)$ is the minimal polynomial of $\alpha$ in this field. Then, since $p(x)$ is seperable, $g(x)$ is seperable, and thus $K/E$ is seperable.
+
+\textbf{(b)} First, we know that $E/F$ is algebraic, since $E \subset K$, and $K/F$ is algebraic, hence any element of $E$ is also in $K$, and hence will have a minimal polynomial over $F$. Seperability follows in exactly the same way, since we can again say that every element of $K$ is seperable, and since $E\subset K$, therefore $E/F$ is seperable.
+
+\textbf{(c)} Suppose $K/F$ is an algebraic extension and $F$ is perfect. Since $F$ is perfect, $K$ is seperable. Moreonver, suppose $H/K$ is an algebraic extension of $K$ $\implies$ $H/K/F$ $\implies$ $H/F$ is algebraic. $F$ is perfect $\implies$ $H$ is seperable, but since $F \subseteq K$, $H$ is seperable over $K$, and so $K$ is perfect.
+
+\newpage
+\textbf{Question 2}
+
+\textbf{(a)} This is not true. Consider the Tower fields $\Q(\sqrt[\leftroot{1}\uproot{0}4]{3})/\Q(\sqrt{3})/\Q$, where we see that $\Q(\sqrt{3})/\Q$ is normal since $x^{2} - 3\ in \Q[x]$ splits over the extension and $\Q(\sqrt[\leftroot{1}\uproot{0}4]{3})/\Q(\sqrt{3})$ is normal since $x^{2} - \sqrt{3}$ splits over the extension. However, notice that $\sqrt[\leftroot{1}\uproot{0}4]{3} \in \Q(\sqrt[\leftroot{1}\uproot{0}4]{3})$ has minimal polynomial $x^{4} - 3$ but it does not split over the extension, so it is not normal.
+
+\textbf{(b)} Since $[K:F] < \infty$, we know $K/F$ is algebraic, and moreover, by the normality theorem if $\alpha \in K$, its minimal polynomial in $F[x]$ splits over $K$. We know that since $K/F$ is algebraic, so is $K/E$, and so $\alpha \in K$ has a minimal polynomial $g(x) \in E[x]$, and minimal polynomial $f(x) \in F[x]$ and we must have that $g(x)\, |\, f(x)$. However, $f(x)$ splits over $K$, and so then so does $g(x)$, and hence $K/E$ is normal.
+
+\textbf{(c)} This is false. To see this, consider the tower of fields $\Q \subset \Q(\sqrt[\leftroot{1}\uproot{0}3]{2}) \subset \Q(\sqrt[\leftroot{1}\uproot{0}4]{3},\xi_{3})$. We notice that first $[\Q(\sqrt[\leftroot{1}\uproot{0}4]{3},\xi_{3}):\Q] < \infty$ and it is normal since it splits $f(x) = x^{3} - 2 \in \Q[x]$. However, notice that the extension $\Q(\sqrt[\leftroot{1}\uproot{0}4]{3})/\Q$ has the element $\sqrt[\leftroot{1}\uproot{0}4]{3}$ which has minimal polynomial $f(x)$, which clearly does not split over this extension, and hence it is not normal.
+
+\textbf{(d)} Since $[K:F] = 2$, we know that $\exists\, \alpha$ such that $K = \text{span}_{F}\{1,\alpha\}$, but this tells us that $K = F(\alpha)$ since $\{1,\alpha,\alpha^{2}\}$ is linearly dependent and thus $K$ is an extension for some degree two polynomial, say $f(x) \in F[x]$. Now, for $K$ to be normal, we just need that the other root of $f(x)$ also is in $K$. Suppose it was not, but then since $\alpha \in K$, we can factor $f(x)$ over $K[x]$, and by the division algorithm our remaining coeffecient will be the root, and in $K$. So, we must have both roots in $K$, and so $K$ is normal.
+
+\newpage
+\textbf{Question 3}
+
+\textbf{(a)} We know that $f(x) = x^{p} - x - a$ is irreducible iff $g(x) = f(x-a) = (x-a)^{p} - (x-a) - a$ is irreducible, but notice by freshmen's dream
+\[ g(x) = (x-a)^{p} - (x-a) -a = x^{p} - a^{p} - x + a - a = x^{p} - x - a^{p} = x^{p} - x - 1 \, .\]
+So, we need only show that $g(x) = x^{p} - x - 1 \in \Z_{p}[x]$ is irreducible. Next, notice that if $\alpha$ is a root of $g(x)$, then we see that since $g(x - 1) = (x - 1)^{p} - (x - 1) - 1 = x^{p} - 1 - x = x^{p} - x - 1 = g(x)$, then $\alpha - 1$ is also a root of $g(x)$, and moreover, so are $\alpha - 2, \alpha - 3, \dots, \alpha - p +1$. Now, suppose $\alpha \in \Z_{p}$, then $g(\alpha) = \alpha^{p} - \alpha - 1 = 0 \implies (1) - \alpha - 1 = 0 \implies \alpha = 0$, but this is a contradiction since clearly $0$ is not a root of $g(x)$. So, $\alpha \notin \Z_{p}$. Next, we see that $g(x)$ is irreducible iff it's galois group is transitive (which we proved in the previous assignment). Suppose $\Gal(g(x))$ was not transitive, then we can't send $\alpha$ to $\alpha - c$, $c\in \Z_{p}^{\times}$, but since we have $p$ different roots, this implies that we can only fix every root, since compositions would generate the entire set of roots. However, if every root is fixed in the Galois group, then $g(x)$ is actually the product of $p$ degree 1 polynomials, which is a contradiction, since $\alpha \notin \Z_{p}$. Therefore, $g(x)$ is irreducible, and thus $f(x)$ is irreducible over $\Z_{p}$.
+
+\textbf{(b)} To see that $\Z_{p}(\alpha)/\Z_{p}$ is Galois, we know that $[\Z_{p}(\alpha):\Z_{p}] = p$, and we notice it is the splitting field of the minimal polynomial $f(x) = x^{p} - x - a \in \Z_{p}[x]$ where $a \in \Z_{p}^{\times}$ since $\alpha \in \Z_{p}(\alpha) \implies \alpha - a \in \Z_{p}(\alpha)$. Which is a seperable polynomial, and so we have Galois by the chracteristic theorem.
+
+\textbf{(c)} We know that $|\Gal(\Z_{p}(\alpha)/\Z_{p})| = [\Z_{p}(\alpha):\Z_{p}] = p$, and all prime groups are known up to isomorphism, so $\Gal(\Z_{p}(\alpha)/\Z_{p}) \cong \Z_{p}$.
+
+\newpage
+\textbf{Question 4}
+
+\textbf{(a)} We find the minimal polynomial,
+\[ c^{2} = 2 + \sqrt{2} \implies (c^{2} - 2)^{2} = 2 \implies c^{4} - 4c^{2} + 2 = 0 \, .\]
+So we get $f(x) = x^{4} - 4x^{2} + 2\in \Q[x]$ to be the minimal polynomial, which is irreducible by 2-Eisenstien. So, we have that $[\Q(c):\Q] = 4$.
+
+\textbf{(b)} $\Q$ is perfect, so we only need to check normality. Notice if we let $y = x^{2}$, then $x^{4} - 4x^{2}  +2 = y^{2} - 4y^{2} + 2 \implies y = 2\pm \sqrt{2}$ and $x = \pm \sqrt{2\pm \sqrt{2}}$, so we let $d = \sqrt{2 - \sqrt{2}}$. Therefore the $\Q$-conjugates of $c$ are $\pm c$ and $\pm d$. Further, notice that $(\sqrt{2 + \sqrt{2}})^{2} \in \Q(c) \implies 2 + \sqrt{2} \in \Q(c) \implies \sqrt{2} \in \Q(c)$, so, since $c\frac{d}{\sqrt{2}} = \frac{(\sqrt{2+ \sqrt{2}})(\sqrt{2 - \sqrt{2}})}{\sqrt{2}} = \frac{\sqrt{2}}{\sqrt{2}} = 1$, we know $\pm c, \pm d \in \Q(c) \implies \Q(c)/\Q$ is normal $\implies \Q(c)/\Q$ is Galois.
+
+\textbf{(c)} We build a table
+\begin{center}
+  $\begin{tabu}{ c|c c c c|c }
+    & c & -c & d & -d & S_{4} \\
+    \hline
+    \varphi_{1} & c & -c & d & -d & \varepsilon\\
+    \varphi_{2} & -c & c & -d & d & (12)(23)\\
+    \varphi_{3} & d & -d & -c & c & (1324)\\
+    \varphi_{4} & -d & d & c & -c & (1423)\\
+  \end{tabu}$
+\end{center}
+The first two rows are quite simple, since we need to have the identity, and we would definitely also require the swapping of negatives to still be in our Galois group. From transitivity, we know that $c$ needs to be sent to every element atleast once, so the first two entries of the last two rows come from that, and the fact that $-c$ is fixed by the choice of $c$. The last bottom-right block is tougher. Notice, since $\varphi_{3}(c) = d$, we have
+\[d^{2} = \varphi_{3}(c)^{2} = \varphi_{3}(c^{2}) = \varphi_{3}(2 + \sqrt{2}) = 2 + \varphi_{3}(\sqrt{2})\]
+\[ \implies \varphi_{3}(\sqrt{2}) = d^{2} - 2 = -\sqrt{2}\, .\]
+Thus, we see
+\[ cd = \sqrt{2} \implies \varphi_{3}(cd) = \varphi_{3}(\sqrt{2}) \implies \varphi_{3}(c)\varphi_{3}(d) = -\sqrt{2}\]
+\[ \varphi_{3}(d) = -\frac{\sqrt{2}}{\varphi_{3}(c)} = -\frac{\sqrt{2}}{d} = -c \]
+which then fixes the rest of the chart from transitivity.
+
+\textbf{(d)} This clearly isn't $\Z_{2} \times \Z_{2}$, so we can conclude $G \cong \Z_{4}$. 
+
+
+\end{document}
