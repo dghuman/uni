@@ -1,0 +1,26 @@
+# Python script to plot some functions from Q5 (b) on Assignment 1
+
+import cmath,numpy
+
+N = 100
+omega_0 = 0.5
+sigma = 0.1
+    
+def c_n(n):
+    return exp(-((1.0/n) - omega_0)*((1.0/n) - omega_0)/(sigma*sigma))
+
+A = 0
+
+for i in range(1,N+1,1):
+    A += c_n(i)
+
+# invert A since the true coeffecient is 1/A    
+A = 1.0/A
+
+def C(t):
+    ans_1 = 0
+    ans_2 = 0
+    for n in range(1,N+1,1):
+        omega_n = 1.0/n
+        ans_1 += exp(-(omega_n - omega_0)*(omega_n - omega_0)/(sigma*sigma))*exp(1j*omega_n*t)
+        ans_2 += exp(-(omega_n - omega_0)*(omega_n - omega_0)/(sigma*sigma))*exp(1j*omega_n*t)

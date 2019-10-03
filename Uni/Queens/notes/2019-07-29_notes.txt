@@ -1,0 +1,19 @@
+## Notes taken on 2019-07-29 in skype call with Professor Clark regarding courses to take in the upcoming term and project ##
+
+Notes on Courses:
+Need two courses, in particular EM and Quantum for sure, then two others minimum.
+
+Current Plan:
+- Quantum, Particle in the Fall
+- Computation, Astro in the Winter
+
+Next year I can take EM to make up the missing requirements for PhD
+
+
+Notes on Research:
+- Fletcher has been working on the simulation stuff using the cluster ceder rather than graham.
+- Has been working on the geometries for the different spacing between strings of the detectors. He has mostly been working on the spacing rather than the actual physics so that is where I will come in.
+- He has not done work with Geant4 yet, but that will be where I continue off from. He has done work specifically assuming muons and then from there.
+
+P-ONE is the project name
+

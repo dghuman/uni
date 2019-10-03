@@ -1,0 +1,64 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,graphicx,array,bm,tensor,braket}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 892 $|$  Assignment 1}
+
+\rhead{Dilraj Ghuman $|$ 20191345}
+
+\begin{document}
+\textbf{Question 1}
+
+\textbf{1.1} The speed of light is exactly $299792456$ m/s, which rounded to $1\% $ give us $c \approx 3.00\times 10^{8}$. We also know $\hbar \approx 1.05 \times 10 ^{-34} \, \text{m}^{2}\text{kg}/\text{s} = 6.58 \times 10^{-16} \, \text{eV}\cdot \text{s}$ up to $1\% $ error.
+
+\textbf{1.2}
+
+\textbf{(1.2.1)} The given mass is only in units of energy, and we want a dimension of mass. So, we recall that energy is $\frac{[M][L]^{2}}{[T]^{2}}$, where $[M],[L],[T]$ are dimensions of mass, length and time respectively. Then, we see that we only need to get rid of the length/time dimensions twice, which is just our dimensions for $c$, so
+\[ 938 \,\text{MeV} \to \frac{938 \, \text{MeV}}{c^{2}} \]
+will be the true mass.
+
+\textbf{(1.2.2)} We recall that a unit of energy is the eV, so to get a length from this quantity that has units of energy, we recognize $\hbar$ has units of energy-time and we can get length from the speed of light. That is,
+\[ \lambda = \frac{2\pi}{E_{\gamma}} \to \frac{2\pi}{E_{\gamma}}\cdot \frac{\hbar}{c} \]
+will be the true wavelength.
+
+\textbf{(1.2.3)} We recall that the dimensions of the inverse square-root gravitational constant are $\frac{[M]^{1/2}[T]}{[L]^{3/2}}$, and we want dimensions of $[M]$. 
+
+\textbf{Question 2}
+
+\textbf{Question 3}
+
+\textbf{Question 4}
+
+\textbf{4.1}  To show that $\textbf{O}(n)$ is a group under multiplication, we need only show the definition of a group is satisfied. In particular, if $M,N \in \textbf{O}(n)$, notice
+\[ MN(MN)^{t} = MN(N^{t}M^{t}) = MNN^{t}M^{t} = MM^{t} = I \implies MN \in \textbf{O}(n) \, ,\]
+which is closure (Notice we don't have to show $(MN)^{t}MN = I$ since we showed the inverse of $MN$ is it's transpose and inverses are unique from linear algebra). Next, since $II^{t} = II = I$, we have an identity $I\in \textbf{O}(n)$. Matrix multiplication is associative, and since $\textbf{O}(n) \subset M_{n\times n}(\R)$, we have associativity for free. Finally, we show inverses are also orthogonal. We know they exist, since
+\[ \text{det}(MM^{t}) = det(I) \implies (\text{det}(M))^{2} = 1 \implies \text{det}(M) = \pm 1\, .\]
+But, since $M$ is orthogonal, by definition $M^{-1} = M^{t}$, so
+\[ M^{-1}(M^{-1})^{t} = M^{t}(M^{t})^{t} = M^{t}M = I  \implies M^{-1} \in \textbf{O}(n)\, .\]
+So, we can conclude that $\textbf{O}(n)$ is indeed a group.
+
+\textbf{4.2} To show that $\textbf{SO}(n)$ is a group, we need only show that it is a subgroup, so our criterion aren't as restrictive. In particular, we get associativity for free, since $\textbf{SO}(n) \subset \textbf{O}(n)$, and since $\text{det}(I) = 1$, $I \in \textbf{SO}(n)$, and so we have the identity as well. All we need is closure and inverses. Well, notice if $M,N \in \textbf{SO}(n)$, then
+\[ \text{det}(MN) = \underbrace{\text{det}(M)}_{1}\underbrace{\text{det}(N)}_{1} = 1 \implies MN \in \textbf{SO}(n) \, .\]
+For inverses, we note
+\[ \text{det}(M^{-1}) = \text{det}(M^{t}) = \text{det}(M) = 1 \implies M^{-1} \in \textbf{SO}(n)\, .\]
+Thus, we have shown $\textbf{SO}(n)$ is indeed a subgroup of $\textbf{O}(n)$.
+
+\textbf{4.3} 
+
+\end{document}

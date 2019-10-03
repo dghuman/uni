@@ -1,0 +1,4 @@
+F19 PHYS 825 Advanced Quantum Theory
+F19 PHYS 892 Particle Physics
+W20 PHYS 862 The Early Universe and Multimessenger Astrophysics
+F/W19-20 PHYS 899 Master's Thesis Research

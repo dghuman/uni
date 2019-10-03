@@ -1,0 +1,69 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,braket,mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Sp}{\mathbb{S}}
+\newcommand{\Pro}{\mathbb{P}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\Que}[1]{\textbf{Question #1}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 467 $|$  Assignment 5}
+
+%\rhead{Dilraj Ghuman $|$ 20564228}
+
+\begin{document}
+\Que{3}
+
+\textbf{(a)} We know that $C$ encodes 2 bits into 4. So, we first see that the proposed encoded Pauli operations are of the correct dimension. Notice that each of the four operations consist of exclusively either $X$'s or $Z$'s tensored with identities. So, without any computations we can conclude that the generators of the Stabelizer group will commute with the encoded operations. Moreover, since the encoded operators anti-commute with one another they can indeed be chosen as the logical $X$ and $Z$ operators.
+
+\textbf{(b)} To see this is an encoded operation, notice that
+\[ H^{\otimes 4}G_{1} H^{\otimes 4} = HXH\otimes HXH\otimes HXH \otimes HXH = Z\otimes Z\otimes Z \otimes Z = G_{2} \]
+\[ H^{\otimes 4}G_{2} H^{\otimes 4} = HZH\otimes HZH\otimes HZH \otimes HZH = X\otimes X\otimes X \otimes X = G_{1} \]
+which tells us that clearly this is indeed an encoded operation.
+
+\textbf{(c)}We compute the commutation relations to get
+\[ H^{\otimes 4}X_{1L}H^{\otimes 4} = HXH\otimes HXH \otimes HH \otimes HH = Z\otimes Z\otimes I\otimes I\]
+and we see that all that happens is that the $Z$ and $X$ pauli operations are swapped. So
+\[ H^{\otimes 4}Z_{1L}H^{\otimes 4} = I\otimes X \otimes X \otimes I \quad , \quad H^{\otimes 4}X_{2L}H^{\otimes 4} = I\otimes Z \otimes Z \otimes I \quad , \quad H^{\otimes 4}Z_{2L}H^{\otimes 4} = I\otimes I \otimes X \otimes X\, .\]
+We have effectively swapped the $X$ and $Z$ operations. Moreover, the encoded Pauli $X$ and $Z$ under relabeling are just swapping, that is
+\[ Z_{1L} \mapsto X_{1L} \quad Z_{2L} \mapsto X_{2L} \quad X_{1L} \mapsto Z_{1L} \quad X_{2L} \mapsto Z_{2L} \]
+and further we see that the generators of the stabilizer are just the usual encoded Pauli's, so that fact that $H^{\otimes 4}$ is indeed an encoded operation tells us that $H^{\otimes 4}$ is exactly just the encoded Hadamard.
+
+\textbf{(d)} We first try to find the codeword $\ket{00_{L}}$, since we can find the rest from this one. Notice that it must be fixed under the stabilizer group, since it must be in our codespace. That is, we need
+\[ G_{1}\ket{00_{L}} = \ket{00_{L}} \quad \& \quad G_{2}\ket{00_{L}} = \ket{00_{L}} \]
+and we notice that such a state is $\ket{\psi} = \frac{1}{\sqrt{2}}\left(\ket{0000} + \ket{1111}\right)$. This ofcourse isn't the only one, but it is the simplest to find by inspection. Notice,
+\[ Z_{1L}\ket{\psi} = \frac{1}{\sqrt{2}}\left(I \otimes Z\otimes Z\otimes I\right)\left(\ket{0000} + \ket{1111}\right) = \frac{1}{\sqrt{2}}\left(\ket{0000} + (-1)^{2}\ket{1111}\right) = \ket{\psi} \]
+\[ Z_{2L}\ket{\psi} = \frac{1}{\sqrt{2}}\left(I \otimes I\otimes Z\otimes Z\right)\left(\ket{0000} + \ket{1111}\right) = \frac{1}{\sqrt{2}}\left(\ket{0000} + (-1)^{2}\ket{1111}\right) = \ket{\psi} \]
+and since this must also hold for $\ket{00_{L}}$, we see that $\ket{00_{L}} = \ket{\psi}$. To get the remaining three we do a simple computation, that is
+\[ \ket{10_{L}} = X_{1L}\ket{00_{L}} = \frac{1}{\sqrt{2}}\left(X\otimes X\otimes I \otimes I\right)\left(\ket{0000} + \ket{1111} \right) = \frac{1}{\sqrt{2}}\left(\ket{1100} + \ket{0011}\right) \]
+\[ \ket{01_{L}} = X_{2L}\ket{00_{L}} = \frac{1}{\sqrt{2}}\left(I\otimes X\otimes X \otimes I\right)\left(\ket{0000} + \ket{1111} \right) = \frac{1}{\sqrt{2}}\left(\ket{0110} + \ket{1001}\right) \]
+and using what we have found
+\[ \ket{11_{L}} = X_{1L}\ket{01_{L}} = \frac{1}{\sqrt{2}}\left(\ket{1010} + \ket{0101}\right) \]
+as required.
+
+\textbf{(e)}
+
+\textbf{(i)} With no error, or $I$ error in the first bit, we know that the $G_{1}$ and $G_{2}$ measurement will give us a syndrome that corresponds with no error, that is $++$ for $G_{1}$ and $G_{2}$ respectively. Notice that only $G_{2}$ will be sensitive to the $X$ error in the first bit, so we will get a syndrome of $+-$, and for similar reason, for $Y$ we get $--$ and finally for $Z$ we get $-+$.
+
+\textbf{(ii)} From the previous part, we see that our codespace is quite restricted, and we know that we only have 4 code words anyways, $\ket{00_{L}},\ket{01_{L}},\ket{10_{L}}$ and $\ket{11_{L}}$. So, we can use the latter three bits to determine what the last bit should be replaced with.
+
+\textbf{(f)} From the previous part, we found what measuring the generators gave us when attempting to determine what the outcome was for errors. Notice that measuring using both generators is required to tell if there has been an unknown Pauli error. So, measuring the generators of the stabilizer group provide us with what type of error we had, and moreover they distinguish from nothing happening. 
+
+\end{document}

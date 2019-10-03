@@ -1,0 +1,85 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,graphicx,array,bm,tensor,braket}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 825 $|$  Assignment 2}
+
+\rhead{Dilraj Ghuman $|$ 20191345}
+
+\begin{document}
+\textbf{Question 1}
+
+We use the WKB approximation for a harmonic oscillator with $V(x) = m\omega^{2}x^{2}/2$. We recall that the 
+
+\textbf{Question 2}
+
+This follows from explicitly spelling out what equivalent representations are. In particular, suppose $G$ is our group with $g\in G$, and $D: G \to GL(V)$, where $V$ is a vector space, will be our representation. Then, $D': G \to GL(W)$, where $W$ is another vector space. Then, we say $D$ and $D'$ are equivalent representations if $V$ and $W$ are isomorphic, that is $\exists$ an isomorphism $\alpha: V \to W$, and
+\[ \alpha \circ D(g) \circ \alpha^{-1} = D'(g) \quad \forall g \in G \, .\]
+However, since we need that $V$ and $W$ are over the same field for our representations, we can see that $\alpha$ is just a change of basis, and can be thought of as an invertable matrix, say $P$, such that
+\[ PD(g)P^{\-1} = D'(g) \, .\]
+From here, we know that Trace is preserved under basis transformations, since similar matrices share their Trace, so
+\[ Tr(D(g)) = Tr(D'(g))\, .\]
+So, if two representations do not preserve trace, we can immediatly conclude they are not equivalent from the contrapositive of the above.
+
+\textbf{Question 3}
+
+\textbf{(a)} To simplify our table, we notice that rotation can be written as $e^{\frac{in\pi}{2}}$, so we use this to represent our rotations. The operation is multiplication, and thus
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|}
+    \hline
+    \times & \bm{1} & \bm{e^{\frac{i\pi}{2}}} & \bm{e^{i\pi}} & \bm{e^{\frac{i3\pi}{2}}} \\
+    \hline
+    \bm{1} & 1 & e^{\frac{i\pi}{2}} & e^{i\pi} & e^{\frac{i3\pi}{2}} \\
+    \hline
+    \bm{e^{\frac{i\pi}{2}}} & e^{\frac{i\pi}{2}} & e^{i\pi} & e^{\frac{i3\pi}{2}} & 1 \\
+    \hline
+    \bm{e^{i\pi}} & e^{i\pi} & e^{\frac{i3\pi}{2}} & 1 & e^{\frac{i\pi}{2}} \\
+    \hline
+    \bm{e^{\frac{i3\pi}{2}}} & e^{\frac{i3\pi}{2}} & 1 & e^{\frac{i\pi}{2}} & e^{i\pi} \\
+    \hline
+  \end{tabular}
+\end{table}
+which shows all the properties we need for this to be a group. The only missing one explicitly is associativity, but that follows from exponential multiplication being associative.
+
+\textbf{(b)} Looking at the table, we see that this is indeed abelian, which we know is true since the multiplication table is symmetric!
+
+\textbf{(c)} The subgroup is the $\pi$ rotation. Looking at the multiplication table, we can notice that $\{1, e^{i\pi}\}$ is a closed set under the group operation of multiplication, and since it is a subset of a group it is naturally a subgroup. %Not sure what he means by what symmetry this corresponds to....
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+
+\textbf{(d)} We recognize that the non-trivial eigenvectors will be $\ket{0,y}$ and $\ket{x,0}$. In particular, we see
+\[ M_{x}\ket{0,y} = \ket{0,y} \quad \& \quad M_{x}\ket{x,0} = \ket{-x,0} = -\ket{x,0} \]
+which tells us the eigenvalues are $1$ and $-1$ respectively.
+
+\textbf{(e)} For the rotation operator, we look at each value of $n$ individually to get the eigenvectors and hence eigenvalues. We skip the identity, since it gives a trivial eigenvalue of $1$ with the entire space, except the $\vec{0}$ being eigenvectors. So, first for $n=1$ we get the rotation $D_{z}\left(\frac{\pi}{2}\right)$, which we know will swap components and make one negative, so this will only have the trivial eigenvector, and similar for $n=3$ for the same reason. This leaves the $n=2$ case, which is a $\pi$ rotation, $D_{z}(\pi)$, and hence only flips the signs of our states and will give an eigenvalue of $-1$.
+
+\textbf{(f)} It suffices to show that the rotation and reflection operator do not commute in a particular case to conclude they do not commute in general. Consider $D_{z}(\pi/2)$, then
+\[ D_{z}(\pi/2)M_{x}\ket{x,y} = D_{z}(\pi/2)\ket{-x,y} = \ket{-y,-x} \quad \& \quad M_{x}D_{z}(\pi/2)\ket{x,y} = M_{x}\ket{-y,x} = \ket{y,x}\]
+\[ \implies D_{z}(\pi/2)M_{x} \neq M_{x}D_{z}(\pi/2) \implies D_{z}(n\pi/2)M_{x} \neq M_{x}D_{z}(n\pi/2)\, .\]
+
+\textbf{(g)} First, we see that for a state $\ket{x,y}$, $D_{z}(\pi)\ket{x,y} = -\ket{x,y}$. So, we can conclude that all states are eigenstates of $D_{z}(\pi)$. On the other hand, we recall that the eigenstates of $M_{x}$ are $\ket{x,0}$ and $\ket{0,y}$. So, we want to choose eigenstates of the hamiltonian $H$ to be simultaneous eigenstates of these two operators, which means they must take the form either $\ket{x,0}$ or $\ket{0,y}$.
+%%%% NOt done %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{(h)}
+
+
+\textbf{Question 4}
+
+\textbf{(a)} 
+\end{document}

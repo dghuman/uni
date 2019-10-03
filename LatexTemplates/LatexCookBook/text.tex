@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}
+\usepackage[document]{ragged2e}
+\usepackage[]{geometry}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb}
+\usepackage[utf8]{inputenc}
+
+\geometry{letterpaper,left=25mm,right=25mm}
+
+%\setlength{\tabcolsep}{10pt}
+
+%\pagestyle{fancy}
+
+%\fancyhead[L]{\fontsize{18}{11} \selectfont Black Bean Burger} % One way to do a title with a header that looks like a title. Could be easier to just make it the title.
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+
+\begin{document}
+\pagenumbering{gobble}
+% Title
+{\Huge \textbf{Black Bean Burger}\par}
+% Some basic information
+\vspace{1em}
+\begin{tabular}{@{}l l l}
+  \hline
+  \noalign{\smallskip}
+  Active Time & Total Time & Yield \\
+  20 mins & 2o mins & Serves 4 (serving size: 1 patty) \\
+  \noalign{\smallskip}
+  \hline
+\end{tabular}
+
+% Possible text blurb
+\vspace{2em}
+Possible text blurb if we want.
+\vspace{2em}
+% Ingredients and Method
+
+\begin{tabular}[t]{ p{5cm} }
+  \textbf{Ingredients} \\
+  \\
+  1 (1-oz.) slice whole-grain bread. Toasted and torn into peices \\
+  1/4 cup grated onion \\
+  1 tablespoon chopped garlic \\
+  1 1/2 teaspoons fresh lime juice \\
+  3/4 teaaspoon ground cumin \\
+  3/4 teaspoon kosher salt \\
+  1/2 teaspoon grated lime \\
+  1 (15-oz.) can unsalted black beans, rinsed and drained \\
+  1/3 cup coarsely chopped walnuts \\
+  1/2 teaspoon hot sauce \\
+  1 large egg lightly beaten \\
+  4 teaspoons olive oil \\
+\end{tabular}
+\begin{tabular}[t]{ p{10cm} }
+  \textbf{Method} \\
+  \\
+  \textbf{Step 1} \hspace{3mm} Place bread in a food processor; pulse 5 times. Transfer to a bowl. \\[5mm]
+  \textbf{Step 2} \hspace{3mm} Combine onion, garlic, juice, cumin, salt, rind, and beands in processor; pulse 4 to 5 times. Add bean mixture, walnuts, hot sauce, and egg to crumbs; stir well. Divide the mixture into 4 equal portions. Shape each portion into 3/4-inch-thick patty. \\[5mm]
+  \textbf{Step 3} \hspace{3mm} Heat oil in a large non-stick skillet over medium-high heat. Add patties to pan; reduce heat to medium and cook 4 minutes on each side or until browned. \\
+\end{tabular}
+
+% We want a footnote here
+\vspace{3em}
+\begin{tabular}[b]{ p{3cm} }
+  \hline
+\end{tabular}
+this is some text I have written in place of lorem ipsum
+
+\end{document}
