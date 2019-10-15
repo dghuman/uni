@@ -216,8 +216,104 @@ and in a similar manner we get
 \[ E_{\pi^{-}} = \frac{- m_{p}^{2} + m_{\pi^{-}}^{2} + m_{\Lambda}^{2}}{2m_{\Lambda}} \, .\]
 The expressions for our momentum come from the relationship used before, that is
 \[ p_{p} = \sqrt{E_{p}^{2} - m_{p}^{2}} \quad \& \quad p_{\pi^{-}} = \sqrt{E_{\pi^{-}}^{2} - m_{\pi^{-}}^{2}}\, . \]
-Pluggin in some numbers, we get
-\[ E_{p} = 943.645 \,\text{MeV} \quad E_{\pi^{-}} = 172.035 \, \text{MeV} \quad p_{p} = 100.58 \,\text{MeV} = p_{\pi^{-}} \, .\]
+Plugging in some numbers, we get
+\[ E_{p} \approx 943.645 \,\text{MeV} \quad E_{\pi^{-}} \approx 172.035 \, \text{MeV} \quad p_{p} \approx 100.58 \,\text{MeV} \approx p_{\pi^{-}} \, .\]
+
+\textbf{3.2.3} To compute the boost we would need, we only need the velocity that the $\Lambda$ Hyperon is traveling at, as that will uniquely determine the Lorentz boost transformation. First, we get a nice relation we can use:
+\begin{equation*}
+  \begin{split}
+    E^{2} & = p^{2}c^{2} + m^{2}c^{4} \\
+    & = \gamma^{2}m^{2}v^{2}c^{2} + m^{2}c^{4} \\
+    & = m^{2}c^{4}\left(\gamma^{2}\beta^{2} + 1\right) \\
+    & = m^{2}\left(\frac{\beta^{2}}{1- \beta^{2}} + 1\right)  \quad \quad \text{(set $c=1$)} \\
+    E^{2} & = m^{2}\gamma^{2} \, .\\
+  \end{split}
+\end{equation*}
+Notice that the information for the velocity is cooked into $\gamma$, so this will make computing the boost even easier. We see
+\[ \gamma^{2}_{\Lambda} = \frac{E_{\Lambda}^{2}}{m_{\Lambda}^{2}} = \frac{m_{\Lambda}^{2} + p_{\Lambda}^{2}}{m_{\Lambda}^{2}} \approx 4.214 \quad \beta^{2} = 1-\frac{1}{\gamma^{2}} \approx 0.763\, .\]
+Then plugging this into our Lorentz Transform,
+\[
+\Lambda = 
+\begin{bmatrix}
+  \gamma & -\beta \gamma & 0  & 0 \\
+  - \beta \gamma & \gamma & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+  \sqrt{\frac{m_{\Lambda}^{2} + p_{\Lambda}^{2}}{m_{\Lambda}^{2}}} & -\frac{p_{\Lambda}}{m_{\Lambda}} & 0  & 0 \\
+  - \frac{p_{\Lambda}}{m_{\Lambda}} &  \sqrt{\frac{m_{\Lambda}^{2} + p_{\Lambda}^{2}}{m_{\Lambda}^{2}}} & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+= 
+\begin{bmatrix}
+  2.053 & -1.566 & 0 & 0 \\
+  -1.566 & 2.053 & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\]
+where we have taken the positive root of $\beta^{2}$ since we suppose a boost in the positive direction.
+
+\textbf{3.2.4} We start by expressing the 4-momentum using $\theta_{p}$, and what we get is
+\[ P_{p}^{\mu} = (E_{p}, \vec{p}) = (E_{p}, p\cos(\theta_{p}), p\sin(\theta_{p}), 0) = (E_{p}, \sqrt{3}/2 p, p/2, 0)\]
+\[ P_{\pi^{-}}^{\mu} = (E_{\pi^{-}}, -p\cos(\theta_{p}), -p\sin(\theta_{p}), 0) = (E_{\pi^{-}}, -\sqrt{3}/2 p, -p/2, 0) \]
+where I have abused my notation, but it is understood that the vectors are column vectors. Then, we see that
+\[ \bar{P}_{p}^{\mu} = (\tensor{\Lambda}{^{\nu}_{\mu}})^{-1}P_{p}^{\mu} =
+\begin{bmatrix}
+  \sqrt{\frac{m_{\Lambda}^{2} + p_{\Lambda}^{2}}{m_{\Lambda}^{2}}} & \frac{p_{\Lambda}}{m_{\Lambda}} & 0  & 0 \\
+  \frac{p_{\Lambda}}{m_{\Lambda}} &  \sqrt{\frac{m_{\Lambda}^{2} + p_{\Lambda}^{2}}{m_{\Lambda}^{2}}} & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+  E_{p} \\
+  \frac{\sqrt{3}}{2} p \\
+  p/2 \\
+  0 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+  E_{p}\sqrt{\frac{m_{\Lambda}^{2} + p_{\Lambda}^{2}}{m_{\Lambda}^{2}}} + \frac{\sqrt{3}}{2}\frac{p_{\Lambda}}{m_{\Lambda}}p \\
+  \frac{p_{\Lambda}}{m_{\Lambda}}E_{p} + \sqrt{\frac{m_{\Lambda}^{2} + p_{\Lambda}^{2}}{m_{\Lambda}^{2}}}\frac{\sqrt{3}}{2} p \\
+  p/2 \\
+  0 \\
+\end{bmatrix}
+\]
+\[ \bar{P}_{\pi^{-}}^{\mu} = (\tensor{\Lambda}{^{\nu}_{\mu}})^{-1}P_{\pi^{-}}^{\mu} =
+\begin{bmatrix}
+  \sqrt{\frac{m_{\Lambda}^{2} + p_{\Lambda}^{2}}{m_{\Lambda}^{2}}} & \frac{p_{\Lambda}}{m_{\Lambda}} & 0  & 0 \\
+  \frac{p_{\Lambda}}{m_{\Lambda}} &  \sqrt{\frac{m_{\Lambda}^{2} + p_{\Lambda}^{2}}{m_{\Lambda}^{2}}} & 0 & 0 \\
+  0 & 0 & 1 & 0 \\
+  0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+  E_{\pi^{-}} \\
+  -\frac{\sqrt{3}}{2} p \\
+  -p/2 \\
+  0 \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+  E_{\pi^{-}}\sqrt{\frac{m_{\Lambda}^{2} + p_{\Lambda}^{2}}{m_{\Lambda}^{2}}} - \frac{\sqrt{3}}{2}\frac{p_{\Lambda}}{m_{\Lambda}}p \\
+  \frac{p_{\Lambda}}{m_{\Lambda}}E_{\pi^{-}} - \sqrt{\frac{m_{\Lambda}^{2} + p_{\Lambda}^{2}}{m_{\Lambda}^{2}}}\frac{\sqrt{3}}{2} p \\
+  -p/2 \\
+  0 \\
+\end{bmatrix}
+\, .
+\]
+This isn't the most intuitive form, but all the values are known, so we can compute it explicitly, which will help us find $\theta$. Computing $\bar{P}_{p}^{\mu}$ explicitly yields
+\[ \bar{P}_{p}^{\mu} \approx
+\begin{bmatrix}
+  2073.71 \, \text{MeV} \\
+  1656.57 \, \text{MeV} \\
+  50.29 \, \text{MeV} \\
+  0 \\
+\end{bmatrix}
+\]
+and so $\theta \approx \arctan\left(\frac{50.29}{1656.57}\right) \approx 1.74^{o} \, \text{Degrees}$. For $\pi^{-}$ we find through a similar computation $\theta_{\pi^{-}} \approx \arctan\left(-\frac{50.29}{95.28}\right) \approx -27.83^{o}$ Degrees. 
 
 \textbf{Question 4}
 
@@ -234,7 +330,5 @@ So, we can conclude that $\textbf{O}(n)$ is indeed a group.
 For inverses, we note
 \[ \text{det}(M^{-1}) = \text{det}(M^{t}) = \text{det}(M) = 1 \implies M^{-1} \in \textbf{SO}(n)\, .\]
 Thus, we have shown $\textbf{SO}(n)$ is indeed a subgroup of $\textbf{O}(n)$.
-
-\textbf{4.3} 
 
 \end{document}
