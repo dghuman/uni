@@ -1,0 +1,34 @@
+3-Dim Invisibility CLoak at Optical Wavelengths
+
+Overview:
+- Based on Transformation Optics
+- Woodpile photonic crystal
+- hide a bump in a gold reflector
+- Fabricated by direct laser writing
+- Characteriezed by Simultaneous high-numerical-aperature, far-field optical microscopy & spectroscopy
+- Operates on unpolarized light from 1.4 to 2.7 micrometer wavelength for veiwing angles of up to 60 degrees
+- Note: Optical wavelength refers to wavelengths from 100 nm to 1 mm
+
+
+
+
+An Ultrathin Invisibility skin cloak for visible light
+
+Overview:
+
+
+Background:
+
+Metamaterial:
+- A material who's importance is based off of the nature of it's changing refractive index to force light along a particular path.
+- Called a metamaterial since they are not naturally occuring.
+- Provide the ability to vary the permittivity and permeability freely as desired. Not sure about the details or what negative values mean.
+- Gain their electrical and magnetic properties from the structure rather than the composition.
+
+Transformation Optics:
+- The application of using varying refractive indices in metamaterials to distort the electromagnetic field (and thus light) to follow paths of our choice.
+- By using metamaterials, we are manipulating Maxwell's equations directly to distort the path of the light as we see fit. As such, they can be used on anything that obeys Maxwell's equations; any wavelength of light.
+- 
+
+
+
