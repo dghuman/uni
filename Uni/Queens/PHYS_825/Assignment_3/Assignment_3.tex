@@ -1,0 +1,231 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,graphicx,array,bm,tensor,braket,mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\newcommand{\ak}[1]{a_{k_{#1}}}
+\newcommand{\akp}[1]{a_{k_{#1}'}}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 825 $|$  Assignment 3}
+
+\rhead{Dilraj Ghuman $|$ 20191345}
+
+\begin{document}
+\textbf{Question 1}
+
+\textbf{(a)} First, we note that
+\[ T_{0}^{(1)} = Z \quad \& \quad T_{\pm 1}^{(1)} = \mp \frac{1}{\sqrt{2}}\left(X \pm iY\right)\, . \]
+Then, we can get for free that
+\[ X = \frac{1}{\sqrt{2}}\left(T_{-1}^{(1)} - T_{1}^{(1)}\right) \quad \& \quad Y = \frac{i}{\sqrt{2}}\left(T_{1}^{(1)} + T_{-1}^{(1)}\right) \, .\]
+Then, we need to consider what the rank two tensors look like in terms of our first order tensors, and using the formula provided with the C-G coeffecients, we get
+\[ T_{0}^{(2)} = \frac{1}{\sqrt{6}}T_{1}^{(1)}T_{-1}^{(1)} + \frac{1}{\sqrt{6}}T_{-1}^{(1)}T_{1}^{(1)} + \sqrt{\frac{2}{3}}T_{0}^{(1)}T_{0}^{(1)} \]
+\[ T_{\pm1}^{(2)} = \frac{1}{\sqrt{2}}T_{\pm 1}^{(1)}T_{0}^{(1)} + \frac{1}{\sqrt{2}}T_{0}^{(1)}T_{\pm1}^{(1)} \quad \& \quad T_{\pm 2}^{(1)} = T_{\pm1}^{(1)}T_{\pm1}^{(1)}\, .\]
+
+This makes getting the sum much easier. In particular, for \textbf{(i)} we get
+\begin{equation*}
+  \begin{split}
+    X^{2} - Y^{2} & = \frac{1}{2}\left(T_{-1}^{(1)} - T_{1}^{(1)}\right)^{2} + \frac{1}{2}\left(T_{1}^{(1)} + T_{-1}^{(1)}\right)^{2} \\
+    & = \frac{1}{2}\left(2T_{-1}^{(1)}T_{-1}^{1} - T_{-1}^{(1)}T_{1}^{(1)} + T_{-1}^{(1)}T_{1}^{(1)} + T_{1}^{(1)}T_{-1}^{(1)} - T_{1}^{(1)}T_{-1}^{(1)} - 2T_{1}^{(1)}T_{1}^{(1)}\right) \\
+    & = T_{-1}^{(1)}T_{-1}^{(1)} + T_{1}^{(1)}T_{1}^{(1)} \\
+    & = \boxed{T_{-2}^{(2)} + T_{2}^{(2)}} \, .\\
+  \end{split}
+\end{equation*}
+For \textbf{(ii)}, we get
+\begin{equation*}
+  \begin{split}
+    XY & = i\frac{1}{2}\left(T_{-1}^{(1)} - T_{1}^{(1)}\right)\left(T_{1}^{(1)} + T_{-1}^{(1)}\right) \\
+    & = \boxed{\frac{i}{2}\left(T_{-1}^{(1)}T_{-1}^{(1)} + T_{-1}^{(1)}T_{1}^{(1)} - T_{1}^{(1)}T_{-1}^{(1)} - T_{-1}^{(1)}T_{-1}^{(1)}\right)}\, .\\
+  \end{split}
+\end{equation*}
+And finally for \textbf{(iii)} we get
+\begin{equation*}
+  \begin{split}
+    XZ & = \frac{1}{\sqrt{2}}\left(T_{-1}^{(1)} - T_{1}^{(1)}\right)T_{0}^{(1)} \\
+    & = \boxed{\frac{1}{\sqrt{2}}\left(T_{-1}^{(1)}T_{0}^{(1)} - T_{1}^{(1)}T_{0}^{(1)}\right)}\\
+  \end{split}
+\end{equation*}
+as required.
+
+\textbf{(b)} We notice that we can rewrite $3Z^{2} - R^{2}$ in spherical tensor form to get
+\begin{equation*}
+  \begin{split}
+    3Z^{2} - R^{2} & = 3Z^{2} - X^{2} - Y^{2} - Z^{2} \\
+    & = 2Z^{2} - X^{2}- Y^{2} \\
+    & = 2T_{0}^{(1)}T_{0}^{(1)} - \left(\frac{1}{2}\left(T_{-1}^{(1)} - T_{1}^{(1)}\right)^{2} - \frac{1}{2}\left(T_{-1}^{(1)} + T_{1}^{(1)}\right)^{2}\right) \\
+    & = 2T_{0}^{(1)}T_{0}^{(1)} + T_{-1}^{(1)}T_{1}^{(1)} + T_{1}^{(1)}T_{-1}^{(1)}\\ 
+    & = \boxed{\sqrt{6} T_{0}^{(2)}} \, .\\
+  \end{split}
+\end{equation*}
+
+So, using Wigner-Eckhart, we see
+\begin{equation*}
+  \begin{split}
+    Q & = e\bra{\alpha, j, m}(3Z^{2} - R^{2})\ket{\alpha, j, m} \\
+    & = e\bra{\alpha, j ,m}\sqrt{6}T_{0}^{(2)}\ket{\alpha, j,m} \\
+    & = e\braket{j,m,2,0|j,m}\bra{\alpha,j}|T^{(2)}|\ket{\alpha,j} \\
+  \end{split}
+\end{equation*}
+\[ \implies \boxed{\frac{1}{\sqrt{6}}\frac{Q}{e\braket{j,m,2,0|j,m}} = \bra{\alpha,j}|T^{(2)}|\ket{\alpha,j}}\, . \]
+
+And,
+\begin{equation*}
+  \begin{split}
+    e\bra{\alpha, j, m'}(X^{2} - Y^{2})\ket{\alpha, j, m} & = e\bra{\alpha, j, m'}(T_{-2}^{(2)} + T_{2}^{(2)})\ket{\alpha, j, m} \\
+    & = e\left(\braket{j,m,2,-2|j,m'}\bra{\alpha,j}|T^{(2)}|\ket{\alpha, j} + \braket{j,m,2,2|j,m'}\bra{\alpha,j}|T^{(2)}|\ket{\alpha, j}\right) \\
+    & = e\left(\braket{j,m,2,-2|j,m'} + \braket{j,m,2,2|j,m'}\right)\bra{\alpha,j}|T^{(2)}|\ket{\alpha, j} \\
+    & = \boxed{\frac{\braket{j,m,2,-2|j,m'} + \braket{j,m,2,2|j,m'}}{\sqrt{6}\braket{j,m,2,0|j,m}}Q} \, . \\
+  \end{split}
+\end{equation*}
+\textbf{Question 2}
+
+To simplify the problem, we write out what $\Theta$ looks like as a matrix, that is
+\begin{equation*}
+  \begin{split}
+    \Theta & = e^{-i\pi S_{y}/\hbar}K \\
+    & = e^{-i\pi\sigma_{y}/2}K \\
+    & = \left(\cos(\pi/2) \cdot \mathbbm{1} - i\sin(\pi/2)\cdot \sigma_{y}\right)K \\
+    & = -i\sigma_{y}K \, .\\
+  \end{split}
+\end{equation*}
+Thus, we see that
+\[
+\Theta
+\begin{bmatrix}
+  \alpha \\
+  \beta
+\end{bmatrix}
+= -i\sigma_{y}K
+\begin{bmatrix}
+  \alpha \\
+  \beta
+\end{bmatrix}
+=
+\begin{bmatrix}
+  -\beta^{*} \\
+  \alpha^{*}
+\end{bmatrix}
+\, .\]
+Notice that if we were to run through the same process again,
+\[
+\Theta^{2}
+\begin{bmatrix}
+  \alpha \\
+  \beta
+\end{bmatrix}
+= \Theta
+\begin{bmatrix}
+  -\beta^{*} \\
+  \alpha^{*}
+\end{bmatrix}
+= -i\sigma_{y}K
+\begin{bmatrix}
+  -\beta^{*} \\
+  \alpha^{*}
+\end{bmatrix}
+=
+\begin{bmatrix}
+  -\alpha \\
+  -\beta
+\end{bmatrix}
+= -
+\begin{bmatrix}
+  \alpha \\
+  \beta
+\end{bmatrix}
+\]
+as required.
+
+\textbf{Question 3}
+
+From our definition of time reversal, we recall that $\braket{\alpha|\beta} = \braket{\tilde{\beta}|\tilde{\alpha}}$, and this is exactly what we shall use to prove this. First, notice
+\begin{equation*}
+  \begin{split}
+    \braket{x,t|x_{0},t_{0}} & = \braket{\tilde{x_{0},t_{0}}|\tilde{x,t}} \\
+    & = \bra{\tilde{x_{0},t_{0}}}\Theta \ket{x,t} \\
+    & \bra{\tilde{x_{0},t_{0}}}\Theta e^{iH(t - t_{0})/\hbar}\ket{x,t_{0}} \\
+  \end{split}
+\end{equation*}
+and similarly, we can get that
+\begin{equation*}
+  \begin{split}
+    \braket{x,t|x_{0},t_{0}}^{*} & = \braket{\tilde{x_{0},t_{0}}|\tilde{x,t}}^{*} \\
+    & = \braket{\tilde{x,t}|\tilde{x_{0},t_{0}}} \\
+    & = \bra{\tilde{x,t}}\Theta \ket{x_{0},t_{0}} \\
+    & \bra{\tilde{x,t}}\Theta e^{iH(t - t_{0})/\hbar}\ket{x_{0},t} \\
+  \end{split}
+\end{equation*}
+
+\textbf{Question 4}
+
+\textbf{(a)} We know that momentum is the generator for translations, so
+\[ U = e^{ -i s(\vec{X}) P_{5}/\hbar} \, .\]
+Periodicity tells us that for $n \in \Z$, $s(\vec{X}) = 2n\pi R/\hbar$ better give us the identity, that is
+\[ U = e^{ -i s(\vec{X}) P_{5}/\hbar} = e^{ -i 2n\pi RP_{5}/\hbar} = \cos\left(2n\pi RP_{5}/\hbar\right) - i\sin\left(2n\pi RP_{5}/\hbar\right) = \mathbbm{1} \]
+\[ \implies 2n\pi RP_{5}/\hbar = 2m\pi \quad m \in \Z\, .\]
+So, we see that $P_{5} = \hbar\frac{m}{n}\frac{1}{R}$, or if $q\in \Q$, then $P_{5} = \frac{\hbar q}{R}$.
+
+\textbf{(b)} We recall the following useful identities,
+\[ [A,BC] = [A,B]C + B[A,C] \quad \& \quad [f(A), B] = \frac{\partial f(A)}{\partial A}[A,B]\]
+so,
+
+\begin{equation*}
+  \begin{split}
+    [H,U] & = \left[\frac{P^{2}}{2m},e^{-is(\vec{X})\frac{q}{R}/\hbar}\right] \\
+    & = \frac{1}{2m}\left(\vec{P}[\vec{P},\vec{X}]\frac{-i}{\hbar}P_{5}\vec{\nabla}s U + [\vec{P},\vec{X}]\frac{-i}{\hbar}P_{5}\vec{\nabla}s U\vec{P}\right) \\
+    & = \boxed{\frac{P_{5}}{2m}\left((\vec{P}\cdot \vec{\nabla}s)U + U(\vec{\nabla}s \cdot \vec{P})\right)}\, . \\
+   \end{split}
+\end{equation*}
+
+\textbf{(c)} As we did in class, our goal is to make the Hamiltonian Gauge invariant for this local translation in the new dimension. We modify the hamiltonian to $H' = \frac{1}{2m}(\vec{P} + P_{5}\vec{\nabla}X_{5})^{2}$, analogous to the transformation done in class, where $-q\vec{A} = P_{5}\vec{\nabla}X_{5}$. Then,
+\[\ket{\psi} \to  U\ket{\psi} \implies \vec{\nabla}X_{5} \to \vec{\nabla}(X_{5} + s(\vec{X})) \]
+which tells us how our new hamiltonian changes:
+\begin{equation*}
+  \begin{split}
+     H' & \to \frac{1}{2m}\left(\vec{P} + P_{5}\vec{\nabla}X_{5} + P_{5}\vec{\nabla}s(\vec{X})\right)^{2} \\
+     & = \frac{1}{2m}\left(P^{2} + \vec{P}\cdot P_{5}\vec{\nabla}X_{5} + P_{5}\vec{\nabla}X_{5}\cdot \vec{P} + \left(P_{5}\vec{\nabla}X_{5}\right)^{2} + \vec{P}\cdot P_{5}\vec{\nabla}s(\vec{X}) + P_{5}\vec{\nabla}s(\vec{X}) \cdot \vec{P} + O(s^{2})\right) \\
+     & \approx \frac{1}{2m}\left(\left(\vec{P} + P_{5}\vec{\nabla}X_{5}\right)^{2} + \underbrace{P_{5}\left(\vec{P}\cdot \vec{\nabla}s(\vec{X}) + \vec{\nabla}s(\vec{X}) \cdot \vec{P}\right)}\right) \\
+  \end{split}
+\end{equation*}
+where we recognize that last bit from our commutator with the un-modified hamiltonian from before. That is, we now see that these terms will exactly cancel the terms with the commutator for the orignal piece of the hamiltonian, and thus leave our $H'$ symmetric.
+
+\textbf{(d)} We notice that we have
+\[ -P_{5} = q \quad \& \quad \vec{\nabla}X_{5} = \vec{A} \quad \& \quad \vec{\nabla}s(\vec{X}) = \vec{\nabla}\chi(\vec{X}) \]
+as the corresponding terms to electromagnetism. The respective gauge transformations, where $p,r\in \Q$ and $C\in \R$, are
+\begin{equation*}
+  \begin{split}
+    P_{5} = r\frac{\hbar}{R} & \to P_{5}' = p\frac{\hbar}{R} \\  
+    \vec{\nabla}X_{5} & \to \vec{\nabla}(X_{5} + s(\vec{X})) \\
+    s(\vec{X}) & \to s(\vec{X}) + C \, .\\
+  \end{split}
+\end{equation*}
+Notice that in our case we still have quantization of charge, since $P_{5} = p\frac{\hbar}{R}$, and $p\in \Q$. This follows from the countability of the rationals, that is we still effectively have integer (or natural) charge, it is just written using rationals.
+
+\textbf{Question 5}
+
+Similar to how we showed this in class, we start by finding the arbitrary element of this operator, so we first compute how the annihilation and creation operators look with 2 tensored bosons,
+\begin{equation*}
+  \begin{split}
+    \langle O \rangle & \propto \bra{n_{k_{1}} = 1, n_{k_{2}} = 1}a_{k_{\alpha}}^{\dagger}a_{k_{\beta}}^{\dagger}a_{k'_{\alpha}}a_{k'_{\beta}}\ket{n_{k_{1}} = 1, n_{k_{2}} = 1} \\
+    & = \bra{0}\ak{1}\ak{2}\ak{\alpha}^{\dagger}\ak{\beta}^{\dagger}\akp{\alpha}\akp{\beta}\akp{1}^{\dagger}\akp{2}^{\dagger}\ket{0} \\
+    & = \bra{0}\ak{1}(\delta_{k_{2}k_{\alpha}} + \ak{\alpha}^{\dagger}\ak{2})\ak{\beta}^{\dagger}\akp{\alpha}(\delta_{k_{\beta}k'_{1}} + \akp{1}^{\dagger}\ak{\beta})\akp{2}^{\dagger}\ket{0} \\
+    & = \bra{0}(\underbrace{\ak{1}\delta_{k_{2}k_{\alpha}}\ak{\beta}^{\dagger}\akp{\alpha}\delta_{k_{\beta}k'_{1}}\akp{2}^{\dagger}}_{A} + \underbrace{\ak{1}\delta_{k_{2}k_{\alpha}}\ak{\beta}^{\dagger}\akp{\alpha}\akp{1}^{\dagger}\ak{\beta}\akp{2}^{\dagger}}_{B} \\
+    & + \underbrace{\ak{1}\ak{\alpha}^{\dagger}\ak{2}\ak{\beta}^{\dagger}\akp{\alpha}\delta_{k_{\beta}k'_{1}}\ak{2}^{\dagger}}_{C} + \underbrace{\ak{1}\ak{\alpha}^{\dagger}\ak{2}\ak{\beta}^{\dagger}\akp{\alpha}\akp{1}^{\dagger}\ak{\beta}\akp{2}^{\dagger}}_{D})\ket{0} \\
+  \end{split}
+\end{equation*}
+To make it less messy, we compute each labeled component individually.
+\end{document}

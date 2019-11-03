@@ -1,0 +1,137 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,graphicx,array,bm,tensor,braket,mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 825 $|$  Assignment 2}
+
+\rhead{Dilraj Ghuman $|$ 20191345}
+
+\begin{document}
+\textbf{Question 1}
+
+From the WKB approximation, we get the result that
+\[  \left(n + \frac{1}{2}\right)\pi = \int_{x_{1}}^{x_{2}}\left[\frac{2m}{\hbar^{2}}(E - V(x))\right]^{\frac{1}{2}}dx\, ,\]
+and since we know that $V(x) = m\omega^{2}x^{2}/2$, we can find the bounds by setting $E = m\omega^{2}x^{2}/2 \implies x = \pm \frac{\sqrt{2E/m}}{\omega}$, and so
+\begin{equation*}
+  \begin{split}
+    \left(n + \frac{1}{2}\right)\pi & = \int_{-\frac{\sqrt{2E/m}}{\omega}}^{\frac{\sqrt{2E/m}}{\omega}}\left[\frac{2m}{\hbar^{2}}\left(E -m\omega^{2}x^{2}/2\right)\right]^{\frac{1}{2}}dx\, .\\
+  \end{split}
+\end{equation*}
+However, we see that looking at the argument, we have
+\[ y = \left[\frac{2m}{\hbar^{2}}\left(E -m\omega^{2}x^{2}/2\right)\right]^{\frac{1}{2}} \implies \frac{\hbar^{2}}{2m}y^{2} + m\omega^{2}x^{2}/2 = E \]
+which we recognize to be the equation of an elipse. Then, since the integral bounds simply go from one end to the other, we are actually computing half the area of this elipse, so we know one radius is $\frac{\sqrt{2E/m}}{\omega}$ and the other is when $x=0$, so $y = \frac{\sqrt{2mE}}{\hbar}$. Thus,
+\[ \left(n + \frac{1}{2}\right)\pi = \int_{-\frac{\sqrt{2E/m}}{\omega}}^{\frac{\sqrt{2E/m}}{\omega}}\left[\frac{2m}{\hbar^{2}}\left(E -m\omega^{2}x^{2}/2\right)\right]^{\frac{1}{2}}dx = \frac{1}{2}A = \frac{1}{2}\pi\cdot\frac{\sqrt{2E/m}}{\omega}\cdot \frac{\sqrt{2mE}}{\hbar} \]
+\[ \implies \left(n + \frac{1}{2}\right)\pi = \frac{E}{\hbar \omega} \implies E = \hbar\omega\left(n + \frac{1}{2}\right) \]
+as required.
+
+\textbf{Question 2}
+
+This follows from explicitly spelling out what equivalent representations are. In particular, suppose $G$ is our group with $g\in G$, and $D: G \to GL(V)$, where $V$ is a vector space, will be our representation. Then, $D': G \to GL(W)$, where $W$ is another vector space. Then, we say $D$ and $D'$ are equivalent representations if $V$ and $W$ are isomorphic, that is $\exists$ an isomorphism $\alpha: V \to W$, and
+\[ \alpha \circ D(g) \circ \alpha^{-1} = D'(g) \quad \forall g \in G \, .\]
+However, since we need that $V$ and $W$ are over the same field for our representations, we can see that $\alpha$ is just a change of basis, and can be thought of as an invertable matrix, say $P$, such that
+\[ PD(g)P^{-1} = D'(g) \, .\]
+From here, we know that Trace is preserved under basis transformations, since similar matrices share their Trace, so
+\[ Tr(D(g)) = Tr(D'(g))\, .\]
+So, if two representations do not preserve trace, we can immediatly conclude they are not equivalent from the contrapositive of the above.
+
+\textbf{Question 3}
+
+\textbf{(a)} To simplify our table, we notice that rotation can be written as $e^{\frac{in\pi}{2}}$, so we use this to represent our rotations. The operation is multiplication, and thus
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|>{$}c<{$}|}
+    \hline
+    \times & \bm{1} & \bm{e^{\frac{i\pi}{2}}} & \bm{e^{i\pi}} & \bm{e^{\frac{i3\pi}{2}}} \\
+    \hline
+    \bm{1} & 1 & e^{\frac{i\pi}{2}} & e^{i\pi} & e^{\frac{i3\pi}{2}} \\
+    \hline
+    \bm{e^{\frac{i\pi}{2}}} & e^{\frac{i\pi}{2}} & e^{i\pi} & e^{\frac{i3\pi}{2}} & 1 \\
+    \hline
+    \bm{e^{i\pi}} & e^{i\pi} & e^{\frac{i3\pi}{2}} & 1 & e^{\frac{i\pi}{2}} \\
+    \hline
+    \bm{e^{\frac{i3\pi}{2}}} & e^{\frac{i3\pi}{2}} & 1 & e^{\frac{i\pi}{2}} & e^{i\pi} \\
+    \hline
+  \end{tabular}
+\end{table}
+which shows all the properties we need for this to be a group. The only missing one explicitly is associativity, but that follows from exponential multiplication being associative.
+
+\textbf{(b)} Looking at the table, we see that this is indeed abelian, which we know is true since the multiplication table is symmetric!
+
+\textbf{(c)} The subgroup is the $\pi$ rotation. Looking at the multiplication table, we can notice that $\{1, e^{i\pi}\}$ is a closed set under the group operation of multiplication, and since it is a subset of a group it is naturally a subgroup. %Not sure what he means by what symmetry this corresponds to....
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+
+\textbf{(d)} We recognize that the non-trivial eigenvectors will be $\ket{0,y}$ and $\ket{x,0}$. In particular, we see
+\[ M_{x}\ket{0,y} = \ket{0,y} \quad \& \quad M_{x}\ket{x,0} = \ket{-x,0} = -\ket{x,0} \]
+which tells us the eigenvalues are $1$ and $-1$ respectively.
+
+\textbf{(e)} For the rotation operator, we look at each value of $n$ individually to get the eigenvectors and hence eigenvalues. We skip the identity, since it gives a trivial eigenvalue of $1$ with the entire space, except the $\vec{0}$ being eigenvectors.
+
+Then, suppose $n=1$, and we can find the eigenvalues by recognizing that $(D(\pi/2))^{4} = I$, and thus the eigenvalue for $(D(\pi/2))^{4}$ is just 1, and so the eigenvalues for $D(\pi/2)$ better be fourth roots of unity, $\{1, -1, i, -i\}$. This must be the same for $D(3\pi/2)$ since it is the inverse of $D(\pi/2)$, and hence it has the same eigenvalues.
+
+Finally, for $n=2$, we see that $(D(\pi))^{2} = I$, so we can conclude that we need the second roots of unity for eigenvalues eigenvalues, which will be $\{1,-1\}$. 
+
+\textbf{(f)} It suffices to show that the rotation and reflection operator do not commute in a particular case to conclude they do not commute in general. Consider $D_{z}(\pi/2)$, then
+\[ D_{z}(\pi/2)M_{x}\ket{x,y} = D_{z}(\pi/2)\ket{-x,y} = \ket{-y,-x} \quad \& \quad M_{x}D_{z}(\pi/2)\ket{x,y} = M_{x}\ket{-y,x} = \ket{y,x}\]
+\[ \implies D_{z}(\pi/2)M_{x} \neq M_{x}D_{z}(\pi/2) \implies D_{z}(n\pi/2)M_{x} \neq M_{x}D_{z}(n\pi/2)\, .\]
+
+\textbf{(g)} Recall that commuting observables share eigenspaces, so they are simultaneously diagonalizable. Then, we note that since we don't have to show that $H$ commutes with either $D_{z}(\pi)$ or $M_{x}$, we can assume that they indeed do commute. Then, all that is left to show is that $D_{z}(\pi)$ and $M_{x}$ commute. Consider the ket $\ket{x,y}$, then
+\begin{equation*}
+  \begin{split}
+    [D_{z}(\pi), M_{x}]\ket{x,y} & = D_{z}(\pi)M_{x}\ket{x,y} - M_{x}D_{z}(\pi)\ket{x,y}\\
+    & = D_{z}(\pi)\ket{-x,y} - M_{x}\ket{-x,-y}\\
+    & = \ket{x,-y} - \ket{x,-y}\\
+    & = 0\\
+  \end{split}
+\end{equation*}
+as required. 
+
+\textbf{(h)} First we note that $D_{z}(\pi)$ is the parity operator in this hilbert space, or atleast equivalent to it. Then, since $[H,D_{z}(\pi)] = 0$ from \textbf{(g)}, we know parity is conserved. Then, we know that $X$ and $Y$ are parity odd since
+\[ \{X,D_{z}(\pi)\}\ket{x,y} = -x\ket{-x,-y} + x\ket{-x,-y} = 0 \quad \& \quad \{Y,D_{z}(\pi)\}\ket{x,y} = -y\ket{-x,-y} + y\ket{-x,-y} = 0\, .\]
+Thus, we can conclude that $[XY,D_{z}(\pi)] = 0$, so $[V,D_{z}(\pi)] = 0$ is parity even. On the other hand, for our reflection operator, we see that
+\[ \{XY,M_{x}\}\ket{x,y} = -xy\ket{-x,y} + xy\ket{-x,y} =  0 \]
+and so $XY$ is reflection odd. We use both of these in our selection rules, that is notice if $d_{2} \neq d_{2}'$, we get $D\ket{\varepsilon,d_{2},\sigma_{x}} = - D\ket{\varepsilon',d_{2}',\sigma_{x}'}$, so
+\begin{equation*}
+  \begin{split}
+    \bra{\varepsilon,d_{2},\sigma_{x}}aXY\ket{\varepsilon',d_{2}',\sigma_{x}'} & = -a\bra{\varepsilon,d_{2},\sigma_{x}}DXYD\ket{\varepsilon',d_{2}',\sigma_{x}'} \\
+    & = -a\bra{\varepsilon,d_{2},\sigma_{x}}DDXY\ket{\varepsilon',d_{2}',\sigma_{x}'} \\
+    & = -\bra{\varepsilon,d_{2},\sigma_{x}}aXY\ket{\varepsilon',d_{2}',\sigma_{x}'} \\
+  \end{split}
+\end{equation*}
+\[ \implies \bra{\varepsilon,d_{2},\sigma_{x}}aXY\ket{\varepsilon',d_{2}',\sigma_{x}'} = -\bra{\varepsilon,d_{2},\sigma_{x}}aXY\ket{\varepsilon',d_{2}',\sigma_{x}'}\]
+\[ \implies \bra{\varepsilon,d_{2},\sigma_{x}}aXY{\varepsilon',d_{2}',\sigma_{x}'} = 0\, .\]
+We can play a similar game with $M_{x}$ but since $V$ anti-commutes with $M_{x}$ we will only get that negative if $\sigma' = \sigma$, so
+\[ \bra{\varepsilon,d_{2},\sigma_{x}}aXY\ket{\varepsilon',d_{2}',\sigma_{x}} = 0 \, .\]
+Thus, we have the selection rules for this computation where the elements vanish if either $d_{2} \neq d_{2}'$ or $\sigma_{x} = \sigma_{x}'$.
+
+\textbf{Question 4}
+
+\textbf{(a)} We recall that $\vec{J} = \vec{L} + \vec{S}$. Since $\vec{J}$ is conserved under this disintigration, and that (A) only has spin (since we are in the rest frame of (A)) we can conclude the quantum number for the final state must be $j = \frac{3}{2}$. We recognize the spin of the final state must be $s = m_{1} + m_{2} = \frac{1}{2} + 0 = \frac{1}{2}$. Then, we know that spin and total angular momentum quantum numbers are related by $|\ell - s| \leq j \leq |\ell + s|$. Since our spins are simple, we can find $\ell$ directly, $\ell = j \pm s = \frac{3}{2} \pm \frac{1}{2}$. So, $\ell\in \{1, 2\}$.
+
+\textbf{(b)} We use our Clebsch-Gordan table to couple $s$ and $l$ to $j$ since those are the values we know for this system. So, if we fix $\ell$, since we already know $s=\frac{1}{2}$, we can look up $J = \frac{1}{2}$ and $M = \frac{1}{2}$ and the corresponding coeffecients will be for our sum. Using the notation of the question, $\ket{\ell,m_{\ell};s,m_{s}}$, for $\ell=1$, we get
+\[ \ket{J,M} = \ket{3/2,3/2} = \ket{1,1;1/2,1/2} \]
+\[ \ket{J,M} = \ket{3/2,1/2} = \frac{1}{\sqrt{3}}\ket{1,1;1/2,-1/2} + \sqrt{\frac{2}{3}}\ket{1,0;1/2,1/2} \]
+and for $\ell=1$ we get
+\[ \ket{J,M} = \ket{3/2,3/2} = \frac{2}{\sqrt{5}}\ket{2,2;1/2,-1/2} - \frac{1}{\sqrt{5}}\ket{2,1;1/2,1/2} \]
+\[ \ket{J,M} = \ket{3/2,1/2} = \sqrt{\frac{3}{5}}\ket{2,1; 1/2,-1/2} - \sqrt{\frac{2}{5}}\ket{2,0;1/2,1/2} \]
+as required. 
+
+\textbf{(c)} Since we know how parity is related to the orbital momentum state, if we know the parity we can find the value for the magniture of the relative orbital momentum. In particular, notice that if our parity is odd, so we have a $-1$ scale, then the value of $\ell$ was odd, and in our case we only have one odd term, $\ell = 1$. In the other case, if the parity is even, then $\ell$ is even, and $\ell = 2$. This way the value fo the relative orbital momentum is uniquely determined by the parity.
+
+\textbf{(d)} Looking at the Clebsch-Gordon Coeffeceints in \textbf{(b)} with $\ell = 1$, we see that probability of the particle $(B)$ being in the spin up state is $P = 2/3$.
+\end{document}
