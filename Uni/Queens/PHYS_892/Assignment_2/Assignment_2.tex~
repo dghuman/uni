@@ -1,0 +1,45 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,graphicx,array,bm,tensor,braket,tikz}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 892 $|$  Assignment 2}
+
+\rhead{Dilraj Ghuman $|$ 20191345}
+
+\begin{document}
+\textbf{Question 1}
+
+\textbf{(1.1)} We know that physics is the same at any point in space, so consider our potential at the current origin to be $U(\vec{r}_{1},\vec{r}_{2})$. Then, if we do a change of coordinate, we can take our origin to be at the position of the second particle, then we see
+\[ \vec{r}_{2} \mapsto \vec{0} \quad  \& \quad \vec{r}_{1} \mapsto \vec{r}_{1} -\vec{r}_{2} \]
+which is a translation, and physics is invariant under this transformation. Then, under this transformation, we see
+\[ U(\vec{r}_{1}, \vec{r}_{2}) \mapsto U(\vec{r}_{1} - \vec{r}_{2}, 0) = U(\vec{r}_{1}-\vec{r}_{2})\]
+as required.
+
+\textbf{(1.2)} We see that
+\[ \dot{\vec{p}}_{1} = -\partial_{\vec{r}_{1}}U(r_{1} - r_{2}) = -U^{\prime} \quad \& \quad \dot{\vec{p}}_{2} = -\partial_{\vec{r}_{2}}U(r_{1} - r_{2}) = U^{\prime} \]
+and so adding our equations
+\[ \dot{\vec{p}}_{1} + \dot{\vec{p}}_{2} = -U^{\prime} + U^{\prime} = 0 \implies \boxed{\frac{d}{dt}\left(\vec{p}_{1} + \vec{p}_{2}\right) = 0} \, .\]
+This tells us that the total momentum of our system is unchanged with time, and so momentum is conserved!
+
+\textbf{Question 2}
+
+To be latexed
+
+\textbf{Question 3}
+\end{document}

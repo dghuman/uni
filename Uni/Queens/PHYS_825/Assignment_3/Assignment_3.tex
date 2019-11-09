@@ -153,22 +153,18 @@ as required.
 \textbf{Question 3}
 
 From our definition of time reversal, we recall that $\braket{\alpha|\beta} = \braket{\tilde{\beta}|\tilde{\alpha}}$, and this is exactly what we shall use to prove this. First, notice
+\[ \ket{\tilde{x,t}} = \Theta\ket{x,t} = \ket{x,-t} \]
+from definition of time reversal. Then, applying this and the complex conjugate equivalent
 \begin{equation*}
   \begin{split}
     \braket{x,t|x_{0},t_{0}} & = \braket{\tilde{x_{0},t_{0}}|\tilde{x,t}} \\
-    & = \bra{\tilde{x_{0},t_{0}}}\Theta \ket{x,t} \\
-    & \bra{\tilde{x_{0},t_{0}}}\Theta e^{iH(t - t_{0})/\hbar}\ket{x,t_{0}} \\
+    & = \braket{x_{0},-t_{0}|x,-t} \\
+    & = \bra{x_{0},t}e^{-iH(-t-t_{0})/\hbar}\ket{x,-t} \\
+    & = \bra{x_{0},t}e^{iH(t+t_{0})/\hbar}\ket{x,-t} \\
+    & = \boxed{\braket{x_{0},t|x,t}} \\
   \end{split}
 \end{equation*}
-and similarly, we can get that
-\begin{equation*}
-  \begin{split}
-    \braket{x,t|x_{0},t_{0}}^{*} & = \braket{\tilde{x_{0},t_{0}}|\tilde{x,t}}^{*} \\
-    & = \braket{\tilde{x,t}|\tilde{x_{0},t_{0}}} \\
-    & = \bra{\tilde{x,t}}\Theta \ket{x_{0},t_{0}} \\
-    & \bra{\tilde{x,t}}\Theta e^{iH(t - t_{0})/\hbar}\ket{x_{0},t} \\
-  \end{split}
-\end{equation*}
+as required. We worked in the Hiesenberg picture, but neglected to write the $H$ for simplicity. 
 
 \textbf{Question 4}
 
@@ -177,7 +173,7 @@ and similarly, we can get that
 Periodicity tells us that for $n \in \Z$, $s(\vec{X}) = 2n\pi R/\hbar$ better give us the identity, that is
 \[ U = e^{ -i s(\vec{X}) P_{5}/\hbar} = e^{ -i 2n\pi RP_{5}/\hbar} = \cos\left(2n\pi RP_{5}/\hbar\right) - i\sin\left(2n\pi RP_{5}/\hbar\right) = \mathbbm{1} \]
 \[ \implies 2n\pi RP_{5}/\hbar = 2m\pi \quad m \in \Z\, .\]
-So, we see that $P_{5} = \hbar\frac{m}{n}\frac{1}{R}$, or if $q\in \Q$, then $P_{5} = \frac{\hbar q}{R}$.
+So, we see that $P_{5} = \hbar\frac{m}{n}\frac{1}{R}$, or if $q\in \Q$, then $\boxed{P_{5} = \frac{\hbar q}{R}}$.
 
 \textbf{(b)} We recall the following useful identities,
 \[ [A,BC] = [A,B]C + B[A,C] \quad \& \quad [f(A), B] = \frac{\partial f(A)}{\partial A}[A,B]\]
@@ -222,10 +218,51 @@ Similar to how we showed this in class, we start by finding the arbitrary elemen
   \begin{split}
     \langle O \rangle & \propto \bra{n_{k_{1}} = 1, n_{k_{2}} = 1}a_{k_{\alpha}}^{\dagger}a_{k_{\beta}}^{\dagger}a_{k'_{\alpha}}a_{k'_{\beta}}\ket{n_{k_{1}} = 1, n_{k_{2}} = 1} \\
     & = \bra{0}\ak{1}\ak{2}\ak{\alpha}^{\dagger}\ak{\beta}^{\dagger}\akp{\alpha}\akp{\beta}\akp{1}^{\dagger}\akp{2}^{\dagger}\ket{0} \\
-    & = \bra{0}\ak{1}(\delta_{k_{2}k_{\alpha}} + \ak{\alpha}^{\dagger}\ak{2})\ak{\beta}^{\dagger}\akp{\alpha}(\delta_{k_{\beta}k'_{1}} + \akp{1}^{\dagger}\ak{\beta})\akp{2}^{\dagger}\ket{0} \\
-    & = \bra{0}(\underbrace{\ak{1}\delta_{k_{2}k_{\alpha}}\ak{\beta}^{\dagger}\akp{\alpha}\delta_{k_{\beta}k'_{1}}\akp{2}^{\dagger}}_{A} + \underbrace{\ak{1}\delta_{k_{2}k_{\alpha}}\ak{\beta}^{\dagger}\akp{\alpha}\akp{1}^{\dagger}\ak{\beta}\akp{2}^{\dagger}}_{B} \\
-    & + \underbrace{\ak{1}\ak{\alpha}^{\dagger}\ak{2}\ak{\beta}^{\dagger}\akp{\alpha}\delta_{k_{\beta}k'_{1}}\ak{2}^{\dagger}}_{C} + \underbrace{\ak{1}\ak{\alpha}^{\dagger}\ak{2}\ak{\beta}^{\dagger}\akp{\alpha}\akp{1}^{\dagger}\ak{\beta}\akp{2}^{\dagger}}_{D})\ket{0} \\
+    & = \bra{0}\ak{1}(\delta_{k_{2}k_{\alpha}} + \ak{\alpha}^{\dagger}\ak{2})\ak{\beta}^{\dagger}\akp{\alpha}(\delta_{k_{\beta}'k'_{1}} + \akp{1}^{\dagger}\akp{\beta})\akp{2}^{\dagger}\ket{0} \\
+    & = \bra{0}(\underbrace{\ak{1}\delta_{k_{2}k_{\alpha}}\ak{\beta}^{\dagger}\akp{\alpha}\delta_{k_{\beta}'k'_{1}}\akp{2}^{\dagger}}_{A} + \underbrace{\ak{1}\delta_{k_{2}k_{\alpha}}\ak{\beta}^{\dagger}\akp{\alpha}\akp{1}^{\dagger}\akp{\beta}\akp{2}^{\dagger}}_{B} \\
+    & + \underbrace{\ak{1}\ak{\alpha}^{\dagger}\ak{2}\ak{\beta}^{\dagger}\akp{\alpha}\delta_{k_{\beta}'k'_{1}}\akp{2}^{\dagger}}_{C} + \underbrace{\ak{1}\ak{\alpha}^{\dagger}\ak{2}\ak{\beta}^{\dagger}\akp{\alpha}\akp{1}^{\dagger}\akp{\beta}\akp{2}^{\dagger}}_{D})\ket{0} \\
   \end{split}
 \end{equation*}
-To make it less messy, we compute each labeled component individually.
+To make it less messy, we compute each labeled component individually. First for $A$, we see
+\begin{equation*}
+  \begin{split}
+    A & = \bra{0}(\delta_{k_{1}k_{\beta}} + \ak{\beta}^{\dagger}\ak{1})\delta_{k_{2}k_{\alpha}}\delta_{k_{\beta}'k'_{1}}(\delta_{k'_{\alpha}k'_{2}} + \akp{2}^{\dagger}\akp{\alpha})\ket{0} \\
+    & = \delta_{k_{1}k_{\beta}}\delta_{k_{2}k_{\alpha}}\delta_{k_{\beta}'k_{1}'}\delta_{k_{\alpha}'k_{2}'} \\
+  \end{split}
+\end{equation*}
+next for $B$ we have
+\begin{equation*}
+  \begin{split}
+    B & = \bra{0}(\delta_{k_{1}k_{\beta}} + \ak{\beta}^{\dagger}\ak{1})\delta_{k_{2}k_{\alpha}}(\delta_{k'_{\alpha}k'_{1}} + \akp{1}^{\dagger}\akp{\alpha})(\delta_{k_{\beta}'k_{2}'} + \akp{2}^{\dagger}\akp{\beta})\ket{0} \\
+    & = \delta_{k_{1}k_{\beta}}\delta_{k_{2}k_{\alpha}}\delta_{k_{\beta}'k'_{2}}\delta_{k'_{\alpha}k'_{1}} \\
+  \end{split}
+\end{equation*}
+and for $C$,
+\begin{equation*}
+  \begin{split}
+    C & = \bra{0}(\delta_{k_{1}k_{\alpha}} + \ak{\alpha}^{\dagger}\ak{1})(\delta_{k_{2}k_{\beta}} + \ak{\beta}^{\dagger}\ak{2})\delta_{k_{\beta}'k'_{1}}(\delta_{k_{2}'k_{\alpha}'} + \akp{2}^{\dagger}\akp{\alpha})\ket{0} \\
+    & = \delta_{k_{1}k_{\alpha}}\delta_{k_{2}k_{\beta}}\delta_{k_{\beta}'k'_{1}}\delta_{k_{2}'k_{\alpha}'} \\
+  \end{split}
+\end{equation*}
+and finally for $D$ we get
+\begin{equation*}
+  \begin{split}
+    D & = \bra{0}(\delta_{k_{1}k_{\alpha}} + \ak{\alpha}^{\dagger}\ak{1})(\delta_{k_{2}k_{\beta}} + \ak{\beta}^{\dagger}\ak{2})(\delta_{k'_{\alpha}k'_{1}} + \akp{1}^{\dagger}\akp{\alpha})(\delta_{k_{\beta}'k'_{2}} + \akp{2}^{\dagger}\akp{\beta})\ket{0} \\
+    & = \delta_{k_{1}k_{\alpha}}\delta_{k_{2}k_{\beta}}\delta_{k'_{\alpha}k'_{1}}\delta_{k_{\beta}'k'_{2}} \, .\\
+  \end{split}
+\end{equation*}
+Now, we combine our results to get
+\[ \langle O\rangle \propto  A + B + C + D = \delta_{k_{1}k_{\beta}}\delta_{k_{2}k_{\alpha}}\delta_{k_{\beta}'k_{1}'}\delta_{k_{\alpha}'k_{2}'} + \delta_{k_{1}k_{\beta}}\delta_{k_{2}k_{\alpha}}\delta_{k_{\beta}'k'_{2}}\delta_{k'_{\alpha}k'_{1}} + \delta_{k_{1}k_{\alpha}}\delta_{k_{2}k_{\beta}}\delta_{k_{\beta}'k'_{1}}\delta_{k_{2}'k_{\alpha}'} + \delta_{k_{1}k_{\alpha}}\delta_{k_{2}k_{\beta}}\delta_{k'_{\alpha}k'_{1}}\delta_{k_{\beta}'k'_{2}} \, .\]
+Now, summing over the appropriate terms we get
+\[ \langle O \rangle \propto \bra{k_{2},k_{1}}O\ket{k_{2}',k_{1}'} + \bra{k_{2},k_{1}}O\ket{k_{1}',k_{2}'} + \bra{k_{1},k_{2}}O\ket{k_{2}',k_{1}'} + \bra{k_{1},k_{2}}O\ket{k_{1}',k_{2}'} \, .\]
+To see that this is the same as the first quantization, we recognize that the missing factor is $\frac{1}{2}$ and some scaling to renormalize. Then, looking at the first quantization (we drop the commas and know it is tensored)
+\[ {}^{S}\bra{k_{1}k_{2}}O^{2}_{(2)}\ket{k_{1}'k_{2}'}^{S} = \frac{1}{2}\left(\bra{k_{1}k_{2}} + \bra{k_{2}k_{1}}\right)\left(\frac{1}{2}O(R_{1},P_{1},S_{1};R_{2},P_{2},S_{2}) + \frac{1}{2}O(R_{2},P_{2},S_{2};R_{1},P_{1},S_{1})\right)\left(\ket{k_{1}'k_{2}'} + \ket{k_{2}'k_{1}'}\right) \]
+but we recognize that the only difference between $O(R_{1},P_{1},S_{1};R_{2},P_{2},S_{2})$ and $O(R_{2},P_{2},S_{2};R_{1},P_{1},S_{1})$ is that they act on opposing entries of the tensored states, so we can swap the tensored kets and bras and get back the same $O$. Moreover, since every combination of the kets and bras occurs, we end up just double counting, so
+\begin{equation*}
+  \begin{split}
+    {}^{S}\bra{k_{1}k_{2}}O^{2}_{(2)}\ket{k_{1}'k_{2}'}^{S} & = \frac{1}{2}\left(\bra{k_{1}k_{2}} + \bra{k_{2}k_{1}}\right)\left(O\right)\left(\ket{k_{1}'k_{2}'} + \ket{k_{2}'k_{1}'}\right) \\
+    & = \frac{1}{2}\left(\bra{k_{2},k_{1}}O\ket{k_{2}',k_{1}'} + \bra{k_{2},k_{1}}O\ket{k_{1}',k_{2}'} + \bra{k_{1},k_{2}}O\ket{k_{2}',k_{1}'} + \bra{k_{1},k_{2}}O\ket{k_{1}',k_{2}'}\right) \\
+  \end{split}
+\end{equation*}
+which is exactly the same as the second quantized form result. 
 \end{document}

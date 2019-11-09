@@ -1,0 +1,192 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,graphicx,array,bm,tensor,braket,tikz,mathtools}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\di}[2][]{\frac{\partial #1}{\partial #2}}
+\newcommand{\del}[2][]{\frac{d #1}{d #2}}
+
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{PHYS 892 $|$  Assignment 2}
+
+\rhead{Dilraj Ghuman $|$ 20191345}
+
+\begin{document}
+\textbf{Question 1}
+
+\textbf{(1.1)} We know that physics is the same at any point in space, so consider our potential at the current origin to be $U(\vec{r}_{1},\vec{r}_{2})$. Then, if we do a change of coordinate, we can take our origin to be at the position of the second particle, then we see
+\[ \vec{r}_{2} \mapsto \vec{0} \quad  \& \quad \vec{r}_{1} \mapsto \vec{r}_{1} -\vec{r}_{2} \]
+which is a translation, and physics is invariant under this transformation. Then, under this transformation, we see
+\[ U(\vec{r}_{1}, \vec{r}_{2}) \mapsto U(\vec{r}_{1} - \vec{r}_{2}, 0) =\boxed{U(\vec{r}_{1}-\vec{r}_{2})}\]
+as required.
+
+\textbf{(1.2)} We see that
+\[ \dot{\vec{p}}_{1} = -\partial_{\vec{r}_{1}}U(r_{1} - r_{2}) = -U^{\prime} \quad \& \quad \dot{\vec{p}}_{2} = -\partial_{\vec{r}_{2}}U(r_{1} - r_{2}) = U^{\prime} \]
+and so adding our equations
+\[ \dot{\vec{p}}_{1} + \dot{\vec{p}}_{2} = -U^{\prime} + U^{\prime} = 0 \implies \boxed{\frac{d}{dt}\left(\vec{p}_{1} + \vec{p}_{2}\right) = 0} \, .\]
+This tells us that the total momentum of our system is unchanged with time, and so momentum is conserved!
+
+\textbf{Question 2}
+
+To be latexed
+
+\textbf{Question 3}
+
+%% Feynman diagrams here
+
+Looking at our diagrams, we first compute our matrix element for the two lowest order diagrams.
+\begin{equation*}
+  \begin{split}
+    -i\mathcal{M}_{1} & = (-ig)^{2}\int \frac{d^{4}q}{(2\pi)^{4}} \frac{i}{q^{2} - m^{2}}(2\pi)^{4}\delta^{4}(P_{1} + P_{2} - q)(2\pi)^{4}\delta^{4}(q - P_{3} - P_{4}) \\
+    & = -g^{2}\frac{i}{(P_{1} + P_{2})^{2} - m^{2}} \\
+  \end{split}
+\end{equation*}
+\[ \implies \boxed{\mathcal{M}_{1} = \frac{g^{2}}{(P_{1} + P_{2})^{2} - m^{2}}} \, .\]
+Similarly for the second diagram, we see
+\begin{equation*}
+  \begin{split}
+    -i\mathcal{M}_{2} & = (-ig)^{2}\int \frac{d^{4}q}{(2\pi)^{4}} \frac{i}{q^{2} - m^{2}}(2\pi)^{4}\delta^{4}(P_{1} - P_{4} - q)(2\pi)^{4}\delta^{4}(q - P_{3} + P_{2}) \\
+    & = -g^{2}\frac{i}{(P_{3} - P_{2})^{2} - m^{2}} \\
+  \end{split}
+\end{equation*}
+\[ \implies \boxed{\mathcal{M}_{2} = \frac{g^{2}}{(P_{3} - P_{2})^{2} - m^{2}}}\, . \]
+So, adding these together we get
+\[ \mathcal{M} = \mathcal{M}_{1} + \mathcal{M}_{2} = \frac{g^{2}}{(P_{1} + P_{2})^{2} - m^{2}} + \frac{g^{2}}{(P_{3} - P_{2})^{2} - m^{2}} \]
+\[ \boxed{\mathcal{M} = g^{2}\left(\frac{1}{(P_{1} + P_{2})^{2} - m^{2}} + \frac{1}{(P_{3} - P_{2})^{2} - m^{2}}\right)} \, .\]
+Now, if we assume that initially $A$ is at rest in the lab frame, we know $\vec{p}_{2} = \vec{0}$, so $E_{2} = m$. Keeping this in mind, we compute our denominators,
+\begin{equation*}
+  \begin{split}
+    (P_{1} + P_{2})^{2} - m^{2} &  = (E_{1} + E_{2})^{2} - (\vec{p}_{1} - \underbrace{\vec{p}_{2}}_{0})^{2} - m^{2} \\
+    & = \underbrace{E_{1}^{2} - p_{1}^{2}}_{0} + 2E_{1}E_{2} + \underbrace{E_{2}^{2} - m^{2}}_{0} \\
+    & = 2E_{1}m \\
+  \end{split}
+\end{equation*}
+where we from now on call $E_{1} = E$, since it is the incident energy. Next,
+\begin{equation*}
+  \begin{split}
+    (P_{3} - P_{2})^{2} - m^{2} & = (E_{3} - E_{2})^{2} - (\vec{p}_{3} - \vec{p}_{2})^{2} - m^{2} \\
+    & = \underbrace{E_{3}^{2} - p_{3}^{2}}_{0} - 2E_{3}E_{2} + \underbrace{E_{2}^{2} - m^{2}}_{0} \\
+    & = -2E_{3}m \, .\\
+  \end{split}
+\end{equation*}
+So, we have found our components, and hence
+\begin{equation*}
+  \begin{split}
+    \mathcal{M} & = g^{2}\left(\frac{1}{2E_{1}m} + \frac{1}{-2E_{3}m}\right) \\
+    \Aboxed{\mathcal{M} & = \frac{g^{2}}{2m}\left(\frac{1}{E_{1}} - \frac{1}{E_{3}}\right)} \\
+  \end{split}
+\end{equation*}
+Before we apply Fermi's Golden Rule, we need to get a little identity to get $E_{3}$ in terms of $E_{1}$ and $\theta$. Using conservation of four-momentum,
+\begin{equation*}
+  \begin{split}
+    P_{1} + P_{2} & = P_{3} + P_{4} \\
+    P_{4} & = P_{1} + P_{2} - P_{3} \\
+    P_{4}^{2} & = (P_{1} + P_{2} - P_{3})^{2} \\
+    m^{2} & = P_{1}^{2} + P_{2}^{2} + P_{3}^{2} + 2P_{1}P_{2} - 2P_{1}P_{3} - 2P_{2}P_{3} \\
+    m^{2} & = m^{2} + 2mE_{1} - 2E_{1}E_{3}(1 - \cos\theta) - 2mE_{3} \\
+    2E_{1}m & = 2mE_{3} + 2E_{1}E_{3}(1-\cos\theta) \\
+    \Aboxed{\frac{E_{1}m}{E_{3}} & = m + E_{1}(1-\cos\theta)} \, .\\
+  \end{split}
+\end{equation*}
+Then, plugging what we know into Fermi's Golden Rule for the cross-section, we get
+\begin{equation*}
+  \begin{split}
+    \left(\del[\sigma]{\Omega}\right)_{\text{Lab}} & = \left(\frac{1}{8\pi}\right)^{2}\frac{\mathcal{S}|\mathcal{M}|^{2}p_{3}^{2}}{mp_{1}(p_{3}(E_{1} + m) - p_{1}E_{3}\cos\theta)} \\
+    & = \left(\frac{g^{2}}{16m\pi}\right)^{2}\mathcal{S}\left(\frac{1}{E_{1}} - \frac{1}{E_{3}}\right)^{2}\frac{E_{3}^{2}}{mE_{1}}\frac{1}{E_{3}(E_{1} + m) - E_{1}E_{3}\cos\theta} \\
+    & = \left(\frac{g^{2}}{16m\pi}\right)^{2}\mathcal{S}\left(\frac{1}{E_{1}} - \frac{1}{E_{3}}\right)^{2}\frac{E_{3}}{mE_{1}}\frac{1}{m + E_{1}(1 - \cos\theta)} \\
+  \end{split}
+\end{equation*}
+and knowing that $\mathcal{S} = 1$ and using our identity for $\frac{mE_{1}}{E_{3}}$, we get
+\begin{equation*}
+  \begin{split}
+    \left(\del[\sigma]{\Omega}\right)_{\text{Lab}} & = \left(\frac{g^{2}}{16m\pi}\right)^{2}\left(\frac{1}{E_{1}} - \frac{m + E_{1}(1-\cos\theta)}{E_{1}m}\right)^{2}\left(\frac{1}{m + E_{1}(1-\cos\theta)}\right)\frac{1}{m + E_{1}(1 - \cos\theta)} \\
+    & = \left(\frac{g^{2}}{16m\pi}\right)^{2}\left(\frac{-E_{1}(1-\cos\theta)}{E_{1}m}\right)^{2}(m + E(1-\cos\theta))^{-2} \\
+   \Aboxed{\left(\del[\sigma]{\Omega}\right)_{\text{Lab}} & = \left(\frac{g^{2}}{16m\pi}\right)^{2}\left(\frac{1 - \cos\theta}{m(m + E(1-\cos\theta))}\right)^{2}} \\
+  \end{split}
+\end{equation*}
+as required.
+
+\textbf{Question 4}
+
+\textbf{Question 5}
+
+\textbf{(5.1)} We recall the Euler Lagrange Equation is
+\[ \partial_{\mu}\left(\frac{\partial \mathcal{L}}{\partial(\partial_{\mu}\psi)}\right) = \frac{\partial \mathcal{L}}{\partial \psi} \quad \& \quad \partial_{\mu}\left(\frac{\partial \mathcal{L}}{\partial(\partial_{\mu}\bar{\psi})}\right) = \frac{\partial \mathcal{L}}{\partial \bar{\psi}} \, .\]
+So, finding our pieces we see
+\begin{align*}
+  \di[\mathcal{L}]{(\partial_{\mu}\psi)} & = \bar{\psi}i \gamma^{\mu}    &   \di[\mathcal{L}]{\psi} & = -m\bar{\psi} \\
+  \di[\mathcal{L}]{(\partial_{\mu}\bar{\psi})} & = 0                     &   \di[\mathcal{L}]{\bar{\psi}} & = (i\gamma^{\mu}\partial_{\mu} - m)\psi \\
+  \end{align*}
+\[ \implies \boxed{i\partial_{\mu}\left(\bar{\psi}\gamma^{\mu}\right) = -m\bar{\psi}} \quad \& \quad \boxed{(i\gamma^{\mu}\partial_{\mu} - m)\psi = 0} \]
+
+\textbf{(5.2)} We see that we get
+\[ \gamma^{\nu}\partial_{\nu}(i\gamma^{\mu}\partial_{\mu} - m)\psi = 0 \]
+and so since the gamma matrices are constants, we can pull through and see
+\begin{equation*}
+  \begin{split}
+   0 & =\gamma^{\nu}\partial_{\nu}(i\gamma^{\mu}\partial_{\mu} - m)\psi \\
+   & = (i\gamma^{\nu}\partial_{\nu}\gamma^{\mu}\partial_{\mu} - m\gamma^{\nu}\partial_{\nu})\psi \\
+   & = (i\gamma^{\nu}\partial_{\nu}\gamma^{\mu}\partial_{\mu} - m\gamma^{\mu}\partial_{\mu})\psi \\
+   0 & = (i\gamma^{\nu}\partial_{\nu} - m)\gamma^{\mu}\partial_{\mu}\psi \\
+  \end{split}
+\end{equation*}
+What does this tell us about the components?
+
+\textbf{(5.3)} Using our previously found Equations of Motion, we see
+\begin{equation*}
+  \begin{split}
+    \partial_{\mu}J^{\mu}  & = \partial_{\mu}\left(-e\bar{\psi}\gamma^{\mu}\psi\right) \\
+    & = -e\left((\partial_{\mu}\bar{\psi}\gamma^{\mu})\psi + \bar{\psi}(\partial_{\mu}\gamma^{\mu}\psi)\right) \\
+    & = -e\left((im\bar{\psi})\psi + \bar{\psi}(-im\psi)\right) \\
+    & = -e\left(im\bar{\psi}\psi -im \bar{\psi}\psi\right) \\
+    & = \boxed{0}\\
+  \end{split}
+\end{equation*}
+as required.
+
+\textbf{(5.4)} First we sho how the ajoint transforms. Notice that $\bar{\psi}\psi$ is a scalar, so it must transform like a scalar, that is $\left(\bar{\psi}\psi\right)' = \bar{\psi}\psi$, so
+\begin{equation*}
+  \begin{split}
+    \bar{\psi}\psi & = \left(\bar{\psi}\psi\right)'\\
+    & = \bar{\psi}'\psi' \\
+    & = \bar{\psi}'\left(S \psi\right) \\
+    \bar{\psi} & = \bar{\psi}'S \\
+    \Aboxed{\bar{\psi}' & = \bar{\psi}S^{-1}} \, .\\
+  \end{split}
+\end{equation*}
+Now that we know how $\bar{\psi}$ transforms, we can see how these other quantities transform. As before, we recall that $\bar{\psi}\psi$ is a scalar, so it is fixed under a Lorentz Transform. Next, we see
+\begin{equation*}
+  \begin{split}
+    \left(\bar{\psi}\gamma^{\mu}\psi\right)' & = \bar{\psi}'\gamma^{\mu}\psi' \\
+    & = \left(\bar{\psi}S^{-1}\right)\gamma^{\mu}\left(S\psi\right) \\
+    & = \bar{\psi}S^{-1}\gamma^{\mu}S\psi \\
+    & = \bar{\psi}\tensor{\Lambda}{^{\mu}_{\nu}}\gamma^{\nu}\psi \\
+    & = \boxed{\tensor{\Lambda}{^{\mu}_{\nu}}\bar{\psi}\gamma^{\nu}\psi}\\
+  \end{split}
+\end{equation*}
+so it transforms like a vector. Finally, for the four-current we see
+\begin{equation*}
+  \begin{split}
+    \left(J^{\mu}\right)' & = \left(-e\bar{\psi}\gamma^{\mu}\psi\right)' \\
+    & = -e\left(\bar{\psi}\gamma^{\mu}\psi\right)' \\
+    & = -e\bar{\psi}S^{-1}\gamma^{\mu}S\psi \\
+    & = -e\bar{\psi}\tensor{\Lambda}{^{\mu}_{\nu}}\gamma^{\nu}\psi \\
+    & = \boxed{\tensor{\Lambda}{^{\mu}_{\nu}}J^{\nu}} \\
+  \end{split}
+\end{equation*}
+which also transforms like a vector. 
+\end{document}
