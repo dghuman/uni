@@ -1,0 +1,69 @@
+\documentclass[10pt]{article}
+\usepackage[]{ragged2e}
+\usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,graphicx,array,bm,tensor,braket,mathtools,tensor}
+\usepackage{mathtools,tkz-euclide}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper,left=25mm,right=25mm,top=15mm]{geometry}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+
+\DeclareMathOperator{\Ima}{Im}
+
+\linespread{1.25}
+%\pagestyle{fancy}
+%\fancyhf{}
+%\lhead{PHYS 921 $|$  Assignment 1}
+
+%\rhead{Dilraj Ghuman $|$ 20191345}
+
+\begin{document}
+\begin{center}
+  {\Large \bf M\"{o}ssbauer Neutrino Oscillations}\\
+  {\small \bf Dilraj Ghuman}
+\end{center}
+\vspace{2em}
+
+\section{Introduction}
+
+In 1958, M\"{o}ssbauer discovered the recoil-less emmission gammas in crystal structures. This behaviour allowed for certain resonance energies to be carried by the photons that would otherwise not be observed in the standard emmission process. A natural progression would thus be to question whether this recoil-less process can be observed with other emission products such neutrinos, in crystal structures. A potential process that could induce such an interaction would be the decay :
+\[^{3} \textnormal{H} \to\,  ^{3}\textnormal{He} + e^{-} + \bar{\nu}_{e}\]
+and the detection using the inverse process,
+\[^{3}\textnormal{He} + e^{-} + \bar{\nu}_{e} \to\, ^{3} \textnormal{H}\, .\]
+
+\section{External Wave-Packet Formalism}
+
+\subsection{The Formalism}
+We have to first go through a simple formalism where we use quantum mechanics to get an estimate on the production rate of neutrinos without accounting for oscillations. We see in the paper that they reference the following hamiltonian for the tritium source decay
+\begin{equation}
+  H_{S}^{+} = \int d^{3}x\frac{1}{\sqrt{2}}G_{F}\cos\theta_{c}\bra{^{3}\textnormal{He}}J^{\mu}\ket{^{3}\textnormal{H}}\bar{\psi}_{e,S}\gamma_{\mu}(1-\gamma^{5})\psi_{\nu},
+\end{equation}
+and the helium detection process,
+\begin{equation}
+  H_{D}^{-} = \int d^{3}x\frac{1}{\sqrt{2}}G_{F}\cos\theta_{c}\bra{^{3}\textnormal{H}}J^{\mu}\ket{^{3}\textnormal{He}}\bar{\psi}_{\nu}\gamma_{\mu}(1-\gamma^{5})\psi_{e,D}\, .
+\end{equation}
+To calculate the rate of neutrino production, we need to use these hamiltonians in combination with the ground state function(s):
+\begin{equation}\label{ground_state}
+  \psi_{A,B,0}(\bm{x}, t) = \left[\frac{m_{A},\omega_{A,B}}{\pi}\right]^{\frac{3}{4}}\exp\left[-\frac{1}{2}m_{A}\omega_{A,B}|\bm{x} - \bm{x}_{B}|^{2}\right]e^{-iE_{A,B}t}\, ,
+\end{equation}
+for $A \in \{\text{H}, \text{He}\}$ and $B\in \{S, D\}$ for the atom type and location respectively. Applying Fermi's golden rule,
+\begin{align*}
+  \Gamma_{i \to f} & = 2\pi|\bra{f}H_{I}\ket{i}|^{2}\rho(E_{f}) \\
+  & = 2\pi|\bra{^{3}\text{He}_{S},\, ^{3}\text{H}_{D}}H_{I}\ket{^{3}\text{H}_{S},\, ^{3}\text{He}_{D}}|^{2}\rho(E_{f})
+\end{align*}
+where $H_{I} = H^{+}_{S} + H^{-}_{D}$ and we need to replace the nuclear states with their corresponding ground state functions described in equation \ref{ground_state}. This is going to get ugly fast as everything is expanded, and this is before we evaluate the $\beta^{-}$ decay processes. In order to avoid becoming over encumbered in this first section (especially since it is before the QFT approach), we note that the leading coeffecients to the $\Gamma_{0}$ term begin to appear as we factor out the $G_{F}$ and $\cos\theta_{c}$ terms. That being said, the final result takes the form
+\begin{equation}
+  \Gamma_{p} = \Gamma_{0}X_{S}\, ,
+\end{equation}
+where
+\begin{equation}
+  \Gamma_{0} = \frac{G^{2}_{F}\cos^{2}\theta_{c}}{\pi}|\psi(R)|^{2}m_{e}^{2}(|M_{V}|^{2}+g^{2}_{A}|M_{A}|^{2})\left(\frac{E_{S,0}}{m_{e}}\right)^{2}\kappa_{S}\, .
+\end{equation}
+To avoid repeating the paper reviewed, I won't explain the meaning of each term here other than the ones of interest to the derivation. The nuclear matrix elements $M_{V}$ and $M_{A}$ arise from the two different $\beta^{-}$ decay processes, Fermi and Gamow-Teller. The $X_{S}$ term carries the energy and mass terms (and hence the momentum) from the introduced groundstate wavefunctions. 
+\end{document}
