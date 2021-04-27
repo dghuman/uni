@@ -1,7 +1,7 @@
 \documentclass[10pt]{article}
 \usepackage[]{ragged2e}
 \usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,graphicx,array,bm,tensor,braket,mathtools,tensor}
-\usepackage{mathtools,tkz-euclide}
+\usepackage{mathtools,tkz-euclide,slashed,url,hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[letterpaper,left=25mm,right=25mm,top=15mm]{geometry}
 
@@ -32,7 +32,7 @@
 
 \section{Introduction}
 
-In 1958, M\"{o}ssbauer discovered the recoil-less emmission gammas in crystal structures. This behaviour allowed for certain resonance energies to be carried by the photons that would otherwise not be observed in the standard emmission process. A natural progression would thus be to question whether this recoil-less process can be observed with other emission products such neutrinos, in crystal structures. A potential process that could induce such an interaction would be the decay :
+In 1958, M\"{o}ssbauer discovered the recoil-less emmission gammas in crystal structures. This behaviour allowed for certain resonance energies to be carried by the photons that would otherwise not be observed in the standard emmission process. A natural progression would thus be to question whether this recoil-less process can be observed with other emission products such as neutrinos, in crystal structures. A potential process that could induce such an interaction would be the decay :
 \[^{3} \textnormal{H} \to\,  ^{3}\textnormal{He} + e^{-} + \bar{\nu}_{e}\]
 and the detection using the inverse process,
 \[^{3}\textnormal{He} + e^{-} + \bar{\nu}_{e} \to\, ^{3} \textnormal{H}\, .\]
@@ -40,12 +40,14 @@ and the detection using the inverse process,
 \section{External Wave-Packet Formalism}
 In essence, the benefit of the \textit{external wave-packet formalism} is to treat the larger nuclei as external to the key internal interactions, like the anti-neutrino and electron in our case. For this reason, we can imagine a Feynman diagram that looks like figure \ref{fig:feyn}.
 
-\tikzset{middlearrow/.style={
-        decoration={markings,
-            mark= at position 0.5 with {\arrow{#1}} ,
-        },
-        postaction={decorate}
-    }
+\tikzset{
+  boson/.style={decorate, decoration={snake}},
+  middlearrow/.style={
+    decoration={markings,
+      mark= at position 0.5 with {\arrow{#1}} ,
+    },
+    postaction={decorate}
+  }
 }
 
 \begin{figure}[h]
@@ -109,7 +111,7 @@ For the cross section, we consider the detection process and recall that the sim
 \begin{equation}
   \frac{d\sigma}{d\Omega}(\theta, \phi) = |f(\theta,\phi)|^{2}\, .
 \end{equation}
-We can follow along in \cite{bahcall, mik} to get the final result as
+We can follow along in \cite{bahcall, Akhmedov_2008} to get the final result as
 \begin{equation}
   \sigma(E) = B_{0}X_{D}\delta(E - E_{D,0})\, ,
 \end{equation}
@@ -124,7 +126,73 @@ Here $X_{D}$ is the detection analogue of the source $X_{S}$. The text continues
 where $\gamma_{S}$ and $\gamma_{D}$ are the energy widths assoiciated with production and detection. This result is used primarily as a comparison with the QFT treatment that is following.
 
 \subsection{QFT Approach}
-We want to use our standard Feynman rules for a weak interaction (which is what produces our neutrino) using Figure \ref{fig:feyn}. 
+We want to use our standard Feynman rules for a weak interaction for the neutrino propogation using Figure \ref{fig:feyn}. We can start with the general form the amplitude (\cite{Beuthe_2003}) will take as being
+\begin{align}
+  \mathcal{A} & = \bra{f}\hat{T}\left(\exp\left(-i\int d^{4}x\mathcal{H}_{I}\right)\right) - \bm{1}\ket{i} \\
+  & = \bra{^{3}\text{He}_{S},\, ^{3}\text{H}_{D}}\hat{T}\left(\exp\left(-i\int d^{4}x\mathcal{H}_{I}\right)\right) - \bm{1}\ket{^{3}\text{H}_{S},\, ^{3}\text{He}_{D}}\, ,
+\end{align}
+where $\mathcal{H}_{I}$ is the interaction lagrangian. Using equation \ref{ground_state} for the states in the bras and kets,
+\begin{equation*}
+  \mathcal{A} = \bra{^{3}\text{He}_{S},\, ^{3}\text{H}_{D}}\left(\int d^{3}x_{1}dt_{1}\ket{x_{1},t_{1}}\bra{x_{1},t_{1}}\right)\hat{T}\left(\exp\left(-i\int d^{4}x\mathcal{H}_{I}\right)\right)\left(\int d^{3}x_{2}dt_{2}\ket{x_{2},t_{2}}\bra{x_{2},t_{2}}\right)\ket{^{3}\text{H}_{S},\, ^{3}\text{He}_{D}}\, ,
+\end{equation*}
+but we associate $(x_{1},t_{1})$ with the source and $(x_{2},t_2)$ with the detector. It is also clear enough to see we can introduce another set of $(x_{1}',t_{1}')$ and $(x_{2}', t_{2}')$ to be completely rigorous in how our kets and bras pass by the propogator, but eventually have them removed using the inevitable $\delta$ functions that show up. As such, we get
+\begin{align*}
+  \mathcal{A} = \int & d^{3}x_{1}dt_{1}\int d^{3}x_{2}dt_{2}\braket{^{3}\text{He}_{S}|x_{1},t_{1}}\braket{x_{1},t_{1}|\,^{3}\text{H}_{S}}\braket{^{3}\text{H}_{D}|x_{2},t_{2}}\braket{x_{2},t_{2}|\,^{3}\text{He}_{D}} \\
+  & \cdot \bra{x_{1}, t_{1}}\hat{T}\left(\exp\left(-i\int d^{4}x\mathcal{H}_{I}\right)\right)\ket{x_{2},t_{2}} \, ,
+\end{align*}
+and subbing in the states,
+\begin{align*}
+  \mathcal{A} = \int & d^{3}x_{1}dt_{1}\int d^{3}x_{2}dt_{2} \left(\frac{m_{\text{He}},\omega_{\text{He},S}}{\pi}\right)^{\frac{3}{4}}\exp\left[-\frac{1}{2}m_{\text{He}}\omega_{\text{He},S}|\bm{x}_{1} - \bm{x}_{S}|^{2}\right]e^{iE_{\text{He},S}t_{1}}\\
+  & \cdot \left(\frac{m_{\text{H}},\omega_{\text{H},S}}{\pi}\right)^{\frac{3}{4}}\exp\left[-\frac{1}{2}m_{\text{H}}\omega_{\text{H},S}|\bm{x}_{1} - \bm{x}_{S}|^{2}\right]e^{-iE_{\text{H},S}t_{1}} \\
+  & \cdot \left(\frac{m_{\text{H}},\omega_{\text{H},D}}{\pi}\right)^{\frac{3}{4}}\exp\left[-\frac{1}{2}m_{\text{H}}\omega_{\text{H},D}|\bm{x}_{2} - \bm{x}_{D}|^{2}\right]e^{iE_{\text{H},D}t_{2}}\\
+  & \cdot \left(\frac{m_{\text{He}},\omega_{\text{He},D}}{\pi}\right)^{\frac{3}{4}}\exp\left[-\frac{1}{2}m_{\text{He}}\omega_{\text{He},D}|\bm{x}_{2} - \bm{x}_{D}|^{2}\right]e^{-iE_{\text{He},D}t_{2}}\\
+  & \cdot \bra{x_{1}, t_{1}}\hat{T}\left(\exp\left(-i\int d^{4}x\mathcal{H}_{I}\right)\right)\ket{x_{2},t_{2}} \, .
+\end{align*}
+
+This is beginning to look like the transition amplitude in the text \cite{Akhmedov_2008}. The difficult part begins now in attempting to understand the propagator in this weak interaction with external atoms. It is simplest here to use the Feynman rules for the relevent vertices. We note there will be contributions from the tritium decay, the inverse process, and the propogation of the neutrino and electron. Though all the processes aside from the neutrino are external, they still will complicate this. First, we note that our neutrino is a fermion, so we know the propagator is of the form,
+\begin{equation}
+  \Pi = \frac{i(\slashed{p} + m_j)}{p_{0}^{2}-\bm{p}^{2} - m_{j}^{2} + i\epsilon}\, ,
+\end{equation}
+where the $j$ index will relate to the PMNS matrix for oscillations. Next, we need to account for the charged current vertices where our lepton and neutrino interact. Luckily, this is a well known vertex in texts \cite{ew_lec} and takes the form
+\begin{equation}
+  \mathcal{V} = -i\frac{g}{2\sqrt{2}}\gamma_{\mu}(1 - \gamma_{5}) \, .
+\end{equation}
+Moreover, we need to account for the external electron as a Dirac spinor using $u_{e,D}$ and $u_{e,S}$ where the first index is for the electron and the second is for the location. We can similarly account for the Helium and Tritium with $u_{\text{He}}$ and $u_{\text{H}}$ respectively. Putting these together, we get
+\begin{equation}
+  \mathcal{B} = -\left(\frac{g}{2\sqrt{2}}\right)^{2}\int \frac{d^{4}p}{(2\pi)^{4}}e^{-ip_{0}(t_{2} - t_{1}) + i\bm{p}(\bm{x}_{2} - \bm{x}_{1})}\bar{u}_{e,S}\gamma_{\mu}(1-\gamma_{5})\frac{i(\slashed{p} + m_j)}{p_{0}^{2}-\bm{p}^{2} - m_{j}^{2} + i\epsilon}(1 + \gamma_{5})\gamma_{\nu}u_{e,D} \, .
+\end{equation}
+Now we have to account for the tritium and helium terms in their decay and capture interactions respectively. The vertex of interest is provided by Figure \ref{fig:decay}.
+
+\begin{figure}[h]
+  \centering
+    \begin{tikzpicture}[scale=3]
+    % Neutrino
+    \draw [boson] (0,0) -- (0.5,0);
+    \node [above] at (0.25,0.1) {$W^{-}$};
+    % lepton
+    \draw [middlearrow={latex}] (0.5,0) -- (1,0.5);
+    \node [right] at (1,0.5) {$\ell$};
+    % neutrino
+    \draw [middlearrow={latex}] (1,-0.5) -- (0.5,0);
+    \node [right] at (1,-0.5) {$\nu_{\ell}$};
+    % H
+    \draw [middlearrow={latex}] (-0.5,-0.5) -- (0,0);
+    \node [left] at (-0.5,-0.5) {$\text{H}$};
+    % He
+    \draw [middlearrow={latex}] (0,0) -- (-0.5,0.5);
+    \node [left] at (-0.5,0.5) {$\text{He}$};
+    \end{tikzpicture}
+    \caption{The decay of Tritium}
+    \label{fig:decay}
+\end{figure}
+
+
+
+\newpage
+%\bibliographystyle{prsty}
+\bibliographystyle{plain}
+
+\bibliography{bib}
 
 
 \end{document}
