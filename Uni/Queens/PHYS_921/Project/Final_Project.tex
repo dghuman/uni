@@ -38,8 +38,40 @@ and the detection using the inverse process,
 \[^{3}\textnormal{He} + e^{-} + \bar{\nu}_{e} \to\, ^{3} \textnormal{H}\, .\]
 
 \section{External Wave-Packet Formalism}
+In essence, the benefit of the \textit{external wave-packet formalism} is to treat the larger nuclei as external to the key internal interactions, like the anti-neutrino and electron in our case. For this reason, we can imagine a Feynman diagram that looks like figure \ref{fig:feyn}.
 
-\subsection{The Formalism}
+\tikzset{middlearrow/.style={
+        decoration={markings,
+            mark= at position 0.5 with {\arrow{#1}} ,
+        },
+        postaction={decorate}
+    }
+}
+
+\begin{figure}[h]
+  \centering
+    \begin{tikzpicture}[scale=3]
+    % Neutrino
+    \draw [middlearrow={latex}] (0,0) -- (0.5,0);
+    \node [above] at (0.25,0.1) {$\nu$};
+    % H_D
+    \draw [middlearrow={latex}] (0.5,0) -- (1,0.5);
+    \node [right] at (1,0.5) {$\text{H}_{D}$};
+    % He_D
+    \draw [middlearrow={latex}] (1,-0.5) -- (0.5,0);
+    \node [right] at (1,-0.5) {$\text{He}_{D}$};
+    % H_S
+    \draw [middlearrow={latex}] (-0.5,-0.5) -- (0,0);
+    \node [left] at (-0.5,-0.5) {$\text{H}_{S}$};
+    % He_S
+    \draw [middlearrow={latex}] (0,0) -- (-0.5,0.5);
+    \node [left] at (-0.5,0.5) {$\text{He}_{S}$};
+    \end{tikzpicture}
+    \caption{A simplified Feynman diagram of the interaction we are interested in.}
+    \label{fig:feyn}
+\end{figure}
+
+\subsection{Quantum Approach}
 We have to first go through a simple formalism where we use quantum mechanics to get an estimate on the production rate of neutrinos without accounting for oscillations. We see in the paper that they reference the following hamiltonian for the tritium source decay
 \begin{equation}
   H_{S}^{+} = \int d^{3}x\frac{1}{\sqrt{2}}G_{F}\cos\theta_{c}\bra{^{3}\textnormal{He}}J^{\mu}\ket{^{3}\textnormal{H}}\bar{\psi}_{e,S}\gamma_{\mu}(1-\gamma^{5})\psi_{\nu},
@@ -55,9 +87,9 @@ To calculate the rate of neutrino production, we need to use these hamiltonians 
 for $A \in \{\text{H}, \text{He}\}$ and $B\in \{S, D\}$ for the atom type and location respectively. Applying Fermi's golden rule,
 \begin{align*}
   \Gamma_{i \to f} & = 2\pi|\bra{f}H_{I}\ket{i}|^{2}\rho(E_{f}) \\
-  & = 2\pi|\bra{^{3}\text{He}_{S},\, ^{3}\text{H}_{D}}H_{I}\ket{^{3}\text{H}_{S},\, ^{3}\text{He}_{D}}|^{2}\rho(E_{f})
+  & = 2\pi|\bra{^{3}\text{He}_{S},\, ^{3}\text{H}_{D}}H_{S}^{+}\ket{^{3}\text{H}_{S},\, ^{3}\text{He}_{D}}|^{2}\rho(E_{f})
 \end{align*}
-where $H_{I} = H^{+}_{S} + H^{-}_{D}$ and we need to replace the nuclear states with their corresponding ground state functions described in equation \ref{ground_state}. This is going to get ugly fast as everything is expanded, and this is before we evaluate the $\beta^{-}$ decay processes. In order to avoid becoming over encumbered in this first section (especially since it is before the QFT approach), we note that the leading coeffecients to the $\Gamma_{0}$ term begin to appear as we factor out the $G_{F}$ and $\cos\theta_{c}$ terms. That being said, the final result takes the form
+where we need to replace the nuclear states with their corresponding ground state functions described in equation \ref{ground_state}. This is going to get ugly fast as everything is expanded, and this is before we evaluate the $\beta^{-}$ decay processes. In order to avoid becoming over encumbered in this first section (especially since it is before the QFT approach), we note that the leading coeffecients to the $\Gamma_{0}$ term begin to appear as we factor out the $G_{F}$ and $\cos\theta_{c}$ terms. That being said, the final result takes the form
 \begin{equation}
   \Gamma_{p} = \Gamma_{0}X_{S}\, ,
 \end{equation}
@@ -65,5 +97,34 @@ where
 \begin{equation}
   \Gamma_{0} = \frac{G^{2}_{F}\cos^{2}\theta_{c}}{\pi}|\psi(R)|^{2}m_{e}^{2}(|M_{V}|^{2}+g^{2}_{A}|M_{A}|^{2})\left(\frac{E_{S,0}}{m_{e}}\right)^{2}\kappa_{S}\, .
 \end{equation}
-To avoid repeating the paper reviewed, I won't explain the meaning of each term here other than the ones of interest to the derivation. The nuclear matrix elements $M_{V}$ and $M_{A}$ arise from the two different $\beta^{-}$ decay processes, Fermi and Gamow-Teller. The $X_{S}$ term carries the energy and mass terms (and hence the momentum) from the introduced groundstate wavefunctions. 
+To avoid repeating the paper reviewed, I won't explain the meaning of each term here other than the ones of interest to the derivation. The nuclear matrix elements $M_{V}$ and $M_{A}$ arise from the two different $\beta^{-}$ decay processes, Fermi and Gamow-Teller. The $X_{S}$ term carries the energy and mass terms (and hence the momentum) from the introduced groundstate wavefunctions for the source,
+\begin{equation}
+  X_{S} = 8\left(\eta_{S} + \frac{1}{\eta_{S}}\right)^{-3}e^{-\frac{p^{2}}{\sigma_{pS}^{2}}}
+\end{equation}
+where
+\begin{equation}
+  \eta_{S} = \sqrt{\frac{m_{\text{H}}\omega_{\text{H},S}}{m_{\text{He}}m_{\text{He},S}}}, \quad \sigma^{2}_{pS} = m_{\text{H}}\omega_{\text{H},S} + m_{\text{He}}\omega_{\text{He},S}\, .
+\end{equation}
+For the cross section, we consider the detection process and recall that the simplest relation of the differential cross-section is related to the scattering amplitude,
+\begin{equation}
+  \frac{d\sigma}{d\Omega}(\theta, \phi) = |f(\theta,\phi)|^{2}\, .
+\end{equation}
+We can follow along in \cite{bahcall, mik} to get the final result as
+\begin{equation}
+  \sigma(E) = B_{0}X_{D}\delta(E - E_{D,0})\, ,
+\end{equation}
+where
+\begin{equation}
+  B_{0} = 4\pi G_{F}^{2}\cos^{2}\theta_{c}|\psi_{e}(R)|^{2}(|M_{V}|^{2} + g_{A}^{2}|M_{A}|^{2})\kappa_{D}\, .
+\end{equation}
+Here $X_{D}$ is the detection analogue of the source $X_{S}$. The text continues to then combine the production, propogation and detection processes to reach the total rate,
+\begin{equation}
+  \Gamma = \frac{1}{4\pi L^{2}}\int_{0}^{\infty}\rho(E)\sigma(E)dE \approx \frac{\Gamma_{0}B_{0}}{4\pi L^{2}}X_{S}X_{D}\frac{(\gamma_{S} + \gamma_{D})/2\pi}{(E_{S,0} - E_{D,0})^{2} + (\gamma_{S} + \gamma_{D})^{2}/4}\, ,
+\end{equation}
+where $\gamma_{S}$ and $\gamma_{D}$ are the energy widths assoiciated with production and detection. This result is used primarily as a comparison with the QFT treatment that is following.
+
+\subsection{QFT Approach}
+We want to use our standard Feynman rules for a weak interaction (which is what produces our neutrino) using Figure \ref{fig:feyn}. 
+
+
 \end{document}
