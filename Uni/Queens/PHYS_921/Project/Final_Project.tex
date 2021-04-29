@@ -1,7 +1,7 @@
 \documentclass[10pt]{article}
 \usepackage[]{ragged2e}
 \usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,graphicx,array,bm,tensor,braket,mathtools,tensor}
-\usepackage{caption,subcaption}
+\usepackage{caption,subcaption,listings}
 \usepackage{mathtools,tkz-euclide,slashed,url,hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[letterpaper,left=25mm,right=25mm,top=15mm]{geometry}
@@ -24,6 +24,36 @@
 
 %\rhead{Dilraj Ghuman $|$ 20191345}
 
+% For code
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
 \begin{document}
 \begin{center}
   {\Large \bf M\"{o}ssbauer Neutrino Oscillations}\\
@@ -33,10 +63,11 @@
 
 \section{Introduction}
 
-In 1958, M\"{o}ssbauer discovered the recoil-less emmission gammas in crystal structures. This behaviour allowed for certain resonance energies to be carried by the photons that would otherwise not be observed in the standard emmission process. A natural progression would thus be to question whether this recoil-less process can be observed with other emission products such as neutrinos, in crystal structures. A potential process that could induce such an interaction would be the decay :
+In 1958, M\"{o}ssbauer discovered recoil-less emission gammas in crystal structures. This behaviour allowed for certain resonance energies to be carried by the photons that would otherwise not be observed in the standard emission process. A natural progression would thus be to question whether this recoil-less process can be observed with other emission products, such as neutrinos. A potential process that could induce such an interaction would be the decay :
 \[^{3} \textnormal{H} \to\,  ^{3}\textnormal{He} + e^{-} + \bar{\nu}_{e}\]
 and the detection using the inverse process,
 \[^{3}\textnormal{He} + e^{-} + \bar{\nu}_{e} \to\, ^{3} \textnormal{H}\, .\]
+As these processes take place in a lattice, the text \cite{Akhmedov_2008} does cover some of these medium interactions. We only consider the dominant one as it is similar in the QFT formulation to the free space process. 
 
 \section{External Wave-Packet Formalism}
 In essence, the benefit of the \textit{external wave-packet formalism} is to treat the larger nuclei as external to the key internal interactions, like the anti-neutrino and electron in our case. For this reason, we can imagine a Feynman diagram that looks like figure \ref{fig:feyn}.
@@ -73,6 +104,7 @@ In essence, the benefit of the \textit{external wave-packet formalism} is to tre
     \caption{A simplified Feynman diagram of the interaction we are interested in.}
     \label{fig:feyn}
 \end{figure}
+In particular, if we follow along with Beuthe and Mikael \cite{Beuthe_2003}, they go through the Jacob-Sachs \cite{sachs} model. Though this model describes non-oscillating particles, \cite{Beuthe_2003} does eventually introduce oscillations as well. For this reason, we follow along with them. 
 
 \subsection{Quantum Approach}
 We have to first go through a simple formalism where we use quantum mechanics to get an estimate on the production rate of neutrinos without accounting for oscillations. We see in the paper that they reference the following hamiltonian for the tritium source decay
@@ -92,7 +124,7 @@ for $A \in \{\text{H}, \text{He}\}$ and $B\in \{S, D\}$ for the atom type and lo
   \Gamma_{i \to f} & = 2\pi|\bra{f}H_{I}\ket{i}|^{2}\rho(E_{f}) \\
   & = 2\pi|\bra{^{3}\text{He}_{S},\, ^{3}\text{H}_{D}}H_{S}^{+}\ket{^{3}\text{H}_{S},\, ^{3}\text{He}_{D}}|^{2}\rho(E_{f})
 \end{align*}
-where we need to replace the nuclear states with their corresponding ground state functions described in equation \ref{ground_state}. This is going to get ugly fast as everything is expanded, and this is before we evaluate the $\beta^{-}$ decay processes. In order to avoid becoming over encumbered in this first section (especially since it is before the QFT approach), we note that the leading coeffecients to the $\Gamma_{0}$ term begin to appear as we factor out the $G_{F}$ and $\cos\theta_{c}$ terms. That being said, the final result takes the form
+where we need to replace the nuclear states with their corresponding ground state functions described in equation \ref{ground_state}. This is going to get ugly fast as everything is expanded, and this is before we evaluate the $\beta^{-}$ decay processes. In order to avoid becoming over encumbered in this first section (especially since it is before the QFT approach), we note that the leading coefficients to the $\Gamma_{0}$ term begin to appear as we factor out the $G_{F}$ and $\cos\theta_{c}$ terms. That being said, the final result takes the form
 \begin{equation}
   \Gamma_{p} = \Gamma_{0}X_{S}\, ,
 \end{equation}
@@ -150,7 +182,7 @@ and subbing in the states,
   & \cdot \bra{x_{1}, t_{1}}\hat{T}\left(\exp\left(-i\int d^{4}x\mathcal{H}_{I}\right)\right)\ket{x_{2},t_{2}} \, .
 \end{align*}
 
-This is beginning to look like the transition amplitude in the text \cite{Akhmedov_2008}. The difficult part begins now in attempting to understand the propagator in this weak interaction with external atoms. It is simplest here to use the Feynman rules for the relevent vertices. We note there will be contributions from the tritium decay, the inverse process, and the propagation of the neutrino and electron. Though all the processes aside from the neutrino are external, they still will complicate this. First, we note that our neutrino is a fermion, so we know the propagator is of the form,
+This is beginning to look like the transition amplitude in the text \cite{Akhmedov_2008}. The difficult part begins now in attempting to understand the propagator in this weak interaction with external atoms. It is simplest here to use the Feynman rules for the relevant vertices. We note there will be contributions from the tritium decay, the inverse process, and the propagation of the neutrino and electron. Though all the processes aside from the neutrino are external, they still will complicate this. First, we note that our neutrino is a fermion, so we know the propagator is of the form,
 \begin{equation}
   \Pi = \frac{i(\slashed{p} + m_j)}{p_{0}^{2}-\bm{p}^{2} - m_{j}^{2} + i\epsilon}\, ,
 \end{equation}
@@ -209,7 +241,7 @@ Finally, before we can tie it all together, we need to account for the mass mixi
 \begin{equation}
   G_{\beta\alpha}(x' - x) = \sum_{j}U_{\beta j}^{\dagger}G_{jj}(x' - x)U_{j\alpha}\,,
 \end{equation}
-where $G_{\beta\alpha}(x' - x)$ is the flavour basis propagator and $G_{jj}(x' - x)$ is the free propagator of a particle with mass $m_{j}$. Note that we must have the PMNS mixing matrix take us between these bases, $U_{ij}$. In our case, we know that the lepton produced is an electron, so this will immediatly fix one of our indices. However, we must now sum over the remain index to account for the mixing of the neutrino. This is described in \cite{Beuthe_2003} as being the result of being unable to treat the oscillations as local property, and instead requiring them to be a global property (as otherwise we fail to observe them at all).
+where $G_{\beta\alpha}(x' - x)$ is the flavour basis propagator and $G_{jj}(x' - x)$ is the free propagator of a particle with mass $m_{j}$. Note that we must have the PMNS mixing matrix take us between these bases, $U_{ij}$. In our case, we know that the lepton produced is an electron, so this will immediately fix one of our indices. However, we must now sum over the remain index to account for the mixing of the neutrino. This is described in \cite{Beuthe_2003} as being the result of being unable to treat the oscillations as local property, and instead requiring them to be a global property (as otherwise we fail to observe them at all).
 
 So, we get the final result matching the text \cite{Akhmedov_2008},
 \begin{equation}\label{eq:final}
@@ -218,7 +250,7 @@ So, we get the final result matching the text \cite{Akhmedov_2008},
   & \cdot \left(\frac{m_{\text{H}},\omega_{\text{H},S}}{\pi}\right)^{\frac{3}{4}}\exp\left[-\frac{1}{2}m_{\text{H}}\omega_{\text{H},S}|\bm{x}_{1} - \bm{x}_{S}|^{2}\right]e^{-iE_{\text{H},S}t_{1}} \\
   & \cdot \left(\frac{m_{\text{H}},\omega_{\text{H},D}}{\pi}\right)^{\frac{3}{4}}\exp\left[-\frac{1}{2}m_{\text{H}}\omega_{\text{H},D}|\bm{x}_{2} - \bm{x}_{D}|^{2}\right]e^{iE_{\text{H},D}t_{2}}\\
   & \cdot \left(\frac{m_{\text{He}},\omega_{\text{He},D}}{\pi}\right)^{\frac{3}{4}}\exp\left[-\frac{1}{2}m_{\text{He}}\omega_{\text{He},D}|\bm{x}_{2} - \bm{x}_{D}|^{2}\right]e^{-iE_{\text{He},D}t_{2}}\\
-  & \cdot \mathcal{B}\sum_{j}\mathcal{M}^{\mu}_{S}\mathcal{M}^{\nu *}_{D}|U_{ej}|^{2} \, .
+  & \cdot\sum_{j}\mathcal{M}^{\mu}_{S}\mathcal{M}^{\nu *}_{D}|U_{ej}|^{2}\mathcal{B} \, .
   \end{split}
 \end{equation}
 
@@ -234,7 +266,7 @@ we are left with a leading factor of
 \begin{align*}
   \mathcal{C} = & (2\pi)^{2}\delta(p_{0} - (E_{\text{He},S} - E_{\text{H},S}))\delta(p_0 - (E_{\text{H},D} - E_{\text{He},D}))\sqrt{\frac{2\pi}{(m_{\text{H}}\omega_{\text{H},S} + m_{\text{He}}\omega_{\text{He},S})}}\sqrt{\frac{2\pi}{(m_{\text{H}}\omega_{\text{H},D} + m_{\text{He}}\omega_{\text{He},D})}}\, .  
 \end{align*}
-Comparing with \cite{Akhmedov_2008}, we see there is a slight discrepansy in the factor they define as $\mathcal{N}$, as that is where they push all the cumbersome coefficients. They seem to disagree on the degree of the
+Comparing with \cite{Akhmedov_2008}, we see there is a slight discrepancy in the factor they define as $\mathcal{N}$, as that is where they push all the cumbersome coefficients. They seem to disagree on the degree of the
 \[ \sqrt{\frac{2\pi}{(m_{\text{H}}\omega_{\text{H},S} + m_{\text{He}}\omega_{\text{He},S})}}\sqrt{\frac{2\pi}{(m_{\text{H}}\omega_{\text{H},D} + m_{\text{He}}\omega_{\text{He},D})}} \]
 terms; where my terms have exponents of $\frac{1}{2}$, the text has $\frac{3}{2}$. These Gaussian integrals should be relatively straightforward, unless I made an obvious error. Regardless, the difference is noted.
 
@@ -244,13 +276,13 @@ From here, the text \cite{Akhmedov_2008} uses a theorem by Grimus and Stockinger
   & \cdot \bar{u}_{e,S}\gamma_{\mu}(1-\gamma^{5})(\slashed{p}_{j} + m_{j})(1 + \gamma^{5})\gamma_{\nu}u_{e,D}\, .
 \end{align*}
 
-\subsection{M\"{o}ssbauer Neutrinos and the Natural Linewidth}
+\section{M\"{o}ssbauer Neutrinos and the Natural Linewidth}
 
 We now skip to the section where the text \cite{Akhmedov_2008} speaks of the dominating effect in the crystal structure. In particular, the decays of the unstable nuclei are introduced into the amplitude found in equation \ref{eq:final} as exponential decay factors of the form
 \begin{equation}
   e^{-\gamma t/2} \hspace{2em} \& \hspace{2em} e^{-\gamma(T-t_{2})/2}
 \end{equation}
-for tritium in the source and detector respectively. Here, $t$ is the time after the experiment has started, $t_{2}$ the production time, $T$ is the time at wich the number of produced tritium atoms is counted and $\gamma$ is the dotal decay width of tritium. Following a procedure similar to the above, the text finds the total probability of finding a tritium atom at the at the position $\bm{x}_{D}$ after a time $T$ as
+for tritium in the source and detector respectively. Here, $t$ is the time after the experiment has started, $t_{2}$ the production time, $T$ is the time at which the number of produced tritium atoms is counted and $\gamma$ is the total decay width of tritium. Following a procedure similar to the above, the text finds the total probability of finding a tritium atom at the at the position $\bm{x}_{D}$ after a time $T$ as
 \begin{equation}\label{eq:prob_before}
   \begin{split}
     \mathcal{P} = \frac{\Gamma_{0}B_{0}}{4\pi L^{2}} & Y_{S}Y_{D}\frac{2}{\pi}\sum_{j,k}\theta(T_{jk})|U_{ej}|^{2}|U_{ek}|^{2} \\
@@ -265,16 +297,13 @@ First off, to avoid repeating and as a comparison, we consider the approximation
   e^{-\gamma T}\frac{\sin^{2}[(E_{S,0} - E_{D,0})\frac{T}{2}]}{(E_{S,0} - E_{D,0})^{2}}\, .
 \end{equation}
 
-We can plot this here :::
-
-
-To compare with this, we take another approximation pathway. First, we ignore all the leading factors as they are constant and don't change the shape of the plots. Next we need to consider the oscillation matrix elements. Ignoring these would effectively reduce to the SM case, so we have to keep some form of oscillations. Instead, we make the approximation that $|\Delta m_{jk}^{2}| \ll 1$, so this changes $p_{jk}^{\text{min}} = \bar{E}^{2} - \text{max}(m_{j}^{2},m_{k}^{2}) \approx \bar{E}^{2} - m^{2} = \text{const}$, and hence we can ignore that corresponding exponential term aswell. Continuing on this train of thought, we see this approximation naturally drops the exponential that involves $\left(\sqrt{\bar{E}^{2} - m_{j}^{2}} - \sqrt{\bar{E}^{2} - m_{k}^{2}}\right)$ to identity the identity. The other exponential we leave as it is. We note this will depend upon the spread $\sigma_{p}$, which is defined in the text as a combination of the $m_{A}$ and $\omega_{A,B}$ type terms. Regardless it is constant and we can fix it for the sake of plotting.
+To compare with this, we take another approximation pathway. First, we ignore all the leading factors as they are constant and don't change the shape of the plots. Next we need to consider the oscillation matrix elements. Ignoring these would effectively reduce to the SM case, so we have to keep some form of oscillations. Instead, we make the approximation that $|\Delta m_{jk}^{2}| \ll 1$, so this changes $p_{jk}^{\text{min}} = \bar{E}^{2} - \text{max}(m_{j}^{2},m_{k}^{2}) \approx \bar{E}^{2} - m^{2} = \text{const}$, and hence we can ignore that corresponding exponential term as well. Continuing on this train of thought, we see this approximation naturally drops the exponential that involves $\left(\sqrt{\bar{E}^{2} - m_{j}^{2}} - \sqrt{\bar{E}^{2} - m_{k}^{2}}\right)$ to the identity. The other exponential we leave as it is. We note this will depend upon the spread $\sigma_{p}$, which is defined in the text as a combination of the $m_{A}$ and $\omega_{A,B}$ type terms. Regardless it is constant and we can fix it for the sake of plotting.
 
 Next, we note that
 \begin{equation}
   T_{jk} = \text{min}\left(T - \frac{L}{v_{j}}, T - \frac{L}{v_{k}}\right)
 \end{equation}
-compares the arrival time of the first neutrino tot he total runtime. The heaviside function $\theta(T_{jk})$ ensures that both mass eigenstates arrive within the run time $T$. The final factor of importance is
+compares the arrival time of the first neutrino to the total runtime. The heaviside function $\theta(T_{jk})$ ensures that both mass eigenstates arrive within the run time $T$. The final factor of importance is
 \begin{equation}
   \frac{1}{L_{jk}^{\text{coh}}} = \gamma\left |\frac{1}{v_{j}} - \frac{1}{v_{k}}\right|\, ,
 \end{equation}
@@ -315,7 +344,44 @@ So, for completeness, we will be plotting the following,
   \end{split}
 \end{equation}
 
-  
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{plots/T_plot.eps}
+    \caption{Plotting time (in arbitrary units) against Probability.}
+    \label{fig:time}
+  \end{subfigure}
+  \hspace{2em}
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{plots/E_plot.eps}
+    \caption{Plotting the energy difference $E_{S,0} - E_{D,0}$ against Probability.}
+    \label{fig:energy}
+  \end{subfigure}
+  \caption{Two simple plots to get an idea of the difference between the two approximations.}
+  \label{fig:plots}
+\end{figure}
+
+Looking at Figure \ref{fig:plots} we see the results of comparing the two approximation methods. In particular, the largest difference seems to occur in the timing. The probability of finding a tritium atom at the site $\bm{x}_{D}$ peaks later in my approximation method compared to the SM approximation used in the text. From looking at the equations, we can guess this is due to the requirement that for a contribution to be included, we need both mass states to have arrived by the time $T$.
+
+As a note, I didn't mess with the other parameters in the code. However they have been set such that more indepth plotting could be done to see the behaviour of this probability as we vary those other parameters.
+
+\section{Conclusion}
+
+The derivation of oscillations in M\"{o}ssbauer neutrinos is a deep-dive into understanding the interactions between nuclei and their decay particles.  In order to make this approachable, we used an external wave-packet methodology to be able to account for the external capture and decay nuclei. We then took those interaction Hamiltonians and built a QFT.
+
+Looking at the dominating process, we took the probability of observing a Tritium nucleus at the detection sight, $\bm{x}_{D}$, and looked into a way of plotting it. I made another approximation including the oscillation parameters (to the best of my ability) to compare with the SM neutrinos approximation. We observed that the largest discrepancy lay primarily in the timing, where the probability of observing this tritium atom peaked later when we included some oscillations. The energy distributions showed that we expected a peak when $E_{S,0} = E_{D,0}$ as expected, since this tells us the largest probability will be when the energies are at resonance. 
+
+Though it should have been obvious, I was still surprised by how much I still have to learn about QFT. The course was able to provide an introductory base to understanding how we can go about taking an interaction theory and building a full QFT, but the subtleties of applying that to a much more complex theory was a big leap. Regardless, I enjoyed working on the project and getting a better appreciation of QFTs in the `real world'.
+
+\newpage
+\section{Appendix}
+I include the code I wrote to make the plots in Figure \ref{fig:plots}:
+
+\lstinputlisting[language=Python]{code/plot.py}
+
+%\end{lstlisting}
 
 
 \newpage
