@@ -1,6 +1,7 @@
 \documentclass[10pt]{article}
 \usepackage[]{ragged2e}
 \usepackage{fancyhdr,amsmath,amsthm,amssymb,bbm,graphicx,array,bm,tensor,braket,mathtools,tensor}
+\usepackage{caption,subcaption}
 \usepackage{mathtools,tkz-euclide,slashed,url,hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[letterpaper,left=25mm,right=25mm,top=15mm]{geometry}
@@ -75,7 +76,7 @@ In essence, the benefit of the \textit{external wave-packet formalism} is to tre
 
 \subsection{Quantum Approach}
 We have to first go through a simple formalism where we use quantum mechanics to get an estimate on the production rate of neutrinos without accounting for oscillations. We see in the paper that they reference the following hamiltonian for the tritium source decay
-\begin{equation}
+\begin{equation}\label{source_h}
   H_{S}^{+} = \int d^{3}x\frac{1}{\sqrt{2}}G_{F}\cos\theta_{c}\bra{^{3}\textnormal{He}}J^{\mu}\ket{^{3}\textnormal{H}}\bar{\psi}_{e,S}\gamma_{\mu}(1-\gamma^{5})\psi_{\nu},
 \end{equation}
 and the helium detection process,
@@ -119,14 +120,14 @@ where
 \begin{equation}
   B_{0} = 4\pi G_{F}^{2}\cos^{2}\theta_{c}|\psi_{e}(R)|^{2}(|M_{V}|^{2} + g_{A}^{2}|M_{A}|^{2})\kappa_{D}\, .
 \end{equation}
-Here $X_{D}$ is the detection analogue of the source $X_{S}$. The text continues to then combine the production, propogation and detection processes to reach the total rate,
+Here $X_{D}$ is the detection analogue of the source $X_{S}$. The text continues to then combine the production, propagation and detection processes to reach the total rate,
 \begin{equation}
   \Gamma = \frac{1}{4\pi L^{2}}\int_{0}^{\infty}\rho(E)\sigma(E)dE \approx \frac{\Gamma_{0}B_{0}}{4\pi L^{2}}X_{S}X_{D}\frac{(\gamma_{S} + \gamma_{D})/2\pi}{(E_{S,0} - E_{D,0})^{2} + (\gamma_{S} + \gamma_{D})^{2}/4}\, ,
 \end{equation}
 where $\gamma_{S}$ and $\gamma_{D}$ are the energy widths assoiciated with production and detection. This result is used primarily as a comparison with the QFT treatment that is following.
 
 \subsection{QFT Approach}
-We want to use our standard Feynman rules for a weak interaction for the neutrino propogation using Figure \ref{fig:feyn}. We can start with the general form the amplitude (\cite{Beuthe_2003}) will take as being
+We want to use our standard Feynman rules for a weak interaction for the neutrino propagation using Figure \ref{fig:feyn}. We can start with the general form the amplitude (\cite{Beuthe_2003}) will take as being
 \begin{align}
   \mathcal{A} & = \bra{f}\hat{T}\left(\exp\left(-i\int d^{4}x\mathcal{H}_{I}\right)\right) - \bm{1}\ket{i} \\
   & = \bra{^{3}\text{He}_{S},\, ^{3}\text{H}_{D}}\hat{T}\left(\exp\left(-i\int d^{4}x\mathcal{H}_{I}\right)\right) - \bm{1}\ket{^{3}\text{H}_{S},\, ^{3}\text{He}_{D}}\, ,
@@ -135,7 +136,7 @@ where $\mathcal{H}_{I}$ is the interaction lagrangian. Using equation \ref{groun
 \begin{equation*}
   \mathcal{A} = \bra{^{3}\text{He}_{S},\, ^{3}\text{H}_{D}}\left(\int d^{3}x_{1}dt_{1}\ket{x_{1},t_{1}}\bra{x_{1},t_{1}}\right)\hat{T}\left(\exp\left(-i\int d^{4}x\mathcal{H}_{I}\right)\right)\left(\int d^{3}x_{2}dt_{2}\ket{x_{2},t_{2}}\bra{x_{2},t_{2}}\right)\ket{^{3}\text{H}_{S},\, ^{3}\text{He}_{D}}\, ,
 \end{equation*}
-but we associate $(x_{1},t_{1})$ with the source and $(x_{2},t_2)$ with the detector. It is also clear enough to see we can introduce another set of $(x_{1}',t_{1}')$ and $(x_{2}', t_{2}')$ to be completely rigorous in how our kets and bras pass by the propogator, but eventually have them removed using the inevitable $\delta$ functions that show up. As such, we get
+but we associate $(x_{1},t_{1})$ with the source and $(x_{2},t_2)$ with the detector. It is also clear enough to see we can introduce another set of $(x_{1}',t_{1}')$ and $(x_{2}', t_{2}')$ to be completely rigorous in how our kets and bras pass by the propagator, but eventually have them removed using the inevitable $\delta$ functions that show up. As such, we get
 \begin{align*}
   \mathcal{A} = \int & d^{3}x_{1}dt_{1}\int d^{3}x_{2}dt_{2}\braket{^{3}\text{He}_{S}|x_{1},t_{1}}\braket{x_{1},t_{1}|\,^{3}\text{H}_{S}}\braket{^{3}\text{H}_{D}|x_{2},t_{2}}\braket{x_{2},t_{2}|\,^{3}\text{He}_{D}} \\
   & \cdot \bra{x_{1}, t_{1}}\hat{T}\left(\exp\left(-i\int d^{4}x\mathcal{H}_{I}\right)\right)\ket{x_{2},t_{2}} \, ,
@@ -149,7 +150,7 @@ and subbing in the states,
   & \cdot \bra{x_{1}, t_{1}}\hat{T}\left(\exp\left(-i\int d^{4}x\mathcal{H}_{I}\right)\right)\ket{x_{2},t_{2}} \, .
 \end{align*}
 
-This is beginning to look like the transition amplitude in the text \cite{Akhmedov_2008}. The difficult part begins now in attempting to understand the propagator in this weak interaction with external atoms. It is simplest here to use the Feynman rules for the relevent vertices. We note there will be contributions from the tritium decay, the inverse process, and the propogation of the neutrino and electron. Though all the processes aside from the neutrino are external, they still will complicate this. First, we note that our neutrino is a fermion, so we know the propagator is of the form,
+This is beginning to look like the transition amplitude in the text \cite{Akhmedov_2008}. The difficult part begins now in attempting to understand the propagator in this weak interaction with external atoms. It is simplest here to use the Feynman rules for the relevent vertices. We note there will be contributions from the tritium decay, the inverse process, and the propagation of the neutrino and electron. Though all the processes aside from the neutrino are external, they still will complicate this. First, we note that our neutrino is a fermion, so we know the propagator is of the form,
 \begin{equation}
   \Pi = \frac{i(\slashed{p} + m_j)}{p_{0}^{2}-\bm{p}^{2} - m_{j}^{2} + i\epsilon}\, ,
 \end{equation}
@@ -165,27 +166,140 @@ Now we have to account for the tritium and helium terms in their decay and captu
 
 \begin{figure}[h]
   \centering
-    \begin{tikzpicture}[scale=3]
+  \begin{tikzpicture}[scale=3]
     % Neutrino
     \draw [boson] (0,0) -- (0.5,0);
     \node [above] at (0.25,0.1) {$W^{-}$};
     % lepton
     \draw [middlearrow={latex}] (0.5,0) -- (1,0.5);
-    \node [right] at (1,0.5) {$\ell$};
+    \node [right] at (1,0.5) {$e^{-}$};
     % neutrino
     \draw [middlearrow={latex}] (1,-0.5) -- (0.5,0);
-    \node [right] at (1,-0.5) {$\nu_{\ell}$};
+    \node [right] at (1,-0.5) {$\bar{\nu}_{e}$};
     % H
     \draw [middlearrow={latex}] (-0.5,-0.5) -- (0,0);
     \node [left] at (-0.5,-0.5) {$\text{H}$};
     % He
     \draw [middlearrow={latex}] (0,0) -- (-0.5,0.5);
     \node [left] at (-0.5,0.5) {$\text{He}$};
-    \end{tikzpicture}
-    \caption{The decay of Tritium}
-    \label{fig:decay}
+  \end{tikzpicture}
+  \caption{The decay of Tritium}
+  \label{fig:decay}
 \end{figure}
 
+The acting interaction in this is the neutron decay into a proton, where one of the down quarks changes to an up quark via a neutral or charged current interaction. This $\beta^{-}$ decay is incredibly important and is how Fermi postulated the existence of neutrinos to begin with \cite{ft_beta}. So, in order to understand how this Matrix element may look, we look at the pieces involved.
+
+First, we note that we should expect a V-A type theory, as it is the general form when considering a spin-1 particle exchange \cite{ft_beta}. For this reason, we can expect that the matrix element for the Tritium decay to be of the form
+\begin{equation}
+  \mathcal{M}_{D}^{\mu} \sim M_{V} - g_{A}M_{A}
+\end{equation}
+where there are some missing factors. Here we have denoted $M_{V}$ and $M_{A}$ as the nuclear vector and axial-vector matrix elements with $g_{A}$ as the axial-vector coupling constant. This is similar to what was discussed in the Quantum section. To get closer to the result in the text, we note that we want to associate the vector and axial component with certain parts of the propagation. For this neutrino source, we want to contract these with $\gamma_{\mu}$, and so more explicitly
+\begin{equation}
+  \mathcal{M}_{D}^{\mu} \sim M_{V}\delta^{\mu}_{0} - g_{A}M_{A}\sigma_{i}\delta^{\mu}_{i}/\sqrt{3}\, .
+\end{equation}
+The $\delta^{\mu}_{0}$ pulls the vector like components of our $\gamma_{\mu}$ and the $\sigma_{i}\delta^{\mu}_{i}$ pulls the axial-vector (the twisting) part, where $\sigma_{i}$ are the traditional pauli-matrices.   
+
+Next we want to treat the external Helium and Tritium as external spin-$\frac{1}{2}$ particles, so
+\begin{equation}
+  \mathcal{M}_{D}^{\mu} \sim \bar{u}_{\text{He}}\left(M_{V}\delta^{\mu}_{0} - g_{A}M_{A}\sigma_{i}\delta^{\mu}_{i}/\sqrt{3}\right)u_{\text{H}}\, .
+\end{equation}
+Looking at equation \ref{source_h}, we see that we better get a leading factor that looks like $\frac{G_{F}\cos\theta_{c}}{\sqrt{2}}$. Comparing with the text \cite{Akhmedov_2008} we note we have the $\psi_{e}(R)$ and $\kappa_{D}^{1/2}$ left, which are the wavefunctions of the external electron and Tritium/Helium products. Looking at \cite{Beuthe_2003}, we see these terms arise out of the overlap between the incoming and outgoing states.
+
+Finally, before we can tie it all together, we need to account for the mass mixing of the propagating neutrino. Referring to \cite{Beuthe_2003}, in order to utilize the propagator as we have in the mass basis, we need to transform from the flavour basis propagator to the mass basis free propagator:
+\begin{equation}
+  G_{\beta\alpha}(x' - x) = \sum_{j}U_{\beta j}^{\dagger}G_{jj}(x' - x)U_{j\alpha}\,,
+\end{equation}
+where $G_{\beta\alpha}(x' - x)$ is the flavour basis propagator and $G_{jj}(x' - x)$ is the free propagator of a particle with mass $m_{j}$. Note that we must have the PMNS mixing matrix take us between these bases, $U_{ij}$. In our case, we know that the lepton produced is an electron, so this will immediatly fix one of our indices. However, we must now sum over the remain index to account for the mixing of the neutrino. This is described in \cite{Beuthe_2003} as being the result of being unable to treat the oscillations as local property, and instead requiring them to be a global property (as otherwise we fail to observe them at all).
+
+So, we get the final result matching the text \cite{Akhmedov_2008},
+\begin{equation}\label{eq:final}
+  \begin{split}
+  i\mathcal{A} = \int & d^{3}x_{1}dt_{1}\int d^{3}x_{2}dt_{2} \left(\frac{m_{\text{He}},\omega_{\text{He},S}}{\pi}\right)^{\frac{3}{4}}\exp\left[-\frac{1}{2}m_{\text{He}}\omega_{\text{He},S}|\bm{x}_{1} - \bm{x}_{S}|^{2}\right]e^{iE_{\text{He},S}t_{1}}\\
+  & \cdot \left(\frac{m_{\text{H}},\omega_{\text{H},S}}{\pi}\right)^{\frac{3}{4}}\exp\left[-\frac{1}{2}m_{\text{H}}\omega_{\text{H},S}|\bm{x}_{1} - \bm{x}_{S}|^{2}\right]e^{-iE_{\text{H},S}t_{1}} \\
+  & \cdot \left(\frac{m_{\text{H}},\omega_{\text{H},D}}{\pi}\right)^{\frac{3}{4}}\exp\left[-\frac{1}{2}m_{\text{H}}\omega_{\text{H},D}|\bm{x}_{2} - \bm{x}_{D}|^{2}\right]e^{iE_{\text{H},D}t_{2}}\\
+  & \cdot \left(\frac{m_{\text{He}},\omega_{\text{He},D}}{\pi}\right)^{\frac{3}{4}}\exp\left[-\frac{1}{2}m_{\text{He}}\omega_{\text{He},D}|\bm{x}_{2} - \bm{x}_{D}|^{2}\right]e^{-iE_{\text{He},D}t_{2}}\\
+  & \cdot \mathcal{B}\sum_{j}\mathcal{M}^{\mu}_{S}\mathcal{M}^{\nu *}_{D}|U_{ej}|^{2} \, .
+  \end{split}
+\end{equation}
+
+To simplify, we note that the time integrals should be relatively simple using 
+\begin{equation}
+  \frac{1}{2\pi}\int dt e^{itE} = \delta(E) \, ,
+\end{equation}
+as this tells us that the integrals over the $t_{1}$ and $t_{2}$ variables will pull out delta functions for energy conservation at the source and detector (note these integrals will also include the exponential with $t_{1}$ and $t_{2}$ in $\mathcal{B}$). The spatial integrals are Gaussian under the transformation of $\bm{x}_{1} \to \bm{x}_{1} + \bm{x}_{S}$ and $\bm{x}_{2} \to \bm{x}_{2} + \bm{x}_{D}$, and using the identity
+\begin{equation}
+  \int_{-\infty}^{\infty} dx e^{-ax^{2}} = \sqrt{\frac{\pi}{a}}\,
+\end{equation}
+we are left with a leading factor of
+\begin{align*}
+  \mathcal{C} = & (2\pi)^{2}\delta(p_{0} - (E_{\text{He},S} - E_{\text{H},S}))\delta(p_0 - (E_{\text{H},D} - E_{\text{He},D}))\sqrt{\frac{2\pi}{(m_{\text{H}}\omega_{\text{H},S} + m_{\text{He}}\omega_{\text{He},S})}}\sqrt{\frac{2\pi}{(m_{\text{H}}\omega_{\text{H},D} + m_{\text{He}}\omega_{\text{He},D})}}\, .  
+\end{align*}
+Comparing with \cite{Akhmedov_2008}, we see there is a slight discrepansy in the factor they define as $\mathcal{N}$, as that is where they push all the cumbersome coefficients. They seem to disagree on the degree of the
+\[ \sqrt{\frac{2\pi}{(m_{\text{H}}\omega_{\text{H},S} + m_{\text{He}}\omega_{\text{He},S})}}\sqrt{\frac{2\pi}{(m_{\text{H}}\omega_{\text{H},D} + m_{\text{He}}\omega_{\text{He},D})}} \]
+terms; where my terms have exponents of $\frac{1}{2}$, the text has $\frac{3}{2}$. These Gaussian integrals should be relatively straightforward, unless I made an obvious error. Regardless, the difference is noted.
+
+From here, the text \cite{Akhmedov_2008} uses a theorem by Grimus and Stockinger \cite{Grim} which in the limit we push the detection and source positions far enough away, we get an approximation to leading order in $1/L$, with $L$ the length between the two points. This gives
+\begin{align*}
+  i\mathcal{A} = & \frac{-i}{2L}\mathcal{N}\delta(E_{S} - E_{D})\sum_{j}\exp\left[-\frac{E_{S}^{2} - m_{j}^{2}}{2\sigma^{2}_{p}}\right]\mathcal{M}_{S}^{\mu}\mathcal{M}_{D}^{\nu *}|U_{ej}|^{2}e^{i\sqrt{E_{S}^{2} - m_{j}^{2}}L} \\
+  & \cdot \bar{u}_{e,S}\gamma_{\mu}(1-\gamma^{5})(\slashed{p}_{j} + m_{j})(1 + \gamma^{5})\gamma_{\nu}u_{e,D}\, .
+\end{align*}
+
+\subsection{M\"{o}ssbauer Neutrinos and the Natural Linewidth}
+
+We now skip to the section where the text \cite{Akhmedov_2008} speaks of the dominating effect in the crystal structure. In particular, the decays of the unstable nuclei are introduced into the amplitude found in equation \ref{eq:final} as exponential decay factors of the form
+\begin{equation}
+  e^{-\gamma t/2} \hspace{2em} \& \hspace{2em} e^{-\gamma(T-t_{2})/2}
+\end{equation}
+for tritium in the source and detector respectively. Here, $t$ is the time after the experiment has started, $t_{2}$ the production time, $T$ is the time at wich the number of produced tritium atoms is counted and $\gamma$ is the dotal decay width of tritium. Following a procedure similar to the above, the text finds the total probability of finding a tritium atom at the at the position $\bm{x}_{D}$ after a time $T$ as
+\begin{equation}\label{eq:prob_before}
+  \begin{split}
+    \mathcal{P} = \frac{\Gamma_{0}B_{0}}{4\pi L^{2}} & Y_{S}Y_{D}\frac{2}{\pi}\sum_{j,k}\theta(T_{jk})|U_{ej}|^{2}|U_{ek}|^{2} \\
+    & \cdot \exp\left[-\frac{(p_{jk}^{\text{min}})^{2}}{\sigma_{p}^{2}}\right]\exp\left[-\frac{|\Delta m_{jk}^{2}|}{2\sigma^{2}_{p}}\right]e^{i\left(\sqrt{\bar{E}^{2} - m_{j}^{2}} - \sqrt{\bar{E}^{2} - m_{k}^{2}}\right)L} \\
+    & \cdot e^{-\gamma T_{jk}}e^{-L/L_{jk}^{\text{coh}}}\frac{\sin\left[\frac{1}{2}(E_{S,0} - E_{D,0})(T - \frac{L}{v_{j}})\right]\sin\left[\frac{1}{2}(E_{S,0} - E_{D,0})(T - \frac{L}{v_{k}})\right]}{(E_{S,0} - E_{D,0})^{2}}\, .
+  \end{split}
+\end{equation}
+Now that we have this, since I am not a theorist and don't expect myself to be able to do any ground-breaking work for this project, I resort to trying to plot a grossly approximated total probability in arbitrary units. To do this, I'll describe what the terms mean, and which ones I'll be ignoring for the sake of simplicity.
+
+First off, to avoid repeating and as a comparison, we consider the approximation given in the text itself. In the case of SM neutrinos (so zero mass and hence no oscillations), we see that the probability reduces to being proportional to
+\begin{equation}
+  e^{-\gamma T}\frac{\sin^{2}[(E_{S,0} - E_{D,0})\frac{T}{2}]}{(E_{S,0} - E_{D,0})^{2}}\, .
+\end{equation}
+
+We can plot this here :::
+
+
+To compare with this, we take another approximation pathway. First, we ignore all the leading factors as they are constant and don't change the shape of the plots. Next we need to consider the oscillation matrix elements. Ignoring these would effectively reduce to the SM case, so we have to keep some form of oscillations. Instead, we make the approximation that $|\Delta m_{jk}^{2}| \ll 1$, so this changes $p_{jk}^{\text{min}} = \bar{E}^{2} - \text{max}(m_{j}^{2},m_{k}^{2}) \approx \bar{E}^{2} - m^{2} = \text{const}$, and hence we can ignore that corresponding exponential term aswell. Continuing on this train of thought, we see this approximation naturally drops the exponentials that involve $\Delta m_{jk}^{2}$, and $\left(\sqrt{\bar{E}^{2} - m_{j}^{2}} - \sqrt{\bar{E}^{2} - m_{k}^{2}}\right)$ both to identity.
+
+Next, we note that
+\begin{equation}
+  T_{jk} = \text{min}\left(T - \frac{L}{v_{j}}, T - \frac{L}{v_{k}}\right)
+\end{equation}
+compares the arrival time of the first neutrino tot he total runtime. The heaviside function $\theta(T_{jk})$ ensures that both mass eigenstates arrive within the run time $T$. The final factor of importance is
+\begin{equation}
+  \frac{1}{L_{jk}^{\text{coh}}} = \gamma\left |\frac{1}{v_{j}} - \frac{1}{v_{k}}\right|\, ,
+\end{equation}
+which is just a coherence factor of the group velocities of the neutrinos. As we see with the last two, we need to look at the group velocities in detail, which are defined here by
+\begin{equation}
+  v_{j} = \frac{\left(\bar{E}^{2} - m_{j}^{2}\right)^{\frac{1}{2}}}{\bar{E}}\, .
+\end{equation}
+We look at the ratio of two of these velocities,
+\begin{equation}
+  \begin{split}
+    \frac{v_{j}}{v_{k}} & = \frac{\left(\bar{E}^{2} - m_{j}^{2}\right)^{\frac{1}{2}}}{\left(\bar{E}^{2} - m_{k}^{2}\right)^{\frac{1}{2}}} \\
+    & = \left(\bar{E}^{2} - m_{j}^{2}\right)^{\frac{1}{2}}\left(\bar{E}^{2} - m_{k}^{2}\right)^{-\frac{1}{2}} \\
+    & = \left(1 - \frac{m_{j}^{2}}{2\bar{E}^{2}} + \mathcal{O}(m_{j}^{4})\right)\left(1 + \frac{m_{k}^{2}}{2\bar{E}^{2}} + \mathcal{O}(m_{k}^{4})\right) \\
+    & \approx 1 - \frac{\Delta m_{jk}^{2}}{2\bar{E}} \, .
+  \end{split}
+\end{equation}
+Now if we use our approximation $|\Delta m_{jk}^{2}| \ll 1$, this will reduce to $1$, and will effectively take us back to the SM approximation. So, in this case, we choose not to take this approximation, and instead for plotting purposes we decide $\bar{E} = \frac{1}{2}$, and since $\bar{E} = \frac{1}{2}(E_{S,0} + E_{D,0})$, we can plot the difference $(E_{S,0} - E_{D,0})\in \{-1, 1\}$.
+
+Now, the only thing left to do before plotting is to figure out the matrix elements $|U_{ej}|^{2}$. From the PDG \cite{pdg_true}, we can get the relations of these elements to the oscillation parameters, and rearranging we get
+\begin{equation}
+  |U_{e3}|^{2} = \sin^{2}\theta_{13}\, , \quad |U_{e2}|^{2} = (1-\sin^{2}\theta_{13})\sin^{2}\theta_{12}\, , \quad |U_{e1}|^{2} = (1-\sin^{2}\theta_{13})(1 - \sin^{2}\theta_{12})
+\end{equation}
+where we can get the values for the sinusoidals using the PDG \cite{pdg_true} as well (to some best fit of recent experiments).
+
+  
 
 
 \newpage
