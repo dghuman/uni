@@ -268,7 +268,7 @@ First off, to avoid repeating and as a comparison, we consider the approximation
 We can plot this here :::
 
 
-To compare with this, we take another approximation pathway. First, we ignore all the leading factors as they are constant and don't change the shape of the plots. Next we need to consider the oscillation matrix elements. Ignoring these would effectively reduce to the SM case, so we have to keep some form of oscillations. Instead, we make the approximation that $|\Delta m_{jk}^{2}| \ll 1$, so this changes $p_{jk}^{\text{min}} = \bar{E}^{2} - \text{max}(m_{j}^{2},m_{k}^{2}) \approx \bar{E}^{2} - m^{2} = \text{const}$, and hence we can ignore that corresponding exponential term aswell. Continuing on this train of thought, we see this approximation naturally drops the exponentials that involve $\Delta m_{jk}^{2}$, and $\left(\sqrt{\bar{E}^{2} - m_{j}^{2}} - \sqrt{\bar{E}^{2} - m_{k}^{2}}\right)$ both to identity.
+To compare with this, we take another approximation pathway. First, we ignore all the leading factors as they are constant and don't change the shape of the plots. Next we need to consider the oscillation matrix elements. Ignoring these would effectively reduce to the SM case, so we have to keep some form of oscillations. Instead, we make the approximation that $|\Delta m_{jk}^{2}| \ll 1$, so this changes $p_{jk}^{\text{min}} = \bar{E}^{2} - \text{max}(m_{j}^{2},m_{k}^{2}) \approx \bar{E}^{2} - m^{2} = \text{const}$, and hence we can ignore that corresponding exponential term aswell. Continuing on this train of thought, we see this approximation naturally drops the exponential that involves $\left(\sqrt{\bar{E}^{2} - m_{j}^{2}} - \sqrt{\bar{E}^{2} - m_{k}^{2}}\right)$ to identity the identity. The other exponential we leave as it is. We note this will depend upon the spread $\sigma_{p}$, which is defined in the text as a combination of the $m_{A}$ and $\omega_{A,B}$ type terms. Regardless it is constant and we can fix it for the sake of plotting.
 
 Next, we note that
 \begin{equation}
@@ -278,7 +278,12 @@ compares the arrival time of the first neutrino tot he total runtime. The heavis
 \begin{equation}
   \frac{1}{L_{jk}^{\text{coh}}} = \gamma\left |\frac{1}{v_{j}} - \frac{1}{v_{k}}\right|\, ,
 \end{equation}
-which is just a coherence factor of the group velocities of the neutrinos. As we see with the last two, we need to look at the group velocities in detail, which are defined here by
+which is just a coherence factor of the group velocities of the neutrinos. For the ultra-relativistic case (which is similar to the approximation we are taking), the text \cite{Akhmedov_2008} tells us that it should approximate to
+\begin{equation}
+  L_{jk}^{\text{coh}} = \frac{4\bar{E}^{2}}{\gamma|\Delta m_{jk}^{2}|}\,.
+\end{equation}
+
+It is important we look at the group velocities as well. Here we have defined them as
 \begin{equation}
   v_{j} = \frac{\left(\bar{E}^{2} - m_{j}^{2}\right)^{\frac{1}{2}}}{\bar{E}}\, .
 \end{equation}
@@ -291,13 +296,24 @@ We look at the ratio of two of these velocities,
     & \approx 1 - \frac{\Delta m_{jk}^{2}}{2\bar{E}} \, .
   \end{split}
 \end{equation}
-Now if we use our approximation $|\Delta m_{jk}^{2}| \ll 1$, this will reduce to $1$, and will effectively take us back to the SM approximation. So, in this case, we choose not to take this approximation, and instead for plotting purposes we decide $\bar{E} = \frac{1}{2}$, and since $\bar{E} = \frac{1}{2}(E_{S,0} + E_{D,0})$, we can plot the difference $(E_{S,0} - E_{D,0})\in \{-1, 1\}$.
+Now if we use our approximation $|\Delta m_{jk}^{2}| \ll 1$, this will reduce to $1$, and will effectively take us back to the SM approximation. So, in this case, we choose not to take this approximation, and instead for plotting purposes we decide $\bar{E} = \frac{1}{2}$, and since $\bar{E} = \frac{1}{2}(E_{S,0} + E_{D,0})$, we can plot the difference $(E_{S,0} - E_{D,0})\in \{-1, 1\}$. Unfortunately this isn't exactly enough to compute $T_{jk}$, as we still need some method of computing the group velocities that aren't just ratios. So, we will have to fix one of the velocities. The only reasonable choice is to fix the lightest mass and computing the other three from there, so we let $v_{1} = 1$. Then
+\begin{equation}
+  v_{2} = \left(1 - \Delta m_{21}^{2}\right)v_{1} \hspace{2em} \& \hspace{2em} v_{3} = \left(1 - \Delta m_{32}^{2}\right)v_{2}\,.
+\end{equation}
 
 Now, the only thing left to do before plotting is to figure out the matrix elements $|U_{ej}|^{2}$. From the PDG \cite{pdg_true}, we can get the relations of these elements to the oscillation parameters, and rearranging we get
 \begin{equation}
   |U_{e3}|^{2} = \sin^{2}\theta_{13}\, , \quad |U_{e2}|^{2} = (1-\sin^{2}\theta_{13})\sin^{2}\theta_{12}\, , \quad |U_{e1}|^{2} = (1-\sin^{2}\theta_{13})(1 - \sin^{2}\theta_{12})
 \end{equation}
-where we can get the values for the sinusoidals using the PDG \cite{pdg_true} as well (to some best fit of recent experiments).
+where we can get the values for the sinusoidals using the PDG \cite{pdg_true} as well (to some best fit of recent experiments). We choose the normal ordering.
+
+So, for completeness, we will be plotting the following,
+\begin{equation}
+  \begin{split}
+    \mathcal{P} \propto & \sum_{j,k}\theta(T_{jk})|U_{ej}|^{2}|U_{ek}|^{2}\exp\left[-\frac{|\Delta m_{jk}^{2}|}{2\sigma^{2}_{p}}\right]e^{-\gamma T_{jk}}e^{-L/L_{jk}^{\text{coh}}} \\
+    & \cdot \frac{\sin\left[\frac{1}{2}(E_{S,0} - E_{D,0})(T - \frac{L}{v_{j}})\right]\sin\left[\frac{1}{2}(E_{S,0} - E_{D,0})(T - \frac{L}{v_{k}})\right]}{(E_{S,0} - E_{D,0})^{2}}\, .
+  \end{split}
+\end{equation}
 
   
 
