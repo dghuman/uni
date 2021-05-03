@@ -236,7 +236,7 @@ quthesis documentation.}}{}
     \chapter*{#1}}
 
 \def\afterpreface{\clearpage
-    %\pagenumbering{roman}
+    %\pagenumbering{arabic}
     \addcontentsline{toc}{chapter}{Contents}
     \tableofcontents
     \doublespacing
@@ -263,7 +263,7 @@ quthesis documentation.}}{}
     \renewcommand{\headrulewidth}{0.5pt}
     \renewcommand{\footrulewidth}{0pt}
     \lhead{\bfseries{\rightmark}}
-    \rhead{\bfseries{\thepage}}
+    \cfoot{\bfseries{\thepage}}
 }
 % Redefine \thebibliography to go to a new page and put an entry in the
 % table of contents

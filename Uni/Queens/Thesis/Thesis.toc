@@ -1,0 +1,27 @@
+\contentsline {chapter}{Abstract}{i}%
+\contentsline {chapter}{Acknowledgments}{ii}%
+\contentsline {chapter}{Statement of Originality}{iii}%
+\contentsline {chapter}{Contents}{iv}%
+\contentsline {chapter}{List of Tables}{vi}%
+\contentsline {chapter}{List of Figures}{vii}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}%
+\contentsline {section}{\numberline {1.1}Neutrinos}{1}%
+\contentsline {section}{\numberline {1.2}Neutrino Telescopes}{1}%
+\contentsline {chapter}{\numberline {2}The Pacific Ocean Neutrino Explorer}{2}%
+\contentsline {section}{\numberline {2.1}Detectors}{2}%
+\contentsline {subsection}{\numberline {2.1.1}Geometry}{2}%
+\contentsline {section}{\numberline {2.2}Ocean Networks Canada}{2}%
+\contentsline {chapter}{\numberline {3}Simulation}{3}%
+\contentsline {section}{\numberline {3.1}IceCube Framework}{3}%
+\contentsline {section}{\numberline {3.2}Simulating Neutrinos}{3}%
+\contentsline {section}{\numberline {3.3}Simulating Muons}{3}%
+\contentsline {section}{\numberline {3.4}Detector Response}{3}%
+\contentsline {chapter}{\numberline {4}Reconstruction}{4}%
+\contentsline {section}{\numberline {4.1}Linefit}{4}%
+\contentsline {section}{\numberline {4.2}Likelihood}{4}%
+\contentsline {chapter}{\numberline {5}Results}{5}%
+\contentsline {section}{\numberline {5.1}Likelihood}{5}%
+\contentsline {chapter}{\numberline {6}Summary and Conclusions}{6}%
+\contentsline {section}{\numberline {6.1}Summary}{6}%
+\contentsline {section}{\numberline {6.2}Future Work}{6}%
+\contentsline {section}{\numberline {6.3}Conclusion}{6}%
