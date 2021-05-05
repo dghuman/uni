@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Thesis.aux
+A level-1 auxiliary file: Introduction.aux
+A level-1 auxiliary file: The_PONE.aux
+A level-1 auxiliary file: Simulation.aux
+A level-1 auxiliary file: Reconstruction.aux
+A level-1 auxiliary file: Results.aux
+A level-1 auxiliary file: Conclusion.aux
+The style file: plain.bst
+Database file #1: thesis.bib
+Warning--I didn't find a database entry for "fig:n_vert"
+You've used 4 entries,
+            2118 wiz_defined-function locations,
+            536 strings with 4838 characters,
+and the built_in function-call counts, 1788 in all, are:
+= -- 159
+> -- 131
+< -- 0
++ -- 52
+- -- 48
+* -- 168
+:= -- 320
+add.period$ -- 12
+call.type$ -- 4
+change.case$ -- 36
+chr.to.int$ -- 0
+cite$ -- 4
+duplicate$ -- 44
+empty$ -- 105
+format.name$ -- 48
+if$ -- 343
+int.to.chr$ -- 0
+int.to.str$ -- 4
+missing$ -- 4
+newline$ -- 23
+num.names$ -- 8
+pop$ -- 28
+preamble$ -- 1
+purify$ -- 32
+quote$ -- 0
+skip$ -- 28
+stack$ -- 0
+substring$ -- 102
+swap$ -- 4
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 16
+warning$ -- 0
+while$ -- 13
+width$ -- 5
+write$ -- 46
+(There was 1 warning)

@@ -1,7 +1,48 @@
 \chapter{Introduction}
 
+The cosmic sky has entranced humans for as far as recorded history can trace. As technology evolved, so too did the observation of the universe around us; from the naked eye to primitive telescopes, and eventually to present day space telescopes, like the Hubble Space Telescope and the upcoming James Web Space Telescope \textbf{(NEED TO CITE THESE)}. These growing technological leaps have also resulted in the exploration of the incredibly small and eventually resulted in the discovery of the neutrino \cite{aneut}. It was perhaps inevitable that these two seemingly separate areas of physics would eventually meet. 
+
 \section{Neutrinos}
 
+The neutrino is a fundemental particle first proposed by Wolfgang Pauli \cite{nu_proposition}, and then later discovered in 1956 using the byproducts of $\beta^{-}$ decay \cite{aneut}. As research continued into the elusive neutrino, another flavour of neutrino was discovered in 1962 called the muon neutrino ($\nu_{\mu}$) \cite{m_nu} and eventually the final flavour of the tau neutrino ($\nu_\tau$) \cite{t_nu}. 
+
+\subsection{Interactions}
+
+Neutrinos are neutral and interact only through the Weak interaction. The Weak interaction is a force that is mediated by the $W^{\pm}$ and $Z^{0}$ massive bosons, and is the force responsible for decays. The main vertices involved in neutrino interactions are shown in Figure \cite{fig:n_vert}, where we see the lepton 
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[scale=3]
+    % W Boson
+    \draw [boson] (0,0) -- (0.5,0);
+    \node [left] at (0,0) {$W^{\pm}$};
+    % lepton
+    \draw [middlearrow={latex}] (0.5,0) -- (1,0.5);
+    \node [right] at (1,0.5) {$\ell$};
+    % neutrino
+    \draw [middlearrow={latex}] (1,-0.5) -- (0.5,0);
+    \node [right] at (1,-0.5) {$\nu_{\ell}$};
+  \end{tikzpicture}
+  \hspace{2em}
+  \begin{tikzpicture}[scale=3]
+    % Z Boson
+    \draw [boson] (0,0) -- (0.5,0);
+    \node [left] at (0,0) {$Z^{0}$};
+    % lepton
+    \draw [middlearrow={latex}] (0.5,0) -- (1,0.5);
+    \node [right] at (1,0.5) {$\nu_{\ell}$};
+    % neutrino
+    \draw [middlearrow={latex}] (1,-0.5) -- (0.5,0);
+    \node [right] at (1,-0.5) {$\nu_{\ell}$};
+  \end{tikzpicture}
+  \caption{The Feynmann diagrams for the vertices that would be included in neutrino interactions using the charged $W^{\pm}$ boson on the left and the neutral $Z^{0}$ boson on the right.}
+  \label{fig:n_vert}
+\end{figure}
+
+
+\subsection{Oscillations}
+
+\subsection{Production \& Sources}
 
 \section{Neutrino Telescopes}
 

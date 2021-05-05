@@ -93,9 +93,19 @@ Blah blah blah.
 %\setlength{\belowdisplayskip}{3pt plus1pt minus1pt}
 %\setlength{\belowdisplayshortskip}{3pt plus1pt minus1pt}
 
-
 % Include my chapter texts - kept separated to make editing easier.
 %\include{Glossary}
+
+\tikzset{
+  boson/.style={decorate, decoration={snake}},
+  middlearrow/.style={
+    decoration={markings,
+      mark= at position 0.5 with {\arrow{#1}} ,
+    },
+    postaction={decorate}
+  }
+}
+
 \include{Introduction}
 \include{The_PONE}
 \include{Simulation}
