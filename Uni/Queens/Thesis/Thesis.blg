@@ -10,45 +10,45 @@ A level-1 auxiliary file: Conclusion.aux
 The style file: plain.bst
 Database file #1: thesis.bib
 Warning--I didn't find a database entry for "fig:n_vert"
-You've used 4 entries,
+You've used 7 entries,
             2118 wiz_defined-function locations,
-            536 strings with 4838 characters,
-and the built_in function-call counts, 1788 in all, are:
-= -- 159
-> -- 131
+            552 strings with 5058 characters,
+and the built_in function-call counts, 2573 in all, are:
+= -- 240
+> -- 152
 < -- 0
-+ -- 52
-- -- 48
-* -- 168
-:= -- 320
-add.period$ -- 12
-call.type$ -- 4
-change.case$ -- 36
++ -- 61
+- -- 54
+* -- 216
+:= -- 450
+add.period$ -- 20
+call.type$ -- 7
+change.case$ -- 48
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 44
-empty$ -- 105
-format.name$ -- 48
-if$ -- 343
+cite$ -- 7
+duplicate$ -- 73
+empty$ -- 179
+format.name$ -- 54
+if$ -- 506
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 4
-newline$ -- 23
-num.names$ -- 8
-pop$ -- 28
+int.to.str$ -- 7
+missing$ -- 6
+newline$ -- 37
+num.names$ -- 14
+pop$ -- 41
 preamble$ -- 1
-purify$ -- 32
+purify$ -- 41
 quote$ -- 0
-skip$ -- 28
+skip$ -- 50
 stack$ -- 0
-substring$ -- 102
-swap$ -- 4
+substring$ -- 167
+swap$ -- 7
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 16
+type$ -- 28
 warning$ -- 0
-while$ -- 13
-width$ -- 5
-write$ -- 46
+while$ -- 23
+width$ -- 8
+write$ -- 76
 (There was 1 warning)

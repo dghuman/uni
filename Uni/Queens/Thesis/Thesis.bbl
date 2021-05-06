@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{bahcall}
+John~N. Bahcall.
+\newblock Solar neutrinos. i. theoretical.
+\newblock {\em Phys. Rev. Lett.}, 12:300--302, Mar 1964.
+
 \bibitem{nu_proposition}
 Laurie~M. {Brown}.
 \newblock {The idea of the neutrino}.
@@ -12,11 +17,20 @@ G.~Danby, J.~Gaillard, K.~Goulianos, L.~Lederman, N.~Mistry, M.~Schwartz, and
   two kinds of neutrinos.
 \newblock {\em Physical Review Letters}, 9:36--44, 1962.
 
+\bibitem{davis}
+Raymond Davis.
+\newblock Solar neutrinos. ii. experimental.
+\newblock {\em Phys. Rev. Lett.}, 12:303--305, Mar 1964.
+
 \bibitem{t_nu}
 K.~Kodama, N.~Ushida, C.~Andreopoulos, N.~Saoulidou, G.~Tzanakos, P.~Yager,
   B.~Baller, D.~Boehnlein, W.~Freeman, B.~Lundberg, and et~al.
 \newblock Observation of tau neutrino interactions.
 \newblock {\em Physics Letters B}, 504(3):218–224, Apr 2001.
+
+\bibitem{lowe_nu}
+Andrew~John Lowe.
+\newblock Neutrino physics \& the solar neutrino problem, 2009.
 
 \bibitem{aneut}
 F.~Reines, C.~L. Cowan, F.~B. Harrison, A.~D. McGuire, and H.~W. Kruse.
