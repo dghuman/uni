@@ -35,7 +35,7 @@ The classic demonstrative method to see this is to consider the mixing of two ne
 \end{equation}
 where $\theta$ is the mixing between the two flavour states, $L = \frac{4\pi E}{\Delta m^{2}}$ is the vacuum oscillation length, and $\Delta m^{2} = m_{2}^{2} - m_{1}^{2}$. Here it is easy enough to see that the oscillation probability vanishes if the masses are identical, and this naturally extends into the three flavour case. The vacuum oscillation length, $L$, is an important and useful quantity as it describes the distance a neutrino must travel before an oscillation is expected \cite{solar_nu}. Experiments like the long-baseline neutrino oscillation experiment Tokai-to-Kamioka (T2K) attempt to use this length to probe the mixing angles of the three neutrino flavours. 
 
-Similar to the CKM matrix for quark mixing \cite{pdg_ckm}, the PMNS matrix \cite{pmns} gives a relation between the mass and flavour states:
+Similar to the CKM matrix for quark mixing \cite{pdg_ckm}, the Pontecorvo-Maki-Nakagawa-Sakata (PMNS) matrix \cite{pmns} gives a relation between the mass and flavour states:
 \begin{equation}
   \begin{bmatrix}
     \nu_{e} \\
@@ -43,19 +43,30 @@ Similar to the CKM matrix for quark mixing \cite{pdg_ckm}, the PMNS matrix \cite
     \nu_{\tau}
   \end{bmatrix}
   =
+  U
+  \begin{bmatrix}
+    \nu_{1} \\
+    \nu_{2} \\
+    \nu_{3}
+  \end{bmatrix}
+  \, 
+\end{equation}
+and we see that
+\begin{equation}
+  U = 
   \begin{bmatrix}
     c_{12}c_{13} & s_{12}c_{13} & s_{13}e^{-i\delta_{\text{CP}}} \\
     -s_{12}c_{23}-c_{12}s_{23}s_{13}e^{i\delta_{\text{CP}}} & c_{12}c_{23} - s_{12}s_{23}s_{13}e^{i\delta_{\text{CP}}} & s_{23}c_{13} \\
     s_{12}s_{23}-c_{12}c_{23}s_{13}e^{i\delta_{\text{CP}}} & -c_{12}s_{23} - s_{12}c_{23}s_{13}e^{i\delta_{\text{CP}}} & c_{23}c_{13}
   \end{bmatrix}
   \begin{bmatrix}
-    \nu_{1} \\
-    \nu_{2} \\
-    \nu_{3}
+    e^{i\eta_{1}} & 0 & 0 \\
+    0 & e^{i\eta_{2}} & 0 \\
+    0 & 0 & 1
   \end{bmatrix}
   \, .
 \end{equation}
-
+where $s_{ij} = \sin\theta_{ij}$, $c_{ij}=\cos\theta_{ij}$, $\delta_{\text{CP}}$ is the Charge-Parity violation phase \cite{pmns}, and $\eta_{i}$ are the Majorana phases. 
 \subsection{Interactions}
 
 Neutrinos are neutral and interact only through the Weak interaction. The Weak interaction is a force that is mediated by the $W^{\pm}$ and $Z^{0}$ massive bosons, and is the force responsible for decays. The main vertices involved in neutrino interactions are shown in Figure \ref{fig:nvert}, where the interacting lepton corresponds with the interacting neutrino flavour. 
