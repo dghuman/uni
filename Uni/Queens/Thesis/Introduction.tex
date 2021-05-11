@@ -25,10 +25,36 @@ such as GALLEX \cite{gallex}. Regardless, the same issue persisted as there cont
   \nu_{e} + d & \to p + p + e^{-} \label{eq:deut_1} \\
   \nu_{l} + d & \to p + n + \nu_{l} \label{eq:deut_2}
 \end{align}
-where we have the Charged Current (CC) interaction in equation \ref{eq:deut_1} and the Neutral Current (NC) interaction in equation \ref{eq:deut_2}. This meant that all flavours of neutrinos could be detected, and using it to detect solar neutrinos showed the theoretical flux originally predicted \cite{sno}. 
+where we have the Charged Current (CC) interaction in equation \ref{eq:deut_1} and the Neutral Current (NC) interaction in equation \ref{eq:deut_2}. This meant that all flavours of neutrinos could be detected, and using it to detect solar neutrinos showed the theoretical flux originally predicted \cite{sno}.
 
-Need to talk about the distance dependence of oscillations, perhaps will need to cover the probability of observing a particular mass of neutrino given the length it travels $L$. Could do the simple two neutrino example, but should probably do the full formula from some source text.
+This result had an astounding implication; the neutrinos were changing on their journey from the Sun \cite{sno}. In the Standard Model, all the neutrino flavours have masses that are identically zero, and this would mean that there is no possible way for the neutrinos to somehow change flavour on their journey to the detectors \cite{solar_nu}. Clearly there was a change in flavour, and thus the Standard Model must be incorrect about the masses of the neutrinos.
 
+The classic demonstrative method to see this is to consider the mixing of two neutrino flavours (like $\nu_{\mu}$ and $\nu_{e}$) \cite{solar_nu}. In analogy to quark flavour mixing \cite{pdg_ckm}, we know the mixing of the flavours occurs in the transformation from the mass to the flavour basis. In particular, for two mass and flavour states one can find \cite{solar_nu},
+\begin{equation}
+  P(\nu_{e} \to \nu_{\mu}, ct) = \sin^{2}2\theta\sin^{2}\left(\frac{\pi ct}{L}\right)
+\end{equation}
+where $\theta$ is the mixing between the two flavour states, $L = \frac{4\pi E}{\Delta m^{2}}$ is the vacuum oscillation length, and $\Delta m^{2} = m_{2}^{2} - m_{1}^{2}$. Here it is easy enough to see that the oscillation probability vanishes if the masses are identical, and this naturally extends into the three flavour case. The vacuum oscillation length, $L$, is an important and useful quantity as it describes the distance a neutrino must travel before an oscillation is expected \cite{solar_nu}. Experiments like the long-baseline neutrino oscillation experiment Tokai-to-Kamioka (T2K) attempt to use this length to probe the mixing angles of the three neutrino flavours. 
+
+Similar to the CKM matrix for quark mixing \cite{pdg_ckm}, the PMNS matrix \cite{pmns} gives a relation between the mass and flavour states:
+\begin{equation}
+  \begin{bmatrix}
+    \nu_{e} \\
+    \nu_{\mu} \\
+    \nu_{\tau}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    c_{12}c_{13} & s_{12}c_{13} & s_{13}e^{-i\delta_{\text{CP}}} \\
+    -s_{12}c_{23}-c_{12}s_{23}s_{13}e^{i\delta_{\text{CP}}} & c_{12}c_{23} - s_{12}s_{23}s_{13}e^{i\delta_{\text{CP}}} & s_{23}c_{13} \\
+    s_{12}s_{23}-c_{12}c_{23}s_{13}e^{i\delta_{\text{CP}}} & -c_{12}s_{23} - s_{12}c_{23}s_{13}e^{i\delta_{\text{CP}}} & c_{23}c_{13}
+  \end{bmatrix}
+  \begin{bmatrix}
+    \nu_{1} \\
+    \nu_{2} \\
+    \nu_{3}
+  \end{bmatrix}
+  \, .
+\end{equation}
 
 \subsection{Interactions}
 

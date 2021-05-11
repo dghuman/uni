@@ -10,44 +10,44 @@ A level-1 auxiliary file: Results.aux
 A level-1 auxiliary file: Conclusion.aux
 The style file: plain.bst
 Database file #1: thesis.bib
-You've used 14 entries,
+You've used 16 entries,
             2118 wiz_defined-function locations,
-            599 strings with 6424 characters,
-and the built_in function-call counts, 5689 in all, are:
-= -- 522
-> -- 381
+            611 strings with 6705 characters,
+and the built_in function-call counts, 6251 in all, are:
+= -- 575
+> -- 406
 < -- 1
-+ -- 156
-- -- 138
-* -- 479
-:= -- 984
-add.period$ -- 40
-call.type$ -- 14
-change.case$ -- 110
++ -- 167
+- -- 146
+* -- 516
+:= -- 1078
+add.period$ -- 46
+call.type$ -- 16
+change.case$ -- 120
 chr.to.int$ -- 0
-cite$ -- 14
-duplicate$ -- 161
-empty$ -- 359
-format.name$ -- 138
-if$ -- 1121
+cite$ -- 16
+duplicate$ -- 179
+empty$ -- 408
+format.name$ -- 146
+if$ -- 1239
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 12
-newline$ -- 71
-num.names$ -- 28
-pop$ -- 99
+int.to.str$ -- 16
+missing$ -- 13
+newline$ -- 81
+num.names$ -- 32
+pop$ -- 111
 preamble$ -- 1
-purify$ -- 96
+purify$ -- 104
 quote$ -- 0
-skip$ -- 123
+skip$ -- 138
 stack$ -- 0
-substring$ -- 330
-swap$ -- 29
+substring$ -- 362
+swap$ -- 31
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
+type$ -- 64
 warning$ -- 0
-while$ -- 45
-width$ -- 16
-write$ -- 150
+while$ -- 50
+width$ -- 18
+write$ -- 170

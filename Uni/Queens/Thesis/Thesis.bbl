@@ -38,6 +38,11 @@ Raymond Davis.
 \newblock Solar neutrinos. ii. experimental.
 \newblock {\em Phys. Rev. Lett.}, 12:303--305, Mar 1964.
 
+\bibitem{pdg_ckm}
+W.J.~Marciano E.~Blucher.
+\newblock The cabibbo angle and ckm unitarity.
+\newblock \url{https://pdg.lbl.gov/2020/reviews/rpp2020-rev-vud-vus.pdf}.
+
 \bibitem{currents}
 Carlotta Giusti and Martin~V Ivanov.
 \newblock Neutral current neutrino-nucleus scattering: theory.
@@ -63,6 +68,11 @@ K.~Kodama, N.~Ushida, C.~Andreopoulos, N.~Saoulidou, G.~Tzanakos, P.~Yager,
 \bibitem{lowe_nu}
 Andrew~John Lowe.
 \newblock Neutrino physics \& the solar neutrino problem, 2009.
+
+\bibitem{pmns}
+Ziro Maki, Masami Nakagawa, and Shoichi Sakata.
+\newblock {Remarks on the Unified Model of Elementary Particles}.
+\newblock {\em Progress of Theoretical Physics}, 28(5):870--880, 11 1962.
 
 \bibitem{aneut}
 F.~Reines, C.~L. Cowan, F.~B. Harrison, A.~D. McGuire, and H.~W. Kruse.
