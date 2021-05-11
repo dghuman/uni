@@ -1,14 +1,30 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{bahcall}
 John~N. Bahcall.
 \newblock Solar neutrinos. i. theoretical.
 \newblock {\em Phys. Rev. Lett.}, 12:300--302, Mar 1964.
 
+\bibitem{sno}
+A.~Bellerive, J.R. Klein, A.B. McDonald, A.J. Noble, and A.W.P. Poon.
+\newblock The sudbury neutrino observatory.
+\newblock {\em Nuclear Physics B}, 908:30–51, Jul 2016.
+
 \bibitem{nu_proposition}
 Laurie~M. {Brown}.
 \newblock {The idea of the neutrino}.
 \newblock {\em Physics Today}, 31(9):23--28, September 1978.
+
+\bibitem{imb}
+D.~Casper, R.~Becker-Szendy, C.~B. Bratton, D.~R. Cady, R.~Claus, S.~T. Dye,
+  W.~Gajewski, M.~Goldhaber, T.~J. Haines, P.~G. Halverson, T.~W. Jones,
+  D.~Kielczewska, W.~R. Kropp, J.~G. Learned, J.~M. LoSecco, C.~McGrew,
+  S.~Matsuno, J.~Matthews, M.~S. Mudan, L.~Price, F.~Reines, J.~Schultz,
+  D.~Sinclair, H.~W. Sobel, J.~L. Stone, L.~R. Sulak, R.~Svoboda, G.~Thornton,
+  and J.~C. van~der Velde.
+\newblock Measurement of atmospheric neutrino composition with the imb-3
+  detector.
+\newblock {\em Phys. Rev. Lett.}, 66:2561--2564, May 1991.
 
 \bibitem{m_nu}
 G.~Danby, J.~Gaillard, K.~Goulianos, L.~Lederman, N.~Mistry, M.~Schwartz, and
@@ -28,6 +44,16 @@ Carlotta Giusti and Martin~V Ivanov.
 \newblock {\em Journal of Physics G: Nuclear and Particle Physics},
   47(2):024001, Jan 2020.
 
+\bibitem{solar_nu}
+Mike Guidry and Jay Billings.
+\newblock A basic introduction to the physics of solar neutrinos, 2018.
+
+\bibitem{kam}
+K.~S. Hirata et~al.
+\newblock {Observation of a small atmospheric muon-neutrino / electron-neutrino
+  ratio in Kamiokande}.
+\newblock {\em Phys. Lett. B}, 280:146--152, 1992.
+
 \bibitem{t_nu}
 K.~Kodama, N.~Ushida, C.~Andreopoulos, N.~Saoulidou, G.~Tzanakos, P.~Yager,
   B.~Baller, D.~Boehnlein, W.~Freeman, B.~Lundberg, and et~al.
@@ -42,5 +68,16 @@ Andrew~John Lowe.
 F.~Reines, C.~L. Cowan, F.~B. Harrison, A.~D. McGuire, and H.~W. Kruse.
 \newblock Detection of the free antineutrino.
 \newblock {\em Phys. Rev.}, 117:159--173, Jan 1960.
+
+\bibitem{gallex}
+D.~Vignaud.
+\newblock The gallex solar neutrino experiment.
+\newblock {\em Nuclear Physics B - Proceedings Supplements}, 60(3):20--29,
+  1998.
+
+\bibitem{superk}
+Christopher~W. Walter.
+\newblock The super-kamiokande experiment.
+\newblock {\em Neutrino Oscillations}, page 19–43, Mar 2008.
 
 \end{thebibliography}
