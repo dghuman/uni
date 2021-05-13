@@ -43,6 +43,10 @@ W.J.~Marciano E.~Blucher.
 \newblock The cabibbo angle and ckm unitarity.
 \newblock \url{https://pdg.lbl.gov/2020/reviews/rpp2020-rev-vud-vus.pdf}.
 
+\bibitem{atm_nu}
+Thomas~K. Gaisser.
+\newblock Atmospheric neutrinos, 2019.
+
 \bibitem{currents}
 Carlotta Giusti and Martin~V Ivanov.
 \newblock Neutral current neutrino-nucleus scattering: theory.
@@ -81,6 +85,12 @@ Ziro Maki, Masami Nakagawa, and Shoichi Sakata.
 \newblock {Remarks on the Unified Model of Elementary Particles}.
 \newblock {\em Progress of Theoretical Physics}, 28(5):870--880, 11 1962.
 
+\bibitem{msw}
+Mikheyev, Smirnov S.~P., and A.~Yu.
+\newblock Resonant amplification of $\nu$ oscillations in matter and
+  solar-neutrino spectroscopy.
+\newblock {\em Il Nuovo Cimento C}, 9, Jan 1986.
+
 \bibitem{aneut}
 F.~Reines, C.~L. Cowan, F.~B. Harrison, A.~D. McGuire, and H.~W. Kruse.
 \newblock Detection of the free antineutrino.
@@ -91,6 +101,11 @@ D.~Vignaud.
 \newblock The gallex solar neutrino experiment.
 \newblock {\em Nuclear Physics B - Proceedings Supplements}, 60(3):20--29,
   1998.
+
+\bibitem{volk_atm}
+L.~V. Volkova.
+\newblock {Energy Spectra and Angular Distributions of Atmospheric Neutrinos}.
+\newblock {\em Sov. J. Nucl. Phys.}, 31:784--790, 1980.
 
 \bibitem{superk}
 Christopher~W. Walter.

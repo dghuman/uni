@@ -1,5 +1,135 @@
 \chapter{Background}\label{ch:Background}
 
+\section{Neutrinos}
+
+The neutrino is a fundemental particle first proposed by Wolfgang Pauli \cite{nu_proposition}, and then later discovered in 1956 using the byproducts of $\beta^{-}$ decay \cite{aneut}. As research continued into the elusive neutrino, another flavour of neutrino was discovered in 1962 called the muon neutrino ($\nu_{\mu}$) \cite{m_nu} and eventually the final flavour of the tau neutrino ($\nu_\tau$) \cite{t_nu}. 
+
+\subsection{Oscillations}\label{subsec:osc}
+
+Alongside the discovery of the neutrino and their flavours, another problem arose in the field of neutrino physics: the solar neutrino problem \cite{lowe_nu}. During the 1960's, an experiment was proposed by Bahcall and Davis to measure the solar neutrino flux, referred to as the Homestake experiment \cite{davis, bahcall}. This was a tank of $^{37}$Cl, built underground to avoid cosmic backgrounds, and used the simple reaction\cite{davis, bahcall}
+\begin{equation}\label{eq:cl}
+  \nu_{e} + ^{37}\text{Cl} \to e^{-} + ^{37}\text{Ar}
+\end{equation}
+to measure the expected solar neutrino flux from the sun. 
+
+Solar neutrinos originate from nuclear processes that occur in the sun, such as the PP chain, or the CNO cycle, and can be detected in experiments on Earth \cite{solar_nu}. Depending on the energy and process in producing the neutrino, we can expect to detect particlar flavours of neutrinos in experiments like the Homestake experiment. In particular, using the predicted distribution of the internal electron density of the Sun, and a spectrum of the produced electron flavours, one could predict the expected flux of solar neutrinos \cite{solar_nu}. In particular, one could predict the influx of electron neutrinos, as was exactly done for the Homestake experiment. It was found that the measured flux was consistently around 30\% the theoretical amount \cite{davis, bahcall, solar_nu}, and hence was coined the solar neutrino problem.
+
+Neutrino detectors continued to be constructed to research and understand these fundemental particles, such as Super-Kamiokande \cite{superk}, the collaboration of Kamiokande \cite{kam} and the IMB \cite{imb} experiments. Another class of solar neutrino detectors were those that used the Gallium chain
+\begin{equation}\label{eq:gal}
+  \nu_{e} + ^{71}\text{Ga} \to e^{-} + ^{71}\text{Ge}\, ,
+\end{equation}
+such as GALLEX \cite{gallex}. Regardless, the same issue persisted as there continued to be a distinct dissonance between the theoretical expectations of solar neutrinos and the observed experimental results. That was, until the Sudbury Neutrino Observatory (SNO) made a distinct change in their approach to solar neutrino detection compared to predecessors by using heavy water \cite{sno}. This allowed for the following interactions \cite{sno},
+\begin{align}
+  \nu_{e} + d & \to p + p + e^{-} \label{eq:deut_1} \\
+  \nu_{l} + d & \to p + n + \nu_{l} \label{eq:deut_2}
+\end{align}
+where we have the Charged Current (CC) interaction in equation \ref{eq:deut_1} and the Neutral Current (NC) interaction in equation \ref{eq:deut_2}. This meant that all flavours of neutrinos could be detected, and using it to detect solar neutrinos showed the theoretical flux originally predicted \cite{sno}.
+
+This result had an astounding implication; the neutrinos were changing on their journey from the Sun \cite{sno}. In the Standard Model, all the neutrino flavours have masses that are identically zero, and this would mean that there is no possible way for the neutrinos to somehow change flavour on their journey to the detectors \cite{solar_nu}. Clearly there was a change in flavour, and thus the Standard Model must be incorrect about the masses of the neutrinos.
+
+The classic demonstrative method to see this is to consider the mixing of two neutrino flavours (like $\nu_{\mu}$ and $\nu_{e}$) \cite{solar_nu}. In analogy to quark flavour mixing \cite{pdg_ckm}, we know the mixing of the flavours occurs in the transformation from the mass to the flavour basis. In particular, for two mass and flavour states one can find \cite{solar_nu},
+\begin{equation}
+  P(\nu_{e} \to \nu_{\mu}, ct) = \sin^{2}2\theta\sin^{2}\left(\frac{\pi ct}{L}\right)
+\end{equation}
+where $\theta$ is the mixing between the two flavour states, $L = \frac{4\pi E}{\Delta m^{2}}$ is the vacuum oscillation length, and $\Delta m^{2} = m_{2}^{2} - m_{1}^{2}$. Here it is easy enough to see that the oscillation probability vanishes if the masses are identical, and this naturally extends into the three flavour case. The vacuum oscillation length, $L$, is an important and useful quantity as it describes the distance a neutrino must travel before an oscillation is expected \cite{solar_nu}. Experiments like the long-baseline neutrino oscillation experiment Tokai-to-Kamioka (T2K) attempt to use this length to probe the mixing angles of the three neutrino flavours. 
+
+Similar to the CKM matrix for quark mixing \cite{pdg_ckm}, the Pontecorvo-Maki-Nakagawa-Sakata (PMNS) matrix \cite{pmns} gives a relation between the mass and flavour states:
+\begin{equation}
+  \begin{bmatrix}
+    \nu_{e} \\
+    \nu_{\mu} \\
+    \nu_{\tau}
+  \end{bmatrix}
+  =
+  U
+  \begin{bmatrix}
+    \nu_{1} \\
+    \nu_{2} \\
+    \nu_{3}
+  \end{bmatrix}
+  \, 
+\end{equation}
+and we see that
+\begin{equation}
+  U = 
+  \begin{bmatrix}
+    c_{12}c_{13} & s_{12}c_{13} & s_{13}e^{-i\delta_{\text{CP}}} \\
+    -s_{12}c_{23}-c_{12}s_{23}s_{13}e^{i\delta_{\text{CP}}} & c_{12}c_{23} - s_{12}s_{23}s_{13}e^{i\delta_{\text{CP}}} & s_{23}c_{13} \\
+    s_{12}s_{23}-c_{12}c_{23}s_{13}e^{i\delta_{\text{CP}}} & -c_{12}s_{23} - s_{12}c_{23}s_{13}e^{i\delta_{\text{CP}}} & c_{23}c_{13}
+  \end{bmatrix}
+  \begin{bmatrix}
+    e^{i\eta_{1}} & 0 & 0 \\
+    0 & e^{i\eta_{2}} & 0 \\
+    0 & 0 & 1
+  \end{bmatrix}
+\end{equation}
+where $s_{ij} = \sin\theta_{ij}$, $c_{ij}=\cos\theta_{ij}$, $\delta_{\text{CP}}$ is the Charge-Parity violation phase \cite{pmns}, and $\eta_{i}$ are the Majorana phases. If neutrinos are not their own anti-particles, or in other words are Dirac fermions, we can expect $\eta_{i} = 0$. If they are their own anti-particles, also knowns as Majorana, then the phases $\eta_{i}$ play a more imporant role \cite{pdg}. 
+
+\subsection{Interactions}\label{subsec:int}
+
+Neutrinos are neutral and interact only through the Weak interaction. The Weak interaction is a force that is mediated by the $W^{\pm}$ and $Z^{0}$ massive bosons, and is the force responsible for decays. The main vertices involved in neutrino interactions are shown in Figure \ref{fig:nvert}, where the interacting lepton corresponds with the interacting neutrino flavour. 
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[scale=3]
+    % W Boson
+    \draw [boson] (0,0) -- (0.5,0);
+    \node [left] at (0,0) {$W^{\pm}$};
+    % lepton
+    \draw [middlearrow={latex}] (0.5,0) -- (1,0.5);
+    \node [right] at (1,0.5) {$\ell$};
+    % neutrino
+    \draw [middlearrow={latex}] (1,-0.5) -- (0.5,0);
+    \node [right] at (1,-0.5) {$\nu_{\ell}$};
+  \end{tikzpicture}
+  \hspace{2em}
+  \begin{tikzpicture}[scale=3]
+    % Z Boson
+    \draw [boson] (0,0) -- (0.5,0);
+    \node [left] at (0,0) {$Z^{0}$};
+    % lepton
+    \draw [middlearrow={latex}] (0.5,0) -- (1,0.5);
+    \node [right] at (1,0.5) {$\nu_{\ell}$};
+    % neutrino
+    \draw [middlearrow={latex}] (1,-0.5) -- (0.5,0);
+    \node [right] at (1,-0.5) {$\nu_{\ell}$};
+  \end{tikzpicture}
+  \caption{The Feynmann diagrams for the vertices that would be included in neutrino interactions using the charged $W^{\pm}$ boson on the left and the neutral $Z^{0}$ boson on the right.}
+  \label{fig:nvert}
+\end{figure}
+
+All interaction involving neutrino production or detection utilize these vertices in some shape or form. We refer to interactions that use the $W^{\pm}$ boson as the Charged Current (CC) interaction \cite{currents}, and those that use the $Z^{0}$ boson as being Neutral Current (NC) interactions \cite{currents}.
+
+It is natural to notice that these interactions require something to interact with, or in other words, the neutrinos must propagate through non-vacuum media and hit targets. We have up to this point only considered oscillations of neutrinos in vacuum, and another imporant aspect is to consider the effect interactions could have on these oscillations. In particular, it is noted that certain flavours of neutrinos can be more strongly influenced by media than others \cite{solar_nu,msw}. In particular, electron neutrinos ($\nu_{e}$) being first generation and majority of regular everyday matter being first generation would result in this stronger coupling \cite{solar_nu,msw}. This difference in coupling would result in changes in the oscillation that could be complex.
+
+This phenomena comes to a head with the Mikheyev–Smirnov–Wolfenstein (MSW) effect. The mixing angle and oscillation length vary with the electron density in the medium which varies the rate at which these neutrinos mix \cite{solar_nu,msw}. In particular there is a resonance mixing angle (and hence resonence electron density) at which the mixing is maximized \cite{solar_nu,msw}. The electron density in the sun at the center starts far above the resonance and ends below the resonance at the edge, hence the produced electron neutrinos experience this resonance oscillation along their path out of the solar center \cite{solar_nu,msw}. The MSW effect is currently understood to be the reason for the solar neutrino problem \cite{solar_nu}.
+
+\subsection{Production \& Sources}
+
+As was discussed in subsection \ref{subsec:int} and \ref{subsec:osc}, neutrinos produced in the fusion process hold great historical significance, and in the attempt to resolve the solar neutrino problem we have come to better understand neutrinos and their processes. The leading reaction chain is the $pp$ chain \cite{pdg,solar_nu}, which is given by \cite{pdg}
+\begin{equation}
+  p + p \to d + e^{+} + \nu_{e} \, .
+\end{equation}
+All other chains that fall under the $pp$ chain follow a similar idea; through the charged current interaction, there is the production of an electron neutrino during the fusion of two reactants \cite{pdg}.
+
+Another site where we can observe neutrino production is in the atmosphere \cite{atm_nu,pdg,volk_atm}. These neutrinos are primarly produced by the decay of pions and muons \cite{pdg},
+\begin{align}
+  \pi^{+} & \to \mu^{+} + \nu_{\mu}\, , \\
+  \mu^{+} & \to e^{+} + \nu_{e} + \bar{\nu}_{\mu}
+\end{align}
+and the charge conjugate $\pi^{-}$ \cite{pdg}. The production of these decaying pions and muons is initiated by cosmic rays interacting with the nucleons in the atmosphere \cite{atm_nu,pdg,volk_atm}. Looking at the inciting interactions, a natural and useful ratio is 
+\begin{equation}
+  \frac{\nu_{\mu} + \bar{\nu}_{\mu}}{\nu_{e} + \bar{\nu}_{e}}
+\end{equation}
+of the number densities \cite{pdg}. It is also useful to note that atmospheric neutrinos can be both downward heading and upward heading, as they can travel through the earth. These two different directions will experience different travel lengths and can be used to probe neutrino oscillations \cite{pdg}. There have been studies done on the atmospheric neutrino flux with experiments across the globe \cite{pdg, volk_atm}.
+
+Geo: Rare decays in the crust eject neutrinos which can be detected. 
+
+Active Galactic Nucleus: Active centres of galaxies that are hubs for producing high energy neutrinos
+
+Supernova: Massive Explosions of dying stars that eject high energy neutrinos.
+
+
 \section{Detection Techniques}
 
 Literature dive into different types of neutrino detection techniques.

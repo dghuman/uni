@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.18)  11 MAY 2021 21:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.18)  12 MAY 2021 22:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -774,31 +774,37 @@ Package caption Info: End \AtBeginDocument code.
 
  (./Introduction.tex
 Chapter 1.
-[1
+) [1
 
 
 
 ]
-Overfull \hbox (8.36292pt too wide) in paragraph at lines 19--20
-\OT1/cmr/m/n/12 fun-de-men-tal par-ti-cles, such as Super-Kamiokande [[]], the 
-col-lab-o-ra-tion of Kamiokande
- []
-
-[2] [3] [4] [5]) [6]
 \openout2 = `Background.aux'.
 
  (./Background.tex
 Chapter 2.
-) [7
+[2
 
 
 
 ]
+Overfull \hbox (8.36292pt too wide) in paragraph at lines 17--18
+\OT1/cmr/m/n/12 fun-de-men-tal par-ti-cles, such as Super-Kamiokande [[]], the 
+col-lab-o-ra-tion of Kamiokande
+ []
+
+[3] [4] [5]
+Overfull \hbox (0.65189pt too wide) in paragraph at lines 105--106
+[]\OT1/cmr/m/n/12 This phe-nom-ena comes to a head with the Mikheyev{Smirnov{Wo
+lfenstein (MSW)
+ []
+
+[6] [7]) [8] [9]
 \openout2 = `The_PONE.aux'.
 
  (./The_PONE.tex
 Chapter 3.
-) [8
+) [10
 
 
 
@@ -807,7 +813,7 @@ Chapter 3.
 
  (./Simulation.tex
 Chapter 4.
-) [9
+) [11
 
 
 
@@ -816,7 +822,7 @@ Chapter 4.
 
  (./Reconstruction.tex
 Chapter 5.
-) [10
+) [12
 
 
 
@@ -825,7 +831,7 @@ Chapter 5.
 
  (./Results.tex
 Chapter 6.
-) [11
+) [13
 
 
 
@@ -834,25 +840,25 @@ Chapter 6.
 
  (./Conclusion.tex
 Chapter 7.
-) [12
+) [14
 
 
 
-] (./Thesis.bbl [13
+] (./Thesis.bbl [15
 
 
 
-] [14]) [15] (./Thesis.aux (./Introduction.aux)
+] [16]) [17] (./Thesis.aux (./Introduction.aux)
 (./Background.aux) (./The_PONE.aux) (./Simulation.aux) (./Reconstruction.aux)
 (./Results.aux) (./Conclusion.aux)) ) 
 Here is how much of TeX's memory you used:
- 15585 strings out of 481239
- 307420 string characters out of 5920377
- 528336 words of memory out of 5000000
- 30481 multiletter control sequences out of 15000+600000
+ 15590 strings out of 481239
+ 307467 string characters out of 5920377
+ 527375 words of memory out of 5000000
+ 30486 multiletter control sequences out of 15000+600000
  539327 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,12n,73p,886b,1007s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,12n,73p,889b,1007s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super
 /cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc
@@ -866,10 +872,10 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Thesis.pdf (23 pages, 157582 bytes).
+Output written on Thesis.pdf (25 pages, 161743 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
+ 141 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
