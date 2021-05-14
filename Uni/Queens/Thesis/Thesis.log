@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.18)  12 MAY 2021 22:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.18)  13 MAY 2021 22:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -799,7 +799,7 @@ Overfull \hbox (0.65189pt too wide) in paragraph at lines 105--106
 lfenstein (MSW)
  []
 
-[6] [7]) [8] [9]
+[6] [7] [8]) [9]
 \openout2 = `The_PONE.aux'.
 
  (./The_PONE.tex
@@ -852,10 +852,10 @@ Chapter 7.
 (./Background.aux) (./The_PONE.aux) (./Simulation.aux) (./Reconstruction.aux)
 (./Results.aux) (./Conclusion.aux)) ) 
 Here is how much of TeX's memory you used:
- 15590 strings out of 481239
- 307467 string characters out of 5920377
- 527375 words of memory out of 5000000
- 30486 multiletter control sequences out of 15000+600000
+ 15593 strings out of 481239
+ 307490 string characters out of 5920377
+ 527387 words of memory out of 5000000
+ 30489 multiletter control sequences out of 15000+600000
  539327 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,12n,73p,889b,1007s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -872,7 +872,7 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Thesis.pdf (25 pages, 161743 bytes).
+Output written on Thesis.pdf (25 pages, 163858 bytes).
 PDF statistics:
  141 PDF objects out of 1000 (max. 8388607)
  100 compressed objects within 1 object stream

@@ -10,6 +10,11 @@ A.~Bellerive, J.R. Klein, A.B. McDonald, A.J. Noble, and A.W.P. Poon.
 \newblock The sudbury neutrino observatory.
 \newblock {\em Nuclear Physics B}, 908:30–51, Jul 2016.
 
+\bibitem{geo_nu}
+G.~Bellini, A.~Ianni, L.~Ludhova, F.~Mantovani, and W.F. McDonough.
+\newblock Geo-neutrinos.
+\newblock {\em Progress in Particle and Nuclear Physics}, 73:1–34, Nov 2013.
+
 \bibitem{nu_proposition}
 Laurie~M. {Brown}.
 \newblock {The idea of the neutrino}.
@@ -76,6 +81,11 @@ K.~Kodama, N.~Ushida, C.~Andreopoulos, N.~Saoulidou, G.~Tzanakos, P.~Yager,
 \newblock Observation of tau neutrino interactions.
 \newblock {\em Physics Letters B}, 504(3):218–224, Apr 2001.
 
+\bibitem{acc_nu}
+S~KOPP.
+\newblock Accelerator neutrino beams.
+\newblock {\em Physics Reports}, 439(3):101–159, Feb 2007.
+
 \bibitem{lowe_nu}
 Andrew~John Lowe.
 \newblock Neutrino physics \& the solar neutrino problem, 2009.
@@ -90,6 +100,11 @@ Mikheyev, Smirnov S.~P., and A.~Yu.
 \newblock Resonant amplification of $\nu$ oscillations in matter and
   solar-neutrino spectroscopy.
 \newblock {\em Il Nuovo Cimento C}, 9, Jan 1986.
+
+\bibitem{re_nu}
+Xin Qian and Jen-Chieh Peng.
+\newblock Physics with reactor neutrinos.
+\newblock {\em Reports on Progress in Physics}, 82(3):036201, Feb 2019.
 
 \bibitem{aneut}
 F.~Reines, C.~L. Cowan, F.~B. Harrison, A.~D. McGuire, and H.~W. Kruse.
