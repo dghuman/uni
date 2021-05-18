@@ -1,5 +1,37 @@
 \begin{thebibliography}{10}
 
+\bibitem{icecube_nat}
+Mark Aartsen, Markus Ackermann, and et~al.
+\newblock Neutrino emission from the direction of the blazar txs 0506+056 prior
+  to the icecube-170922a alert.
+\newblock {\em Science}, 361(6398):147--151, 2018.
+
+\bibitem{icecube}
+M.G. Aartsen, M.~Ackermann, J.~Adams, J.A. Aguilar, M.~Ahlers, M.~Ahrens,
+  D.~Altmann, K.~Andeen, T.~Anderson, I.~Ansseau, and et~al.
+\newblock The icecube neutrino observatory: instrumentation and online systems.
+\newblock {\em Journal of Instrumentation}, 12(03):P03012–P03012, Mar 2017.
+
+\bibitem{antares}
+M.~Ageron et~al.
+\newblock {ANTARES: the first undersea neutrino telescope}.
+\newblock {\em Nucl. Instrum. Meth. A}, 656:11--38, 2011.
+
+\bibitem{amanda}
+E.~Andres et~al.
+\newblock {The AMANDA neutrino telescope: Principle of operation and first
+  results}.
+\newblock {\em Astropart. Phys.}, 13:1--20, 2000.
+
+\bibitem{dumand}
+J.~Babson, B.~Barish, R.~Becker-Szendy, H.~Bradner, R.~Cady, J.~Clem, S.~T.
+  Dye, J.~Gaidos, P.~Gorham, P.~K.~F. Grieder, M.~Jaworski, T.~Kitamura,
+  W.~Kropp, J.~G. Learned, S.~Matsuno, R.~March, K.~Mitsui, D.~O'Connor,
+  Y.~Ohashi, A.~Okada, V.~Peterson, L.~Price, F.~Reines, A.~Roberts, C.~Roos,
+  H.~Sobel, V.~J. Stenger, M.~Webster, and C.~Wilson.
+\newblock Cosmic-ray muons in the deep ocean.
+\newblock {\em Phys. Rev. D}, 42:3613--3620, Dec 1990.
+
 \bibitem{bahcall}
 John~N. Bahcall.
 \newblock Solar neutrinos. i. theoretical.
@@ -14,6 +46,12 @@ A.~Bellerive, J.R. Klein, A.B. McDonald, A.J. Noble, and A.W.P. Poon.
 G.~Bellini, A.~Ianni, L.~Ludhova, F.~Mantovani, and W.F. McDonough.
 \newblock Geo-neutrinos.
 \newblock {\em Progress in Particle and Nuclear Physics}, 73:1–34, Nov 2013.
+
+\bibitem{baikal}
+I.~A. Belolaptikov et~al.
+\newblock {The Baikal underwater neutrino telescope: Design, performance and
+  first results}.
+\newblock {\em Astropart. Phys.}, 7:263--282, 1997.
 
 \bibitem{germ_low}
 S.~Bhattarai, D.~M. Mei, and M.~S. Raut.
@@ -99,6 +137,12 @@ K.~S. Hirata et~al.
 \newblock {Observation of a small atmospheric muon-neutrino / electron-neutrino
   ratio in Kamiokande}.
 \newblock {\em Phys. Lett. B}, 280:146--152, 1992.
+
+\bibitem{icecube_rad}
+Spencer~R. Klein.
+\newblock Icecube: A cubic kilometer radiation detector.
+\newblock {\em IEEE Transactions on Nuclear Science}, 56(3):1141–1147, Jun
+  2009.
 
 \bibitem{t_nu}
 K.~Kodama, N.~Ushida, C.~Andreopoulos, N.~Saoulidou, G.~Tzanakos, P.~Yager,
