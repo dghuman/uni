@@ -40,6 +40,12 @@ D.~Casper, R.~Becker-Szendy, C.~B. Bratton, D.~R. Cady, R.~Claus, S.~T. Dye,
   detector.
 \newblock {\em Phys. Rev. Lett.}, 66:2561--2564, May 1991.
 
+\bibitem{cher_og}
+P~A Cherenkov.
+\newblock {Dokl. Akad. Nauk SSSR}.
+\newblock {\em [Comptes Rendus Acad. Sciences USSR 2 451 (1934)]}, 2(451),
+  1934.
+
 \bibitem{m_nu}
 G.~Danby, J.~Gaillard, K.~Goulianos, L.~Lederman, N.~Mistry, M.~Schwartz, and
   J.~Steinberger.
@@ -57,9 +63,19 @@ W.J.~Marciano E.~Blucher.
 \newblock The cabibbo angle and ckm unitarity.
 \newblock \url{https://pdg.lbl.gov/2020/reviews/rpp2020-rev-vud-vus.pdf}.
 
+\bibitem{minos}
+Justin Evans.
+\newblock The minos experiment: results and prospects, 2013.
+
 \bibitem{atm_nu}
 Thomas~K. Gaisser.
 \newblock Atmospheric neutrinos, 2019.
+
+\bibitem{ginz}
+V.~L. Ginzburg.
+\newblock Radiation from uniformly moving sources (vavilov-cherenkov effect,
+  transition radiation, and some other phenomena).
+\newblock {\em Acoustical Physics}, 51, Feb 2005.
 
 \bibitem{currents}
 Carlotta Giusti and Martin~V Ivanov.
@@ -94,6 +110,13 @@ K.~Kodama, N.~Ushida, C.~Andreopoulos, N.~Saoulidou, G.~Tzanakos, P.~Yager,
 S~KOPP.
 \newblock Accelerator neutrino beams.
 \newblock {\em Physics Reports}, 439(3):101–159, Feb 2007.
+
+\bibitem{ical}
+A~Kumar, A~M Vinod~Kumar, Abhik Jash, Ajit~K Mohanty, Aleena Chacko, Ali Ajmi,
+  Ambar Ghosal, Amina Khatun, Amitava Raychaudhuri, Amol Dighe, and et~al.
+\newblock Invited review: Physics potential of the ical detector at the
+  india-based neutrino observatory (ino).
+\newblock {\em Pramana}, 88(5), Apr 2017.
 
 \bibitem{lowe_nu}
 Andrew~John Lowe.
@@ -130,6 +153,18 @@ Arun~Kumar Soma and Henry Tsz-King Wong.
 \newblock {Germanium detectors with sub-keV sensitivities for neutrino and dark
   matter physics}.
 \newblock {\em J. Phys. Conf. Ser.}, 606(1):012011, 2015.
+
+\bibitem{tamm}
+I~E Tamm and I~M Frank.
+\newblock {Dokl. Akad. Nauk SSSR}.
+\newblock {\em [Comptes Rendus Acad. Sciences USSR 14 107 (1937)]}, 14(107),
+  1937.
+
+\bibitem{vav_og}
+S~I Vavilov.
+\newblock {Dokl. Akad. Nauk SSSR}.
+\newblock {\em [Comptes Rendus Acad. Sciences USSR 2 457 (1934)]}, 2(457),
+  1934.
 
 \bibitem{gallex}
 D.~Vignaud.

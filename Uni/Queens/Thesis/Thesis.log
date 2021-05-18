@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.18)  15 MAY 2021 23:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.18)  17 MAY 2021 22:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -799,12 +799,12 @@ Overfull \hbox (0.65189pt too wide) in paragraph at lines 105--106
 lfenstein (MSW)
  []
 
-[6] [7] [8] [9]) [10]
+[6] [7] [8] [9] [10]) [11]
 \openout2 = `The_PONE.aux'.
 
  (./The_PONE.tex
 Chapter 3.
-) [11
+) [12
 
 
 
@@ -813,7 +813,7 @@ Chapter 3.
 
  (./Simulation.tex
 Chapter 4.
-) [12
+) [13
 
 
 
@@ -822,7 +822,7 @@ Chapter 4.
 
  (./Reconstruction.tex
 Chapter 5.
-) [13
+) [14
 
 
 
@@ -831,7 +831,7 @@ Chapter 5.
 
  (./Results.tex
 Chapter 6.
-) [14
+) [15
 
 
 
@@ -840,22 +840,22 @@ Chapter 6.
 
  (./Conclusion.tex
 Chapter 7.
-) [15
+) [16
 
 
 
-] (./Thesis.bbl [16
+] (./Thesis.bbl [17
 
 
 
-] [17] [18]) [19] (./Thesis.aux (./Introduction.aux)
+] [18] [19]) [20] (./Thesis.aux (./Introduction.aux)
 (./Background.aux) (./The_PONE.aux) (./Simulation.aux) (./Reconstruction.aux)
 (./Results.aux) (./Conclusion.aux)) ) 
 Here is how much of TeX's memory you used:
- 15597 strings out of 481239
- 307526 string characters out of 5920377
- 527403 words of memory out of 5000000
- 30493 multiletter control sequences out of 15000+600000
+ 15603 strings out of 481239
+ 307568 string characters out of 5920377
+ 527427 words of memory out of 5000000
+ 30499 multiletter control sequences out of 15000+600000
  539327 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,12n,73p,1055b,1007s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -872,10 +872,10 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Thesis.pdf (27 pages, 166835 bytes).
+Output written on Thesis.pdf (28 pages, 173402 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
+ 151 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
