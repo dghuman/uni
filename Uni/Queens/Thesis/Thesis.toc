@@ -13,26 +13,26 @@
 \contentsline {section}{\numberline {2.2}Detection Techniques}{9}%
 \contentsline {subsection}{\numberline {2.2.1}Vavilov-Cherenkov}{10}%
 \contentsline {section}{\numberline {2.3}Neutrino Telescopes}{11}%
-\contentsline {subsection}{\numberline {2.3.1}IceCube}{11}%
-\contentsline {subsection}{\numberline {2.3.2}ANTARES}{11}%
-\contentsline {subsection}{\numberline {2.3.3}KM3NET}{11}%
-\contentsline {chapter}{\numberline {3}The Pacific Ocean Neutrino Explorer}{12}%
-\contentsline {section}{\numberline {3.1}Detectors}{12}%
-\contentsline {subsection}{\numberline {3.1.1}Geometry}{12}%
-\contentsline {section}{\numberline {3.2}Ocean Networks Canada}{12}%
-\contentsline {chapter}{\numberline {4}Simulation}{13}%
-\contentsline {section}{\numberline {4.1}IceCube Framework}{13}%
-\contentsline {section}{\numberline {4.2}Simulating Neutrinos}{13}%
-\contentsline {section}{\numberline {4.3}Simulating Muons}{13}%
-\contentsline {section}{\numberline {4.4}Detector Response}{13}%
-\contentsline {chapter}{\numberline {5}Reconstruction}{14}%
-\contentsline {section}{\numberline {5.1}Linefit}{14}%
-\contentsline {section}{\numberline {5.2}Likelihood}{14}%
-\contentsline {chapter}{\numberline {6}Results}{15}%
-\contentsline {section}{\numberline {6.1}Likelihood}{15}%
-\contentsline {chapter}{\numberline {7}Summary and Conclusions}{16}%
-\contentsline {section}{\numberline {7.1}Summary}{16}%
-\contentsline {section}{\numberline {7.2}Future Work}{16}%
-\contentsline {section}{\numberline {7.3}Conclusion}{16}%
-\contentsline {chapter}{Bibliography}{17}%
+\contentsline {subsection}{\numberline {2.3.1}IceCube}{12}%
+\contentsline {subsection}{\numberline {2.3.2}ANTARES}{12}%
+\contentsline {subsection}{\numberline {2.3.3}KM3NET}{12}%
+\contentsline {chapter}{\numberline {3}The Pacific Ocean Neutrino Explorer}{13}%
+\contentsline {section}{\numberline {3.1}Detectors}{13}%
+\contentsline {subsection}{\numberline {3.1.1}Geometry}{13}%
+\contentsline {section}{\numberline {3.2}Ocean Networks Canada}{13}%
+\contentsline {chapter}{\numberline {4}Simulation}{14}%
+\contentsline {section}{\numberline {4.1}IceCube Framework}{14}%
+\contentsline {section}{\numberline {4.2}Simulating Neutrinos}{14}%
+\contentsline {section}{\numberline {4.3}Simulating Muons}{14}%
+\contentsline {section}{\numberline {4.4}Detector Response}{14}%
+\contentsline {chapter}{\numberline {5}Reconstruction}{15}%
+\contentsline {section}{\numberline {5.1}Linefit}{15}%
+\contentsline {section}{\numberline {5.2}Likelihood}{15}%
+\contentsline {chapter}{\numberline {6}Results}{16}%
+\contentsline {section}{\numberline {6.1}Likelihood}{16}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{17}%
+\contentsline {section}{\numberline {7.1}Summary}{17}%
+\contentsline {section}{\numberline {7.2}Future Work}{17}%
+\contentsline {section}{\numberline {7.3}Conclusion}{17}%
+\contentsline {chapter}{Bibliography}{18}%
 \renewcommand *\cftchappresnum {Appendix }
