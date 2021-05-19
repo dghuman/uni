@@ -15,24 +15,24 @@
 \contentsline {section}{\numberline {2.3}Neutrino Telescopes}{11}%
 \contentsline {subsection}{\numberline {2.3.1}IceCube}{12}%
 \contentsline {subsection}{\numberline {2.3.2}ANTARES}{13}%
-\contentsline {subsection}{\numberline {2.3.3}KM3NET}{13}%
-\contentsline {chapter}{\numberline {3}The Pacific Ocean Neutrino Explorer}{14}%
-\contentsline {section}{\numberline {3.1}Detectors}{14}%
-\contentsline {subsection}{\numberline {3.1.1}Geometry}{14}%
-\contentsline {section}{\numberline {3.2}Ocean Networks Canada}{14}%
-\contentsline {chapter}{\numberline {4}Simulation}{15}%
-\contentsline {section}{\numberline {4.1}IceCube Framework}{15}%
-\contentsline {section}{\numberline {4.2}Simulating Neutrinos}{15}%
-\contentsline {section}{\numberline {4.3}Simulating Muons}{15}%
-\contentsline {section}{\numberline {4.4}Detector Response}{15}%
-\contentsline {chapter}{\numberline {5}Reconstruction}{16}%
-\contentsline {section}{\numberline {5.1}Linefit}{16}%
-\contentsline {section}{\numberline {5.2}Likelihood}{16}%
-\contentsline {chapter}{\numberline {6}Results}{17}%
-\contentsline {section}{\numberline {6.1}Likelihood}{17}%
-\contentsline {chapter}{\numberline {7}Summary and Conclusions}{18}%
-\contentsline {section}{\numberline {7.1}Summary}{18}%
-\contentsline {section}{\numberline {7.2}Future Work}{18}%
-\contentsline {section}{\numberline {7.3}Conclusion}{18}%
-\contentsline {chapter}{Bibliography}{19}%
+\contentsline {subsection}{\numberline {2.3.3}KM3NET}{14}%
+\contentsline {chapter}{\numberline {3}The Pacific Ocean Neutrino Explorer}{15}%
+\contentsline {section}{\numberline {3.1}Detectors}{15}%
+\contentsline {subsection}{\numberline {3.1.1}Geometry}{15}%
+\contentsline {section}{\numberline {3.2}Ocean Networks Canada}{15}%
+\contentsline {chapter}{\numberline {4}Simulation}{16}%
+\contentsline {section}{\numberline {4.1}IceCube Framework}{16}%
+\contentsline {section}{\numberline {4.2}Simulating Neutrinos}{16}%
+\contentsline {section}{\numberline {4.3}Simulating Muons}{16}%
+\contentsline {section}{\numberline {4.4}Detector Response}{16}%
+\contentsline {chapter}{\numberline {5}Reconstruction}{17}%
+\contentsline {section}{\numberline {5.1}Linefit}{17}%
+\contentsline {section}{\numberline {5.2}Likelihood}{17}%
+\contentsline {chapter}{\numberline {6}Results}{18}%
+\contentsline {section}{\numberline {6.1}Likelihood}{18}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{19}%
+\contentsline {section}{\numberline {7.1}Summary}{19}%
+\contentsline {section}{\numberline {7.2}Future Work}{19}%
+\contentsline {section}{\numberline {7.3}Conclusion}{19}%
+\contentsline {chapter}{Bibliography}{20}%
 \renewcommand *\cftchappresnum {Appendix }
