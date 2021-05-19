@@ -27,12 +27,12 @@
 \contentsline {section}{\numberline {4.4}Detector Response}{16}%
 \contentsline {chapter}{\numberline {5}Reconstruction}{17}%
 \contentsline {section}{\numberline {5.1}Linefit}{17}%
-\contentsline {section}{\numberline {5.2}Likelihood}{17}%
-\contentsline {chapter}{\numberline {6}Results}{18}%
-\contentsline {section}{\numberline {6.1}Likelihood}{18}%
-\contentsline {chapter}{\numberline {7}Summary and Conclusions}{19}%
-\contentsline {section}{\numberline {7.1}Summary}{19}%
-\contentsline {section}{\numberline {7.2}Future Work}{19}%
-\contentsline {section}{\numberline {7.3}Conclusion}{19}%
-\contentsline {chapter}{Bibliography}{20}%
+\contentsline {section}{\numberline {5.2}Likelihood}{18}%
+\contentsline {chapter}{\numberline {6}Results}{19}%
+\contentsline {section}{\numberline {6.1}Likelihood}{19}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{20}%
+\contentsline {section}{\numberline {7.1}Summary}{20}%
+\contentsline {section}{\numberline {7.2}Future Work}{20}%
+\contentsline {section}{\numberline {7.3}Conclusion}{20}%
+\contentsline {chapter}{Bibliography}{21}%
 \renewcommand *\cftchappresnum {Appendix }
