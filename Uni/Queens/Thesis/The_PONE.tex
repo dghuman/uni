@@ -13,12 +13,14 @@ The geometry of the detector is incredibly important, as the layout and position
   \label{fig:pone_geo}
 \end{figure}
 
+With the current proposed geometry, the detector will be incredibly sensitive to horizontal incoming high energy muons from neutrino astrophysical neutrino sources \cite{pone}. 
+
 \section{Detectors}
-Similar to previously constructed Neutrino Telescopes, P-ONE will primarily use Vavilov-Cherenkov Radiation from leptons produced through neutrino interactions. This electromagnetic radiation is then detected through highly sensitive optical modules that consist of Photo-Multiplier Tubes (PMTs). 
+Similar to previously constructed Neutrino Telescopes, P-ONE will primarily use Vavilov-Cherenkov Radiation from leptons produced through neutrino interactions. This electromagnetic radiation is then detected through highly sensitive optical modules that consist of Photo-Multiplier Tubes (PMTs).
 
 \subsection{Photo-Multiplier Tubes}
 
-Use photoelectric effect and then showering of electrons to enhance the signal at the photon level.
+
 
 \subsection{Digital Optical Modules}
 
@@ -26,11 +28,18 @@ Adopted from the DOMs in IceCube that house the PMTs.
 
 \subsection{mDOMs}
 
-Proposed redesign of the IceCube DOM to increase the granularity of light detection. In place of one large PMT, multiple smaller PMTs can line the same space and coverage at the cost of gaps between detectors. The benefit being that individual hits on the smaller PMTs can provide extra information using the acceptance angle and directionality of that particular PMT. 
+Proposed redesign of the IceCube DOM to increase the granularity of light detection. In place of one large PMT, multiple smaller PMTs can line the same space and coverage at the cost of gaps between detectors. The benefit being that individual hits on the smaller PMTs can provide extra information using the acceptance angle and directionality of that particular PMT. Moreover, in theory this can also reproduce the standard DOM data as the signal collected by a single PMT in the array can be collected and treated as a hit for the entire DOM. This gives the mDOMs a felxibility that isn't present for standard DOMs. In IceCube the standard DOMs use single $10^{\prime\prime}$ diameter PMTs \cite{icecube}, where the mDOMs would use multiple $3^{\prime\prime}$ diameter PMTs. 
 
 \section{Strings for Absorption length in Water}
 
-The Pathfinder mission for P-ONE is the STRings for Absroption length in Water (STRAW) and its follow up STRAW-b, which were deployed in 2018 and 2020 respectively. The purpose of these missions was to test the technical details of running an experiment like P-ONE, such as the hardware limitation, and to provide data to measure the Attenuation length of light in water. In particular, even in perfectly clean water, light
+The Pathfinder mission for P-ONE is the STRings for Absroption length in Water (STRAW) and its follow up STRAW-b, which were deployed in 2018 and 2020 respectively. The purpose of these missions was to test the technical details of running an experiment like P-ONE, such as the hardware limitation, to provide data to measure the Attenuation length of light in water for light in wavelengths between 350 nm and 600 nm, characterize the bioluminescence of deap-sea living organisms and the $^{40}$K dissolved in the salty water \cite{straw}.
+
+The basic design of STRAW is the same as that of standard Neutrino Telescopes; using PMTs for detecting photons and calibrating light emmitting sources on mooring lines to collect data \cite{straw}. In this particular case STRAW uses two vertical mooring lines with $3^{\prime\prime}$ PMTs and Precision Optical Calibrationn Modules (POCAMs) for the calibration sources \cite{straw}, which provide isotropic and short pulsed flashes of light. The attenuation length $L_{T}$ in water can be realized using the known photon intensity $N_{0}$, the wavelength from the POCAM flashes and the distance $r$ to each particular PMT with effective collection area $A_{\text{det}}$ measuring an intensity $N(r)$ \cite{straw}. This yields
+\begin{equation}
+  N(r) = \frac{N_{0}}{4\pi r^{2}}\exp\left(-\frac{r}{L_{T}}\right)A_{\text{det}}\, .
+\end{equation}
+
+
 
 \section{Ocean Networks Canada}
 
