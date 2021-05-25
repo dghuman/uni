@@ -24,19 +24,19 @@
 \contentsline {subsection}{\numberline {3.2.3}mDOMs}{17}%
 \contentsline {section}{\numberline {3.3}Strings for Absorption length in Water}{17}%
 \contentsline {section}{\numberline {3.4}Ocean Networks Canada}{18}%
-\contentsline {chapter}{\numberline {4}Simulation}{19}%
-\contentsline {section}{\numberline {4.1}IceCube Framework}{19}%
-\contentsline {section}{\numberline {4.2}Simulating Neutrinos}{19}%
-\contentsline {section}{\numberline {4.3}Simulating Muons}{19}%
-\contentsline {section}{\numberline {4.4}Detector Response}{19}%
-\contentsline {chapter}{\numberline {5}Reconstruction}{20}%
-\contentsline {section}{\numberline {5.1}Linefit}{20}%
-\contentsline {section}{\numberline {5.2}Likelihood}{21}%
-\contentsline {chapter}{\numberline {6}Results}{22}%
-\contentsline {section}{\numberline {6.1}Likelihood}{22}%
-\contentsline {chapter}{\numberline {7}Summary and Conclusions}{23}%
-\contentsline {section}{\numberline {7.1}Summary}{23}%
-\contentsline {section}{\numberline {7.2}Future Work}{23}%
-\contentsline {section}{\numberline {7.3}Conclusion}{23}%
-\contentsline {chapter}{Bibliography}{24}%
+\contentsline {chapter}{\numberline {4}Simulation}{21}%
+\contentsline {section}{\numberline {4.1}IceCube Framework}{21}%
+\contentsline {section}{\numberline {4.2}Simulating Neutrinos}{21}%
+\contentsline {section}{\numberline {4.3}Simulating Muons}{21}%
+\contentsline {section}{\numberline {4.4}Detector Response}{21}%
+\contentsline {chapter}{\numberline {5}Reconstruction}{22}%
+\contentsline {section}{\numberline {5.1}Linefit}{22}%
+\contentsline {section}{\numberline {5.2}Likelihood}{23}%
+\contentsline {chapter}{\numberline {6}Results}{24}%
+\contentsline {section}{\numberline {6.1}Likelihood}{24}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{25}%
+\contentsline {section}{\numberline {7.1}Summary}{25}%
+\contentsline {section}{\numberline {7.2}Future Work}{25}%
+\contentsline {section}{\numberline {7.3}Conclusion}{25}%
+\contentsline {chapter}{Bibliography}{26}%
 \renewcommand *\cftchappresnum {Appendix }

@@ -1,6 +1,6 @@
 \chapter{The Pacific Ocean Neutrino Explorer}
 
-The  Pacific Ocean Neutrino Explorer (P-ONE) is a proposed Neutrino Telescope planned to run in the Pacific Ocean near the West Coast of Vancouver Island, Canada \cite{pone}. As with other Neutrino Telescopes, P-ONE hopes to detect and characterize astrophysical neutrinos from galactic and extra-galactic sources for extremely high energy neutrinos \cite{pone}. In particular, due to the planned multi-cubic kilometer coverage, it would be suitable for neutrinos from sources such as Blazars \cite{icecube_nat}. Moreover P-ONE hopes to provide an avenue for research in exotic particle searches, dark matter, neutrino oscillations, supernova neutrinos, tau neutrino studies ($\nu_{\tau}$) and oceanography studies \cite{pone}. 
+The  Pacific Ocean Neutrino Explorer (P-ONE) is a proposed Neutrino Telescope planned to run in the Pacific Ocean near the West Coast of Vancouver Island, Canada \cite{pone}. As with other Neutrino Telescopes, P-ONE hopes to detect and characterize astrophysical neutrinos from galactic and extra-galactic sources for extremely high energy neutrinos \cite{pone}. In particular, due to the planned multi-cubic kilometer coverage, it would be suitable for neutrinos from sources such as Blazars \cite{icecube_nat}. Moreover P-ONE hopes to provide an avenue for research in exotic particle searches, dark matter, neutrino oscillations, supernova neutrinos, and tau neutrino studies ($\nu_{\tau}$) \cite{pone}. 
 
 \section{Geometry}
 
@@ -34,15 +34,32 @@ Proposed redesign of the IceCube DOM to increase the granularity of light detect
 
 The Pathfinder mission for P-ONE is the STRings for Absroption length in Water (STRAW) and its follow up STRAW-b, which were deployed in 2018 and 2020 respectively. The purpose of these missions was to test the technical details of running an experiment like P-ONE, such as the hardware limitation, to provide data to measure the Attenuation length of light in water for light in wavelengths between 350 nm and 600 nm, characterize the bioluminescence of deap-sea living organisms and the $^{40}$K dissolved in the salty water \cite{straw}.
 
-The basic design of STRAW is the same as that of standard Neutrino Telescopes; using PMTs for detecting photons and calibrating light emmitting sources on mooring lines to collect data \cite{straw}. In this particular case STRAW uses two vertical mooring lines with $3^{\prime\prime}$ PMTs and Precision Optical Calibrationn Modules (POCAMs) for the calibration sources \cite{straw}, which provide isotropic and short pulsed flashes of light. The attenuation length $L_{T}$ in water can be realized using the known photon intensity $N_{0}$, the wavelength from the POCAM flashes and the distance $r$ to each particular PMT with effective collection area $A_{\text{det}}$ measuring an intensity $N(r)$ \cite{straw}. This yields
+The basic design of STRAW is the same as that of standard Neutrino Telescopes; using PMTs for detecting photons and calibrating light emmitting sources on mooring lines to collect data \cite{straw}. In this particular case STRAW uses two vertical mooring lines with $3^{\prime\prime}$ PMTs and Precision Optical Calibration Modules (POCAMs) for the calibration sources \cite{straw}, which provide isotropic and short pulsed flashes of light. The attenuation length $L_{T}$ in water can be realized using the known photon intensity $N_{0}$, the wavelength from the POCAM flashes and the distance $r$ to each particular PMT with effective collection area $A_{\text{det}}$ measuring an intensity $N(r)$ \cite{straw}. This yields
 \begin{equation}
   N(r) = \frac{N_{0}}{4\pi r^{2}}\exp\left(-\frac{r}{L_{T}}\right)A_{\text{det}}\, .
 \end{equation}
-The expected maximum value of absorption length is around 50 meters, so the STRAW geometry has been chosen to cover the ranges between 20 m and 90 m \cite{straw}. Some of the geometry choices were purely due to technical limitations, such as the maximum safe cable lengths to minimize data loss \cite{straw}, while others were to preserve some form of symmetry between modules \cite{straw}. 
+The expected maximum value of absorption length is around 50 meters, so the STRAW geometry has been chosen to cover the ranges between 20 m and 90 m \cite{straw}. Some of the geometry choices were purely due to technical limitations, such as the maximum safe cable lengths to minimize data loss \cite{straw}, while others were to preserve some form of symmetry between modules \cite{straw}.
 
+Should I talk about POCAMs in detail? \cite{pocam}
 
 \section{Ocean Networks Canada}
 
-Ocean Networks Canada (ONC) is the institution that has supported and provided infrastructure for running an experiment of the scale that P-ONE is. 
+The construction and implementation of P-ONE is supported by Ocean Networks Canada (ONC), an oceanography observatory with a vast network monitoring the west and east coasts of Canada along with the arctic \cite{onc}. Situated at the University of Victoria, ONC uses cabled observatories, remote control systems and interactive sensors for data collection and evidence-based decision-making \cite{onc}. The west coast observatory is comprised of the 800-km NEPTUNE observatory and the nearly 50-km VENUS observatory \cite{onc}, with the NEPTUNE observatory housing the proposed site of P-ONE at the Cascadia Basin.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.9\textwidth]{./Figures/western_infrastructure.png}
+  \caption{Western Infrastructure}
+  \label{west_inf}
+\end{figure}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=.9\textwidth]{./Figures/cascadia_basin.png}
+  \caption{Cascadia Basin}
+  \label{fig:casc}
+\end{figure}
+
 
 

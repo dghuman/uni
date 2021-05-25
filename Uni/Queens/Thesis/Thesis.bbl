@@ -1,5 +1,9 @@
 \begin{thebibliography}{10}
 
+\bibitem{onc}
+Ocean networks canada.
+\newblock \url{https://www.pacific-neutrino.org/about-us}.
+
 \bibitem{icecube_nat}
 Mark Aartsen, Markus Ackermann, and et~al.
 \newblock Neutrino emission from the direction of the blazar txs 0506+056 prior
@@ -151,6 +155,12 @@ K.~S. Hirata et~al.
 \newblock {Observation of a small atmospheric muon-neutrino / electron-neutrino
   ratio in Kamiokande}.
 \newblock {\em Phys. Lett. B}, 280:146--152, 1992.
+
+\bibitem{pocam}
+{Jurkovic, M.}, {Abraham, K.}, {Holzapfel, K.}, {Krings, K.}, {Resconi, E.},
+  and {Veenkamp, J.}
+\newblock A precision optical calibration module (pocam) for icecube-gen2.
+\newblock {\em EPJ Web of Conferences}, 116:06001, 2016.
 
 \bibitem{icecube_rad}
 Spencer~R. Klein.
