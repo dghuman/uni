@@ -102,6 +102,10 @@ P~A Cherenkov.
 \newblock {\em [Comptes Rendus Acad. Sciences USSR 2 451 (1934)]}, 2(451),
   1934.
 
+\bibitem{mpmt}
+Lew Classen, Alexander Kappes, and Timo Karg.
+\newblock A multi-pmt optical module for the icecube upgrade, 2019.
+
 \bibitem{m_nu}
 G.~Danby, J.~Gaillard, K.~Goulianos, L.~Lederman, N.~Mistry, M.~Schwartz, and
   J.~Steinberger.
@@ -150,6 +154,11 @@ Particle~Data Group and et~al. Zyla.
 Mike Guidry and Jay Billings.
 \newblock A basic introduction to the physics of solar neutrinos, 2018.
 
+\bibitem{ham}
+HAMAMATSU.
+\newblock {\em PHOTOMULTIPLIER TUBES: Basics and Applications}.
+\newblock HAMAMATSU, 2009.
+
 \bibitem{kam}
 K.~S. Hirata et~al.
 \newblock {Observation of a small atmospheric muon-neutrino / electron-neutrino
@@ -189,6 +198,15 @@ A~Kumar, A~M Vinod~Kumar, Abhik Jash, Ajit~K Mohanty, Aleena Chacko, Ali Ajmi,
 \bibitem{lowe_nu}
 Andrew~John Lowe.
 \newblock Neutrino physics \& the solar neutrino problem, 2009.
+
+\bibitem{pmt_hist}
+B.K. Lubsandorzhiev.
+\newblock On the history of photomultiplier tube invention.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment},
+  567(1):236--238, 2006.
+\newblock Proceedings of the 4th International Conference on New Developments
+  in Photodetection.
 
 \bibitem{sup_nu}
 C.~Lunardini and A.Yu. Smirnov.

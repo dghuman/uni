@@ -20,23 +20,23 @@
 \contentsline {section}{\numberline {3.1}Geometry}{15}%
 \contentsline {section}{\numberline {3.2}Detectors}{16}%
 \contentsline {subsection}{\numberline {3.2.1}Photo-Multiplier Tubes}{17}%
-\contentsline {subsection}{\numberline {3.2.2}Digital Optical Modules}{17}%
-\contentsline {subsection}{\numberline {3.2.3}mDOMs}{17}%
-\contentsline {section}{\numberline {3.3}Strings for Absorption length in Water}{17}%
-\contentsline {section}{\numberline {3.4}Ocean Networks Canada}{18}%
-\contentsline {chapter}{\numberline {4}Simulation}{21}%
-\contentsline {section}{\numberline {4.1}IceCube Framework}{21}%
-\contentsline {section}{\numberline {4.2}Simulating Neutrinos}{21}%
-\contentsline {section}{\numberline {4.3}Simulating Muons}{21}%
-\contentsline {section}{\numberline {4.4}Detector Response}{21}%
-\contentsline {chapter}{\numberline {5}Reconstruction}{22}%
-\contentsline {section}{\numberline {5.1}Linefit}{22}%
-\contentsline {section}{\numberline {5.2}Likelihood}{23}%
-\contentsline {chapter}{\numberline {6}Results}{24}%
-\contentsline {section}{\numberline {6.1}Likelihood}{24}%
-\contentsline {chapter}{\numberline {7}Summary and Conclusions}{25}%
-\contentsline {section}{\numberline {7.1}Summary}{25}%
-\contentsline {section}{\numberline {7.2}Future Work}{25}%
-\contentsline {section}{\numberline {7.3}Conclusion}{25}%
-\contentsline {chapter}{Bibliography}{26}%
+\contentsline {subsection}{\numberline {3.2.2}Digital Optical Modules}{18}%
+\contentsline {subsection}{\numberline {3.2.3}mDOMs}{18}%
+\contentsline {section}{\numberline {3.3}Strings for Absorption length in Water}{19}%
+\contentsline {section}{\numberline {3.4}Ocean Networks Canada}{20}%
+\contentsline {chapter}{\numberline {4}Simulation}{22}%
+\contentsline {section}{\numberline {4.1}IceCube Framework}{22}%
+\contentsline {section}{\numberline {4.2}Simulating Neutrinos}{22}%
+\contentsline {section}{\numberline {4.3}Simulating Muons}{22}%
+\contentsline {section}{\numberline {4.4}Detector Response}{22}%
+\contentsline {chapter}{\numberline {5}Reconstruction}{23}%
+\contentsline {section}{\numberline {5.1}Linefit}{23}%
+\contentsline {section}{\numberline {5.2}Likelihood}{24}%
+\contentsline {chapter}{\numberline {6}Results}{25}%
+\contentsline {section}{\numberline {6.1}Likelihood}{25}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{26}%
+\contentsline {section}{\numberline {7.1}Summary}{26}%
+\contentsline {section}{\numberline {7.2}Future Work}{26}%
+\contentsline {section}{\numberline {7.3}Conclusion}{26}%
+\contentsline {chapter}{Bibliography}{27}%
 \renewcommand *\cftchappresnum {Appendix }
