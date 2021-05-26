@@ -22,13 +22,19 @@ Similar to previously constructed Neutrino Telescopes, P-ONE will primarily use 
 
 A key part of any neutrino telescope is the detection mechanism, and in this community the Photo-Multiplier Tube (PMT) is synonomous with detector. The PMT is a vacuum-sealed photocathode with dynode and anodes above connector pins \cite{ham}. The primary mechanism of a PMT is the photoelectric effect from a photon hitting the photocathode resulting in a cascade of electron showers along the dynodes and anodes amplifying the signal before it reaches the connector pins \cite{pmt_hist}.Through this method the PMT can produce large signals at the single photon level, but is for the same reason sensitive to a particular range of frequencies/wavelengths of light \cite{pmt_hist}.
 
-In particular, PMTs are generally sensitive to wavelengths anywhere as low as 100 nm to as high as 500 nm depending on the material of the photochathode \cite{ham}. Another property of PMTs to note is the Quantum Efficiency (QE), which is defined as the ratio of photoelectrons emitted by the photocathode to the number of incident photons \cite{ham}. Thus, QE defines how much photon information a PMT will transmit. The QE is dependent upon the photocathode and varies with the incident photons wavelength, as different wavelengths carry different energies \cite{ham}. In contrast to QE, the Dark Current (Dark Noise) is the reporting by PMTs of light even in completely dark environments \cite{ham}. According to the HAMAMATSU handbook \cite{ham}, a number of reasons can be the cause for this misfiring in PMTs including (but not limited to) thermionic emissons, internal current leakage, scintillation from glass envelope and radiation sources. One can minimize the effect from these sources, such as reducing the temperature to limit the thermionic emissions \cite{ham}. The final aspect of PMTs we discuss is after pulsing, the small pulses observed after the arrival of a signal \cite{ham}. The quick afterpulses (within nano-seconds) can usually be attributed to scattering of electrons on the first dynode \cite{ham}, while later afterpulses (within microseconds) can be the result of positive ions from the ionization of residual gases in the tube \cite{ham}.
+In particular, PMTs are generally sensitive to wavelengths anywhere as low as 100 nm to as high as 500 nm depending on the material of the photochathode \cite{ham}. Another property of PMTs to note is the Quantum Efficiency (QE), which is defined as the ratio of photoelectrons emitted by the photocathode to the number of incident photons \cite{ham}. Thus, QE defines how much photon information a PMT will transmit. The QE is dependent upon the photocathode and varies with the incident photons wavelength, as different wavelengths carry different energies \cite{ham}.
+
+In contrast to QE, the Dark Current (Dark Noise) is the reporting by PMTs of light even in completely dark environments \cite{ham}. According to the HAMAMATSU handbook \cite{ham}, a number of reasons can be the cause for this misfiring in PMTs including (but not limited to) thermionic emissons, internal current leakage, scintillation from glass envelope and radiation sources. One can minimize the effect from these sources, such as reducing the temperature to limit the thermionic emissions \cite{ham}.
+
+The final aspect of PMTs we discuss is after pulsing, the small pulses observed after the arrival of a signal \cite{ham}. The quick afterpulses (within nano-seconds) can usually be attributed to scattering of electrons on the first dynode \cite{ham}, while later afterpulses (within microseconds) can be the result of positive ions from the ionization of residual gases in the tube \cite{ham}.
 
 The PMT is an incredibly technical piece of hardware, and characterizing each PMT becomes important to understanding the detector as a whole. 
 
 \subsection{Digital Optical Modules}
 
-Adopted from the DOMs in IceCube that house the PMTs.
+In IceCube, the Digitial Optical Module (DOM) is a module containing a ten-inch PMT supported by coupling gel, the high voltage generator, an LED flasher board for calibration, and the mainboard used for analog and digital signal processing \cite{icecube_pmt,icecube}. P-ONE will be adopting this approach for detector construction.
+
+What else to add here?
 
 \subsection{mDOMs}
 

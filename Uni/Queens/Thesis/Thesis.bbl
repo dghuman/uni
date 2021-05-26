@@ -16,6 +16,13 @@ M.G. Aartsen, M.~Ackermann, J.~Adams, J.A. Aguilar, M.~Ahlers, M.~Ahrens,
 \newblock The icecube neutrino observatory: instrumentation and online systems.
 \newblock {\em Journal of Instrumentation}, 12(03):P03012–P03012, Mar 2017.
 
+\bibitem{icecube_pmt}
+R.~Abbasi, Y.~Abdou, and et~al.
+\newblock Calibration and characterization of the icecube photomultiplier tube.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment},
+  618(1):139--152, 2010.
+
 \bibitem{antares}
 M.~Ageron et~al.
 \newblock {ANTARES: the first undersea neutrino telescope}.

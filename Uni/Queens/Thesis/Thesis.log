@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.18)  25 MAY 2021 22:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.18)  25 MAY 2021 23:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -820,13 +820,13 @@ Package pdftex.def Info: ./Figures/PONEv0_-23_design.jpg  used on input line 11
 File: ./Figures/western_infrastructure.png Graphic file (type png)
 <use ./Figures/western_infrastructure.png>
 Package pdftex.def Info: ./Figures/western_infrastructure.png  used on input li
-ne 55.
+ne 61.
 (pdftex.def)             Requested size: 390.25534pt x 219.5189pt.
  [20 <./Figures/western_infrastructure.png>]
 <./Figures/cascadia_basin.png, id=109, 385.44pt x 216.81pt>
 File: ./Figures/cascadia_basin.png Graphic file (type png)
 <use ./Figures/cascadia_basin.png>
-Package pdftex.def Info: ./Figures/cascadia_basin.png  used on input line 64.
+Package pdftex.def Info: ./Figures/cascadia_basin.png  used on input line 70.
 (pdftex.def)             Requested size: 390.25534pt x 219.5189pt.
 ) [21 <./Figures/cascadia_basin.png>]
 \openout2 = `Simulation.aux'.
@@ -872,13 +872,13 @@ Chapter 7.
 (./Introduction.aux) (./Background.aux) (./The_PONE.aux) (./Simulation.aux)
 (./Reconstruction.aux) (./Results.aux) (./Conclusion.aux)) ) 
 Here is how much of TeX's memory you used:
- 15704 strings out of 481239
- 309856 string characters out of 5920377
- 527527 words of memory out of 5000000
- 30594 multiletter control sequences out of 15000+600000
+ 15705 strings out of 481239
+ 309869 string characters out of 5920377
+ 527531 words of memory out of 5000000
+ 30595 multiletter control sequences out of 15000+600000
  539327 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,12n,73p,1508b,1007s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,12n,73p,1055b,1007s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/f
 onts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
@@ -893,7 +893,7 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/
 cm-super/sfrm1200.pfb>
-Output written on Thesis.pdf (40 pages, 5493846 bytes).
+Output written on Thesis.pdf (40 pages, 5494461 bytes).
 PDF statistics:
  197 PDF objects out of 1000 (max. 8388607)
  135 compressed objects within 2 object streams
