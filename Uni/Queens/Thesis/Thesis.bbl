@@ -225,6 +225,12 @@ Ziro Maki, Masami Nakagawa, and Shoichi Sakata.
 \newblock {Remarks on the Unified Model of Elementary Particles}.
 \newblock {\em Progress of Theoretical Physics}, 28(5):870--880, 11 1962.
 
+\bibitem{biolum_rec}
+Séverine Martini and Steven H.~D. Haddock.
+\newblock Quantification of bioluminescence from the surface to the deep sea
+  demonstrates its predominance as an ecological trait.
+\newblock {\em Scientific Reports}, 7, 04 2017.
+
 \bibitem{msw}
 Mikheyev, Smirnov S.~P., and A.~Yu.
 \newblock Resonant amplification of $\nu$ oscillations in matter and
@@ -274,5 +280,11 @@ L.~V. Volkova.
 Christopher~W. Walter.
 \newblock The super-kamiokande experiment.
 \newblock {\em Neutrino Oscillations}, page 19–43, Mar 2008.
+
+\bibitem{biolum}
+Edith Widder.
+\newblock Bioluminescence in the ocean: Origins of biological, chemical, and
+  ecological diversity.
+\newblock {\em Science (New York, N.Y.)}, 328:704--8, 05 2010.
 
 \end{thebibliography}

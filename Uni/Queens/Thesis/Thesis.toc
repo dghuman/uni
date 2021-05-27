@@ -23,20 +23,20 @@
 \contentsline {subsection}{\numberline {3.2.2}Digital Optical Modules}{18}%
 \contentsline {subsection}{\numberline {3.2.3}mDOMs}{18}%
 \contentsline {section}{\numberline {3.3}Strings for Absorption length in Water}{19}%
-\contentsline {section}{\numberline {3.4}Ocean Networks Canada}{20}%
-\contentsline {chapter}{\numberline {4}Simulation}{22}%
-\contentsline {section}{\numberline {4.1}IceCube Framework}{22}%
-\contentsline {section}{\numberline {4.2}Simulating Neutrinos}{22}%
-\contentsline {section}{\numberline {4.3}Simulating Muons}{22}%
-\contentsline {section}{\numberline {4.4}Detector Response}{22}%
-\contentsline {chapter}{\numberline {5}Reconstruction}{23}%
-\contentsline {section}{\numberline {5.1}Linefit}{23}%
-\contentsline {section}{\numberline {5.2}Likelihood}{24}%
-\contentsline {chapter}{\numberline {6}Results}{25}%
-\contentsline {section}{\numberline {6.1}Likelihood}{25}%
-\contentsline {chapter}{\numberline {7}Summary and Conclusions}{26}%
-\contentsline {section}{\numberline {7.1}Summary}{26}%
-\contentsline {section}{\numberline {7.2}Future Work}{26}%
-\contentsline {section}{\numberline {7.3}Conclusion}{26}%
-\contentsline {chapter}{Bibliography}{27}%
+\contentsline {section}{\numberline {3.4}Ocean Networks Canada}{21}%
+\contentsline {chapter}{\numberline {4}Simulation}{24}%
+\contentsline {section}{\numberline {4.1}IceCube Framework}{24}%
+\contentsline {section}{\numberline {4.2}Simulating Neutrinos}{24}%
+\contentsline {section}{\numberline {4.3}Simulating Muons}{24}%
+\contentsline {section}{\numberline {4.4}Detector Response}{24}%
+\contentsline {chapter}{\numberline {5}Reconstruction}{25}%
+\contentsline {section}{\numberline {5.1}Linefit}{25}%
+\contentsline {section}{\numberline {5.2}Likelihood}{26}%
+\contentsline {chapter}{\numberline {6}Results}{27}%
+\contentsline {section}{\numberline {6.1}Likelihood}{27}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{28}%
+\contentsline {section}{\numberline {7.1}Summary}{28}%
+\contentsline {section}{\numberline {7.2}Future Work}{28}%
+\contentsline {section}{\numberline {7.3}Conclusion}{28}%
+\contentsline {chapter}{Bibliography}{29}%
 \renewcommand *\cftchappresnum {Appendix }

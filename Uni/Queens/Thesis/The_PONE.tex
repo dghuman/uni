@@ -40,11 +40,18 @@ What else to add here?
 
 A proposed redesign of the IceCube DOM to increase the granularity of light detection is the multi-DOM (mDOM). In place of one large PMT, multiple smaller PMTs can line the same space and coverage at the cost of gaps between detectors. The benefit being that individual hits on the smaller PMTs can provide extra information using the acceptance angle and directionality of that particular PMT \cite{mpmt}. Moreover, in theory this can also reproduce the standard DOM data as the signal collected by a single PMT in the array can be collected and treated as a hit for the entire DOM. This gives the mDOMs a felxibility that isn't present for standard DOMs. In IceCube the standard DOMs use a ten-inch diameter PMTs \cite{icecube}, where the mDOMs would use up to 24 three-inch diameter PMTs \cite{mpmt}.
 
-p\section{Strings for Absorption length in Water}
+\section{Strings for Absorption length in Water}
 
 The Pathfinder mission for P-ONE is the STRings for Absroption length in Water (STRAW) and its follow up STRAW-b, which were deployed in 2018 and 2020 respectively. The purpose of these missions was to test the technical details of running an experiment like P-ONE, such as the hardware limitation, to provide data to measure the Attenuation length of light in water for light in wavelengths between 350 nm and 600 nm, characterize the bioluminescence of deap-sea living organisms and the $^{40}$K dissolved in the salty water \cite{straw}.
 
-The basic design of STRAW is the same as that of standard Neutrino Telescopes; using PMTs for detecting photons and calibrating light emmitting sources on mooring lines to collect data \cite{straw}. In this particular case STRAW uses two vertical mooring lines with $3^{\prime\prime}$ PMTs and Precision Optical Calibration Modules (POCAMs) for the calibration sources \cite{straw}, which provide isotropic and short pulsed flashes of light. The attenuation length $L_{T}$ in water can be realized using the known photon intensity $N_{0}$, the wavelength from the POCAM flashes and the distance $r$ to each particular PMT with effective collection area $A_{\text{det}}$ measuring an intensity $N(r)$ \cite{straw}. This yields
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.7\textwidth]{./Figures/STRAW.png}
+  \caption{A diagram of the full STRAW setup including distances \cite{straw}.}
+  \label{fig:straw}
+\end{figure}
+
+The basic design of STRAW, as shown in Figure \ref{fig:straw}, is the same as that of standard Neutrino Telescopes; using PMTs for detecting photons and calibrating light emmitting sources on mooring lines to collect data \cite{straw}. In this particular case STRAW uses two vertical mooring lines with $3^{\prime\prime}$ PMTs and Precision Optical Calibration Modules (POCAMs) for the calibration sources \cite{straw}, which provide isotropic and short pulsed flashes of light. The attenuation length $L_{T}$ in water can be realized using the known photon intensity $N_{0}$, the wavelength from the POCAM flashes and the distance $r$ to each particular PMT with effective collection area $A_{\text{det}}$ measuring an intensity $N(r)$ \cite{straw}. This yields
 \begin{equation}
   N(r) = \frac{N_{0}}{4\pi r^{2}}\exp\left(-\frac{r}{L_{T}}\right)A_{\text{det}}\, .
 \end{equation}
@@ -59,7 +66,7 @@ The construction and implementation of P-ONE is supported by Ocean Networks Cana
 \begin{figure}[h]
   \centering
   \includegraphics[width=.9\textwidth]{./Figures/western_infrastructure.png}
-  \caption{A diagram of the Ocean Networks Canada Western Infrastructure for monitoring the Pacific Ocean. This contains the NEPTUNE and VENUS observatories.}
+  \caption{A diagram of the Ocean Networks Canada Western Infrastructure for monitoring the Pacific Ocean. This contains the NEPTUNE and VENUS observatories. Source \cite{onc}.}
   \label{fig:west_inf}
 \end{figure}
 
@@ -68,11 +75,11 @@ The west coast observatory, as seen in Figure \ref{fig:west_inf}, is comprised o
 \begin{figure}
   \centering
   \includegraphics[width=.9\textwidth]{./Figures/cascadia_basin.png}
-  \caption{Diagram of the Cascadia Basin, the site of the upcoming P-ONE experiment and current site of the pathfinder STRAW.}
+  \caption{Diagram of the Cascadia Basin, the site of the upcoming P-ONE experiment and current site of the pathfinder STRAW. Source \cite{onc}.}
   \label{fig:casc}
 \end{figure}
 
-This biodiversity results in the potential background of bioluminescence \cite{pone,onc}. There are efforts being put together to understand and characterize this background in order to be better prepared for when the detector is installed.
+This biodiversity results in the potential background of bioluminescence \cite{pone,onc,biolum,biolum_rec}. Bioluminesence is the emission of visible light by living organisms due to natural chemical processes used by a wide range of species \cite{biolum}. Some studies show that 75\% of all organisms larger than 1 cm occurring between the surface down to 4000 m depth are capable of bioluminescence \cite{biolum_rec}. Due to evolutionary advantages, most bioluminescent organisms emit light between 440 nm and 540 nm, which also has the largest absorption length in water \cite{biolum}. The amount of photons emitted can also vary significantly from $10^{3}$ for bacterium to $10^{12}$ photons from some fish \cite{biolum}. There are efforts being put together to understand and characterize this background in order to be better prepared for when the detector is installed.
 
 
 
