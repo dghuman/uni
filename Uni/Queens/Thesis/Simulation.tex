@@ -10,11 +10,17 @@ The bulk of the code is written in C++ with the goal of being modular. This mean
 
 \section{Simulating Neutrinos}
 
-The sofware used to generate neutrinos is the very aptly named Neutrino--Generator (NuGen) \cite{icetray}. This is code written in IceTray based off of the All Neutrino Interaction Generator (ANIS), a high energy neutrino generator used for neutrino telescopes. NuGen has the capabilities of preparing and injecting a neutrino and interacting along the way if they so happen, and then forcing an interaction in the detector. NuGen can also produce secondaries. However, NuGen does not propogate photons nor charged leptons. This is saved for PROPOSAL and CLSim, where the former is used to propogate charged leptons and the latter is used to produce and propogate photons in a parallel manner (if using GPUs). 
+The sofware used to generate neutrinos is the very aptly named Neutrino--Generator (NuGen) \cite{icetray}. This is code written in IceTray based off of the All Neutrino Interaction Generator (ANIS), a high energy neutrino generator used for neutrino telescopes. NuGen has the capabilities of preparing and injecting a neutrino and interacting along the way if they so happen, and then forcing an interaction in the detector. NuGen can also produce secondaries. However, NuGen does not propogate photons nor charged leptons. This is saved for PROPOSAL and CLSim, where the former is used to propogate charged leptons and the latter is used to produce and propogate photons in a parallel manner (if using GPUs).
 
 \section{Simulating Muons}
 
-The module used to generate muons is the Muon Gun that exists in GEANT4. This can be used to inject muons based on some sampling surface dependent upon a given flux model \cite{icetray}. Muon Gun is versatile as it can be easily modified to produce muons using a variety of sampling surfaces, and can even be modified to be energy dependent \cite{icetray}.
+The module used to generate muons is the MuonGun that exists in GEANT4. This can be used to inject muons based on some sampling surface dependent upon a given flux model \cite{icetray}. Muon Gun is versatile as it can be easily modified to produce muons using a variety of sampling surfaces, and can even be modified to be energy dependent \cite{icetray}.
+
+In particular, the MuonGun works by drawing samples from a parameterization of the atmospheric muon flux \cite{icetray}. This is parameterized in the same manner as described in \cite{muon_flux}; it depends on the water depth ($h$), zenith angle ($\theta$), multiplicity, and energy. In particular, the energy spectrum of single muons is described by
+\begin{equation}
+  \frac{dN}{d(\log_{10}E_{\mu})} = G\cdot E_{\mu}e^{\beta X(1 - \gamma)}\left[E_{\mu} + \epsilon(1 - e^{-\beta X})\right]^{-\gamma}\, ,
+\end{equation}
+where there are multiple fit parameters described more in \cite{muon_flux}. The energy loss due to water interactions also have to be added and are also discussed in \cite{muon_flux}. These parameterizations are great for fast generation of muons \cite{muon_flux}, which is important for understanding the background of cosmic ray muons common in most neutrino telescopes \cite{icecube, antares, amanda, pone, muon_flux}. 
 
 Do we talk about Muon Gun or Cosmic Muons? Currently only Cosmic Muons are being used but both could be used.
 
