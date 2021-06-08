@@ -5,7 +5,7 @@ A telescope is only as good as it's ability to identify distinct sources. In the
 \section{Geometry of a Single Hit}
 
 At first thought, it may sound simple to try and reproduce the tracks that produce the light one would observe in neutrino detectors, but upon considering the data that is aquired the true complexity is revealed. To see this, we consider first the geometry of a single hit to see what the data would look like. Referring to Figure \ref{fig:ghit}, we consider a muon track that is infinite in length, which is a safe approximation assuming a sufficient energy of the neutrino relative to the size of the detector. Specifically we can parameterize the track with
-\begin{equation}
+\begin{equation}\label{eq:track}
   \vec{u}(t) = \vec{x} + ct\vec{v}\, ,
 \end{equation}
 where $\vec{x}$ is the vertex, $\vec{v}$ is the direction the muon is travelling in, $t$ is the time parameter, and finally $c$ is the speed of light, which again for sufficiently high energy muons is a good approximation for the speed. Looking at the $i^{\text{th}}$ DOM located at a position $\vec{r_{i}}$, it is easy to see there must be a closest approach position for the track, $\vec{p}_{i}$, and emission point of a photon given there is a direct hit on the DOM, located at $\vec{q}_{i}$. The photon is emitted at a cherenkov angle of $\theta_{c}$, which is as described in equation \ref{fig:cher_angle}. 
@@ -42,7 +42,73 @@ where $\vec{x}$ is the vertex, $\vec{v}$ is the direction the muon is travelling
   \label{fig:ghit}
 \end{figure}
 
+The next step is to consider the information we know about the DOMs. In particular, the direction of the DOM will determine its angular acceptance giving information on whether or not particular photons can actually reach the DOMs, and the time at which photons are detected. Moreover, light can scatter and may not travel a direct path, so the distance $d_{i}$ also becomes an important parameter to consider. Any sophisticated reconstruction technique will require these parameters to produce reliable results, and hence are important to both understand and compute given a track. Hence, we first attempt to discuss the method for computing these parameters given a DOM position and track.
 
+Assuming a track as given in equation \ref{eq:track}, and that we know the closest approach position at $\vec{p}_{i}$ for a DOM at $\vec{r}_{i}$, then we can easily compute $d_{i,c} = |\vec{p}_{i} - \vec{r}_{i}|$. Then, using the closest approach distance,
+\begin{equation}\label{eq:dist}
+  d_{i} = \frac{d_{i,c}}{\sin\theta_{c}}
+\end{equation}
+will describe the distance the photon travels. To get the emission point of the photon $\vec{q}_{i}$, we know that $s_{i} = d_{i}/\tan\theta_{c}$ and that the corresponding time would be $t_{s} = s/c$. Then we see that
+\begin{equation}
+  \vec{q}_{i} = \vec{p}_{i} - ct_{s}\vec{v} = \vec{p}_{i} - s\vec{v}\, ,
+\end{equation}
+where $\vec{p}_{i} = \vec{u}(t_{i,c}) = \vec{x} + ct_{i,c}\vec{v}$, and so
+\begin{equation}\label{eq:emit}
+  \vec{q}_{i} = \vec{x} + (ct_{i,c} - s)\vec{v}\, .
+\end{equation}
+It is important to note that the distance term $s$ is negative in equation \ref{eq:emit} due to the photon being emitted before the track will be closest to the DOM.
+
+Now, we know where the emission point is and we know the distance $d_{i}$ from equation \ref{eq:dist}. Now, we want to compute the geometric time, as in the time we would expect the photon to arrive at the DOM from our proposed track. To predict this time, we need a reference along the track, and the vertex $\vec{x}$ is a natural choice for this. Then, we know that
+\begin{equation}
+  t_{\text{geo}} = t_{d} + t_{x}
+\end{equation}
+where
+\begin{equation}\label{eq:travel_time}
+  t_{d} = \frac{d_{i}}{c_{n}}\, , \hspace{2em} \& \hspace{2em} t_{x} = \frac{(\vec{q}_{i} - \vec{x})\cdot\vec{v}}{c}\, .
+\end{equation}
+The former is the time it takes for the emitted photon to travel directly to the DOM, with $c_{n}$ being the group velocity of light in water, and the latter is the time it takes for the muon to travel from the vertex to the emission point. It is important to note that in the second term of equation \ref{eq:travel_time}, the numerator makes sure that the travel time has the correct value. Since the vertex $\vec{x}$ is not physical, and is mearly a reference point for the purposes of this thesis, it is possible for this to be after the emission point. In that case, the value $t_{x}$ would have to be negative, and this projection onto the direction vector of the track ensures this. Now, given that we know the time at which the muon is at the vertex, we can shift this travel time accordingly to a shifted $t_{\text{geo}}$ that will now be comparable to the time that the DOM reports, $t_{\text{obs}}$. The parameter of importance then is the residual time, defined as
+\begin{equation}
+  t_{\text{res}} = t_{\text{obs}} - t_{\text{geo}}\, ,
+\end{equation}
+as it will vaguely inform of the difference between the geometric guess track and the true track. 
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[scale=3]
+    % Origin
+    \node [above left] at (-2.5,0.5) {$\mathcal{O}$};
+    \draw [fill] (-2.5,0.5) circle [radius=0.05];
+    % x and r vector
+    \node [below left] at (-1.75,-0.25) {$\vec{x}$};
+    \node [above left] at (-1.75,0.75) {$\vec{r}$};
+    \draw [->] (-2.5,0.5) -- (-1.017,-0.982);
+    \draw [->] (-2.5,0.5) -- (-1,1);
+    % Closest point to DOM
+    \node [below left] at (-0.5, 0.5) {$d_{c}$};
+    \draw [fill] (0,0) circle [radius=0.025];
+    \draw [dashed] (-1,1) -- (0,0);
+    % Muon Travel line
+    \node [right] at (1,1) {$\mu, \vec{u}$};
+    \draw [thick, ->] (-1.25,-1.25) -- (1.25,1.25);
+    % Emission point
+    \node [below right] at (-0.5,-0.5) {$((\vec{r} - \vec{x})\cdot\vec{v})\vec{v}$};
+    \draw [fill] (-1,-1) circle [radius=0.025];
+    % DOM
+    \draw [fill] (-1,1) circle [radius=0.1];
+    % Emission Photon
+    \node [left] at (-1,0) {$\vec{r} - \vec{x}$};
+    \draw [->] (-1,-1) -- (-1,1);
+  \end{tikzpicture}
+  \caption{Drawing of a track with vertex and DOM labeled. The origin here is also marked to emphasize the vector notation and algebra. It is easy enough to see the vector algebra required to get the distance of closest approach through this diagram.}
+  \label{fig:dic}
+\end{figure}
+
+The next step is to recall all these prior computations rely on the distance of closest approach ($d_{i,c}$) being known. To compute this, we need some geometric considerations with the vectors of the track, the DOM and the vertex. To visualize the vector algebra, we can introduce an origin from which the vectors can be drawn, in which case we get Figure \ref{fig:dic}. We see that the vector pointing to the vertex is $\vec{x}$ and the vector pointing to the DOM is $\vec{r}$, where the indices are dropped for convenience. Then, we see that a vector pointing from the vertex to the DOM can be defined by $\vec{r} - \vec{x}$. Next, we can find the projection of this vector along the track direction (which is already a unit vector) as being $(\vec{r} - \vec{x})\cdot\vec{v}$. Then, we see that we have two sides of a right angle triangle with the third missing side being the length $d_{c}$, so
+\begin{equation}
+  d_{c} = \sqrt{|\vec{r} - \vec{x}|^{2} - |(\vec{r} - \vec{x})\cdot\vec{v}|^{2}}\, .
+\end{equation}
+
+We now have a method of computing $d_{i,c}$, and thus computing $d_{i}$ and $t_{\text{res}}$ for each DOM given a proposed track $\vec{u}(t) = \vec{x} + ct\vec{v}$. At this point it is important to note the degrees of freedom we have for this problem
 
 There are several software techniques that need to be applied before a result can be taken seriously, and usually this pipline begins with a simple and quick initial guess fit. 
 

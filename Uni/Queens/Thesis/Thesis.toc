@@ -31,13 +31,13 @@
 \contentsline {section}{\numberline {4.4}Detector Response}{26}%
 \contentsline {chapter}{\numberline {5}Reconstruction}{28}%
 \contentsline {section}{\numberline {5.1}Geometry of a Single Hit}{28}%
-\contentsline {section}{\numberline {5.2}Linefit}{30}%
-\contentsline {section}{\numberline {5.3}Likelihood}{30}%
-\contentsline {chapter}{\numberline {6}Results}{31}%
-\contentsline {section}{\numberline {6.1}Likelihood}{31}%
-\contentsline {chapter}{\numberline {7}Summary and Conclusions}{32}%
-\contentsline {section}{\numberline {7.1}Summary}{32}%
-\contentsline {section}{\numberline {7.2}Future Work}{32}%
-\contentsline {section}{\numberline {7.3}Conclusion}{32}%
-\contentsline {chapter}{Bibliography}{33}%
+\contentsline {section}{\numberline {5.2}Linefit}{33}%
+\contentsline {section}{\numberline {5.3}Likelihood}{33}%
+\contentsline {chapter}{\numberline {6}Results}{34}%
+\contentsline {section}{\numberline {6.1}Likelihood}{34}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{35}%
+\contentsline {section}{\numberline {7.1}Summary}{35}%
+\contentsline {section}{\numberline {7.2}Future Work}{35}%
+\contentsline {section}{\numberline {7.3}Conclusion}{35}%
+\contentsline {chapter}{Bibliography}{36}%
 \renewcommand *\cftchappresnum {Appendix }
