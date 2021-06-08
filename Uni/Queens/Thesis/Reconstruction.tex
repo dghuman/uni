@@ -108,16 +108,43 @@ The next step is to recall all these prior computations rely on the distance of 
   d_{c} = \sqrt{|\vec{r} - \vec{x}|^{2} - |(\vec{r} - \vec{x})\cdot\vec{v}|^{2}}\, .
 \end{equation}
 
-We now have a method of computing $d_{i,c}$, and thus computing $d_{i}$ and $t_{\text{res}}$ for each DOM given a proposed track $\vec{u}(t) = \vec{x} + ct\vec{v}$. At this point it is important to note the degrees of freedom we have for this problem
+We now have a method of computing $d_{i,c}$, and thus computing $d_{i}$ and $t_{\text{res}}$ for each DOM given a proposed track $\vec{u}(t) = \vec{x} + ct\vec{v}$. It is important here to note the degrees of freedom that parameterizing a track have. The vertex provides four as it is a position in 3-dimensional space with a time attached. The direction provides two degrees of freedom, as it is a unit vector and can be parameterized using two angles and a unit length radius in spherical coordinates. This gives us six parameters in total that need to be computed to uniquely define an infinite track. 
 
-There are several software techniques that need to be applied before a result can be taken seriously, and usually this pipline begins with a simple and quick initial guess fit. 
+We are now ready to consider different methods for computing these parameters. There are several software techniques that need to be applied before a result can be taken seriously, and usually this pipline begins with a simple and quick initial guess fit. 
 
 \section{Linefit}
 
-Any robust reconstruction method requires an initial guess (generally referred to as a seed) in order to be used, but getting this first guess can be non-trivial. Moreover, reconstruction pipelines can be incredibly sensitive to the initial guess and ensuring the quality of this fit is difficult in its own right.
+Any robust reconstruction method requires an initial guess (generally referred to as a seed) in order to be used, but getting this first guess can be non-trivial. Moreover, reconstruction pipelines can be incredibly sensitive to the initial guess and ensuring the quality of this fit is difficult in its own right. The standard method for a first guess in such situations is the linefit/linear fit. This is a simple track fit that minimizes the $\chi^{2}$ on the observed hits given in an event. As such, this fitting technique assumes that all hits on the DOMs are directly on the path of the muon track, which is a decent first approximation.
 
-The standard method for a first guess in such situations is the linefit/linear fit. This is a simple track fit that minimizes the $\chi^{2}$ on the observed hits given in an event. 
-
+Under these approximations, we assume each spatial coordinate independent from the others. Then we can fit linearly in the projected two dimensional spaces of position and time: $x-t$, $y-t$ and $z-t$, where $t$, the time of the corresponding hit, is the independent variable. This way, the problem is reduced to fitting the equation $y=c_{1}x + c_{0}$ in each position and time space. From here, we need only apply $\chi^{2}$ minimization, which in the case of linear data fitting is exactly the method of least squares. In this scenario, if the data points are defined as $(x_{1},y_{1}), \dots, (x_{m},y_{m})$, then the solution that minimizes the $\chi^{2}$ will be
+\begin{equation}
+  \vec{c} = (X^{T}X)^{-1}X^{T}\vec{y}\, ,
+\end{equation}
+where
+\begin{equation}
+  \vec{c} =
+  \begin{bmatrix}
+    c_{0} \\
+    c_{1}
+  \end{bmatrix}
+  \quad \& \quad
+  X =
+  \begin{bmatrix}
+    1 & x_{1} \\
+    1 & x_{2} \\
+    \vdots & \vdots \\
+    1 & x_{m}
+  \end{bmatrix}
+  \quad \& \quad
+  \vec{y} = 
+  \begin{bmatrix}
+    y_{1} \\
+    y_{2} \\
+    \vdots \\
+    y_{m}
+  \end{bmatrix}\, .
+\end{equation}
+Once $\vec{c}$ is computed for each position and time space, the vertex position is estimated to be at $(c_{0,x}, c_{0,y}, c_{0,z})$ with direction $(c_{1,x}, c_{1,y}, c_{1,z})$. 
 
 % Can add charge section (make sure to credit Thomas in statement of originality)
 \section{Likelihood}
