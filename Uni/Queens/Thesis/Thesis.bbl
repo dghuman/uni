@@ -261,6 +261,11 @@ F.~Reines, C.~L. Cowan, F.~B. Harrison, A.~D. McGuire, and H.~W. Kruse.
 \newblock Detection of the free antineutrino.
 \newblock {\em Phys. Rev.}, 117:159--173, Jan 1960.
 
+\bibitem{llh_text}
+Byron~P. Roe.
+\newblock {\em Probability and Statistics in the Physical Sciences}.
+\newblock Springer International Publishing, 2001.
+
 \bibitem{som_germ}
 Arun~Kumar Soma and Henry Tsz-King Wong.
 \newblock {Germanium detectors with sub-keV sensitivities for neutrino and dark

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.18)  8 JUN 2021 13:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.18)  8 JUN 2021 19:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -769,7 +769,7 @@ Package caption Info: End \AtBeginDocument code.
 
  [7
 
-]
+] [8]
 \openout2 = `Introduction.aux'.
 
  (./Introduction.tex
@@ -815,20 +815,20 @@ Chapter 3.
 
 
 ]
-<./Figures/PONEv0_-23_design.jpg, id=89, 466.8642pt x 286.1892pt>
+<./Figures/PONEv0_-23_design.jpg, id=92, 466.8642pt x 286.1892pt>
 File: ./Figures/PONEv0_-23_design.jpg Graphic file (type jpg)
 <use ./Figures/PONEv0_-23_design.jpg>
 Package pdftex.def Info: ./Figures/PONEv0_-23_design.jpg  used on input line 11
 .
 (pdftex.def)             Requested size: 341.43306pt x 209.30501pt.
  [16 <./Figures/PONEv0_-23_design.jpg>] [17] [18]
-<./Figures/STRAW.png, id=100, 588.1975pt x 979.66pt>
+<./Figures/STRAW.png, id=103, 588.1975pt x 979.66pt>
 File: ./Figures/STRAW.png Graphic file (type png)
 <use ./Figures/STRAW.png>
 Package pdftex.def Info: ./Figures/STRAW.png  used on input line 49.
 (pdftex.def)             Requested size: 303.53267pt x 505.53957pt.
  [19] [20 <./Figures/STRAW.png>]
-<./Figures/western_infrastructure.png, id=109, 385.44pt x 216.81pt>
+<./Figures/western_infrastructure.png, id=112, 385.44pt x 216.81pt>
 File: ./Figures/western_infrastructure.png Graphic file (type png)
 <use ./Figures/western_infrastructure.png>
 Package pdftex.def Info: ./Figures/western_infrastructure.png  used on input li
@@ -839,7 +839,7 @@ ne 68.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [21]
-<./Figures/cascadia_basin.png, id=113, 385.44pt x 216.81pt>
+<./Figures/cascadia_basin.png, id=116, 385.44pt x 216.81pt>
 File: ./Figures/cascadia_basin.png Graphic file (type png)
 <use ./Figures/cascadia_basin.png>
 Package pdftex.def Info: ./Figures/cascadia_basin.png  used on input line 77.
@@ -863,12 +863,12 @@ Chapter 5.
 
 
 
-] [29] [30] [31] [32] [33]) [34]
+] [29] [30] [31] [32] [33] [34]) [35]
 \openout2 = `Results.aux'.
 
  (./Results.tex
 Chapter 6.
-) [35
+) [36
 
 
 
@@ -877,22 +877,22 @@ Chapter 6.
 
  (./Conclusion.tex
 Chapter 7.
-) [36
+) [37
 
 
 
-] (./Thesis.bbl [37
+] (./Thesis.bbl [38
 
 
 
-] [38] [39] [40] [41] [42]) [43] (./Thesis.aux
+] [39] [40] [41] [42] [43]) [44] (./Thesis.aux
 (./Introduction.aux) (./Background.aux) (./The_PONE.aux) (./Simulation.aux)
 (./Reconstruction.aux) (./Results.aux) (./Conclusion.aux)) ) 
 Here is how much of TeX's memory you used:
- 15740 strings out of 481239
- 310405 string characters out of 5920377
- 528630 words of memory out of 5000000
- 30629 multiletter control sequences out of 15000+600000
+ 15742 strings out of 481239
+ 310427 string characters out of 5920377
+ 528645 words of memory out of 5000000
+ 30631 multiletter control sequences out of 15000+600000
  539327 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,12n,73p,1056b,1007s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -910,10 +910,10 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/
 cm-super/sfrm1200.pfb>
-Output written on Thesis.pdf (51 pages, 5610782 bytes).
+Output written on Thesis.pdf (53 pages, 5615203 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 159 compressed objects within 2 object streams
+ 240 PDF objects out of 1000 (max. 8388607)
+ 163 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

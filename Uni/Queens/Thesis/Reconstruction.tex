@@ -116,7 +116,27 @@ We are now ready to consider different methods for computing these parameters. T
 
 Any robust reconstruction method requires an initial guess (generally referred to as a seed) in order to be used, but getting this first guess can be non-trivial. Moreover, reconstruction pipelines can be incredibly sensitive to the initial guess and ensuring the quality of this fit is difficult in its own right. The standard method for a first guess in such situations is the linefit/linear fit. This is a simple track fit that minimizes the $\chi^{2}$ on the observed hits given in an event. As such, this fitting technique assumes that all hits on the DOMs are directly on the path of the muon track, which is a decent first approximation.
 
-Under these approximations, we assume each spatial coordinate independent from the others. Then we can fit linearly in the projected two dimensional spaces of position and time: $x-t$, $y-t$ and $z-t$, where $t$, the time of the corresponding hit, is the independent variable. This way, the problem is reduced to fitting the equation $y=c_{1}x + c_{0}$ in each position and time space. From here, we need only apply $\chi^{2}$ minimization, which in the case of linear data fitting is exactly the method of least squares. In this scenario, if the data points are defined as $(x_{1},y_{1}), \dots, (x_{m},y_{m})$, then the solution that minimizes the $\chi^{2}$ will be
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[scale=5]
+    % Drawing the x,y,z-t axis
+    \node [right] at (1,0) {$t$};
+    \node [above] at (0,1) {$x,y,z$};
+    \draw [thick, ->] (0,0) -- (1,0);
+    \draw [thick, ->] (0,0) -- (0,1);
+    % Drawing the points to be fit
+    \draw [fill] (0.1,0.4) circle [radius=0.025];
+    \draw [fill] (0.2,0.2) circle [radius=0.025];
+    \draw [fill] (0.4,0.4) circle [radius=0.025];
+    \draw [fill] (0.6,0.7) circle [radius=0.025];
+    \draw [fill] (0.8,0.6) circle [radius=0.025];
+    \draw [fill] (0.95,0.85) circle [radius=0.025];
+  \end{tikzpicture}
+  \caption{Drawing of the position and time space with possible points $(x_{i},y_{i})$ that would be fit.}
+  \label{fig:linfit}
+\end{figure}
+
+Under these approximations, we assume each spatial coordinate independent from the others. Then we can fit linearly in the projected two dimensional spaces of position and time: $x-t$, $y-t$ and $z-t$, where $t$, the time of the corresponding hit, is the independent variable. This way, the problem is reduced to fitting the equation $y=c_{1}x + c_{0}$ in each position and time space as seen in Figure \ref{fig:linfit}. From here, we need only apply $\chi^{2}$ minimization, which in the case of linear data fitting is exactly the method of least squares. In this scenario, if the data points are defined as $(x_{1},y_{1}), \dots, (x_{m},y_{m})$, then the solution that minimizes the $\chi^{2}$ will be
 \begin{equation}
   \vec{c} = (X^{T}X)^{-1}X^{T}\vec{y}\, ,
 \end{equation}
@@ -144,9 +164,17 @@ where
     y_{m}
   \end{bmatrix}\, .
 \end{equation}
-Once $\vec{c}$ is computed for each position and time space, the vertex position is estimated to be at $(c_{0,x}, c_{0,y}, c_{0,z})$ with direction $(c_{1,x}, c_{1,y}, c_{1,z})$. 
+Once $\vec{c}$ is computed for each position and time space, the vertex position is estimated to be at $(c_{0,x}, c_{0,y}, c_{0,z})$ with direction $(c_{1,x}, c_{1,y}, c_{1,z})$, where the second subscript denotes the spatial component of the data that was used in the fit. 
 
 % Can add charge section (make sure to credit Thomas in statement of originality)
 \section{Likelihood}
+
+A more robust technique for reconstructing potential muon tracks is a Maximum Likelihood Estimate \cite{llh_text}. In essence this is a statistically driven parameter fitting technique that allows for more complex modelling, such as the inclusion of the VC emissions. Specifically, if a single DOM observes data $\vec{x_{i}}$, then the probability of observing this data given track parameters $\vec{\theta}$ is described by a probability distribution $p\left(\vec{x_{i}}|\vec{\theta}\right)$. Since this is true for each DOM in a given event, the likelihood distribution is defined as
+\begin{equation}
+  \mathcal{L}(\vec{\theta}) = \prod_{i=1}^{n}p\left(\vec{x_{i}}|\vec{\theta}\right)\, ,
+\end{equation}
+where the indices are over all $n$ DOMs. The data, $\vec{x}$, can carry information such as the times, charges, and directionality of the hits. The varied parameters, $\vec{\theta}$, carry the information about the track including the direction, the vertex, the vertex time, and the energy. The parameters that maximize the distribution $\mathcal{L}(\vec{\theta})$ are the best guess for the track given this method.
+
+Finding this maximum is generally non-trivial and a difficult problem. Computational limits motivate using more robust maximization techniques than full parameter searches, and generally these are techniques that use gradient driven methods. Due to this methodology, generally the solution proposed by the MLE is not the global maximum, and is usually a local maximum. The result of the maximization is thus heavily dependent upon the initial conditions and the exact method of fitting. 
 
 

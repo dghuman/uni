@@ -10,47 +10,52 @@ A level-1 auxiliary file: Results.aux
 A level-1 auxiliary file: Conclusion.aux
 The style file: plain.bst
 Database file #1: thesis.bib
+I was expecting a `,' or a `}'---line 1407 of file thesis.bib
+ :        
+ :        DOI={10.1007/978-1-4684-9296-5}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in onc
 Warning--to sort, need author or key in icetray
-You've used 53 entries,
+You've used 54 entries,
             2118 wiz_defined-function locations,
-            823 strings with 12475 characters,
-and the built_in function-call counts, 18673 in all, are:
-= -- 1716
-> -- 1154
+            827 strings with 12579 characters,
+and the built_in function-call counts, 18888 in all, are:
+= -- 1735
+> -- 1161
 < -- 1
-+ -- 472
-- -- 408
-* -- 1499
-:= -- 3226
-add.period$ -- 151
-call.type$ -- 53
-change.case$ -- 358
++ -- 475
+- -- 410
+* -- 1507
+:= -- 3264
+add.period$ -- 154
+call.type$ -- 54
+change.case$ -- 361
 chr.to.int$ -- 0
-cite$ -- 55
-duplicate$ -- 547
-empty$ -- 1298
-format.name$ -- 408
-if$ -- 3715
+cite$ -- 56
+duplicate$ -- 559
+empty$ -- 1320
+format.name$ -- 410
+if$ -- 3761
 int.to.chr$ -- 0
-int.to.str$ -- 53
-missing$ -- 43
-newline$ -- 260
-num.names$ -- 102
-pop$ -- 336
+int.to.str$ -- 54
+missing$ -- 45
+newline$ -- 265
+num.names$ -- 104
+pop$ -- 344
 preamble$ -- 1
-purify$ -- 306
+purify$ -- 309
 quote$ -- 0
-skip$ -- 424
+skip$ -- 430
 stack$ -- 0
-substring$ -- 1051
-swap$ -- 68
+substring$ -- 1056
+swap$ -- 69
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 210
+type$ -- 212
 warning$ -- 2
-while$ -- 146
-width$ -- 55
-write$ -- 554
-(There were 2 warnings)
+while$ -- 148
+width$ -- 56
+write$ -- 564
+(There was 1 error message)
