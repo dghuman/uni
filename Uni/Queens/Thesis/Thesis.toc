@@ -33,11 +33,12 @@
 \contentsline {section}{\numberline {5.1}Geometry of a Single Hit}{28}%
 \contentsline {section}{\numberline {5.2}Linefit}{33}%
 \contentsline {section}{\numberline {5.3}Likelihood}{35}%
-\contentsline {chapter}{\numberline {6}Results}{36}%
-\contentsline {section}{\numberline {6.1}Likelihood}{36}%
-\contentsline {chapter}{\numberline {7}Summary and Conclusions}{37}%
-\contentsline {section}{\numberline {7.1}Summary}{37}%
-\contentsline {section}{\numberline {7.2}Future Work}{37}%
-\contentsline {section}{\numberline {7.3}Conclusion}{37}%
-\contentsline {chapter}{Bibliography}{38}%
+\contentsline {subsection}{\numberline {5.3.1}Likelihood Function}{36}%
+\contentsline {chapter}{\numberline {6}Results}{37}%
+\contentsline {section}{\numberline {6.1}Likelihood}{37}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{38}%
+\contentsline {section}{\numberline {7.1}Summary}{38}%
+\contentsline {section}{\numberline {7.2}Future Work}{38}%
+\contentsline {section}{\numberline {7.3}Conclusion}{38}%
+\contentsline {chapter}{Bibliography}{39}%
 \renewcommand *\cftchappresnum {Appendix }

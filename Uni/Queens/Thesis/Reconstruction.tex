@@ -169,12 +169,23 @@ Once $\vec{c}$ is computed for each position and time space, the vertex position
 % Can add charge section (make sure to credit Thomas in statement of originality)
 \section{Likelihood}
 
-A more robust technique for reconstructing potential muon tracks is a Maximum Likelihood Estimate \cite{llh_text}. In essence this is a statistically driven parameter fitting technique that allows for more complex modelling, such as the inclusion of the VC emissions. Specifically, if a single DOM observes data $\vec{x_{i}}$, then the probability of observing this data given track parameters $\vec{\theta}$ is described by a probability distribution $p\left(\vec{x_{i}}|\vec{\theta}\right)$. Since this is true for each DOM in a given event, the likelihood distribution is defined as
+A more robust technique for reconstructing potential muon tracks is a Maximum Likelihood Estimate \cite{llh_text}. In essence this is a statistically driven parameter fitting technique that allows for more complex modelling, such as the inclusion of the VC emissions. Specifically, if a single DOM observes data $\vec{x_{i}}$, then the probability of observing this data given track parameters $\vec{\theta}$ is described by a probability distribution $p\left(\vec{x_{i}}\bigr\rvert\vec{\theta}\right)$. Since this is true for each DOM in a given event, the likelihood distribution is defined as
 \begin{equation}
-  \mathcal{L}(\vec{\theta}) = \prod_{i=1}^{n}p\left(\vec{x_{i}}|\vec{\theta}\right)\, ,
+  \mathcal{L}(\vec{\theta}) = \prod_{i=1}^{n}p\left(\vec{x_{i}}\bigr\rvert\vec{\theta}\right)\, ,
 \end{equation}
 where the indices are over all $n$ DOMs. The data, $\vec{x}$, can carry information such as the times, charges, and directionality of the hits. The varied parameters, $\vec{\theta}$, carry the information about the track including the direction, the vertex, the vertex time, and the energy. The parameters that maximize the distribution $\mathcal{L}(\vec{\theta})$ are the best guess for the track given this method.
 
-Finding this maximum is generally non-trivial and a difficult problem. Computational limits motivate using more robust maximization techniques than full parameter searches, and generally these are techniques that use gradient driven methods. Due to this methodology, generally the solution proposed by the MLE is not the global maximum, and is usually a local maximum. The result of the maximization is thus heavily dependent upon the initial conditions and the exact method of fitting. 
+Finding this maximum is generally non-trivial and a difficult problem. Computational limits motivate using more robust maximization techniques than full parameter searches, and generally these are techniques that use gradient driven methods. Due to this methodology, generally the solution proposed by the MLE is not the global maximum, and is usually a local maximum. The result of the maximization is thus heavily dependent upon the initial conditions and the exact method of fitting.
 
+\subsection{Likelihood Function}
 
+Though we understand the general theory for how the likelihood function will turn out, we still need an explicit form for $p\left(\vec{x_{i}}\bigr\rvert\vec{\theta}\right)$. This probability function could be made arbitrarily complex by attempting to account for every little physical detail, so we need to state the assumptions and physical processes that will be modeled. Using the fact that we know how to get the geometric time and direct distance that the emitted photon would travel before hitting the DOM given a guess track, the next step would be to account for the scattering and absorption of light. This seems like a small change, but has large repercussions in the probability distribution describing the data given a hypothesis track. IceCube uses the Pandel function \cite{phd_kai}, which explicitly takes the following form,
+\begin{equation}\label{eq:pandel}
+  \begin{split}
+    p\left(t_{\text{res}}\bigr\rvert\vec{\theta}\right) = & \frac{1}{N(d)}\frac{\tau^{-d/\lambda}\cdot t_{\text{res}}^{d/\lambda - 1}}{\Gamma(d/\lambda)}\cdot \exp\left(-t_{\text{res}}\cdot\left(\frac{1}{\tau} + \frac{c_{\text{medium}}}{\lambda_{a}}\right) - \frac{d}{\lambda{a}}\right)\, , \\
+    N(d) = & e^{-d/\lambda_{a}}\cdot\left(1 + \frac{\tau \cdot c_{\text{medium}}}{\lambda_{a}}\right)^{-d/\lambda}\, ,
+  \end{split}
+\end{equation}
+where $d$ is the photon travel distance, $\lambda$ is the scattering length, $\lambda_{a}$ is the absorption length, $\Gamma(x)$ is the Gamma function, $c_{\text{medium}}$ is the speed of light in water, and $\tau$ is an inverse time parameter for fitting \cite{phd_kai}. Given these parameters, which are physically motivated or fit using simulated data, the Pandel function gives the probability of observing a residual time for a hypothesis track. It is important to note here that $\vec{\theta} = (\vec{v}, \vec{x}, t_{\text{vertex}})$, where we have the track direction, vertex position and vertex time respectively.
+
+The Pandel function favours positive residual times, so much so the probability has varying behavours as $t_{\text{res}}\to 0$. 

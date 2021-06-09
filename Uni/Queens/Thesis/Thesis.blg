@@ -17,45 +17,45 @@ I was expecting a `,' or a `}'---line 1407 of file thesis.bib
 I'm skipping whatever remains of this entry
 Warning--to sort, need author or key in onc
 Warning--to sort, need author or key in icetray
-You've used 54 entries,
+You've used 55 entries,
             2118 wiz_defined-function locations,
-            827 strings with 12579 characters,
-and the built_in function-call counts, 18888 in all, are:
-= -- 1735
-> -- 1161
+            833 strings with 12681 characters,
+and the built_in function-call counts, 19087 in all, are:
+= -- 1756
+> -- 1168
 < -- 1
-+ -- 475
-- -- 410
-* -- 1507
-:= -- 3264
-add.period$ -- 154
-call.type$ -- 54
-change.case$ -- 361
++ -- 478
+- -- 412
+* -- 1518
+:= -- 3304
+add.period$ -- 157
+call.type$ -- 55
+change.case$ -- 364
 chr.to.int$ -- 0
-cite$ -- 56
-duplicate$ -- 559
-empty$ -- 1320
-format.name$ -- 410
-if$ -- 3761
+cite$ -- 57
+duplicate$ -- 568
+empty$ -- 1334
+format.name$ -- 412
+if$ -- 3799
 int.to.chr$ -- 0
-int.to.str$ -- 54
+int.to.str$ -- 55
 missing$ -- 45
-newline$ -- 265
-num.names$ -- 104
-pop$ -- 344
+newline$ -- 270
+num.names$ -- 106
+pop$ -- 347
 preamble$ -- 1
-purify$ -- 309
+purify$ -- 312
 quote$ -- 0
-skip$ -- 430
+skip$ -- 436
 stack$ -- 0
-substring$ -- 1056
-swap$ -- 69
+substring$ -- 1061
+swap$ -- 70
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 212
+type$ -- 216
 warning$ -- 2
-while$ -- 148
-width$ -- 56
-write$ -- 564
+while$ -- 150
+width$ -- 57
+write$ -- 575
 (There was 1 error message)
