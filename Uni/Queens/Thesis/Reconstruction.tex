@@ -182,10 +182,17 @@ Finding this maximum is generally non-trivial and a difficult problem. Computati
 Though we understand the general theory for how the likelihood function will turn out, we still need an explicit form for $p\left(\vec{x_{i}}\bigr\rvert\vec{\theta}\right)$. This probability function could be made arbitrarily complex by attempting to account for every little physical detail, so we need to state the assumptions and physical processes that will be modeled. Using the fact that we know how to get the geometric time and direct distance that the emitted photon would travel before hitting the DOM given a guess track, the next step would be to account for the scattering and absorption of light. This seems like a small change, but has large repercussions in the probability distribution describing the data given a hypothesis track. IceCube uses the Pandel function \cite{phd_kai}, which explicitly takes the following form,
 \begin{equation}\label{eq:pandel}
   \begin{split}
-    p\left(t_{\text{res}}\bigr\rvert\vec{\theta}\right) = & \frac{1}{N(d)}\frac{\tau^{-d/\lambda}\cdot t_{\text{res}}^{d/\lambda - 1}}{\Gamma(d/\lambda)}\cdot \exp\left(-t_{\text{res}}\cdot\left(\frac{1}{\tau} + \frac{c_{\text{medium}}}{\lambda_{a}}\right) - \frac{d}{\lambda{a}}\right)\, , \\
+    p\left(t_{\text{res}}\bigr\rvert\vec{\theta}\right) = & \frac{1}{N(d)}\frac{\tau^{-d/\lambda}\cdot t_{\text{res}}^{d/\lambda - 1}}{\Gamma(d/\lambda)}\cdot \exp\left(-t_{\text{res}}\cdot\left(\frac{1}{\tau} + \frac{c_{\text{medium}}}{\lambda_{a}}\right) - \frac{d}{\lambda_{a}}\right)\, , \\
     N(d) = & e^{-d/\lambda_{a}}\cdot\left(1 + \frac{\tau \cdot c_{\text{medium}}}{\lambda_{a}}\right)^{-d/\lambda}\, ,
   \end{split}
 \end{equation}
 where $d$ is the photon travel distance, $\lambda$ is the scattering length, $\lambda_{a}$ is the absorption length, $\Gamma(x)$ is the Gamma function, $c_{\text{medium}}$ is the speed of light in water, and $\tau$ is an inverse time parameter for fitting \cite{phd_kai}. Given these parameters, which are physically motivated or fit using simulated data, the Pandel function gives the probability of observing a residual time for a hypothesis track. It is important to note here that $\vec{\theta} = (\vec{v}, \vec{x}, t_{\text{vertex}})$, where we have the track direction, vertex position and vertex time respectively.
 
-The Pandel function favours positive residual times, so much so the probability has varying behavours as $t_{\text{res}}\to 0$. 
+The Pandel function favours positive residual times, so much so the probability has varying behavours as $t_{\text{res}}\to 0$. Figure \ref{fig:pandel} shows this behaviour 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{./Figures/pandel_plot.eps}
+  \caption{A figure showing a plot of the pandel function over 300 nanoseconds with 10 meters, 30 meters and 50 meters of travel distances for the emitted light. }
+  \label{fig:pandel}
+\end{figure}
