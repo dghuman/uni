@@ -284,6 +284,12 @@ I~E Tamm and I~M Frank.
 \newblock {\em [Comptes Rendus Acad. Sciences USSR 14 107 (1937)]}, 14(107),
   1937.
 
+\bibitem{conv}
+N.~van Eijndhoven, O.~Fadiran, and G.~Japaridze.
+\newblock Implementation of a gauss convoluted pandel pdf for track
+  reconstruction in neutrino telescopes.
+\newblock {\em Astroparticle Physics}, 28(4-5):456–462, Dec 2007.
+
 \bibitem{vav_og}
 S~I Vavilov.
 \newblock {Dokl. Akad. Nauk SSSR}.

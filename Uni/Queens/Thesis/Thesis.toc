@@ -34,11 +34,11 @@
 \contentsline {section}{\numberline {5.2}Linefit}{33}%
 \contentsline {section}{\numberline {5.3}Likelihood}{35}%
 \contentsline {subsection}{\numberline {5.3.1}Likelihood Function}{36}%
-\contentsline {chapter}{\numberline {6}Results}{38}%
-\contentsline {section}{\numberline {6.1}Likelihood}{38}%
-\contentsline {chapter}{\numberline {7}Summary and Conclusions}{39}%
-\contentsline {section}{\numberline {7.1}Summary}{39}%
-\contentsline {section}{\numberline {7.2}Future Work}{39}%
-\contentsline {section}{\numberline {7.3}Conclusion}{39}%
-\contentsline {chapter}{Bibliography}{40}%
+\contentsline {chapter}{\numberline {6}Results}{39}%
+\contentsline {section}{\numberline {6.1}Likelihood}{39}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{40}%
+\contentsline {section}{\numberline {7.1}Summary}{40}%
+\contentsline {section}{\numberline {7.2}Future Work}{40}%
+\contentsline {section}{\numberline {7.3}Conclusion}{40}%
+\contentsline {chapter}{Bibliography}{41}%
 \renewcommand *\cftchappresnum {Appendix }
