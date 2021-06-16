@@ -108,7 +108,26 @@ The next step is to recall all these prior computations rely on the distance of 
   d_{c} = \sqrt{|\vec{r} - \vec{x}|^{2} - |(\vec{r} - \vec{x})\cdot\vec{v}|^{2}}\, .
 \end{equation}
 
-We now have a method of computing $d_{i,c}$, and thus computing $d_{i}$ and $t_{\text{res}}$ for each DOM given a proposed track $\vec{u}(t) = \vec{x} + ct\vec{v}$. It is important here to note the degrees of freedom that parameterizing a track have. The vertex provides four as it is a position in 3-dimensional space with a time attached. The direction provides two degrees of freedom, as it is a unit vector and can be parameterized using two angles and a unit length radius in spherical coordinates. This gives us six parameters in total that need to be computed to uniquely define an infinite track. 
+We now have a method of computing $d_{i,c}$, and thus computing $d_{i}$ and $t_{\text{res}}$ for each DOM given a proposed track $\vec{u}(t) = \vec{x} + ct\vec{v}$. It is important here to note the degrees of freedom that parameterizing a track have. The vertex provides four as it is a position in 3-dimensional space with a time attached. The direction provides two degrees of freedom, as it is a unit vector and can be parameterized using two angles and a unit length radius in spherical coordinates. This gives us six parameters in total that need to be computed to uniquely define an infinite track.
+
+A simple way to check that this is working is to plot the arrival times of photons for a given track direction to a single line of detectors. We can take these detectors to be located starting at the origin and lined along the z-axis in space. If a track is traveling such that it intersects the central detector, the arrival times of the photons emmitted by this track will take on a particular expected shape. Figures \ref{subfig:utime} and \ref{subfig:dtime} show these distributions given particlar track directions with the zenith angle of direction provided. Of the directions given, there is also the special angle of $\theta = \pi/2 \pm \theta_{c}$ which lines up the wavefront with the line of detectors and hence has one of the ``arms'' of the arrival times arrive nearly at the same time (they can be slightly off due to approximations). 
+
+\begin{figure}[ht]
+  \begin{minipage}[b]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{./Figures/upward_arrival_time.eps}
+    \caption{Upward Arrival Time}
+    \label{subfig:utime}
+  \end{minipage}
+  \hspace{0.1cm}
+  \begin{minipage}[b]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{./Figures/downward_arrival_time.eps}
+    \caption{Downward Arrival Time}
+    \label{subfig:dtime}
+  \end{minipage}
+\end{figure}
+
 
 We are now ready to consider different methods for computing these parameters. There are several software techniques that need to be applied before a result can be taken seriously, and usually this pipline begins with a simple and quick initial guess fit. 
 
@@ -170,7 +189,7 @@ Once $\vec{c}$ is computed for each position and time space, the vertex position
 \section{Likelihood}
 
 A more robust technique for reconstructing potential muon tracks is a Maximum Likelihood Estimate \cite{llh_text}. In essence this is a statistically driven parameter fitting technique that allows for more complex modelling, such as the inclusion of the VC emissions. Specifically, if a single DOM observes data $\vec{x_{i}}$, then the probability of observing this data given track parameters $\vec{\theta}$ is described by a probability distribution $p\left(\vec{x_{i}}\bigr\rvert\vec{\theta}\right)$. Since this is true for each DOM in a given event, the likelihood distribution is defined as
-\begin{equation}
+\begin{equation}\label{eq:gen_llh}
   \mathcal{L}(\vec{\theta}) = \prod_{i=1}^{n}p\left(\vec{x_{i}}\bigr\rvert\vec{\theta}\right)\, ,
 \end{equation}
 where the indices are over all $n$ DOMs. The data, $\vec{x}$, can carry information such as the times, charges, and directionality of the hits. The varied parameters, $\vec{\theta}$, carry the information about the track including the direction, the vertex, the vertex time, and the energy. The parameters that maximize the distribution $\mathcal{L}(\vec{\theta})$ are the best guess for the track given this method.
@@ -204,11 +223,52 @@ The simplest model for detector error is a gaussian, and a known method of foldi
   \mathcal{F}_{\sigma}(\rho, \xi, t) = \int_{0}^{\infty}\frac{\text{d}x}{\sqrt{2\pi\sigma^{2}}}p(\rho, \xi, x)e^{-(t-x)^{2}/2\sigma^{2}}\, .
 \end{equation}
 This integral has an exact form \cite{conv},
-\begin{equation}
+\begin{equation}\label{eq:exact_cpandel}
   \mathcal{F}_{\sigma}(\rho, \xi, t) = \frac{\rho^{\xi}\sigma^{\xi-1}e^{-t^{2}/2\sigma^{2}}}{2^{(1+\xi)/2}}\left[\frac{_{1}F_{1}(\frac{1}{2}\xi,\frac{1}{2},\frac{1}{2}\eta^{2})}{\Gamma(\frac{1}{2}(\xi+1))} - \sqrt{2}\eta\frac{_{1}F_{1}(\frac{1}{2}(\xi+1),\frac{3}{2},\frac{1}{2}\eta^{2})}{\Gamma(\frac{1}{2}\xi)}\right]\, ,
 \end{equation}
 where
 \begin{equation}
   \eta = \rho\sigma - \frac{t}{\sigma}\, 
 \end{equation}
-and $_{1}F_{1}$ is the confluent hypergeometric function \cite{conv}. Fortunately $_{1}F_{1}$ is available in multiple computing languages and allows for numerical evaluation of $\mathcal{F}_{\sigma}(\rho, \xi, t)$ \cite{conv}. This is still non-trivial due to convergence bounds on $_{1}F_{1}$, and as in \cite{conv} approximations for different domains must be used in order to accurately be able to use the entire distance and time domain. 
+and $_{1}F_{1}$ is the confluent hypergeometric function \cite{conv}. Fortunately $_{1}F_{1}$ is available in multiple computing languages and allows for numerical evaluation of $\mathcal{F}_{\sigma}(\rho, \xi, t)$ \cite{conv}, where there is a plot over an example domain in figure \ref{fig:cpandel}. This is still non-trivial due to convergence bounds on $_{1}F_{1}$, and as in \cite{conv} approximations for different domains must be used in order to accurately be able to use the entire distance and time domain. For the exact approximations used, refer to \cite{conv}, but we will discuss the regions that need to be approximated. In \cite{conv}, the regions are described using the $\xi$ and $\eta$ parameters, but it is easy enough to translate these to $t$ and $d$. The regions used for this reconstruction are adaped from \cite{conv}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{./Figures/cpandel_plot.eps}
+  \caption{A figure showing a plot of the cpandel function over -50 ns to 300 ns at 50 meters of travel distances for the emitted light. The parameters aside from $\sigma$ are fit according to the simulated data, and we have two plots of $\sigma \in \{5\, \text{ns}, 10\, \text{ns}\}$.}
+  \label{fig:cpandel}
+\end{figure}
+
+The simplest regions to understand are the unlikely regions. These are the ones for which we are incredibly unlikely to find any events as the residual time is either very positive ($t_{\text{res}} > 3500$ ns), or too negative ($t_{\text{res}} < -25\sigma$ ns). In these regions, independent of distance, these residual times are unphysical and hence heavily penalized by this likelihood. The next region we consider is for $-5\sigma < t_{\text{res}} < 30\sigma$ and $d < 5\lambda_{s}$. This describes the most common region for events to occur, and is within the convergence boundary of the hypergeometric functions. The exact form of the equation, as described in equation \ref{eq:exact_cpandel}, is the one taken for this region and promotes the general expected behaviour around the peak. The remaining regions are a combination of the possible ranges of distance and time; there are approximations for large $t$ and small $d$, small $t$ and large $d$ and large $t$ and large $d$. These regions each have various approximations associated.
+
+\section{Fitting}
+
+With the track parameterizing understood, a likelihood distribution in the form of the CPandel function, it is now at a point where the reconstruction step can actually take place. As a likelihood, $\mathcal{L}(\vec{\theta}$, for a given track gives a probability, we wish to maximize this function with respect to $\vec{\theta}$. Computationally accomplishing this goal, the first step is to utilise a standard method in maximizing likelihoods by taking the logarithm,
+\begin{equation}  
+  \ell(\vec{\theta}) = \log\left(\mathcal{L}(\vec{\theta})\right)\, .
+\end{equation}
+As we recall the form for $\mathcal{L}(\vec{\theta})$ in equation \ref{eq:gen_llh} is a product of probability distributions, then naturally we see
+\begin{equation}
+  \ell(\vec{\theta}) = \sum_{i=1}^{n}\log\left(p\left(\vec{x_{i}}\bigr\rvert\vec{\theta}\right)\right)\, ,
+\end{equation}
+which is now a sum rather than a product. This will immediatly be more useful as computationally it is easier to take a sum then a product. Another point to note is that generally one finds the minimums of functions rather than maximums purely due to convention, and so generally the minima of $-\ell(\vec{\theta})$ is what is computed.
+
+For the actual minimization process, the common method is to use a simplex based technique \cite{simplex}. This method, sometimes referred to as the Nedler-Mead algorithm, is powerful for finding local minima of multi-parameter systems and uses an approach that does not rely on derivatives. The benefit is that this method is relatively straight forward and easily implemented. A more robust technique is to use a gradient based approach, such as the nonlinear conjugate gradient method \cite{gradient}, which uses a gradient to determine the direction in which the minimizer will head. The benefit to this latter approach is that it is more consistent and reliable in finding the minima.
+
+Ultimately the choice of minimization technique is case dependent and can vary. Both of these are compared in the analysis.
+
+\section{Corrections}
+
+Through some testing and debugging, it was found there were some manual corrections and changes that had to be made to observe an improvement in the likelihood reconstruction. These changes included reparameterizing the problem into a spherical coordinate-like form, and an extra penalty on the likelihood.
+
+\subsection{Reparameterizing}
+
+Due to the seed for the likelihood fit being the linear fit, the result can be vary depending upon how well the original fit does. A flaw of the linear fit method is that the vertex is purely a geometric fit, and doesn't serve any other purpose in this initial fitting technique. This can occasionally result in a vertex that is very far away from the director, which can have drastic effects on the minimization. In particular, the further the vertex is, the more sensitive the minimizer is to changes in the direction azimuth and zenith angles. This can impede the minimization process, and cause the minimizer to even miss local minimas.
+
+To avoid these potential issues, the problem was reparameterized from $\vec{\theta} = (\theta, \phi, \vec{x}, t)$ to $\vec{\theta} = (\theta, \phi, \vartheta, \varphi, t)$. The new $\vartheta$ and $\varphi$ refer to the zenith and azimuth angles that point to the vertex at a fixed radius $r$ related to the size of the detector. Fixing $r$ determines a sphere around the center of the detector, and the intersection of the track with that sphere is determined and the new vertex is determined to be the first point that intersects the sphere, hwhich allows for computation of these new angles. If the line does not intersect the sphere, the event is determined to be outside the detector and would be disregarded in event cleaning anyways. 
+
+\subsection{Extra Penalty}
+
+As the likelihood function represents the ideal residual time distribution, the goal of the likelihood method is to generally push the distribution towards the CPandel distribution. This is a vague approximation of how the likelihood method actually works, but it motivates penalizing negative residual values even more. Ocassionaly the minimization process won't find a distribution that fits the CPandel well, and in these cases adding an extra artificial presence to nudge the residual time distribution in the right direction can improve the fit.
+
+Though this solution works, it is inherently temporary and is a band-aid method to force the likelihood minimization to behave the way we want. Ideally the likelihood distribution would be robust enough to correctly push the minimization in the correct direction without this manual push. 

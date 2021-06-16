@@ -31,14 +31,19 @@
 \contentsline {section}{\numberline {4.4}Detector Response}{26}%
 \contentsline {chapter}{\numberline {5}Reconstruction}{28}%
 \contentsline {section}{\numberline {5.1}Geometry of a Single Hit}{28}%
-\contentsline {section}{\numberline {5.2}Linefit}{33}%
-\contentsline {section}{\numberline {5.3}Likelihood}{35}%
-\contentsline {subsection}{\numberline {5.3.1}Likelihood Function}{36}%
-\contentsline {chapter}{\numberline {6}Results}{39}%
-\contentsline {section}{\numberline {6.1}Likelihood}{39}%
-\contentsline {chapter}{\numberline {7}Summary and Conclusions}{40}%
-\contentsline {section}{\numberline {7.1}Summary}{40}%
-\contentsline {section}{\numberline {7.2}Future Work}{40}%
-\contentsline {section}{\numberline {7.3}Conclusion}{40}%
-\contentsline {chapter}{Bibliography}{41}%
+\contentsline {section}{\numberline {5.2}Linefit}{34}%
+\contentsline {section}{\numberline {5.3}Likelihood}{36}%
+\contentsline {subsection}{\numberline {5.3.1}Likelihood Function}{37}%
+\contentsline {section}{\numberline {5.4}Fitting}{41}%
+\contentsline {section}{\numberline {5.5}Corrections}{42}%
+\contentsline {subsection}{\numberline {5.5.1}Reparameterizing}{42}%
+\contentsline {subsection}{\numberline {5.5.2}Extra Penalty}{43}%
+\contentsline {chapter}{\numberline {6}Results}{44}%
+\contentsline {section}{\numberline {6.1}Linefit}{44}%
+\contentsline {section}{\numberline {6.2}Likelihood}{44}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{45}%
+\contentsline {section}{\numberline {7.1}Summary}{45}%
+\contentsline {section}{\numberline {7.2}Future Work}{45}%
+\contentsline {section}{\numberline {7.3}Conclusion}{45}%
+\contentsline {chapter}{Bibliography}{46}%
 \renewcommand *\cftchappresnum {Appendix }

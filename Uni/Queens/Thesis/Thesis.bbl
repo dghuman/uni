@@ -117,6 +117,12 @@ P~A Cherenkov.
 Lew Classen, Alexander Kappes, and Timo Karg.
 \newblock A multi-pmt optical module for the icecube upgrade, 2019.
 
+\bibitem{gradient}
+Y.~H. Dai and Y.~Yuan.
+\newblock A nonlinear conjugate gradient method with a strong global
+  convergence property.
+\newblock {\em SIAM J. Optim.}, 10:177--182, 1999.
+
 \bibitem{m_nu}
 G.~Danby, J.~Gaillard, K.~Goulianos, L.~Lederman, N.~Mistry, M.~Schwartz, and
   J.~Steinberger.
@@ -250,6 +256,11 @@ Mikheyev, Smirnov S.~P., and A.~Yu.
 \newblock Resonant amplification of $\nu$ oscillations in matter and
   solar-neutrino spectroscopy.
 \newblock {\em Il Nuovo Cimento C}, 9, Jan 1986.
+
+\bibitem{simplex}
+J.~Nelder and R.~Mead.
+\newblock A simplex method for function minimization.
+\newblock {\em Comput. J.}, 7:308--313, 1965.
 
 \bibitem{re_nu}
 Xin Qian and Jen-Chieh Peng.
