@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.18)  15 JUN 2021 14:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.18)  16 JUN 2021 22:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -769,7 +769,7 @@ Package caption Info: End \AtBeginDocument code.
 \tf@lof=\write8
 \openout8 = `Thesis.lof'.
 
- [8]
+ [8] [9]
 \openout2 = `Introduction.aux'.
 
  (./Introduction.tex
@@ -815,20 +815,20 @@ Chapter 3.
 
 
 ]
-<./Figures/PONEv0_-23_design.jpg, id=92, 466.8642pt x 286.1892pt>
+<./Figures/PONEv0_-23_design.jpg, id=96, 466.8642pt x 286.1892pt>
 File: ./Figures/PONEv0_-23_design.jpg Graphic file (type jpg)
 <use ./Figures/PONEv0_-23_design.jpg>
 Package pdftex.def Info: ./Figures/PONEv0_-23_design.jpg  used on input line 11
 .
 (pdftex.def)             Requested size: 341.43306pt x 209.30501pt.
  [16 <./Figures/PONEv0_-23_design.jpg>] [17] [18]
-<./Figures/STRAW.png, id=103, 588.1975pt x 979.66pt>
+<./Figures/STRAW.png, id=106, 588.1975pt x 979.66pt>
 File: ./Figures/STRAW.png Graphic file (type png)
 <use ./Figures/STRAW.png>
 Package pdftex.def Info: ./Figures/STRAW.png  used on input line 49.
 (pdftex.def)             Requested size: 303.53267pt x 505.53957pt.
  [19] [20 <./Figures/STRAW.png>]
-<./Figures/western_infrastructure.png, id=112, 385.44pt x 216.81pt>
+<./Figures/western_infrastructure.png, id=115, 385.44pt x 216.81pt>
 File: ./Figures/western_infrastructure.png Graphic file (type png)
 <use ./Figures/western_infrastructure.png>
 Package pdftex.def Info: ./Figures/western_infrastructure.png  used on input li
@@ -839,7 +839,7 @@ ne 68.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [21]
-<./Figures/cascadia_basin.png, id=116, 385.44pt x 216.81pt>
+<./Figures/cascadia_basin.png, id=120, 385.44pt x 216.81pt>
 File: ./Figures/cascadia_basin.png Graphic file (type png)
 <use ./Figures/cascadia_basin.png>
 Package pdftex.def Info: ./Figures/cascadia_basin.png  used on input line 77.
@@ -875,7 +875,7 @@ d-to.pdf>
 ime-eps-converted-to.pdf ./Figures/upward_arrival_time.eps>
 (epstopdf)             \includegraphics on input line 118.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/upward_arrival_time-eps-converted-to.pdf, id=154, 462.72874pt x 346.
+<./Figures/upward_arrival_time-eps-converted-to.pdf, id=157, 462.72874pt x 346.
 29375pt>
 File: ./Figures/upward_arrival_time-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -894,7 +894,7 @@ ted-to.pdf>
 _time-eps-converted-to.pdf ./Figures/downward_arrival_time.eps>
 (epstopdf)             \includegraphics on input line 125.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/downward_arrival_time-eps-converted-to.pdf, id=155, 462.72874pt x 34
+<./Figures/downward_arrival_time-eps-converted-to.pdf, id=158, 462.72874pt x 34
 6.29375pt>
 File: ./Figures/downward_arrival_time-eps-converted-to.pdf Graphic file (type p
 df)
@@ -916,7 +916,7 @@ Package epstopdf Info: Source file: <./Figures/pandel_plot.eps>
 converted-to.pdf ./Figures/pandel_plot.eps>
 (epstopdf)             \includegraphics on input line 214.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/pandel_plot-eps-converted-to.pdf, id=251, 462.52798pt x 346.89601pt>
+<./Figures/pandel_plot-eps-converted-to.pdf, id=254, 462.52798pt x 346.89601pt>
 
 File: ./Figures/pandel_plot-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/pandel_plot-eps-converted-to.pdf>
@@ -935,7 +935,7 @@ f>
 -converted-to.pdf ./Figures/cpandel_plot.eps>
 (epstopdf)             \includegraphics on input line 237.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/cpandel_plot-eps-converted-to.pdf, id=287, 462.52798pt x 346.89601pt
+<./Figures/cpandel_plot-eps-converted-to.pdf, id=290, 462.52798pt x 346.89601pt
 >
 File: ./Figures/cpandel_plot-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/cpandel_plot-eps-converted-to.pdf>
@@ -953,56 +953,86 @@ Overfull \hbox (7.9552pt too wide) in paragraph at lines 268--269
 
  (./Results.tex
 Chapter 6.
-) [44
+[44
 
 
 
 ]
+<./Figures/reco_plots/alpha_dist_linefit_count.png, id=348, 462.528pt x 346.896
+pt>
+File: ./Figures/reco_plots/alpha_dist_linefit_count.png Graphic file (type png)
+
+<use ./Figures/reco_plots/alpha_dist_linefit_count.png>
+Package pdftex.def Info: ./Figures/reco_plots/alpha_dist_linefit_count.png  use
+d on input line 17.
+(pdftex.def)             Requested size: 341.43306pt x 256.08499pt.
+ [45 <./Figures/reco_plots/alpha_dist_linefit_count.png>]
+<./Figures/reco_plots/alpha_dist_llh_count.png, id=354, 462.528pt x 346.896pt>
+File: ./Figures/reco_plots/alpha_dist_llh_count.png Graphic file (type png)
+<use ./Figures/reco_plots/alpha_dist_llh_count.png>
+Package pdftex.def Info: ./Figures/reco_plots/alpha_dist_llh_count.png  used on
+ input line 30.
+(pdftex.def)             Requested size: 341.43306pt x 256.08499pt.
+ [46 <./Figures/reco_plots/alpha_dist_llh_count.png>]
+<./Figures/reco_plots/angular_diff_dir.png, id=359, 462.528pt x 346.896pt>
+File: ./Figures/reco_plots/angular_diff_dir.png Graphic file (type png)
+<use ./Figures/reco_plots/angular_diff_dir.png>
+Package pdftex.def Info: ./Figures/reco_plots/angular_diff_dir.png  used on inp
+ut line 41.
+(pdftex.def)             Requested size: 341.43306pt x 256.08499pt.
+ [47 <./Figures/reco_plots/angular_diff_dir.png>]
+<./Figures/reco_plots/alpha_dist_llh_seedcomparison.png, id=364, 462.528pt x 34
+6.896pt>
+File: ./Figures/reco_plots/alpha_dist_llh_seedcomparison.png Graphic file (type
+ png)
+<use ./Figures/reco_plots/alpha_dist_llh_seedcomparison.png>
+Package pdftex.def Info: ./Figures/reco_plots/alpha_dist_llh_seedcomparison.png
+  used on input line 54.
+(pdftex.def)             Requested size: 341.43306pt x 256.08499pt.
+ [48]) [49 <./Figures/reco_plots/alpha_dist_llh_seedcomparison.png>]
 \openout2 = `Conclusion.aux'.
 
- (./Conclusion.tex
+
+(./Conclusion.tex
 Chapter 7.
-) [45
+) [50
 
 
 
-] (./Thesis.bbl [46
+] (./Thesis.bbl [51
 
 
 
-] [47] [48] [49] [50] [51]) [52] (./Thesis.aux
+] [52] [53] [54] [55] [56]) [57] (./Thesis.aux
 (./Introduction.aux) (./Background.aux) (./The_PONE.aux) (./Simulation.aux)
-(./Reconstruction.aux) (./Results.aux) (./Conclusion.aux))
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+(./Reconstruction.aux) (./Results.aux) (./Conclusion.aux)) ) 
 Here is how much of TeX's memory you used:
- 15778 strings out of 481239
- 311677 string characters out of 5920377
- 528741 words of memory out of 5000000
- 30662 multiletter control sequences out of 15000+600000
+ 15807 strings out of 481239
+ 312897 string characters out of 5920377
+ 528785 words of memory out of 5000000
+ 30686 multiletter control sequences out of 15000+600000
  539327 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,21n,73p,1100b,1007s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts
-/type1/public/cm-super/sfrm1200.pfb>
-Output written on Thesis.pdf (61 pages, 5694453 bytes).
+{/usr/share/texmf/f
+onts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-supe
+r/sfrm1200.pfb>
+Output written on Thesis.pdf (67 pages, 6085351 bytes).
 PDF statistics:
- 422 PDF objects out of 1000 (max. 8388607)
- 206 compressed objects within 3 object streams
+ 449 PDF objects out of 1000 (max. 8388607)
+ 219 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
 
