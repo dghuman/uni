@@ -56,7 +56,34 @@ To test which initial parameter most affects the reconstruction, I started the r
   \label{fig:alpha_llh_test}
 \end{figure}
 
+We can also check whether there is a correlation with the likelihood values and the reconstructed angular resolution ($\alpha$). To do so, we need a way to include both the final and initial likelihood values, as there can be a wide variety of ranges that a reconstruction can start and end at. For this reason, we consider plotting the ratio between the final negative loglikelihood value and the initial, $\ell_{f}/\ell_{i}$. Thus, a smaller value denotes a larger improvement in the likelihood value. On the other hand, any value above one denotes a drop in quality of fit. This plot is made in figure \ref{fig:alpha_llhratio_comp}.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{./Figures/reco_plots/alpha_dist_vs_llhratio_heat.png}
+  \caption{We plot the likelihood ratio $\ell_{f}/\ell_{i}$ against the final reconstructed angular resolution using a heatmap. }
+  \label{fig:alpha_llhratio_comp}
+\end{figure}
+
+Referring to figure \ref{fig:alpha_llhratio_comp}, we see that the events are bunching up near a small ratio of $\ell_{f}/\ell_{i}$ and small error in the solid angle $\alpha$. This could point to a correlation between the increase in the quality of the fit and the increase in the direcitonality of the reconstructed track. There could still be some hidden biases here that are being unaccounted for, such as reconstruction angles that begin close to the truth only changing in small amounts but having massive likelihood value swings. For this reason, we need to check for sure that there are no hidden biases in both $\ell_{f}$ against $\ell_{i}$ and $\alpha_{f}$ against $\alpha_{i}$.
+
+\begin{figure}[ht]
+  \begin{minipage}[b]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{./Figures/reco_plots/llhratio_comp_heat.png}
+    \caption{Correlation heatmap between the initial negative loglikelihood value and the final negative loglikelihood.}
+    \label{subfig:llh_heat}
+  \end{minipage}
+  \hspace{0.1cm}
+  \begin{minipage}[b]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{./Figures/reco_plots/alpha_dist_comp_heat.png}
+    \caption{Correlation map of the final reconstructed angular resolution and the initial angular resolution.}
+    \label{subfig:alpha_heat}
+  \end{minipage}
+\end{figure}
+
+Looking at figures \ref{subfig:llh_heat} and \ref{subfig:alpha_heat}, we can see that the reconstruction is behaving as one would expect. For both plots, the $y=x$ diagonal line would symbolize neither improvement nor regression, and anything below would suggest improvement. In both figures majority of the points end up below this line encouraging the 
 
 
 computation time

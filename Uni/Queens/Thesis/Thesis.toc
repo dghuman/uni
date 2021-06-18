@@ -41,9 +41,9 @@
 \contentsline {chapter}{\numberline {6}Results}{44}%
 \contentsline {section}{\numberline {6.1}Linefit}{45}%
 \contentsline {section}{\numberline {6.2}Likelihood}{46}%
-\contentsline {chapter}{\numberline {7}Summary and Conclusions}{50}%
-\contentsline {section}{\numberline {7.1}Summary}{50}%
-\contentsline {section}{\numberline {7.2}Future Work}{50}%
-\contentsline {section}{\numberline {7.3}Conclusion}{50}%
-\contentsline {chapter}{Bibliography}{51}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{52}%
+\contentsline {section}{\numberline {7.1}Summary}{52}%
+\contentsline {section}{\numberline {7.2}Future Work}{52}%
+\contentsline {section}{\numberline {7.3}Conclusion}{52}%
+\contentsline {chapter}{Bibliography}{53}%
 \renewcommand *\cftchappresnum {Appendix }
