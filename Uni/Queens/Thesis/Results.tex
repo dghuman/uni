@@ -83,7 +83,18 @@ Referring to figure \ref{fig:alpha_llhratio_comp}, we see that the events are bu
   \end{minipage}
 \end{figure}
 
-Looking at figures \ref{subfig:llh_heat} and \ref{subfig:alpha_heat}, we can see that the reconstruction is behaving as one would expect. For both plots, the $y=x$ diagonal line would symbolize neither improvement nor regression, and anything below would suggest improvement. In both figures majority of the points end up below this line encouraging the correlation between the reconstruction improving both the likelihood value but also the reconstructed angular direction. 
+Looking at figures \ref{subfig:llh_heat} and \ref{subfig:alpha_heat}, we can see that the reconstruction is behaving as one would expect. For both plots, the $y=x$ diagonal line would symbolize neither improvement nor regression, and anything below would suggest improvement. In both figures majority of the points end up below this line encouraging the correlation between the reconstruction improving both the likelihood value but also the reconstructed angular direction. For figure \ref{subfig:llh_heat}, the clustering of events shows a correlation between good seed events leading to well fit final fits. The further the seed events get from being good fits, the more spread the quality of the final fit becoms. A similar result can be seen with the angular resolution correlation plot in figure \ref{subfig:alpha_heat}.
+
+Another important parameter to consider when looking at reconstructions is the time it takes to run. This can become increasingly important as there are massive amounts of potential events a detector can observe during its runtime, and being able to reconstruct them becomes an important potential bottleneck. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{./Figures/reco_plots/computation_time_perpulse.png}
+  \caption{Distribution of the computation time for reconstructing events normalized by the pulse count. Higher energy events will naturally need to a larger number of observed pulses and increase the computation time accordingly. }
+  \label{fig:comp_time}
+\end{figure}
+
+Figure \ref{fig:comp_time} plots the computation time for the reconstruction algorithm normalized by the pulse count, where the pulse count scales with the number of photons produced, and hence the energy of the muon.
 
 
 computation time
