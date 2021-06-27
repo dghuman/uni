@@ -12,45 +12,45 @@ The style file: plain.bst
 Database file #1: thesis.bib
 Warning--to sort, need author or key in onc
 Warning--to sort, need author or key in icetray
-You've used 58 entries,
+You've used 59 entries,
             2118 wiz_defined-function locations,
-            851 strings with 13089 characters,
-and the built_in function-call counts, 20098 in all, are:
-= -- 1855
-> -- 1212
+            857 strings with 13718 characters,
+and the built_in function-call counts, 21402 in all, are:
+= -- 1952
+> -- 1385
 < -- 1
-+ -- 497
-- -- 426
-* -- 1596
-:= -- 3474
-add.period$ -- 166
-call.type$ -- 58
-change.case$ -- 380
++ -- 566
+- -- 494
+* -- 1748
+:= -- 3719
+add.period$ -- 169
+call.type$ -- 59
+change.case$ -- 417
 chr.to.int$ -- 0
-cite$ -- 60
-duplicate$ -- 601
-empty$ -- 1415
-format.name$ -- 426
-if$ -- 4008
+cite$ -- 61
+duplicate$ -- 612
+empty$ -- 1439
+format.name$ -- 494
+if$ -- 4231
 int.to.chr$ -- 0
-int.to.str$ -- 58
-missing$ -- 48
-newline$ -- 285
-num.names$ -- 112
-pop$ -- 357
+int.to.str$ -- 59
+missing$ -- 49
+newline$ -- 290
+num.names$ -- 114
+pop$ -- 392
 preamble$ -- 1
-purify$ -- 325
+purify$ -- 361
 quote$ -- 0
-skip$ -- 459
+skip$ -- 466
 stack$ -- 0
-substring$ -- 1147
-swap$ -- 73
+substring$ -- 1171
+swap$ -- 74
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 228
+type$ -- 232
 warning$ -- 2
-while$ -- 159
-width$ -- 60
-write$ -- 608
+while$ -- 163
+width$ -- 61
+write$ -- 619
 (There were 2 warnings)

@@ -1,10 +1,10 @@
 \chapter{The Pacific Ocean Neutrino Explorer}
 
-The  Pacific Ocean Neutrino Explorer (P--ONE) is a proposed Neutrino Telescope planned to run in the Pacific Ocean near the West Coast of Vancouver Island, Canada \cite{pone}. As with other Neutrino Telescopes, P--ONE hopes to detect and characterize astrophysical neutrinos from galactic and extra--galactic sources for extremely high energy neutrinos \cite{pone}. In particular, due to the planned multi--cubic kilometer coverage, it would be suitable for neutrinos from sources such as Blazars \cite{icecube_nat}. Moreover P--ONE hopes to provide an avenue for research in exotic particle searches, dark matter, neutrino oscillations, supernova neutrinos, and tau neutrino studies ($\nu_{\tau}$) \cite{pone}. 
+The  Pacific Ocean Neutrino Explorer (P--ONE) is a proposed neutrino telescope planned to operate in the Pacific Ocean near the West Coast of Vancouver Island, Canada \cite{pone}. As with other neutrino telescopes, P--ONE aims to detect and characterize extremely high energy astrophysical neutrinos from galactic and extra--galactic sources \cite{pone}. In particular, due to the planned multi--cubic kilometer coverage, it would be suitable for neutrinos from sources such as Blazars \cite{icecube_nat}. Moreover P--ONE hopes to provide an avenue for research in exotic particle searches, dark matter, neutrino oscillations, supernova neutrinos, and tau neutrino studies ($\nu_{\tau}$) \cite{pone}. 
 
 \section{Geometry}
 
-The geometry of the detector is incredibly important, as the layout and positions of the detectors can drastically change the results and the sensitivies \cite{icecube}. The first proposed Explorer phase for P--ONE corresponds to the first 10 string--segment to be deployed \cite{pone}. Each string will be composed of 20 photo--sensors and atleast two calibration modules \cite{pone}, with the strings organized in an array similar to that of IceCube \cite{pone,icecube}. In order to avoid using thousands of strings to get a larger coverage, it can achieve a similar amount of information using a segmented approach where 6 more arrays similar to those of the Explorer are added around it \cite{pone}. This design is drawn in Figure \ref{fig:pone_geo}. 
+The geometry of the detector is incredibly important, as the layout and positions of the detectors can drastically change the results and the sensitivies \cite{icecube}. The first proposed Explorer phase for P--ONE corresponds to the first 10 string--segment to be deployed \cite{pone}. Each string will be composed of 20 photo--sensors and at least two calibration modules \cite{pone}, with the strings organized in an array similar to that of IceCube \cite{pone,icecube}. In order to avoid using thousands of strings to get a larger coverage, it can achieve a similar amount of information using a segmented approach where six more arrays similar to those of the Explorer are added around it \cite{pone}. This design is drawn in Figure \ref{fig:pone_geo}. 
 
 \begin{figure}[h]
   \centering
@@ -13,32 +13,40 @@ The geometry of the detector is incredibly important, as the layout and position
   \label{fig:pone_geo}
 \end{figure}
 
-With the current proposed geometry, the detector will be incredibly sensitive to horizontal incoming high energy muons from neutrino astrophysical neutrino sources \cite{pone}. 
+With the current proposed geometry, the detector will be incredibly sensitive to horizontal incoming high energy muons from astrophysical neutrino sources \cite{pone}. 
 
 \section{Detectors}
-Similar to previously constructed Neutrino Telescopes, P--ONE will primarily use Vavilov--Cherenkov Radiation from leptons produced through neutrino interactions. This electromagnetic radiation is then detected through highly sensitive optical modules that consist of Photo--Multiplier Tubes (PMTs).
+Similar to previously constructed neutrino telescopes, P--ONE will primarily use Vavilov--Cherenkov Radiation from leptons produced through neutrino interactions. This electromagnetic radiation is then detected through highly sensitive optical modules containing photomultiplier tubes (PMTs).
 
-\subsection{Photo--Multiplier Tubes}
+\subsection{Photomultiplier Tubes}
 
-A key part of any neutrino telescope is the detection mechanism, and in this community the Photo--Multiplier Tube (PMT) is synonomous with detector. The PMT is a vacuum--sealed photocathode with dynode and anodes above connector pins \cite{ham}. The primary mechanism of a PMT is the photoelectric effect from a photon hitting the photocathode resulting in a cascade of electron showers along the dynodes and anodes amplifying the signal before it reaches the connector pins \cite{pmt_hist}.Through this method the PMT can produce large signals at the single photon level, but is for the same reason sensitive to a particular range of frequencies/wavelengths of light \cite{pmt_hist}.
+A key part of any neutrino telescope is the detection mechanism, and in this community the PMT is synonomous with detector. The PMT is a vacuum--sealed photocathode with dynode and anodes above connector pins \cite{ham}. The primary mechanism of a PMT is the photoelectric effect from a photon hitting the photocathode \cite{pmt_hist}. This ejected electron than travels and collides with another cathode, which results in more elctrons being ejected. This results in a cascade of electron showers along the dynodes and anodes amplifying the signal before it reaches the connector pins \cite{pmt_hist}. Through this method the PMT can produce large signals at the single photon level, yet is only sensitive to a particular range of frequencies/wavelengths of light \cite{pmt_hist}.
 
-In particular, PMTs are generally sensitive to wavelengths anywhere as low as 100 nm to as high as 500 nm depending on the material of the photochathode \cite{ham}. Another property of PMTs to note is the Quantum Efficiency (QE), which is defined as the ratio of photoelectrons emitted by the photocathode to the number of incident photons \cite{ham}. Thus, QE defines how much photon information a PMT will transmit. The QE is dependent upon the photocathode and varies with the incident photons wavelength, as different wavelengths carry different energies \cite{ham}.
+In particular, PMTs are generally sensitive to wavelengths anywhere as low as 100 nm to as high as 500 nm depending on the material of the photochathode \cite{ham}. Another property of PMTs to note is the Quantum Efficiency (QE), which is defined as the ratio of photoelectrons emitted by the photocathode to the number of incident photons \cite{ham}. Thus, QE defines the probability an incident photon causes a signal. The QE is dependent upon the photocathode and varies with the incident photons wavelength, as different wavelengths carry different energies \cite{ham}.
 
-In contrast to QE, the Dark Current (Dark Noise) is the reporting by PMTs of light even in completely dark environments \cite{ham}. According to the HAMAMATSU handbook \cite{ham}, a number of reasons can be the cause for this misfiring in PMTs including (but not limited to) thermionic emissons, internal current leakage, scintillation from glass envelope and radiation sources. One can minimize the effect from these sources, such as reducing the temperature to limit the thermionic emissions \cite{ham}.
+In contrast to QE, the Dark Current (Dark Noise) is the reporting by PMTs of light even in completely dark environments \cite{ham}. According to the Hamamatsu handbook \cite{ham}, a number of reasons can be the cause for this misfiring in PMTs including (but not limited to) thermionic emissons, internal current leakage, scintillation from glass envelope and radiation sources. One can minimize the effect from these sources, such as reducing the temperature to limit the thermionic emissions \cite{ham}.
 
-The final aspect of PMTs we discuss is after pulsing, the small pulses observed after the arrival of a signal \cite{ham}. The quick afterpulses (within nano--seconds) can usually be attributed to scattering of electrons on the first dynode \cite{ham}, while later afterpulses (within microseconds) can be the result of positive ions from the ionization of residual gases in the tube \cite{ham}.
+The final aspect of PMTs we discuss is afterpulsing, the small pulses observed after the arrival of a signal \cite{ham}. The quick afterpulses (within nano--seconds) can usually be attributed to scattering of electrons on the first dynode \cite{ham}, while later afterpulses (within microseconds) can be the result of positive ions from the ionization of residual gases in the tube \cite{ham}.
 
-The PMT is an incredibly technical piece of hardware, and characterizing each PMT becomes important to understanding the detector as a whole. 
+The PMT is an incredibly technical piece of hardware, and characterizing each PMT is important to understanding the detector as a whole. 
 
 \subsection{Digital Optical Modules}
 
-In IceCube, the Digitial Optical Module (DOM) is a module containing a ten--inch PMT supported by coupling gel, the high voltage generator, an LED flasher board for calibration, and the mainboard used for analog and digital signal processing \cite{icecube_pmt,icecube}. P--ONE will be adopting this approach for detector construction.
+In IceCube, the Digitial Optical Module (DOM) is a module containing a ten--inch PMT supported by coupling gel, the high voltage generator, an LED flasher board for calibration, and the mainboard used for analog and digital signal processing \cite{icecube_pmt,icecube} which allows for near--autonomous function. P--ONE will be adopting this approach for detector construction.
 
-What else to add here?
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=.9\textwidth]{./Figures/icecube_dom.png}
+  \caption{A diagram and schematic of the IceCube DOM.}
+  \label{fig:ice_dom}
+\end{figure}
+
+Figure \ref{fig:ice_dom} shows a diagram of the IceCube DOM along with a schematic of the electronics that are on board. 
+
 
 \subsection{mDOMs}
 
-A proposed redesign of the IceCube DOM to increase the granularity of light detection is the multi--DOM (mDOM). In place of one large PMT, multiple smaller PMTs can line the same space and coverage at the cost of gaps between detectors. The benefit being that individual hits on the smaller PMTs can provide extra information using the acceptance angle and directionality of that particular PMT \cite{mpmt}. Moreover, in theory this can also reproduce the standard DOM data as the signal collected by a single PMT in the array can be collected and treated as a hit for the entire DOM. This gives the mDOMs a felxibility that isn't present for standard DOMs. In IceCube the standard DOMs use a ten--inch diameter PMTs \cite{icecube}, where the mDOMs would use up to 24 three--inch diameter PMTs \cite{mpmt}.
+A proposed redesign of the IceCube DOM to increase the granularity of light detection is the multi--DOM (mDOM). In place of one large PMT, multiple smaller PMTs can line the same space and provide coverage at the cost of gaps between detectors. The benefit being that individual hits on the smaller PMTs can provide extra information using the acceptance angle and directionality of that particular PMT \cite{mpmt}. Moreover, in theory this can also reproduce the standard DOM data as the signal collected by a single PMT in the array can be collected and treated as a hit for the entire DOM. This gives the mDOMs a felxibility that isn't present for standard DOMs. In IceCube the standard DOMs use a ten--inch diameter PMTs \cite{icecube}, where the mDOMs would use up to 24 three--inch diameter PMTs \cite{mpmt}.
 
 \section{Strings for Absorption length in Water}
 
