@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.18)  27 JUN 2021 17:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.18)  27 JUN 2021 19:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -832,17 +832,13 @@ Package pdftex.def Info: ./Figures/STRAW.png  used on input line 57.
 File: ./Figures/western_infrastructure.png Graphic file (type png)
 <use ./Figures/western_infrastructure.png>
 Package pdftex.def Info: ./Figures/western_infrastructure.png  used on input li
-ne 76.
+ne 74.
 (pdftex.def)             Requested size: 390.25534pt x 219.5189pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[24]
+ [24]
 <./Figures/cascadia_basin.png, id=131, 385.44pt x 216.81pt>
 File: ./Figures/cascadia_basin.png Graphic file (type png)
 <use ./Figures/cascadia_basin.png>
-Package pdftex.def Info: ./Figures/cascadia_basin.png  used on input line 85.
+Package pdftex.def Info: ./Figures/cascadia_basin.png  used on input line 83.
 (pdftex.def)             Requested size: 390.25534pt x 219.5189pt.
  [25 <./Figures/western_infrastructure.png>]) [26 <./Figures/cascadia_basin.png
 >]
@@ -1070,7 +1066,7 @@ sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share
 onts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-supe
 r/sfrm1200.pfb>
-Output written on Thesis.pdf (74 pages, 6624184 bytes).
+Output written on Thesis.pdf (74 pages, 6624830 bytes).
 PDF statistics:
  482 PDF objects out of 1000 (max. 8388607)
  235 compressed objects within 3 object streams
