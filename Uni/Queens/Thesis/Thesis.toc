@@ -39,8 +39,8 @@
 \contentsline {chapter}{\numberline {5}Reconstruction}{31}%
 \contentsline {section}{\numberline {5.1}Geometry of a Single Hit}{31}%
 \contentsline {section}{\numberline {5.2}Linefit}{37}%
-\contentsline {section}{\numberline {5.3}Likelihood}{39}%
-\contentsline {subsection}{\numberline {5.3.1}Likelihood Function}{40}%
+\contentsline {section}{\numberline {5.3}Likelihood}{38}%
+\contentsline {subsection}{\numberline {5.3.1}Likelihood Function}{39}%
 \contentsline {section}{\numberline {5.4}Fitting}{44}%
 \contentsline {section}{\numberline {5.5}Corrections}{45}%
 \contentsline {subsection}{\numberline {5.5.1}Reparameterizing}{45}%
@@ -48,9 +48,9 @@
 \contentsline {chapter}{\numberline {6}Results}{47}%
 \contentsline {section}{\numberline {6.1}Linefit}{48}%
 \contentsline {section}{\numberline {6.2}Likelihood}{49}%
-\contentsline {chapter}{\numberline {7}Summary and Conclusions}{56}%
-\contentsline {section}{\numberline {7.1}Summary}{56}%
-\contentsline {section}{\numberline {7.2}Future Work}{56}%
-\contentsline {section}{\numberline {7.3}Conclusion}{56}%
-\contentsline {chapter}{Bibliography}{57}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{57}%
+\contentsline {section}{\numberline {7.1}Summary}{57}%
+\contentsline {section}{\numberline {7.2}Future Work}{57}%
+\contentsline {section}{\numberline {7.3}Conclusion}{57}%
+\contentsline {chapter}{Bibliography}{58}%
 \renewcommand *\cftchappresnum {Appendix }

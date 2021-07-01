@@ -4,4 +4,5 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces The labels `\textbf {line}', `\textbf {llh}', `\textbf {llhdir}', `\textbf {llhvert}', `\textbf {llhtrue}' refer to the linefit, likelihood, likelihood using the true direction seed, likelihood using the true vertex seed and likelihood using the truth as a seed reconstructions respectively. The values are given in percentage of events below the given $\alpha $ solid angle to the true direction.\relax }}{53}%
 \addvspace {10\p@ }
