@@ -273,6 +273,11 @@ J.~Nelder and R.~Mead.
 \newblock A simplex method for function minimization.
 \newblock {\em Comput. J.}, 7:308--313, 1965.
 
+\bibitem{savgol}
+William~H. Press and Saul~A. Teukolsky.
+\newblock Savitzky‐golay smoothing filters.
+\newblock {\em Computers in Physics}, 4(6):669--672, 1990.
+
 \bibitem{re_nu}
 Xin Qian and Jen-Chieh Peng.
 \newblock Physics with reactor neutrinos.

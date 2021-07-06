@@ -315,6 +315,25 @@ This isn't immediately usable as a distribution. Due to the sampling rate and li
   \end{minipage}
 \end{figure}
 
+To deal with the noise that is occuring near the tails of the distribution a filter can be applied to smoothen the data. In particular, the Savitzky-Golay filter is a digital filter method to help remove the jagged edges in the target function \cite{savgol}. This filter is applied to the STRAW data in Figure \ref{fig:straw_data_savgol}, where the effect becomes clear. Compared to the interpolations in Figures \ref{subfig:straw_data_linear} and \ref{subfig:straw_data_cubic}, the Savitzky-Golay filter is clearly a smoother fit. The tail jittering still tends to cause the distribution to shift erratically, but odd variations like at the zero nanosecond count are smoothened out.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{./Figures/reco_plots/straw_data_fit_savgol.eps}
+  \caption{A data filtering method to help remove the background noise that is present in the STRAW data.}
+  \label{fig:straw_data_savgol}
+\end{figure}
+
+After having seen the fits in Figures \ref{fig:straw_data_savgol}, \ref{subfig:straw_data_linear} and \ref{subfig:straw_data_cubic} there is still a glaring issue that has not been accounted for; these fits do not account for varying distances. Due to data collection limitations from the geometry of STRAW, getting a broader range of distances is impossible. Without being able to account for the distance dependence on the residual time distribution this method is limited. Being able to poll different distances and interpolate these distributions could be useful.
+
+A method that could account for this would be using an explicit equation rather than a fit. A distribution that looks similar to the residual time distribution is the exponential gaussian. Referring to Figure \ref{fig:straw_data_exponnorm}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{./Figures/reco_plots/straw_data_fit_exponnorm.eps}
+  \caption{Varying exponential normal/gaussian distributions compared to the STRAW data.}
+  \label{fig:straw_data_exponnorm}
+\end{figure}
 
 
 \section{Track Fitting}
