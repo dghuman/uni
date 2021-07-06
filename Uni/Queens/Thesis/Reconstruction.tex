@@ -242,7 +242,55 @@ and $_{1}F_{1}$ is the confluent hypergeometric function \cite{conv}. Fortunatel
 
 The simplest regions to understand are the unlikely regions. These are the ones in which it is incredibly unlikely to find any events as the residual time is either very positive ($t_{\text{res}} > 3500$ ns), or too negative ($t_{\text{res}} < -25\sigma$ ns). In these regions, independent of distance, these residual times are unphysical and hence heavily penalized by this likelihood. The next region we consider is for $-5\sigma < t_{\text{res}} < 30\sigma$ and $d < 5\lambda_{s}$. This describes the most common region for events to occur, and is within the convergence boundary of the hypergeometric functions. The exact form of the equation, as described in Equation \ref{eq:exact_cpandel}, is the one taken for this region and promotes the general expected behaviour around the peak. The remaining regions are a combination of the possible ranges of distance and time; there are approximations for large $t$ and small $d$, small $t$ and large $d$ and large $t$ and large $d$. These regions each have various approximations associated. The approximations are omitted here but can be found in \cite{conv}.
 
-\section{Fitting}
+\subsection{Function Fitting}
+
+In order to use the CPandel distribution, the fitting parameters need to be found such that they match the simulated data. We can see a distribution of the residual times computed over thousands of events in Figure \ref{fig:sim_restime}. Due to the lack of simulated background and noise but instead an artificial Gaussian smearing the resulting distribution is quite smooth and idealized. Moreover, the data is normalized and hence the values on the $y$-axis represent the percentage of the total number of events that fit this criteria.
+
+The data in Figure \ref{fig:sim_restime} is over all distance ranges of the produced light, but the CPandel function clearly depends on the distance as seen in Equation \ref{eq:exact_cpandel}. Thus, it is useful to fit to the simulated data by categorizing over different distance ranges, which can be visualized in similar plots to Figure \ref{fig:sim_restime}. In particular, these plots can be seen in Figures \ref{subfig:res_time_r1}, \ref{subfig:res_time_r3}, \ref{subfig:res_time_r5} and \ref{subfig:res_time_r7}, where the range shifts incrementally upwards over these four figures. With the residual time seperated by distance, it is clear to see the dependence that it has on the distance, and hence the importance of fitting over all of the viable distance ranges of light that will be detected. The prominant feature is a general flattening of the distribution for larger distances, which is expected as light has a higher chance of scattering/being absorbed the further it travels. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{./Figures/reco_plots/residual_time_histogram.eps}
+  \caption{Normalzied residual time distribution made using simulated events. Here the residual time is computed by comparing the geometric time with the true travel time simulated by the photon propogation software. This does not contain any dark noise or electronic noise and hence is an idealized distribution.}
+  \label{fig:sim_restime}
+\end{figure}
+
+
+\begin{figure}[H]
+  \begin{minipage}[b]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{./Figures/reco_plots/residual_time_hist_r1.eps}
+    \caption{Distances from 0 to 30 meters.}
+    \label{subfig:res_time_r1}
+  \end{minipage}
+  \hspace{0.1cm}
+  \begin{minipage}[b]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{./Figures/reco_plots/residual_time_hist_r3.eps}
+    \caption{Distance from 20 to 50 meters.}
+    \label{subfig:res_time_r3}
+  \end{minipage}
+  \begin{minipage}[b]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{./Figures/reco_plots/residual_time_hist_r5.eps}
+    \caption{Distances from 40 to 70 meters.}
+    \label{subfig:res_time_r5}
+  \end{minipage}
+  \hspace{0.1cm}
+  \begin{minipage}[b]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{./Figures/reco_plots/residual_time_hist_r7.eps}
+    \caption{Distances from 60 to 90 meters.}
+    \label{subfig:res_time_r7}
+  \end{minipage}
+\end{figure}
+
+
+\subsection{Other Potential Distributions}
+
+The CPandel isn't the only option for a likelihood distiribution. Another natural choice would be to use real data to emulate a distribution.
+
+\section{Track Fitting}
 
 With the track parameterization understood, a likelihood distribution in the form of the CPandel function, it is now at a point where the reconstruction step can actually take place. As a likelihood, $\mathcal{L}(\vec{\theta})$, for a given track gives a probability, we wish to maximize this function with respect to $\vec{\theta}$. In order to computationally accomplishing this goal, the first step is to utilise a standard method in maximizing likelihoods by taking the logarithm,
 \begin{equation}  
