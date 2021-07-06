@@ -46,11 +46,11 @@
 \contentsline {subsection}{\numberline {5.5.1}Reparameterizing}{45}%
 \contentsline {subsection}{\numberline {5.5.2}Extra Penalty}{46}%
 \contentsline {chapter}{\numberline {6}Results}{47}%
-\contentsline {section}{\numberline {6.1}Linefit}{48}%
-\contentsline {section}{\numberline {6.2}Likelihood}{49}%
-\contentsline {chapter}{\numberline {7}Summary and Conclusions}{57}%
-\contentsline {section}{\numberline {7.1}Summary}{57}%
-\contentsline {section}{\numberline {7.2}Future Work}{57}%
-\contentsline {section}{\numberline {7.3}Conclusion}{57}%
-\contentsline {chapter}{Bibliography}{58}%
+\contentsline {section}{\numberline {6.1}Linefit}{47}%
+\contentsline {section}{\numberline {6.2}Likelihood}{48}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{58}%
+\contentsline {section}{\numberline {7.1}Summary}{58}%
+\contentsline {section}{\numberline {7.2}Future Work}{58}%
+\contentsline {section}{\numberline {7.3}Conclusion}{58}%
+\contentsline {chapter}{Bibliography}{59}%
 \renewcommand *\cftchappresnum {Appendix }
