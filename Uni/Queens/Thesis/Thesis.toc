@@ -43,7 +43,7 @@
 \contentsline {subsection}{\numberline {5.3.1}Likelihood Function}{39}%
 \contentsline {subsection}{\numberline {5.3.2}Function Fitting}{44}%
 \contentsline {subsection}{\numberline {5.3.3}Other Potential Distributions}{46}%
-\contentsline {section}{\numberline {5.4}Track Fitting}{50}%
+\contentsline {section}{\numberline {5.4}Track Fitting}{51}%
 \contentsline {section}{\numberline {5.5}Corrections}{52}%
 \contentsline {subsection}{\numberline {5.5.1}Reparameterizing}{52}%
 \contentsline {subsection}{\numberline {5.5.2}Extra Penalty}{53}%
