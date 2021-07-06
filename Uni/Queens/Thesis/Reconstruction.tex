@@ -288,7 +288,34 @@ The data in Figure \ref{fig:sim_restime} is over all distance ranges of the prod
 
 \subsection{Other Potential Distributions}
 
-The CPandel isn't the only option for a likelihood distiribution. Another natural choice would be to use real data to emulate a distribution.
+The CPandel isn't the only option for a likelihood distribution. Another natural choice would be to use real data to emulate a distribution. As was discussed in Section \ref{sec:straw}, STRAW has been collecting data since 2018 in order to get a measurement on the attenuation length and could in theory provide data for such a use. Figure \ref{fig:straw_data} provides an example of such a plot. It is not immediatly clear why such a setup should provide a distribution like one expects from functions like the Pandel and CPandel. The variable plotted in the Pandel and CPandel is the residual time, and for the data we have only plotted the arrival time of light. However, as the driving agent in the distributions is the scattering of light, the arrival time in the STRAW data will naturally observe a smearing due to this phenomena. In this way, the arrival time mimics the behaviour of the residual time, which is the difference between the observed and geometric times. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{./Figures/reco_plots/straw_data.eps}
+  \caption{A snippet of data stacked over multiple channels using a POCAM flash as a source of light. The POCAM provides a 10 ns flash of light, and sits at a fixed distance from the Optical Module. The time has been shifted for convenience.} 
+  \label{fig:straw_data}
+\end{figure}
+
+This isn't immediately usable as a distribution. Due to the sampling rate and limitations of the detector, there will be gaps between plot points, and these gaps do not work when times can go between these values. The first thing to try is a simple interpolation to fill these gaps. Consider linear and cubic interpolation as shown in Figures \ref{subfig:straw_data_linear} and \ref{subfig:straw_data_cubic} respectively. These both do the job of filling the gap between the points, as interpolations do, but they have varying results. The linear interpolation results in a piecewise fit that isn't very smooth, which can be an issue when using gradient decent methods of fitting as the likelihood space built using this distribution will also be constructed in a piecwise manner. This issue is slightly resolved with a cubic interpolation, however the issue becomes more exacerbated in the end and beginning tails of the distribution where the data becomes more noisy. The interpolation attempts to continue fitting between the points even as noise begins to dominate, and can result in a plethora of oscillations in the fit. These flucuations are also quite bad for the minimization as they can introduce more minima that could trap the minimizer. 
+
+\begin{figure}[H]
+  \begin{minipage}[b]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{./Figures/reco_plots/straw_data_fit_lnear.eps}
+    \caption{Linear interpolation of the STRAW data. This produces a likelihood distribution that has piecewise behaviours due to the linear nature.}
+    \label{subfig:straw_data_linear}
+  \end{minipage}
+  \hspace{0.1cm}
+  \begin{minipage}[b]{0.48\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{./Figures/reco_plots/straw_data_fit_cubic.eps}
+    \caption{Cubic interpolation of the STRAW data. The cubic fit allows for a smoother fit between points, but still has a piecewise nature due to the interpolation.}
+    \label{subfig:straw_data_cubic}
+  \end{minipage}
+\end{figure}
+
+
 
 \section{Track Fitting}
 
