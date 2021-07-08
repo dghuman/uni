@@ -48,8 +48,8 @@
 \contentsline {subsection}{\numberline {5.5.1}Reparameterizing}{52}%
 \contentsline {subsection}{\numberline {5.5.2}Extra Penalty}{53}%
 \contentsline {chapter}{\numberline {6}Results}{54}%
-\contentsline {section}{\numberline {6.1}Linefit}{54}%
-\contentsline {section}{\numberline {6.2}Likelihood}{55}%
+\contentsline {section}{\numberline {6.1}Linefit}{55}%
+\contentsline {section}{\numberline {6.2}Likelihood}{56}%
 \contentsline {chapter}{\numberline {7}Summary and Conclusions}{68}%
 \contentsline {section}{\numberline {7.1}Summary}{68}%
 \contentsline {section}{\numberline {7.2}Future Work}{68}%
