@@ -96,6 +96,26 @@ To get a better idea of how the plots in Figure \ref{fig:alpha_llh_test} and Fig
   \label{tab:alpha_comp}
 \end{table}
 
+As the largest increase in accuracy occurs from changing the vertex position, as seen in Table \ref{tab:alpha_comp}, a comparison of the vertex positions given by the linear fit with the true vertex positions might provide some insight into why this is so. This is a non-trivial comparison, as the vertex position has three free variables, and projecting along a single axis isn't particularly useful due to the nature of the linear fit vertex ocassionaly ending up very far away from the detector. For this reason, a useful representation is one similar to that of Figure \ref{fig:alpha_llh_sep}, as in the process of reconstructing, the vertex is projected onto a sphere anyways. Thus, assuming this projection of the vertices, the problem reduces to looking at the angle distribution is the zenith ($\theta$) and azimuth ($\phi$). Figure \ref{fig:vert_dist} shows what this distribution looks like compared with the true vertex distribution. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{./Figures/reco_plots/angular_vert_dist_modified.eps}
+  \caption{A distribution of the vertex zenith and azimuthal components when projected onto a sphere of radius 550 meters. \textbf{Above:} The zenith component distribution. \textbf{Below:} The azimuth component distribution.}
+  \label{fig:vert_dist}
+\end{figure}
+
+The shapes of the plots in Figure \ref{fig:vert_dist} are telling. The top plot, the zenith distribution, is heavily pushed up to angles around zero for good reason. The simulated muons are primarily cosmic, and hence the vertex being primarily in the $[0, 50]$ degree range makes sense. The lack of angles in the symmetric part near 360 are due purely to the branch choice as generally for spherical coordinates $\theta \in [0,180]$ degrees since the complement angle is covered by the azimuthal angle. The more valuable point is the difference in the linear fit zenith distribution with the true distribution. The true distribution is consistent with a cosmic muon source, but the linear fit seems to be dragging the vertex positions towards two particular peaks. These peaks can be seen in the zoomed plot made in Figure \ref{fig:vert_dist_zoomed} to be around 10 and 22 degrees. These angular peaks can be explained as the vertices tending to bunch up near the DOM locations. If the source of muons was isotropic, and not just cosmic, one could expect this pattern to repeat throughout the domain of the zenith. To understand why these peaks occur, it is simplest to think of a zenith distribution as a projection along the azimuthal angle. Unlike simple cartesian projections, which are usually onto a plane in three dimensions, this is a projected onto a rotating surface. The result is a stacking of the azimuthal dependence, leaving only the distance between the DOMs. 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm]{./Figures/reco_plots/zenith_vert_dist_modified_zoomed.eps}
+  \caption{A distribution of the vertex zenith and azimuthal components when projected onto a sphere of radius 550 meters. \textbf{Above:} The zenith component distribution. \textbf{Below:} The azimuth component distribution.}
+  \label{fig:vert_dist_zoomed}
+\end{figure}
+
+On the other hand, the azimuthal spans its full range of $[0, 360]$ degrees. The true vertex azimuth can be observed as being relatively uniform, yet the linefit reconstructed vertex has a clear oscillatory pattern. Similar to the peaks observed in the zenith distribution, these can be attributed to the DOMs where here the projection along the zenith leads to the distance between the lines of the DOMs being the active agent. Both the azimuthal and zenith distributions show that the linear fit has an inherent bias towards the locations of the optical modules, and removing this bias could improve the vertex reconstruction which would in turn improve the likelihood reconstruction as seen in Figure \ref{fig:alpha_llh_test}. 
+
 We can also check whether there is a correlation with the likelihood values and the reconstructed angular resolution ($\alpha$). To do so, we need a way to include both the final and initial likelihood values, as there can be a wide variety of ranges that a reconstruction can start and end at. For this reason, we consider plotting the ratio between the final negative loglikelihood value and the initial, $\ell_{f}/\ell_{i}$. Thus, a smaller value denotes a larger improvement in the likelihood value. On the other hand, any value above one denotes a drop in quality of fit. This plot is made in figure \ref{fig:alpha_llhratio_comp}.
 
 \begin{figure}[H]
@@ -134,11 +154,6 @@ Another important parameter to consider when looking at reconstructions is the t
   \label{fig:comp_time}
 \end{figure}
 
-Figure \ref{fig:comp_time} plots the computation time for the reconstruction algorithm normalized by the pulse count, where the pulse count scales with the number of photons produced, and hence the energy of the muon.
-
-
-computation time
-
-what affects the reco the most
+Figure \ref{fig:comp_time} plots the computation time for the reconstruction algorithm normalized by the pulse count, where the pulse count scales with the number of photons produced, and hence the energy of the muon. The peak occurs around 0.125 sec/pulse, which isn't great, though it is a decent first efficiency test. Ideally this will be sped up either by using clever techniques, or by shifting to a language like C++ where this repetative nature of nested loops is better optimized. Parallelization schemes could also be introduced if even more speed up is required. 
 
 
