@@ -34,8 +34,8 @@
 \contentsline {chapter}{\numberline {4}Simulation}{27}%
 \contentsline {section}{\numberline {4.1}IceCube Framework}{27}%
 \contentsline {section}{\numberline {4.2}Simulating Neutrinos}{28}%
-\contentsline {section}{\numberline {4.3}Simulating Muons}{28}%
-\contentsline {section}{\numberline {4.4}Detector Response}{29}%
+\contentsline {section}{\numberline {4.3}Simulating Muons}{29}%
+\contentsline {section}{\numberline {4.4}Detector Response}{30}%
 \contentsline {chapter}{\numberline {5}Reconstruction}{31}%
 \contentsline {section}{\numberline {5.1}Geometry of a Single Hit}{31}%
 \contentsline {section}{\numberline {5.2}Linefit}{37}%

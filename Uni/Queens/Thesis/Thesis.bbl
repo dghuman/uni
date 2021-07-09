@@ -27,6 +27,13 @@ R.~Abbasi, Y.~Abdou, and et~al.
   Accelerators, Spectrometers, Detectors and Associated Equipment},
   618(1):139--152, 2010.
 
+\bibitem{lepton_inj}
+R.~Abbasi, M.~Ackermann, J.~Adams, J.A. Aguilar, M.~Ahlers, M.~Ahrens,
+  C.~Alispach, A.A. Alves, N.M. Amin, R.~An, and et~al.
+\newblock Leptoninjector and leptonweighter: A neutrino event generator and
+  weighter for neutrino observatories.
+\newblock {\em Computer Physics Communications}, 266:108018, Sep 2021.
+
 \bibitem{antares}
 M.~Ageron et~al.
 \newblock {ANTARES: the first undersea neutrino telescope}.
@@ -134,6 +141,11 @@ G.~Danby, J.~Gaillard, K.~Goulianos, L.~Lederman, N.~Mistry, M.~Schwartz, and
 Raymond Davis.
 \newblock Solar neutrinos. ii. experimental.
 \newblock {\em Phys. Rev. Lett.}, 12:303--305, Mar 1964.
+
+\bibitem{icetray_art}
+T~R De~Young.
+\newblock {IceTray: a Software Framework for IceCube}.
+\newblock 2005.
 
 \bibitem{pdg_ckm}
 W.J.~Marciano E.~Blucher.
