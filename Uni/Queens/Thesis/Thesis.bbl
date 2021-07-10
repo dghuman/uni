@@ -335,6 +335,12 @@ S~I Vavilov.
 \newblock {\em [Comptes Rendus Acad. Sciences USSR 2 457 (1934)]}, 2(457),
   1934.
 
+\bibitem{sim_present}
+Juan Carlos~D\'{i}az V\'{e}lez and Paolo Desiati.
+\newblock Neutrino and air shower simulations in icecube.
+\newblock
+  \url{https://events.icecube.wisc.edu/event/105/contributions/1086/attachments/850/921/Simulation_in_IceCube_2019.pdf}.
+
 \bibitem{gallex}
 D.~Vignaud.
 \newblock The gallex solar neutrino experiment.
