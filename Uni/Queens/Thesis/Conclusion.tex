@@ -1,7 +1,26 @@
 \chapter{Summary and Conclusions}\label{ch:Conclusion}
 
+
 \section{Summary}
+The track reconstruction for P-ONE is continuing to be developed and as of now shows excellent promise to provide the telescope with information to help veto background events, and reconstruct high energy muon-neutrino ($\nu_{\mu}$) events. Using a simple linear fit as a starting point, where the performance is well described by the plot in Figure \ref{fig:alpha_linefit}, the likelihood based reconstruction has been tested and analyzed to better understand its performance. Figures \ref{fig:alpha_llh} and \ref{fig:alpha_llh_sep} alongside Tables \ref{tab:angular_diff} and \ref{tab:alpha_comp} provide detailed information about this performance, such as the likelihood reconstructing 38\% of its events within a $5^{\circ}$ angular error, while the linear fit constructs 24.25\% in the same error range.
+
+Improvements can continue to be made as is outlined in Figure \ref{fig:alpha_llh_test} and are actively being explored. Moreover the reconstruction provides interesting effects from the geometry of the events and the detector, as seen in Figure \ref{fig:vert_dist}. These geometric artifacts can help optimize the geometry and provide insight into the detector behaviour/limitations when it comes to detection. The final discussion is that of the computation time, where novel and clever techniques could improve the current computation time described in Figure \ref{fig:comp_time}. 
 
 \section{Future Work}
 
+The Pacific Ocean Neutrino Explorer is still very much in its early stages when it comes to the reconstruction capabilities, and as such there is significant amounts of improvements yet to be made. With respect to the muon track reconstruction, the following lists potential areas of future work:
+\begin{multicols}{2}
+  \begin{itemize}
+  \item Backgrounds (Noise, bioluminescence)
+  \item Multiple fits
+  \item Seed (linear fit) improvement
+  \item Data Cleaning
+  \item mDOM Reconstruction
+  \item Combining with tau and electron searches
+  \end{itemize}
+\end{multicols}
+This list is not exhaustive, but provides an idea of potential areas that have not yet been explored and could be for future work with the muon track reconstruction. Most of these are self-explanatory, but `Multiple fits' and `mDOM Reconstruction' can be explained in more detail. The former refers to most sophisticated and well working reconstruction algorithms working in multiple steps and looping over multiple steps. For example, using the fact that the linear fit can have a pretty consistent offset in its vertex location, the likelihood reconstruction could be done multiple times in varying vertex positions to acheive a better fit. The `mDOM Reconstruction' refers to the proposed mDOM usage in P-ONE, where each DOM would have multiple smaller PMTs. This introduces a lot more information on the directionality of each DOM, as individual PMT hits provide information about the potential direction a photon came from. This is a non-trivial effort, as incorporating this into a geometric fit introduces a complexity that hasn't been explored in the current reconstruction.
+
 \section{Conclusion}
+
+The track reconstruction for P-ONE is beginning to take shape and showing promise in reconstruction and vetoing of events. There is still plenty to be done for the reconstruction leaving room for improvement, and with the potential for novel technologies like the mDOM being used in P-ONE there is much more to be gained from exploring this area. With the eventual construction of P-ONE planned within the decade, and the lines being deployed sooner, a well functioning reconstruction chain can provide an excellent source for early detections in the developing detector. The Pacific Ocean Neutrino Explorer will be an exciting new avenue for neutrino research, and with the efforts of collaborators across the globe will provide a new lens with which to explore (pun intended) from the scale of the neutrino to the cosmos itself. 
