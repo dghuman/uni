@@ -2,8 +2,8 @@
 \contentsline {chapter}{Acknowledgments}{ii}%
 \contentsline {chapter}{Statement of Originality}{iii}%
 \contentsline {chapter}{Contents}{iv}%
-\contentsline {chapter}{List of Tables}{vi}%
-\contentsline {chapter}{List of Figures}{vii}%
+\contentsline {chapter}{List of Tables}{vii}%
+\contentsline {chapter}{List of Figures}{viii}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}%
 \contentsline {chapter}{\numberline {2}Background}{3}%
 \contentsline {section}{\numberline {2.1}Neutrinos}{3}%
@@ -34,28 +34,30 @@
 \contentsline {chapter}{\numberline {4}Simulation}{28}%
 \contentsline {section}{\numberline {4.1}IceCube Framework}{28}%
 \contentsline {section}{\numberline {4.2}Simulating Neutrinos}{29}%
-\contentsline {section}{\numberline {4.3}Simulating Muons}{30}%
-\contentsline {section}{\numberline {4.4}Detector Response}{31}%
-\contentsline {chapter}{\numberline {5}Reconstruction}{33}%
-\contentsline {section}{\numberline {5.1}Geometry of a Single Hit}{33}%
-\contentsline {section}{\numberline {5.2}Linefit}{39}%
-\contentsline {section}{\numberline {5.3}Likelihood}{40}%
-\contentsline {subsection}{\numberline {5.3.1}Likelihood Function}{41}%
-\contentsline {subsection}{\numberline {5.3.2}Function Fitting}{46}%
-\contentsline {subsection}{\numberline {5.3.3}Other Potential Distributions}{48}%
-\contentsline {section}{\numberline {5.4}Track Fitting}{53}%
-\contentsline {section}{\numberline {5.5}Corrections}{54}%
-\contentsline {subsection}{\numberline {5.5.1}Reparameterizing}{54}%
-\contentsline {subsection}{\numberline {5.5.2}Extra Penalty}{55}%
-\contentsline {chapter}{\numberline {6}Results}{56}%
-\contentsline {section}{\numberline {6.1}Linefit}{57}%
-\contentsline {section}{\numberline {6.2}Likelihood}{58}%
-\contentsline {subsection}{\numberline {6.2.1}Seed Comparisons}{61}%
-\contentsline {subsection}{\numberline {6.2.2}Correlations}{66}%
-\contentsline {subsection}{\numberline {6.2.3}Computation Time}{69}%
-\contentsline {chapter}{\numberline {7}Summary and Conclusions}{71}%
-\contentsline {section}{\numberline {7.1}Summary}{71}%
-\contentsline {section}{\numberline {7.2}Future Work}{72}%
-\contentsline {section}{\numberline {7.3}Conclusion}{73}%
-\contentsline {chapter}{Bibliography}{74}%
+\contentsline {section}{\numberline {4.3}Simulating Muons}{31}%
+\contentsline {subsection}{\numberline {4.3.1}Cosmic Ray Muons}{31}%
+\contentsline {subsection}{\numberline {4.3.2}Flux Model}{32}%
+\contentsline {section}{\numberline {4.4}Detector Response}{33}%
+\contentsline {chapter}{\numberline {5}Reconstruction}{34}%
+\contentsline {section}{\numberline {5.1}Geometry of a Single Hit}{34}%
+\contentsline {section}{\numberline {5.2}Linefit}{40}%
+\contentsline {section}{\numberline {5.3}Likelihood}{41}%
+\contentsline {subsection}{\numberline {5.3.1}Likelihood Function}{42}%
+\contentsline {subsection}{\numberline {5.3.2}Function Fitting}{47}%
+\contentsline {subsection}{\numberline {5.3.3}Other Potential Distributions}{49}%
+\contentsline {section}{\numberline {5.4}Track Fitting}{54}%
+\contentsline {section}{\numberline {5.5}Corrections}{55}%
+\contentsline {subsection}{\numberline {5.5.1}Reparameterizing}{55}%
+\contentsline {subsection}{\numberline {5.5.2}Extra Penalty}{56}%
+\contentsline {chapter}{\numberline {6}Results}{57}%
+\contentsline {section}{\numberline {6.1}Linefit}{58}%
+\contentsline {section}{\numberline {6.2}Likelihood}{59}%
+\contentsline {subsection}{\numberline {6.2.1}Seed Comparisons}{62}%
+\contentsline {subsection}{\numberline {6.2.2}Correlations}{67}%
+\contentsline {subsection}{\numberline {6.2.3}Computation Time}{70}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{72}%
+\contentsline {section}{\numberline {7.1}Summary}{72}%
+\contentsline {section}{\numberline {7.2}Future Work}{73}%
+\contentsline {section}{\numberline {7.3}Conclusion}{74}%
+\contentsline {chapter}{Bibliography}{75}%
 \renewcommand *\cftchappresnum {Appendix }

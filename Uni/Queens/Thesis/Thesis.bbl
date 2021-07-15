@@ -66,6 +66,12 @@ John~N. Bahcall.
 \newblock Solar neutrinos. i. theoretical.
 \newblock {\em Phys. Rev. Lett.}, 12:300--302, Mar 1964.
 
+\bibitem{muon_param}
+Y.~Becherini, A.~Margiotta, M.~Sioli, and M.~Spurio.
+\newblock A parameterisation of single and multiple muons in the deep water or
+  ice.
+\newblock {\em Astroparticle Physics}, 25(1):1--13, 2006.
+
 \bibitem{sno}
 A.~Bellerive, J.R. Klein, A.B. McDonald, A.J. Noble, and A.W.P. Poon.
 \newblock The sudbury neutrino observatory.
@@ -156,6 +162,12 @@ W.J.~Marciano E.~Blucher.
 Justin Evans.
 \newblock The minos experiment: results and prospects, 2013.
 
+\bibitem{sibyll}
+R.~S. Fletcher, T.~K. Gaisser, Paolo Lipari, and Todor Stanev.
+\newblock sibyll: An event generator for simulation of high energy cosmic ray
+  cascades.
+\newblock {\em Phys. Rev. D}, 50:5710--5731, Nov 1994.
+
 \bibitem{atm_nu}
 Thomas~K. Gaisser.
 \newblock Atmospheric neutrinos, 2019.
@@ -195,6 +207,11 @@ HAMAMATSU.
 \newblock {\em PHOTOMULTIPLIER TUBES: Basics and Applications}.
 \newblock HAMAMATSU, 2009.
 
+\bibitem{corsika}
+D.~Heck, J.~Knapp, J.~N. Capdevielle, G.~Schatz, and T.~Thouw.
+\newblock {CORSIKA: A Monte Carlo code to simulate extensive air showers}.
+\newblock 2 1998.
+
 \bibitem{kam}
 K.~S. Hirata et~al.
 \newblock {Observation of a small atmospheric muon-neutrino / electron-neutrino
@@ -211,6 +228,11 @@ K.~S. Hirata, T.~Kajita, T.~Kifune, K.~Kihara, M.~Nakahata, K.~Nakamura,
 \newblock Observation of $^{8}\mathrm{B}$ solar neutrinos in the kamiokande-ii
   detector.
 \newblock {\em Phys. Rev. Lett.}, 63:16--19, Jul 1989.
+
+\bibitem{hoerandel}
+Jörg~R. Hörandel.
+\newblock Models of the knee in the energy spectrum of cosmic rays.
+\newblock {\em Astroparticle Physics}, 21(3):241–265, Jun 2004.
 
 \bibitem{pocam}
 {Jurkovic, M.}, {Abraham, K.}, {Holzapfel, K.}, {Krings, K.}, {Resconi, E.},
