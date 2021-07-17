@@ -10,54 +10,51 @@ A level-1 auxiliary file: Results.aux
 A level-1 auxiliary file: Conclusion.aux
 The style file: plain.bst
 Database file #1: thesis.bib
-I was expecting a `,' or a `}'---line 1561 of file thesis.bib
- : 
- : keywords = {Extensive air shower detector, Cosmic-ray detection}
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "biakal_gvd2020"
+Warning--to sort, need author or key in km3net_web
 Warning--to sort, need author or key in onc
 Warning--to sort, need author or key in icetray
 Warning--empty journal in icetray_art
 Warning--empty journal in corsika
-You've used 69 entries,
+You've used 73 entries,
             2118 wiz_defined-function locations,
-            906 strings with 15273 characters,
-and the built_in function-call counts, 25140 in all, are:
-= -- 2290
-> -- 1633
+            924 strings with 15733 characters,
+and the built_in function-call counts, 26416 in all, are:
+= -- 2401
+> -- 1717
 < -- 1
-+ -- 667
-- -- 582
-* -- 2065
-:= -- 4372
-add.period$ -- 199
-call.type$ -- 69
-change.case$ -- 491
++ -- 701
+- -- 612
+* -- 2164
+:= -- 4586
+add.period$ -- 209
+call.type$ -- 73
+change.case$ -- 518
 chr.to.int$ -- 0
-cite$ -- 73
-duplicate$ -- 716
-empty$ -- 1684
-format.name$ -- 582
-if$ -- 4965
+cite$ -- 78
+duplicate$ -- 752
+empty$ -- 1779
+format.name$ -- 612
+if$ -- 5223
 int.to.chr$ -- 0
-int.to.str$ -- 69
-missing$ -- 58
-newline$ -- 340
-num.names$ -- 134
-pop$ -- 460
+int.to.str$ -- 73
+missing$ -- 60
+newline$ -- 358
+num.names$ -- 140
+pop$ -- 493
 preamble$ -- 1
-purify$ -- 425
+purify$ -- 448
 quote$ -- 0
-skip$ -- 539
+skip$ -- 569
 stack$ -- 0
-substring$ -- 1381
-swap$ -- 82
+substring$ -- 1434
+swap$ -- 86
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 272
-warning$ -- 4
-while$ -- 191
-width$ -- 71
-write$ -- 723
-(There was 1 error message)
+type$ -- 288
+warning$ -- 5
+while$ -- 199
+width$ -- 75
+write$ -- 760
+(There were 6 warnings)

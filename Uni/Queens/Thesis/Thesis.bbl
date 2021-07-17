@@ -4,6 +4,10 @@
 Icecube documents.
 \newblock \url{https://software.icecube.wisc.edu/}.
 
+\bibitem{km3net_web}
+Km3net homepage.
+\newblock \url{https://www.km3net.org/}.
+
 \bibitem{onc}
 Ocean networks canada.
 \newblock \url{https://www.pacific-neutrino.org/about-us}.
@@ -34,6 +38,13 @@ R.~Abbasi, M.~Ackermann, J.~Adams, J.A. Aguilar, M.~Ahlers, M.~Ahrens,
   weighter for neutrino observatories.
 \newblock {\em Computer Physics Communications}, 266:108018, Sep 2021.
 
+\bibitem{km3net}
+S~Adrián-Martínez, M~Ageron, F~Aharonian, S~Aiello, A~Albert, F~Ameli,
+  E~Anassontzis, M~Andre, G~Androulakis, M~Anghinolfi, and et~al.
+\newblock Letter of intent for km3net 2.0.
+\newblock {\em Journal of Physics G: Nuclear and Particle Physics},
+  43(8):084001, Jun 2016.
+
 \bibitem{antares}
 M.~Ageron et~al.
 \newblock {ANTARES: the first undersea neutrino telescope}.
@@ -58,6 +69,11 @@ T~Antoni, W.D Apel, and et~al.
 \newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
   Accelerators, Spectrometers, Detectors and Associated Equipment},
   513(3):490--510, 2003.
+
+\bibitem{baikal_gvd}
+{Avrorin, A.D.}, {Avrorin, A.V.}, and et~al.
+\newblock Baikal-gvd: status and prospects.
+\newblock {\em EPJ Web Conf.}, 191:01006, 2018.
 
 \bibitem{dumand}
 J.~Babson, B.~Barish, R.~Becker-Szendy, H.~Bradner, R.~Cady, J.~Clem, S.~T.
@@ -340,6 +356,10 @@ F.~Reines, C.~L. Cowan, F.~B. Harrison, A.~D. McGuire, and H.~W. Kruse.
 Byron~P. Roe.
 \newblock {\em Probability and Statistics in the Physical Sciences}.
 \newblock Springer International Publishing, 2001.
+
+\bibitem{baikal_gvd2020}
+Grigory Safronov.
+\newblock Baikal-gvd: status and first results, 2020.
 
 \bibitem{phd_kai}
 Kai Schatto.

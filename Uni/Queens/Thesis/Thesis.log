@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.18)  15 JUL 2021 22:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.1.18)  16 JUL 2021 16:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -831,11 +831,11 @@ Package caption Info: End \AtBeginDocument code.
 
 ] (./Thesis.toc [4
 
-])
+] [5])
 \tf@toc=\write6
 \openout6 = `Thesis.toc'.
 
- [5] [6]
+ [6]
 (./Thesis.lot)
 \tf@lot=\write7
 \openout7 = `Thesis.lot'.
@@ -844,11 +844,11 @@ Package caption Info: End \AtBeginDocument code.
 
 ] (./Thesis.lof [8
 
-] [9] [10])
+] [9] [10] [11])
 \tf@lof=\write8
 \openout8 = `Thesis.lof'.
 
- [11] [12]
+ [12]
 \openout2 = `Introduction.aux'.
 
  (./Introduction.tex
@@ -878,57 +878,69 @@ Overfull \hbox (0.65189pt too wide) in paragraph at lines 122--123
 lfenstein (MSW)
  []
 
-[9] [10] [11] [12] [13] [14] [15] [16] [17]) [18]
+[9] [10] [11] [12] [13] [14] [15] [16] [17]
+<./Figures/baikal-gvd.png, id=113, 526.96875pt x 550.055pt>
+File: ./Figures/baikal-gvd.png Graphic file (type png)
+<use ./Figures/baikal-gvd.png>
+Package pdftex.def Info: ./Figures/baikal-gvd.png  used on input line 220.
+(pdftex.def)             Requested size: 341.43306pt x 356.40683pt.
+ [18] [19 <./Figures/baikal-gvd.png>]
+<./Figures/KM3NeT.jpg, id=123, 2569.6pt x 1575.8875pt>
+File: ./Figures/KM3NeT.jpg Graphic file (type jpg)
+<use ./Figures/KM3NeT.jpg>
+Package pdftex.def Info: ./Figures/KM3NeT.jpg  used on input line 235.
+(pdftex.def)             Requested size: 341.43306pt x 209.39322pt.
+ [20]) [21 <./Figures/KM3NeT.jpg>]
 \openout2 = `The_PONE.aux'.
 
  (./The_PONE.tex
 Chapter 3.
-[19
+[22
 
 
 
 ]
-<./Figures/PONEv0_-23_design.jpg, id=120, 466.8642pt x 286.1892pt>
+<./Figures/PONEv0_-23_design.jpg, id=133, 466.8642pt x 286.1892pt>
 File: ./Figures/PONEv0_-23_design.jpg Graphic file (type jpg)
 <use ./Figures/PONEv0_-23_design.jpg>
 Package pdftex.def Info: ./Figures/PONEv0_-23_design.jpg  used on input line 11
 .
 (pdftex.def)             Requested size: 341.43306pt x 209.30501pt.
- [20 <./Figures/PONEv0_-23_design.jpg>] [21]
-<./Figures/icecube_dom.png, id=127, 1147.28625pt x 546.04pt>
+ [23 <./Figures/PONEv0_-23_design.jpg>] [24]
+<./Figures/icecube_dom.png, id=141, 1147.28625pt x 546.04pt>
 File: ./Figures/icecube_dom.png Graphic file (type png)
 <use ./Figures/icecube_dom.png>
 Package pdftex.def Info: ./Figures/icecube_dom.png  used on input line 39.
 (pdftex.def)             Requested size: 390.25534pt x 185.73445pt.
- [22 <./Figures/icecube_dom.png>]
-<./Figures/STRAW.png, id=133, 588.1975pt x 979.66pt>
+ [25 <./Figures/icecube_dom.png>]
+<./Figures/STRAW.png, id=146, 588.1975pt x 979.66pt>
 File: ./Figures/STRAW.png Graphic file (type png)
 <use ./Figures/STRAW.png>
 Package pdftex.def Info: ./Figures/STRAW.png  used on input line 58.
 (pdftex.def)             Requested size: 303.53267pt x 505.53957pt.
- [23] [24 <./Figures/STRAW.png>] [25]
-<./Figures/western_infrastructure.png, id=145, 385.44pt x 216.81pt>
+ [26] [27 <./Figures/STRAW.png>] [28]
+<./Figures/western_infrastructure.png, id=157, 385.44pt x 216.81pt>
 File: ./Figures/western_infrastructure.png Graphic file (type png)
 <use ./Figures/western_infrastructure.png>
 Package pdftex.def Info: ./Figures/western_infrastructure.png  used on input li
 ne 75.
 (pdftex.def)             Requested size: 390.25534pt x 219.5189pt.
-<./Figures/cascadia_basin.png, id=146, 385.44pt x 216.81pt>
+<./Figures/cascadia_basin.png, id=158, 385.44pt x 216.81pt>
 File: ./Figures/cascadia_basin.png Graphic file (type png)
 <use ./Figures/cascadia_basin.png>
 Package pdftex.def Info: ./Figures/cascadia_basin.png  used on input line 84.
 (pdftex.def)             Requested size: 390.25534pt x 219.5189pt.
- [26 <./Figures/western_infrastructure.png>]) [27 <./Figures/cascadia_basin.png
+ [29 <./Figures/western_infrastructure.png>]) [30 <./Figures/cascadia_basin.png
 >]
 \openout2 = `Simulation.aux'.
 
  (./Simulation.tex
 Chapter 4.
-[28
+[31
 
 
 
-] [29] [30] [31] [32] [33] [34]
+] [32] [33] [34] [35] [36] [37]
 Package epstopdf Info: Source file: <./Figures/reco_plots/DOM_Locations_3d.eps>
 
 (epstopdf)                    date: 2021-07-15 15:44:26
@@ -941,7 +953,7 @@ converted-to.pdf>
 ocations_3d-eps-converted-to.pdf ./Figures/reco_plots/DOM_Locations_3d.eps>
 (epstopdf)             \includegraphics on input line 61.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/DOM_Locations_3d-eps-converted-to.pdf, id=178, 462.72874p
+<./Figures/reco_plots/DOM_Locations_3d-eps-converted-to.pdf, id=192, 462.72874p
 t x 346.29375pt>
 File: ./Figures/reco_plots/DOM_Locations_3d-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -949,16 +961,16 @@ type pdf)
 Package pdftex.def Info: ./Figures/reco_plots/DOM_Locations_3d-eps-converted-to
 .pdf  used on input line 61.
 (pdftex.def)             Requested size: 341.43306pt x 255.52415pt.
- [35]) [36 <./Figures/reco_plots/DOM_Locations_3d-eps-converted-to.pdf>]
+ [38]) [39 <./Figures/reco_plots/DOM_Locations_3d-eps-converted-to.pdf>]
 \openout2 = `Reconstruction.aux'.
 
  (./Reconstruction.tex
 Chapter 5.
-[37
+[40
 
 
 
-] [38] [39] [40] [41]
+] [41] [42] [43] [44]
 Package epstopdf Info: Source file: <./Figures/upward_arrival_time.eps>
 (epstopdf)                    date: 2021-06-15 13:51:42
 (epstopdf)                    size: 27978 bytes
@@ -970,7 +982,7 @@ d-to.pdf>
 ime-eps-converted-to.pdf ./Figures/upward_arrival_time.eps>
 (epstopdf)             \includegraphics on input line 119.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/upward_arrival_time-eps-converted-to.pdf, id=230, 462.72874pt x 346.
+<./Figures/upward_arrival_time-eps-converted-to.pdf, id=243, 462.72874pt x 346.
 29375pt>
 File: ./Figures/upward_arrival_time-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -989,7 +1001,7 @@ ted-to.pdf>
 _time-eps-converted-to.pdf ./Figures/downward_arrival_time.eps>
 (epstopdf)             \includegraphics on input line 126.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/downward_arrival_time-eps-converted-to.pdf, id=231, 462.72874pt x 34
+<./Figures/downward_arrival_time-eps-converted-to.pdf, id=244, 462.72874pt x 34
 6.29375pt>
 File: ./Figures/downward_arrival_time-eps-converted-to.pdf Graphic file (type p
 df)
@@ -997,8 +1009,8 @@ df)
 Package pdftex.def Info: ./Figures/downward_arrival_time-eps-converted-to.pdf  
 used on input line 126.
 (pdftex.def)             Requested size: 208.13574pt x 155.76204pt.
- [42 <./Figures/upward_arrival_time-eps-converted-to.pdf> <./Figures/downward_a
-rrival_time-eps-converted-to.pdf>] [43] [44] [45]
+ [45 <./Figures/upward_arrival_time-eps-converted-to.pdf> <./Figures/downward_a
+rrival_time-eps-converted-to.pdf>] [46] [47] [48]
 Package epstopdf Info: Source file: <./Figures/pandel_plot.eps>
 (epstopdf)                    date: 2021-06-09 23:29:02
 (epstopdf)                    size: 26706 bytes
@@ -1010,7 +1022,7 @@ Package epstopdf Info: Source file: <./Figures/pandel_plot.eps>
 converted-to.pdf ./Figures/pandel_plot.eps>
 (epstopdf)             \includegraphics on input line 215.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/pandel_plot-eps-converted-to.pdf, id=323, 462.52798pt x 346.89601pt>
+<./Figures/pandel_plot-eps-converted-to.pdf, id=336, 462.52798pt x 346.89601pt>
 
 File: ./Figures/pandel_plot-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/pandel_plot-eps-converted-to.pdf>
@@ -1018,7 +1030,7 @@ Package pdftex.def Info: ./Figures/pandel_plot-eps-converted-to.pdf  used on in
 put line 215.
 (pdftex.def)             Requested size: 341.43306pt x 256.085pt.
 
-[46] [47 <./Figures/pandel_plot-eps-converted-to.pdf>]
+[49] [50 <./Figures/pandel_plot-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./Figures/cpandel_plot.eps>
 (epstopdf)                    date: 2021-06-12 13:12:52
 (epstopdf)                    size: 26725 bytes
@@ -1030,14 +1042,14 @@ f>
 -converted-to.pdf ./Figures/cpandel_plot.eps>
 (epstopdf)             \includegraphics on input line 238.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/cpandel_plot-eps-converted-to.pdf, id=362, 462.52798pt x 346.89601pt
+<./Figures/cpandel_plot-eps-converted-to.pdf, id=375, 462.52798pt x 346.89601pt
 >
 File: ./Figures/cpandel_plot-eps-converted-to.pdf Graphic file (type pdf)
 <use ./Figures/cpandel_plot-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/cpandel_plot-eps-converted-to.pdf  used on i
 nput line 238.
 (pdftex.def)             Requested size: 341.43306pt x 256.085pt.
- [48] [49 <./Figures/cpandel_plot-eps-converted-to.pdf>]
+ [51] [52 <./Figures/cpandel_plot-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./Figures/reco_plots/residual_time_histogr
 am.eps>
 (epstopdf)                    date: 2021-07-05 20:36:02
@@ -1051,7 +1063,7 @@ ual_time_histogram-eps-converted-to.pdf ./Figures/reco_plots/residual_time_hist
 ogram.eps>
 (epstopdf)             \includegraphics on input line 253.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/residual_time_histogram-eps-converted-to.pdf, id=408, 462
+<./Figures/reco_plots/residual_time_histogram-eps-converted-to.pdf, id=420, 462
 .72874pt x 346.29375pt>
 File: ./Figures/reco_plots/residual_time_histogram-eps-converted-to.pdf Graphic
  file (type pdf)
@@ -1059,7 +1071,7 @@ File: ./Figures/reco_plots/residual_time_histogram-eps-converted-to.pdf Graphic
 Package pdftex.def Info: ./Figures/reco_plots/residual_time_histogram-eps-conve
 rted-to.pdf  used on input line 253.
 (pdftex.def)             Requested size: 341.43306pt x 255.52415pt.
- [50]
+ [53]
 Package epstopdf Info: Source file: <./Figures/reco_plots/residual_time_hist_r1
 .eps>
 (epstopdf)                    date: 2021-07-05 20:36:02
@@ -1073,7 +1085,7 @@ ual_time_hist_r1-eps-converted-to.pdf ./Figures/reco_plots/residual_time_hist_r
 1.eps>
 (epstopdf)             \includegraphics on input line 262.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/residual_time_hist_r1-eps-converted-to.pdf, id=412, 462.7
+<./Figures/reco_plots/residual_time_hist_r1-eps-converted-to.pdf, id=424, 462.7
 2874pt x 346.29375pt>
 File: ./Figures/reco_plots/residual_time_hist_r1-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -1094,7 +1106,7 @@ ual_time_hist_r3-eps-converted-to.pdf ./Figures/reco_plots/residual_time_hist_r
 3.eps>
 (epstopdf)             \includegraphics on input line 269.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/residual_time_hist_r3-eps-converted-to.pdf, id=413, 462.7
+<./Figures/reco_plots/residual_time_hist_r3-eps-converted-to.pdf, id=425, 462.7
 2874pt x 346.29375pt>
 File: ./Figures/reco_plots/residual_time_hist_r3-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -1115,7 +1127,7 @@ ual_time_hist_r5-eps-converted-to.pdf ./Figures/reco_plots/residual_time_hist_r
 5.eps>
 (epstopdf)             \includegraphics on input line 275.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/residual_time_hist_r5-eps-converted-to.pdf, id=414, 462.7
+<./Figures/reco_plots/residual_time_hist_r5-eps-converted-to.pdf, id=426, 462.7
 2874pt x 346.29375pt>
 File: ./Figures/reco_plots/residual_time_hist_r5-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -1136,7 +1148,7 @@ ual_time_hist_r7-eps-converted-to.pdf ./Figures/reco_plots/residual_time_hist_r
 7.eps>
 (epstopdf)             \includegraphics on input line 282.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/residual_time_hist_r7-eps-converted-to.pdf, id=415, 462.7
+<./Figures/reco_plots/residual_time_hist_r7-eps-converted-to.pdf, id=427, 462.7
 2874pt x 346.29375pt>
 File: ./Figures/reco_plots/residual_time_hist_r7-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -1144,7 +1156,7 @@ ile (type pdf)
 Package pdftex.def Info: ./Figures/reco_plots/residual_time_hist_r7-eps-convert
 ed-to.pdf  used on input line 282.
 (pdftex.def)             Requested size: 208.13574pt x 155.76204pt.
- [51 <./Figures/reco_plots/residual_time_histogram-eps-converted-to.pdf>] [52 <
+ [54 <./Figures/reco_plots/residual_time_histogram-eps-converted-to.pdf>] [55 <
 ./Figures/reco_plots/residual_time_hist_r1-eps-converted-to.pdf> <./Figures/rec
 o_plots/residual_time_hist_r3-eps-converted-to.pdf> <./Figures/reco_plots/resid
 ual_time_hist_r5-eps-converted-to.pdf> <./Figures/reco_plots/residual_time_hist
@@ -1160,7 +1172,7 @@ ted-to.pdf>
 _data-eps-converted-to.pdf ./Figures/reco_plots/straw_data.eps>
 (epstopdf)             \includegraphics on input line 295.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/straw_data-eps-converted-to.pdf, id=571, 462.52798pt x 34
+<./Figures/reco_plots/straw_data-eps-converted-to.pdf, id=584, 462.52798pt x 34
 6.89601pt>
 File: ./Figures/reco_plots/straw_data-eps-converted-to.pdf Graphic file (type p
 df)
@@ -1168,7 +1180,7 @@ df)
 Package pdftex.def Info: ./Figures/reco_plots/straw_data-eps-converted-to.pdf  
 used on input line 295.
 (pdftex.def)             Requested size: 341.43306pt x 256.085pt.
- [53 <./Figures/reco_plots/straw_data-eps-converted-to.pdf>]
+ [56 <./Figures/reco_plots/straw_data-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./Figures/reco_plots/straw_data_fit_lnear.
 eps>
 (epstopdf)                    date: 2021-07-05 21:01:46
@@ -1182,7 +1194,7 @@ _data_fit_lnear-eps-converted-to.pdf ./Figures/reco_plots/straw_data_fit_lnear.
 eps>
 (epstopdf)             \includegraphics on input line 305.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/straw_data_fit_lnear-eps-converted-to.pdf, id=611, 462.52
+<./Figures/reco_plots/straw_data_fit_lnear-eps-converted-to.pdf, id=624, 462.52
 798pt x 346.89601pt>
 File: ./Figures/reco_plots/straw_data_fit_lnear-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -1203,7 +1215,7 @@ _data_fit_cubic-eps-converted-to.pdf ./Figures/reco_plots/straw_data_fit_cubic.
 eps>
 (epstopdf)             \includegraphics on input line 312.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/straw_data_fit_cubic-eps-converted-to.pdf, id=612, 462.52
+<./Figures/reco_plots/straw_data_fit_cubic-eps-converted-to.pdf, id=625, 462.52
 798pt x 346.89601pt>
 File: ./Figures/reco_plots/straw_data_fit_cubic-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -1211,7 +1223,7 @@ le (type pdf)
 Package pdftex.def Info: ./Figures/reco_plots/straw_data_fit_cubic-eps-converte
 d-to.pdf  used on input line 312.
 (pdftex.def)             Requested size: 208.13574pt x 156.10176pt.
- [54 <./Figures/reco_plots/straw_data_fit_lnear-eps-converted-to.pdf> <./Figure
+ [57 <./Figures/reco_plots/straw_data_fit_lnear-eps-converted-to.pdf> <./Figure
 s/reco_plots/straw_data_fit_cubic-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./Figures/reco_plots/straw_data_fit_savgol
 .eps>
@@ -1226,7 +1238,7 @@ _data_fit_savgol-eps-converted-to.pdf ./Figures/reco_plots/straw_data_fit_savgo
 l.eps>
 (epstopdf)             \includegraphics on input line 322.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/straw_data_fit_savgol-eps-converted-to.pdf, id=684, 462.5
+<./Figures/reco_plots/straw_data_fit_savgol-eps-converted-to.pdf, id=697, 462.5
 2798pt x 346.89601pt>
 File: ./Figures/reco_plots/straw_data_fit_savgol-eps-converted-to.pdf Graphic f
 ile (type pdf)
@@ -1234,7 +1246,7 @@ ile (type pdf)
 Package pdftex.def Info: ./Figures/reco_plots/straw_data_fit_savgol-eps-convert
 ed-to.pdf  used on input line 322.
 (pdftex.def)             Requested size: 341.43306pt x 256.085pt.
- [55 <./Figures/reco_plots/straw_data_fit_savgol-eps-converted-to.pdf>]
+ [58 <./Figures/reco_plots/straw_data_fit_savgol-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./Figures/reco_plots/straw_data_fit_exponn
 orm.eps>
 (epstopdf)                    date: 2021-07-05 21:20:02
@@ -1248,7 +1260,7 @@ _data_fit_exponnorm-eps-converted-to.pdf ./Figures/reco_plots/straw_data_fit_ex
 ponnorm.eps>
 (epstopdf)             \includegraphics on input line 333.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/straw_data_fit_exponnorm-eps-converted-to.pdf, id=727, 46
+<./Figures/reco_plots/straw_data_fit_exponnorm-eps-converted-to.pdf, id=739, 46
 2.52798pt x 346.89601pt>
 File: ./Figures/reco_plots/straw_data_fit_exponnorm-eps-converted-to.pdf Graphi
 c file (type pdf)
@@ -1256,19 +1268,19 @@ c file (type pdf)
 Package pdftex.def Info: ./Figures/reco_plots/straw_data_fit_exponnorm-eps-conv
 erted-to.pdf  used on input line 333.
 (pdftex.def)             Requested size: 341.43306pt x 256.085pt.
- [56 <./Figures/reco_plots/straw_data_fit_exponnorm-eps-converted-to.pdf>] [57]
+ [59 <./Figures/reco_plots/straw_data_fit_exponnorm-eps-converted-to.pdf>] [60]
 
 Overfull \hbox (7.9552pt too wide) in paragraph at lines 363--364
 []\OT1/cmr/m/n/12 To avoid these po-ten-tial is-sues, the prob-lem was repa-ram
 -e-ter-ized from $[] = (\OML/cmm/m/it/12 ^^R; ^^^; []; t\OT1/cmr/m/n/12 )$
  []
 
-[58]) [59]
+[61]) [62]
 \openout2 = `Results.aux'.
 
  (./Results.tex
 Chapter 6.
-[60
+[63
 
 
 
@@ -1286,7 +1298,7 @@ _dist_linefit_norm-eps-converted-to.pdf ./Figures/reco_plots/alpha_dist_linefit
 _norm.eps>
 (epstopdf)             \includegraphics on input line 15.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/alpha_dist_linefit_norm-eps-converted-to.pdf, id=789, 462
+<./Figures/reco_plots/alpha_dist_linefit_norm-eps-converted-to.pdf, id=801, 462
 .72874pt x 346.29375pt>
 File: ./Figures/reco_plots/alpha_dist_linefit_norm-eps-converted-to.pdf Graphic
  file (type pdf)
@@ -1294,7 +1306,7 @@ File: ./Figures/reco_plots/alpha_dist_linefit_norm-eps-converted-to.pdf Graphic
 Package pdftex.def Info: ./Figures/reco_plots/alpha_dist_linefit_norm-eps-conve
 rted-to.pdf  used on input line 15.
 (pdftex.def)             Requested size: 341.43306pt x 255.52415pt.
- [61 <./Figures/reco_plots/alpha_dist_linefit_norm-eps-converted-to.pdf>]
+ [64 <./Figures/reco_plots/alpha_dist_linefit_norm-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./Figures/reco_plots/alpha_dist_llh_norm.e
 ps>
 (epstopdf)                    date: 2021-07-05 21:49:06
@@ -1308,7 +1320,7 @@ _dist_llh_norm-eps-converted-to.pdf ./Figures/reco_plots/alpha_dist_llh_norm.ep
 s>
 (epstopdf)             \includegraphics on input line 28.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/alpha_dist_llh_norm-eps-converted-to.pdf, id=831, 462.728
+<./Figures/reco_plots/alpha_dist_llh_norm-eps-converted-to.pdf, id=843, 462.728
 74pt x 346.29375pt>
 File: ./Figures/reco_plots/alpha_dist_llh_norm-eps-converted-to.pdf Graphic fil
 e (type pdf)
@@ -1317,7 +1329,7 @@ Package pdftex.def Info: ./Figures/reco_plots/alpha_dist_llh_norm-eps-converted
 -to.pdf  used on input line 28.
 (pdftex.def)             Requested size: 341.43306pt x 255.52415pt.
 
-[62 <./Figures/reco_plots/alpha_dist_llh_norm-eps-converted-to.pdf>]
+[65 <./Figures/reco_plots/alpha_dist_llh_norm-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <./Figures/reco_plots/angular_diff_dir.eps>
 
 (epstopdf)                    date: 2021-07-07 12:57:01
@@ -1330,7 +1342,7 @@ converted-to.pdf>
 ar_diff_dir-eps-converted-to.pdf ./Figures/reco_plots/angular_diff_dir.eps>
 (epstopdf)             \includegraphics on input line 39.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/angular_diff_dir-eps-converted-to.pdf, id=874, 462.72874p
+<./Figures/reco_plots/angular_diff_dir-eps-converted-to.pdf, id=886, 462.72874p
 t x 346.29375pt>
 File: ./Figures/reco_plots/angular_diff_dir-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -1338,7 +1350,7 @@ type pdf)
 Package pdftex.def Info: ./Figures/reco_plots/angular_diff_dir-eps-converted-to
 .pdf  used on input line 39.
 (pdftex.def)             Requested size: 341.43306pt x 255.52415pt.
- [63 <./Figures/reco_plots/angular_diff_dir-eps-converted-to.pdf>] [64]
+ [66 <./Figures/reco_plots/angular_diff_dir-eps-converted-to.pdf>] [67]
 Package epstopdf Info: Source file: <./Figures/reco_plots/alpha_dist_llh_seedco
 mparison.eps>
 (epstopdf)                    date: 2021-07-05 21:46:53
@@ -1352,15 +1364,15 @@ _dist_llh_seedcomparison-eps-converted-to.pdf ./Figures/reco_plots/alpha_dist_l
 lh_seedcomparison.eps>
 (epstopdf)             \includegraphics on input line 73.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/alpha_dist_llh_seedcomparison-eps-converted-to.pdf, id=92
-2, 462.72874pt x 346.29375pt>
+<./Figures/reco_plots/alpha_dist_llh_seedcomparison-eps-converted-to.pdf, id=93
+5, 462.72874pt x 346.29375pt>
 File: ./Figures/reco_plots/alpha_dist_llh_seedcomparison-eps-converted-to.pdf G
 raphic file (type pdf)
 <use ./Figures/reco_plots/alpha_dist_llh_seedcomparison-eps-converted-to.pdf>
 Package pdftex.def Info: ./Figures/reco_plots/alpha_dist_llh_seedcomparison-eps
 -converted-to.pdf  used on input line 73.
 (pdftex.def)             Requested size: 341.43306pt x 255.52415pt.
- [65] [66 <./Figures/reco_plots/alpha_dist_llh_seedcomparison-eps-converted-to.
+ [68] [69 <./Figures/reco_plots/alpha_dist_llh_seedcomparison-eps-converted-to.
 pdf>]
 Package epstopdf Info: Source file: <./Figures/reco_plots/angular_vert_dist_mod
 ified.eps>
@@ -1375,7 +1387,7 @@ ar_vert_dist_modified-eps-converted-to.pdf ./Figures/reco_plots/angular_vert_di
 st_modified.eps>
 (epstopdf)             \includegraphics on input line 105.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/angular_vert_dist_modified-eps-converted-to.pdf, id=969, 
+<./Figures/reco_plots/angular_vert_dist_modified-eps-converted-to.pdf, id=981, 
 462.72874pt x 346.29375pt>
 File: ./Figures/reco_plots/angular_vert_dist_modified-eps-converted-to.pdf Grap
 hic file (type pdf)
@@ -1383,7 +1395,7 @@ hic file (type pdf)
 Package pdftex.def Info: ./Figures/reco_plots/angular_vert_dist_modified-eps-co
 nverted-to.pdf  used on input line 105.
 (pdftex.def)             Requested size: 341.43306pt x 255.52415pt.
- [67] [68 <./Figures/reco_plots/angular_vert_dist_modified-eps-converted-to.pdf
+ [70] [71 <./Figures/reco_plots/angular_vert_dist_modified-eps-converted-to.pdf
 >]
 Package epstopdf Info: Source file: <./Figures/reco_plots/zenith_vert_dist_modi
 fied_zoomed.eps>
@@ -1399,7 +1411,7 @@ rt_dist_modified_zoomed.eps>
 (epstopdf)             \includegraphics on input line 114.
 Package epstopdf Info: Output file is already uptodate.
 <./Figures/reco_plots/zenith_vert_dist_modified_zoomed-eps-converted-to.pdf, id
-=1014, 462.72874pt x 346.29375pt>
+=1026, 462.72874pt x 346.29375pt>
 File: ./Figures/reco_plots/zenith_vert_dist_modified_zoomed-eps-converted-to.pd
 f Graphic file (type pdf)
 <use ./Figures/reco_plots/zenith_vert_dist_modified_zoomed-eps-converted-to.pdf
@@ -1407,9 +1419,9 @@ f Graphic file (type pdf)
 Package pdftex.def Info: ./Figures/reco_plots/zenith_vert_dist_modified_zoomed-
 eps-converted-to.pdf  used on input line 114.
 (pdftex.def)             Requested size: 341.43306pt x 255.52415pt.
- [69 <./Figures/reco_plots/zenith_vert_dist_modified_zoomed-eps-converted-to.pd
+ [72 <./Figures/reco_plots/zenith_vert_dist_modified_zoomed-eps-converted-to.pd
 f>]
-<./Figures/reco_plots/alpha_dist_vs_llhratio_heat.png, id=1055, 462.528pt x 346
+<./Figures/reco_plots/alpha_dist_vs_llhratio_heat.png, id=1068, 462.528pt x 346
 .896pt>
 File: ./Figures/reco_plots/alpha_dist_vs_llhratio_heat.png Graphic file (type p
 ng)
@@ -1417,8 +1429,8 @@ ng)
 Package pdftex.def Info: ./Figures/reco_plots/alpha_dist_vs_llhratio_heat.png  
 used on input line 127.
 (pdftex.def)             Requested size: 341.43306pt x 256.08499pt.
- [70]
-<./Figures/reco_plots/llhratio_comp_heat.png, id=1059, 462.528pt x 346.896pt>
+ [73]
+<./Figures/reco_plots/llhratio_comp_heat.png, id=1072, 462.528pt x 346.896pt>
 File: ./Figures/reco_plots/llhratio_comp_heat.png Graphic file (type png)
 <use ./Figures/reco_plots/llhratio_comp_heat.png>
 Package pdftex.def Info: ./Figures/reco_plots/llhratio_comp_heat.png  used on i
@@ -1434,14 +1446,14 @@ Underfull \hbox (badness 2726) in paragraph at lines 138--138
 \OT1/cmr/m/n/12 tween the ini-tial neg-a-tive
  []
 
-<./Figures/reco_plots/alpha_dist_comp_heat.png, id=1060, 462.528pt x 346.896pt>
+<./Figures/reco_plots/alpha_dist_comp_heat.png, id=1073, 462.528pt x 346.896pt>
 
 File: ./Figures/reco_plots/alpha_dist_comp_heat.png Graphic file (type png)
 <use ./Figures/reco_plots/alpha_dist_comp_heat.png>
 Package pdftex.def Info: ./Figures/reco_plots/alpha_dist_comp_heat.png  used on
  input line 144.
 (pdftex.def)             Requested size: 208.13574pt x 156.10175pt.
-[71 <./Figures/reco_plots/alpha_dist_vs_llhratio_heat.png>] [72 <./Figures/reco
+[74 <./Figures/reco_plots/alpha_dist_vs_llhratio_heat.png>] [75 <./Figures/reco
 _plots/llhratio_comp_heat.png> <./Figures/reco_plots/alpha_dist_comp_heat.png>]
 Package epstopdf Info: Source file: <./Figures/reco_plots/computation_time_perp
 ulse.eps>
@@ -1456,7 +1468,7 @@ tation_time_perpulse-eps-converted-to.pdf ./Figures/reco_plots/computation_time
 _perpulse.eps>
 (epstopdf)             \includegraphics on input line 158.
 Package epstopdf Info: Output file is already uptodate.
-<./Figures/reco_plots/computation_time_perpulse-eps-converted-to.pdf, id=1071, 
+<./Figures/reco_plots/computation_time_perpulse-eps-converted-to.pdf, id=1083, 
 462.72874pt x 346.29375pt>
 File: ./Figures/reco_plots/computation_time_perpulse-eps-converted-to.pdf Graph
 ic file (type pdf)
@@ -1464,29 +1476,29 @@ ic file (type pdf)
 Package pdftex.def Info: ./Figures/reco_plots/computation_time_perpulse-eps-con
 verted-to.pdf  used on input line 158.
 (pdftex.def)             Requested size: 341.43306pt x 255.52415pt.
-[73 <./Figures/reco_plots/computation_time_perpulse-eps-converted-to.pdf>])
-[74]
+[76 <./Figures/reco_plots/computation_time_perpulse-eps-converted-to.pdf>])
+[77]
 \openout2 = `Conclusion.aux'.
 
  (./Conclusion.tex
 Chapter 7.
-[75
+[78
 
 
 
-] [76]) [77] (./Thesis.bbl [78
+] [79]) [80] (./Thesis.bbl [81
 
 
 
-] [79] [80] [81] [82] [83] [84] [85]) [86]
+] [82] [83] [84] [85] [86] [87] [88]) [89]
 (./Thesis.aux (./Introduction.aux) (./Background.aux) (./The_PONE.aux)
 (./Simulation.aux) (./Reconstruction.aux) (./Results.aux) (./Conclusion.aux)) )
  
 Here is how much of TeX's memory you used:
- 16156 strings out of 481239
- 322684 string characters out of 5920377
- 536273 words of memory out of 5000000
- 31003 multiletter control sequences out of 15000+600000
+ 16175 strings out of 481239
+ 323046 string characters out of 5920377
+ 536311 words of memory out of 5000000
+ 31020 multiletter control sequences out of 15000+600000
  541789 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,21n,73p,1596b,1007s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1507,10 +1519,10 @@ exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/pu
 blic/cm-super/sfrm1200.pfb>
-Output written on Thesis.pdf (99 pages, 6893314 bytes).
+Output written on Thesis.pdf (102 pages, 7570715 bytes).
 PDF statistics:
- 1204 PDF objects out of 1440 (max. 8388607)
- 394 compressed objects within 4 object streams
+ 1216 PDF objects out of 1440 (max. 8388607)
+ 400 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 173 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -22,43 +22,43 @@
 \contentsline {section}{\numberline {2.3}Neutrino Telescopes}{15}%
 \contentsline {subsection}{\numberline {2.3.1}IceCube}{15}%
 \contentsline {subsection}{\numberline {2.3.2}ANTARES}{17}%
-\contentsline {subsection}{\numberline {2.3.3}KM3NET}{18}%
-\contentsline {subsection}{\numberline {2.3.4}Baikal}{18}%
-\contentsline {chapter}{\numberline {3}The Pacific Ocean Neutrino Explorer}{19}%
-\contentsline {section}{\numberline {3.1}Geometry}{19}%
-\contentsline {section}{\numberline {3.2}Detectors}{20}%
-\contentsline {subsection}{\numberline {3.2.1}Photomultiplier Tubes}{21}%
-\contentsline {subsection}{\numberline {3.2.2}Digital Optical Modules}{22}%
-\contentsline {subsection}{\numberline {3.2.3}mDOMs}{23}%
-\contentsline {section}{\numberline {3.3}Strings for Absorption length in Water}{23}%
-\contentsline {section}{\numberline {3.4}Ocean Networks Canada}{25}%
-\contentsline {chapter}{\numberline {4}Simulation}{28}%
-\contentsline {section}{\numberline {4.1}IceCube Framework}{28}%
-\contentsline {section}{\numberline {4.2}Simulating Neutrinos}{29}%
-\contentsline {section}{\numberline {4.3}Simulating Muons}{31}%
-\contentsline {subsection}{\numberline {4.3.1}Cosmic Ray Muons}{31}%
-\contentsline {subsection}{\numberline {4.3.2}Flux Model}{33}%
-\contentsline {section}{\numberline {4.4}Detector Response}{34}%
-\contentsline {chapter}{\numberline {5}Reconstruction}{37}%
-\contentsline {section}{\numberline {5.1}Geometry of a Single Hit}{37}%
-\contentsline {section}{\numberline {5.2}Linefit}{43}%
-\contentsline {section}{\numberline {5.3}Likelihood}{44}%
-\contentsline {subsection}{\numberline {5.3.1}Likelihood Function}{45}%
-\contentsline {subsection}{\numberline {5.3.2}Function Fitting}{50}%
-\contentsline {subsection}{\numberline {5.3.3}Other Potential Distributions}{52}%
-\contentsline {section}{\numberline {5.4}Track Fitting}{57}%
-\contentsline {section}{\numberline {5.5}Corrections}{58}%
-\contentsline {subsection}{\numberline {5.5.1}Reparameterizing}{58}%
-\contentsline {subsection}{\numberline {5.5.2}Extra Penalty}{59}%
-\contentsline {chapter}{\numberline {6}Results}{60}%
-\contentsline {section}{\numberline {6.1}Linefit}{61}%
-\contentsline {section}{\numberline {6.2}Likelihood}{62}%
-\contentsline {subsection}{\numberline {6.2.1}Seed Comparisons}{65}%
-\contentsline {subsection}{\numberline {6.2.2}Correlations}{70}%
-\contentsline {subsection}{\numberline {6.2.3}Computation Time}{73}%
-\contentsline {chapter}{\numberline {7}Summary and Conclusions}{75}%
-\contentsline {section}{\numberline {7.1}Summary}{75}%
-\contentsline {section}{\numberline {7.2}Future Work}{76}%
-\contentsline {section}{\numberline {7.3}Conclusion}{77}%
-\contentsline {chapter}{Bibliography}{78}%
+\contentsline {subsection}{\numberline {2.3.3}Baikal}{18}%
+\contentsline {subsection}{\numberline {2.3.4}KM3NeT}{19}%
+\contentsline {chapter}{\numberline {3}The Pacific Ocean Neutrino Explorer}{22}%
+\contentsline {section}{\numberline {3.1}Geometry}{22}%
+\contentsline {section}{\numberline {3.2}Detectors}{23}%
+\contentsline {subsection}{\numberline {3.2.1}Photomultiplier Tubes}{24}%
+\contentsline {subsection}{\numberline {3.2.2}Digital Optical Modules}{25}%
+\contentsline {subsection}{\numberline {3.2.3}mDOMs}{26}%
+\contentsline {section}{\numberline {3.3}Strings for Absorption length in Water}{26}%
+\contentsline {section}{\numberline {3.4}Ocean Networks Canada}{28}%
+\contentsline {chapter}{\numberline {4}Simulation}{31}%
+\contentsline {section}{\numberline {4.1}IceCube Framework}{31}%
+\contentsline {section}{\numberline {4.2}Simulating Neutrinos}{32}%
+\contentsline {section}{\numberline {4.3}Simulating Muons}{34}%
+\contentsline {subsection}{\numberline {4.3.1}Cosmic Ray Muons}{34}%
+\contentsline {subsection}{\numberline {4.3.2}Flux Model}{36}%
+\contentsline {section}{\numberline {4.4}Detector Response}{37}%
+\contentsline {chapter}{\numberline {5}Reconstruction}{40}%
+\contentsline {section}{\numberline {5.1}Geometry of a Single Hit}{40}%
+\contentsline {section}{\numberline {5.2}Linefit}{46}%
+\contentsline {section}{\numberline {5.3}Likelihood}{47}%
+\contentsline {subsection}{\numberline {5.3.1}Likelihood Function}{48}%
+\contentsline {subsection}{\numberline {5.3.2}Function Fitting}{53}%
+\contentsline {subsection}{\numberline {5.3.3}Other Potential Distributions}{55}%
+\contentsline {section}{\numberline {5.4}Track Fitting}{60}%
+\contentsline {section}{\numberline {5.5}Corrections}{61}%
+\contentsline {subsection}{\numberline {5.5.1}Reparameterizing}{61}%
+\contentsline {subsection}{\numberline {5.5.2}Extra Penalty}{62}%
+\contentsline {chapter}{\numberline {6}Results}{63}%
+\contentsline {section}{\numberline {6.1}Linefit}{64}%
+\contentsline {section}{\numberline {6.2}Likelihood}{65}%
+\contentsline {subsection}{\numberline {6.2.1}Seed Comparisons}{68}%
+\contentsline {subsection}{\numberline {6.2.2}Correlations}{73}%
+\contentsline {subsection}{\numberline {6.2.3}Computation Time}{76}%
+\contentsline {chapter}{\numberline {7}Summary and Conclusions}{78}%
+\contentsline {section}{\numberline {7.1}Summary}{78}%
+\contentsline {section}{\numberline {7.2}Future Work}{79}%
+\contentsline {section}{\numberline {7.3}Conclusion}{80}%
+\contentsline {chapter}{Bibliography}{81}%
 \renewcommand *\cftchappresnum {Appendix }
